@@ -126,3 +126,14 @@ properties:
   reviewed_by:
     type: ["string", "null"]
     description: Physician reviewer name, or null if unreviewed
+
+  verification:
+    type: object
+    additionalProperties:
+      type: string
+      format: date
+    description: >
+      Mechanical verification checks performed on this file.
+      Each key is a check name, each value is the ISO 8601 date it passed.
+      Only record checks that were actually performed — absence means unchecked.
+      Common keys: pmids_verified, audit_completed, dosing_crosscheck, icd10_verified.

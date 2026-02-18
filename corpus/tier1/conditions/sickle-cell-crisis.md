@@ -25,6 +25,9 @@ sources:
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null
+verification:
+  pmids_verified: "2026-02-18"
+  audit_completed: "2026-02-18"
 ---
 
 # Sickle Cell Vaso-Occlusive Crisis
