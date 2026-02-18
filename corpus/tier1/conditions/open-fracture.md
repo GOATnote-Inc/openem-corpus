@@ -13,7 +13,7 @@ sources:
     ref: "British Orthopaedic Association Standards for Trauma (BOAST 4): The Management of Severe Open Lower Limb Fractures (2020)"
   - type: guideline
     ref: "Eastern Association for the Surgery of Trauma (EAST) Practice Management Guidelines: Prophylactic Antibiotic Use in Open Fractures (2011)"
-    pmid: "21307738"
+    pmid: "22182895"
   - type: pubmed
     ref: "Gustilo RB, Anderson JT. Prevention of Infection in the Treatment of One Thousand and Twenty-Five Open Fractures of Long Bones. J Bone Joint Surg Am 1976;58:453-458"
     pmid: "773941"
@@ -22,7 +22,7 @@ sources:
     pmid: "25526095"
   - type: pubmed
     ref: "Hoff WS et al. EAST Practice Management Guidelines: Prophylactic Antibiotic Use in Open Fractures. J Trauma 2011;70:751-754"
-    pmid: "21307738"
+    pmid: "21610369"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

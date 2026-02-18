@@ -22,7 +22,7 @@ sources:
     pmid: "1888441"
   - type: pubmed
     ref: "Greller H, Gupta A. Benzodiazepine poisoning and withdrawal. Emerg Med Clin North Am. 2022;40(1):113-131"
-    pmid: "34782081"
+    pmid: "35140946"
   - type: pubmed
     ref: "Jones CM, McAninch JK. Emergency department visits and overdose deaths from combined use of opioids and benzodiazepines. Am J Prev Med. 2015;49(4):493-501"
     pmid: "26143953"

@@ -14,10 +14,10 @@ sources:
     pmid: "12777558"
   - type: pubmed
     ref: "Grisaru-Soen G, Komisar O, Aizenstein O, et al. Retropharyngeal and parapharyngeal abscess in children — epidemiology, clinical features and treatment. Int J Pediatr Otorhinolaryngol. 2010;74(9):1016-1020"
-    pmid: "20598383"
+    pmid: "20598378"
   - type: pubmed
     ref: "Hoffmann C, Pierrot S, Contencin P, et al. Retropharyngeal infections in children. Treatment strategies and outcomes. Int J Pediatr Otorhinolaryngol. 2011;75(9):1099-1103"
-    pmid: "21700340"
+    pmid: "21705095"
   - type: guideline
     ref: "IDSA Practice Guidelines for the Diagnosis and Management of Skin and Soft Tissue Infections: 2014 Update. Clin Infect Dis. 2014;59(2):e10-e52"
   - type: pubmed

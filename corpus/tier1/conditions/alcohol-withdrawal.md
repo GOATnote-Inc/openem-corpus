@@ -21,7 +21,7 @@ sources:
     doi: "10.1177/1060028016629161"
   - type: pubmed
     ref: "Hendey GW, et al. A prospective, randomized trial of phenobarbital versus benzodiazepines for acute alcohol withdrawal. Am J Emerg Med. 2011;29(4):382-385"
-    pmid: "20825817"
+    pmid: "20825805"
   - type: pubmed
     ref: "Lee C, et al. Phenobarbital treatment of alcohol withdrawal in the emergency department: A systematic review and meta-analysis. Acad Emerg Med. 2024;31(2):127-136"
     pmid: "37923363"

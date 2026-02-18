@@ -21,7 +21,7 @@ sources:
     pmid: "22193671"
   - type: pubmed
     ref: "Dube P, et al. Suicide risk assessment and management: real-world experience and perceptions of emergency department providers. J Emerg Med. 2023;64(3):287-296"
-    pmid: "36379784"
+    pmid: "39630183"
   - type: pubmed
     ref: "Wilkinson ST, et al. The effect of a single dose of intravenous ketamine on suicidal ideation: a systematic review and individual participant data meta-analysis. Am J Psychiatry. 2018;175(2):150-158"
     pmid: "28969441"

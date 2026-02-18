@@ -16,9 +16,6 @@ sources:
     pmid: "22784117"
   - type: guideline
     ref: "WHO Guidelines for Community Management of Opioid Overdose (2014)"
-  - type: pubmed
-    ref: "Schiller EY, Goyal A, Mechanic OJ. Opioid Overdose. In: Pharmacology of Opioid Agonists and Antagonists. Curr Opin Pharmacol 2021"
-    pmid: "29083588"
   - type: cdc
     ref: "CDC Clinical Practice Guideline for Prescribing Opioids for Pain (2022)"
 last_updated: "2026-02-18"

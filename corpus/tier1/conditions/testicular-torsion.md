@@ -16,10 +16,10 @@ sources:
     pmid: "24364548"
   - type: pubmed
     ref: "Mellick LB, Sinex JE, Gibson RW, et al. A systematic review of testicle survival time after a torsion event. Pediatr Emerg Care. 2019;35(12):821-825"
-    pmid: "31738340"
+    pmid: "28953100"
   - type: pubmed
     ref: "Beni-Israel T, Goldman M, Bar Chaim S, Kozer E. Clinical predictors for testicular torsion as seen in the pediatric ED. Am J Emerg Med. 2010;28(7):786-789"
-    pmid: "20837256"
+    pmid: "20837255"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

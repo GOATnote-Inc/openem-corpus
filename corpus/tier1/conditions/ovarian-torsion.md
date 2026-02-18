@@ -22,7 +22,7 @@ sources:
     ref: "American College of Radiology (ACR) Appropriateness Criteria: Acute Pelvic Pain in the Reproductive Age Group (2020)"
   - type: pubmed
     ref: "Nizar K et al. Doppler study of the ovarian venous blood flow in ovarian torsion. J Clin Ultrasound 2009;37(8):436-439"
-    pmid: "19582828"
+    pmid: "19670236"
   - type: pubmed
     ref: "Oelsner G, Shashar D. Adnexal torsion. Clin Obstet Gynecol 2006;49(3):459-463"
     pmid: "16885653"

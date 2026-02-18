@@ -16,10 +16,10 @@ sources:
     ref: "2014 UK Renal Association Clinical Practice Guidelines — Treatment of Acute Hyperkalemia in Adults"
   - type: pubmed
     ref: "Rafique Z, et al. ECG Findings and Adverse Outcomes in Emergency Department Patients with Hyperkalemia. Am J Emerg Med. 2020"
-    pmid: "31734085"
+    pmid: "39022138"
   - type: pubmed
     ref: "Lindner G, et al. Hyperkalemia in the Emergency Department. Am J Emerg Med. 2020"
-    pmid: "31955990"
+    pmid: "32852924"
   - type: guideline
     ref: "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease"
   - type: pubmed

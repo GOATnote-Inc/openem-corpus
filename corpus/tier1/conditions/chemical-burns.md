@@ -16,10 +16,10 @@ sources:
     pmid: "1607623"
   - type: guideline
     ref: "Kirkpatrick JJR et al. Hydrofluoric acid burns: a review. Burns 1995;21(7):483-493"
-    pmid: "8540972"
+    pmid: "8540974"
   - type: review
     ref: "Hatzifotis M et al. Hydrofluoric acid burns. Burns 2004;30(2):156-159"
-    pmid: "15019124"
+    pmid: "15019125"
   - type: guideline
     ref: "Edlich RF et al. Modern concepts of treatment and prevention of chemical injuries. J Long Term Eff Med Implants 2005;15(3):303-318"
     pmid: "16022641"

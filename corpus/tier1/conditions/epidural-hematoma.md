@@ -22,7 +22,7 @@ sources:
     ref: "2020 ACS TQIP Best Practices in the Management of Traumatic Brain Injury"
   - type: pubmed
     ref: "Bricolo AP, Pasut LM. Extradural hematoma: toward zero mortality. A prospective study. Neurosurgery 1984;14(1):8-12"
-    pmid: "6694793"
+    pmid: "6694798"
   - type: review
     ref: "Kuo KW et al. Management of Epidural Hematomas. Neurosurg Clin N Am 2017;28(2):187-193"
     doi: "10.1016/j.nec.2016.11.004"

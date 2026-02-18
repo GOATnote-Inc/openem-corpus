@@ -20,7 +20,7 @@ sources:
     pmid: "28634032"
   - type: pubmed
     ref: "Seminario-Vidal L, et al. Society of Dermatology Hospitalists supportive care guidelines for the management of Stevens-Johnson syndrome/toxic epidermal necrolysis in adults. J Am Acad Dermatol. 2020;82(6):1553-1567"
-    pmid: "32014522"
+    pmid: "32151629"
   - type: review
     ref: "Dodiuk-Gad RP, et al. Stevens-Johnson syndrome and toxic epidermal necrolysis: an update. Am J Clin Dermatol. 2015;16(6):475-493"
     pmid: "26481651"

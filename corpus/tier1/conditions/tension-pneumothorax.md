@@ -17,7 +17,7 @@ sources:
     ref: "Eastern Association for the Surgery of Trauma (EAST) Practice Management Guidelines: Tube Thoracostomy (2021)"
   - type: review
     ref: "Roberts DJ et al. Clinical Presentation of Tension Pneumothorax: A Systematic Review. Ann Surg 2015"
-    pmid: "26756756"
+    pmid: "25563887"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

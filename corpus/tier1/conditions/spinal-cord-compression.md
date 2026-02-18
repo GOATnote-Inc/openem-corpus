@@ -19,7 +19,7 @@ sources:
     pmid: "15774794"
   - type: pubmed
     ref: "Todd NV. Cauda equina syndrome: is the current management of patients presenting to district general hospitals fit for purpose? Br J Neurosurg. 2018;32(1):27-30"
-    pmid: "29199464"
+    pmid: "30687660"
   - type: guideline
     ref: "2017 AO Spine/AANS/CNS Guideline: Management of Degenerative Cervical Myelopathy"
 last_updated: "2026-02-18"

@@ -21,7 +21,7 @@ sources:
     pmid: "24766875"
   - type: pubmed
     ref: "Banerji A et al. ACE inhibitor-associated angioedema in the emergency department. Ann Emerg Med 2008;51(4):S130"
-    pmid: "18358170"
+    pmid: "18450117"
   - type: review
     ref: "Zuraw BL. Hereditary angioedema. N Engl J Med 2008;359(10):1027-36"
     pmid: "18768946"

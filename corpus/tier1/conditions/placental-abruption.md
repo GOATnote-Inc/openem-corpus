@@ -16,7 +16,7 @@ sources:
     pmid: "21241259"
   - type: pubmed
     ref: "Downes KL, Grantz KL, Shenassa ED. Maternal, labor, delivery, and perinatal outcomes associated with placental abruption: a systematic review. Am J Perinatol. 2017;34(10):935-957"
-    pmid: "28208199"
+    pmid: "28329897"
   - type: guideline
     ref: "RCOG Green-top Guideline No. 63: Antepartum Haemorrhage. Royal College of Obstetricians and Gynaecologists. 2011 (reviewed 2017)"
   - type: guideline

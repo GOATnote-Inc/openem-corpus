@@ -20,7 +20,7 @@ sources:
     pmid: "7630308"
   - type: pubmed
     ref: "Klug TE et al. Peritonsillar Abscess: Complication of Acute Tonsillitis or Weber's Glands Infection? Otolaryngol Head Neck Surg 2016;155:199-207"
-    pmid: "27095051"
+    pmid: "27026737"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

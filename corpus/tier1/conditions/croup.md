@@ -22,7 +22,7 @@ sources:
     pmid: "24114291"
   - type: guideline
     ref: "Zoorob R et al. Croup: an overview. Am Fam Physician 2011;83(9):1067-1073"
-    pmid: "21534521"
+    pmid: "21534520"
   - type: review
     ref: "Petrocheilou A et al. Viral croup: diagnosis and a treatment algorithm. Pediatr Pulmonol 2014;49(5):421-429"
     pmid: "24596395"

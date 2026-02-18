@@ -14,10 +14,10 @@ sources:
     pmid: "15063302"
   - type: pubmed
     ref: "Biancari F, D'Andrea V, Paone R, et al. Current treatment and outcome of esophageal perforations in adults: systematic review and meta-analysis of 75 studies. World J Surg. 2013;37(5):1051-1059"
-    pmid: "23440484"
+    pmid: "23440483"
   - type: pubmed
     ref: "Kaman L, Iqbal J, Kundil B, Kochhar R. Management of esophageal perforation in adults. Gastroenterology Res. 2010;3(6):235-244"
-    pmid: "27942316"
+    pmid: "27942303"
   - type: pubmed
     ref: "de Schipper JP, Pull ter Gunne AF, Oostvogel HJ, van Laarhoven CJ. Spontaneous rupture of the oesophagus: Boerhaave's syndrome in 2008. Literature review and treatment algorithm. Dig Surg. 2009;26(1):1-6"
     pmid: "19145081"

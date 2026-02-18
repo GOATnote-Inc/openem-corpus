@@ -11,10 +11,10 @@ track: tier1
 sources:
   - type: pubmed
     ref: "Guardiani E, Bliss M, Harley E. Supraglottitis in the era following widespread immunization against Haemophilus influenzae type B: evolving principles in diagnosis and management. Laryngoscope. 2010;120(11):2183-2188"
-    pmid: "21058388"
+    pmid: "20925091"
   - type: pubmed
     ref: "Lichtor JL, Roche Rodriguez M, Engbretsen LE, et al. Epiglottitis: it hasn't gone away. Anesthesiology. 2016;124(6):1404-1407"
-    pmid: "27028465"
+    pmid: "27031010"
   - type: guideline
     ref: "ACEP Clinical Policy: Critical Issues in the Evaluation and Management of Adult Patients Presenting to the Emergency Department with Acute Carbon Monoxide Poisoning — adapted airway management principles"
 last_updated: "2026-02-18"

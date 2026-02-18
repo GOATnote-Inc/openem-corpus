@@ -17,10 +17,10 @@ sources:
     pmid: "15241098"
   - type: pubmed
     ref: "Nawijn F et al. Time Is of the Essence When Treating Necrotizing Soft Tissue Infections: A Systematic Review and Meta-analysis. World J Emerg Surg 2020;15:4"
-    pmid: "31921329"
+    pmid: "31921330"
   - type: pubmed
     ref: "Lancerotto L et al. Necrotizing Fasciitis: Classification, Diagnosis, and Management. J Trauma Acute Care Surg 2012;72:560-566"
-    pmid: "22491544"
+    pmid: "22491537"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

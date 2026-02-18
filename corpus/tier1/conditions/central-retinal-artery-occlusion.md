@@ -16,13 +16,13 @@ sources:
     pmid: "23470793"
   - type: review
     ref: "Mac Grory B et al. Central Retinal Artery Occlusion: A Predictable, Preventable, and Undertreated Stroke Analog. Stroke 2021;52(11):e706-e716"
-    pmid: "34284616"
+    pmid: "35475855"
   - type: review
     ref: "Hayreh SS. Central Retinal Artery Occlusion. Prog Retin Eye Res 2024;98:101217"
-    pmid: "37806651"
+    pmid: "39959587"
   - type: guideline
     ref: "2019 AHA/ASA Guidelines for the Early Management of Patients with Acute Ischemic Stroke"
-    pmid: "30662385"
+    pmid: "32153711"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

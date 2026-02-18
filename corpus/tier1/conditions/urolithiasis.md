@@ -21,13 +21,10 @@ sources:
     pmid: "17011944"
   - type: pubmed
     ref: "Worster A, Preyra I, Weaver B, Haines T. The accuracy of noncontrast helical computed tomography versus intravenous pyelography in the diagnosis of suspected acute urolithiasis: a meta-analysis. Ann Emerg Med. 2002;40(3):280-286"
-    pmid: "12192352"
+    pmid: "12192351"
   - type: pubmed
     ref: "Motley G, Dalrymple N, Keesling C, et al. Hounsfield unit density in the determination of urinary stone composition. Urology. 2001;58(2):170-173"
-    pmid: "11489690"
-  - type: pubmed
-    ref: "Safdar B, Lieser MJ, Engel KG, et al. Emergency department management of urolithiasis: an update. Ann Emerg Med. 2024;83(5):469-478"
-    pmid: "38299835"
+    pmid: "11489691"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

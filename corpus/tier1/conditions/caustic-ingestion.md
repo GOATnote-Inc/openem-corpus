@@ -25,7 +25,7 @@ sources:
     pmid: "32348645"
   - type: pubmed
     ref: "Bird JH, Kumar S, Paul C, Ramsden JD. Controversies in the management of caustic ingestion injury: an evidence-based review. Clin Otolaryngol. 2017;42(3):701-708"
-    pmid: "27588581"
+    pmid: "28032947"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

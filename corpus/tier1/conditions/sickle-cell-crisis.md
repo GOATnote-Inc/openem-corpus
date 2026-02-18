@@ -18,7 +18,7 @@ sources:
     pmid: "32559294"
   - type: pubmed
     ref: "Howard J et al. Guideline on the management of acute chest syndrome in sickle cell disease. Br J Haematol 2015;169(4):492-505"
-    pmid: "25726920"
+    pmid: "25824256"
   - type: pubmed
     ref: "DeBaun MR et al. American Society of Hematology 2020 guidelines for sickle cell disease: prevention, diagnosis, and treatment of cerebrovascular disease in children and adults. Blood Adv 2020;4(8):1554-1588"
     pmid: "32298430"

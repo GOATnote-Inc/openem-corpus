@@ -24,9 +24,6 @@ sources:
   - type: guideline
     ref: "Joint Task Force on Practice Parameters. Drug Allergy: An Updated Practice Parameter. Ann Allergy Asthma Immunol 2010;105(4):259-273"
     pmid: "20934625"
-  - type: review
-    ref: "Blumenthal KG et al. HLA-B*5801 and Allopurinol-Induced DRESS and SJS/TEN. Ann Rheum Dis 2019;78(7):e69"
-    pmid: "29980579"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

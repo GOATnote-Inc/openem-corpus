@@ -14,7 +14,7 @@ sources:
     pmid: "26760044"
   - type: pubmed
     ref: "Puar TH et al. Adrenal Crisis: Still a Deadly Event in the 21st Century. Am J Med 2016;129:339.e1-9"
-    pmid: "26363353"
+    pmid: "26363354"
   - type: pubmed
     ref: "Rushworth RL et al. Adrenal Crisis. N Engl J Med 2019;381:852-861"
     pmid: "31461595"

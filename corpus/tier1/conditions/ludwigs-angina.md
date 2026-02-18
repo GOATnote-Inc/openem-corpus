@@ -15,10 +15,7 @@ sources:
     pmid: "24973422"
   - type: pubmed
     ref: "Bridwell RE et al. Ludwig Angina: Emergency Department Recognition and Management. J Emerg Med. 2021;60(4):508-513"
-    pmid: "33451890"
-  - type: pubmed
-    ref: "An J et al. Systematic Review of Deep Neck Infection Management. Laryngoscope. 2017;127(7):1507-1516"
-    pmid: "27859303"
+    pmid: "33481171"
   - type: review
     ref: "Candamourty R et al. Ludwig's Angina - An Emergency: A Case Report with Literature Review. J Nat Sci Biol Med. 2012;3(2):206-208"
     pmid: "23225990"

@@ -26,7 +26,7 @@ sources:
     pmid: "16148727"
   - type: review
     ref: "Danesh-Meyer H et al. Giant Cell Arteritis: Managing the Ophthalmic Medical Emergency. Surv Ophthalmol 2023;68(3):527-545"
-    pmid: "36736879"
+    pmid: "40663369"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

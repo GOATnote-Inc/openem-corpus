@@ -11,7 +11,7 @@ track: tier1
 sources:
   - type: guideline
     ref: "WSES 2017 Guidelines for Management of Small Bowel Obstruction. World J Emerg Surg. 2017;12:29"
-    pmid: "28680448"
+    pmid: "29946347"
   - type: guideline
     ref: "ASCRS Clinical Practice Guidelines for the Management of Small Bowel Obstruction. Dis Colon Rectum. 2020;63(8):1046-1057"
     pmid: "32692069"
@@ -20,7 +20,7 @@ sources:
     pmid: "31168315"
   - type: guideline
     ref: "WSES 2020 Guidelines for the Management of Acute Colonic Diverticulitis in the Emergency Setting — large bowel obstruction sections"
-    pmid: "33632092"
+    pmid: "32381121"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

@@ -20,7 +20,7 @@ sources:
     doi: "10.1016/j.jacc.2018.08.1029"
   - type: pubmed
     ref: "Aronson PL, et al. Association of clinical practice guidelines with emergency department management of febrile young infants. J Pediatr. 2023;254:58-65"
-    pmid: "36347342"
+    pmid: "25684689"
   - type: pubmed
     ref: "Byington CL, et al. Serious bacterial infections in febrile infants 1 to 90 days old with and without viral infections. Pediatrics. 2004;113(6):1662-1666"
     pmid: "15173488"

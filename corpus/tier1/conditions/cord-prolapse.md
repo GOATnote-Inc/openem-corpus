@@ -22,7 +22,7 @@ sources:
     pmid: "16551378"
   - type: pubmed
     ref: "Gibbons C et al. Management of umbilical cord prolapse. Obstet Gynecol. 2014;124(5):1071-1072"
-    pmid: "25437740"
+    pmid: "24931454"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

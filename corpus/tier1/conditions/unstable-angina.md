@@ -20,9 +20,6 @@ sources:
   - type: review
     ref: "Amsterdam EA et al. Testing of Low-Risk Patients Presenting to the ED with Chest Pain. Circulation 2010;122(17):1756-1776"
     pmid: "20660809"
-  - type: guideline
-    ref: "2020 ACEP Clinical Policy: Critical Issues in the Evaluation and Management of Emergency Department Patients with Acute Chest Pain"
-    pmid: "33099609"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

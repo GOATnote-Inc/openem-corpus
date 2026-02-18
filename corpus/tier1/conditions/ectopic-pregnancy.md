@@ -17,10 +17,10 @@ sources:
     ref: "2019 ACEP Clinical Policy: Early Pregnancy"
   - type: review
     ref: "Hendriks E et al. Ectopic Pregnancy: Diagnosis and Management. Am Fam Physician 2020"
-    pmid: "32573953"
+    pmid: "32412215"
   - type: review
     ref: "Murray H et al. Diagnosis and Treatment of Ectopic Pregnancy. CMAJ 2005"
-    pmid: "15983249"
+    pmid: "16217116"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

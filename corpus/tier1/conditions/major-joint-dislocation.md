@@ -13,16 +13,13 @@ sources:
     ref: "American Academy of Orthopaedic Surgeons (AAOS): Management of Glenohumeral Joint Instability (2020)"
   - type: pubmed
     ref: "Hendey GW. Managing Anterior Shoulder Dislocation. Ann Emerg Med 2016;67(1):76-80"
-    pmid: "26169927"
+    pmid: "26277437"
   - type: pubmed
     ref: "Cornwall R, Radomisli TE. Nerve injury in traumatic dislocation of the hip. Clin Orthop Relat Res 2000;(377):84-91"
     pmid: "10943188"
   - type: pubmed
     ref: "Mehlman CT et al. Traumatic Hip Dislocation in Children. Clin Orthop Relat Res 2000;(376):68-79"
-    pmid: "10906859"
-  - type: pubmed
-    ref: "Shuster M et al. Prospective study of a traction-countertraction technique for reducing anterior shoulder dislocations. Ann Emerg Med 1999;33(1):43-47"
-    pmid: "9867886"
+    pmid: "10906860"
   - type: pubmed
     ref: "Fitch RW, Kuhn JE. Intraarticular lidocaine versus intravenous procedural sedation with narcotics and benzodiazepines for reduction of the dislocated shoulder. Acad Emerg Med 2008;15(8):703-708"
     pmid: "18783486"

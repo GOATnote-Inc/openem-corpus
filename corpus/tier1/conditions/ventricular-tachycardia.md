@@ -17,7 +17,7 @@ sources:
     doi: "10.1161/CIR.0000000000000549"
   - type: pubmed
     ref: "Brugada P, et al. A New Approach to the Differential Diagnosis of a Regular Tachycardia with a Wide QRS Complex. Circulation. 1991"
-    pmid: "2009837"
+    pmid: "2022022"
   - type: pubmed
     ref: "Vereckei A, et al. New Algorithm Using Only Lead aVR for Differential Diagnosis of Wide QRS Complex Tachycardia. Heart Rhythm. 2008"
     pmid: "18180024"

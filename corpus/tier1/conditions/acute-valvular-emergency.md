@@ -16,14 +16,11 @@ sources:
     ref: "2021 ESC/EACTS Guidelines for the Management of Valvular Heart Disease"
     doi: "10.1093/eurheartj/ehab395"
   - type: pubmed
-    ref: "Stout KK et al. 2019 AHA/ACC Focused Update of the 2014 Guideline for the Management of Patients With Valvular Heart Disease. Circulation. 2019;139(24):e923-e931"
-    pmid: "30920934"
-  - type: pubmed
     ref: "Hamirani YS et al. Acute aortic regurgitation. Circulation. 2012;126(9):1121-1126"
     pmid: "22927474"
   - type: pubmed
     ref: "Thompson CR et al. Acute mitral regurgitation. Ann Thorac Surg. 2003;75(5):S52-S60"
-    pmid: "12820734"
+    pmid: "12776954"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

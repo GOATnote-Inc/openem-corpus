@@ -17,7 +17,7 @@ sources:
     doi: "10.1016/j.ejvs.2023.08.003"
   - type: pubmed
     ref: "IMPROVE Trial Investigators. Endovascular Strategy or Open Repair for Ruptured Abdominal Aortic Aneurysm: One-Year Outcomes from the IMPROVE Randomized Trial. Eur Heart J. 2015"
-    pmid: "25586123"
+    pmid: "26520179"
     doi: "10.1093/eurheartj/ehu501"
   - type: pubmed
     ref: "Moll FL, et al. Management of Abdominal Aortic Aneurysms Clinical Practice Guidelines of the European Society for Vascular Surgery. Eur J Vasc Endovasc Surg. 2011"

@@ -19,7 +19,7 @@ sources:
     pmid: "26535174"
   - type: pubmed
     ref: "Lam DS, Tham CC, Lai JS, Leung DY. Current approaches to the management of acute primary angle closure. Curr Opin Ophthalmol. 2007;18(2):104-109"
-    pmid: "17301610"
+    pmid: "17301617"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

@@ -22,7 +22,7 @@ sources:
     pmid: "15006973"
   - type: pubmed
     ref: "Camargo CA Jr et al. Managing asthma exacerbations in the emergency department: summary of the NAEPP Expert Panel Report 3 guidelines for the management of asthma exacerbations. J Emerg Med. 2009;37(2 Suppl):S6-S17"
-    pmid: "19683658"
+    pmid: "19683665"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

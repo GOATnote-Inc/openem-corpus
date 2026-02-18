@@ -18,7 +18,7 @@ sources:
     pmid: "11153548"
   - type: review
     ref: "Bond A, Manian FA. Spinal Epidural Abscess: A Review with Special Emphasis on Earlier Diagnosis. Biomed Res Int 2017;2017:5765715"
-    pmid: "28484710"
+    pmid: "28044125"
     doi: "10.1155/2017/5765715"
   - type: pubmed
     ref: "Davis DP et al. The Clinical Presentation and Impact of Diagnostic Delays on Emergency Department Patients with Spinal Epidural Abscess. J Emerg Med 2004;26(3):285-291"
