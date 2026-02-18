@@ -1,7 +1,7 @@
 ---
 id: unstable-angina
 condition: Unstable Angina
-aliases: [UA, acute coronary syndrome, crescendo angina, preinfarction angina, NSTE-ACS]
+aliases: [UA, NSTE-ACS, crescendo angina, preinfarction angina]
 icd10: [I20.0, I20.1, I20.8, I20.9]
 esi: 2
 time_to_harm: "< 2 hours (progression to NSTEMI or STEMI)"

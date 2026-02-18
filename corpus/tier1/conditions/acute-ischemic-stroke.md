@@ -116,11 +116,20 @@ reviewed_by: null
 - Platelet count < 100,000
 - INR > 1.7 or PT > 15 seconds
 - aPTT elevated (if on heparin)
-- DOAC use within 48 hours with abnormal drug-specific coag assay (or unknown timing)
+- DOAC use within 48 hours with abnormal drug-specific coag assay (or unknown timing) — unless reversed (see DOAC reversal below)
 - Blood glucose < 50 mg/dL
 - Intracranial surgery/serious head trauma within 3 months
 - GI/GU hemorrhage within 21 days
 - Arterial puncture at non-compressible site within 7 days
+
+### DOAC Reversal for tPA Eligibility
+
+Patients on DOACs who present within the tPA window may become eligible after reversal:
+
+- **Dabigatran:** Idarucizumab (Praxbind) 5 g IV (two 2.5 g boluses ≤ 15 min apart). Reversal is immediate and complete. tPA can be administered immediately after infusion.
+- **Rivaroxaban/apixaban/edoxaban (factor Xa inhibitors):** Andexanet alfa (Andexxa) 400 mg IV bolus at 30 mg/min, then 4 mg/min infusion x 120 min (low-dose regimen for last dose > 7 hours ago or apixaban ≤ 5 mg; double dose if last dose < 7 hours ago or higher doses). Anti-Xa activity normalizes within minutes.
+- **If reversal agents unavailable:** 4-factor PCC (Kcentra) 50 units/kg IV as empiric option for factor Xa inhibitors (off-label, less evidence). Do not delay transfer to a center with reversal agents.
+- **Timing:** Check drug-specific coagulation assay (thrombin time for dabigatran, anti-Xa level for Xa inhibitors). If last DOAC dose > 48 hours ago AND renal function is normal, tPA may be given without reversal.
 
 ### Blood Pressure Management
 

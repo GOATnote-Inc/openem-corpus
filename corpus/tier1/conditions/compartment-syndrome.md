@@ -1,7 +1,7 @@
 ---
 id: compartment-syndrome
 condition: Acute Compartment Syndrome
-aliases: [ACS, compartment syndrome, acute extremity compartment syndrome, exercise-induced compartment syndrome]
+aliases: [acute compartment syndrome, compartment syndrome, acute extremity compartment syndrome, exercise-induced compartment syndrome]
 icd10: [T79.A0XA, T79.A11A, T79.A12A, T79.A19A, T79.A21A, T79.A22A, T79.A29A, M79.A19]
 esi: 2
 time_to_harm: "< 6 hours"

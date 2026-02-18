@@ -2,7 +2,7 @@
 id: necrotizing-fasciitis
 condition: Necrotizing Fasciitis
 aliases: [nec fasc, flesh-eating disease, necrotizing soft tissue infection, NSTI, fournier gangrene]
-icd10: [M72.6, N49.3, N76.89, T79.A0XA]
+icd10: [M72.6, N49.3, N76.89]
 esi: 1
 time_to_harm: "< 6 hours"
 mortality_if_delayed: "Mortality increases 7.6% per hour of surgical delay"
