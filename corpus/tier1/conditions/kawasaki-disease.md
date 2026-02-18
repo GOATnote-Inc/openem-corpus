@@ -63,7 +63,7 @@ reviewed_by: null
 
 1. **Do not wait for all 5 criteria to initiate treatment.** Incomplete Kawasaki disease is common. Fever ≥ 5 days with 2-3 classic features and elevated inflammatory markers warrants treatment.
 2. **IVIG 2 g/kg IV (single infusion)** over 10-12 hours. Administer as soon as diagnosis is made. Treatment within 10 days of fever onset reduces coronary aneurysm risk from 25% to < 5%.
-3. **Aspirin 30-50 mg/kg/day PO divided q6h** (high-dose anti-inflammatory) during acute febrile phase until afebrile for 48-72 hours.
+3. **Aspirin 30-50 mg/kg/day PO divided q6h** (high-dose anti-inflammatory; US/AHA convention uses 80-100 mg/kg/day — both regimens are evidence-based with similar outcomes; follow institutional protocol) during acute febrile phase until afebrile for 48-72 hours.
 4. **Then aspirin 3-5 mg/kg/day PO once daily** (low-dose antiplatelet) for 6-8 weeks or until ESR and platelets normalize (longer if coronary abnormalities present).
 5. **Echocardiogram at diagnosis** — baseline coronary artery assessment. Repeat at 2 weeks and 6-8 weeks.
 6. **Admit all patients** — for IVIG infusion and cardiac monitoring.

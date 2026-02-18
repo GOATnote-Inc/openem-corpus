@@ -146,7 +146,7 @@ Discontinue vancomycin at 48-72 hours if cultures are negative for resistant gra
 
 - **ICU:** Septic shock, hemodynamic instability, respiratory failure, altered mental status, high-risk patients with organ dysfunction
 - **Inpatient (oncology or medicine):** All high-risk patients (MASCC <21), any patient requiring IV antibiotics
-- **Outpatient (rare, with strict criteria):** MASCC >=21 AND solid tumor AND expected short duration of neutropenia AND no comorbidities AND reliable follow-up within 24 hours AND able to tolerate oral medications. Oral regimen: ciprofloxacin 500 mg PO q8h + amoxicillin-clavulanate 875/125 mg PO q12h. Must have 4-hour observation in ED first.
+- **Outpatient (rare, with strict criteria):** MASCC >=21 AND solid tumor AND expected short duration of neutropenia AND no comorbidities AND reliable follow-up within 24 hours AND able to tolerate oral medications. Oral regimen: ciprofloxacin 500 mg PO q12h + amoxicillin-clavulanate 875/125 mg PO q12h. Must have 4-hour observation in ED first.
 - **Oncology consultation:** Required for all patients — guides ongoing management, chemotherapy adjustments, and G-CSF decisions
 
 ## Pitfalls

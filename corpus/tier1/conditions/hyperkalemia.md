@@ -161,7 +161,7 @@ reviewed_by: null
 
 ### Cardiac Arrest from Hyperkalemia
 - Standard ACLS with modifications:
-- Calcium chloride 1 g IV push (central) or calcium gluconate 3 g IV push (peripheral) — give immediately
+- Calcium chloride 1 g IV push (any available access during arrest; central preferred when available) or calcium gluconate 3 g IV push (peripheral) — give immediately
 - Sodium bicarbonate 50 mEq IV push
 - Insulin 10 units + D50 50 mL IV
 - Albuterol 10-20 mg nebulized (if able)

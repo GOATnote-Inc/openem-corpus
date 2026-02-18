@@ -9,8 +9,6 @@ mortality_if_delayed: "Complete airway obstruction and death can occur within mi
 category: respiratory
 track: tier1
 sources:
-  - type: guideline
-    ref: "DeSouza IS, Frangos S. Epiglottitis. In: Tintinalli JE, et al. Emergency Medicine: A Comprehensive Study Guide, 9th ed. McGraw-Hill; 2020"
   - type: pubmed
     ref: "Guardiani E, Bliss M, Harley E. Supraglottitis in the era following widespread immunization against Haemophilus influenzae type B: evolving principles in diagnosis and management. Laryngoscope. 2010;120(11):2183-2188"
     pmid: "21058388"

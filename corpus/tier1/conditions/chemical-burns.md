@@ -12,8 +12,6 @@ sources:
     ref: "Palao R et al. Chemical burns: pathophysiology and treatment. Burns 2010;36(3):295-304"
     pmid: "19864073"
   - type: review
-    ref: "Harchelroad FP, Rottinghaus DM. Chemical Burns. In: Tintinalli JE et al., eds. Emergency Medicine: A Comprehensive Study Guide. McGraw-Hill"
-  - type: review
     ref: "Bertolini JC. Hydrofluoric acid: a review of toxicity. J Emerg Med 1992;10(2):163-168"
     pmid: "1607623"
   - type: guideline

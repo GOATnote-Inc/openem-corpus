@@ -71,7 +71,7 @@ reviewed_by: null
 2. **Lumbar puncture** — obtain CSF for HSV PCR, cell count, protein, glucose, and bacterial cultures. Do not delay acyclovir for LP. If LP is delayed (CT needed first, coagulopathy), start acyclovir immediately and perform LP as soon as feasible.
 3. **CT head before LP** — to rule out mass lesion/elevated ICP in patients with focal deficits, papilledema, altered consciousness, or immunocompromised state.
 4. **MRI brain with diffusion-weighted imaging** — obtain urgently (more sensitive than CT for temporal lobe changes). MRI abnormalities may precede CSF positivity.
-5. **Seizure management** — levetiracetam 20-30 mg/kg IV (max 3000 mg) or phenytoin/fosphenytoin 20 mg PE/kg IV. Temporal lobe seizures may be subtle (staring, lip-smacking, behavioral arrest).
+5. **Seizure management** — levetiracetam 20-30 mg/kg IV (max 4500 mg) or phenytoin/fosphenytoin 20 mg PE/kg IV. Temporal lobe seizures may be subtle (staring, lip-smacking, behavioral arrest).
 6. **Neonatal HSV** — acyclovir 20 mg/kg IV q8h. Higher dose than adults. Begin immediately if neonatal encephalitis is suspected regardless of vesicle presence.
 7. **Consult infectious disease and neurology.**
 
@@ -171,7 +171,7 @@ reviewed_by: null
 **Prognosis and Counseling:**
 - Mortality with acyclovir: ~20% (vs. >70% untreated)
 - Significant morbidity in survivors: memory impairment (anterograde and retrograde), personality changes, aphasia, seizure disorder (~50%)
-- Younger age and lower GCS at presentation predict worse outcomes
+- Older age (adults) and lower GCS at presentation predict worse outcomes
 - Early treatment (within 48 hours of symptom onset) significantly improves outcomes
 
 ## Pitfalls

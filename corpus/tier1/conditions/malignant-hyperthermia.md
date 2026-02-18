@@ -76,7 +76,7 @@ reviewed_by: null
 
 1. **Stop all triggering agents immediately.** Discontinue volatile anesthetics, remove vaporizers from circuit. If post-RSI in ED: succinylcholine is already metabolized, but if volatile agent running, stop it
 2. **Hyperventilate with 100% FiO2** at 2-3x normal minute ventilation using a clean anesthesia circuit or Ambu bag (do not use anesthesia machine that had volatile agent running through it)
-3. **Dantrolene 2.5 mg/kg IV bolus** — reconstitute with sterile water (each 20 mg vial requires 60 mL sterile water; Ryanodex formulation: 250 mg/vial requires 5 mL). Repeat 2.5 mg/kg q5 minutes until symptoms resolve (tachycardia, rigidity, ETCO2 normalize). Maximum 10 mg/kg, but exceed if needed
+3. **Dantrolene 2.5 mg/kg IV bolus** — reconstitute with sterile water (each 20 mg vial requires 60 mL sterile water; Ryanodex formulation: 250 mg/vial requires 5 mL). Repeat 2.5 mg/kg q5 minutes until symptoms resolve (tachycardia, rigidity, ETCO2 normalize). No maximum dose in a true MH crisis — continue until symptoms resolve
 4. **Active cooling:** Ice packs to axillae, groin, neck; cold IV saline 1-2 L; cooling blankets; cold lavage (gastric, bladder, peritoneal if refractory). Target temperature < 38.5C, then stop active cooling to avoid overshoot hypothermia
 5. **Treat hyperkalemia:** Calcium chloride 10 mg/kg IV (or calcium gluconate 30 mg/kg IV), regular insulin 0.1 units/kg IV + dextrose 0.5 g/kg IV (D50W), sodium bicarbonate 1-2 mEq/kg IV
 6. **Call MH hotline: 1-800-644-9737** (MHAUS 24/7 emergency consultation)
@@ -155,7 +155,7 @@ reviewed_by: null
 
 1. **Waiting for fever to diagnose MH.** Temperature elevation is a LATE sign. Rising ETCO2, tachycardia, and masseter rigidity after succinylcholine precede hyperthermia. Waiting for fever delays dantrolene by critical minutes.
 
-2. **Insufficient dantrolene stocked in the ED.** A 100-kg patient requires at least 36 vials of standard dantrolene (20 mg/vial) for a single 2.5 mg/kg dose and up to 144 vials for maximum dosing. Know where MH carts are stored. Ryanodex (250 mg/vial) is faster to reconstitute.
+2. **Insufficient dantrolene stocked in the ED.** A 100-kg patient requires 13 vials of standard dantrolene (20 mg/vial) for a single 2.5 mg/kg dose; MHAUS recommends stocking at least 36 vials (sufficient for approximately 3 loading doses). Know where MH carts are stored. Ryanodex (250 mg/vial) is faster to reconstitute.
 
 3. **Administering calcium channel blockers with dantrolene.** The combination of dantrolene + verapamil or diltiazem causes fatal hyperkalemia and cardiovascular collapse. This is an absolute contraindication.
 

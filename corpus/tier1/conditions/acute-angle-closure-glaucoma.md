@@ -20,8 +20,6 @@ sources:
   - type: pubmed
     ref: "Lam DS, Tham CC, Lai JS, Leung DY. Current approaches to the management of acute primary angle closure. Curr Opin Ophthalmol. 2007;18(2):104-109"
     pmid: "17301610"
-  - type: guideline
-    ref: "Weisberg E, Tuggy M. Acute Angle-Closure Glaucoma. In: Adams JG, et al. Emergency Medicine Clinical Essentials, 2nd ed. Elsevier; 2013"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

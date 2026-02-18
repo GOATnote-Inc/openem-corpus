@@ -107,7 +107,7 @@ reviewed_by: null
 
 ### Antibiotics
 - **First-line (adults):** Ampicillin-sulbactam 3 g IV q6h
-- **First-line (pediatrics):** Ampicillin-sulbactam 50 mg/kg IV q6h (based on ampicillin component, max 3 g/dose)
+- **First-line (pediatrics):** Ampicillin-sulbactam 50 mg/kg IV q6h (based on ampicillin component, max 2 g ampicillin component per dose = 3 g combined formulation)
 - **Alternative:** Clindamycin 600-900 mg IV q8h (adults) or 10-13 mg/kg IV q8h (pediatrics, max 900 mg/dose)
 - **MRSA concern (IVDU, known colonization):** Add vancomycin 15-20 mg/kg IV q8-12h (adults) or 15 mg/kg IV q6h (pediatrics)
 - **Mediastinal extension:** Broaden to meropenem 1 g IV q8h (adults) or 20 mg/kg IV q8h (pediatrics)

@@ -19,8 +19,6 @@ sources:
     ref: "Schmidt KJ, et al. Treatment of Severe Alcohol Withdrawal. Ann Pharmacother. 2016;50(5):389-401"
     pmid: "26861990"
     doi: "10.1177/1060028016629161"
-  - type: review
-    ref: "Hoffman RS, Weinhouse GL. Management of moderate and severe alcohol withdrawal syndromes. UpToDate (clinical review; cited for protocol reference)"
   - type: pubmed
     ref: "Hendey GW, et al. A prospective, randomized trial of phenobarbital versus benzodiazepines for acute alcohol withdrawal. Am J Emerg Med. 2011;29(4):382-385"
     pmid: "20825817"

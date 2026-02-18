@@ -77,11 +77,11 @@ reviewed_by: null
 
 1. **Bedside echocardiography immediately** to identify valve pathology, severity, and mechanism
 2. **Acute AR/MR:** Afterload reduction with sodium nitroprusside 0.3-5 mcg/kg/min IV titrated to MAP 60-70 mmHg — reduces regurgitant fraction and improves forward cardiac output
-3. **Intra-aortic balloon pump (IABP)** for acute AR or MR refractory to vasodilators (augments diastolic coronary perfusion, reduces afterload); IABP is **contraindicated** in acute AR (worsens regurgitation during diastolic balloon inflation) — use only in acute MR
+3. **Intra-aortic balloon pump (IABP) for acute MR only** — augments diastolic coronary perfusion and reduces afterload. **IABP is absolutely contraindicated in acute AR** (diastolic balloon inflation worsens aortic regurgitation and causes hemodynamic collapse)
 4. **Critical AS: Do NOT give vasodilators, nitrates, or diuretics** — preload-dependent, fixed obstruction; vasodilation causes irreversible cardiovascular collapse
 5. **Critical AS with hypotension:** Phenylephrine 100-200 mcg IV bolus to maintain coronary perfusion pressure; cautious volume resuscitation with NS 250 mL boluses
 6. **Emergent cardiothoracic surgery consultation** for all acute severe valvular emergencies — definitive treatment is surgical valve repair or replacement
-7. **Blood cultures x2** before antibiotics if endocarditis suspected, then empiric antibiotics (vancomycin 25-30 mg/kg IV loading dose + cefepime 2 g IV q8h)
+7. **Blood cultures x2** before antibiotics if endocarditis suspected, then empiric antibiotics (vancomycin 25-30 mg/kg IV loading dose + ceftriaxone 2 g IV q12h)
 
 ## Differential Diagnosis
 
@@ -130,7 +130,7 @@ reviewed_by: null
 - Emergent transcatheter aortic valve replacement (TAVR) or surgical AVR
 
 ### Endocarditis-Related Valve Destruction
-- Vancomycin 25-30 mg/kg IV loading dose (max 2 g) + cefepime 2 g IV q8h (or gentamicin 3 mg/kg IV if native valve)
+- Vancomycin 25-30 mg/kg IV loading dose (no fixed maximum — dose by weight) + ceftriaxone 2 g IV q12h (or gentamicin 1 mg/kg IV q8h if native valve requiring synergy)
 - Adjust antibiotics to culture results
 - Surgical valve replacement for: hemodynamic instability, heart failure from valve destruction, large vegetations (>10 mm), abscess formation, persistent bacteremia > 5-7 days
 

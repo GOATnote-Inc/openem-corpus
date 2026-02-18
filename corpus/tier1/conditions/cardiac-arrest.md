@@ -83,7 +83,7 @@ reviewed_by: null
 - **Hypovolemia:** rapid volume resuscitation, blood products if hemorrhagic
 - **Hypoxia:** confirm airway, bilateral breath sounds, 100% FiO2
 - **Hydrogen ion (acidosis):** sodium bicarbonate 1 mEq/kg IV if suspected severe metabolic acidosis or prolonged arrest
-- **Hyperkalemia/hypokalemia:** calcium chloride 1 g IV (central line) or calcium gluconate 3 g IV (peripheral), insulin 10 units + D50 50 mL IV
+- **Hyperkalemia/hypokalemia:** calcium chloride 1 g IV push (any available access during arrest; central preferred when available) or calcium gluconate 3 g IV (peripheral), insulin 10 units + D50 50 mL IV
 - **Hypothermia:** warm IV fluids, active rewarming; continue resuscitation until core temp > 32°C
 - **Tension pneumothorax:** needle decompression 2nd intercostal space midclavicular line (14-gauge angiocatheter) followed by finger thoracostomy or chest tube
 - **Tamponade (cardiac):** pericardiocentesis or ED thoracotomy (penetrating trauma)
@@ -142,8 +142,7 @@ Cardiac arrest is a clinical state, not a diagnosis. The differential is the und
 **Targeted temperature management (TTM):**
 - Initiate in all comatose patients (GCS < 8) after ROSC regardless of initial rhythm
 - Target temperature 32-36°C for at least 24 hours (TTM2 trial showed no benefit of 33°C vs 36°C; avoid fever >= 37.8°C for 72 hours)
-- Methods: IV cold saline bolus (30 mL/kg up to 2 L), surface cooling devices, endovascular cooling catheters
-- Avoid active pre-hospital cooling with large-volume cold IV fluids (RINSE and PARAMEDIC2 data)
+- Methods: surface cooling devices (preferred), endovascular cooling catheters. Avoid large-volume cold IV saline bolus (RINSE trial: associated with pulmonary edema and re-arrest without improving outcomes)
 - Shivering management: buspirone 30 mg NG, meperidine 25-50 mg IV, surface counterwarming; neuromuscular blockade if refractory (cisatracurium 0.15 mg/kg IV)
 - Rewarm slowly at 0.25-0.5°C/hour
 

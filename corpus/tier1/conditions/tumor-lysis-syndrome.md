@@ -59,7 +59,7 @@ reviewed_by: null
 
 1. **Check electrolytes immediately:** BMP, phosphorus, magnesium, uric acid, LDH, CBC. Repeat q4-6h during active TLS.
 2. **ECG immediately** — peaked T waves, widened QRS (hyperkalemia); prolonged QTc (hypocalcemia).
-3. **Treat hyperkalemia first** — most immediately lethal derangement. Calcium gluconate 10% 30 mL IV over 10 min (cardiac membrane stabilization ONLY if ECG changes present and no severe hyperphosphatemia), insulin 10 units regular IV + dextrose 50% 50 mL IV, sodium bicarbonate 50 mEq IV if acidotic, kayexalate 30 g PO/PR, emergent dialysis if refractory.
+3. **Treat hyperkalemia first** — most immediately lethal derangement. Calcium gluconate 10% 10-20 mL (1-2 g) IV over 10 min (cardiac membrane stabilization ONLY if ECG changes present and no severe hyperphosphatemia), insulin 10 units regular IV + dextrose 50% 50 mL IV, sodium bicarbonate 50 mEq IV if acidotic, kayexalate 30 g PO/PR, emergent dialysis if refractory.
 4. **Rasburicase 0.2 mg/kg IV (single dose)** for uric acid > 8 mg/dL or rapidly rising. Contraindicated in G6PD deficiency (causes methemoglobinemia and hemolytic anemia). Screen G6PD before use if possible; if unknown and life-threatening, give and monitor.
 5. **Aggressive IV hydration:** NS at 200 mL/hr (adults) or 200 mL/m2/hr (pediatric), target urine output ≥ 2 mL/kg/hr. No potassium in fluids.
 6. **Emergent nephrology consult for dialysis** if: potassium > 6 mEq/L refractory to medical management, phosphorus > 10 mg/dL, uric acid > 10 mg/dL despite rasburicase, volume overload, oliguric AKI, symptomatic hypocalcemia with concurrent hyperphosphatemia.
@@ -111,7 +111,7 @@ reviewed_by: null
 - If rasburicase contraindicated: allopurinol 800 mg PO load then 300-600 mg/day + aggressive hydration + urinary alkalinization (sodium bicarbonate 50-100 mEq/L in IV fluids, target urine pH 6.5-7.0). Do NOT alkalinize urine if hyperphosphatemia present (promotes calcium phosphate crystallization)
 
 *Hyperkalemia:*
-- Calcium gluconate 10% 30 mL IV over 10 min (membrane stabilization) — ONLY if ECG changes AND no severe hyperphosphatemia
+- Calcium gluconate 10% 10-20 mL (1-2 g) IV over 10 min (membrane stabilization) — ONLY if ECG changes AND no severe hyperphosphatemia
 - Insulin 10 units regular IV + D50 50 mL IV (shift potassium intracellularly)
 - Sodium bicarbonate 50-150 mEq IV if metabolic acidosis
 - Albuterol 10-20 mg nebulized (adjunctive)
@@ -120,7 +120,7 @@ reviewed_by: null
 - Emergent hemodialysis if K > 6.5 mEq/L refractory to medical therapy or ECG changes persist
 
 *Hyperphosphatemia:*
-- Aluminum hydroxide 300-600 mg PO q6h or sevelamer 800-1600 mg PO TID (phosphate binders)
+- Sevelamer 800-1600 mg PO TID (preferred phosphate binder; no aluminum toxicity risk) or calcium acetate 1334 mg PO TID (if sevelamer unavailable and calcium-phosphate product < 55)
 - Aggressive hydration to promote renal excretion
 - Hemodialysis for phosphorus > 10 mg/dL or refractory
 
