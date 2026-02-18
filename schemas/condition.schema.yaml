@@ -1,0 +1,128 @@
+# JSON Schema (in YAML form) for condition frontmatter validation
+# All condition .md files must have YAML frontmatter matching this schema.
+
+$schema: "http://json-schema.org/draft-07/schema#"
+title: OpenEM Condition
+description: Schema for emergency medicine condition files
+type: object
+
+required:
+  - id
+  - condition
+  - icd10
+  - esi
+  - time_to_harm
+  - category
+  - track
+  - sources
+  - last_updated
+  - compiled_by
+
+properties:
+  id:
+    type: string
+    pattern: "^[a-z0-9-]+$"
+    description: URL-safe identifier (lowercase, hyphens only)
+
+  condition:
+    type: string
+    description: Full clinical name of the condition
+
+  aliases:
+    type: array
+    items:
+      type: string
+    description: Alternative names, abbreviations, lay terms
+
+  icd10:
+    type: array
+    items:
+      type: string
+      pattern: "^[A-Z][0-9]"
+    minItems: 1
+    description: ICD-10-CM codes (US public domain)
+
+  snomed:
+    type: string
+    description: SNOMED CT concept ID (reference only — not redistributed)
+
+  esi:
+    type: integer
+    minimum: 1
+    maximum: 5
+    description: Emergency Severity Index (1=resuscitation, 5=non-urgent)
+
+  time_to_harm:
+    type: string
+    description: "Time window before irreversible harm (e.g., '< 90 minutes')"
+
+  mortality_if_delayed:
+    type: string
+    description: Mortality risk with delayed treatment
+
+  category:
+    type: string
+    enum:
+      - cardiovascular
+      - neurological
+      - respiratory
+      - gastrointestinal
+      - genitourinary
+      - obstetric-gynecologic
+      - endocrine-metabolic
+      - infectious
+      - musculoskeletal
+      - hematologic
+      - toxicologic
+      - traumatic
+      - environmental
+      - psychiatric
+      - pediatric
+      - ophthalmologic
+      - dermatologic
+      - allergic-immunologic
+    description: Primary clinical category
+
+  track:
+    type: string
+    enum: [tier1, tier2]
+    description: Licensing track
+
+  sources:
+    type: array
+    items:
+      type: object
+      required: [type, ref]
+      properties:
+        type:
+          type: string
+          enum: [guideline, pubmed, textbook, who, cdc, wikem, review, meta-analysis]
+        ref:
+          type: string
+          description: Human-readable citation
+        pmid:
+          type: string
+          description: PubMed ID
+        doi:
+          type: string
+          description: DOI
+        url:
+          type: string
+          format: uri
+          description: Direct URL
+    minItems: 1
+    description: At least one verifiable source required
+
+  last_updated:
+    type: string
+    format: date
+    description: ISO 8601 date of last update
+
+  compiled_by:
+    type: string
+    enum: [agent, human]
+    description: Who compiled this file
+
+  reviewed_by:
+    type: ["string", "null"]
+    description: Physician reviewer name, or null if unreviewed
