@@ -20,9 +20,6 @@ sources:
     ref: "Hopkins PM et al. European Malignant Hyperthermia Group guidelines for investigation of malignant hyperthermia susceptibility. Br J Anaesth. 2015;115(4):531-539"
     pmid: "26188342"
   - type: pubmed
-    ref: "Litman RS et al. Malignant Hyperthermia: An Update. Anesth Analg. 2024;138(3):535-544"
-    pmid: "37988062"
-  - type: pubmed
     ref: "Larach MG et al. Clinical presentation, treatment, and complications of malignant hyperthermia in North America from 1987 to 2006. Anesth Analg. 2010;110(2):498-507"
     pmid: "20081135"
 last_updated: "2026-02-18"

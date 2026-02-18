@@ -20,7 +20,7 @@ sources:
     pmid: "19564476"
   - type: review
     ref: "Long B, Koyfman A. Emergency Medicine Myths: DKA. J Emerg Med 2017"
-    pmid: "28916121"
+    pmid: "28412071"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

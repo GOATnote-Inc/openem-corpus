@@ -17,7 +17,7 @@ sources:
     ref: "2021 ACEP Clinical Policy: Acute Allergic Reactions and Anaphylaxis"
   - type: review
     ref: "Shaker MS et al. Anaphylaxis — A 2020 Practice Parameter Update. J Allergy Clin Immunol 2020"
-    pmid: "33358859"
+    pmid: "32001253"
 last_updated: "2026-02-18"
 compiled_by: agent
 reviewed_by: null

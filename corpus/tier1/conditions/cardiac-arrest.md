@@ -23,7 +23,7 @@ sources:
     doi: "10.1056/NEJMoa2100591"
   - type: pubmed
     ref: "Early Coronary Angiography after Cardiac Arrest without ST-Segment Elevation (COACT Trial)"
-    pmid: "30776907"
+    pmid: "30883057"
     doi: "10.1056/NEJMoa1816897"
   - type: guideline
     ref: "2020 AHA Post-Cardiac Arrest Care Algorithm"
