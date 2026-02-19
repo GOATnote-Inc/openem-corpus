@@ -14,12 +14,12 @@ sources:
     doi: "10.1002/jhbp.512"
     pmid: "29032610"
   - type: guideline
-    ref: "Tokyo Guidelines 2018 (TG18): flowchart for the management of acute cholangitis. J Hepatobiliary Pancreat Sci. 2018;25(1):31-40"
+    ref: "Miura F, et al. Tokyo Guidelines 2018 (TG18): initial management of acute biliary infection and flowchart for acute cholangitis. J Hepatobiliary Pancreat Sci. 2018;25(1):31-40"
     doi: "10.1002/jhbp.509"
-    pmid: "29032636"
+    pmid: "28941329"
   - type: pubmed
     ref: "Gomi H, et al. TG13 antimicrobial therapy for acute cholangitis and cholecystitis. J Hepatobiliary Pancreat Sci. 2013;20(1):60-70"
-    pmid: "23307003"
+    pmid: "23340954"
   - type: pubmed
     ref: "Buxbaum JL, et al. ASGE guideline on the role of endoscopy in the evaluation and management of choledocholithiasis. Gastrointest Endosc. 2019;89(6):1075-1105"
     pmid: "30979521"

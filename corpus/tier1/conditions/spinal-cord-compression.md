@@ -18,8 +18,8 @@ sources:
     ref: "Loblaw DA et al. Systematic review of the diagnosis and management of malignant extradural spinal cord compression. J Clin Oncol. 2005;23(9):2028-2037"
     pmid: "15774794"
   - type: pubmed
-    ref: "Todd NV. Cauda equina syndrome: is the current management of patients presenting to district general hospitals fit for purpose? Br J Neurosurg. 2018;32(1):27-30"
-    pmid: "30687660"
+    ref: "Todd NV. Cauda equina syndrome: is the current management of patients presenting to district general hospitals fit for purpose? Bone Joint J. 2015;97-B(10):1390-1394"
+    pmid: "26430015"
   - type: guideline
     ref: "2017 AO Spine/AANS/CNS Guideline: Management of Degenerative Cervical Myelopathy"
 last_updated: "2026-02-18"

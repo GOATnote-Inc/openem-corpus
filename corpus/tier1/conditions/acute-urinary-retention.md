@@ -14,8 +14,8 @@ sources:
     ref: "Selius BA, Subedi R. Urinary Retention in Adults: Diagnosis and Initial Management. Am Fam Physician 2008;77(5):643-650"
     pmid: "18350762"
   - type: review
-    ref: "Marshall JR et al. Acute Urinary Retention: Clinical Features and Management in an Emergency Setting. Eur J Emerg Med 2014;21(1):2-10"
-    pmid: "25757349"
+    ref: "Marshall JR, Haber J, Josephson EB. An evidence-based approach to emergency department management of acute urinary retention. Emerg Med Pract. 2014;16(1):1-20"
+    pmid: "24804332"
   - type: guideline
     ref: "2023 EAU Guidelines on Management of Non-Neurogenic Male Lower Urinary Tract Symptoms (LUTS), incl. Benign Prostatic Obstruction (BPO)"
   - type: review

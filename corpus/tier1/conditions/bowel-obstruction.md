@@ -12,9 +12,6 @@ sources:
   - type: guideline
     ref: "WSES 2017 Guidelines for Management of Small Bowel Obstruction. World J Emerg Surg. 2017;12:29"
     pmid: "29946347"
-  - type: guideline
-    ref: "ASCRS Clinical Practice Guidelines for the Management of Small Bowel Obstruction. Dis Colon Rectum. 2020;63(8):1046-1057"
-    pmid: "32692069"
   - type: pubmed
     ref: "Catena F, De Simone B, Coccolini F, et al. Bowel obstruction: a narrative review for all physicians. World J Emerg Surg. 2019;14:20"
     pmid: "31168315"

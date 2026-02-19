@@ -19,8 +19,8 @@ sources:
     ref: "Hamirani YS et al. Acute aortic regurgitation. Circulation. 2012;126(9):1121-1126"
     pmid: "22927474"
   - type: pubmed
-    ref: "Thompson CR et al. Acute mitral regurgitation. Ann Thorac Surg. 2003;75(5):S52-S60"
-    pmid: "12776954"
+    ref: "Thompson CR, et al. Cardiogenic shock due to acute severe mitral regurgitation complicating acute myocardial infarction: a report from the SHOCK Trial Registry. J Am Coll Cardiol. 2000;36(3 Suppl A):1104-1109"
+    pmid: "10985712"
 last_updated: "2026-02-18"
 compiled_by: agent
 risk_tier: A
