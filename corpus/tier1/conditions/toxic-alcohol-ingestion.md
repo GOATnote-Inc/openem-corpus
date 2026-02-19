@@ -24,9 +24,6 @@ sources:
   - type: review
     ref: "Kraut JA, Kurtz I. Toxic alcohol ingestions: clinical features, diagnosis, and management. Clin J Am Soc Nephrol 2008;3(1):208-25"
     pmid: "18045860"
-  - type: review
-    ref: "Barceloux DG et al. American Academy of Clinical Toxicology practice guidelines on the treatment of methanol poisoning. J Toxicol Clin Toxicol 2002;40(4):415-46"
-    pmid: "12216995"
 last_updated: "2026-02-18"
 compiled_by: agent
 risk_tier: A

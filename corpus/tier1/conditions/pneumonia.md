@@ -19,9 +19,6 @@ sources:
     pmid: "27418577"
   - type: guideline
     ref: "2023 Surviving Sepsis Campaign Guidelines (pneumonia-related sepsis management)"
-  - type: pubmed
-    ref: "Metlay JP, et al. Diagnosis and Treatment of Adults with Community-acquired Pneumonia. Am J Respir Crit Care Med. 2019;200(7):e45-e67"
-    pmid: "31573350"
   - type: review
     ref: "Mandell LA, Niederman MS. Aspiration Pneumonia. N Engl J Med. 2019;380(7):651-663"
     pmid: "30763196"
