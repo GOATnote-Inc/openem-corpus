@@ -33,6 +33,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Neonatal Emergencies
@@ -166,7 +167,7 @@ BRUE criteria (replaces ALTE): Episode in infant < 1 year with >= 1 of:
 - Cefotaxime 50 mg/kg IV q8h (broader Gram-negative coverage; note: ceftriaxone is CONTRAINDICATED in neonates due to bilirubin displacement and calcium-ceftriaxone precipitation)
 
 **If concern for meningitis doses:**
-- Ampicillin 75 mg/kg IV q8h (meningitis dosing)
+- Ampicillin 100 mg/kg IV q8h (meningitis dosing; target 300 mg/kg/day)
 - Gentamicin 4 mg/kg IV q24h
 
 ### Acyclovir for Neonatal HSV

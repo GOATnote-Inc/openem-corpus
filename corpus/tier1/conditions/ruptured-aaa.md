@@ -35,6 +35,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Ruptured Abdominal Aortic Aneurysm
@@ -132,7 +133,7 @@ verification:
 - Transfuse pRBCs, FFP, and platelets in 1:1:1 ratio (massive transfusion protocol)
 - Tranexamic acid (TXA) 1 g IV over 10 minutes (extrapolated from trauma literature; no large rAAA-specific RCT, but biologically rational to reduce fibrinolysis)
 - Calcium gluconate 1-3 g IV to counter citrate-induced hypocalcemia from massive transfusion
-- Vasopressors: norepinephrine 0.1-0.5 mcg/kg/min IV or vasopressin 0.04 units/min IV as temporizing measure — do NOT use as substitute for hemorrhage control
+- Vasopressors: norepinephrine 0.05-0.5 mcg/kg/min IV or vasopressin 0.04 units/min IV as temporizing measure — do NOT use as substitute for hemorrhage control
 
 ### Surgical Repair
 **EVAR (endovascular aneurysm repair):**

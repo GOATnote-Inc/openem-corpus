@@ -29,6 +29,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Esophageal Perforation
@@ -107,7 +108,7 @@ Full triad present in <50% of cases. Most common presentation: sudden chest or e
 
 ### Resuscitation
 - **IV crystalloid:** Aggressive fluid resuscitation — patients are typically hypovolemic from third-spacing, sepsis, and poor oral intake
-- **Vasopressors:** Norepinephrine 0.1-0.5 mcg/kg/min if hypotensive despite fluids
+- **Vasopressors:** Norepinephrine 0.05-0.5 mcg/kg/min if hypotensive despite fluids
 - **NPO:** Absolute — nothing by mouth
 
 ### Antibiotics

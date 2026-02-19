@@ -27,6 +27,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Acute Valvular Emergency
@@ -119,7 +120,7 @@ verification:
 - Sodium nitroprusside 0.3-5 mcg/kg/min IV to reduce afterload (favors forward flow over regurgitant flow)
 - IABP if refractory to vasodilators (reduces afterload, improves forward output)
 - Dobutamine 2-20 mcg/kg/min IV for inotropic support
-- Norepinephrine 0.1-0.5 mcg/kg/min IV if vasodilator-induced hypotension prevents adequate MAP
+- Norepinephrine 0.05-0.5 mcg/kg/min IV if vasodilator-induced hypotension prevents adequate MAP
 - Emergent surgical mitral valve repair or replacement
 
 ### Critical Aortic Stenosis with Decompensation

@@ -27,6 +27,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Bacterial Meningitis
@@ -128,7 +129,7 @@ If CT is needed, give empiric antibiotics + dexamethasone BEFORE CT scan.
 | Adults 18-50 yr | Ceftriaxone 2g IV q12h + vancomycin 15-20 mg/kg IV q8-12h |
 | Adults > 50 yr | Ceftriaxone 2g IV q12h + vancomycin 15-20 mg/kg IV q8-12h + ampicillin 2g IV q4h (Listeria coverage) |
 | Immunocompromised | Ceftriaxone 2g IV q12h + vancomycin 15-20 mg/kg IV q8-12h + ampicillin 2g IV q4h |
-| Neonates | Ampicillin 200 mg/kg/day divided q6h + cefotaxime 200 mg/kg/day divided q6h (or gentamicin) |
+| Neonates | Ampicillin 300 mg/kg/day divided q6h + cefotaxime 200 mg/kg/day divided q6h (or gentamicin) |
 | Post-neurosurgical/VP shunt | Vancomycin 15-20 mg/kg IV q8-12h + cefepime 2g IV q8h (or meropenem 2g IV q8h) |
 | Penicillin allergy (severe) | Meropenem 2g IV q8h + vancomycin 15-20 mg/kg IV q8-12h |
 

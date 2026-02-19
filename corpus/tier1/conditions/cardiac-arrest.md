@@ -33,6 +33,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Cardiac Arrest
@@ -133,7 +134,7 @@ Cardiac arrest is a clinical state, not a diagnosis. The differential is the und
 
 **Hemodynamic optimization:**
 - Target MAP >= 65 mmHg (some evidence supports MAP 80-100 mmHg for neurologic outcomes)
-- Norepinephrine 0.1-0.5 mcg/kg/min IV first-line vasopressor
+- Norepinephrine 0.05-0.5 mcg/kg/min IV first-line vasopressor
 - Dobutamine 2-20 mcg/kg/min IV if cardiogenic shock with low cardiac output
 - Normal saline or lactated Ringer boluses for hypovolemia; avoid excessive fluid
 

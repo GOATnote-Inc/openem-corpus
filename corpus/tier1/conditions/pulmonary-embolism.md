@@ -23,6 +23,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Pulmonary Embolism
@@ -175,7 +176,7 @@ All must be true to rule out PE without D-dimer:
 ### Hemodynamic Support
 
 - IV crystalloid: Cautious 250-500 mL bolus (excessive fluid worsens RV failure by overdistension)
-- **Norepinephrine** 0.1-0.5 mcg/kg/min: First-line vasopressor (augments RV coronary perfusion)
+- **Norepinephrine** 0.05-0.5 mcg/kg/min: First-line vasopressor (augments RV coronary perfusion)
 - **Epinephrine** 0.1-0.5 mcg/kg/min: Alternative, combines inotropy and vasoconstriction
 - **Dobutamine** 2-20 mcg/kg/min: If RV failure with adequate MAP (adds inotropy without vasoconstriction)
 - **Avoid aggressive fluid resuscitation** — the RV is volume-overloaded, not volume-depleted

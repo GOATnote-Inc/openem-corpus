@@ -27,6 +27,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Acute Heart Failure
@@ -123,7 +124,7 @@ This is the most common presentation and most responsive to ED treatment.
 - Intubation if NIPPV fails, persistent SpO2 < 90%, or inability to protect airway
 
 ### Cold and Wet (Cardiogenic Shock)
-- **Norepinephrine** 0.1-0.5 mcg/kg/min IV first-line vasopressor (preferred over dopamine per SOAP II trial)
+- **Norepinephrine** 0.05-0.5 mcg/kg/min IV first-line vasopressor (preferred over dopamine per SOAP II trial)
 - **Dobutamine** 2-20 mcg/kg/min IV for inotropy (augments cardiac output)
 - **Milrinone** 0.375-0.75 mcg/kg/min IV (avoid loading dose; alternative inodilator; useful in beta-blocker–treated patients)
 - Diuretics after perfusion restored

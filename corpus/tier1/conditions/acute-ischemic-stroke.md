@@ -23,6 +23,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Acute Ischemic Stroke
@@ -130,7 +131,7 @@ verification:
 Patients on DOACs who present within the tPA window may become eligible after reversal:
 
 - **Dabigatran:** Idarucizumab (Praxbind) 5 g IV (two 2.5 g boluses ≤ 15 min apart). Reversal is immediate and complete. tPA can be administered immediately after infusion.
-- **Rivaroxaban/apixaban/edoxaban (factor Xa inhibitors):** Andexanet alfa (Andexxa) 400 mg IV bolus at 30 mg/min, then 4 mg/min infusion x 120 min (low-dose regimen for last dose > 7 hours ago or apixaban ≤ 5 mg; double dose if last dose < 7 hours ago or higher doses). Anti-Xa activity normalizes within minutes.
+- **Rivaroxaban/apixaban/edoxaban (factor Xa inhibitors):** Andexanet alfa (Andexxa) 400 mg IV bolus at 30 mg/min, then 4 mg/min infusion x 120 min (low-dose regimen for last dose ≥ 8 hours ago or apixaban ≤ 5 mg; double dose if last dose < 8 hours ago or higher doses). Anti-Xa activity normalizes within minutes.
 - **If reversal agents unavailable:** 4-factor PCC (Kcentra) 50 units/kg IV as empiric option for factor Xa inhibitors (off-label, less evidence). Do not delay transfer to a center with reversal agents.
 - **Timing:** Check drug-specific coagulation assay (thrombin time for dabigatran, anti-Xa level for Xa inhibitors). If last DOAC dose > 48 hours ago AND renal function is normal, tPA may be given without reversal.
 

@@ -21,6 +21,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Sepsis and Septic Shock
@@ -146,9 +147,9 @@ verification:
 - Avoid albumin as first-line; may consider if substantial crystalloid already given
 
 ### Vasopressors
-- **Norepinephrine:** First-line, 0.1-0.5 mcg/kg/min IV (titrate to MAP >= 65)
+- **Norepinephrine:** First-line, 0.05-0.5 mcg/kg/min IV (titrate to MAP >= 65)
 - **Vasopressin:** 0.03 units/min IV (fixed dose), add as second agent when norepinephrine 0.25-0.5 mcg/kg/min insufficient
-- **Epinephrine:** 0.1-0.5 mcg/kg/min IV, add as third-line or if cardiac dysfunction prominent
+- **Epinephrine:** 0.05-2 mcg/kg/min IV, add as third-line or if cardiac dysfunction prominent
 - **Phenylephrine:** Avoid; associated with splanchnic vasoconstriction and worse outcomes in sepsis
 - **Peripheral vasopressors:** Acceptable via large-bore peripheral IV for up to 24 hours while obtaining central access
 

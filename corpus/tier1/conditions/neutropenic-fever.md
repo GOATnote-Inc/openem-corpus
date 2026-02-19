@@ -29,6 +29,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Neutropenic Fever
@@ -138,7 +139,7 @@ Discontinue vancomycin at 48-72 hours if cultures are negative for resistant gra
 
 ### Sepsis/Shock Management
 - **IV crystalloid:** 30 mL/kg bolus within first 3 hours
-- **Vasopressors:** Norepinephrine 0.1-0.5 mcg/kg/min as first-line if hypotension persists after fluid resuscitation
+- **Vasopressors:** Norepinephrine 0.05-0.5 mcg/kg/min as first-line if hypotension persists after fluid resuscitation
 - **Stress-dose steroids:** Hydrocortisone 50 mg IV q6h if vasopressor-refractory shock
 
 ### G-CSF (Filgrastim)

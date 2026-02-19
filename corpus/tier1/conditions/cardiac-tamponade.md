@@ -26,6 +26,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Cardiac Tamponade
@@ -70,7 +71,7 @@ verification:
 3. **Emergent thoracotomy** for traumatic tamponade with cardiac arrest or peri-arrest: left anterolateral thoracotomy at 5th intercostal space, open pericardium anterior and parallel to the phrenic nerve
 4. **Avoid positive pressure ventilation** — decreases venous return and worsens tamponade physiology; if intubation unavoidable, use ketamine 1-2 mg/kg IV for induction to preserve sympathetic tone
 5. **Avoid vasodilators, diuretics, and beta-blockers** — all worsen hemodynamics
-6. **Vasopressors as bridge:** norepinephrine 0.1-0.5 mcg/kg/min IV if pericardiocentesis delayed
+6. **Vasopressors as bridge:** norepinephrine 0.05-0.5 mcg/kg/min IV if pericardiocentesis delayed
 7. **Pericardial drain placement** after initial aspiration to prevent reaccumulation
 
 ## Differential Diagnosis
@@ -108,9 +109,9 @@ verification:
 - Glucocorticoids only for autoimmune etiology or NSAID-refractory cases
 
 ### Resuscitation Adjuncts
-- Norepinephrine 0.1-0.5 mcg/kg/min IV for vasopressor support
+- Norepinephrine 0.05-0.5 mcg/kg/min IV for vasopressor support
 - Volume resuscitation with NS or LR 500-1000 mL boluses
-- Atropine 0.5 mg IV for reflex bradycardia during pericardiocentesis (vagal response)
+- Atropine 1 mg IV for reflex bradycardia during pericardiocentesis (vagal response)
 
 ## Disposition
 

@@ -31,6 +31,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Alcohol Withdrawal Syndrome
@@ -160,7 +161,7 @@ Definition: > 40 mg diazepam (or equivalent) in first hour OR > 200 mg diazepam 
 Options:
 - **Phenobarbital** (see below)
 - **Propofol 5-80 mcg/kg/min IV infusion** — requires intubation and ICU
-- **Dexmedetomidine 0.2-1.5 mcg/kg/hr IV** — adjunct only; does not prevent seizures or treat delirium tremens alone. Reduces benzodiazepine requirements.
+- **Dexmedetomidine 0.2-1.4 mcg/kg/hr IV** — adjunct only; does not prevent seizures or treat delirium tremens alone. Reduces benzodiazepine requirements.
 - **Ketamine 0.15-0.5 mg/kg/hr IV** — emerging adjunct for refractory withdrawal
 
 ### Phenobarbital Protocol (Alternative or Adjunct)

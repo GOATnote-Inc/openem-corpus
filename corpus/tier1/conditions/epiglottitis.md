@@ -23,6 +23,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Acute Epiglottitis
@@ -115,7 +116,7 @@ verification:
 - Duration: 7-10 days IV initially, step down to oral when clinical improvement
 
 ### Corticosteroids
-- **Dexamethasone 10 mg IV every 6-8 hours x 24-48 hours** — reduces supraglottic edema, facilitates earlier extubation
+- **Dexamethasone 10 mg IV initial dose, then 4 mg IV every 6 hours x 24-48 hours** — reduces supraglottic edema, facilitates earlier extubation
 - Limited high-quality evidence but widely used and low risk
 
 ### Adjuncts

@@ -28,6 +28,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Submersion Injury
@@ -125,7 +126,7 @@ verification:
 
 **Hemodynamic Support:**
 - IV crystalloid resuscitation for hypotension: NS or LR 20 mL/kg bolus
-- Vasopressors (norepinephrine 0.1-0.5 mcg/kg/min IV) if persistent hypotension despite fluid resuscitation
+- Vasopressors (norepinephrine 0.05-0.5 mcg/kg/min IV) if persistent hypotension despite fluid resuscitation
 - Inotropic support as needed
 
 **Hypothermia Management:**

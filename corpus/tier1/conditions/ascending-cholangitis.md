@@ -32,6 +32,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Acute Ascending Cholangitis
@@ -163,7 +164,7 @@ Bacterial infection of the biliary tract due to obstruction. Increased biliary p
 
 ### Hemodynamic Support
 - IV crystalloid resuscitation: Ringer's lactate 30 mL/kg bolus for sepsis-induced hypotension
-- Norepinephrine 0.1-0.5 mcg/kg/min IV for vasopressor-dependent shock (MAP target >= 65 mmHg)
+- Norepinephrine 0.05-0.5 mcg/kg/min IV for vasopressor-dependent shock (MAP target >= 65 mmHg)
 - Vasopressin 0.03 units/min IV as second agent if norepinephrine insufficient
 
 ### Pain Management

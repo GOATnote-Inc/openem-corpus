@@ -30,6 +30,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Traumatic Brain Injury
@@ -61,7 +62,7 @@ Medium-risk (for brain injury on CT): amnesia before impact >30 min, dangerous m
 ## Critical Actions
 
 1. **Secure airway with cervical spine precautions** — intubate all patients with GCS <=8. RSI with video laryngoscopy. Avoid hypoxia (SpO2 <90) and hypotension (SBP <100) — each independently doubles mortality.
-2. **Maintain SBP >100 mmHg** (Brain Trauma Foundation target). Fluid resuscitate with NS or LR. Vasopressors (norepinephrine 0.1-0.5 mcg/kg/min) if fluid-unresponsive.
+2. **Maintain SBP >100 mmHg** (Brain Trauma Foundation target). Fluid resuscitate with NS or LR. Vasopressors (norepinephrine 0.05-0.5 mcg/kg/min) if fluid-unresponsive.
 3. **Emergent CT head without contrast** — within 30 minutes of arrival for moderate/severe TBI.
 4. **Reverse anticoagulation immediately** — warfarin: 4-factor PCC 25-50 units/kg IV + vitamin K 10 mg IV. DOACs: idarucizumab 5g IV for dabigatran; andexanet alfa or 4-factor PCC 50 units/kg for factor Xa inhibitors. Antiplatelet: platelet transfusion is NOT routinely recommended (PATCH trial).
 5. **Treat elevated ICP** — head of bed 30 degrees, head midline, loosen c-collar if compressing neck veins. Osmotic therapy: mannitol 1 g/kg IV (20% solution) or hypertonic saline 23.4% 30 mL IV via central line (or 3% saline 250 mL IV peripheral OK). Hyperventilate briefly to PaCO2 30-35 mmHg ONLY as bridge to definitive intervention.

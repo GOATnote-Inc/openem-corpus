@@ -26,6 +26,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Adrenal Crisis
@@ -65,9 +66,9 @@ verification:
 1. **Hydrocortisone 100 mg IV bolus** — give immediately if adrenal crisis suspected. Do NOT wait for lab confirmation. This is both diagnostic and therapeutic.
 2. **Aggressive fluid resuscitation** — NS 1-2 L IV bolus (20 mL/kg pediatric). These patients are profoundly volume-depleted. Continue 1 L/hr until hemodynamically stable.
 3. **D50W 25-50 g IV** — if glucose < 60 mg/dL. Start D10W infusion for persistent hypoglycemia.
-4. **Correct hyperkalemia** — if K > 6.0 mEq/L or ECG changes: calcium gluconate 1 g IV, insulin 10 units IV + D50W 25 g, sodium bicarbonate 50 mEq IV.
+4. **Correct hyperkalemia** — if K > 6.0 mEq/L or ECG changes: calcium gluconate 3 g IV (30 mL of 10%), insulin 10 units IV + D50W 25 g, sodium bicarbonate 50 mEq IV.
 5. **Identify precipitant** — obtain blood cultures, UA, CXR, lactate. Infection is the most common trigger.
-6. **Hydrocortisone 50 mg IV q6-8h** — continued stress-dose steroids after initial bolus. Taper over 1-3 days as precipitant resolves.
+6. **Hydrocortisone 50 mg IV q6h** — continued stress-dose steroids after initial bolus (200 mg/day total). Taper over 1-3 days as precipitant resolves.
 7. **Draw cortisol and ACTH BEFORE steroid administration if possible** — but NEVER delay treatment for labs. A single pre-treatment cortisol tube is sufficient.
 
 ## Differential Diagnosis
@@ -107,7 +108,7 @@ verification:
 ## Treatment
 
 **Stress-Dose Glucocorticoids:**
-- Hydrocortisone 100 mg IV bolus, then 50 mg IV q6-8h (200 mg/day) for first 24 hours
+- Hydrocortisone 100 mg IV bolus, then 50 mg IV q6h (200 mg/day) for first 24 hours
 - Alternative: dexamethasone 4 mg IV if ACTH stimulation test planned (dexamethasone does not cross-react with cortisol assay)
 - Taper: reduce to hydrocortisone 50 mg IV q8h on day 2, then transition to oral maintenance over 2-5 days as precipitant resolves
 

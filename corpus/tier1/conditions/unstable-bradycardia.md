@@ -30,6 +30,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Unstable Bradycardia
@@ -158,7 +159,7 @@ Heart rate < 60 bpm (or rate insufficient to maintain adequate perfusion) with s
 ### Medication-Specific Antidotes
 
 **Beta-blocker toxicity:**
-- Glucagon 3-5 mg IV bolus, then 3-5 mg/hr infusion (bypasses beta-receptor via cAMP)
+- Glucagon 5-10 mg IV bolus, then 1-5 mg/hr infusion (bypasses beta-receptor via cAMP)
 - High-dose insulin euglycemic therapy (HIET): insulin 1 unit/kg IV bolus, then 1 unit/kg/hr infusion; co-administer dextrose 50% 25 g IV bolus, then D10W infusion; monitor glucose q15 min
 - IV lipid emulsion (Intralipid 20%): 1.5 mL/kg IV bolus, then 0.25 mL/kg/min infusion for lipophilic beta-blocker overdose
 

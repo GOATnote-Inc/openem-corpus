@@ -32,6 +32,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Benzodiazepine Overdose
@@ -136,7 +137,7 @@ verification:
 
 ### Supportive Care (Mainstay)
 - **Airway management:** Jaw thrust, oropharyngeal airway, bag-valve-mask ventilation as temporizing measures. Endotracheal intubation if unable to maintain airway or oxygenation. RSI with propofol or etomidate (avoid additional benzodiazepines for RSI).
-- **IV fluids:** Normal saline 20 mL/kg bolus for hypotension. Vasopressors (norepinephrine 0.1-0.5 mcg/kg/min) if refractory — suggest co-ingestion or alternate diagnosis.
+- **IV fluids:** Normal saline 20 mL/kg bolus for hypotension. Vasopressors (norepinephrine 0.05-0.5 mcg/kg/min) if refractory — suggest co-ingestion or alternate diagnosis.
 - **Warming:** Active rewarming if hypothermic (forced-air warming blanket)
 
 ### Activated Charcoal

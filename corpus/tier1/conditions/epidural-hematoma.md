@@ -32,6 +32,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Epidural Hematoma
@@ -86,7 +87,7 @@ verification:
 3. **Emergent neurosurgical consultation** — call at time of CT, not after results. Surgical decompression within 1-2 hours of deterioration is the goal.
 4. **ICP management while awaiting OR:**
    - Elevate head of bed to 30 degrees
-   - Mannitol 1-1.5 g/kg IV bolus (20% solution) for signs of herniation
+   - Mannitol 1 g/kg IV bolus (20% solution) for signs of herniation
    - OR hypertonic saline 23.4% 30 mL IV over 10-20 minutes via central line (or 3% NaCl 250-500 mL IV via peripheral line)
 5. **Reverse anticoagulation** — if on warfarin: 4-factor PCC 25-50 IU/kg IV + vitamin K 10 mg IV. If on DOAC: andexanet alfa or 4-factor PCC. If on antiplatelet: platelet transfusion (evidence debated but reasonable with active hemorrhage and planned surgery).
 6. **Avoid secondary brain injury:**

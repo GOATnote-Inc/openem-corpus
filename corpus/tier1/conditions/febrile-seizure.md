@@ -28,6 +28,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Febrile Seizure
@@ -65,7 +66,7 @@ verification:
 
 1. **ABCs** — maintain airway, position lateral (recovery position), suction if needed. Do NOT place anything in the mouth.
 2. **Actively seizing > 5 minutes — treat as status epilepticus:**
-   - Midazolam 0.2 mg/kg IM (max 10 mg) or 0.2 mg/kg intranasal (max 10 mg)
+   - Midazolam 0.2 mg/kg IM (max 5 mg) or 0.2 mg/kg intranasal (max 5 mg)
    - Diazepam 0.5 mg/kg rectal (max 20 mg)
    - Lorazepam 0.1 mg/kg IV (max 4 mg) if IV access established
 3. **Identify the fever source** — thorough exam for meningitis, UTI, otitis media, pneumonia, bacteremia. The seizure is not the diagnosis; the fever source is.
@@ -109,8 +110,8 @@ verification:
 
 **Acute Seizure Management (if actively seizing in ED):**
 - Position on side, suction airway, apply O2
-- Midazolam 0.2 mg/kg IM (max 10 mg) — fastest IM onset
-- Midazolam 0.2 mg/kg intranasal via mucosal atomizer (max 10 mg)
+- Midazolam 0.2 mg/kg IM (max 5 mg) — fastest IM onset
+- Midazolam 0.2 mg/kg intranasal via mucosal atomizer (max 5 mg)
 - Diazepam 0.5 mg/kg PR (max 20 mg) — preferred rectal option
 - Lorazepam 0.1 mg/kg IV (max 4 mg) — if IV access available
 - If seizure continues after 2 benzodiazepine doses: levetiracetam 40-60 mg/kg IV (max 4500 mg) over 15 min, or fosphenytoin 20 mg PE/kg IV (max 1500 mg PE) over 10-20 min

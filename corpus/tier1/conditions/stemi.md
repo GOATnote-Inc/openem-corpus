@@ -21,6 +21,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # ST-Elevation Myocardial Infarction (STEMI)
@@ -104,7 +105,7 @@ verification:
 ## Treatment
 
 ### Cardiogenic Shock (Killip Class IV)
-- Norepinephrine 0.1-0.5 mcg/kg/min IV first-line vasopressor
+- Norepinephrine 0.05-0.5 mcg/kg/min IV first-line vasopressor
 - Dobutamine 2-20 mcg/kg/min IV for inotropy
 - Mechanical circulatory support (IABP, Impella) per institutional protocol
 - Emergent PCI remains the priority
