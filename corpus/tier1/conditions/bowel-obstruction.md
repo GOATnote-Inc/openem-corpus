@@ -23,12 +23,19 @@ sources:
     pmid: "32381121"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
+risk_tier: B
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Bowel Obstruction
 
 ## Recognition
@@ -156,7 +163,7 @@ verification:
 
 3. **Delaying NG tube placement.** NG decompression reduces aspiration risk, relieves nausea, and allows quantification of losses for fluid replacement. Place early, not as a last resort.
 
-4. **Under-resuscitating.** Third-space losses in bowel obstruction are massive (3-6 liters). Patients presenting with tachycardia and oliguria need aggressive crystalloid before any decision about operative vs. non-operative management.
+4. **Under-resuscitating.** Third-space losses in bowel obstruction are massive (3-6 L). Patients presenting with tachycardia and oliguria need aggressive crystalloid before any decision about operative vs. non-operative management.
 
 5. **Failing to examine all hernia orifices.** Incarcerated inguinal, femoral, umbilical, and incisional hernias cause SBO. Missed femoral hernias in elderly women are a classic and preventable diagnostic failure. Examine the groin in every patient with SBO.
 

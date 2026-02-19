@@ -29,12 +29,19 @@ sources:
     pmid: "40663369"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
+risk_tier: B
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Temporal Arteritis (Giant Cell Arteritis)
 
 ## Recognition

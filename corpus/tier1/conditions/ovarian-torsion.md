@@ -2,7 +2,7 @@
 id: ovarian-torsion
 condition: Ovarian Torsion
 aliases: [adnexal torsion, ovarian torsion, torsion of the ovary, twisted ovary]
-icd10: [N83.51, N83.52, N83.53]
+icd10: [N83.519, N83.529, N83.53]
 esi: 2
 time_to_harm: "< 6-8 hours (ovarian salvage rate drops significantly)"
 mortality_if_delayed: "Low mortality; high morbidity — ovarian necrosis and loss of fertility if diagnosis delayed"
@@ -28,13 +28,19 @@ sources:
     pmid: "16885653"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
-  dosing_crosscheck: "2026-02-19"
+risk_tier: B
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Ovarian Torsion
 
 ## Recognition

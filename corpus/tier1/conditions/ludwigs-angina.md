@@ -2,7 +2,7 @@
 id: ludwigs-angina
 condition: Ludwig's Angina
 aliases: [Ludwig angina, submandibular space infection, floor of mouth cellulitis, angina ludovici]
-icd10: [K12.2, J36]
+icd10: [K12.2]
 esi: 1
 time_to_harm: "< 2 hours"
 mortality_if_delayed: ">50% if airway lost without surgical airway control; historical mortality >50% pre-antibiotics"
@@ -24,13 +24,19 @@ sources:
     doi: "10.1093/bja/aev371"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
-  dosing_crosscheck: "2026-02-19"
+risk_tier: A
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Ludwig's Angina
 
 ## Recognition

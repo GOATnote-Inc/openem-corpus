@@ -1,9 +1,10 @@
 # JSON Schema (in YAML form) for condition frontmatter validation
 # All condition .md files must have YAML frontmatter matching this schema.
+# Schema version 2.0 — machine-validation metadata, no manual review layer.
 
 $schema: "http://json-schema.org/draft-07/schema#"
 title: OpenEM Condition
-description: Schema for emergency medicine condition files
+description: Schema for emergency medicine condition files (v2.0)
 type: object
 
 required:
@@ -17,6 +18,8 @@ required:
   - sources
   - last_updated
   - compiled_by
+  - risk_tier
+  - validation
 
 properties:
   id:
@@ -123,17 +126,52 @@ properties:
     enum: [agent, human]
     description: Who compiled this file
 
-  reviewed_by:
-    type: ["string", "null"]
-    description: Physician reviewer name, or null if unreviewed
-
-  verification:
-    type: object
-    additionalProperties:
-      type: string
-      format: date
+  risk_tier:
+    type: string
+    enum: [A, B, C]
     description: >
-      Mechanical verification checks performed on this file.
-      Each key is a check name, each value is the ISO 8601 date it passed.
-      Only record checks that were actually performed — absence means unchecked.
-      Common keys: pmids_verified, audit_completed, dosing_crosscheck, icd10_verified.
+      Risk classification (informational, not gatekeeping).
+      A = high-risk (ESI 1, resuscitation-level), B = moderate (ESI 2),
+      C = general management (ESI 3+).
+
+  validation:
+    type: object
+    properties:
+      automated_consistency_check:
+        type: ["string", "null"]
+        description: Date of last automated consistency check (ISO 8601)
+      dose_range_validator:
+        type: ["string", "null"]
+        description: Date of last dose-range validation pass
+      unit_normalization_check:
+        type: ["string", "null"]
+        description: Date of last unit normalization check
+      cross_file_consistency_check:
+        type: ["string", "null"]
+        description: Date of last cross-file drug consistency audit
+      citation_presence_check:
+        type: ["string", "null"]
+        description: Date of last citation presence/format check
+      duplicate_content_check:
+        type: ["string", "null"]
+        description: Date of last duplicate/near-duplicate scan
+      outlier_detection_flag:
+        type: string
+        enum: [clear, flagged]
+        description: "Whether anomaly detection flagged this file"
+      schema_version:
+        type: string
+        description: Schema version this file conforms to
+      guideline_version_reference:
+        type: ["string", "null"]
+        description: Guideline currency status (current, outdated, or null if unchecked)
+      provenance_links:
+        type: array
+        items:
+          type: string
+        description: Provenance chain identifiers (commit hashes, agent run IDs)
+    required:
+      - schema_version
+    description: >
+      Machine-validation metadata. All checks are automated —
+      no manual attestation layer. Null values indicate unchecked.

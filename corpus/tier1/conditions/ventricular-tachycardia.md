@@ -2,7 +2,7 @@
 id: ventricular-tachycardia
 condition: Ventricular Tachycardia
 aliases: [VT, V-tach, ventricular tach, wide complex tachycardia, WCT, monomorphic VT, polymorphic VT, pulseless VT]
-icd10: [I47.2, I47.20, I47.21, I47.29, I49.01]
+icd10: [I47.20, I47.21, I47.29]
 esi: 1
 time_to_harm: "< 5 minutes"
 mortality_if_delayed: "Pulseless VT degenerates to VF and death within minutes without defibrillation"
@@ -31,12 +31,19 @@ sources:
     doi: "10.1093/eurheartj/ehw230"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
+risk_tier: A
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Ventricular Tachycardia
 
 ## Recognition

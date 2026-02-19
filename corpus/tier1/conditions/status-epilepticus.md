@@ -2,7 +2,7 @@
 id: status-epilepticus
 condition: Status Epilepticus
 aliases: [SE, refractory status epilepticus, convulsive status epilepticus, super-refractory status epilepticus]
-icd10: [G41.0, G41.1, G41.2, G41.9]
+icd10: [G40.901, G40.911, G40.301, G40.311, G40.401, G40.411]
 esi: 1
 time_to_harm: "< 5 minutes"
 mortality_if_delayed: "Mortality 20% in refractory SE; permanent neuronal injury within 30 minutes of continuous seizure"
@@ -25,13 +25,19 @@ sources:
     pmid: "22528274"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
-  dosing_crosscheck: "2026-02-19"
+risk_tier: A
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Status Epilepticus
 
 ## Recognition

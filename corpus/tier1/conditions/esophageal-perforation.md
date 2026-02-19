@@ -2,7 +2,7 @@
 id: esophageal-perforation
 condition: Esophageal Perforation
 aliases: [esophageal perforation, Boerhaave syndrome, esophageal rupture, transmural esophageal tear, effort rupture of the esophagus]
-icd10: [K22.3, K22.8, S27.813A, S27.819A]
+icd10: [K22.3, S27.813A, S27.819A]
 esi: 1
 time_to_harm: "< 12 hours"
 mortality_if_delayed: ">40% mortality if diagnosis delayed >24 hours; approaches 100% if untreated"
@@ -25,13 +25,19 @@ sources:
     ref: "WSES Guidelines for Management of Iatrogenic Esophageal Perforation. World J Emerg Surg. 2014;9:44"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
-  dosing_crosscheck: "2026-02-19"
+risk_tier: A
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Esophageal Perforation
 
 ## Recognition

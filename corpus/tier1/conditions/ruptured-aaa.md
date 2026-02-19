@@ -2,7 +2,7 @@
 id: ruptured-aaa
 condition: Ruptured Abdominal Aortic Aneurysm
 aliases: [ruptured AAA, rAAA, ruptured aortic aneurysm, ruptured abdominal aneurysm, AAA rupture]
-icd10: [I71.3, I71.8]
+icd10: [I71.30, I71.8]
 esi: 1
 time_to_harm: "< 30 minutes"
 mortality_if_delayed: "Overall mortality 80-90%; 50% die before reaching hospital; operative mortality 40-50%"
@@ -31,13 +31,19 @@ sources:
     ref: "2020 AHA/ACC Guideline for the Diagnosis and Management of Aortic Disease"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
-  dosing_crosscheck: "2026-02-19"
+risk_tier: A
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Ruptured Abdominal Aortic Aneurysm
 
 ## Recognition

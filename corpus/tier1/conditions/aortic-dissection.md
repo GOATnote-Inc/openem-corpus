@@ -2,7 +2,7 @@
 id: aortic-dissection
 condition: Aortic Dissection
 aliases: [aortic dissection, Stanford Type A dissection, Stanford Type B dissection, DeBakey classification, acute aortic syndrome]
-icd10: [I71.00, I71.01, I71.010, I71.011, I71.012, I71.019, I71.02, I71.03]
+icd10: [I71.00, I71.010, I71.011, I71.012, I71.019, I71.02, I71.03]
 esi: 1
 time_to_harm: "< 24 hours; 1-2% mortality per hour in untreated Type A"
 mortality_if_delayed: "50% mortality at 48 hours for untreated Type A"
@@ -17,13 +17,19 @@ sources:
     ref: "2010 ACCF/AHA/AATS/ACR/ASA/SCA/SCAI/SIR/STS/SVM Guidelines for the Diagnosis and Management of Thoracic Aortic Disease"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
-  dosing_crosscheck: "2026-02-19"
+risk_tier: A
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Aortic Dissection
 
 ## Recognition

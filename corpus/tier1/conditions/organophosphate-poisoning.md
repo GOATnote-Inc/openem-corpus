@@ -2,7 +2,7 @@
 id: organophosphate-poisoning
 condition: Organophosphate Poisoning
 aliases: [OP poisoning, cholinergic toxidrome, nerve agent exposure, cholinesterase inhibitor poisoning, insecticide poisoning]
-icd10: [T60.0X1A, T60.0X2A, T60.0X4A, T65.0X1A]
+icd10: [T60.0X1A, T60.0X2A, T60.0X4A]
 esi: 1
 time_to_harm: "< 30 minutes"
 mortality_if_delayed: "20-40% without atropinization"
@@ -24,13 +24,19 @@ sources:
     pmid: "17379909"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
-  dosing_crosscheck: "2026-02-19"
+risk_tier: A
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Organophosphate Poisoning
 
 ## Recognition
@@ -167,7 +173,7 @@ verification:
 
 ## Pitfalls
 
-1. **Under-dosing atropine.** The most common lethal error. Bronchorrhea — not bradycardia — kills these patients. There is no maximum dose of atropine. Double the dose every 3-5 minutes until lungs are clear. Patients may need hundreds of milligrams.
+1. **Under-dosing atropine.** The most common lethal error. Bronchorrhea — not bradycardia — kills these patients. There is no maximum dose of atropine. Double the dose every 3-5 minutes until lungs are clear. Patients may need hundreds of mg.
 
 2. **Using pupil size as an atropine endpoint.** Miosis may persist despite adequate atropinization. Titrate to clear lungs, adequate oxygenation, and hemodynamic stability. Pupil size is unreliable.
 

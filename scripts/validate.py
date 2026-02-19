@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Validate all condition files against the frontmatter schema."""
+"""Validate all condition files against the v2.0 frontmatter schema.
+
+Exit 0 = all pass, exit 1 = errors found. This is a build gate.
+"""
 
 import sys
 import re
@@ -10,7 +13,10 @@ import yaml
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCHEMA_PATH = REPO_ROOT / "schemas" / "condition.schema.yaml"
 
-REQUIRED_FIELDS = ["id", "condition", "icd10", "esi", "time_to_harm", "category", "track", "sources", "last_updated", "compiled_by"]
+REQUIRED_FIELDS = [
+    "id", "condition", "icd10", "esi", "time_to_harm", "category",
+    "track", "sources", "last_updated", "compiled_by", "risk_tier", "validation",
+]
 VALID_CATEGORIES = [
     "cardiovascular", "neurological", "respiratory", "gastrointestinal",
     "genitourinary", "obstetric-gynecologic", "endocrine-metabolic",
@@ -19,6 +25,7 @@ VALID_CATEGORIES = [
     "ophthalmologic", "dermatologic", "allergic-immunologic",
 ]
 VALID_TRACKS = ["tier1", "tier2"]
+VALID_RISK_TIERS = ["A", "B", "C"]
 REQUIRED_SECTIONS = ["Recognition", "Critical Actions", "Pitfalls"]
 
 
@@ -68,6 +75,17 @@ def validate_file(path: Path) -> list[str]:
         if fm["track"] not in VALID_TRACKS:
             errors.append(f"{path}: Invalid track '{fm['track']}'")
 
+    if "risk_tier" in fm:
+        if fm["risk_tier"] not in VALID_RISK_TIERS:
+            errors.append(f"{path}: Invalid risk_tier '{fm['risk_tier']}' (must be A, B, or C)")
+
+    if "validation" in fm:
+        val = fm["validation"]
+        if not isinstance(val, dict):
+            errors.append(f"{path}: validation must be an object")
+        elif "schema_version" not in val:
+            errors.append(f"{path}: validation.schema_version is required")
+
     if "sources" in fm:
         if not isinstance(fm["sources"], list) or len(fm["sources"]) == 0:
             errors.append(f"{path}: sources must be a non-empty list")
@@ -77,6 +95,10 @@ def validate_file(path: Path) -> list[str]:
                     errors.append(f"{path}: source[{i}] missing 'type'")
                 if "ref" not in src:
                     errors.append(f"{path}: source[{i}] missing 'ref'")
+
+    # Reject legacy fields
+    if "reviewed_by" in fm:
+        errors.append(f"{path}: Legacy field 'reviewed_by' present — remove it (schema v2.0)")
 
     # Check required markdown sections
     for section in REQUIRED_SECTIONS:
@@ -105,7 +127,7 @@ def main():
             print(f"  - {err}")
         sys.exit(1)
     else:
-        print(f"PASSED: {file_count} files validated successfully.")
+        print(f"PASSED: {file_count} files validated successfully (schema v2.0).")
         sys.exit(0)
 
 

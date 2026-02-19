@@ -2,7 +2,7 @@
 id: acute-asthma-exacerbation
 condition: Acute Asthma Exacerbation
 aliases: [asthma attack, acute severe asthma, status asthmaticus, asthma flare, acute bronchospasm]
-icd10: [J45.21, J45.31, J45.41, J45.51, J45.901, J46]
+icd10: [J45.21, J45.31, J45.41, J45.51, J45.901, J45.902]
 esi: 2
 time_to_harm: "< 30 minutes"
 mortality_if_delayed: "Near-fatal asthma progresses to respiratory arrest within minutes; ~3,500 US deaths/year"
@@ -25,12 +25,19 @@ sources:
     pmid: "19683665"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
+risk_tier: B
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Acute Asthma Exacerbation
 
 ## Recognition

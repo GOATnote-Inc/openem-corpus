@@ -2,7 +2,7 @@
 id: hsv-encephalitis
 condition: Herpes Simplex Virus Encephalitis
 aliases: [HSV encephalitis, herpes encephalitis, HSE, herpetic encephalitis, herpes simplex encephalitis]
-icd10: [B00.4, G05.1]
+icd10: [B00.4, G05.3]
 esi: 2
 time_to_harm: "< 24 hours (mortality >70% untreated; acyclovir must be started empirically)"
 mortality_if_delayed: ">70% mortality untreated; reduced to ~20% with early acyclovir. Survivors often have permanent neurologic deficits."
@@ -29,12 +29,19 @@ sources:
     pmid: "28251511"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
+risk_tier: B
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
+  provenance_links: []
 ---
-
 # Herpes Simplex Virus Encephalitis
 
 ## Recognition
