@@ -28,6 +28,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Heat Stroke
@@ -130,7 +131,7 @@ verification:
 **Rhabdomyolysis Management:**
 - Aggressive IV hydration: NS 200-300 mL/hr targeting UOP 200-300 mL/hr
 - Monitor CK every 6-12 hours
-- Monitor potassium (hyperkalemia) — calcium gluconate 3g IV, insulin 10 units IV + dextrose 50g IV, kayexalate, or emergent dialysis if refractory
+- Monitor potassium (hyperkalemia) — calcium gluconate 3g IV, insulin 10 units IV + D50W 50 mL (25 g) IV, kayexalate, or emergent dialysis if refractory
 - Sodium bicarbonate drip (150 mEq/L in D5W) to alkalinize urine pH >6.5 (controversial but still practiced for myoglobin clearance)
 
 **Seizure Control:**

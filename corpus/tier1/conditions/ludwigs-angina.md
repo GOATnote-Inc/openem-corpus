@@ -28,6 +28,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Ludwig's Angina
@@ -115,7 +116,7 @@ verification:
 ### Antibiotic Therapy
 - **First-line:** Ampicillin-sulbactam 3 g IV q6h (covers oral aerobes and anaerobes)
 - **Penicillin-allergic:** Clindamycin 900 mg IV q8h + ceftriaxone 2 g IV q24h
-- **MRSA concern:** Add vancomycin 25-30 mg/kg IV loading dose (then 15-20 mg/kg IV q8-12h, target trough 15-20 mcg/mL)
+- **MRSA concern:** Add vancomycin 25-30 mg/kg IV loading dose (then 15-20 mg/kg IV q8-12h, target AUC/MIC 400-600)
 - Duration: 2-3 weeks IV, transition to PO when improving clinically
 
 ### Adjunctive Therapy

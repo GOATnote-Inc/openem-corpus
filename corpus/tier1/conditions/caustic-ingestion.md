@@ -32,6 +32,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Caustic Ingestion
@@ -155,7 +156,7 @@ verification:
 
 ### Medications
 - **PPI:** Pantoprazole 40 mg IV BID for acid injury (reduces ongoing acid contact with damaged mucosa)
-- **Antibiotics:** Only if perforation documented or high-grade injury (Zargar 3). Broad-spectrum: piperacillin-tazobactam 4.5 g IV q8h or meropenem 1 g IV q8h.
+- **Antibiotics:** Only if perforation documented or high-grade injury (Zargar 3). Broad-spectrum: piperacillin-tazobactam 4.5 g IV q6h or meropenem 1 g IV q8h.
 - **Steroids: NOT recommended.** Multiple studies show no benefit in preventing strictures and may increase infection and perforation risk.
 - **Sucralfate:** No proven benefit; do not use acutely.
 

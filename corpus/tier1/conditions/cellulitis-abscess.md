@@ -32,6 +32,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Cellulitis and Cutaneous Abscess
@@ -147,7 +148,7 @@ verification:
   - If MRSA risk: add TMP-SMX DS 1-2 tabs PO BID or doxycycline 100 mg PO BID
 - **Moderate (IV):**
   - Cefazolin 1-2 g IV q8h
-  - If MRSA risk: vancomycin 15-20 mg/kg IV q8-12h (trough target 15-20 mcg/mL) or daptomycin 4 mg/kg IV daily
+  - If MRSA risk: vancomycin 15-20 mg/kg IV q8-12h (target AUC/MIC 400-600) or daptomycin 4 mg/kg IV daily
 - **Severe / Necrotizing fasciitis:**
   - Vancomycin 25-30 mg/kg IV loading dose, then 15-20 mg/kg IV q8-12h PLUS piperacillin-tazobactam 4.5 g IV q6h PLUS clindamycin 900 mg IV q8h (clindamycin for toxin suppression)
   - Emergent surgical debridement — antibiotics are adjunct, not definitive

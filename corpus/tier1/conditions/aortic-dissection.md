@@ -21,6 +21,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Aortic Dissection
@@ -106,7 +107,7 @@ Assigns 1 point per category (0-3):
 2. **Pain control:** Morphine 2-4 mg IV q5-15min or fentanyl 25-100 mcg IV q5-10min
 3. **Heart rate control (target HR < 60 bpm):**
    - Esmolol 500 mcg/kg IV bolus, then 50-200 mcg/kg/min infusion (preferred: titratable, short-acting)
-   - OR labetalol 20 mg IV, then 20-80 mg IV q10min (max 300 mg) or infusion 0.5-2 mg/min
+   - OR labetalol 20 mg IV, then 40 mg, then 80 mg IV q10min (max 300 mg total) or infusion 0.5-2 mg/min
 4. **Blood pressure control (target SBP 100-120 mmHg):**
    - If beta-blocker alone insufficient, add nicardipine 5 mg/hr IV, titrate by 2.5 mg/hr q5-15min (max 15 mg/hr)
    - OR nitroprusside 0.25-10 mcg/kg/min (ONLY after adequate beta-blockade to prevent reflex tachycardia)

@@ -88,7 +88,7 @@ verification:
 4. **ICP management while awaiting OR:**
    - Elevate head of bed to 30 degrees
    - Mannitol 1 g/kg IV bolus (20% solution) for signs of herniation
-   - OR hypertonic saline 23.4% 30 mL IV over 10-20 minutes via central line (or 3% NaCl 250-500 mL IV via peripheral line)
+   - OR hypertonic saline 23.4% 30 mL IV over 10-20 minutes via central line (or 3% NaCl 250 mL IV bolus via peripheral line, can repeat)
 5. **Reverse anticoagulation** — if on warfarin: 4-factor PCC 25-50 IU/kg IV + vitamin K 10 mg IV. If on DOAC: andexanet alfa or 4-factor PCC. If on antiplatelet: platelet transfusion (evidence debated but reasonable with active hemorrhage and planned surgery).
 6. **Avoid secondary brain injury:**
    - Target SBP > 100 mmHg (age > 49) or > 110 mmHg (age 15-49) per BTF guidelines
@@ -148,9 +148,9 @@ verification:
 | Intervention | Dose/Details |
 |-------------|-------------|
 | **Head of bed elevation** | 30 degrees, midline position, loosen cervical collar if safe |
-| **Mannitol** | 1-1.5 g/kg IV bolus (20% solution, via peripheral or central line). Can repeat 0.25-0.5 g/kg q4-6h. Hold if serum osmolality > 320 mOsm/L or SBP < 90 mmHg. |
+| **Mannitol** | 1 g/kg IV bolus (20% solution, via peripheral or central line). Can repeat 0.25-0.5 g/kg q4-6h. Hold if serum osmolality > 320 mOsm/L or SBP < 90 mmHg. |
 | **Hypertonic saline 23.4%** | 30 mL IV over 10-20 min via central line. Alternative to mannitol. Preferred if hypotensive (does not cause osmotic diuresis). |
-| **Hypertonic saline 3%** | 250-500 mL IV via peripheral line as alternative if no central access |
+| **Hypertonic saline 3%** | 250 mL IV bolus via peripheral line (can repeat); alternative if no central access |
 | **Hyperventilation** | Target PaCO2 30-35 mmHg ONLY as temporizing bridge to OR (< 30 min). Sustained hyperventilation causes cerebral ischemia — avoid routine use. |
 | **Seizure prophylaxis** | Levetiracetam 1,000-1,500 mg IV loading dose or fosphenytoin 20 mg PE/kg IV |
 

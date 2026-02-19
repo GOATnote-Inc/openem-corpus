@@ -35,6 +35,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Spinal Epidural Abscess
@@ -135,7 +136,7 @@ verification:
 
 | Regimen | Dose | Coverage |
 |---------|------|----------|
-| **Vancomycin** | 25-30 mg/kg IV loading dose, then 15-20 mg/kg IV q8-12h (target trough 15-20 mcg/mL) | MRSA, MSSA, streptococci |
+| **Vancomycin** | 25-30 mg/kg IV loading dose, then 15-20 mg/kg IV q8-12h (target AUC/MIC 400-600) | MRSA, MSSA, streptococci |
 | PLUS **Ceftriaxone** | 2 g IV q12h | Gram-negative rods |
 | OR PLUS **Cefepime** | 2 g IV q8h | Broader gram-negative coverage including Pseudomonas (for IVDU, immunocompromised) |
 | OR PLUS **Meropenem** | 2 g IV q8h | Broadest gram-negative coverage; use if Pseudomonas or ESBL-producing organisms suspected |

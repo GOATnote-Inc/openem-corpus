@@ -132,7 +132,7 @@ Reduce MAP by no more than 25% in the first hour, then to 160/100 mmHg over the 
 - **Avoid beta-blockers** — unopposed alpha stimulation worsens hypertension
 
 ### Eclampsia/Pre-eclampsia
-- Magnesium sulfate 4 g IV over 15-20 minutes, then 1-2 g/hr infusion (seizure prophylaxis and treatment)
+- Magnesium sulfate 4-6 g IV over 15-20 minutes, then 1-2 g/hr infusion (seizure prophylaxis and treatment)
 - Labetalol 20 mg IV, escalating doses; OR hydralazine 5 mg IV q20min; OR nicardipine 5-15 mg/hr
 - Target SBP < 160, DBP < 110
 - Delivery is definitive treatment

@@ -29,6 +29,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Status Epilepticus
@@ -133,7 +134,7 @@ verification:
 - **Eclampsia:** Magnesium sulfate 4-6 g IV over 15-20 minutes, then 1-2 g/hr; emergent delivery
 - **Alcohol withdrawal seizures:** Benzodiazepines; phenytoin is ineffective for withdrawal seizures
 - **Hyponatremia (Na < 120):** Hypertonic saline (3% NaCl) 150 mL IV over 10 minutes; repeat x 2 if seizure persists; target 4-6 mEq/L increase
-- **Organophosphate poisoning:** Atropine 2-4 mg IV q5min + pralidoxime 1-2 g IV over 15-30 minutes
+- **Organophosphate poisoning:** Atropine 2-5 mg IV q3-5min + pralidoxime 1-2 g IV over 15-30 minutes
 
 ### Supportive Care
 - Vasopressors for anesthetic-induced hypotension

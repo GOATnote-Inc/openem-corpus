@@ -131,7 +131,7 @@ verification:
 **Supportive Care:**
 - ICU admission with invasive monitoring
 - Fluid resuscitation — target MAP >= 65, UOP >= 0.5 mL/kg/hr
-- Vasopressors — norepinephrine first-line, add vasopressin 0.04 units/min if refractory
+- Vasopressors — norepinephrine 0.05-0.5 mcg/kg/min IV first-line, add vasopressin 0.03 units/min if refractory
 - Blood product resuscitation as needed (massive tissue loss, DIC)
 - Nutritional support — high-protein, high-calorie diet (massive protein losses from open wounds)
 

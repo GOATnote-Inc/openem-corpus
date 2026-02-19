@@ -33,6 +33,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Globe Rupture (Open Globe Injury)
@@ -124,7 +125,7 @@ verification:
 **Antibiotics (endophthalmitis prophylaxis):**
 - **Systemic (start in ED):**
   - Levofloxacin 500 mg IV every 24 hours (covers gram-negatives and has excellent intraocular penetration)
-  - OR: vancomycin 1 g IV every 12 hours + ceftazidime 1 g IV every 8 hours (broader coverage for high-risk wounds: soil contamination, rural setting, organic foreign body, delayed presentation)
+  - OR: vancomycin 15-20 mg/kg IV every 8-12h (target AUC/MIC 400-600) + ceftazidime 1 g IV every 8 hours (broader coverage for high-risk wounds: soil contamination, rural setting, organic foreign body, delayed presentation)
 - **Topical:** moxifloxacin 0.5% ophthalmic 1 drop to affected eye (if wound permits safe instillation without pressure)
 - Start antibiotics as early as possible — endophthalmitis risk increases with every hour of delay
 - High-risk for endophthalmitis: rural setting, soil/organic contamination, lens capsule disruption, retained IOFB, delayed presentation >24 hours

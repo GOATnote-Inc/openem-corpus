@@ -175,7 +175,7 @@ Heart rate < 60 bpm (or rate insufficient to maintain adequate perfusion) with s
 - Correct hypokalemia (potentiates digoxin toxicity)
 
 **Organophosphate poisoning:**
-- Atropine 2-4 mg IV, double dose every 3-5 minutes until secretions dry
+- Atropine 2-5 mg IV, double dose every 3-5 minutes until secretions dry
 - Pralidoxime (2-PAM) 1-2 g IV over 15-30 minutes
 
 ### Transvenous Pacing
@@ -185,7 +185,7 @@ Heart rate < 60 bpm (or rate insufficient to maintain adequate perfusion) with s
 - Consult cardiology/EP for placement
 
 ### Treat Underlying Cause
-- **Hyperkalemia:** Calcium gluconate 3 g IV, insulin 10 units IV + D50 25 g, albuterol 10-20 mg nebulized, sodium bicarbonate 150 mEq IV if acidotic
+- **Hyperkalemia:** Calcium gluconate 3 g IV, insulin 10 units IV + D50 25 g, albuterol 10-20 mg nebulized, sodium bicarbonate 50-100 mEq IV if acidotic
 - **Inferior MI:** Reperfusion therapy (PCI), avoid nitroglycerin and morphine (preload-dependent), IV fluids for RV infarct
 - **Hypothermia:** Active rewarming; pacing often ineffective until core temp > 30C
 

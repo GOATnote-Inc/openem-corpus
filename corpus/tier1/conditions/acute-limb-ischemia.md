@@ -30,6 +30,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Acute Limb Ischemia
@@ -141,7 +142,7 @@ verification:
 
 **Post-Revascularization Monitoring:**
 - **Compartment syndrome** — monitor for tense compartments, pain out of proportion, pain with passive stretch for 24-48 hours. Fasciotomy threshold: compartment pressure >30 mmHg or within 30 mmHg of diastolic pressure.
-- **Reperfusion injury** — check potassium, CK, lactate, and renal function every 4-6 hours for 24 hours. Treat hyperkalemia aggressively (calcium gluconate 1-2 g IV, repeat as needed; insulin 10 units + D50 50 mL IV; sodium bicarbonate 50 mEq IV if acidotic).
+- **Reperfusion injury** — check potassium, CK, lactate, and renal function every 4-6 hours for 24 hours. Treat hyperkalemia aggressively (calcium gluconate 3 g IV (30 mL of 10%), repeat as needed; insulin 10 units + D50 50 mL IV; sodium bicarbonate 50 mEq IV if acidotic).
 - **Myoglobinuria** — maintain urine output >200 mL/hr with aggressive crystalloid. Urine alkalinization (sodium bicarbonate 150 mEq in 1 L D5W) to keep urine pH >6.5.
 - Continuous telemetry monitoring
 - Prophylactic fasciotomy at time of revascularization if ischemia time >4-6 hours

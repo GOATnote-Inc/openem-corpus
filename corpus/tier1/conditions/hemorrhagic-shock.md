@@ -145,7 +145,7 @@ verification:
 
 **Vasopressors:**
 - NOT first-line — volume replacement is primary
-- Norepinephrine 0.05-0.5 mcg/kg/min or vasopressin 0.04 units/min as bridge during massive hemorrhage when blood products are not yet available or patient is in extremis
+- Norepinephrine 0.05-0.5 mcg/kg/min or vasopressin 0.03 units/min as bridge during massive hemorrhage when blood products are not yet available or patient is in extremis
 - Push-dose epinephrine: 10-20 mcg IV (1 mL of 10 mcg/mL concentration) for peri-arrest
 
 **Goal-Directed Resuscitation Endpoints:**

@@ -30,6 +30,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Postpartum Hemorrhage
@@ -149,7 +150,7 @@ verification:
 - Activate protocol early (EBL > 1,500 mL, ongoing hemorrhage, hemodynamic instability)
 - Target 1:1:1 ratio of pRBC:FFP:platelets
 - Cryoprecipitate 10 units if fibrinogen < 200 mg/dL
-- Calcium gluconate 1-2 g IV for citrate-induced hypocalcemia (q4 units blood)
+- Calcium gluconate 3 g IV for citrate-induced hypocalcemia (q4 units blood)
 - Avoid hypothermia: use fluid warmers, forced-air warming
 
 **For Uterine Inversion:**

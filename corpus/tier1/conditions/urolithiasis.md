@@ -31,6 +31,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Urolithiasis (Renal Colic)
@@ -133,7 +134,7 @@ verification:
 
 ### Infected Obstructing Stone (Urologic Emergency)
 - **Do NOT attempt to pass the stone medically** — this is a surgical emergency
-- IV antibiotics immediately: piperacillin-tazobactam 4.5 g IV q8h or cefepime 2 g IV q8h
+- IV antibiotics immediately: piperacillin-tazobactam 4.5 g IV q6h or cefepime 2 g IV q8h
 - Emergent urology consultation for decompression: percutaneous nephrostomy tube or ureteral stent placement
 - Vasopressors as needed for septic shock
 - ICU admission

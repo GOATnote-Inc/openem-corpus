@@ -32,6 +32,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Ovarian Torsion
@@ -140,7 +141,7 @@ verification:
 - Ketorolac 15-30 mg IV (unless pregnant or renal impairment)
 - Ondansetron 4 mg IV for nausea/vomiting
 - Preoperative labs: CBC, BMP, type and screen, coagulation studies
-- Antibiotics: not routinely indicated unless necrosis or infection suspected (piperacillin-tazobactam 3.375 g IV if concern for tubo-ovarian abscess)
+- Antibiotics: not routinely indicated unless necrosis or infection suspected (piperacillin-tazobactam 4.5 g IV q6h if concern for tubo-ovarian abscess)
 
 **In Pregnancy:**
 - Torsion most common in first trimester (corpus luteum cyst)

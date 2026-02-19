@@ -132,8 +132,8 @@ verification:
 - Avoid large-volume crystalloid resuscitation — worsens coagulopathy and disrupts clot
 - Transfuse pRBCs, FFP, and platelets in 1:1:1 ratio (massive transfusion protocol)
 - Tranexamic acid (TXA) 1 g IV over 10 minutes (extrapolated from trauma literature; no large rAAA-specific RCT, but biologically rational to reduce fibrinolysis)
-- Calcium gluconate 1-3 g IV to counter citrate-induced hypocalcemia from massive transfusion
-- Vasopressors: norepinephrine 0.05-0.5 mcg/kg/min IV or vasopressin 0.04 units/min IV as temporizing measure — do NOT use as substitute for hemorrhage control
+- Calcium gluconate 3 g IV to counter citrate-induced hypocalcemia from massive transfusion
+- Vasopressors: norepinephrine 0.05-0.5 mcg/kg/min IV or vasopressin 0.03 units/min IV as temporizing measure — do NOT use as substitute for hemorrhage control
 
 ### Surgical Repair
 **EVAR (endovascular aneurysm repair):**
