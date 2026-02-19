@@ -149,7 +149,7 @@ verification:
 
 ### Flumazenil (Use With Extreme Caution)
 - **Competitive GABA-A antagonist** — reverses benzodiazepine effect
-- **Dose:** 0.2 mg IV over 30 seconds. If no response at 60 seconds: 0.3 mg IV. Then 0.5 mg IV every 60 seconds. Maximum total dose: 3-5 mg.
+- **Dose:** 0.2 mg IV over 30 seconds. If no response at 60 seconds: 0.3 mg IV. Then 0.5 mg IV every 60 seconds. Maximum initial cumulative dose: 3 mg. If partial response, may titrate to 5 mg total.
 - **Onset:** 1-2 minutes. **Duration:** 45-90 minutes.
 - **Re-sedation risk:** Flumazenil duration (45-90 min) is shorter than most benzodiazepines. Patient may re-sedate after initial reversal. Requires prolonged monitoring.
 

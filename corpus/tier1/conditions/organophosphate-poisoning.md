@@ -28,6 +28,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Organophosphate Poisoning
@@ -66,7 +67,7 @@ verification:
 ## Critical Actions
 
 1. **Decontaminate immediately** — remove all clothing, wash skin with soap and water. Staff must wear PPE (gown, gloves, N95 minimum). Do NOT allow contaminated patient into resuscitation area without decontamination.
-2. **Atropine 2-5 mg IV, double the dose every 5 minutes** until bronchorrhea clears and oxygenation improves. There is NO maximum dose. Severely poisoned patients may require 100+ mg in the first 24 hours. Target: dry lungs, HR >80, SpO2 >90%. Do NOT use pupil size as an atropine endpoint.
+2. **Atropine 2-5 mg IV, double the dose every 3-5 minutes** until bronchorrhea clears and oxygenation improves. There is NO maximum dose. Severely poisoned patients may require 100+ mg in the first 24 hours. Target: dry lungs, HR >80, SpO2 >90%. Do NOT use pupil size as an atropine endpoint.
 3. **Pralidoxime (2-PAM) 30 mg/kg IV (max 2g) over 15-30 minutes**, then infusion 8-10 mg/kg/hr. Reactivates acetylcholinesterase before "aging" occurs. Most effective within 12-24 hours of exposure (varies by agent). Continue for 24-48 hours minimum.
 4. **Secure the airway** — intubate early if bronchorrhea is uncontrolled, respiratory muscle weakness, or GCS <8. Avoid succinylcholine (prolonged paralysis — pseudocholinesterase is inhibited). Use rocuronium 1.2 mg/kg IV.
 5. **Benzodiazepines for seizures** — diazepam 10 mg IV or midazolam 5-10 mg IV/IM. Repeat as needed. OP-induced seizures are resistant to phenytoin.

@@ -27,6 +27,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Hypertensive Emergency
@@ -99,7 +100,7 @@ Reduce MAP by no more than 25% in the first hour, then to 160/100 mmHg over the 
 
 ### Hypertensive Encephalopathy / General Hypertensive Emergency
 - **Nicardipine** 5 mg/hr IV, titrate by 2.5 mg/hr q5-15min (max 15 mg/hr) — preferred first-line
-- **Clevidipine** 1-2 mg/hr IV, titrate by doubling q90sec (max 21 mg/hr) — ultra-short acting
+- **Clevidipine** 1-2 mg/hr IV, titrate by doubling q90sec (max 32 mg/hr short-term; average ≤ 21 mg/hr over 24h due to lipid load) — ultra-short acting
 - **Labetalol** 20 mg IV bolus, then 40 mg, then 80 mg q10min (max 300 mg total); infusion 0.5-2 mg/min
 
 ### Acute Aortic Dissection
@@ -109,9 +110,9 @@ Reduce MAP by no more than 25% in the first hour, then to 160/100 mmHg over the 
 - **NEVER give vasodilators before beta-blocker** — reflex tachycardia increases aortic shear stress
 
 ### Acute Pulmonary Edema / Heart Failure
-- Nitroglycerin 5-200 mcg/min IV (potent venodilator, reduces preload)
+- Nitroglycerin 20-200 mcg/min IV for hypertensive pulmonary edema (potent venodilator, reduces preload; start higher than generic 5 mcg/min — titrate aggressively)
 - Nicardipine 5-15 mg/hr IV
-- Clevidipine 1-21 mg/hr IV
+- Clevidipine 1-32 mg/hr IV (average ≤ 21 mg/hr over 24h)
 - Add furosemide 40-80 mg IV for volume overload
 - Avoid labetalol in acute decompensated HF (negative inotropy)
 

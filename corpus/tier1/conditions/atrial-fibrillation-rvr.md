@@ -27,6 +27,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Atrial Fibrillation with Rapid Ventricular Response
@@ -75,7 +76,7 @@ verification:
 
 1. **Unstable patient:** Synchronized cardioversion at 120-200 J biphasic; sedate with etomidate 0.2-0.3 mg/kg IV or midazolam 2-5 mg IV if time permits
 2. **Stable patient — rate control strategy:**
-   - Diltiazem 0.25 mg/kg IV over 2 minutes (typical dose 15-20 mg); repeat at 0.35 mg/kg IV after 15 minutes if needed; infusion at 5-15 mg/hr
+   - Diltiazem 0.25 mg/kg IV over 2 minutes (typical dose 15-20 mg, max 20 mg); repeat at 0.35 mg/kg IV after 15 minutes if needed; infusion at 5-15 mg/hr
    - Metoprolol 5 mg IV q5min x 3 doses (avoid if acute HF, hypotension, bronchospasm)
 3. **Magnesium** 2 g IV over 15 minutes — augments rate control, correct hypomagnesemia
 4. **Assess CHA2DS2-VASc score** for anticoagulation decision
@@ -129,7 +130,7 @@ verification:
 
 **Pharmacologic cardioversion (AFib duration < 48 hours or adequately anticoagulated):**
 - Procainamide 15-17 mg/kg IV over 30-60 minutes (monitor for hypotension and QRS widening)
-- Ibutilide 1 mg IV over 10 minutes; repeat x 1 after 10 minutes if no conversion (monitor for torsades — requires 4-6h telemetry post-dose)
+- Ibutilide 1 mg IV over 10 minutes (0.01 mg/kg for patients < 60 kg); repeat x 1 after 10 minutes if no conversion (monitor for torsades — requires 4-6h telemetry post-dose)
 - Amiodarone 150 mg IV over 10 min (less effective acutely but safer in structural heart disease)
 
 ### Pre-excited AFib (WPW)

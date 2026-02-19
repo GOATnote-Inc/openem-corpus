@@ -190,7 +190,7 @@ BRUE criteria (replaces ALTE): Episode in infant < 1 year with >= 1 of:
 - **Treatment:** D10W 2 mL/kg IV bolus (provides 200 mg/kg dextrose). Do NOT use D50W (hyperosmolar, causes sclerosis of peripheral veins and rebound hypoglycemia)
 - Follow with D10W continuous infusion at glucose infusion rate (GIR) of 6-8 mg/kg/min
 - Recheck glucose in 15-30 minutes; repeat bolus if still < 45 mg/dL
-- If refractory to D10W: hydrocortisone 5 mg/kg IV or glucagon 0.03 mg/kg IV/IM (max 1 mg)
+- If refractory to D10W: hydrocortisone 5 mg/kg/dose IV q12h or glucagon 0.03-0.1 mg/kg IV/IM (max 1 mg)
 
 ### Neonatal Jaundice / Kernicterus Prevention
 - Plot total serum bilirubin on Bhutani nomogram for risk zone

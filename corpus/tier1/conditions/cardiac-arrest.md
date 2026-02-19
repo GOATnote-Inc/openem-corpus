@@ -147,7 +147,7 @@ Cardiac arrest is a clinical state, not a diagnosis. The differential is the und
 - Initiate in all comatose patients (GCS < 8) after ROSC regardless of initial rhythm
 - Target temperature 32-36°C for at least 24 hours (TTM2 trial showed no benefit of 33°C vs 36°C; avoid fever >= 37.8°C for 72 hours)
 - Methods: surface cooling devices (preferred), endovascular cooling catheters. Avoid large-volume cold IV saline bolus (RINSE trial: associated with pulmonary edema and re-arrest without improving outcomes)
-- Shivering management: buspirone 30 mg NG, meperidine 25-50 mg IV, surface counterwarming; neuromuscular blockade if refractory (cisatracurium 0.15 mg/kg IV)
+- Shivering management: buspirone 30 mg NG q8h, meperidine 25-50 mg IV, surface counterwarming; neuromuscular blockade if refractory (cisatracurium 0.15 mg/kg IV)
 - Rewarm slowly at 0.25-0.5°C/hour
 
 **Seizure management:**

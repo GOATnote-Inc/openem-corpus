@@ -27,6 +27,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Necrotizing Fasciitis
@@ -70,7 +71,7 @@ verification:
 ## Critical Actions
 
 1. **Emergent surgical consultation** — call surgery immediately when NSTI is suspected. Do NOT delay for imaging or lab results. Surgical debridement is the definitive treatment.
-2. **Broad-spectrum IV antibiotics** — vancomycin 25-30 mg/kg IV + piperacillin-tazobactam 4.5 g IV q6h + clindamycin 900 mg IV q8h. Clindamycin is critical for toxin suppression (inhibits protein synthesis, reduces GAS superantigen/exotoxin production).
+2. **Broad-spectrum IV antibiotics** — vancomycin 25-30 mg/kg IV loading dose then 15-20 mg/kg q8-12h + piperacillin-tazobactam 4.5 g IV q6h + clindamycin 900 mg IV q8h. Clindamycin is critical for toxin suppression (inhibits protein synthesis, reduces GAS superantigen/exotoxin production).
 3. **Aggressive fluid resuscitation** — these patients develop septic shock rapidly. NS or LR boluses, titrate to MAP >= 65 mmHg. Vasopressors (norepinephrine) for refractory hypotension.
 4. **Serial exams** — mark the borders of erythema with a skin marker and timestamp. Progression beyond marked borders despite antibiotics supports NSTI diagnosis.
 5. **Obtain labs** — CBC, CMP, CRP, lactate, CK, blood cultures, coagulation studies. Calculate LRINEC score.
@@ -115,7 +116,7 @@ verification:
 ## Treatment
 
 **Antibiotics (start immediately, do not wait for cultures):**
-- Empiric broad-spectrum: vancomycin 25-30 mg/kg IV (MRSA coverage) + piperacillin-tazobactam 4.5 g IV q6h (gram-negative and anaerobic coverage) + clindamycin 900 mg IV q8h (toxin suppression)
+- Empiric broad-spectrum: vancomycin 25-30 mg/kg IV loading dose, then 15-20 mg/kg IV q8-12h (MRSA coverage; target AUC/MIC 400-600) + piperacillin-tazobactam 4.5 g IV q6h (gram-negative and anaerobic coverage) + clindamycin 900 mg IV q8h (toxin suppression)
 - Alternative: vancomycin + meropenem 1 g IV q8h + clindamycin 900 mg IV q8h
 - Penicillin allergy: vancomycin + aztreonam 2 g IV q8h + metronidazole 500 mg IV q8h + clindamycin 900 mg IV q8h
 - Water exposure (Vibrio): add doxycycline 100 mg IV q12h

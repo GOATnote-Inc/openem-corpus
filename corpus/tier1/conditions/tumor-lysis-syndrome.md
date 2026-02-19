@@ -29,6 +29,7 @@ reviewed_by: null
 verification:
   pmids_verified: "2026-02-18"
   audit_completed: "2026-02-18"
+  dosing_crosscheck: "2026-02-19"
 ---
 
 # Tumor Lysis Syndrome
@@ -114,7 +115,7 @@ verification:
 - If rasburicase contraindicated: allopurinol 800 mg PO load then 300-600 mg/day + aggressive hydration + urinary alkalinization (sodium bicarbonate 50-100 mEq/L in IV fluids, target urine pH 6.5-7.0). Do NOT alkalinize urine if hyperphosphatemia present (promotes calcium phosphate crystallization)
 
 *Hyperkalemia:*
-- Calcium gluconate 10% 10-20 mL (1-2 g) IV over 10 min (membrane stabilization) — ONLY if ECG changes AND no severe hyperphosphatemia
+- Calcium gluconate 10% 10-20 mL (1-2 g) IV over 10 min (membrane stabilization) — ONLY if ECG changes AND no severe hyperphosphatemia (lower dose than isolated hyperkalemia due to calcium-phosphate precipitation risk; see hyperkalemia.md for standard 3 g dosing)
 - Insulin 10 units regular IV + D50 50 mL IV (shift potassium intracellularly)
 - Sodium bicarbonate 50-150 mEq IV if metabolic acidosis
 - Albuterol 10-20 mg nebulized (adjunctive)
