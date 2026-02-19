@@ -12,9 +12,6 @@ sources:
   - type: guideline
     ref: "2023 AHA/ASA Guideline for the Management of Patients With Aneurysmal Subarachnoid Hemorrhage"
     doi: "10.1161/STR.0000000000000436"
-  - type: guideline
-    ref: "2012 AHA/ASA Guidelines for the Management of Aneurysmal Subarachnoid Hemorrhage"
-    doi: "10.1161/STR.0b013e3182587839"
   - type: pubmed
     ref: "Perry JJ et al. Clinical decision rules to rule out subarachnoid hemorrhage for acute headache. JAMA. 2013;310(12):1248-1255"
     pmid: "24065011"
@@ -24,7 +21,7 @@ sources:
   - type: pubmed
     ref: "Dubosh NM et al. Sensitivity of Early Brain Computed Tomography to Exclude Aneurysmal Subarachnoid Hemorrhage: A Systematic Review and Meta-Analysis. Stroke. 2016;47(3):750-755"
     pmid: "26797666"
-last_updated: "2026-02-18"
+last_updated: "2026-02-19"
 compiled_by: agent
 risk_tier: A
 validation:
@@ -36,7 +33,7 @@ validation:
   duplicate_content_check: "2026-02-19"
   outlier_detection_flag: clear
   schema_version: "2.0"
-  guideline_version_reference: null
+  guideline_version_reference: "2023 AHA/ASA"
   provenance_links: []
 ---
 # Subarachnoid Hemorrhage

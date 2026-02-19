@@ -10,12 +10,12 @@ track: tier1
 sources:
   - type: guideline
     ref: "2011 AAP Clinical Practice Guideline: Febrile Seizures — Neurodiagnostic Evaluation of the Child with a Simple Febrile Seizure"
-    pmid: "22372159"
+    pmid: "21285335"
   - type: guideline
     ref: "2008 AAP Clinical Practice Guideline: Treatment of the Child with Simple Febrile Seizures"
     pmid: "18519501"
   - type: review
-    ref: "Leung AKC et al. Febrile Seizures: An Updated Review. Cureus 2018;10(12):e3777"
+    ref: "Leung AKC et al. Febrile Seizures: An Overview. Drugs Context 2018;7:212536"
     pmid: "30038660"
   - type: review
     ref: "Patel N et al. Febrile Seizures. BMJ 2015;351:h4240"

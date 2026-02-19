@@ -9,7 +9,7 @@ category: psychiatric
 track: tier1
 sources:
   - type: guideline
-    ref: "2012 ACEP Clinical Policy: Critical Issues in the Diagnosis and Management of the Adult Psychiatric Patient in the Emergency Department"
+    ref: "2017 ACEP Clinical Policy: Critical Issues in the Diagnosis and Management of the Adult Psychiatric Patient in the Emergency Department. Ann Emerg Med 2017;69(4):480-498"
     pmid: "28335913"
   - type: guideline
     ref: "2020 APA Practice Guidelines for the Treatment of Schizophrenia, Third Edition"

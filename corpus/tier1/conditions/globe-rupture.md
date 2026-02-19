@@ -18,8 +18,8 @@ sources:
   - type: review
     ref: "Ahmed Y et al. Endophthalmitis Following Open Globe Injuries. Eye (Lond) 2012;26(2):212-217"
     pmid: "22134598"
-  - type: guideline
-    ref: "Colyer MH et al. Delayed Intraocular Foreign Body Removal Does Not Worsen Outcome. Br J Ophthalmol 2007;91(5):653-655"
+  - type: pubmed
+    ref: "Colyer MH et al. Delayed intraocular foreign body removal without endophthalmitis during Operations Iraqi Freedom and Enduring Freedom. Ophthalmology 2007;114(8):1439-1447"
     pmid: "17331579"
   - type: review
     ref: "Bhagat N et al. Post-Traumatic Infectious Endophthalmitis. Surv Ophthalmol 2011;56(3):214-251"

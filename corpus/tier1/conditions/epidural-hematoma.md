@@ -15,9 +15,6 @@ sources:
   - type: review
     ref: "Bullock MR et al. Surgical Management of Acute Epidural Hematomas. Neurosurgery 2006;58(3 Suppl):S7-S15"
     pmid: "16710967"
-  - type: review
-    ref: "Khairat A, Waseem M. Epidural Hematoma. J Emerg Med 2019"
-    pmid: "30085524"
   - type: guideline
     ref: "2020 ACS TQIP Best Practices in the Management of Traumatic Brain Injury"
   - type: pubmed

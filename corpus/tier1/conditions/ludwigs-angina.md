@@ -14,8 +14,8 @@ sources:
     doi: "10.1093/cid/ciu296"
     pmid: "24973422"
   - type: pubmed
-    ref: "Bridwell RE et al. Ludwig Angina: Emergency Department Recognition and Management. J Emerg Med. 2021;60(4):508-513"
-    pmid: "33481171"
+    ref: "Bridwell RE et al. Diagnosis and management of Ludwig's angina: An evidence-based review. Am J Emerg Med. 2021;41:1-5"
+    pmid: "33383265"
   - type: review
     ref: "Candamourty R et al. Ludwig's Angina - An Emergency: A Case Report with Literature Review. J Nat Sci Biol Med. 2012;3(2):206-208"
     pmid: "23225990"

@@ -15,7 +15,7 @@ sources:
     ref: "Bertolini JC. Hydrofluoric acid: a review of toxicity. J Emerg Med 1992;10(2):163-168"
     pmid: "1607623"
   - type: guideline
-    ref: "Kirkpatrick JJR et al. Hydrofluoric acid burns: a review. Burns 1995;21(7):483-493"
+    ref: "Kirkpatrick JJR et al. An algorithmic approach to the treatment of hydrofluoric acid burns. Burns 1995;21(7):483-493"
     pmid: "8540974"
   - type: review
     ref: "Hatzifotis M et al. Hydrofluoric acid burns. Burns 2004;30(2):156-159"

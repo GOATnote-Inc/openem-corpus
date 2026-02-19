@@ -20,7 +20,7 @@ sources:
     ref: "Bernstein JA et al. The diagnosis and management of acute and chronic urticaria: 2014 update. J Allergy Clin Immunol 2014;133(5):1270-7"
     pmid: "24766875"
   - type: pubmed
-    ref: "Banerji A et al. ACE inhibitor-associated angioedema in the emergency department. Ann Emerg Med 2008;51(4):S130"
+    ref: "Banerji A et al. Multicenter study of patients with angiotensin-converting enzyme inhibitor-induced angioedema who present to the emergency department. Ann Allergy Asthma Immunol 2008;100(4):327-32"
     pmid: "18450117"
   - type: review
     ref: "Zuraw BL. Hereditary angioedema. N Engl J Med 2008;359(10):1027-36"

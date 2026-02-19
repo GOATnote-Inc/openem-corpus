@@ -20,8 +20,8 @@ sources:
   - type: guideline
     ref: "2023 European Resuscitation Council Guidelines: Cardiac Arrest in Special Circumstances — Drowning"
   - type: review
-    ref: "Schmidt AC et al. Drowning: Epidemiology, Prevention, Pathophysiology, Resuscitation. J Emerg Med 2016;51(4):365-376"
-    pmid: "28246575"
+    ref: "Schmidt AC et al. Drowning: Epidemiology, Prevention, Pathophysiology, Resuscitation, and Rewarming. Wilderness Environ Med 2016;27(2):236-251"
+    pmid: "27061040"
 last_updated: "2026-02-18"
 compiled_by: agent
 risk_tier: A
