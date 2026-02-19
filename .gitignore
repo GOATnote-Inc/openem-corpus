@@ -5,3 +5,6 @@ __pycache__/
 dist/
 build/
 .env
+.venv/
+data/index/
+audit-report.json
