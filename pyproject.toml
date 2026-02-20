@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openem"
+version = "0.1.0"
+description = "Python interface to the OpenEM emergency medicine corpus"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+dependencies = [
+    "lancedb>=0.29",
+]
+
+[project.optional-dependencies]
+embeddings = [
+    "sentence-transformers>=5.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["python/openem"]
