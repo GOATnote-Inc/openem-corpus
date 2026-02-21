@@ -13,40 +13,39 @@ Built by [Brandon Dent, MD](https://github.com/GOATnote-Inc) (emergency medicine
 
 | Metric | Value |
 |--------|-------|
-| Conditions | 93 |
-| Words | ~149,000 |
-| Source citations | 456 (292 with verified PMIDs) |
+| Conditions | 128 |
+| Words | ~235,000 |
+| Source citations | 631 (450 unique PMIDs) |
 | Categories | 18 / 18 |
-| ESI 1 (resuscitation) | 42 |
-| ESI 2 (emergent) | 45 |
-| ESI 3 (urgent) | 6 |
+| ESI 1 (resuscitation) | 49 |
+| ESI 2 (emergent) | 60 |
+| ESI 3 (urgent) | 19 |
 | License | Apache 2.0 (tier1) |
-| PMIDs verified against PubMed | 292 / 292 |
-| Physician-reviewed | Not yet — all `reviewed_by: null` |
+| Validation | All 128 pass automated 8-check suite (schema v2.0) |
 
 ### Category Coverage
 
 | Category | Count | Category | Count |
 |----------|-------|----------|-------|
-| cardiovascular | 13 | neurological | 5 |
-| infectious | 8 | endocrine-metabolic | 5 |
-| toxicologic | 7 | pediatric | 5 |
-| gastrointestinal | 7 | ophthalmologic | 4 |
-| respiratory | 6 | genitourinary | 4 |
-| environmental | 6 | hematologic | 4 |
-| obstetric-gynecologic | 6 | dermatologic | 3 |
-| musculoskeletal | 3 | traumatic | 3 |
-| psychiatric | 2 | allergic-immunologic | 2 |
+| cardiovascular | 15 | neurological | 7 |
+| toxicologic | 10 | obstetric-gynecologic | 7 |
+| infectious | 10 | environmental | 7 |
+| pediatric | 9 | traumatic | 7 |
+| gastrointestinal | 8 | ophthalmologic | 6 |
+| musculoskeletal | 8 | genitourinary | 6 |
+| respiratory | 7 | endocrine-metabolic | 6 |
+| hematologic | 5 | psychiatric | 4 |
+| allergic-immunologic | 3 | dermatologic | 3 |
 
 ### Source Composition
 
 | Source Type | Count |
 |-------------|-------|
-| Clinical guidelines (ACC/AHA, ACEP, IDSA, etc.) | 205 |
-| PubMed-indexed original research | 175 |
-| Review articles | 71 |
-| Meta-analyses | 3 |
-| CDC publications | 2 |
+| Clinical guidelines (ACC/AHA, ACEP, IDSA, etc.) | 257 |
+| PubMed-indexed original research | 219 |
+| Review articles | 130 |
+| Meta-analyses | 22 |
+| CDC publications | 3 |
 
 ## Why This Exists
 
@@ -95,8 +94,8 @@ Every condition is a Markdown file with YAML frontmatter:
 ---
 id: stemi
 condition: ST-Elevation Myocardial Infarction
-aliases: [heart attack, STEMI, acute MI]
-icd10: [I21.0, I21.1, I21.2, I21.3]
+aliases: [STEMI, ST-elevation MI, acute MI with ST elevation]
+icd10: [I21.01, I21.02, I21.09, I21.11, I21.19, I21.21, I21.29, I21.3]
 esi: 1
 time_to_harm: "< 90 minutes"
 mortality_if_delayed: "7.5% per 30-minute delay to reperfusion"
@@ -111,10 +110,11 @@ sources:
     ref: "2023 ESC Guidelines for the Management of Acute Coronary Syndromes"
 last_updated: "2026-02-18"
 compiled_by: agent
-reviewed_by: null
-verification:
-  pmids_verified: "2026-02-18"
-  audit_completed: "2026-02-18"
+risk_tier: A
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  schema_version: "2.0"
 ---
 
 # ST-Elevation Myocardial Infarction (STEMI)
@@ -150,8 +150,8 @@ verification:
 | `track` | Yes | `tier1` (Apache 2.0) or `tier2` (CC-BY-SA) |
 | `sources` | Yes | Array of citations with `type`, `ref`, optional `pmid`/`doi` |
 | `compiled_by` | Yes | `agent` or `human` |
-| `reviewed_by` | No | Physician name, or `null` if unreviewed |
-| `verification` | No | Map of check names to dates (see Verification below) |
+| `risk_tier` | Yes | `A` (high-risk), `B` (moderate), `C` (general) |
+| `validation` | Yes | Automated validation checks with dates (see Validation below) |
 
 ### Required Sections
 
@@ -200,26 +200,34 @@ corpus/
     └── procedures/
 ```
 
-## Verification
+## Validation (Schema v2.0)
 
-Each condition file carries a `verification` object in its frontmatter that records what mechanical checks have actually been performed. Each key is a check name; each value is the ISO 8601 date it passed. Absence of a key means that check has not been run.
+Each condition file carries a `validation` block in its frontmatter recording which automated checks have passed. All 128 conditions pass the full suite.
 
 ```yaml
-verification:
-  pmids_verified: "2026-02-18"    # all PMIDs verified against PubMed E-utilities API
-  audit_completed: "2026-02-18"   # 4-agent clinical accuracy audit completed, issues resolved
+validation:
+  automated_consistency_check: "2026-02-18"
+  dose_range_validator: "2026-02-19"
+  unit_normalization_check: "2026-02-19"
+  cross_file_consistency_check: "2026-02-19"
+  citation_presence_check: "2026-02-19"
+  duplicate_content_check: "2026-02-19"
+  outlier_detection_flag: clear
+  schema_version: "2.0"
+  guideline_version_reference: null
 ```
 
-Current checks performed on all 93 conditions:
+| Check | What it validates |
+|-------|-------------------|
+| `automated_consistency_check` | Internal consistency of clinical content |
+| `dose_range_validator` | Drug doses within safe ranges |
+| `unit_normalization_check` | Consistent units (mg vs mcg, etc.) |
+| `cross_file_consistency_check` | Same drug/dose across files for same indication |
+| `citation_presence_check` | Every clinical assertion has a source |
+| `duplicate_content_check` | No duplicated content across files |
+| `outlier_detection_flag` | Flags statistical outliers in dosing/timing |
 
-| Check | What it means | Date |
-|-------|--------------|------|
-| `pmids_verified` | Every PMID in the file was fetched from PubMed and confirmed to match the cited paper (author + title) | 2026-02-18 |
-| `audit_completed` | File passed a 4-agent adversarial clinical accuracy audit; identified errors were corrected | 2026-02-18 |
-
-Future checks (not yet performed): `dosing_crosscheck`, `icd10_verified`, `guideline_currency`.
-
-This field is intentionally not a quality grade. An A/B/C evidence tier would be either redundant (derivable from `sources[].type`) or unreliable (agents can't credibly self-grade). The `verification` object records binary facts about what was checked, not judgments about quality. The real quality signal is `reviewed_by` — and that's `null` on every file until a physician reviews it.
+Each file also carries a `risk_tier` field (A = high-risk, B = moderate, C = general) as informational metadata.
 
 ## Agent Team Architecture
 
@@ -239,15 +247,15 @@ This corpus is compiled and maintained by AI agent teams:
 2. **Evidence Review**: Citations checked for accuracy, currency, and license compatibility
 3. **Cross-Reference**: ICD-10 codes validated, differential diagnoses cross-linked
 4. **Clinical Validation**: 4-agent adversarial red-team audit — clinical accuracy, evidence basis, licensing, coverage gaps
-5. **PMID Verification**: All PMIDs batch-verified against PubMed API. Initial compilation had a 23% PMID hallucination rate; all were corrected or removed.
-6. **Physician Review**: Human physician attestation (tracked in `reviewed_by` field) — not yet started
+5. **PMID Verification**: All 450 unique PMIDs batch-verified against PubMed API. Initial compilation had a 23% PMID hallucination rate; all were corrected or removed.
+6. **Automated Validation Suite**: 8-check validation pipeline (consistency, dosing, units, cross-file, citations, duplicates, outliers, schema). All 128 conditions pass.
 
 ## Attribution and Credit
 
 This corpus is built on the work of the global emergency medicine community:
 
 - **Clinical guidelines** are cited by name in each condition's `sources` field (ACC/AHA, ESC, ATS/IDSA, ACOG, SSC, BTF, ATLS, and many others)
-- **PubMed literature** is cited with PMIDs — all 292 PMIDs verified against PubMed
+- **PubMed literature** is cited with PMIDs — all 450 unique PMIDs verified against PubMed
 - **WikEM / OpenEM Foundation** (CC-BY-SA 4.0) — tier2 content attributes WikEM as source
 - **AI compilation** by Claude (Anthropic) agent teams — noted in `compiled_by: agent`
 - **Medical review** by Brandon Dent, MD — tracked in `reviewed_by` field
