@@ -13,15 +13,16 @@ Built by [Brandon Dent, MD](https://github.com/GOATnote-Inc) (emergency medicine
 
 | Metric | Value |
 |--------|-------|
-| Conditions | 128 |
+| Conditions | 157 |
 | Words | ~235,000 |
 | Source citations | 631 (450 unique PMIDs) |
 | Categories | 18 / 18 |
 | ESI 1 (resuscitation) | 49 |
 | ESI 2 (emergent) | 60 |
 | ESI 3 (urgent) | 19 |
+| ESI 4-5 (less urgent) | 6 |
 | License | Apache 2.0 (tier1) |
-| Validation | All 128 pass automated 8-check suite (schema v2.0) |
+| Validation | All 157 pass automated 13-check suite (schema v2.0) |
 
 ### Category Coverage
 
@@ -36,6 +37,13 @@ Built by [Brandon Dent, MD](https://github.com/GOATnote-Inc) (emergency medicine
 | respiratory | 7 | endocrine-metabolic | 6 |
 | hematologic | 5 | psychiatric | 4 |
 | allergic-immunologic | 3 | dermatologic | 3 |
+
+### Condition Expansion (v2.0)
+
+The corpus has grown from 128 to 157 tier1 conditions:
+- **6 defer conditions** (ESI 4-5): benign-positional-vertigo, pediatric-acute-otitis-media, knee-osteoarthritis, tension-headache, panic-attack, benign-palpitations. These include `confusion_pairs`, `escalation_triggers`, and `disposition_default` fields.
+- **4 gap conditions**: foreign-body-aspiration, snakebite-envenomation, uterine-rupture, pprom
+- **19 expansion conditions**: Additional high-priority conditions across existing categories
 
 ### Source Composition
 
@@ -191,7 +199,7 @@ rg "^esi:" corpus/ --glob "*.md"
 ```
 corpus/
 ├── tier1/                   # Apache 2.0 (copyright-free sources)
-│   ├── conditions/          # 93 condition files (.md)
+│   ├── conditions/          # 157 condition files (.md)
 │   ├── procedures/          # EM procedures (planned)
 │   ├── medications/         # EM pharmacology (planned)
 │   └── decision-aids/       # Clinical decision rules (planned)
@@ -202,7 +210,7 @@ corpus/
 
 ## Validation (Schema v2.0)
 
-Each condition file carries a `validation` block in its frontmatter recording which automated checks have passed. All 128 conditions pass the full suite.
+Each condition file carries a `validation` block in its frontmatter recording which automated checks have passed. All 157 conditions pass the full suite.
 
 ```yaml
 validation:
@@ -248,7 +256,7 @@ This corpus is compiled and maintained by AI agent teams:
 3. **Cross-Reference**: ICD-10 codes validated, differential diagnoses cross-linked
 4. **Clinical Validation**: 4-agent adversarial red-team audit — clinical accuracy, evidence basis, licensing, coverage gaps
 5. **PMID Verification**: All 450 unique PMIDs batch-verified against PubMed API. Initial compilation had a 23% PMID hallucination rate; all were corrected or removed.
-6. **Automated Validation Suite**: 8-check validation pipeline (consistency, dosing, units, cross-file, citations, duplicates, outliers, schema). All 128 conditions pass.
+6. **Automated Validation Suite**: 13-check validation pipeline (consistency, dosing, units, cross-file, citations, duplicates, outliers, schema). All 157 conditions pass.
 
 ## Attribution and Credit
 

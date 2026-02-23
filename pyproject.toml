@@ -8,9 +8,27 @@ version = "0.1.0"
 description = "Python interface to the OpenEM emergency medicine corpus"
 requires-python = ">=3.10"
 license = "Apache-2.0"
+authors = [
+    {name = "GOATnote Inc."},
+    {name = "Brandon Dent, MD"},
+]
+readme = "README.md"
+keywords = ["emergency-medicine", "medical-corpus", "ai-training", "clinical-knowledge", "lancedb"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
 dependencies = [
     "lancedb>=0.29",
 ]
+
+[project.urls]
+Homepage = "https://github.com/GOATnote-Inc/openem-corpus"
+Repository = "https://github.com/GOATnote-Inc/openem-corpus"
+Issues = "https://github.com/GOATnote-Inc/openem-corpus/issues"
 
 [project.optional-dependencies]
 embeddings = [

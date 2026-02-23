@@ -20,7 +20,7 @@
 ## Validation model:
 - No manual review requirements. All quality gates are machine-automated.
 - `scripts/validate.py` enforces schema compliance
-- `scripts/audit.py` runs 8 automated validation passes
+- `scripts/audit.py` runs 13 automated validation passes
 - Risk tiers (A/B/C) are informational metadata, not gatekeeping
 
 ## Licensing:
