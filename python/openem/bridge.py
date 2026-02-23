@@ -20,6 +20,7 @@ Usage:
     system_prefix = bridge.format_system_context("neonatal_sepsis")
 """
 
+import json
 import logging
 from typing import Optional
 
@@ -149,8 +150,9 @@ class OpenEMBridge:
         # Sort by section priority
         def section_priority(r: dict) -> int:
             section = r.get("section", "")
+            parent = section.split(" > ")[0] if " > " in section else section
             try:
-                return PRIORITY_SECTIONS.index(section)
+                return PRIORITY_SECTIONS.index(parent)
             except ValueError:
                 return len(PRIORITY_SECTIONS)
 
@@ -204,3 +206,66 @@ class OpenEMBridge:
             f"{context}\n"
             "--- END REFERENCE ---\n\n"
         )
+
+    def get_context_with_differentials(
+        self,
+        condition: str,
+        top_k: int = 5,
+        max_chars: int = 3000,
+    ) -> Optional[str]:
+        """Retrieve context including confusion-pair escalation triggers.
+
+        For defer conditions, appends escalation triggers from confusion pairs.
+        Presents the primary condition FIRST, then triggers only (not full
+        emergency condition text — avoids anchoring on emergency language).
+        """
+        primary_context = self.get_context(condition, top_k, max_chars - 500)
+        if not primary_context:
+            return None
+
+        # Check if this condition has confusion pairs
+        condition_ids = self.resolve_condition_ids(condition)
+        if not condition_ids:
+            return primary_context
+
+        # Look up confusion pairs from the index metadata
+        confusion_pairs = []
+        for cid in condition_ids:
+            results = self._index.search(
+                query=cid.replace("-", " "),
+                top_k=1,
+                mode="hybrid",
+                condition_id=cid,
+            )
+            for r in results:
+                cp_data = r.get("confusion_pairs", "[]")
+                if isinstance(cp_data, str):
+                    try:
+                        cp_data = json.loads(cp_data)
+                    except (json.JSONDecodeError, TypeError):
+                        cp_data = []
+                if cp_data:
+                    confusion_pairs.extend(cp_data)
+                break
+
+        if not confusion_pairs:
+            return primary_context
+
+        # Build escalation trigger addendum (triggers only, not full emergency text)
+        trigger_parts = []
+        for cp in confusion_pairs:
+            cp_condition = cp.get("condition", "")
+            differentiators = cp.get("differentiators", [])
+            if cp_condition and differentiators:
+                trigger_parts.append(
+                    f"ESCALATE if: {', '.join(differentiators)} "
+                    f"(consider {cp_condition.replace('-', ' ')})"
+                )
+
+        if not trigger_parts:
+            return primary_context
+
+        addendum = "\n\n[ESCALATION TRIGGERS — Red flags requiring emergency evaluation]\n"
+        addendum += "\n".join(f"- {t}" for t in trigger_parts)
+
+        return primary_context + addendum

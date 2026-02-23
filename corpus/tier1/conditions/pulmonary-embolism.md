@@ -221,3 +221,12 @@ All must be true to rule out PE without D-dimer:
 6. **Anchoring on "negative" CTPA in subsegmental arteries.** Subsegmental PEs may be missed due to motion artifact or reader error. If clinical suspicion remains high after a reportedly negative CTPA, consider repeat imaging, V/Q scan, or lower extremity ultrasound.
 
 7. **Delayed anticoagulation while awaiting imaging.** Start heparin when clinical suspicion is moderate-to-high. If CTPA is negative, heparin can be discontinued. The risk of delayed treatment outweighs the risk of a few hours of anticoagulation.
+
+## Operational Substitution Risks
+The following, while clinically accurate in monitored settings, should NEVER
+be provided to a patient being told to go to the ED:
+- Leg elevation and compression schedules (e.g., "elevate legs above heart level and wear compression stockings")
+- D-dimer home monitoring guidance (e.g., "get a repeat D-dimer at your primary care office in 48 hours")
+- Anticoagulation self-titration instructions (e.g., "adjust your DOAC dose based on symptoms")
+- Home oxygen saturation monitoring as a substitute for ED evaluation (e.g., "check SpO2 every 4 hours")
+- Self-assessment checklists for DVT/PE symptom progression

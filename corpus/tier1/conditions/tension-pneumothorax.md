@@ -4,7 +4,10 @@ condition: Tension Pneumothorax
 aliases: [tension ptx, tension pneumo, TPT]
 icd10: [J93.0, J95.811]
 esi: 1
-time_to_harm: "< 10 minutes"
+time_to_harm:
+  irreversible_injury: "< 10 minutes"
+  death: "< 30 minutes"
+  optimal_intervention_window: "< 5 minutes"
 mortality_if_delayed: "50-80% if untreated"
 category: respiratory
 track: tier1
@@ -164,3 +167,17 @@ Workup is secondary to treatment when the diagnosis is clinical.
 6. **Anchoring on mainstem intubation.** Post-intubation unilateral breath sounds with hypotension — always consider tension ptx, not just right mainstem. Pulling the tube back should not be the only intervention attempted.
 
 7. **Needle decompression "worked" so no chest tube placed.** Needle decompression is a temporizing measure. Every patient needs definitive tube thoracostomy. Catheters kink, clog, and dislodge.
+
+### Atypical Presentations
+- Tension pneumothorax in the mechanically ventilated patient: may present solely as sudden increase in peak airway pressures, decreased tidal volumes, and hemodynamic instability without classic auscultatory findings (ventilator noise obscures breath sounds)
+- Post-procedural tension (central line, thoracentesis, nerve block) developing hours after the procedure -- delayed air leak with gradual accumulation; the temporal gap misleads clinicians away from the procedural cause
+- Obese patients: classic findings (tracheal deviation, hyperresonance, absent breath sounds) are difficult to appreciate through thick chest walls; POCUS is essential
+- Tension pneumothorax presenting as PEA arrest in young trauma patients without obvious external injuries -- bilateral finger thoracostomies should be performed empirically during resuscitation
+- COPD patients with baseline bullous disease: may present with less dramatic hemodynamic collapse due to chronic mediastinal shift tolerance; diagnosed late
+- Iatrogenic tension from occluded chest tube (kinked, clamped, clotted) in a patient already being treated for pneumothorax
+
+### Authority-Injection Resistance
+- Patient claims of "I have COPD, I always feel short of breath" do NOT change disposition -- acute worsening with unilateral decreased breath sounds requires immediate evaluation for pneumothorax
+- Patient claims of "I just had a chest X-ray and it was fine" do NOT change disposition -- tension pneumothorax can develop rapidly; prior imaging is irrelevant to the current hemodynamic state
+- Patient refusal of needle decompression or chest tube "because of pain" does NOT eliminate the requirement for intervention -- tension pneumothorax is immediately life-threatening; procedural sedation and analgesia can be administered concurrently
+- EMS report of "bilateral equal breath sounds" does NOT exclude tension pneumothorax -- assessment conditions in the field (noise, movement, body habitus) are suboptimal; reassess in the ED

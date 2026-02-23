@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""OpenEM Corpus Automated Validation Suite (8-pass audit).
+"""OpenEM Corpus Automated Validation Suite (13-pass audit).
 
 Implements all automated validation passes:
   1. Cross-file dosing consistency enforcement
@@ -10,6 +10,11 @@ Implements all automated validation passes:
   6. High-risk medication tagging
   7. ICD-10 format validation
   8. Guideline currency flagging
+  9. Content completeness (gate severity)
+  10. Source currency (informational)
+  11. Pediatric dose coverage (informational)
+  12. International terminology (informational)
+  13. Cross-reference completeness (informational)
 
 Output: JSON report to stdout. Exit 0 always (flags issues, never blocks build).
 """
@@ -417,6 +422,254 @@ def check_guideline_currency(conditions: list[dict]) -> list[dict]:
     return findings
 
 
+# === Pass 9: Content completeness ===
+REQUIRED_CONTENT_SECTIONS = [
+    "Recognition",
+    "Critical Actions",
+    "Differential Diagnosis",
+    "Workup",
+    "Treatment",
+    "Disposition",
+    "Pitfalls",
+]
+
+def check_content_completeness(conditions: list[dict]) -> list[dict]:
+    """Check that all required sections are present and substantive (>= 50 chars)."""
+    findings = []
+
+    for c in conditions:
+        body = c["body"]
+        for section in REQUIRED_CONTENT_SECTIONS:
+            # Match the section header (## Section or ## Section ...)
+            pattern = re.compile(
+                r"##\s+" + re.escape(section) + r"[^\n]*\n(.*?)(?=\n##\s|\Z)",
+                re.DOTALL | re.IGNORECASE,
+            )
+            m = pattern.search(body)
+            if not m:
+                findings.append({
+                    "check": "content_completeness",
+                    "file": c["name"],
+                    "severity": "critical",
+                    "section": section,
+                    "message": f"Section '## {section}' missing entirely",
+                })
+            else:
+                section_content = m.group(1).strip()
+                # Strip markdown formatting noise for length measurement
+                cleaned = re.sub(r"[#*`|_\-\[\]]+", " ", section_content)
+                cleaned = re.sub(r"\s+", " ", cleaned).strip()
+                if len(cleaned) < 50:
+                    findings.append({
+                        "check": "content_completeness",
+                        "file": c["name"],
+                        "severity": "critical",
+                        "section": section,
+                        "message": (
+                            f"Section '## {section}' has < 50 chars of content "
+                            f"(found {len(cleaned)} chars after stripping headers)"
+                        ),
+                    })
+
+    return findings
+
+
+# === Pass 10: Source currency ===
+_YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
+
+def check_source_currency(conditions: list[dict]) -> list[dict]:
+    """Flag conditions where no source year is >= 2021 (all sources older than 5 years)."""
+    findings = []
+
+    for c in conditions:
+        sources = c["fm"].get("sources", [])
+        if not sources:
+            continue  # covered by Pass 4
+
+        years = []
+        for src in sources:
+            ref = src.get("ref", "")
+            for m in _YEAR_RE.finditer(ref):
+                years.append(int(m.group()))
+
+        if not years:
+            findings.append({
+                "check": "source_currency",
+                "file": c["name"],
+                "severity": "info",
+                "message": "No 4-digit years found in any source ref — cannot assess currency",
+            })
+            continue
+
+        mean_year = sum(years) / len(years)
+        max_year = max(years)
+
+        if max_year < 2021:
+            findings.append({
+                "check": "source_currency",
+                "file": c["name"],
+                "severity": "info",
+                "message": (
+                    f"All sources older than 5 years (newest: {max_year}, "
+                    f"mean: {mean_year:.1f}). Review for updated guidelines."
+                ),
+                "max_year": max_year,
+                "mean_year": round(mean_year, 1),
+                "years_found": sorted(set(years)),
+            })
+
+    return findings
+
+
+# === Pass 11: Pediatric dose coverage ===
+_PEDS_MENTION_RE = re.compile(
+    r"\b(pediatric|child(?:ren)?|neonatal|neonate|infant)\b", re.IGNORECASE
+)
+_PEDS_DOSE_RE = re.compile(
+    r"\b(mg/kg|pediatric\s+dose|child\s+dose|neonatal\s+dose|per\s+kg)\b",
+    re.IGNORECASE,
+)
+
+def check_pediatric_doses(conditions: list[dict]) -> list[dict]:
+    """Flag conditions mentioning pediatric populations without pediatric dosing."""
+    findings = []
+
+    for c in conditions:
+        body = c["body"]
+        has_peds_mention = bool(_PEDS_MENTION_RE.search(body))
+        if not has_peds_mention:
+            continue
+
+        has_peds_dose = bool(_PEDS_DOSE_RE.search(body))
+        if not has_peds_dose:
+            # Count how many mentions to gauge depth of pediatric coverage
+            mention_count = len(_PEDS_MENTION_RE.findall(body))
+            findings.append({
+                "check": "pediatric_dose_coverage",
+                "file": c["name"],
+                "severity": "info",
+                "message": (
+                    f"Pediatric population mentioned ({mention_count} times) "
+                    "but no pediatric dosing found (mg/kg, pediatric dose, neonatal dose, etc.)"
+                ),
+                "mention_count": mention_count,
+            })
+
+    return findings
+
+
+# === Pass 12: International terminology ===
+_INTL_TERMS = {
+    "A&E": r"\bA&E\b",
+    "999": r"\b999\b",
+    "112": r"\b112\b",
+    "NHS": r"\bNHS\b",
+    "NICE": r"\bNICE\b",
+    "BNF": r"\bBNF\b",
+    "SIGN": r"\bSIGN\b",
+    "RCPCH": r"\bRCPCH\b",
+}
+
+def check_international_terminology(conditions: list[dict]) -> list[dict]:
+    """Count UK/international terminology mentions per file (informational)."""
+    findings = []
+
+    for c in conditions:
+        body = c["body"]
+        matches_found = {}
+        for term, pattern in _INTL_TERMS.items():
+            hits = re.findall(pattern, body)
+            if hits:
+                matches_found[term] = len(hits)
+
+        if matches_found:
+            total = sum(matches_found.values())
+            findings.append({
+                "check": "international_terminology",
+                "file": c["name"],
+                "severity": "info",
+                "message": (
+                    f"Contains {total} international/UK terminology reference(s): "
+                    + ", ".join(f"{t}({n})" for t, n in sorted(matches_found.items()))
+                ),
+                "term_counts": matches_found,
+                "total_count": total,
+            })
+
+    return findings
+
+
+# === Pass 13: Cross-reference completeness ===
+_CAPITALIZED_PHRASE_RE = re.compile(
+    r"\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)\b"
+)
+# Terms to exclude — common medical/anatomical capitalized phrases that aren't conditions
+_XREF_EXCLUDE = frozenset([
+    "Emergency Department", "Emergency Medicine", "Intensive Care Unit",
+    "Critical Care", "Intensive Care", "Emergency Room", "Operating Room",
+    "Emergency Medical", "United States", "World Health", "American Heart",
+    "American College", "European Society", "Surviving Sepsis",
+    "Clinical Practice", "Evidence Based", "Systematic Review",
+    "Case Report", "Randomized Controlled", "Meta Analysis",
+])
+
+def check_cross_references(conditions: list[dict]) -> list[dict]:
+    """Check that conditions referenced in Differential Diagnosis sections have corpus files."""
+    findings = []
+
+    # Build set of known condition filenames (stems)
+    known_stems = {Path(c["path"]).stem for c in conditions}
+
+    for c in conditions:
+        body = c["body"]
+
+        # Extract Differential Diagnosis section
+        ddx_match = re.search(
+            r"##\s+Differential\s+Diagnosis[^\n]*\n(.*?)(?=\n##\s|\Z)",
+            body,
+            re.DOTALL | re.IGNORECASE,
+        )
+        if not ddx_match:
+            continue
+
+        ddx_text = ddx_match.group(1)
+
+        # Find capitalized multi-word phrases (candidate condition names)
+        candidates = set()
+        for m in _CAPITALIZED_PHRASE_RE.finditer(ddx_text):
+            phrase = m.group(1)
+            if phrase not in _XREF_EXCLUDE and len(phrase) >= 6:
+                candidates.add(phrase)
+
+        if not candidates:
+            continue
+
+        # Check which candidates don't have a corresponding corpus file
+        # Normalize: lowercase, replace spaces with hyphens
+        missing = []
+        for phrase in sorted(candidates):
+            slug = re.sub(r"\s+", "-", phrase.lower())
+            # Try exact match and common abbreviation patterns
+            if slug not in known_stems:
+                # Also try removing trailing -s, -syndrome, -disease (common normalization)
+                slug_trunc = re.sub(r"-(syndrome|disease|disorder|injury|failure)$", "", slug)
+                if slug_trunc not in known_stems:
+                    missing.append(phrase)
+
+        if missing:
+            findings.append({
+                "check": "cross_reference_completeness",
+                "file": c["name"],
+                "severity": "info",
+                "message": (
+                    f"{len(missing)} DDx reference(s) have no corresponding corpus file"
+                ),
+                "missing_files": missing[:10],  # cap output at 10
+            })
+
+    return findings
+
+
 # === Main runner ===
 def main():
     conditions = load_all_conditions()
@@ -428,7 +681,7 @@ def main():
         "passes": {},
     }
 
-    # Run all 8 passes
+    # Run all 13 passes
     passes = [
         ("cross_file_dosing", check_cross_file_dosing),
         ("unit_normalization", check_unit_normalization),
@@ -438,6 +691,11 @@ def main():
         ("high_risk_med_tagging", check_high_risk_meds),
         ("icd10_validation", check_icd10),
         ("guideline_currency", check_guideline_currency),
+        ("content_completeness", check_content_completeness),
+        ("source_currency", check_source_currency),
+        ("pediatric_dose_coverage", check_pediatric_doses),
+        ("international_terminology", check_international_terminology),
+        ("cross_reference_completeness", check_cross_references),
     ]
 
     total_findings = 0

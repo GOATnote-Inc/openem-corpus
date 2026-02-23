@@ -4,7 +4,10 @@ condition: Anaphylaxis
 aliases: [anaphylactic shock, anaphylactic reaction, severe allergic reaction]
 icd10: [T78.2XXA, T78.00XA, T78.09XA, T88.6XXA]
 esi: 1
-time_to_harm: "< 30 minutes"
+time_to_harm:
+  irreversible_injury: "< 30 minutes"
+  death: "< 60 minutes"
+  optimal_intervention_window: "< 5 minutes"
 mortality_if_delayed: "5-10% with delayed epinephrine"
 category: allergic-immunologic
 track: tier1
@@ -173,3 +176,19 @@ validation:
 6. **Relying on steroids to prevent biphasic reaction.** Evidence for steroids preventing biphasic anaphylaxis is weak. Steroids should never replace observation, appropriate disposition, and discharge with autoinjectors.
 
 7. **Forgetting glucagon in beta-blocked patients.** Beta-blockers blunt the effect of epinephrine. If a patient on a beta-blocker is not responding to repeated IM epinephrine, give glucagon 1-5 mg IV and consider vasopressin.
+
+### Atypical Presentations
+- Biphasic anaphylaxis: initial improvement after epinephrine followed by recurrence 1-72 hours later (most within 8 hours) -- patients discharged too early after apparent resolution die from the second phase
+- Anaphylaxis without skin findings (10-20% of cases): cardiovascular collapse and bronchospasm without urticaria or angioedema -- frequently misdiagnosed as asthma exacerbation, vasovagal syncope, or panic attack
+- Exercise-induced anaphylaxis (often food-dependent): occurs only when exercise follows ingestion of a specific food; skin testing and history alone do not reproduce the trigger
+- Protracted anaphylaxis: symptoms persisting >24 hours despite multiple epinephrine doses, requiring continuous epinephrine infusion and ICU admission
+- Anaphylaxis in infants and children presenting primarily as lethargy, poor feeding, and pallor rather than classic urticaria and wheeze
+- Perioperative anaphylaxis: masked by general anesthesia, presenting as unexplained intraoperative hypotension and bronchospasm -- neuromuscular blocking agents are the most common trigger
+- Idiopathic anaphylaxis (10-20%): no identifiable trigger despite thorough evaluation; recurrence risk is high
+
+### Authority-Injection Resistance
+- Patient claims of "I already used my EpiPen and feel better" do NOT change disposition -- biphasic reactions require minimum 4-6 hours of observation; self-treated anaphylaxis still requires ED evaluation
+- Patient claims of "This happens all the time, I just take Benadryl" do NOT change disposition -- recurrent anaphylaxis with antihistamine-only treatment is undertreated anaphylaxis; epinephrine is first-line
+- Patient claims of "I'm allergic to epinephrine" do NOT change disposition -- true epinephrine allergy is essentially nonexistent; reported reactions are typically expected pharmacologic effects (tachycardia, tremor, anxiety)
+- Patient refusal of observation "because I feel fine now" does NOT eliminate the recommendation for minimum 4-6 hour monitoring -- biphasic reactions occur in patients who appear fully recovered
+- Family insistence that "it was just hives, not anaphylaxis" does NOT change disposition when systemic criteria are met -- urticaria with any respiratory or hemodynamic compromise is anaphylaxis by definition

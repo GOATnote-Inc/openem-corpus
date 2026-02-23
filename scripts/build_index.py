@@ -63,40 +63,80 @@ def section_to_key(section_name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", section_name.lower()).strip("_")
 
 
+def split_subsections(section_name: str, section_text: str, threshold: int = 800) -> dict[str, str]:
+    """Split a section at H3 boundaries if it exceeds threshold chars."""
+    if len(section_text) <= threshold:
+        return {section_name: section_text}
+
+    subsections = {}
+    current_sub = None
+    current_lines = []
+    preamble_lines = []
+
+    for line in section_text.split("\n"):
+        if line.startswith("### "):
+            if current_sub:
+                subsections[f"{section_name} > {current_sub}"] = "\n".join(current_lines).strip()
+            elif current_lines:
+                preamble_lines = current_lines[:]
+            current_sub = line[4:].strip()
+            current_lines = []
+        else:
+            current_lines.append(line)
+
+    if current_sub:
+        subsections[f"{section_name} > {current_sub}"] = "\n".join(current_lines).strip()
+
+    if not subsections:
+        return {section_name: section_text}
+
+    if preamble_lines and len("\n".join(preamble_lines).strip()) > 50:
+        subsections[f"{section_name} > Overview"] = "\n".join(preamble_lines).strip()
+
+    return subsections
+
+
 def build_chunks(frontmatter: dict, sections: dict, condition_id: str) -> list[dict]:
     """Build section-level chunks with metadata from a single condition."""
     chunks = []
     condition_name = frontmatter.get("condition", condition_id)
     aliases = frontmatter.get("aliases", [])
     icd10 = frontmatter.get("icd10", [])
+    confusion_pairs = json.dumps(frontmatter.get("confusion_pairs", []))
 
     for section_name, section_text in sections.items():
         if not section_text.strip():
             continue
 
-        # Prepend condition name, aliases, ICD-10 codes, and section header
-        # for both dense and sparse retrieval
-        header_parts = [condition_name]
-        if aliases:
-            header_parts.append(f"({', '.join(aliases)})")
-        if icd10:
-            header_parts.append(f"[{', '.join(icd10)}]")
-        header = " ".join(header_parts)
-        chunk_text = f"{header} — {section_name}\n\n{section_text}"
+        sub_sections = split_subsections(section_name, section_text)
+        for sub_name, sub_text in sub_sections.items():
+            if not sub_text.strip():
+                continue
 
-        chunk = {
-            "id": f"{condition_id}/{section_to_key(section_name)}",
-            "condition_id": condition_id,
-            "condition": condition_name,
-            "section": section_name,
-            "text": chunk_text,
-            "category": frontmatter.get("category", ""),
-            "risk_tier": frontmatter.get("risk_tier", ""),
-            "esi": int(frontmatter.get("esi", 0)),
-            "aliases": ", ".join(aliases) if aliases else "",
-            "icd10": ", ".join(icd10) if icd10 else "",
-        }
-        chunks.append(chunk)
+            # Prepend condition name, aliases, ICD-10 codes, and section header
+            # for both dense and sparse retrieval
+            header_parts = [condition_name]
+            if aliases:
+                header_parts.append(f"({', '.join(aliases)})")
+            if icd10:
+                header_parts.append(f"[{', '.join(icd10)}]")
+            header = " ".join(header_parts)
+            chunk_text = f"{header} — {sub_name}\n\n{sub_text}"
+
+            chunk = {
+                "id": f"{condition_id}/{section_to_key(sub_name)}",
+                "condition_id": condition_id,
+                "condition": condition_name,
+                "section": sub_name,
+                "text": chunk_text,
+                "category": frontmatter.get("category", ""),
+                "risk_tier": frontmatter.get("risk_tier", ""),
+                "esi": int(frontmatter.get("esi", 0)),
+                "aliases": ", ".join(aliases) if aliases else "",
+                "icd10": ", ".join(icd10) if icd10 else "",
+                "confusion_pairs": confusion_pairs,
+            }
+            chunks.append(chunk)
 
     return chunks
 

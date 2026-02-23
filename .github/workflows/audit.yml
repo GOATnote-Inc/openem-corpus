@@ -1,0 +1,53 @@
+name: Audit and Diversity
+
+on:
+  push:
+    paths:
+      - "corpus/**"
+  pull_request:
+    paths:
+      - "corpus/**"
+
+jobs:
+  audit:
+    name: Audit and diversity metrics
+    runs-on: ubuntu-latest
+    # Informational only — never blocks merge
+    continue-on-error: true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Run audit
+        run: python scripts/audit.py > audit-report.json
+
+      - name: Run diversity metrics
+        run: |
+          if [ -f scripts/diversity_metrics.py ]; then
+            python scripts/diversity_metrics.py > diversity-report.json
+          else
+            echo "diversity_metrics.py not yet implemented" > diversity-report.json
+          fi
+
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-report
+          path: audit-report.json
+          retention-days: 30
+
+      - name: Upload diversity report
+        uses: actions/upload-artifact@v4
+        with:
+          name: diversity-report
+          path: diversity-report.json
+          retention-days: 30

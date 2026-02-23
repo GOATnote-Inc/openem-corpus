@@ -56,8 +56,21 @@ properties:
     description: Emergency Severity Index (1=resuscitation, 5=non-urgent)
 
   time_to_harm:
-    type: string
-    description: "Time window before irreversible harm (e.g., '< 90 minutes')"
+    oneOf:
+      - type: string
+        description: "Time window before irreversible harm (e.g., '< 90 minutes')"
+      - type: object
+        properties:
+          irreversible_injury:
+            type: string
+            description: "Time to irreversible organ/tissue damage"
+          death:
+            type: string
+            description: "Time to death without treatment"
+          optimal_intervention_window:
+            type: string
+            description: "Window for optimal outcome (e.g., tPA < 4.5h)"
+        description: "Structured time-to-harm with granular windows"
 
   mortality_if_delayed:
     type: string
@@ -133,6 +146,42 @@ properties:
       Risk classification (informational, not gatekeeping).
       A = high-risk (ESI 1, resuscitation-level), B = moderate (ESI 2),
       C = general management (ESI 3+).
+
+  disposition_default:
+    type: string
+    enum: [admission, outpatient, observation]
+    description: >
+      Default disposition for this condition. Primarily used for ESI 4-5
+      defer conditions where the expected outcome is outpatient management.
+
+  escalation_triggers:
+    type: array
+    items:
+      type: string
+    description: >
+      Red flags that upgrade this condition to an emergency.
+      For defer conditions (ESI 4-5), these are the signs/symptoms
+      that should trigger escalation to emergency care despite the
+      otherwise benign presentation.
+
+  confusion_pairs:
+    type: array
+    items:
+      type: object
+      required: [condition, differentiators]
+      properties:
+        condition:
+          type: string
+          description: OpenEM condition_id of the confusion-pair emergency condition
+        differentiators:
+          type: array
+          items:
+            type: string
+          description: Key clinical features that distinguish the two conditions
+    description: >
+      Emergency conditions with overlapping presentations that could be
+      confused with this condition. Each entry includes the emergency
+      condition_id and key differentiating features.
 
   validation:
     type: object

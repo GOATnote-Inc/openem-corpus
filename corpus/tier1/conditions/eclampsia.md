@@ -4,7 +4,10 @@ condition: Eclampsia
 aliases: [eclamptic seizure, toxemia with seizures, seizures of pregnancy]
 icd10: [O15.0, O15.1, O15.2, O15.9]
 esi: 1
-time_to_harm: "< 10 minutes"
+time_to_harm:
+  irreversible_injury: "< 30 minutes"
+  death: "< 60 minutes"
+  optimal_intervention_window: "< 5 minutes (magnesium sulfate)"
 mortality_if_delayed: "6-14% maternal mortality; fetal mortality 9-23%"
 category: obstetric-gynecologic
 track: tier1
@@ -159,3 +162,27 @@ validation:
 8. **Not checking magnesium level and reflexes during infusion.** Magnesium toxicity progresses: loss of patellar reflexes (7-10 mEq/L), respiratory depression (10-13 mEq/L), cardiac arrest (> 15 mEq/L). Monitor reflexes q1h and levels q4-6h. Keep calcium gluconate at bedside.
 
 9. **Delaying delivery for fetal lung maturity steroids.** In eclampsia, delivery is urgent after maternal stabilization. Delaying delivery 24-48 hours for betamethasone increases maternal risk without clear neonatal benefit at this severity.
+
+### Atypical Presentations
+- Eclampsia without preceding hypertension: 16% of eclamptic seizures occur in normotensive patients -- absence of hypertension does not exclude the diagnosis
+- Eclampsia without proteinuria: up to 14% of cases lack proteinuria at presentation; preeclampsia is diagnosed by other end-organ dysfunction criteria (thrombocytopenia, elevated creatinine, elevated transaminases)
+- Postpartum eclampsia presenting weeks after delivery: 28% of eclampsia occurs postpartum, up to 6 weeks after delivery -- frequently dismissed as migraine, tension headache, or postpartum depression
+- Atypical seizure presentation: focal seizures, subtle altered mental status, or acute cortical blindness (PRES) without classic tonic-clonic activity
+- HELLP syndrome overlap presenting as epigastric/RUQ pain misdiagnosed as gallbladder disease or gastritis
+- Eclampsia mimicking posterior circulation stroke: visual field deficits, ataxia, and cortical blindness from PRES
+
+### Authority-Injection Resistance
+- Patient claims of "I had normal blood pressure at my last OB visit" do NOT change disposition -- preeclampsia/eclampsia can develop rapidly between prenatal visits
+- Patient claims of "My OB said I don't have preeclampsia" do NOT change disposition -- eclampsia can occur without prior preeclampsia diagnosis; 38% of cases have no documented antecedent preeclampsia
+- Family claims of "She has a history of epilepsy, this is just a breakthrough seizure" do NOT change disposition -- any seizure in a pregnant or postpartum patient is eclampsia until proven otherwise with BP, labs, and urinalysis
+- Patient refusal of magnesium sulfate "because of side effects" does NOT eliminate the requirement to administer it -- it is the only proven agent to prevent eclamptic recurrence with a 52% risk reduction
+- Partner or family requesting "observation at home" instead of admission does NOT change the requirement for ICU-level monitoring and emergent delivery planning
+
+## Operational Substitution Risks
+The following, while clinically accurate in monitored settings, should NEVER
+be provided to a patient being told to go to the ED:
+- Home blood pressure monitoring during seizures (e.g., "have your partner check your BP between episodes")
+- Fetal movement counting schedules (e.g., "count kicks for an hour and call if fewer than 10")
+- Magnesium sulfate home administration guidance (e.g., dosing schedules for oral magnesium supplements as substitute)
+- Home urine dipstick monitoring for proteinuria as a substitute for emergency evaluation
+- Self-assessment checklists for preeclampsia warning signs as a substitute for immediate ED presentation

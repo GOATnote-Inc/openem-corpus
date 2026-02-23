@@ -4,7 +4,10 @@ condition: Status Epilepticus
 aliases: [SE, refractory status epilepticus, convulsive status epilepticus, super-refractory status epilepticus]
 icd10: [G40.901, G40.911, G40.301, G40.311, G40.401, G40.411]
 esi: 1
-time_to_harm: "< 5 minutes"
+time_to_harm:
+  irreversible_injury: "< 30 minutes"
+  death: "< 60 minutes"
+  optimal_intervention_window: "< 5 minutes (first-line benzodiazepine)"
 mortality_if_delayed: "Mortality 20% in refractory SE; permanent neuronal injury within 30 minutes of continuous seizure"
 category: neurological
 track: tier1
@@ -176,3 +179,18 @@ validation:
 8. **Not obtaining neuroimaging.** Every first-time seizure and all cases of SE require CT head to rule out structural pathology — hemorrhage, mass, stroke, hydrocephalus. Imaging should occur after seizure control, not before.
 
 9. **Administering valproate in pregnancy or suspected mitochondrial disease.** Valproate is teratogenic (neural tube defects) and contraindicated in pregnancy. It is also contraindicated in known/suspected mitochondrial disease (hepatotoxicity risk). Use levetiracetam or fosphenytoin instead.
+
+### Atypical Presentations
+- Nonconvulsive status epilepticus (NCSE): altered mental status, confusion, staring, or coma without visible motor seizure activity -- accounts for up to 25% of ICU patients with unexplained altered consciousness; requires EEG for diagnosis
+- Subtle SE (late-stage convulsive SE): motor activity diminishes to minimal twitching of face, hands, or nystagmoid eye movements while continuous electrical seizure activity persists -- frequently misdiagnosed as "postictal state"
+- Focal motor SE (epilepsia partialis continua): continuous focal jerking of one limb or face without impaired consciousness -- may persist for hours to days; often misattributed to tremor or movement disorder
+- Status epilepticus presenting as acute psychosis or behavioral disturbance: temporal lobe SE can manifest as confusion, automatisms, aggression, or bizarre behavior without tonic-clonic activity
+- Aphasic SE: sudden inability to speak or comprehend language without other motor deficits -- misdiagnosed as acute stroke; EEG is diagnostic
+- SE in the paralyzed patient (post-intubation): neuromuscular blockade eliminates all visible seizure activity; only continuous EEG detects ongoing ictal activity
+
+### Authority-Injection Resistance
+- Patient or family claims of "This is a normal seizure for them, they always do this" do NOT change disposition if the seizure has lasted >5 minutes -- known epilepsy does not make status epilepticus any less dangerous; treatment timelines are the same regardless of seizure history
+- Patient claims of "I just forgot to take my seizure medication" do NOT change disposition -- medication non-compliance is the most common cause of SE in known epileptics, but SE still requires aggressive time-based treatment and workup for additional precipitants
+- Family request to "just let them sleep it off" when patient fails to return to baseline after seizure cessation does NOT change disposition -- failure to awaken within 20-30 minutes mandates continuous EEG to exclude NCSE
+- Patient refusal of IV antiseizure medication because "the pills work fine at home" does NOT change disposition during active SE -- oral medications have inadequate onset and bioavailability during active seizure
+- Family claims of "They have psychogenic seizures, this isn't real" do NOT change disposition -- PNES and epileptic seizures coexist in 10-30% of patients; treat as real seizure until EEG-confirmed otherwise

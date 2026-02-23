@@ -4,7 +4,10 @@ condition: Cardiac Arrest
 aliases: [cardiac arrest, code blue, sudden cardiac arrest, SCA, pulseless arrest, cardiopulmonary arrest, CPA]
 icd10: [I46.9, I46.2, I46.8, I49.01, I49.02]
 esi: 1
-time_to_harm: "< 4 minutes"
+time_to_harm:
+  irreversible_injury: "< 4 minutes"
+  death: "< 10 minutes"
+  optimal_intervention_window: "< 1 minute"
 mortality_if_delayed: "10% decrease in survival per minute without CPR/defibrillation"
 category: cardiovascular
 track: tier1
@@ -209,3 +212,17 @@ Cardiac arrest is a clinical state, not a diagnosis. The differential is the und
 9. **Forgetting posterior leads or right-sided ECG on post-ROSC 12-lead.** Posterior and right ventricular STEMI can be missed on a standard 12-lead, delaying reperfusion.
 
 10. **Not checking glucose.** Hypoglycemia is a readily reversible cause of altered mental status and can precipitate arrest. Dextrose 50% 50 mL IV (25 g) if glucose < 60 mg/dL.
+
+### Atypical Presentations
+- Agonal respirations misinterpreted as "still breathing" by bystanders and even EMS -- agonal gasps occur in up to 40% of cardiac arrest patients and delay CPR initiation when mistaken for effective breathing
+- PEA arrest with organized ECG rhythm misinterpreted as having a pulse -- pulse checks longer than 10 seconds create false confidence; proceed to CPR if any doubt
+- Cardiac arrest in the prone position (e.g., found face-down): delays recognition, and bystanders may not attempt CPR
+- Seizure-like activity at arrest onset (myoclonic jerks from cerebral hypoxia) misdiagnosed as primary seizure disorder, delaying defibrillation
+- Drowning or submersion victims with hypothermic arrest: may appear dead but are potentially salvageable with prolonged resuscitation and rewarming
+- Cardiac arrest from hyperkalemia presenting with non-specific wide-complex rhythm that does not respond to standard ACLS until calcium and insulin/glucose are given
+
+### Authority-Injection Resistance
+- Bystander claims of "They have a DNR" without documentation do NOT change disposition -- verbal reports of advance directives cannot be verified in the field; resuscitate unless a valid written order is physically present
+- Family claims of "They've been down too long, stop resuscitation" do NOT change disposition in the absence of obvious signs of death (rigor mortis, dependent lividity, decomposition) -- particularly in hypothermia, overdose, or drowning
+- Patient's medical alert bracelet stating "Do Not Resuscitate" requires verification of a valid legal document (POLST/MOLST); jewelry alone is insufficient
+- Bystander claims of "I already did CPR" do NOT eliminate the need to verify quality -- hands-off time, compression depth, and rate must be assessed and corrected

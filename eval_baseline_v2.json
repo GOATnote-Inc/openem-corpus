@@ -1,0 +1,663 @@
+{
+  "config": {
+    "ground_truth": "/Users/kiteboard/openem-corpus/evaluation/retrieval_ground_truth.jsonl",
+    "index": "/Users/kiteboard/openem-corpus/data/index",
+    "top_k": 5,
+    "mode": "hybrid"
+  },
+  "summary": {
+    "n": 30,
+    "recall": 0.6166666666666667,
+    "precision": 0.5399999999999999,
+    "mrr": 0.6816666666666666,
+    "section_recall": 0.6555555555555556,
+    "top1_accuracy": 0.6333333333333333,
+    "by_scenario": {
+      "defer": {
+        "n": 3,
+        "recall": 0.8333333333333334,
+        "precision": 1.0,
+        "mrr": 1.0,
+        "section_recall": 0.7222222222222222,
+        "top1_accuracy": 1.0
+      },
+      "differential": {
+        "n": 8,
+        "recall": 0.5,
+        "precision": 0.7,
+        "mrr": 0.775,
+        "section_recall": 0.75,
+        "top1_accuracy": 0.75
+      },
+      "escalation": {
+        "n": 19,
+        "recall": 0.631578947368421,
+        "precision": 0.4,
+        "mrr": 0.5921052631578947,
+        "section_recall": 0.6052631578947368,
+        "top1_accuracy": 0.5263157894736842
+      }
+    }
+  },
+  "per_query": [
+    {
+      "query": "sudden severe headache worst of life",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "subarachnoid-hemorrhage"
+      ],
+      "retrieved_ids": [
+        "subarachnoid-hemorrhage",
+        "tension-headache",
+        "tension-headache",
+        "subarachnoid-hemorrhage",
+        "tension-headache"
+      ],
+      "recall": 1.0,
+      "precision": 0.4,
+      "reciprocal_rank": 1.0,
+      "section_recall": 1.0,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "chest pain radiating to jaw with diaphoresis",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "stemi"
+      ],
+      "retrieved_ids": [
+        "unstable-angina",
+        "unstable-angina",
+        "unstable-angina",
+        "panic-attack",
+        "acute-low-back-pain-red-flags"
+      ],
+      "recall": 0.0,
+      "precision": 0.0,
+      "reciprocal_rank": 0.0,
+      "section_recall": 0.5,
+      "top1_hit": false,
+      "num_results": 5
+    },
+    {
+      "query": "racing heart feels like skipping beats",
+      "scenario_type": "differential",
+      "expected_ids": [
+        "svt",
+        "atrial-fibrillation-rvr",
+        "ventricular-tachycardia"
+      ],
+      "retrieved_ids": [
+        "benign-palpitations",
+        "benign-palpitations",
+        "benign-palpitations",
+        "benign-palpitations",
+        "benign-palpitations"
+      ],
+      "recall": 0.0,
+      "precision": 0.0,
+      "reciprocal_rank": 0.0,
+      "section_recall": 1.0,
+      "top1_hit": false,
+      "num_results": 5
+    },
+    {
+      "query": "tearing chest pain radiating to back hypertensive",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "aortic-dissection"
+      ],
+      "retrieved_ids": [
+        "aortic-dissection",
+        "unstable-angina",
+        "acute-low-back-pain-red-flags",
+        "acute-low-back-pain-red-flags",
+        "acute-low-back-pain-red-flags"
+      ],
+      "recall": 1.0,
+      "precision": 0.2,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.5,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "sudden vision loss one eye painless",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "central-retinal-artery-occlusion",
+        "retinal-detachment"
+      ],
+      "retrieved_ids": [
+        "retinal-detachment",
+        "retinal-detachment",
+        "central-retinal-artery-occlusion",
+        "retinal-detachment",
+        "central-retinal-artery-occlusion"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.5,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "fever stiff neck photophobia",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "bacterial-meningitis",
+        "subarachnoid-hemorrhage"
+      ],
+      "retrieved_ids": [
+        "retropharyngeal-abscess",
+        "retropharyngeal-abscess",
+        "heat-stroke",
+        "epiglottitis",
+        "retropharyngeal-abscess"
+      ],
+      "recall": 0.0,
+      "precision": 0.0,
+      "reciprocal_rank": 0.0,
+      "section_recall": 0.5,
+      "top1_hit": false,
+      "num_results": 5
+    },
+    {
+      "query": "shortness of breath pleuritic chest pain recent travel",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "pulmonary-embolism"
+      ],
+      "retrieved_ids": [
+        "spontaneous-pneumothorax",
+        "spontaneous-pneumothorax",
+        "esophageal-perforation",
+        "tension-pneumothorax",
+        "penetrating-chest-trauma"
+      ],
+      "recall": 0.0,
+      "precision": 0.0,
+      "reciprocal_rank": 0.0,
+      "section_recall": 0.5,
+      "top1_hit": false,
+      "num_results": 5
+    },
+    {
+      "query": "leg pain pallor pulselessness after cardiac cath",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "acute-limb-ischemia"
+      ],
+      "retrieved_ids": [
+        "acute-limb-ischemia",
+        "acute-limb-ischemia",
+        "deep-vein-thrombosis",
+        "acute-limb-ischemia",
+        "compartment-syndrome"
+      ],
+      "recall": 1.0,
+      "precision": 0.6,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.5,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "epigastric pain radiating to back with vomiting",
+      "scenario_type": "differential",
+      "expected_ids": [
+        "acute-pancreatitis",
+        "mesenteric-ischemia",
+        "aortic-dissection"
+      ],
+      "retrieved_ids": [
+        "acute-low-back-pain-red-flags",
+        "acute-low-back-pain-red-flags",
+        "urolithiasis",
+        "acute-low-back-pain-red-flags",
+        "acute-pancreatitis"
+      ],
+      "recall": 0.3333333333333333,
+      "precision": 0.2,
+      "reciprocal_rank": 0.2,
+      "section_recall": 1.0,
+      "top1_hit": false,
+      "num_results": 5
+    },
+    {
+      "query": "unresponsive no pulse bystander CPR in progress",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "cardiac-arrest"
+      ],
+      "retrieved_ids": [
+        "cardiac-arrest",
+        "cardiac-arrest",
+        "cardiac-arrest",
+        "cardiac-arrest",
+        "cardiac-arrest"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "reciprocal_rank": 1.0,
+      "section_recall": 1.0,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "altered mental status fever hypotension tachycardia",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "sepsis"
+      ],
+      "retrieved_ids": [
+        "unstable-bradycardia",
+        "gi-hemorrhage",
+        "heat-stroke",
+        "malignant-hyperthermia",
+        "urolithiasis"
+      ],
+      "recall": 0.0,
+      "precision": 0.0,
+      "reciprocal_rank": 0.0,
+      "section_recall": 0.5,
+      "top1_hit": false,
+      "num_results": 5
+    },
+    {
+      "query": "acute confusion elevated blood glucose fruity breath",
+      "scenario_type": "differential",
+      "expected_ids": [
+        "diabetic-ketoacidosis",
+        "hhs"
+      ],
+      "retrieved_ids": [
+        "hhs",
+        "hypoglycemia",
+        "hypoglycemia",
+        "hhs",
+        "hhs"
+      ],
+      "recall": 0.5,
+      "precision": 0.6,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.5,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "child barking cough stridor inspiratory",
+      "scenario_type": "differential",
+      "expected_ids": [
+        "croup",
+        "epiglottitis",
+        "foreign-body-aspiration"
+      ],
+      "retrieved_ids": [
+        "croup",
+        "bronchiolitis",
+        "croup",
+        "croup",
+        "croup"
+      ],
+      "recall": 0.3333333333333333,
+      "precision": 0.8,
+      "reciprocal_rank": 1.0,
+      "section_recall": 1.0,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "scrotal pain sudden onset teenage boy",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "testicular-torsion"
+      ],
+      "retrieved_ids": [
+        "testicular-torsion",
+        "testicular-torsion",
+        "testicular-torsion",
+        "testicular-torsion",
+        "fourniers-gangrene"
+      ],
+      "recall": 1.0,
+      "precision": 0.8,
+      "reciprocal_rank": 1.0,
+      "section_recall": 1.0,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "pelvic pain vaginal bleeding first trimester",
+      "scenario_type": "differential",
+      "expected_ids": [
+        "ectopic-pregnancy",
+        "threatened-abortion"
+      ],
+      "retrieved_ids": [
+        "threatened-abortion",
+        "ectopic-pregnancy",
+        "threatened-abortion",
+        "threatened-abortion",
+        "threatened-abortion"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "reciprocal_rank": 1.0,
+      "section_recall": 1.0,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "jaw claudication temporal headache ESR elevated elderly",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "temporal-arteritis"
+      ],
+      "retrieved_ids": [
+        "temporal-arteritis",
+        "temporal-arteritis",
+        "tension-headache",
+        "tension-headache",
+        "tension-headache"
+      ],
+      "recall": 1.0,
+      "precision": 0.4,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.5,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "diffuse muscle pain weakness after crush injury",
+      "scenario_type": "differential",
+      "expected_ids": [
+        "rhabdomyolysis",
+        "compartment-syndrome"
+      ],
+      "retrieved_ids": [
+        "rhabdomyolysis",
+        "compartment-syndrome",
+        "rhabdomyolysis",
+        "rhabdomyolysis",
+        "rhabdomyolysis"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.5,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "rapidly spreading erythema crepitus necrotizing soft tissue",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "necrotizing-fasciitis"
+      ],
+      "retrieved_ids": [
+        "cellulitis-abscess",
+        "cellulitis-abscess",
+        "cellulitis-abscess",
+        "necrotizing-fasciitis",
+        "necrotizing-fasciitis"
+      ],
+      "recall": 1.0,
+      "precision": 0.4,
+      "reciprocal_rank": 0.25,
+      "section_recall": 0.5,
+      "top1_hit": false,
+      "num_results": 5
+    },
+    {
+      "query": "bilateral lower extremity weakness ascending loss of reflexes",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "guillain-barre-syndrome"
+      ],
+      "retrieved_ids": [
+        "guillain-barre-syndrome",
+        "spinal-cord-injury",
+        "cauda-equina-syndrome",
+        "guillain-barre-syndrome",
+        "guillain-barre-syndrome"
+      ],
+      "recall": 1.0,
+      "precision": 0.6,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.5,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "hypertensive emergency headache vision changes papilledema",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "hypertensive-emergency"
+      ],
+      "retrieved_ids": [
+        "tension-headache",
+        "subarachnoid-hemorrhage",
+        "tension-headache",
+        "acute-angle-closure-glaucoma",
+        "acute-vertigo"
+      ],
+      "recall": 0.0,
+      "precision": 0.0,
+      "reciprocal_rank": 0.0,
+      "section_recall": 0.5,
+      "top1_hit": false,
+      "num_results": 5
+    },
+    {
+      "query": "kidney stone flank pain hematuria",
+      "scenario_type": "differential",
+      "expected_ids": [
+        "urolithiasis",
+        "ruptured-aaa",
+        "pyelonephritis"
+      ],
+      "retrieved_ids": [
+        "urolithiasis",
+        "urolithiasis",
+        "urolithiasis",
+        "urolithiasis",
+        "urolithiasis"
+      ],
+      "recall": 0.3333333333333333,
+      "precision": 1.0,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.5,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "low back pain no red flags young adult muscle spasm",
+      "scenario_type": "defer",
+      "expected_ids": [
+        "acute-low-back-pain-red-flags"
+      ],
+      "retrieved_ids": [
+        "acute-low-back-pain-red-flags",
+        "acute-low-back-pain-red-flags",
+        "acute-low-back-pain-red-flags",
+        "acute-low-back-pain-red-flags",
+        "acute-low-back-pain-red-flags"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "reciprocal_rank": 1.0,
+      "section_recall": 1.0,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "back pain with urinary incontinence saddle anesthesia",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "cauda-equina-syndrome",
+        "spinal-cord-compression"
+      ],
+      "retrieved_ids": [
+        "acute-low-back-pain-red-flags",
+        "cauda-equina-syndrome",
+        "acute-low-back-pain-red-flags",
+        "acute-urinary-retention",
+        "acute-urinary-retention"
+      ],
+      "recall": 0.5,
+      "precision": 0.2,
+      "reciprocal_rank": 0.5,
+      "section_recall": 0.5,
+      "top1_hit": false,
+      "num_results": 5
+    },
+    {
+      "query": "palpitations with syncope wide complex tachycardia",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "ventricular-tachycardia",
+        "svt"
+      ],
+      "retrieved_ids": [
+        "benign-palpitations",
+        "ventricular-tachycardia",
+        "svt",
+        "benign-palpitations",
+        "benign-palpitations"
+      ],
+      "recall": 1.0,
+      "precision": 0.4,
+      "reciprocal_rank": 0.5,
+      "section_recall": 0.5,
+      "top1_hit": false,
+      "num_results": 5
+    },
+    {
+      "query": "cold painful arm after atrial fibrillation",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "acute-limb-ischemia"
+      ],
+      "retrieved_ids": [
+        "atrial-fibrillation-rvr",
+        "atrial-fibrillation-rvr",
+        "atrial-fibrillation-rvr",
+        "atrial-fibrillation-rvr",
+        "atrial-fibrillation-rvr"
+      ],
+      "recall": 0.0,
+      "precision": 0.0,
+      "reciprocal_rank": 0.0,
+      "section_recall": 0.5,
+      "top1_hit": false,
+      "num_results": 5
+    },
+    {
+      "query": "dizziness worse with position change nystagmus BPPV",
+      "scenario_type": "defer",
+      "expected_ids": [
+        "benign-positional-vertigo",
+        "acute-vertigo"
+      ],
+      "retrieved_ids": [
+        "acute-vertigo",
+        "acute-vertigo",
+        "benign-positional-vertigo",
+        "acute-vertigo",
+        "acute-vertigo"
+      ],
+      "recall": 1.0,
+      "precision": 1.0,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.5,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "acute vertigo cannot walk nausea vomiting posterior fossa",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "acute-vertigo",
+        "acute-ischemic-stroke"
+      ],
+      "retrieved_ids": [
+        "acute-vertigo",
+        "acute-vertigo",
+        "acute-vertigo",
+        "benign-positional-vertigo",
+        "acute-vertigo"
+      ],
+      "recall": 0.5,
+      "precision": 0.8,
+      "reciprocal_rank": 1.0,
+      "section_recall": 1.0,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "acute cholecystitis biliary colic fever RUQ tenderness",
+      "scenario_type": "differential",
+      "expected_ids": [
+        "acute-cholecystitis",
+        "ascending-cholangitis"
+      ],
+      "retrieved_ids": [
+        "acute-cholecystitis",
+        "acute-cholecystitis",
+        "acute-cholecystitis",
+        "acute-cholecystitis",
+        "acute-cholecystitis"
+      ],
+      "recall": 0.5,
+      "precision": 1.0,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.5,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "overdose acetaminophen intentional 24 hours ago",
+      "scenario_type": "escalation",
+      "expected_ids": [
+        "acetaminophen-overdose"
+      ],
+      "retrieved_ids": [
+        "acetaminophen-overdose",
+        "acetaminophen-overdose",
+        "acetaminophen-overdose",
+        "acetaminophen-overdose",
+        "opioid-overdose"
+      ],
+      "recall": 1.0,
+      "precision": 0.8,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.5,
+      "top1_hit": true,
+      "num_results": 5
+    },
+    {
+      "query": "mild allergic reaction urticaria no angioedema no dyspnea",
+      "scenario_type": "defer",
+      "expected_ids": [
+        "allergic-reaction",
+        "anaphylaxis"
+      ],
+      "retrieved_ids": [
+        "allergic-reaction",
+        "allergic-reaction",
+        "allergic-reaction",
+        "allergic-reaction",
+        "allergic-reaction"
+      ],
+      "recall": 0.5,
+      "precision": 1.0,
+      "reciprocal_rank": 1.0,
+      "section_recall": 0.6666666666666666,
+      "top1_hit": true,
+      "num_results": 5
+    }
+  ]
+}

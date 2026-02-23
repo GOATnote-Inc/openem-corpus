@@ -175,3 +175,12 @@ Any ONE of the following in patients >= 15 years with new severe headache reachi
 8. **Discharging a patient with sentinel headache (warning leak).** Up to 50% of SAH patients report a preceding severe headache days to weeks before the catastrophic bleed. Any thunderclap headache requires full SAH workup regardless of spontaneous resolution.
 
 9. **Using the "four-tube LP clearing" method alone to differentiate SAH from traumatic tap.** RBC clearing across tubes is unreliable. Xanthochromia (visual or spectrophotometric) is the key discriminator. Send fluid for spectrophotometry when available.
+
+## Operational Substitution Risks
+The following, while clinically accurate in monitored settings, should NEVER
+be provided to a patient being told to go to the ED:
+- Home neurological check schedules (e.g., "have someone check your pupils and mental status every 2 hours")
+- Headache intensity diary (e.g., "rate your headache on a scale and track changes over the next 24 hours")
+- Follow-up neurology appointment timeline (e.g., "schedule an outpatient MRA within the next week")
+- Blood pressure self-monitoring at home as a substitute for ICU-level BP management
+- Self-assessment checklists for re-bleed warning signs

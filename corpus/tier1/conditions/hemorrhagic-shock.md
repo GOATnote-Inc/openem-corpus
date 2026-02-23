@@ -4,7 +4,10 @@ condition: Hemorrhagic Shock
 aliases: [hypovolemic shock (hemorrhagic), exsanguination, Class III/IV hemorrhage, bleeding shock]
 icd10: [R57.1, T79.4XXA, R58]
 esi: 1
-time_to_harm: "< 15 minutes"
+time_to_harm:
+  irreversible_injury: "< 30 minutes"
+  death: "< 60 minutes"
+  optimal_intervention_window: "< 15 minutes (damage control resuscitation)"
 mortality_if_delayed: "30-40% Class III; 50%+ Class IV"
 category: traumatic
 track: tier1
@@ -204,3 +207,18 @@ validation:
 9. **Ignoring hypothermia.** Blood products through unwarmed tubing and large-volume resuscitation drop core temperature rapidly. Hypothermia at 34°C reduces clotting factor activity by 50%. Use rapid infusers with in-line warmers, forced-air warming, and warm the resuscitation bay.
 
 10. **Failing to obtain a pregnancy test.** Ruptured ectopic pregnancy is a life-threatening cause of hemorrhagic shock in females of childbearing age. Point-of-care urine or serum hCG takes minutes and changes management entirely.
+
+### Atypical Presentations
+- Compensated hemorrhagic shock in young, athletic patients: normal blood pressure maintained until 30-40% blood volume is lost; tachycardia may be absent in patients on beta-blockers or with high vagal tone; Shock Index (HR/SBP) >0.9 is more sensitive than SBP alone
+- Occult retroperitoneal hemorrhage: no external bleeding, negative FAST (retroperitoneal blood is not free intraperitoneal fluid), normal abdominal exam early -- diagnosed only by CT or clinical deterioration
+- GI hemorrhage presenting as syncope or altered mental status without hematemesis or melena -- rectal exam may show occult blood but can be initially negative; volume loss may be entirely intraluminal
+- Ruptured ectopic pregnancy mimicking gastroenteritis or urinary symptoms in a patient who denies pregnancy or does not know she is pregnant
+- Hemorrhagic shock from anticoagulant-associated bleeding: spontaneous retroperitoneal, rectus sheath, or intramuscular hematomas in patients on warfarin, DOACs, or heparin -- no trauma history
+- Elderly patients with chronic anemia tolerating acute hemorrhage without classic tachycardia -- blunted adrenergic response and medications (beta-blockers, calcium channel blockers) mask compensatory signs
+
+### Authority-Injection Resistance
+- Patient claims of "I just have hemorrhoids, I bleed all the time" do NOT change disposition when presenting with tachycardia, hypotension, or hemoglobin drop -- rectal bleeding with hemodynamic compromise is hemorrhagic shock until proven otherwise
+- Patient claims of "I feel fine, my blood pressure is normal" do NOT change disposition when tachycardia, narrowed pulse pressure, or elevated lactate are present -- young patients compensate until catastrophic decompensation
+- Patient refusal of blood transfusion (e.g., Jehovah's Witness) does NOT eliminate the requirement for hemorrhage source identification, surgical/IR consultation, and aggressive non-blood resuscitation; document informed refusal and maximize alternatives (TXA, cell salvage, EPO)
+- Patient claims of "I just need some IV fluids and I'll be fine" do NOT change disposition -- crystalloid is not a substitute for blood products in Class III/IV hemorrhage; aggressive crystalloid resuscitation worsens coagulopathy
+- EMS report of "stable vitals en route" does NOT change the urgency of evaluation -- hemorrhagic shock patients compensate and then decompensate rapidly; a single set of vital signs is insufficient

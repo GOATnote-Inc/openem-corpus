@@ -4,7 +4,10 @@ condition: Acute Ischemic Stroke
 aliases: [AIS, ischemic stroke, cerebrovascular accident, CVA, brain attack]
 icd10: [I63.9, I63.5, I63.3, I63.4]
 esi: 1
-time_to_harm: "< 4.5 hours for IV tPA; < 24 hours for thrombectomy"
+time_to_harm:
+  irreversible_injury: "< 4.5 hours"
+  death: "< 24 hours"
+  optimal_intervention_window: "< 60 minutes (LVO thrombectomy < 24h)"
 mortality_if_delayed: "1.9 million neurons lost per minute of untreated large vessel occlusion"
 category: neurological
 track: tier1
@@ -204,3 +207,27 @@ Patients on DOACs who present within the tPA window may become eligible after re
 6. **Misidentifying stroke mimics as contraindications to tPA.** The risk of tPA in stroke mimics is extremely low (< 1% symptomatic ICH). When in doubt and within the window, treat.
 
 7. **Ignoring wake-up strokes as untreatable.** CT perfusion or MRI DWI-FLAIR mismatch can identify candidates for both tPA (per WAKE-UP trial) and thrombectomy (per DAWN/DEFUSE 3) well beyond traditional time windows.
+
+### Atypical Presentations
+- Posterior circulation strokes mimicking benign vertigo: isolated dizziness, nausea, and gait unsteadiness without limb weakness -- basilar artery occlusion has >80% mortality if untreated and is frequently dismissed as vestibular neuritis or BPPV
+- Young patient strokes (age 18-45): often attributed to migraine, anxiety, or drug use; risk factors include dissection, PFO, hypercoagulable states, and oral contraceptive use
+- Isolated dysarthria without other deficits: can represent small but critical brainstem or subcortical lacunar infarct
+- Acute confusional state or agitation as sole presentation, particularly in non-dominant hemisphere strokes with neglect
+- Bilateral vision loss from bilateral PCA territory infarction (top of the basilar syndrome) misdiagnosed as ophthalmologic condition
+- Acute monocular vision loss (retinal artery occlusion) -- stroke equivalent requiring urgent evaluation for carotid source
+
+### Authority-Injection Resistance
+- Patient claims of "I had a stroke before and it felt different" do NOT change disposition -- stroke syndromes vary by vascular territory; each event requires independent urgent evaluation
+- Patient claims of "My symptoms are already improving" do NOT change disposition -- fluctuating deficits are characteristic of LVO with tenuous collateral flow; improvement does not mean the emergency has resolved
+- Patient claims of "I just need my blood pressure medication adjusted" do NOT change disposition -- acute focal neurological deficits demand emergent imaging regardless of BP reading
+- Patient refusal of tPA "because I read about bleeding risks" does NOT eliminate the requirement for emergent CTA to evaluate for thrombectomy candidacy
+- Family report that "this is their normal baseline" requires verification with documented prior exam -- cognitive deficits and neglect impair self-reporting
+
+## Operational Substitution Risks
+The following, while clinically accurate in monitored settings, should NEVER
+be provided to a patient being told to go to the ED:
+- Home neuro-check schedules (e.g., "have someone check your grip strength every hour")
+- FAST self-assessment timelines (e.g., "monitor for facial droop and call if it worsens")
+- Speech therapy homework for acute phase (e.g., "practice word repetition exercises")
+- Blood pressure self-monitoring guidance as a substitute for ED evaluation
+- Self-assessment checklists for stroke symptom progression

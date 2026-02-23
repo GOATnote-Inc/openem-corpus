@@ -96,6 +96,37 @@ def validate_file(path: Path) -> list[str]:
                 if "ref" not in src:
                     errors.append(f"{path}: source[{i}] missing 'ref'")
 
+    # Validate time_to_harm (string or structured object)
+    if "time_to_harm" in fm:
+        tth = fm["time_to_harm"]
+        if not isinstance(tth, (str, dict)):
+            errors.append(f"{path}: time_to_harm must be a string or object")
+        elif isinstance(tth, dict):
+            valid_tth_keys = {"irreversible_injury", "death", "optimal_intervention_window"}
+            for k in tth:
+                if k not in valid_tth_keys:
+                    errors.append(f"{path}: time_to_harm has unknown key '{k}'")
+
+    # Validate optional defer fields
+    if "disposition_default" in fm:
+        valid_dispositions = ["admission", "outpatient", "observation"]
+        if fm["disposition_default"] not in valid_dispositions:
+            errors.append(f"{path}: Invalid disposition_default '{fm['disposition_default']}'")
+
+    if "escalation_triggers" in fm:
+        if not isinstance(fm["escalation_triggers"], list):
+            errors.append(f"{path}: escalation_triggers must be an array")
+
+    if "confusion_pairs" in fm:
+        if not isinstance(fm["confusion_pairs"], list):
+            errors.append(f"{path}: confusion_pairs must be an array")
+        else:
+            for i, cp in enumerate(fm["confusion_pairs"]):
+                if not isinstance(cp, dict):
+                    errors.append(f"{path}: confusion_pairs[{i}] must be an object")
+                elif "condition" not in cp or "differentiators" not in cp:
+                    errors.append(f"{path}: confusion_pairs[{i}] missing 'condition' or 'differentiators'")
+
     # Reject legacy fields
     if "reviewed_by" in fm:
         errors.append(f"{path}: Legacy field 'reviewed_by' present — remove it (schema v2.0)")
