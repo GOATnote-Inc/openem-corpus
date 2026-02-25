@@ -176,7 +176,7 @@ def validate_file(path: Path) -> list[str]:
     return errors
 
 
-def main():
+def main() -> None:
     all_errors = []
     file_count = 0
 

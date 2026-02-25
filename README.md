@@ -1,5 +1,9 @@
 # OpenEM Corpus
 
+[![Tests](https://github.com/GOATnote-Inc/openem-corpus/actions/workflows/tests.yml/badge.svg)](https://github.com/GOATnote-Inc/openem-corpus/actions/workflows/tests.yml)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE-APACHE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+
 **The AI-native emergency medicine knowledge base.**
 Agent-compiled. Physician-verified. Grep-friendly.
 
@@ -275,23 +279,9 @@ OpenEM Corpus. GOATnote Inc. https://github.com/GOATnote-Inc/openem-corpus
 
 ## Contributing
 
-Contributions welcome. Every file must:
-1. Follow the schema in `schemas/condition.schema.yaml`
-2. Include at least one verifiable source citation
-3. Pass validation (`python scripts/validate.py`)
-4. Not include StatPearls content or SNOMED CT codes
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, validation workflow, and submission guidelines.
 
-Physician reviewers: review a condition and submit a PR setting `reviewed_by: "Your Name, MD"`.
-
-Run corpus statistics:
-```bash
-python scripts/stats.py
-```
-
-Validate all files:
-```bash
-python scripts/validate.py
-```
+Physician reviewers: review a condition and submit a PR setting `reviewed_by: "Your Name, MD"` in the YAML frontmatter.
 
 ## Related Projects
 

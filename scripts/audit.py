@@ -781,7 +781,7 @@ def check_cross_references(conditions: list[dict]) -> list[dict]:
 
 
 # === Main runner ===
-def main():
+def main() -> None:
     conditions = load_all_conditions()
     print(f"Loaded {len(conditions)} conditions", file=sys.stderr)
 
