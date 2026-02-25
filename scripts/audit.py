@@ -83,14 +83,49 @@ STANDARD_UNITS = [
 
 # High-risk medication categories
 HIGH_RISK_MEDS = {
-    "vasopressors": ["norepinephrine", "epinephrine", "vasopressin", "phenylephrine", "dopamine"],
+    "vasopressors": [
+        "norepinephrine",
+        "epinephrine",
+        "vasopressin",
+        "phenylephrine",
+        "dopamine",
+    ],
     "antiarrhythmics": ["amiodarone", "lidocaine", "procainamide", "adenosine"],
-    "anticoagulants": ["heparin", "enoxaparin", "warfarin", "tpa", "alteplase", "tenecteplase"],
-    "rsi_agents": ["succinylcholine", "rocuronium", "etomidate", "ketamine", "propofol"],
+    "anticoagulants": [
+        "heparin",
+        "enoxaparin",
+        "warfarin",
+        "tpa",
+        "alteplase",
+        "tenecteplase",
+    ],
+    "rsi_agents": [
+        "succinylcholine",
+        "rocuronium",
+        "etomidate",
+        "ketamine",
+        "propofol",
+    ],
     "insulin": ["insulin"],
-    "tox_antidotes": ["naloxone", "flumazenil", "fomepizole", "pyridoxine", "atropine", "pralidoxime",
-                      "digifab", "n-acetylcysteine", "hydroxocobalamin", "glucagon"],
-    "obstetric": ["oxytocin", "methylergonovine", "carboprost", "misoprostol", "magnesium sulfate"],
+    "tox_antidotes": [
+        "naloxone",
+        "flumazenil",
+        "fomepizole",
+        "pyridoxine",
+        "atropine",
+        "pralidoxime",
+        "digifab",
+        "n-acetylcysteine",
+        "hydroxocobalamin",
+        "glucagon",
+    ],
+    "obstetric": [
+        "oxytocin",
+        "methylergonovine",
+        "carboprost",
+        "misoprostol",
+        "magnesium sulfate",
+    ],
     "pediatric_critical": ["prostaglandin", "surfactant", "dextrose"],
 }
 
@@ -127,7 +162,9 @@ def load_all_conditions() -> list[dict]:
         fm = extract_frontmatter(text)
         body = get_body(text)
         if fm:
-            results.append({"path": str(f), "name": f.stem, "fm": fm, "body": body, "text": text})
+            results.append(
+                {"path": str(f), "name": f.stem, "fm": fm, "body": body, "text": text}
+            )
     return results
 
 
@@ -146,31 +183,37 @@ def check_cross_file_dosing(conditions: list[dict]) -> list[dict]:
         r"nicardipine|diltiazem|magnesium sulfate|sodium bicarbonate|"
         r"tranexamic acid|heparin|alteplase|tenecteplase)\s+"
         r"(\d+[\d.,\-/]*\s*(?:mg|mcg|g|units?|mEq|mL)[\w/]*(?:\s*(?:IV|IM|IO|SQ|SL|PO|PR|IN|ET|q\d+[hm]?))*)",
-        re.IGNORECASE
+        re.IGNORECASE,
     )
 
     for c in conditions:
         for match in dose_pattern.finditer(c["body"]):
             drug = match.group(1).lower().strip()
             dose = match.group(2).strip()
-            drug_doses[drug].append({
-                "file": c["name"],
-                "dose": dose,
-                "context": c["body"][max(0, match.start()-40):match.end()+40].replace("\n", " ").strip()
-            })
+            drug_doses[drug].append(
+                {
+                    "file": c["name"],
+                    "dose": dose,
+                    "context": c["body"][max(0, match.start() - 40) : match.end() + 40]
+                    .replace("\n", " ")
+                    .strip(),
+                }
+            )
 
     # Flag drugs with multiple distinct dose strings (potential inconsistencies)
     for drug, mentions in drug_doses.items():
         unique_doses = set(m["dose"] for m in mentions)
         if len(unique_doses) > 3:  # More than 3 distinct dose strings warrants review
-            findings.append({
-                "check": "cross_file_dosing",
-                "drug": drug,
-                "severity": "info",
-                "unique_dose_count": len(unique_doses),
-                "files": list(set(m["file"] for m in mentions)),
-                "doses": list(unique_doses)[:10],
-            })
+            findings.append(
+                {
+                    "check": "cross_file_dosing",
+                    "drug": drug,
+                    "severity": "info",
+                    "unique_dose_count": len(unique_doses),
+                    "files": list(set(m["file"] for m in mentions)),
+                    "doses": list(unique_doses)[:10],
+                }
+            )
 
     return findings
 
@@ -198,14 +241,16 @@ def check_unit_normalization(conditions: list[dict]) -> list[dict]:
         for pat, msg in bad_patterns:
             matches = list(re.finditer(pat, c["body"], re.IGNORECASE))
             if matches:
-                findings.append({
-                    "check": "unit_normalization",
-                    "file": c["name"],
-                    "severity": "warning",
-                    "message": msg,
-                    "count": len(matches),
-                    "examples": [m.group() for m in matches[:3]],
-                })
+                findings.append(
+                    {
+                        "check": "unit_normalization",
+                        "file": c["name"],
+                        "severity": "warning",
+                        "message": msg,
+                        "count": len(matches),
+                        "examples": [m.group() for m in matches[:3]],
+                    }
+                )
 
     return findings
 
@@ -217,7 +262,11 @@ def check_dose_range_anomalies(conditions: list[dict]) -> list[dict]:
 
     # Known safe ranges: (drug_pattern, max_single_dose_mg, context)
     dose_limits = [
-        (r"epinephrine\s+(\d+\.?\d*)\s*mg\s*(?:IV|IO)", 1.0, "epinephrine IV single dose"),
+        (
+            r"epinephrine\s+(\d+\.?\d*)\s*mg\s*(?:IV|IO)",
+            1.0,
+            "epinephrine IV single dose",
+        ),
         (r"epinephrine\s+(\d+\.?\d*)\s*mg\s*IM", 0.5, "epinephrine IM single dose"),
         (r"atropine\s+(\d+\.?\d*)\s*mg", 5.0, "atropine single dose"),
         (r"lorazepam\s+(\d+\.?\d*)\s*mg", 8.0, "lorazepam single dose"),
@@ -235,13 +284,15 @@ def check_dose_range_anomalies(conditions: list[dict]) -> list[dict]:
                 try:
                     dose_val = float(m.group(1))
                     if dose_val > max_dose:
-                        findings.append({
-                            "check": "dose_range_anomaly",
-                            "file": c["name"],
-                            "severity": "critical",
-                            "message": f"{label}: {dose_val} mg exceeds max {max_dose} mg",
-                            "match": m.group(),
-                        })
+                        findings.append(
+                            {
+                                "check": "dose_range_anomaly",
+                                "file": c["name"],
+                                "severity": "critical",
+                                "message": f"{label}: {dose_val} mg exceeds max {max_dose} mg",
+                                "match": m.group(),
+                            }
+                        )
                 except (ValueError, IndexError):
                     pass
 
@@ -257,60 +308,72 @@ def check_citations(conditions: list[dict]) -> list[dict]:
         sources = fm.get("sources", [])
 
         if not sources:
-            findings.append({
-                "check": "citation_presence",
-                "file": c["name"],
-                "severity": "critical",
-                "message": "No sources listed",
-            })
+            findings.append(
+                {
+                    "check": "citation_presence",
+                    "file": c["name"],
+                    "severity": "critical",
+                    "message": "No sources listed",
+                }
+            )
             continue
 
         for i, src in enumerate(sources):
             if "type" not in src:
-                findings.append({
-                    "check": "citation_format",
-                    "file": c["name"],
-                    "severity": "warning",
-                    "message": f"source[{i}] missing 'type'",
-                })
+                findings.append(
+                    {
+                        "check": "citation_format",
+                        "file": c["name"],
+                        "severity": "warning",
+                        "message": f"source[{i}] missing 'type'",
+                    }
+                )
             if "ref" not in src:
-                findings.append({
-                    "check": "citation_format",
-                    "file": c["name"],
-                    "severity": "warning",
-                    "message": f"source[{i}] missing 'ref'",
-                })
+                findings.append(
+                    {
+                        "check": "citation_format",
+                        "file": c["name"],
+                        "severity": "warning",
+                        "message": f"source[{i}] missing 'ref'",
+                    }
+                )
 
             # Validate PMID format (digits only)
             if "pmid" in src and src["pmid"]:
                 if not re.match(r"^\d+$", str(src["pmid"])):
-                    findings.append({
-                        "check": "citation_format",
-                        "file": c["name"],
-                        "severity": "warning",
-                        "message": f"source[{i}] invalid PMID format: '{src['pmid']}'",
-                    })
+                    findings.append(
+                        {
+                            "check": "citation_format",
+                            "file": c["name"],
+                            "severity": "warning",
+                            "message": f"source[{i}] invalid PMID format: '{src['pmid']}'",
+                        }
+                    )
 
             # Validate DOI format
             if "doi" in src and src["doi"]:
                 if not re.match(r"^10\.\d{4,}", str(src["doi"])):
-                    findings.append({
-                        "check": "citation_format",
-                        "file": c["name"],
-                        "severity": "warning",
-                        "message": f"source[{i}] invalid DOI format: '{src['doi']}'",
-                    })
+                    findings.append(
+                        {
+                            "check": "citation_format",
+                            "file": c["name"],
+                            "severity": "warning",
+                            "message": f"source[{i}] invalid DOI format: '{src['doi']}'",
+                        }
+                    )
 
         # Check pubmed sources have PMIDs
         pubmed_sources = [s for s in sources if s.get("type") == "pubmed"]
         for i, src in enumerate(pubmed_sources):
             if "pmid" not in src:
-                findings.append({
-                    "check": "citation_format",
-                    "file": c["name"],
-                    "severity": "info",
-                    "message": f"pubmed source missing PMID: {src.get('ref', '?')[:60]}",
-                })
+                findings.append(
+                    {
+                        "check": "citation_format",
+                        "file": c["name"],
+                        "severity": "info",
+                        "message": f"pubmed source missing PMID: {src.get('ref', '?')[:60]}",
+                    }
+                )
 
     return findings
 
@@ -337,13 +400,15 @@ def check_duplicates(conditions: list[dict]) -> list[dict]:
     for sig, files in sig_map.items():
         unique_files = list(set(files))
         if len(unique_files) > 1:
-            findings.append({
-                "check": "duplicate_content",
-                "severity": "info",
-                "message": f"Near-duplicate paragraph across {len(unique_files)} files",
-                "files": unique_files,
-                "signature": sig[:80],
-            })
+            findings.append(
+                {
+                    "check": "duplicate_content",
+                    "severity": "info",
+                    "message": f"Near-duplicate paragraph across {len(unique_files)} files",
+                    "files": unique_files,
+                    "signature": sig[:80],
+                }
+            )
 
     return findings
 
@@ -364,13 +429,15 @@ def check_high_risk_meds(conditions: list[dict]) -> list[dict]:
                     break
 
         if file_tags:
-            findings.append({
-                "check": "high_risk_med_tagging",
-                "file": c["name"],
-                "severity": "info",
-                "risk_tier": c["fm"].get("risk_tier", "?"),
-                "high_risk_categories": sorted(file_tags),
-            })
+            findings.append(
+                {
+                    "check": "high_risk_med_tagging",
+                    "file": c["name"],
+                    "severity": "info",
+                    "risk_tier": c["fm"].get("risk_tier", "?"),
+                    "high_risk_categories": sorted(file_tags),
+                }
+            )
 
     return findings
 
@@ -382,22 +449,26 @@ def check_icd10(conditions: list[dict]) -> list[dict]:
     for c in conditions:
         codes = c["fm"].get("icd10", [])
         if not codes:
-            findings.append({
-                "check": "icd10_validation",
-                "file": c["name"],
-                "severity": "critical",
-                "message": "No ICD-10 codes listed",
-            })
+            findings.append(
+                {
+                    "check": "icd10_validation",
+                    "file": c["name"],
+                    "severity": "critical",
+                    "message": "No ICD-10 codes listed",
+                }
+            )
             continue
 
         for code in codes:
             if not ICD10_PATTERN.match(str(code)):
-                findings.append({
-                    "check": "icd10_validation",
-                    "file": c["name"],
-                    "severity": "warning",
-                    "message": f"Invalid ICD-10-CM format: '{code}'",
-                })
+                findings.append(
+                    {
+                        "check": "icd10_validation",
+                        "file": c["name"],
+                        "severity": "warning",
+                        "message": f"Invalid ICD-10-CM format: '{code}'",
+                    }
+                )
 
     return findings
 
@@ -412,12 +483,14 @@ def check_guideline_currency(conditions: list[dict]) -> list[dict]:
             ref = src.get("ref", "")
             for fragment, note in OUTDATED_GUIDELINES.items():
                 if fragment in ref:
-                    findings.append({
-                        "check": "guideline_currency",
-                        "file": c["name"],
-                        "severity": "info",
-                        "message": f"Potentially outdated: '{ref[:80]}' — {note}",
-                    })
+                    findings.append(
+                        {
+                            "check": "guideline_currency",
+                            "file": c["name"],
+                            "severity": "info",
+                            "message": f"Potentially outdated: '{ref[:80]}' — {note}",
+                        }
+                    )
 
     return findings
 
@@ -433,6 +506,7 @@ REQUIRED_CONTENT_SECTIONS = [
     "Pitfalls",
 ]
 
+
 def check_content_completeness(conditions: list[dict]) -> list[dict]:
     """Check that all required sections are present and substantive (>= 50 chars)."""
     findings = []
@@ -447,35 +521,40 @@ def check_content_completeness(conditions: list[dict]) -> list[dict]:
             )
             m = pattern.search(body)
             if not m:
-                findings.append({
-                    "check": "content_completeness",
-                    "file": c["name"],
-                    "severity": "critical",
-                    "section": section,
-                    "message": f"Section '## {section}' missing entirely",
-                })
+                findings.append(
+                    {
+                        "check": "content_completeness",
+                        "file": c["name"],
+                        "severity": "critical",
+                        "section": section,
+                        "message": f"Section '## {section}' missing entirely",
+                    }
+                )
             else:
                 section_content = m.group(1).strip()
                 # Strip markdown formatting noise for length measurement
                 cleaned = re.sub(r"[#*`|_\-\[\]]+", " ", section_content)
                 cleaned = re.sub(r"\s+", " ", cleaned).strip()
                 if len(cleaned) < 50:
-                    findings.append({
-                        "check": "content_completeness",
-                        "file": c["name"],
-                        "severity": "critical",
-                        "section": section,
-                        "message": (
-                            f"Section '## {section}' has < 50 chars of content "
-                            f"(found {len(cleaned)} chars after stripping headers)"
-                        ),
-                    })
+                    findings.append(
+                        {
+                            "check": "content_completeness",
+                            "file": c["name"],
+                            "severity": "critical",
+                            "section": section,
+                            "message": (
+                                f"Section '## {section}' has < 50 chars of content "
+                                f"(found {len(cleaned)} chars after stripping headers)"
+                            ),
+                        }
+                    )
 
     return findings
 
 
 # === Pass 10: Source currency ===
 _YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
+
 
 def check_source_currency(conditions: list[dict]) -> list[dict]:
     """Flag conditions where no source year is >= 2021 (all sources older than 5 years)."""
@@ -493,30 +572,34 @@ def check_source_currency(conditions: list[dict]) -> list[dict]:
                 years.append(int(m.group()))
 
         if not years:
-            findings.append({
-                "check": "source_currency",
-                "file": c["name"],
-                "severity": "info",
-                "message": "No 4-digit years found in any source ref — cannot assess currency",
-            })
+            findings.append(
+                {
+                    "check": "source_currency",
+                    "file": c["name"],
+                    "severity": "info",
+                    "message": "No 4-digit years found in any source ref — cannot assess currency",
+                }
+            )
             continue
 
         mean_year = sum(years) / len(years)
         max_year = max(years)
 
         if max_year < 2021:
-            findings.append({
-                "check": "source_currency",
-                "file": c["name"],
-                "severity": "info",
-                "message": (
-                    f"All sources older than 5 years (newest: {max_year}, "
-                    f"mean: {mean_year:.1f}). Review for updated guidelines."
-                ),
-                "max_year": max_year,
-                "mean_year": round(mean_year, 1),
-                "years_found": sorted(set(years)),
-            })
+            findings.append(
+                {
+                    "check": "source_currency",
+                    "file": c["name"],
+                    "severity": "info",
+                    "message": (
+                        f"All sources older than 5 years (newest: {max_year}, "
+                        f"mean: {mean_year:.1f}). Review for updated guidelines."
+                    ),
+                    "max_year": max_year,
+                    "mean_year": round(mean_year, 1),
+                    "years_found": sorted(set(years)),
+                }
+            )
 
     return findings
 
@@ -529,6 +612,7 @@ _PEDS_DOSE_RE = re.compile(
     r"\b(mg/kg|pediatric\s+dose|child\s+dose|neonatal\s+dose|per\s+kg)\b",
     re.IGNORECASE,
 )
+
 
 def check_pediatric_doses(conditions: list[dict]) -> list[dict]:
     """Flag conditions mentioning pediatric populations without pediatric dosing."""
@@ -544,16 +628,18 @@ def check_pediatric_doses(conditions: list[dict]) -> list[dict]:
         if not has_peds_dose:
             # Count how many mentions to gauge depth of pediatric coverage
             mention_count = len(_PEDS_MENTION_RE.findall(body))
-            findings.append({
-                "check": "pediatric_dose_coverage",
-                "file": c["name"],
-                "severity": "info",
-                "message": (
-                    f"Pediatric population mentioned ({mention_count} times) "
-                    "but no pediatric dosing found (mg/kg, pediatric dose, neonatal dose, etc.)"
-                ),
-                "mention_count": mention_count,
-            })
+            findings.append(
+                {
+                    "check": "pediatric_dose_coverage",
+                    "file": c["name"],
+                    "severity": "info",
+                    "message": (
+                        f"Pediatric population mentioned ({mention_count} times) "
+                        "but no pediatric dosing found (mg/kg, pediatric dose, neonatal dose, etc.)"
+                    ),
+                    "mention_count": mention_count,
+                }
+            )
 
     return findings
 
@@ -570,6 +656,7 @@ _INTL_TERMS = {
     "RCPCH": r"\bRCPCH\b",
 }
 
+
 def check_international_terminology(conditions: list[dict]) -> list[dict]:
     """Count UK/international terminology mentions per file (informational)."""
     findings = []
@@ -584,34 +671,53 @@ def check_international_terminology(conditions: list[dict]) -> list[dict]:
 
         if matches_found:
             total = sum(matches_found.values())
-            findings.append({
-                "check": "international_terminology",
-                "file": c["name"],
-                "severity": "info",
-                "message": (
-                    f"Contains {total} international/UK terminology reference(s): "
-                    + ", ".join(f"{t}({n})" for t, n in sorted(matches_found.items()))
-                ),
-                "term_counts": matches_found,
-                "total_count": total,
-            })
+            findings.append(
+                {
+                    "check": "international_terminology",
+                    "file": c["name"],
+                    "severity": "info",
+                    "message": (
+                        f"Contains {total} international/UK terminology reference(s): "
+                        + ", ".join(
+                            f"{t}({n})" for t, n in sorted(matches_found.items())
+                        )
+                    ),
+                    "term_counts": matches_found,
+                    "total_count": total,
+                }
+            )
 
     return findings
 
 
 # === Pass 13: Cross-reference completeness ===
-_CAPITALIZED_PHRASE_RE = re.compile(
-    r"\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)\b"
-)
+_CAPITALIZED_PHRASE_RE = re.compile(r"\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)\b")
 # Terms to exclude — common medical/anatomical capitalized phrases that aren't conditions
-_XREF_EXCLUDE = frozenset([
-    "Emergency Department", "Emergency Medicine", "Intensive Care Unit",
-    "Critical Care", "Intensive Care", "Emergency Room", "Operating Room",
-    "Emergency Medical", "United States", "World Health", "American Heart",
-    "American College", "European Society", "Surviving Sepsis",
-    "Clinical Practice", "Evidence Based", "Systematic Review",
-    "Case Report", "Randomized Controlled", "Meta Analysis",
-])
+_XREF_EXCLUDE = frozenset(
+    [
+        "Emergency Department",
+        "Emergency Medicine",
+        "Intensive Care Unit",
+        "Critical Care",
+        "Intensive Care",
+        "Emergency Room",
+        "Operating Room",
+        "Emergency Medical",
+        "United States",
+        "World Health",
+        "American Heart",
+        "American College",
+        "European Society",
+        "Surviving Sepsis",
+        "Clinical Practice",
+        "Evidence Based",
+        "Systematic Review",
+        "Case Report",
+        "Randomized Controlled",
+        "Meta Analysis",
+    ]
+)
+
 
 def check_cross_references(conditions: list[dict]) -> list[dict]:
     """Check that conditions referenced in Differential Diagnosis sections have corpus files."""
@@ -652,20 +758,24 @@ def check_cross_references(conditions: list[dict]) -> list[dict]:
             # Try exact match and common abbreviation patterns
             if slug not in known_stems:
                 # Also try removing trailing -s, -syndrome, -disease (common normalization)
-                slug_trunc = re.sub(r"-(syndrome|disease|disorder|injury|failure)$", "", slug)
+                slug_trunc = re.sub(
+                    r"-(syndrome|disease|disorder|injury|failure)$", "", slug
+                )
                 if slug_trunc not in known_stems:
                     missing.append(phrase)
 
         if missing:
-            findings.append({
-                "check": "cross_reference_completeness",
-                "file": c["name"],
-                "severity": "info",
-                "message": (
-                    f"{len(missing)} DDx reference(s) have no corresponding corpus file"
-                ),
-                "missing_files": missing[:10],  # cap output at 10
-            })
+            findings.append(
+                {
+                    "check": "cross_reference_completeness",
+                    "file": c["name"],
+                    "severity": "info",
+                    "message": (
+                        f"{len(missing)} DDx reference(s) have no corresponding corpus file"
+                    ),
+                    "missing_files": missing[:10],  # cap output at 10
+                }
+            )
 
     return findings
 
@@ -715,7 +825,10 @@ def main():
     report["critical_findings"] = critical_count
 
     print(json.dumps(report, indent=2))
-    print(f"\nTotal: {total_findings} findings ({critical_count} critical)", file=sys.stderr)
+    print(
+        f"\nTotal: {total_findings} findings ({critical_count} critical)",
+        file=sys.stderr,
+    )
 
     # Always exit 0 — audit flags but does not block
     return 0

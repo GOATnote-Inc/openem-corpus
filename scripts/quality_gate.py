@@ -58,6 +58,7 @@ DOSE_LIMITS = [
 
 # ---- File loading ----
 
+
 def extract_frontmatter(text: str) -> dict | None:
     m = re.match(r"^---\n(.*?)\n---", text, re.DOTALL)
     if not m:
@@ -83,17 +84,20 @@ def load_all_conditions() -> list[dict]:
 
 # ---- Gate checks ----
 
+
 def gate_no_sources(conditions: list[dict]) -> list[dict]:
     """BLOCK: Any condition with no sources."""
     failures = []
     for c in conditions:
         sources = c["fm"].get("sources", [])
         if not sources:
-            failures.append({
-                "gate": "no_sources",
-                "file": c["name"],
-                "message": "No sources listed — every condition requires at least one citation",
-            })
+            failures.append(
+                {
+                    "gate": "no_sources",
+                    "file": c["name"],
+                    "message": "No sources listed — every condition requires at least one citation",
+                }
+            )
     return failures
 
 
@@ -103,11 +107,13 @@ def gate_no_icd10(conditions: list[dict]) -> list[dict]:
     for c in conditions:
         codes = c["fm"].get("icd10", [])
         if not codes:
-            failures.append({
-                "gate": "no_icd10",
-                "file": c["name"],
-                "message": "No ICD-10 codes — every condition requires at least one code",
-            })
+            failures.append(
+                {
+                    "gate": "no_icd10",
+                    "file": c["name"],
+                    "message": "No ICD-10 codes — every condition requires at least one code",
+                }
+            )
     return failures
 
 
@@ -118,11 +124,13 @@ def gate_invalid_icd10(conditions: list[dict]) -> list[dict]:
         codes = c["fm"].get("icd10", [])
         for code in codes:
             if not ICD10_PATTERN.match(str(code)):
-                failures.append({
-                    "gate": "invalid_icd10_format",
-                    "file": c["name"],
-                    "message": f"Invalid ICD-10-CM format: '{code}' — must match [A-TV-Z]\\d{{2}}(\\.[A-Z0-9]{{1,4}})?",
-                })
+                failures.append(
+                    {
+                        "gate": "invalid_icd10_format",
+                        "file": c["name"],
+                        "message": f"Invalid ICD-10-CM format: '{code}' — must match [A-TV-Z]\\d{{2}}(\\.[A-Z0-9]{{1,4}})?",
+                    }
+                )
     return failures
 
 
@@ -135,14 +143,16 @@ def gate_dose_range_anomalies(conditions: list[dict]) -> list[dict]:
                 try:
                     dose_val = float(m.group(1))
                     if dose_val > max_dose:
-                        failures.append({
-                            "gate": "dose_range_anomaly",
-                            "file": c["name"],
-                            "message": (
-                                f"{label}: {dose_val} mg exceeds max {max_dose} mg. "
-                                f"Match: '{m.group()}'"
-                            ),
-                        })
+                        failures.append(
+                            {
+                                "gate": "dose_range_anomaly",
+                                "file": c["name"],
+                                "message": (
+                                    f"{label}: {dose_val} mg exceeds max {max_dose} mg. "
+                                    f"Match: '{m.group()}'"
+                                ),
+                            }
+                        )
                 except (ValueError, IndexError):
                     pass
     return failures
@@ -164,14 +174,16 @@ def gate_zero_pmids(conditions: list[dict]) -> list[dict]:
         # which is acceptable. Flag only when we have pubmed-type sources without PMIDs.
         pubmed_sources = [s for s in sources if s.get("type") == "pubmed"]
         if pubmed_sources and not pmids:
-            failures.append({
-                "gate": "zero_pmids",
-                "file": c["name"],
-                "message": (
-                    f"{len(pubmed_sources)} source(s) typed 'pubmed' but none have a PMID field. "
-                    "Add pmid: fields or change source type to 'guideline'."
-                ),
-            })
+            failures.append(
+                {
+                    "gate": "zero_pmids",
+                    "file": c["name"],
+                    "message": (
+                        f"{len(pubmed_sources)} source(s) typed 'pubmed' but none have a PMID field. "
+                        "Add pmid: fields or change source type to 'guideline'."
+                    ),
+                }
+            )
     return failures
 
 
@@ -199,28 +211,34 @@ def gate_content_completeness(conditions: list[dict]) -> list[dict]:
                     passing_sections += 1
                     section_results[section] = f"OK ({char_count} chars)"
                 else:
-                    section_results[section] = f"THIN ({char_count} chars < {MIN_SECTION_CHARS})"
+                    section_results[section] = (
+                        f"THIN ({char_count} chars < {MIN_SECTION_CHARS})"
+                    )
             else:
                 section_results[section] = "MISSING"
 
         if passing_sections < MIN_PASSING_SECTIONS:
-            failures.append({
-                "gate": "content_completeness",
-                "file": c["name"],
-                "message": (
-                    f"Only {passing_sections}/{len(REQUIRED_SECTIONS)} required sections are "
-                    f"substantive (need {MIN_PASSING_SECTIONS}). "
-                    "Sections: " + "; ".join(f"{s}: {r}" for s, r in section_results.items())
-                ),
-                "passing_sections": passing_sections,
-                "required": MIN_PASSING_SECTIONS,
-                "section_detail": section_results,
-            })
+            failures.append(
+                {
+                    "gate": "content_completeness",
+                    "file": c["name"],
+                    "message": (
+                        f"Only {passing_sections}/{len(REQUIRED_SECTIONS)} required sections are "
+                        f"substantive (need {MIN_PASSING_SECTIONS}). "
+                        "Sections: "
+                        + "; ".join(f"{s}: {r}" for s, r in section_results.items())
+                    ),
+                    "passing_sections": passing_sections,
+                    "required": MIN_PASSING_SECTIONS,
+                    "section_detail": section_results,
+                }
+            )
 
     return failures
 
 
 # ---- Runner ----
+
 
 def main() -> int:
     conditions = load_all_conditions()

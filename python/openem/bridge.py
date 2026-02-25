@@ -96,7 +96,8 @@ class OpenEMBridge:
         fallback_id = fallback_id.lower()
         logger.warning(
             "Condition %r not in condition_map; trying fallback %r",
-            condition, fallback_id,
+            condition,
+            fallback_id,
         )
         return [fallback_id]
 
@@ -265,7 +266,9 @@ class OpenEMBridge:
         if not trigger_parts:
             return primary_context
 
-        addendum = "\n\n[ESCALATION TRIGGERS — Red flags requiring emergency evaluation]\n"
+        addendum = (
+            "\n\n[ESCALATION TRIGGERS — Red flags requiring emergency evaluation]\n"
+        )
         addendum += "\n".join(f"- {t}" for t in trigger_parts)
 
         return primary_context + addendum

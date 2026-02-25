@@ -63,7 +63,9 @@ def section_to_key(section_name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", section_name.lower()).strip("_")
 
 
-def split_subsections(section_name: str, section_text: str, threshold: int = 800) -> dict[str, str]:
+def split_subsections(
+    section_name: str, section_text: str, threshold: int = 800
+) -> dict[str, str]:
     """Split a section at H3 boundaries if it exceeds threshold chars."""
     if len(section_text) <= threshold:
         return {section_name: section_text}
@@ -76,7 +78,9 @@ def split_subsections(section_name: str, section_text: str, threshold: int = 800
     for line in section_text.split("\n"):
         if line.startswith("### "):
             if current_sub:
-                subsections[f"{section_name} > {current_sub}"] = "\n".join(current_lines).strip()
+                subsections[f"{section_name} > {current_sub}"] = "\n".join(
+                    current_lines
+                ).strip()
             elif current_lines:
                 preamble_lines = current_lines[:]
             current_sub = line[4:].strip()
@@ -85,7 +89,9 @@ def split_subsections(section_name: str, section_text: str, threshold: int = 800
             current_lines.append(line)
 
     if current_sub:
-        subsections[f"{section_name} > {current_sub}"] = "\n".join(current_lines).strip()
+        subsections[f"{section_name} > {current_sub}"] = "\n".join(
+            current_lines
+        ).strip()
 
     if not subsections:
         return {section_name: section_text}
@@ -144,10 +150,15 @@ def build_chunks(frontmatter: dict, sections: dict, condition_id: str) -> list[d
 def main():
     parser = argparse.ArgumentParser(description="Build OpenEM hybrid search index")
     parser.add_argument(
-        "--model", default=DEFAULT_MODEL, help=f"Embedding model (default: {DEFAULT_MODEL})"
+        "--model",
+        default=DEFAULT_MODEL,
+        help=f"Embedding model (default: {DEFAULT_MODEL})",
     )
     parser.add_argument(
-        "--output", type=Path, default=DEFAULT_INDEX_DIR, help="Output directory for index"
+        "--output",
+        type=Path,
+        default=DEFAULT_INDEX_DIR,
+        help="Output directory for index",
     )
     args = parser.parse_args()
 

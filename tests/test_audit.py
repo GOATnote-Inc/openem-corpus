@@ -24,6 +24,7 @@ from audit import (
 
 # ---- Helpers ----
 
+
 def make_condition(name, body, fm_overrides=None):
     """Build a synthetic condition dict as returned by audit.load_all_conditions."""
     fm = {
@@ -51,6 +52,7 @@ def make_condition(name, body, fm_overrides=None):
 
 
 # ---- Pass 1: Cross-file dosing ----
+
 
 class TestCheckCrossFileDosing:
     def test_no_findings_when_single_file(self):
@@ -94,27 +96,39 @@ class TestCheckCrossFileDosing:
 
 # ---- Pass 2: Unit normalization ----
 
+
 class TestCheckUnitNormalization:
     def test_flags_ug_unit(self):
         c = make_condition("tox", "Give 50 ug fentanyl IV.")
         findings = check_unit_normalization([c])
-        assert any("ug" in f.get("message", "").lower() or "ug" in str(f.get("examples", [])).lower()
-                   for f in findings)
+        assert any(
+            "ug" in f.get("message", "").lower()
+            or "ug" in str(f.get("examples", [])).lower()
+            for f in findings
+        )
 
     def test_flags_cc_unit(self):
         c = make_condition("fluid", "Give 500 cc normal saline.")
         findings = check_unit_normalization([c])
-        assert any("cc" in f.get("message", "").lower() or "cc" in str(f.get("examples", [])).lower()
-                   for f in findings)
+        assert any(
+            "cc" in f.get("message", "").lower()
+            or "cc" in str(f.get("examples", [])).lower()
+            for f in findings
+        )
 
     def test_flags_gm_unit(self):
         c = make_condition("acetaminophen", "Give 1 gm acetaminophen.")
         findings = check_unit_normalization([c])
-        assert any("gm" in f.get("message", "").lower() or "gm" in str(f.get("examples", [])).lower()
-                   for f in findings)
+        assert any(
+            "gm" in f.get("message", "").lower()
+            or "gm" in str(f.get("examples", [])).lower()
+            for f in findings
+        )
 
     def test_no_findings_for_correct_units(self):
-        c = make_condition("stemi", "Give epinephrine 1 mg IV. Norepinephrine 0.1 mcg/kg/min.")
+        c = make_condition(
+            "stemi", "Give epinephrine 1 mg IV. Norepinephrine 0.1 mcg/kg/min."
+        )
         findings = check_unit_normalization([c])
         assert findings == []
 
@@ -132,6 +146,7 @@ class TestCheckUnitNormalization:
 
 # ---- Pass 3: Dose-range anomaly detection ----
 
+
 class TestCheckDoseRangeAnomalies:
     def test_flags_epinephrine_iv_overdose(self):
         # Max epinephrine IV single dose is 1.0 mg; 5 mg should be flagged
@@ -143,7 +158,9 @@ class TestCheckDoseRangeAnomalies:
     def test_epinephrine_normal_dose_not_flagged(self):
         c = make_condition("crit", "Give epinephrine 1 mg IV push.")
         findings = check_dose_range_anomalies([c])
-        epi_findings = [f for f in findings if "epinephrine" in f.get("message", "").lower()]
+        epi_findings = [
+            f for f in findings if "epinephrine" in f.get("message", "").lower()
+        ]
         assert epi_findings == []
 
     def test_flags_atropine_overdose(self):
@@ -161,7 +178,9 @@ class TestCheckDoseRangeAnomalies:
     def test_no_findings_for_normal_doses(self):
         c = make_condition("svt", "Give adenosine 6 mg IV rapid push.")
         findings = check_dose_range_anomalies([c])
-        adenosine_findings = [f for f in findings if "adenosine" in f.get("message", "").lower()]
+        adenosine_findings = [
+            f for f in findings if "adenosine" in f.get("message", "").lower()
+        ]
         assert adenosine_findings == []
 
     def test_finding_has_critical_severity(self):
@@ -172,6 +191,7 @@ class TestCheckDoseRangeAnomalies:
 
 
 # ---- Pass 4: Citations ----
+
 
 class TestCheckCitations:
     def test_flags_missing_sources(self):
@@ -219,10 +239,17 @@ class TestCheckCitations:
 
 # ---- Pass 5: Duplicates ----
 
+
 class TestCheckDuplicates:
     def test_no_findings_for_unique_content(self):
-        c1 = make_condition("cond1", "Unique paragraph about condition one management in the emergency department.")
-        c2 = make_condition("cond2", "Different paragraph about condition two with separate clinical content.")
+        c1 = make_condition(
+            "cond1",
+            "Unique paragraph about condition one management in the emergency department.",
+        )
+        c2 = make_condition(
+            "cond2",
+            "Different paragraph about condition two with separate clinical content.",
+        )
         findings = check_duplicates([c1, c2])
         assert findings == []
 
@@ -232,7 +259,9 @@ class TestCheckDuplicates:
             "Monitor vital signs and repeat in 5-15 minutes if no improvement."
         )
         c1 = make_condition("allergy", f"{shared}\n\nUnique allergy content here.")
-        c2 = make_condition("anaphylaxis", f"{shared}\n\nUnique anaphylaxis content here.")
+        c2 = make_condition(
+            "anaphylaxis", f"{shared}\n\nUnique anaphylaxis content here."
+        )
         findings = check_duplicates([c1, c2])
         dup_findings = [f for f in findings if f.get("check") == "duplicate_content"]
         assert len(dup_findings) >= 1
@@ -255,12 +284,16 @@ class TestCheckDuplicates:
         assert findings == []
 
     def test_single_condition_no_duplicates(self):
-        c = make_condition("solo", "Single condition paragraph here. No other files to compare against.")
+        c = make_condition(
+            "solo",
+            "Single condition paragraph here. No other files to compare against.",
+        )
         findings = check_duplicates([c])
         assert findings == []
 
 
 # ---- Pass 7: ICD-10 ----
+
 
 class TestCheckICD10:
     def test_flags_missing_icd10(self):
@@ -292,13 +325,16 @@ class TestCheckICD10:
         assert any("Invalid ICD-10" in f.get("message", "") for f in findings)
 
     def test_multiple_codes_both_checked(self):
-        c = make_condition("multi", "Body.", fm_overrides={"icd10": ["I21.01", "BAD_CODE"]})
+        c = make_condition(
+            "multi", "Body.", fm_overrides={"icd10": ["I21.01", "BAD_CODE"]}
+        )
         findings = check_icd10([c])
         invalid = [f for f in findings if "Invalid ICD-10" in f.get("message", "")]
         assert len(invalid) >= 1
 
 
 # ---- Pass 8: Guideline currency ----
+
 
 class TestCheckGuidelineCurrency:
     def test_flags_outdated_2010_aha(self):

@@ -123,6 +123,7 @@ def no_frontmatter_file(tmp_path):
 
 # ---- parse_condition ----
 
+
 class TestParseCondition:
     def test_returns_frontmatter_dict(self, sample_file):
         fm, sections = parse_condition(sample_file)
@@ -177,6 +178,7 @@ class TestParseCondition:
 
 # ---- section_to_key ----
 
+
 class TestSectionToKey:
     def test_critical_actions(self):
         assert section_to_key("Critical Actions") == "critical_actions"
@@ -206,6 +208,7 @@ class TestSectionToKey:
 
 # ---- build_chunks ----
 
+
 class TestBuildChunks:
     def test_returns_list(self, sample_file):
         fm, sections = parse_condition(sample_file)
@@ -220,8 +223,18 @@ class TestBuildChunks:
     def test_chunk_has_required_keys(self, sample_file):
         fm, sections = parse_condition(sample_file)
         chunks = build_chunks(fm, sections, "test-stemi")
-        required = {"id", "condition_id", "condition", "section", "text",
-                    "category", "risk_tier", "esi", "aliases", "icd10"}
+        required = {
+            "id",
+            "condition_id",
+            "condition",
+            "section",
+            "text",
+            "category",
+            "risk_tier",
+            "esi",
+            "aliases",
+            "icd10",
+        }
         for chunk in chunks:
             for key in required:
                 assert key in chunk, f"Chunk missing key '{key}'"
@@ -231,7 +244,9 @@ class TestBuildChunks:
         chunks = build_chunks(fm, sections, "test-stemi")
         for chunk in chunks:
             cid = chunk["id"]
-            assert cid.startswith("test-stemi/"), f"id '{cid}' must start with 'test-stemi/'"
+            assert cid.startswith("test-stemi/"), (
+                f"id '{cid}' must start with 'test-stemi/'"
+            )
 
     def test_chunk_text_includes_condition_name(self, sample_file):
         fm, sections = parse_condition(sample_file)

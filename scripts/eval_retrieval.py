@@ -37,7 +37,9 @@ def load_ground_truth(path: Path) -> list[dict]:
             try:
                 records.append(json.loads(line))
             except json.JSONDecodeError as e:
-                print(f"WARNING: Skipping malformed line {line_num}: {e}", file=sys.stderr)
+                print(
+                    f"WARNING: Skipping malformed line {line_num}: {e}", file=sys.stderr
+                )
     return records
 
 
@@ -65,7 +67,9 @@ def reciprocal_rank(retrieved_ids: list[str], expected_ids: list[str]) -> float:
     return 0.0
 
 
-def section_recall(retrieved_sections: list[str], expected_sections: list[str]) -> float:
+def section_recall(
+    retrieved_sections: list[str], expected_sections: list[str]
+) -> float:
     """Fraction of expected sections found in retrieved chunks.
 
     Handles sub-section names (e.g., 'Treatment > Pain Management') by checking
@@ -180,9 +184,11 @@ def print_report(agg: dict, per_query: list[dict], verbose: bool = False) -> Non
         print("\nBy scenario type:")
         for stype, metrics in agg["by_scenario"].items():
             print(f"  {stype} (n={metrics['n']})")
-            print(f"    Recall={metrics['recall']:.3f}  Prec={metrics['precision']:.3f}  "
-                  f"MRR={metrics['mrr']:.3f}  SecRecall={metrics['section_recall']:.3f}  "
-                  f"Top1={metrics['top1_accuracy']:.3f}")
+            print(
+                f"    Recall={metrics['recall']:.3f}  Prec={metrics['precision']:.3f}  "
+                f"MRR={metrics['mrr']:.3f}  SecRecall={metrics['section_recall']:.3f}  "
+                f"Top1={metrics['top1_accuracy']:.3f}"
+            )
 
     if verbose:
         print("\nPer-query detail:")
@@ -192,8 +198,10 @@ def print_report(agg: dict, per_query: list[dict], verbose: bool = False) -> Non
             print(f"[{status}] ({r['scenario_type']}) {r['query'][:60]}")
             print(f"       expected: {r['expected_ids']}")
             print(f"       got:      {r['retrieved_ids']}")
-            print(f"       recall={r['recall']:.2f}  prec={r['precision']:.2f}  "
-                  f"rr={r['reciprocal_rank']:.2f}  sec_recall={r['section_recall']:.2f}")
+            print(
+                f"       recall={r['recall']:.2f}  prec={r['precision']:.2f}  "
+                f"rr={r['reciprocal_rank']:.2f}  sec_recall={r['section_recall']:.2f}"
+            )
 
     print("=" * 60 + "\n")
 
@@ -244,7 +252,9 @@ def main():
 
     # Load ground truth
     if not args.ground_truth.exists():
-        print(f"ERROR: Ground truth file not found: {args.ground_truth}", file=sys.stderr)
+        print(
+            f"ERROR: Ground truth file not found: {args.ground_truth}", file=sys.stderr
+        )
         sys.exit(1)
 
     records = load_ground_truth(args.ground_truth)
@@ -256,7 +266,10 @@ def main():
     if args.scenario:
         records = [r for r in records if r.get("scenario_type") == args.scenario]
         if not records:
-            print(f"ERROR: No records with scenario_type={args.scenario!r}", file=sys.stderr)
+            print(
+                f"ERROR: No records with scenario_type={args.scenario!r}",
+                file=sys.stderr,
+            )
             sys.exit(1)
 
     print(f"Loaded {len(records)} queries from {args.ground_truth}")
@@ -270,12 +283,16 @@ def main():
         sys.exit(1)
 
     manifest = index.manifest
-    print(f"  Index: {manifest['num_conditions']} conditions, "
-          f"{manifest['num_chunks']} chunks, "
-          f"model={manifest['embedding_model']}")
+    print(
+        f"  Index: {manifest['num_conditions']} conditions, "
+        f"{manifest['num_chunks']} chunks, "
+        f"model={manifest['embedding_model']}"
+    )
 
     # Run evaluation
-    print(f"\nEvaluating {len(records)} queries (top_k={args.top_k}, mode={args.mode})...")
+    print(
+        f"\nEvaluating {len(records)} queries (top_k={args.top_k}, mode={args.mode})..."
+    )
     per_query = []
     for i, record in enumerate(records):
         result = evaluate_query(index, record, args.top_k, args.mode)

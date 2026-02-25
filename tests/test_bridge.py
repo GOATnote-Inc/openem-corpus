@@ -30,6 +30,7 @@ from openem.bridge import OpenEMBridge, PRIORITY_SECTIONS
 
 # ---- Fixtures ----
 
+
 def make_mock_index(search_results=None):
     """Build a MagicMock that mimics OpenEMIndex."""
     idx = MagicMock()
@@ -64,6 +65,7 @@ CONDITION_MAP = {
 
 # ---- resolve_condition_ids ----
 
+
 class TestResolveConditionIds:
     def test_exact_match_in_map(self):
         bridge = OpenEMBridge(make_mock_index(), CONDITION_MAP)
@@ -72,7 +74,8 @@ class TestResolveConditionIds:
     def test_multi_id_match(self):
         bridge = OpenEMBridge(make_mock_index(), CONDITION_MAP)
         assert bridge.resolve_condition_ids("neonatal_sepsis") == [
-            "neonatal-emergencies", "sepsis"
+            "neonatal-emergencies",
+            "sepsis",
         ]
 
     def test_case_insensitive_lookup(self):
@@ -106,6 +109,7 @@ class TestResolveConditionIds:
 
 # ---- get_context ----
 
+
 class TestGetContext:
     def test_returns_none_for_empty_condition_id_list(self):
         """When condition_map maps key to [], return None without calling search."""
@@ -121,7 +125,12 @@ class TestGetContext:
         assert result is None
 
     def test_returns_string_with_valid_results(self):
-        r = make_result("stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab immediately.")
+        r = make_result(
+            "stemi/critical_actions",
+            "STEMI",
+            "Critical Actions",
+            "Activate cath lab immediately.",
+        )
         idx = make_mock_index(search_results=[r])
         bridge = OpenEMBridge(idx, CONDITION_MAP)
         result = bridge.get_context("stemi")
@@ -129,7 +138,12 @@ class TestGetContext:
         assert len(result) > 0
 
     def test_result_contains_section_header(self):
-        r = make_result("stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab immediately.")
+        r = make_result(
+            "stemi/critical_actions",
+            "STEMI",
+            "Critical Actions",
+            "Activate cath lab immediately.",
+        )
         idx = make_mock_index(search_results=[r])
         bridge = OpenEMBridge(idx, CONDITION_MAP)
         result = bridge.get_context("stemi")
@@ -138,8 +152,12 @@ class TestGetContext:
 
     def test_dedup_by_chunk_id(self):
         """Duplicate chunk IDs appear in results only once."""
-        r1 = make_result("stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab.")
-        r2 = make_result("stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab.")
+        r1 = make_result(
+            "stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab."
+        )
+        r2 = make_result(
+            "stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab."
+        )
         idx = make_mock_index(search_results=[r1, r2])
         bridge = OpenEMBridge(idx, CONDITION_MAP)
         result = bridge.get_context("stemi")
@@ -148,8 +166,12 @@ class TestGetContext:
 
     def test_section_priority_critical_actions_before_disposition(self):
         """Critical Actions must appear before Disposition in output."""
-        r_disp = make_result("stemi/disposition", "STEMI", "Disposition", "Admit to cardiac ICU.")
-        r_crit = make_result("stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab.")
+        r_disp = make_result(
+            "stemi/disposition", "STEMI", "Disposition", "Admit to cardiac ICU."
+        )
+        r_crit = make_result(
+            "stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab."
+        )
         # Return disposition first to verify sorting overrides insertion order
         idx = make_mock_index(search_results=[r_disp, r_crit])
         bridge = OpenEMBridge(idx, CONDITION_MAP)
@@ -161,7 +183,9 @@ class TestGetContext:
     def test_max_chars_budget_respected(self):
         """Output must not exceed max_chars."""
         long_text = "x" * 5000
-        r = make_result("stemi/critical_actions", "STEMI", "Critical Actions", long_text)
+        r = make_result(
+            "stemi/critical_actions", "STEMI", "Critical Actions", long_text
+        )
         idx = make_mock_index(search_results=[r])
         bridge = OpenEMBridge(idx, CONDITION_MAP)
         result = bridge.get_context("stemi", max_chars=500)
@@ -170,7 +194,9 @@ class TestGetContext:
     def test_strips_header_line_from_chunk(self):
         """Text starting with a header line (first paragraph) should be stripped."""
         text_with_header = "STEMI — Critical Actions\n\nActivate cath lab immediately."
-        r = make_result("stemi/critical_actions", "STEMI", "Critical Actions", text_with_header)
+        r = make_result(
+            "stemi/critical_actions", "STEMI", "Critical Actions", text_with_header
+        )
         idx = make_mock_index(search_results=[r])
         bridge = OpenEMBridge(idx, CONDITION_MAP)
         result = bridge.get_context("stemi")
@@ -179,8 +205,15 @@ class TestGetContext:
 
     def test_multiple_condition_ids_searched(self):
         """Each condition_id in the resolved list gets its own search call."""
-        r1 = make_result("neonatal-emergencies/critical_actions", "Neonatal Emergencies", "Critical Actions", "Neonatal text.")
-        r2 = make_result("sepsis/critical_actions", "Sepsis", "Critical Actions", "Sepsis text.")
+        r1 = make_result(
+            "neonatal-emergencies/critical_actions",
+            "Neonatal Emergencies",
+            "Critical Actions",
+            "Neonatal text.",
+        )
+        r2 = make_result(
+            "sepsis/critical_actions", "Sepsis", "Critical Actions", "Sepsis text."
+        )
 
         call_count = []
 
@@ -200,6 +233,7 @@ class TestGetContext:
 
 # ---- format_system_context ----
 
+
 class TestFormatSystemContext:
     def test_returns_none_when_no_context(self):
         idx = make_mock_index(search_results=[])
@@ -208,7 +242,9 @@ class TestFormatSystemContext:
         assert result is None
 
     def test_wraps_with_prefix_and_suffix(self):
-        r = make_result("stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab.")
+        r = make_result(
+            "stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab."
+        )
         idx = make_mock_index(search_results=[r])
         bridge = OpenEMBridge(idx, CONDITION_MAP)
         result = bridge.format_system_context("stemi")
@@ -217,14 +253,21 @@ class TestFormatSystemContext:
         assert "--- END REFERENCE ---" in result
 
     def test_prefix_mentions_emergency_care(self):
-        r = make_result("stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab.")
+        r = make_result(
+            "stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab."
+        )
         idx = make_mock_index(search_results=[r])
         bridge = OpenEMBridge(idx, CONDITION_MAP)
         result = bridge.format_system_context("stemi")
         assert "emergency care" in result.lower()
 
     def test_context_embedded_in_output(self):
-        r = make_result("stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab immediately.")
+        r = make_result(
+            "stemi/critical_actions",
+            "STEMI",
+            "Critical Actions",
+            "Activate cath lab immediately.",
+        )
         idx = make_mock_index(search_results=[r])
         bridge = OpenEMBridge(idx, CONDITION_MAP)
         raw = bridge.get_context("stemi")
@@ -233,6 +276,7 @@ class TestFormatSystemContext:
 
 
 # ---- corpus_info property ----
+
 
 class TestCorpusInfo:
     def test_corpus_info_string(self):
@@ -246,18 +290,23 @@ class TestCorpusInfo:
 
 # ---- Priority section ordering ----
 
+
 class TestSectionPriority:
     def test_priority_list_order(self):
         """Verify PRIORITY_SECTIONS constant is ordered as documented."""
         assert PRIORITY_SECTIONS[0] == "Critical Actions"
         assert PRIORITY_SECTIONS[1] == "Treatment"
         assert "Disposition" in PRIORITY_SECTIONS
-        assert PRIORITY_SECTIONS.index("Critical Actions") < PRIORITY_SECTIONS.index("Disposition")
+        assert PRIORITY_SECTIONS.index("Critical Actions") < PRIORITY_SECTIONS.index(
+            "Disposition"
+        )
 
     def test_unknown_section_sorted_last(self):
         """Sections not in PRIORITY_SECTIONS sort after all known sections."""
         r_unknown = make_result("stemi/references", "STEMI", "References", "Some refs.")
-        r_known = make_result("stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab.")
+        r_known = make_result(
+            "stemi/critical_actions", "STEMI", "Critical Actions", "Activate cath lab."
+        )
         idx = make_mock_index(search_results=[r_unknown, r_known])
         bridge = OpenEMBridge(idx, CONDITION_MAP)
         result = bridge.get_context("stemi")

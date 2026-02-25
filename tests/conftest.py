@@ -188,13 +188,17 @@ _ALL_CONDITION_FILES = _collect_condition_files()
 
 
 def pytest_configure(config):
-    config.addinivalue_line("markers", "slow: mark test as slow (requires LanceDB index)")
+    config.addinivalue_line(
+        "markers", "slow: mark test as slow (requires LanceDB index)"
+    )
 
 
 @pytest.fixture(
     scope="session",
     params=_ALL_CONDITION_FILES if _ALL_CONDITION_FILES else [None],
-    ids=[f.stem for f in _ALL_CONDITION_FILES] if _ALL_CONDITION_FILES else ["no-files"],
+    ids=[f.stem for f in _ALL_CONDITION_FILES]
+    if _ALL_CONDITION_FILES
+    else ["no-files"],
 )
 def all_condition_files(request) -> Path:
     """Parametrized fixture: yields each real condition file path."""

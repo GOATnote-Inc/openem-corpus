@@ -14,16 +14,39 @@ import yaml
 # ---- Constants matching validate.py ----
 
 REQUIRED_FIELDS = [
-    "id", "condition", "icd10", "esi", "time_to_harm", "category",
-    "track", "sources", "last_updated", "compiled_by", "risk_tier", "validation",
+    "id",
+    "condition",
+    "icd10",
+    "esi",
+    "time_to_harm",
+    "category",
+    "track",
+    "sources",
+    "last_updated",
+    "compiled_by",
+    "risk_tier",
+    "validation",
 ]
 
 VALID_CATEGORIES = [
-    "cardiovascular", "neurological", "respiratory", "gastrointestinal",
-    "genitourinary", "obstetric-gynecologic", "endocrine-metabolic",
-    "infectious", "musculoskeletal", "hematologic", "toxicologic",
-    "traumatic", "environmental", "psychiatric", "pediatric",
-    "ophthalmologic", "dermatologic", "allergic-immunologic",
+    "cardiovascular",
+    "neurological",
+    "respiratory",
+    "gastrointestinal",
+    "genitourinary",
+    "obstetric-gynecologic",
+    "endocrine-metabolic",
+    "infectious",
+    "musculoskeletal",
+    "hematologic",
+    "toxicologic",
+    "traumatic",
+    "environmental",
+    "psychiatric",
+    "pediatric",
+    "ophthalmologic",
+    "dermatologic",
+    "allergic-immunologic",
 ]
 
 VALID_TRACKS = ["tier1", "tier2"]
@@ -31,12 +54,22 @@ VALID_RISK_TIERS = ["A", "B", "C"]
 REQUIRED_SECTIONS = ["Recognition", "Critical Actions", "Pitfalls"]
 
 VALID_DISPOSITIONS = ["admission", "outpatient", "observation"]
-VALID_SOURCE_TYPES = ["guideline", "pubmed", "textbook", "who", "cdc", "wikem", "review", "meta-analysis"]
+VALID_SOURCE_TYPES = [
+    "guideline",
+    "pubmed",
+    "textbook",
+    "who",
+    "cdc",
+    "wikem",
+    "review",
+    "meta-analysis",
+]
 
 ICD10_PATTERN = re.compile(r"^[A-Z][0-9]")
 
 
 # ---- Helpers ----
+
 
 def parse_file(path: Path):
     """Return (frontmatter_dict, full_text) for a condition file."""
@@ -49,6 +82,7 @@ def parse_file(path: Path):
 
 
 # ---- Tests ----
+
 
 class TestRequiredFrontmatterFields:
     def test_frontmatter_exists(self, all_condition_files):
@@ -91,7 +125,9 @@ class TestFieldValues:
         if fm is None or "esi" not in fm:
             pytest.skip("No frontmatter or esi field")
         esi = fm["esi"]
-        assert isinstance(esi, int), f"{path.name}: esi must be an integer, got {type(esi)}"
+        assert isinstance(esi, int), (
+            f"{path.name}: esi must be an integer, got {type(esi)}"
+        )
         assert 1 <= esi <= 5, f"{path.name}: esi {esi} out of range 1-5"
 
     def test_category_valid(self, all_condition_files):
@@ -301,6 +337,4 @@ class TestOptionalDeferFields:
             pytest.skip("time_to_harm is not a dict")
         valid_keys = {"irreversible_injury", "death", "optimal_intervention_window"}
         for k in tth:
-            assert k in valid_keys, (
-                f"{path.name}: time_to_harm has unknown key '{k}'"
-            )
+            assert k in valid_keys, f"{path.name}: time_to_harm has unknown key '{k}'"

@@ -40,6 +40,7 @@ VAGUE_TIME_PATTERNS = [
 
 # ---- Helpers ----
 
+
 def parse_file(path: Path):
     """Return (frontmatter_dict, body_text) for a condition file."""
     text = path.read_text()
@@ -94,14 +95,13 @@ def count_bullet_items(text: str) -> int:
 
 # ---- Tests ----
 
+
 class TestWordCounts:
     def test_total_word_count_at_least_500(self, all_condition_files):
         path = all_condition_files
         _, body = parse_file(path)
         wc = count_words(body)
-        assert wc >= 500, (
-            f"{path.name}: Only {wc} words total (minimum 500 required)"
-        )
+        assert wc >= 500, f"{path.name}: Only {wc} words total (minimum 500 required)"
 
 
 class TestSectionWordCounts:

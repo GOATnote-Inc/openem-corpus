@@ -25,7 +25,10 @@ from pathlib import Path
 
 # Default run log path (scribegoat2 canonical location)
 DEFAULT_RUN_LOG = (
-    Path(__file__).resolve().parent.parent.parent / "scribegoat2" / "experiments" / "run_log.jsonl"
+    Path(__file__).resolve().parent.parent.parent
+    / "scribegoat2"
+    / "experiments"
+    / "run_log.jsonl"
 )
 
 # Corpus milestone dates (add more as corpus grows)
@@ -39,6 +42,7 @@ CORPUS_MILESTONES = [
 
 
 # ---- Parsing ----
+
 
 def load_run_log(path: Path) -> list[dict]:
     """Parse JSONL run log. Skip malformed lines with a warning."""
@@ -56,6 +60,7 @@ def load_run_log(path: Path) -> list[dict]:
 
 
 # ---- Metric extraction ----
+
 
 def extract_pass_k(entry: dict, model: str) -> float | None:
     """Extract pass^k from a run log entry for a given model."""
@@ -100,6 +105,7 @@ def parse_ts(ts_str: str) -> datetime | None:
 
 # ---- Grouping ----
 
+
 def is_rag_experiment(entry: dict) -> bool:
     """Heuristic: experiment uses RAG/corpus grounding."""
     task = entry.get("task", "").lower()
@@ -131,6 +137,7 @@ def milestone_phase(ts: datetime | None) -> str:
 
 # ---- Analysis ----
 
+
 def analyze_baseline_vs_rag(entries: list[dict]) -> dict:
     """Compare baseline vs RAG pass^k per model."""
     baseline_by_model: dict[str, list[float]] = defaultdict(list)
@@ -153,21 +160,32 @@ def analyze_baseline_vs_rag(entries: list[dict]) -> dict:
         rag_vals = rag_by_model.get(model, [])
         bl_mean = sum(bl_vals) / len(bl_vals) if bl_vals else None
         rag_mean = sum(rag_vals) / len(rag_vals) if rag_vals else None
-        delta = (rag_mean - bl_mean) if (bl_mean is not None and rag_mean is not None) else None
-        rows.append({
-            "model": model,
-            "baseline_n": len(bl_vals),
-            "baseline_mean_pass_k": round(bl_mean, 4) if bl_mean is not None else None,
-            "rag_n": len(rag_vals),
-            "rag_mean_pass_k": round(rag_mean, 4) if rag_mean is not None else None,
-            "delta_pp": round(delta, 4) if delta is not None else None,
-            "direction": (
-                "improvement" if delta and delta > 0.01
-                else "regression" if delta and delta < -0.01
-                else "neutral" if delta is not None
-                else "insufficient_data"
-            ),
-        })
+        delta = (
+            (rag_mean - bl_mean)
+            if (bl_mean is not None and rag_mean is not None)
+            else None
+        )
+        rows.append(
+            {
+                "model": model,
+                "baseline_n": len(bl_vals),
+                "baseline_mean_pass_k": round(bl_mean, 4)
+                if bl_mean is not None
+                else None,
+                "rag_n": len(rag_vals),
+                "rag_mean_pass_k": round(rag_mean, 4) if rag_mean is not None else None,
+                "delta_pp": round(delta, 4) if delta is not None else None,
+                "direction": (
+                    "improvement"
+                    if delta and delta > 0.01
+                    else "regression"
+                    if delta and delta < -0.01
+                    else "neutral"
+                    if delta is not None
+                    else "insufficient_data"
+                ),
+            }
+        )
 
     return {"by_model": rows}
 
@@ -195,15 +213,25 @@ def analyze_pre_post_corpus(entries: list[dict]) -> dict:
         post_vals = post_by_model.get(model, [])
         pre_mean = sum(pre_vals) / len(pre_vals) if pre_vals else None
         post_mean = sum(post_vals) / len(post_vals) if post_vals else None
-        delta = (post_mean - pre_mean) if (pre_mean is not None and post_mean is not None) else None
-        rows.append({
-            "model": model,
-            "pre_corpus_n": len(pre_vals),
-            "pre_corpus_mean_pass_k": round(pre_mean, 4) if pre_mean is not None else None,
-            "post_corpus_n": len(post_vals),
-            "post_corpus_mean_pass_k": round(post_mean, 4) if post_mean is not None else None,
-            "delta_pp": round(delta, 4) if delta is not None else None,
-        })
+        delta = (
+            (post_mean - pre_mean)
+            if (pre_mean is not None and post_mean is not None)
+            else None
+        )
+        rows.append(
+            {
+                "model": model,
+                "pre_corpus_n": len(pre_vals),
+                "pre_corpus_mean_pass_k": round(pre_mean, 4)
+                if pre_mean is not None
+                else None,
+                "post_corpus_n": len(post_vals),
+                "post_corpus_mean_pass_k": round(post_mean, 4)
+                if post_mean is not None
+                else None,
+                "delta_pp": round(delta, 4) if delta is not None else None,
+            }
+        )
 
     return {
         "corpus_milestone": CORPUS_MILESTONES[0]["description"],
@@ -289,17 +317,21 @@ def compute_corpus_lift_summary(entries: list[dict]) -> dict:
                     continue
 
                 delta = rag_pk - bl_pk
-                pairs_found.append({
-                    "model": model,
-                    "baseline_id": bl_e.get("id", "?"),
-                    "rag_id": rag_e.get("id", "?"),
-                    "baseline_task": bl_e.get("task", ""),
-                    "rag_task": rag_e.get("task", ""),
-                    "baseline_pass_k": round(bl_pk, 4),
-                    "rag_pass_k": round(rag_pk, 4),
-                    "delta_pp": round(delta, 4),
-                    "lift_pct": round(delta / bl_pk * 100, 1) if bl_pk > 0 else None,
-                })
+                pairs_found.append(
+                    {
+                        "model": model,
+                        "baseline_id": bl_e.get("id", "?"),
+                        "rag_id": rag_e.get("id", "?"),
+                        "baseline_task": bl_e.get("task", ""),
+                        "rag_task": rag_e.get("task", ""),
+                        "baseline_pass_k": round(bl_pk, 4),
+                        "rag_pass_k": round(rag_pk, 4),
+                        "delta_pp": round(delta, 4),
+                        "lift_pct": round(delta / bl_pk * 100, 1)
+                        if bl_pk > 0
+                        else None,
+                    }
+                )
 
     # Sort by delta descending
     pairs_found.sort(key=lambda x: x["delta_pp"], reverse=True)
@@ -329,7 +361,9 @@ def render_table(rows: list[dict], columns: list[str], title: str) -> str:
     # Rows
     for row in rows:
         line = "  ".join(
-            str(row.get(col, "-") if row.get(col) is not None else "-").ljust(widths[col])
+            str(row.get(col, "-") if row.get(col) is not None else "-").ljust(
+                widths[col]
+            )
             for col in columns
         )
         lines.append(line)
@@ -338,6 +372,7 @@ def render_table(rows: list[dict], columns: list[str], title: str) -> str:
 
 
 # ---- Main ----
+
 
 def main() -> int:
     parser = argparse.ArgumentParser(
@@ -391,61 +426,85 @@ def main() -> int:
         return 0
 
     # Human-readable summary tables
-    print(f"\n{'='*70}")
+    print(f"\n{'=' * 70}")
     print("OpenEM Corpus Impact Analysis")
     print(f"Run log: {run_log_path}")
     print(f"Total experiments: {len(entries)}  |  RAG experiments: {len(rag_detail)}")
-    print(f"{'='*70}")
+    print(f"{'=' * 70}")
 
     # Table 1: Baseline vs RAG by model
     t1_cols = [
-        "model", "baseline_n", "baseline_mean_pass_k",
-        "rag_n", "rag_mean_pass_k", "delta_pp", "direction",
+        "model",
+        "baseline_n",
+        "baseline_mean_pass_k",
+        "rag_n",
+        "rag_mean_pass_k",
+        "delta_pp",
+        "direction",
     ]
-    print(render_table(baseline_vs_rag["by_model"], t1_cols, "Table 1: Baseline vs RAG (all experiments, by model)"))
+    print(
+        render_table(
+            baseline_vs_rag["by_model"],
+            t1_cols,
+            "Table 1: Baseline vs RAG (all experiments, by model)",
+        )
+    )
 
     # Table 2: Pre- vs post-corpus by model
     t2_cols = [
         "model",
-        "pre_corpus_n", "pre_corpus_mean_pass_k",
-        "post_corpus_n", "post_corpus_mean_pass_k",
+        "pre_corpus_n",
+        "pre_corpus_mean_pass_k",
+        "post_corpus_n",
+        "post_corpus_mean_pass_k",
         "delta_pp",
     ]
-    print(render_table(
-        pre_post["by_model"],
-        t2_cols,
-        f"Table 2: Pre- vs Post-Corpus ({pre_post['cutoff_date'][:10]})",
-    ))
+    print(
+        render_table(
+            pre_post["by_model"],
+            t2_cols,
+            f"Table 2: Pre- vs Post-Corpus ({pre_post['cutoff_date'][:10]})",
+        )
+    )
 
     # Table 3: Explicit baseline/RAG pairs
     t3_cols = [
-        "model", "baseline_id", "rag_id",
-        "baseline_pass_k", "rag_pass_k", "delta_pp", "lift_pct",
+        "model",
+        "baseline_id",
+        "rag_id",
+        "baseline_pass_k",
+        "rag_pass_k",
+        "delta_pp",
+        "lift_pct",
     ]
-    print(render_table(
-        lift_summary["explicit_pairs"],
-        t3_cols,
-        "Table 3: Explicit Baseline/RAG Pairs (matched by model + scenario count)",
-    ))
+    print(
+        render_table(
+            lift_summary["explicit_pairs"],
+            t3_cols,
+            "Table 3: Explicit Baseline/RAG Pairs (matched by model + scenario count)",
+        )
+    )
 
     # Table 4: RAG experiment details
     rag_flat = []
     for r in rag_detail:
         for model, metrics in r["metrics_per_model"].items():
-            rag_flat.append({
-                "id": r["id"],
-                "date": r["ts"][:10] if r["ts"] else "?",
-                "model": model,
-                "pass_k": metrics.get("pass_k"),
-                "ers": metrics.get("ers"),
-                "n_scenarios": r.get("n_scenarios"),
-                "task": r.get("task", "")[:40],
-            })
+            rag_flat.append(
+                {
+                    "id": r["id"],
+                    "date": r["ts"][:10] if r["ts"] else "?",
+                    "model": model,
+                    "pass_k": metrics.get("pass_k"),
+                    "ers": metrics.get("ers"),
+                    "n_scenarios": r.get("n_scenarios"),
+                    "task": r.get("task", "")[:40],
+                }
+            )
 
     t4_cols = ["id", "date", "model", "pass_k", "ers", "n_scenarios", "task"]
     print(render_table(rag_flat, t4_cols, "Table 4: RAG Experiment Details"))
 
-    print(f"\n{'='*70}\n")
+    print(f"\n{'=' * 70}\n")
 
     return 0
 

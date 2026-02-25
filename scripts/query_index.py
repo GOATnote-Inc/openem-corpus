@@ -32,7 +32,10 @@ def load_index(index_dir: Path):
     """Load LanceDB table and manifest."""
     manifest_path = index_dir / "manifest.json"
     if not manifest_path.exists():
-        print(f"ERROR: No manifest at {manifest_path}. Run build_index.py first.", file=sys.stderr)
+        print(
+            f"ERROR: No manifest at {manifest_path}. Run build_index.py first.",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     manifest = json.loads(manifest_path.read_text())
@@ -48,11 +51,15 @@ def _apply_filters(query_builder, **filters):
     if filters.get("risk_tier"):
         query_builder = query_builder.where(f"risk_tier = '{filters['risk_tier']}'")
     if filters.get("condition_id"):
-        query_builder = query_builder.where(f"condition_id = '{filters['condition_id']}'")
+        query_builder = query_builder.where(
+            f"condition_id = '{filters['condition_id']}'"
+        )
     return query_builder
 
 
-def _rrf_merge(vector_results: list[dict], fts_results: list[dict], k: int = 60) -> list[dict]:
+def _rrf_merge(
+    vector_results: list[dict], fts_results: list[dict], k: int = 60
+) -> list[dict]:
     """Reciprocal Rank Fusion of two result lists. Returns merged list sorted by RRF score."""
     scores: dict[str, float] = {}
     results_by_id: dict[str, dict] = {}
@@ -96,8 +103,12 @@ def search(table, query: str, mode: str, top_k: int, model_name: str, **filters)
     # Hybrid: manual RRF fusion of vector + FTS
     fetch_k = top_k * 4  # over-fetch for better fusion
 
-    vec_qb = _apply_filters(table.search(vec, query_type="vector").limit(fetch_k), **filters)
-    fts_qb = _apply_filters(table.search(query, query_type="fts").limit(fetch_k), **filters)
+    vec_qb = _apply_filters(
+        table.search(vec, query_type="vector").limit(fetch_k), **filters
+    )
+    fts_qb = _apply_filters(
+        table.search(query, query_type="fts").limit(fetch_k), **filters
+    )
 
     vec_results = vec_qb.to_list()
     fts_results = fts_qb.to_list()
@@ -115,7 +126,9 @@ def format_result(r: dict, rank: int, verbose: bool = False) -> str:
     ]
     if verbose:
         text = r["text"].split("\n\n", 1)[-1]  # strip the prepended header
-        wrapped = textwrap.fill(text[:500], width=80, initial_indent="      ", subsequent_indent="      ")
+        wrapped = textwrap.fill(
+            text[:500], width=80, initial_indent="      ", subsequent_indent="      "
+        )
         lines.append(wrapped)
         if len(text) > 500:
             lines.append(f"      ... ({len(text)} chars total)")
@@ -130,8 +143,12 @@ def main():
     parser.add_argument("--verbose", "-v", action="store_true", help="Show chunk text")
     parser.add_argument("--index-dir", type=Path, default=DEFAULT_INDEX_DIR)
     parser.add_argument("--filter-category", dest="category", help="Filter by category")
-    parser.add_argument("--filter-risk-tier", dest="risk_tier", help="Filter by risk tier (A/B/C)")
-    parser.add_argument("--filter-condition", dest="condition_id", help="Filter by condition ID")
+    parser.add_argument(
+        "--filter-risk-tier", dest="risk_tier", help="Filter by risk tier (A/B/C)"
+    )
+    parser.add_argument(
+        "--filter-condition", dest="condition_id", help="Filter by condition ID"
+    )
     parser.add_argument("--json", action="store_true", help="Output as JSON")
     args = parser.parse_args()
 
@@ -155,8 +172,10 @@ def main():
         print(json.dumps(results, indent=2))
         return
 
-    print(f"\nQuery: \"{args.query}\"  (mode={args.mode}, top_k={args.top_k})")
-    print(f"Index: {manifest['num_chunks']} chunks / {manifest['num_conditions']} conditions")
+    print(f'\nQuery: "{args.query}"  (mode={args.mode}, top_k={args.top_k})')
+    print(
+        f"Index: {manifest['num_chunks']} chunks / {manifest['num_conditions']} conditions"
+    )
     print(f"{'─' * 70}")
 
     if not results:

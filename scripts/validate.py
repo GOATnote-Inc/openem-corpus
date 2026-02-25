@@ -14,15 +14,38 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SCHEMA_PATH = REPO_ROOT / "schemas" / "condition.schema.yaml"
 
 REQUIRED_FIELDS = [
-    "id", "condition", "icd10", "esi", "time_to_harm", "category",
-    "track", "sources", "last_updated", "compiled_by", "risk_tier", "validation",
+    "id",
+    "condition",
+    "icd10",
+    "esi",
+    "time_to_harm",
+    "category",
+    "track",
+    "sources",
+    "last_updated",
+    "compiled_by",
+    "risk_tier",
+    "validation",
 ]
 VALID_CATEGORIES = [
-    "cardiovascular", "neurological", "respiratory", "gastrointestinal",
-    "genitourinary", "obstetric-gynecologic", "endocrine-metabolic",
-    "infectious", "musculoskeletal", "hematologic", "toxicologic",
-    "traumatic", "environmental", "psychiatric", "pediatric",
-    "ophthalmologic", "dermatologic", "allergic-immunologic",
+    "cardiovascular",
+    "neurological",
+    "respiratory",
+    "gastrointestinal",
+    "genitourinary",
+    "obstetric-gynecologic",
+    "endocrine-metabolic",
+    "infectious",
+    "musculoskeletal",
+    "hematologic",
+    "toxicologic",
+    "traumatic",
+    "environmental",
+    "psychiatric",
+    "pediatric",
+    "ophthalmologic",
+    "dermatologic",
+    "allergic-immunologic",
 ]
 VALID_TRACKS = ["tier1", "tier2"]
 VALID_RISK_TIERS = ["A", "B", "C"]
@@ -57,7 +80,9 @@ def validate_file(path: Path) -> list[str]:
         if not re.match(r"^[a-z0-9-]+$", str(fm["id"])):
             errors.append(f"{path}: id must be lowercase alphanumeric with hyphens")
         if fm["id"] != path.stem:
-            errors.append(f"{path}: id '{fm['id']}' does not match filename '{path.stem}'")
+            errors.append(
+                f"{path}: id '{fm['id']}' does not match filename '{path.stem}'"
+            )
 
     if "icd10" in fm:
         if not isinstance(fm["icd10"], list) or len(fm["icd10"]) == 0:
@@ -77,7 +102,9 @@ def validate_file(path: Path) -> list[str]:
 
     if "risk_tier" in fm:
         if fm["risk_tier"] not in VALID_RISK_TIERS:
-            errors.append(f"{path}: Invalid risk_tier '{fm['risk_tier']}' (must be A, B, or C)")
+            errors.append(
+                f"{path}: Invalid risk_tier '{fm['risk_tier']}' (must be A, B, or C)"
+            )
 
     if "validation" in fm:
         val = fm["validation"]
@@ -102,7 +129,11 @@ def validate_file(path: Path) -> list[str]:
         if not isinstance(tth, (str, dict)):
             errors.append(f"{path}: time_to_harm must be a string or object")
         elif isinstance(tth, dict):
-            valid_tth_keys = {"irreversible_injury", "death", "optimal_intervention_window"}
+            valid_tth_keys = {
+                "irreversible_injury",
+                "death",
+                "optimal_intervention_window",
+            }
             for k in tth:
                 if k not in valid_tth_keys:
                     errors.append(f"{path}: time_to_harm has unknown key '{k}'")
@@ -111,7 +142,9 @@ def validate_file(path: Path) -> list[str]:
     if "disposition_default" in fm:
         valid_dispositions = ["admission", "outpatient", "observation"]
         if fm["disposition_default"] not in valid_dispositions:
-            errors.append(f"{path}: Invalid disposition_default '{fm['disposition_default']}'")
+            errors.append(
+                f"{path}: Invalid disposition_default '{fm['disposition_default']}'"
+            )
 
     if "escalation_triggers" in fm:
         if not isinstance(fm["escalation_triggers"], list):
@@ -125,11 +158,15 @@ def validate_file(path: Path) -> list[str]:
                 if not isinstance(cp, dict):
                     errors.append(f"{path}: confusion_pairs[{i}] must be an object")
                 elif "condition" not in cp or "differentiators" not in cp:
-                    errors.append(f"{path}: confusion_pairs[{i}] missing 'condition' or 'differentiators'")
+                    errors.append(
+                        f"{path}: confusion_pairs[{i}] missing 'condition' or 'differentiators'"
+                    )
 
     # Reject legacy fields
     if "reviewed_by" in fm:
-        errors.append(f"{path}: Legacy field 'reviewed_by' present — remove it (schema v2.0)")
+        errors.append(
+            f"{path}: Legacy field 'reviewed_by' present — remove it (schema v2.0)"
+        )
 
     # Check required markdown sections
     for section in REQUIRED_SECTIONS:

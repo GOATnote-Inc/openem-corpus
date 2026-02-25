@@ -89,7 +89,10 @@ GUIDELINE_MILESTONES = {
     "AHA_ACLS_2020": {
         "description": "AHA ACLS 2020 guidelines",
         "cutoff_year": 2020,
-        "pattern": re.compile(r"\b(AHA|ACLS)\b.*?\b(201[0-9])\b|\b(201[0-9])\b.*?\b(AHA|ACLS)\b", re.IGNORECASE),
+        "pattern": re.compile(
+            r"\b(AHA|ACLS)\b.*?\b(201[0-9])\b|\b(201[0-9])\b.*?\b(AHA|ACLS)\b",
+            re.IGNORECASE,
+        ),
         "flag_message": "AHA/ACLS reference predates 2020 guidelines",
     },
     "SSC_2021": {
@@ -117,6 +120,7 @@ _YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
 
 # ---- Shared file loading (mirrors audit.py) ----
 
+
 def extract_frontmatter(text: str) -> dict | None:
     m = re.match(r"^---\n(.*?)\n---", text, re.DOTALL)
     if not m:
@@ -142,6 +146,7 @@ def load_all_conditions() -> list[dict]:
 
 
 # ---- Metric 1: Category entropy ----
+
 
 def compute_category_entropy(conditions: list[dict]) -> dict:
     """Shannon entropy H = -sum(p * log2(p)) across categories."""
@@ -176,6 +181,7 @@ def compute_category_entropy(conditions: list[dict]) -> dict:
 
 # ---- Metric 2: ESI balance (Gini coefficient) ----
 
+
 def compute_esi_gini(conditions: list[dict]) -> dict:
     """Gini coefficient across ESI 1-5. 0 = perfect equality, 1 = maximally unequal."""
     counts = Counter()
@@ -202,8 +208,10 @@ def compute_esi_gini(conditions: list[dict]) -> dict:
         },
         "gini_coefficient": gini,
         "interpretation": (
-            "well-balanced" if gini < 0.3
-            else "moderate imbalance" if gini < 0.6
+            "well-balanced"
+            if gini < 0.3
+            else "moderate imbalance"
+            if gini < 0.6
             else "high imbalance"
         ),
         "missing_esi_count": len(conditions) - total,
@@ -212,9 +220,12 @@ def compute_esi_gini(conditions: list[dict]) -> dict:
 
 # ---- Metric 3: Risk tier x category matrix ----
 
+
 def compute_tier_category_matrix(conditions: list[dict]) -> dict:
     """Count per (risk_tier, category) pair. Flag zero cells."""
-    matrix: dict[str, dict[str, int]] = {tier: defaultdict(int) for tier in VALID_RISK_TIERS}
+    matrix: dict[str, dict[str, int]] = {
+        tier: defaultdict(int) for tier in VALID_RISK_TIERS
+    }
     unclassified = 0
 
     for c in conditions:
@@ -226,9 +237,7 @@ def compute_tier_category_matrix(conditions: list[dict]) -> dict:
             unclassified += 1
 
     # Build output matrix (only non-zero cells for readability)
-    output_matrix = {
-        tier: dict(counts) for tier, counts in matrix.items()
-    }
+    output_matrix = {tier: dict(counts) for tier, counts in matrix.items()}
 
     # Find zero cells: (tier, category) pairs present in neither row nor column
     zero_cells = []
@@ -253,6 +262,7 @@ def compute_tier_category_matrix(conditions: list[dict]) -> dict:
 
 
 # ---- Metric 4: Demographic representation ----
+
 
 def compute_demographic_representation(conditions: list[dict]) -> dict:
     """Per-condition mention counts for 5 demographic groups. Summary stats."""
@@ -279,7 +289,9 @@ def compute_demographic_representation(conditions: list[dict]) -> dict:
         "group_coverage": {
             group: {
                 "conditions_mentioning": group_totals.get(group, 0),
-                "coverage_rate": round(group_totals.get(group, 0) / total, 4) if total else 0.0,
+                "coverage_rate": round(group_totals.get(group, 0) / total, 4)
+                if total
+                else 0.0,
             }
             for group in DEMOGRAPHIC_PATTERNS
         },
@@ -290,6 +302,7 @@ def compute_demographic_representation(conditions: list[dict]) -> dict:
 
 
 # ---- Metric 5: Geographic representation ----
+
 
 def compute_geographic_representation(conditions: list[dict]) -> dict:
     """Count files with international vs US-only mentions."""
@@ -318,7 +331,11 @@ def compute_geographic_representation(conditions: list[dict]) -> dict:
         "us_only_count": len(us_only_files),
         "both_count": len(both_files),
         "neither_count": len(neither_files),
-        "international_coverage_rate": round((len(intl_files) + len(both_files)) / total, 4) if total else 0.0,
+        "international_coverage_rate": round(
+            (len(intl_files) + len(both_files)) / total, 4
+        )
+        if total
+        else 0.0,
         "international_only_files": intl_files,
         "us_only_files": us_only_files,
         "both_files": both_files,
@@ -327,6 +344,7 @@ def compute_geographic_representation(conditions: list[dict]) -> dict:
 
 
 # ---- Metric 6: Temporal drift ----
+
 
 def compute_temporal_drift(conditions: list[dict]) -> dict:
     """Flag citations that predate known guideline milestone dates."""
@@ -348,17 +366,20 @@ def compute_temporal_drift(conditions: list[dict]) -> dict:
                     if years_in_ref:
                         ref_year = max(years_in_ref)
                         if ref_year < milestone["cutoff_year"]:
-                            flagged[milestone_key].append({
-                                "file": c["name"],
-                                "ref": ref[:100],
-                                "ref_year": ref_year,
-                                "flag": milestone["flag_message"],
-                            })
+                            flagged[milestone_key].append(
+                                {
+                                    "file": c["name"],
+                                    "ref": ref[:100],
+                                    "ref_year": ref_year,
+                                    "flag": milestone["flag_message"],
+                                }
+                            )
 
     year_distribution: Counter = Counter(all_source_years)
     sorted_years = sorted(year_distribution.items())
     mean_year = (
-        sum(y * n for y, n in year_distribution.items()) / sum(year_distribution.values())
+        sum(y * n for y, n in year_distribution.items())
+        / sum(year_distribution.values())
         if year_distribution
         else None
     )
@@ -381,6 +402,7 @@ def compute_temporal_drift(conditions: list[dict]) -> dict:
 
 # ---- Main ----
 
+
 def main() -> int:
     conditions = load_all_conditions()
     print(f"Loaded {len(conditions)} conditions", file=sys.stderr)
@@ -392,7 +414,9 @@ def main() -> int:
             "category_entropy": compute_category_entropy(conditions),
             "esi_balance": compute_esi_gini(conditions),
             "tier_category_matrix": compute_tier_category_matrix(conditions),
-            "demographic_representation": compute_demographic_representation(conditions),
+            "demographic_representation": compute_demographic_representation(
+                conditions
+            ),
             "geographic_representation": compute_geographic_representation(conditions),
             "temporal_drift": compute_temporal_drift(conditions),
         },

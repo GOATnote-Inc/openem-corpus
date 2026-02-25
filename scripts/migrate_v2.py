@@ -26,7 +26,7 @@ def extract_frontmatter_raw(text: str) -> tuple[str, str, str]:
     m = re.match(r"^(---\n)(.*?\n)(---\n?)", text, re.DOTALL)
     if not m:
         raise ValueError("No YAML frontmatter found")
-    return m.group(1), m.group(2), text[m.end():]
+    return m.group(1), m.group(2), text[m.end() :]
 
 
 def parse_verification(fm_text: str) -> dict:
@@ -51,16 +51,16 @@ def build_validation_yaml(old_verif: dict) -> str:
     cp = old_verif.get("pmids_verified")
 
     lines = ["validation:"]
-    lines.append(f'  automated_consistency_check: {_val(ac)}')
-    lines.append(f'  dose_range_validator: {_val(dr)}')
-    lines.append(f'  unit_normalization_check: null')
-    lines.append(f'  cross_file_consistency_check: {_val(dr)}')
-    lines.append(f'  citation_presence_check: {_val(cp)}')
-    lines.append(f'  duplicate_content_check: null')
-    lines.append(f'  outlier_detection_flag: clear')
+    lines.append(f"  automated_consistency_check: {_val(ac)}")
+    lines.append(f"  dose_range_validator: {_val(dr)}")
+    lines.append(f"  unit_normalization_check: null")
+    lines.append(f"  cross_file_consistency_check: {_val(dr)}")
+    lines.append(f"  citation_presence_check: {_val(cp)}")
+    lines.append(f"  duplicate_content_check: null")
+    lines.append(f"  outlier_detection_flag: clear")
     lines.append(f'  schema_version: "2.0"')
-    lines.append(f'  guideline_version_reference: null')
-    lines.append(f'  provenance_links: []')
+    lines.append(f"  guideline_version_reference: null")
+    lines.append(f"  provenance_links: []")
     return "\n".join(lines) + "\n"
 
 

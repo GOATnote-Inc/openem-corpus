@@ -78,11 +78,15 @@ class OpenEMIndex:
         fetch_k = top_k * 4
         vec_qb = self._apply_filters(
             self.table.search(vec, query_type="vector").limit(fetch_k),
-            category, risk_tier, condition_id,
+            category,
+            risk_tier,
+            condition_id,
         )
         fts_qb = self._apply_filters(
             self.table.search(query, query_type="fts").limit(fetch_k),
-            category, risk_tier, condition_id,
+            category,
+            risk_tier,
+            condition_id,
         )
 
         merged = self._rrf_merge(vec_qb.to_list(), fts_qb.to_list())
@@ -109,7 +113,9 @@ class OpenEMIndex:
             rid = r["id"]
             scores[rid] = scores.get(rid, 0.0) + 1.0 / (k + rank + 1)
             by_id[rid] = r
-        return [by_id[rid] for rid in sorted(scores, key=lambda x: scores[x], reverse=True)]
+        return [
+            by_id[rid] for rid in sorted(scores, key=lambda x: scores[x], reverse=True)
+        ]
 
     @staticmethod
     def _clean(results):
