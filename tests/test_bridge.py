@@ -37,7 +37,7 @@ def make_mock_index(search_results=None):
     idx.manifest = {
         "version": "1.0",
         "num_chunks": 896,
-        "num_conditions": 128,
+        "num_conditions": 185,
     }
     idx.search.return_value = search_results if search_results is not None else []
     return idx
@@ -284,7 +284,7 @@ class TestCorpusInfo:
         bridge = OpenEMBridge(idx, CONDITION_MAP)
         info = bridge.corpus_info
         assert "OpenEM" in info
-        assert "128" in info
+        assert "185" in info
         assert "896" in info
 
 

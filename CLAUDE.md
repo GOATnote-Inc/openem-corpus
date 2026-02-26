@@ -63,6 +63,15 @@ Six conditions at ESI 4-5 (benign-positional-vertigo, pediatric-acute-otitis-med
 
 Four conditions added to fill critical coverage gaps: foreign-body-aspiration, snakebite-envenomation, uterine-rupture, pprom.
 
+### v2.1 Expansion (2026-02-26)
+
+28 new conditions added across three new categories:
+- **disaster-mci** (6 conditions): mass-casualty-triage, active-shooter-response, blast-injury, chemical-mass-casualty, radiation-mass-casualty, crush-syndrome-mci
+- **procedural** (7 conditions): resuscitative-thoracotomy, perimortem-cesarean-delivery, lateral-canthotomy, difficult-airway-management, breech-precipitous-delivery, surgical-cricothyrotomy, reboa
+- **HALO high-acuity** (15 conditions): aortic-transection, fat-embolism-syndrome, air-embolism, spontaneous-coronary-artery-dissection, hemorrhagic-stroke, necrotizing-enterocolitis, inborn-errors-metabolic-crisis, pheochromocytoma-crisis, toxic-shock-syndrome, cavernous-sinus-thrombosis, massive-hemoptysis, retrobulbar-hemorrhage, tracheal-disruption, esophageal-foreign-body-impaction, malignant-otitis-externa
+
+Total corpus: 185 conditions across 20 categories. New source type `consensus-statement` added to schema.
+
 ### Safety Annotations
 
 - **Operational Substitution Risks** on 6 high-traffic conditions (e.g., SAH: structured home monitoring alongside emergency language)

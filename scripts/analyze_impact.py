@@ -38,6 +38,11 @@ CORPUS_MILESTONES = [
         "date": "2026-02-18T00:00:00+00:00",
         "description": "OpenEM corpus v1: 128 conditions compiled",
     },
+    {
+        "name": "openem_mci_halo_procedural_expansion",
+        "date": "2026-02-26T00:00:00+00:00",
+        "description": "OpenEM corpus v2.1: 185 conditions (added 28 MCI, HALO, procedural)",
+    },
 ]
 
 
