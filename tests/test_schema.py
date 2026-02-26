@@ -311,13 +311,19 @@ class TestOptionalDeferFields:
                 f"{path.name}: confusion_pairs[{i}] missing 'differentiators'"
             )
 
-    def test_no_legacy_reviewed_by_field(self, all_condition_files):
+    def test_reviewed_by_format_if_present(self, all_condition_files):
+        """If reviewed_by is present, it must be a non-empty string with review_date."""
         path = all_condition_files
         fm, _ = parse_file(path)
         if fm is None:
             pytest.skip("No frontmatter")
-        assert "reviewed_by" not in fm, (
-            f"{path.name}: Legacy field 'reviewed_by' present — remove it (schema v2.0)"
+        if "reviewed_by" not in fm:
+            return  # Optional field
+        assert isinstance(fm["reviewed_by"], str) and len(fm["reviewed_by"]) > 0, (
+            f"{path.name}: reviewed_by must be a non-empty string"
+        )
+        assert "review_date" in fm, (
+            f"{path.name}: reviewed_by present but review_date missing"
         )
 
     def test_time_to_harm_is_string_or_dict(self, all_condition_files):

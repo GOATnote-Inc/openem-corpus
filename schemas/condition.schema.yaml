@@ -56,6 +56,12 @@ properties:
     description: Emergency Severity Index (1=resuscitation, 5=non-urgent)
 
   time_to_harm:
+    description: >
+      Time window before irreversible harm. Convention:
+      - risk_tier A: SHOULD use structured object form (with irreversible_injury,
+        death, optimal_intervention_window). String form is accepted but
+        new/updated tier A conditions should use the object form.
+      - risk_tier B/C: string form is standard (e.g., "< 6 hours").
     oneOf:
       - type: string
         description: "Time window before irreversible harm (e.g., '< 90 minutes')"
@@ -140,6 +146,18 @@ properties:
     type: string
     enum: [agent, human]
     description: Who compiled this file
+
+  reviewed_by:
+    type: string
+    description: >
+      Name and credentials of the physician reviewer
+      (e.g., "Brandon Dent, MD — Board Certified Emergency Medicine").
+      Null or absent if not yet reviewed.
+
+  review_date:
+    type: string
+    format: date
+    description: ISO 8601 date of physician review
 
   risk_tier:
     type: string

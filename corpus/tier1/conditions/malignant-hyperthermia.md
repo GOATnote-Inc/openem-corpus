@@ -24,6 +24,8 @@ sources:
     pmid: "20081135"
 last_updated: "2026-02-18"
 compiled_by: agent
+reviewed_by: "Brandon Dent, MD — Board Certified Emergency Medicine"
+review_date: "2026-02-27"
 risk_tier: A
 validation:
   automated_consistency_check: "2026-02-18"
@@ -34,7 +36,6 @@ validation:
   duplicate_content_check: "2026-02-19"
   outlier_detection_flag: clear
   schema_version: "2.0"
-  guideline_version_reference: null
   provenance_links: []
 ---
 # Malignant Hyperthermia

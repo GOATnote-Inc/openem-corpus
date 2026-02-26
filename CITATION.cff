@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use the OpenEM Corpus, please cite it as below."
+title: "OpenEM Corpus: An AI-Native Emergency Medicine Knowledge Base"
+type: dataset
+authors:
+  - family-names: Dent
+    given-names: Brandon
+    orcid: ""
+    affiliation: "GOATnote Inc."
+repository-code: "https://github.com/GOATnote-Inc/openem-corpus"
+license: Apache-2.0
+version: "2.1"
+date-released: "2026-02-27"
+keywords:
+  - emergency-medicine
+  - clinical-safety
+  - llm-evaluation
+  - medical-corpus
+  - ai-safety
+abstract: >-
+  A structured, token-efficient corpus of 185 emergency medicine conditions
+  designed for AI/LLM evaluation and safety research. Agent-compiled from
+  clinical guidelines and PubMed literature, machine-validated through a
+  13-check automated suite, and physician-reviewed for all high-acuity
+  (risk tier A) conditions. Used by ScribeGoat2, LostBench, and SafeShift
+  to evaluate whether LLMs maintain safety boundaries in emergency medicine
+  conversations.

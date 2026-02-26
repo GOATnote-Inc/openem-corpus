@@ -23,6 +23,8 @@ sources:
     pmid: "26797666"
 last_updated: "2026-02-19"
 compiled_by: agent
+reviewed_by: "Brandon Dent, MD — Board Certified Emergency Medicine"
+review_date: "2026-02-27"
 risk_tier: A
 validation:
   automated_consistency_check: "2026-02-18"

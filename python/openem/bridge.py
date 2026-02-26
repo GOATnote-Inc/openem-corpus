@@ -1,20 +1,19 @@
 """Shared OpenEM retrieval bridge for downstream projects.
 
 Handles condition-ID resolution, deduplication, section priority ordering,
-and context-budget management. Downstream projects (ScribeGoat2, LostBench)
-supply their own condition-name mapping and call this bridge.
+and context-budget management. When no condition_map is provided, the
+canonical map is auto-loaded from the corpus frontmatter + overlay.
 
 Usage:
     from openem import OpenEMIndex, OpenEMBridge
 
     index = OpenEMIndex("/path/to/openem/data/index")
 
-    # Each downstream project defines its own mapping
-    CONDITION_MAP = {
-        "neonatal_sepsis": ["neonatal-emergencies", "sepsis"],
-        "stemi": ["stemi"],
-    }
-    bridge = OpenEMBridge(index, CONDITION_MAP)
+    # Auto-load canonical condition map (no explicit map needed):
+    bridge = OpenEMBridge(index)
+
+    # Or supply a custom map for downstream overrides:
+    bridge = OpenEMBridge(index, condition_map={"neonatal_sepsis": ["neonatal-emergencies", "sepsis"]})
 
     context = bridge.get_context("neonatal_sepsis")
     system_prefix = bridge.format_system_context("neonatal_sepsis")
@@ -51,7 +50,7 @@ class OpenEMBridge:
     def __init__(
         self,
         index: OpenEMIndex,
-        condition_map: dict[str, list[str]],
+        condition_map: Optional[dict[str, list[str]]] = None,
         fallback_separator: str = "_",
     ):
         """
@@ -59,10 +58,15 @@ class OpenEMBridge:
             index: An initialized OpenEMIndex instance.
             condition_map: Maps downstream condition names to lists of
                 OpenEM condition_ids. Values may be empty lists (no match).
+                If None, the canonical map is auto-loaded from the corpus
+                frontmatter and overlay.yaml.
             fallback_separator: Character to replace with "-" when a
                 condition is not in the map (e.g., "_" -> kebab-case).
         """
         self._index = index
+        if condition_map is None:
+            from openem.conditions import load_condition_map
+            condition_map = load_condition_map()
         self._condition_map = condition_map
         self._fallback_separator = fallback_separator
 

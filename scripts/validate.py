@@ -164,11 +164,12 @@ def validate_file(path: Path) -> list[str]:
                         f"{path}: confusion_pairs[{i}] missing 'condition' or 'differentiators'"
                     )
 
-    # Reject legacy fields
+    # Validate reviewed_by if present
     if "reviewed_by" in fm:
-        errors.append(
-            f"{path}: Legacy field 'reviewed_by' present — remove it (schema v2.0)"
-        )
+        if not isinstance(fm["reviewed_by"], str) or not fm["reviewed_by"]:
+            errors.append(f"{path}: reviewed_by must be a non-empty string")
+        if "review_date" not in fm:
+            errors.append(f"{path}: reviewed_by present but review_date missing")
 
     # Check required markdown sections
     for section in REQUIRED_SECTIONS:

@@ -8,8 +8,8 @@ Usage:
     from openem import OpenEMIndex, OpenEMBridge
 
     index = OpenEMIndex("/path/to/openem/data/index")
-    bridge = OpenEMBridge(index, condition_map={"neonatal_sepsis": ["neonatal-emergencies", "sepsis"]})
-    context = bridge.get_context("neonatal_sepsis", max_chars=3000)
+    bridge = OpenEMBridge(index)  # auto-loads canonical condition map
+    context = bridge.get_context("stemi", max_chars=3000)
 """
 
 from openem.index import OpenEMIndex

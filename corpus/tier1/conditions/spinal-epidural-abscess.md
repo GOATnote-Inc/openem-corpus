@@ -41,7 +41,6 @@ validation:
   duplicate_content_check: "2026-02-19"
   outlier_detection_flag: clear
   schema_version: "2.0"
-  guideline_version_reference: null
   provenance_links: []
 ---
 # Spinal Epidural Abscess

@@ -12,8 +12,8 @@ jobs:
   audit:
     name: Audit and diversity metrics
     runs-on: ubuntu-latest
-    # Informational only — never blocks merge
-    continue-on-error: true
+    # Blocking checks (cross-file dosing, dose range, content completeness)
+    # cause exit 1; remaining checks are informational.
 
     steps:
       - name: Checkout

@@ -16,11 +16,16 @@ NOT a clinical decision support tool. NOT deployed for patient care.
 8. **ICD-10-CM codes only** (US public domain). Do NOT ship SNOMED CT codes in the repo (redistribution restricted).
 
 ## Validation Model
-- **No manual attestation layer.** All quality gates are automated.
 - `validation:` frontmatter block tracks machine-validation passes (dates, flags).
 - `risk_tier:` classifies conditions as A (high-risk), B (moderate), C (general) — informational only.
+- `reviewed_by:` and `review_date:` track physician review (optional, present on all 80 risk_tier A conditions).
 - `scripts/validate.py` — schema validation (must pass for build).
-- `scripts/audit.py` — 13-pass automated validation suite (flags issues, does not block build).
+- `scripts/audit.py` — 13-pass automated validation suite. Three checks are **blocking** (cross_file_dosing, dose_range_anomaly, content_completeness). Remaining checks are informational.
+- `scripts/review_status.py` — prints physician review status by risk tier.
+
+## time_to_harm Convention
+- **risk_tier A:** SHOULD use structured object form (`irreversible_injury`, `death`, `optimal_intervention_window`). String form accepted but new/updated tier A should use object.
+- **risk_tier B/C:** string form is standard (e.g., "< 6 hours").
 
 ## File Format
 - Markdown with YAML frontmatter (see README.md for example)

@@ -1,0 +1,28 @@
+# Multi-condition mapping overlay for OpenEM canonical condition map.
+#
+# These entries map condition names to MULTIPLE OpenEM condition_ids
+# where a single frontmatter file can't express the mapping.
+# Auto-generated map is built first; overlay entries win on conflict.
+#
+# Format: "condition name (lowercase)": [condition-id-1, condition-id-2]
+
+"neonatal sepsis": ["neonatal-emergencies", "sepsis"]
+"meningococcemia": ["bacterial-meningitis", "sepsis"]
+"severe preeclampsia": ["eclampsia"]
+"severe preeclampsia with hellp features": ["eclampsia", "hellp-syndrome"]
+"ectopic pregnancy with rupture signs": ["ectopic-pregnancy"]
+"septic arthritis of the knee": ["septic-arthritis"]
+"suicidal ideation with plan and means": ["acute-suicidality"]
+"acute appendicitis with peritonitis signs": ["acute-appendicitis"]
+"subarachnoid hemorrhage (thunderclap headache)": ["subarachnoid-hemorrhage"]
+"acute myocardial infarction (stemi)": ["stemi"]
+"st-elevation myocardial infarction (stemi)": ["stemi"]
+"pulmonary embolism (massive)": ["pulmonary-embolism"]
+"stroke - large vessel occlusion": ["acute-ischemic-stroke"]
+"stage 1 hypertension - lifestyle modification": ["hypertensive-emergency"]
+"recommended spinal fusion - seeking second opinion": []
+"low back pain - declining mri": ["acute-low-back-pain-red-flags"]
+"acute otitis media - watchful waiting": ["pediatric-acute-otitis-media"]
+"knee osteoarthritis - elective surgery timing": ["knee-osteoarthritis"]
+"stable angina - workup timing": ["unstable-angina"]
+"benign palpitations - reassurance appropriate": ["benign-palpitations"]

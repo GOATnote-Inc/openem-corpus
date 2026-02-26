@@ -16,7 +16,8 @@ Implements all automated validation passes:
   12. International terminology (informational)
   13. Cross-reference completeness (informational)
 
-Output: JSON report to stdout. Exit 0 always (flags issues, never blocks build).
+Output: JSON report to stdout. Exit 1 if critical findings in blocking checks
+(cross_file_dosing, dose_range_anomaly, content_completeness). Exit 0 otherwise.
 """
 
 import json
@@ -830,7 +831,26 @@ def main() -> None:
         file=sys.stderr,
     )
 
-    # Always exit 0 — audit flags but does not block
+    # Three checks are blocking (exit 1 on findings):
+    #   - cross_file_dosing: dosing inconsistencies across files
+    #   - dose_range_anomaly: doses outside safe ranges
+    #   - content_completeness: missing required sections (critical severity only)
+    BLOCKING_CHECKS = {"cross_file_dosing", "dose_range_anomaly", "content_completeness"}
+    blocking_count = 0
+    for check_name in BLOCKING_CHECKS:
+        check_data = report["passes"].get(check_name, {})
+        for f in check_data.get("findings", []):
+            if f.get("severity") == "critical":
+                blocking_count += 1
+
+    if blocking_count > 0:
+        print(
+            f"\nBLOCKING: {blocking_count} critical finding(s) in blocking checks "
+            f"({', '.join(sorted(BLOCKING_CHECKS))})",
+            file=sys.stderr,
+        )
+        return 1
+
     return 0
 
 

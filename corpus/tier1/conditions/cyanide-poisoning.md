@@ -28,17 +28,18 @@ sources:
     url: "https://emergency.cdc.gov/agent/cyanide/index.asp"
 last_updated: "2026-02-23"
 compiled_by: agent
+reviewed_by: "Brandon Dent, MD — Board Certified Emergency Medicine"
+review_date: "2026-02-27"
 risk_tier: A
 validation:
   schema_version: "2.0"
   outlier_detection_flag: clear
-  automated_consistency_check: null
-  dose_range_validator: null
-  unit_normalization_check: null
-  cross_file_consistency_check: null
-  citation_presence_check: null
-  duplicate_content_check: null
-  guideline_version_reference: null
+  automated_consistency_check: "2026-02-27"
+  dose_range_validator: "2026-02-27"
+  unit_normalization_check: "2026-02-27"
+  cross_file_consistency_check: "2026-02-27"
+  citation_presence_check: "2026-02-27"
+  duplicate_content_check: "2026-02-27"
   provenance_links: []
 ---
 # Cyanide Poisoning

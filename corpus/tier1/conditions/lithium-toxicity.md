@@ -28,15 +28,14 @@ last_updated: "2026-02-19"
 compiled_by: agent
 risk_tier: B
 validation:
-  automated_consistency_check: null
-  dose_range_validator: null
-  unit_normalization_check: null
-  cross_file_consistency_check: null
-  citation_presence_check: null
-  duplicate_content_check: null
+  automated_consistency_check: "2026-02-27"
+  dose_range_validator: "2026-02-27"
+  unit_normalization_check: "2026-02-27"
+  cross_file_consistency_check: "2026-02-27"
+  citation_presence_check: "2026-02-27"
+  duplicate_content_check: "2026-02-27"
   outlier_detection_flag: clear
   schema_version: "2.0"
-  guideline_version_reference: null
   provenance_links: []
 ---
 # Lithium Toxicity

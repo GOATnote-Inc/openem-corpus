@@ -27,6 +27,8 @@ sources:
     pmid: "22326173"
 last_updated: "2026-02-26"
 compiled_by: agent
+reviewed_by: "Brandon Dent, MD — Board Certified Emergency Medicine"
+review_date: "2026-02-27"
 risk_tier: A
 confusion_pairs:
   - condition: acute-angle-closure-glaucoma
@@ -41,14 +43,13 @@ confusion_pairs:
       - "CST: bilateral cavernous sinus involvement on MRI/MRV"
 validation:
   schema_version: "2.0"
-  automated_consistency_check: null
-  dose_range_validator: null
-  unit_normalization_check: null
-  cross_file_consistency_check: null
-  citation_presence_check: null
-  duplicate_content_check: null
+  automated_consistency_check: "2026-02-27"
+  dose_range_validator: "2026-02-27"
+  unit_normalization_check: "2026-02-27"
+  cross_file_consistency_check: "2026-02-27"
+  citation_presence_check: "2026-02-27"
+  duplicate_content_check: "2026-02-27"
   outlier_detection_flag: clear
-  guideline_version_reference: null
   provenance_links: []
 ---
 # Cavernous Sinus Thrombosis

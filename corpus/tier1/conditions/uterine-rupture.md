@@ -29,6 +29,8 @@ sources:
     ref: "California Maternal Quality Care Collaborative (CMQCC). Improving Health Care Response to Obstetric Hemorrhage v3.0, 2022"
 last_updated: "2026-02-23"
 compiled_by: agent
+reviewed_by: "Brandon Dent, MD — Board Certified Emergency Medicine"
+review_date: "2026-02-27"
 risk_tier: A
 validation:
   schema_version: "2.0"
