@@ -46,6 +46,8 @@ VALID_CATEGORIES = [
     "ophthalmologic",
     "dermatologic",
     "allergic-immunologic",
+    "disaster-mci",
+    "procedural",
 ]
 VALID_TRACKS = ["tier1", "tier2"]
 VALID_RISK_TIERS = ["A", "B", "C"]

@@ -47,6 +47,8 @@ VALID_CATEGORIES = [
     "ophthalmologic",
     "dermatologic",
     "allergic-immunologic",
+    "disaster-mci",
+    "procedural",
 ]
 
 VALID_TRACKS = ["tier1", "tier2"]
@@ -63,6 +65,7 @@ VALID_SOURCE_TYPES = [
     "wikem",
     "review",
     "meta-analysis",
+    "consensus-statement",
 ]
 
 ICD10_PATTERN = re.compile(r"^[A-Z][0-9]")

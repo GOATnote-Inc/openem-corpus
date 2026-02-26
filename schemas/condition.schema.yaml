@@ -97,6 +97,8 @@ properties:
       - ophthalmologic
       - dermatologic
       - allergic-immunologic
+      - disaster-mci
+      - procedural
     description: Primary clinical category
 
   track:
@@ -112,7 +114,7 @@ properties:
       properties:
         type:
           type: string
-          enum: [guideline, pubmed, textbook, who, cdc, wikem, review, meta-analysis]
+          enum: [guideline, pubmed, textbook, who, cdc, wikem, review, meta-analysis, consensus-statement]
         ref:
           type: string
           description: Human-readable citation
