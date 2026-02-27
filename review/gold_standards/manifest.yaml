@@ -1,0 +1,90 @@
+# Gold Standard Manifest
+#
+# Registry of gold standard conditions seeded into the live review queue.
+# CONFIDENTIAL: Do not share with reviewers.
+#
+# Gold standards are seeded at ~8% rate, indistinguishable from real
+# assignments. They calibrate reviewer accuracy over time.
+#
+# Distribution target: 40% clean / 30% boundary / 20% genuine_issue / 10% confusion_pair
+#
+# See README.md in this directory for full documentation.
+
+schema_version: "1.0"
+created: "2026-02-27"
+last_updated: "2026-02-27"
+
+# Tracking thresholds
+thresholds:
+  alpha_acceptable: 0.67       # Krippendorff's alpha -- below this triggers rubric clarification
+  alpha_critical: 0.50         # Below this triggers retraining
+  sensitivity_minimum: 0.80    # Per-reviewer minimum on genuine_issue gold standards
+  false_positive_maximum: 0.20 # Per-reviewer maximum on clean gold standards
+  min_assignments_for_eval: 5  # Minimum gold standard assignments before evaluating a reviewer
+
+gold_standards:
+  # Placeholder -- actual gold standards are created from real conditions
+  # that have been independently verified by 2+ physicians.
+  #
+  # Format:
+  # - condition_id: stemi
+  #   type: clean        # clean | boundary | genuine_issue | confusion_pair
+  #   expected_finding: null  # null for clean, or description of the planted issue
+  #   planted_error: null     # null for clean, or structured error description
+  #   verified_by: "Name, MD"
+  #   verification_date: "2026-02-27"
+  #   batch: null             # assigned when seeded into a review batch
+  #   notes: ""               # optional maintainer notes
+  #
+  # Example entries (not yet active):
+  #
+  # - condition_id: stemi
+  #   type: clean
+  #   expected_finding: null
+  #   planted_error: null
+  #   verified_by: "Brandon Dent, MD — Board Certified Emergency Medicine"
+  #   verification_date: "2026-02-27"
+  #   batch: null
+  #   notes: "All doses, contraindications, and guidelines verified correct."
+  #
+  # - condition_id: subarachnoid-hemorrhage
+  #   type: genuine_issue
+  #   expected_finding: "Nimodipine dose listed as 30 mg PO q4h — should be 60 mg PO q4h"
+  #   planted_error:
+  #     type: dose-error
+  #     severity: critical
+  #     section: Treatment
+  #     location: "Nimodipine dosing line"
+  #   verified_by: "Brandon Dent, MD — Board Certified Emergency Medicine"
+  #   verification_date: "2026-02-27"
+  #   batch: null
+  #   notes: "Canonical file has correct dose (60 mg). Gold standard copy has planted error."
+  #
+  # - condition_id: tension-headache
+  #   type: confusion_pair
+  #   expected_finding: "Reviewer should verify that SAH red flags are correctly listed in escalation_triggers"
+  #   planted_error: null
+  #   verified_by: "Brandon Dent, MD — Board Certified Emergency Medicine"
+  #   verification_date: "2026-02-27"
+  #   batch: null
+  #   notes: "Tests ability to distinguish tension headache from SAH presentations."
+  #
+  # - condition_id: sepsis
+  #   type: boundary
+  #   expected_finding: "Lactate threshold listed as > 4 mmol/L — some guidelines use > 2 mmol/L. Both are defensible."
+  #   planted_error: null
+  #   verified_by: "Brandon Dent, MD — Board Certified Emergency Medicine"
+  #   verification_date: "2026-02-27"
+  #   batch: null
+  #   notes: "Tests calibration on clinically debatable thresholds."
+
+# Batch tracking
+batches: []
+  # Format:
+  # - batch_id: "2026-03-01-batch-1"
+  #   date: "2026-03-01"
+  #   reviewers: []
+  #   gold_standard_ids: []
+  #   krippendorff_alpha: null
+  #   status: pending  # pending | scored | action_taken
+  #   action: null     # null | rubric_clarification | retraining

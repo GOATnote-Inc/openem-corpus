@@ -1,0 +1,96 @@
+name: Review Gate
+
+on:
+  pull_request:
+    paths:
+      - "corpus/**/*.md"
+      - "reviewers/**"
+
+jobs:
+  review-gate:
+    name: Validate reviewer credentials
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Check reviewer credentials
+        run: |
+          python3 -c "
+          import re
+          import sys
+          import yaml
+          from pathlib import Path
+
+          # Load reviewer registry
+          registry_path = Path('reviewers/registry.yaml')
+          if not registry_path.exists():
+              print('No reviewer registry found — skipping check')
+              sys.exit(0)
+
+          registry = yaml.safe_load(registry_path.read_text()) or {}
+          reviewers = registry.get('reviewers', [])
+          active_ids = {r['id'] for r in reviewers if r.get('status') == 'active'}
+          all_ids = {r['id'] for r in reviewers}
+          pending_ids = {r['id'] for r in reviewers if r.get('status') == 'pending_verification'}
+
+          errors = []
+
+          # Check modified condition files
+          for md_file in sorted(Path('corpus/tier1/conditions').glob('*.md')):
+              text = md_file.read_text()
+              m = re.match(r'^---\n(.*?)\n---', text, re.DOTALL)
+              if not m:
+                  continue
+              fm = yaml.safe_load(m.group(1))
+              if not fm:
+                  continue
+
+              # Check reviewed_by matches a known reviewer
+              reviewer = fm.get('reviewed_by', '')
+              if reviewer:
+                  # Match against registry names (not IDs)
+                  known_names = {r.get('name', '') for r in reviewers}
+                  # Extract just the name part before ' — '
+                  reviewer_name = reviewer.split(' — ')[0].strip() if ' — ' in reviewer else reviewer.strip()
+                  name_match = any(reviewer_name in n for n in known_names)
+                  if not name_match:
+                      print(f'INFO: {md_file.name}: reviewer \"{reviewer}\" not in registry (may be pre-registry)')
+
+              # Check reviews array entries
+              reviews = fm.get('reviews', [])
+              for i, rev in enumerate(reviews):
+                  reviewer_str = rev.get('reviewer', '')
+                  reviewer_name = reviewer_str.split(' — ')[0].strip() if ' — ' in reviewer_str else reviewer_str.strip()
+                  # Check against registry
+                  matched = False
+                  for r in reviewers:
+                      if reviewer_name in r.get('name', ''):
+                          if r.get('status') == 'pending_verification':
+                              errors.append(
+                                  f'{md_file.name}: reviews[{i}] reviewer \"{reviewer_str}\" '
+                                  f'has status pending_verification in registry'
+                              )
+                          matched = True
+                          break
+                  if not matched and reviews:
+                      print(f'INFO: {md_file.name}: reviews[{i}] reviewer \"{reviewer_str}\" not in registry')
+
+          if errors:
+              print()
+              print('ERRORS (blocking):')
+              for e in errors:
+                  print(f'  {e}')
+              sys.exit(1)
+          else:
+              print('Review gate: all checks passed')
+          "

@@ -1,0 +1,24 @@
+# Reviewer Registry
+# Credentialed physician profiles for OpenEM condition review.
+# See REVIEWING.md for onboarding process.
+
+reviewers:
+  - id: bdent
+    name: "Brandon Dent, MD"
+    credentials: "Board Certified Emergency Medicine"
+    specialties: [emergency-medicine]
+    category_match: [all]  # can review any category
+    max_concurrent: 10
+    status: active
+    onboarding_date: "2026-02-27"
+
+  # Template for new reviewers — copy and fill in:
+  #
+  # - id: reviewer_handle          # short unique identifier
+  #   name: "Name, MD/DO"
+  #   credentials: "Board certification(s)"
+  #   specialties: [toxicology, emergency-medicine]
+  #   category_match: [toxicologic, environmental]  # or [all]
+  #   max_concurrent: 5            # max simultaneous assignments
+  #   status: pending_verification  # pending_verification | active | inactive
+  #   onboarding_date: null        # set when status becomes active

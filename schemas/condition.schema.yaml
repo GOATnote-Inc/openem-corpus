@@ -159,6 +159,35 @@ properties:
     format: date
     description: ISO 8601 date of physician review
 
+  reviews:
+    type: array
+    items:
+      type: object
+      required: [reviewer, date, type]
+      properties:
+        reviewer:
+          type: string
+          description: "Name and credentials (e.g., 'Brandon Dent, MD — Board Certified Emergency Medicine')"
+        date:
+          type: string
+          format: date
+          description: "ISO 8601 date of review"
+        type:
+          type: string
+          enum: [full, dosing-focused, red-team, spot-check, consensus]
+          description: "Type of review performed"
+        issues_found:
+          type: integer
+          minimum: 0
+          description: "Number of issues flagged (0 = clean review)"
+        issues_ref:
+          type: string
+          description: "GitHub issue or PR number referencing detailed findings"
+    description: >
+      Array of structured review records. Supplements the single reviewed_by/review_date
+      fields (which are kept for backwards compatibility and record the initial review).
+      Each entry records one review pass with type, reviewer, and issue count.
+
   risk_tier:
     type: string
     enum: [A, B, C]

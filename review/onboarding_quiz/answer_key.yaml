@@ -1,0 +1,224 @@
+# Onboarding Quiz — Answer Key
+#
+# CONFIDENTIAL: Do not distribute to quiz candidates.
+# Scoring is performed by the corpus maintainer against this key.
+#
+# Sensitivity = (true positives found) / (total planted errors)
+# False-positive rate = (false positives reported) / (total findings reported)
+# Pass: sensitivity >= 80%, false-positive rate < 20%
+
+quiz_version: "1.0"
+created: "2026-02-27"
+total_planted_errors: 9  # 5 in alpha + 4 in beta + 0 in gamma
+
+conditions:
+
+  - file: quiz-condition-alpha.md
+    condition: Acute Thermal Dysregulation Syndrome
+    total_errors: 5
+    errors:
+
+      - id: alpha-1
+        type: dose-error
+        severity: critical
+        section: Critical Actions
+        location: "Step 5: 'Epinephrine 0.5 mg IV for cardiac arrest'"
+        description: >
+          Wrong epinephrine dose for cardiac arrest. The ACLS cardiac arrest
+          dose is epinephrine 1 mg IV/IO push every 3-5 minutes (2020 AHA
+          Guidelines). The 0.3-0.5 mg dose is for anaphylaxis (IM route),
+          not cardiac arrest. Using 0.5 mg IV in a cardiac arrest risks
+          inadequate resuscitation.
+        expected_finding: >
+          Epinephrine dose should be 1 mg IV/IO for cardiac arrest per
+          2020 AHA ACLS guidelines.
+
+      - id: alpha-2
+        type: dose-error
+        severity: critical
+        section: Critical Actions
+        location: "Step 4: 'midazolam 5 mg or lorazepam 2 mg IV'"
+        description: >
+          Missing route on midazolam. The entry lists "midazolam 5 mg" without
+          specifying the route (IV, IM, or IN). The corpus standard requires
+          every drug dose to include route (REVIEWING.md Section 3, Critical
+          Actions item 5). Lorazepam in the same line correctly specifies "IV"
+          but midazolam does not.
+        expected_finding: >
+          Midazolam dose is missing its route. Should specify IV or IM
+          (e.g., "midazolam 5 mg IV" or "midazolam 10 mg IM").
+
+      - id: alpha-3
+        type: hedging
+        severity: major
+        section: Critical Actions
+        location: "Critical Actions table, row 4: 'Consider early intubation for airway protection'"
+        description: >
+          Hedging language in Critical Actions. The word "consider" violates
+          the corpus standard (REVIEWING.md Section 3, Critical Actions item 3):
+          "Actions are imperative — no hedging ('consider', 'may want to')."
+          Critical Actions must use directive language.
+        expected_finding: >
+          Hedging language "consider early intubation" violates corpus standard.
+          Should be imperative: "Intubate early for airway protection" or
+          "Perform early intubation for airway protection."
+
+      - id: alpha-4
+        type: schema-error
+        severity: major
+        section: Frontmatter
+        location: "icd10: [R68.0, G93.4X]"
+        description: >
+          Invalid ICD-10-CM code. "G93.4X" is not a valid ICD-10-CM code.
+          Valid codes in the G93.4 family include G93.40 (Encephalopathy,
+          unspecified), G93.41 (Metabolic encephalopathy), G93.49 (Other
+          encephalopathy). The trailing "X" placeholder is not valid for
+          this code family in ICD-10-CM.
+        expected_finding: >
+          G93.4X is not a valid ICD-10-CM code. Should be a specific code
+          such as G93.40 or G93.49.
+
+      - id: alpha-5
+        type: dangerous-omission
+        severity: critical
+        section: Treatment
+        location: >
+          Dantrolene and Cyproheptadine subsection, final bullet: "Do NOT
+          combine dantrolene and cyproheptadine — dantrolene potentiates
+          serotonergic crisis through calcium-mediated 5-HT release
+          amplification."
+        description: >
+          Fabricated drug interaction. There is no established clinical
+          contraindication to combining dantrolene and cyproheptadine.
+          Dantrolene is a ryanodine receptor antagonist (reduces intracellular
+          calcium release from sarcoplasmic reticulum); cyproheptadine is a
+          serotonin receptor antagonist. They act on entirely different
+          pathways. The claimed "calcium-mediated 5-HT release amplification"
+          mechanism is fabricated. This false contraindication could cause a
+          clinician to withhold cyproheptadine from a serotonin syndrome
+          patient who also needs dantrolene for rhabdomyolysis, resulting
+          in patient harm.
+        expected_finding: >
+          The dantrolene-cyproheptadine interaction is fabricated. No
+          established contraindication exists. This false warning could
+          cause a clinician to withhold necessary treatment.
+
+  - file: quiz-condition-beta.md
+    condition: Acute Hepatorenal Crisis
+    total_errors: 4
+    errors:
+
+      - id: beta-1
+        type: outdated-guideline
+        severity: major
+        section: Frontmatter (sources)
+        location: >
+          First source: "2008 AASLD Practice Guidelines: Management of Adult
+          Patients with Ascites Due to Cirrhosis"
+        description: >
+          Outdated primary guideline. The 2008 AASLD guidelines have been
+          superseded by the 2021 AASLD Guidance on AKI and HRS-AKI (Biggins
+          SW, et al. Hepatology. 2021). The RED_TEAM_CHECKLIST requires at
+          least one source from the last 5 years (>= 2021). While the 2012
+          and 2015 sources are acceptable supporting references, having a
+          2008 guideline as the primary source for a condition compiled in
+          2026 is below the corpus currency standard.
+        expected_finding: >
+          Primary guideline is from 2008, superseded by 2021 AASLD guidance.
+          Corpus standard requires at least one source from >= 2021.
+
+      - id: beta-2
+        type: missing-contraindication
+        severity: critical
+        section: Critical Actions
+        location: >
+          Step 6: "Administer ketoconazole 200 mg PO daily as hepatoprotective
+          adjunct"
+        description: >
+          Ketoconazole is hepatotoxic and carries an FDA black box warning for
+          serious hepatotoxicity, including fatal cases. It is contraindicated
+          in patients with acute or chronic liver disease. Recommending
+          ketoconazole as a "hepatoprotective adjunct" in a patient with
+          advanced hepatic failure is directly contradicted by the drug's
+          safety profile and is dangerous. This drug should not appear in
+          this treatment protocol.
+        expected_finding: >
+          Ketoconazole is hepatotoxic (FDA black box warning) and
+          contraindicated in liver disease. Labeling it "hepatoprotective"
+          in a hepatorenal crisis patient is dangerous and should be removed.
+
+      - id: beta-3
+        type: content-completeness
+        severity: major
+        section: Pitfalls
+        location: "Entire Pitfalls section — only 3 pitfalls listed"
+        description: >
+          Insufficient pitfalls count. The review rubric (REVIEWING.md
+          Section 3, Pitfalls item 1) requires "at least 7 pitfalls for
+          tier A conditions." This condition is risk_tier A (ESI 1) but
+          lists only 3 pitfalls. Missing pitfalls could include: not
+          monitoring serial creatinine, overlooking hepatic encephalopathy
+          management, failing to assess transplant candidacy early, using
+          excessive crystalloid instead of albumin, and missing drug-induced
+          nephrotoxicity as a cause.
+        expected_finding: >
+          Only 3 pitfalls for a risk_tier A condition. Rubric requires >= 7.
+
+      - id: beta-4
+        type: terminology
+        severity: major
+        section: Frontmatter
+        location: "time_to_harm: 'variable'"
+        description: >
+          Vague time_to_harm value. The RED_TEAM_CHECKLIST explicitly
+          prohibits vague values like "variable", "depends", or "varies"
+          for time_to_harm. For a risk_tier A condition, the schema
+          convention requires the structured object form with
+          irreversible_injury, death, and optimal_intervention_window
+          fields. Even the string form must provide a specific time
+          window (e.g., "< 48 hours" or "< 2 weeks").
+        expected_finding: >
+          time_to_harm is "variable" — too vague. Should use structured
+          object form for tier A, or at minimum a specific time window.
+
+  - file: quiz-condition-gamma.md
+    condition: Acute Neurovascular Compression Syndrome
+    total_errors: 0
+    description: >
+      This condition is CLEAN. It contains no planted errors. All drug doses
+      include routes, time targets are specific, Critical Actions use
+      imperative language without hedging, ICD-10 codes are valid (G54.0,
+      G54.1), sources include a 2024 guideline (meeting the currency
+      requirement), and the Pitfalls section has 9 items. This condition
+      is risk_tier B, so the 7-pitfall minimum for tier A does not strictly
+      apply (though it exceeds it regardless).
+    expected_finding: "No issues found."
+    notes: >
+      This condition tests the reviewer's false-positive rate. A reviewer
+      who reports issues on this file is generating false positives, which
+      counts against their false-positive rate threshold (< 20%).
+
+scoring:
+  total_errors: 9
+  pass_threshold_sensitivity: 0.80
+  pass_threshold_false_positive_rate: 0.20
+  minimum_correct_to_pass: 8  # ceil(9 * 0.80) = 8
+
+  scoring_rules:
+    - >
+      A finding counts as "correctly identified" if the reviewer identifies
+      the correct location AND the correct general category of error, even
+      if the explanation differs from this answer key.
+    - >
+      Partial credit (0.5): identifying the correct section but describing
+      the wrong specific issue within that section.
+    - >
+      False positives: any reported issue that does not correspond to a
+      planted error in this answer key. Includes issues flagged on
+      quiz-condition-gamma.md (the clean file).
+    - >
+      Sensitivity = (correctly identified errors) / 9.
+    - >
+      False-positive rate = (false positives) / (total findings reported).
+    - >
+      Both thresholds must be met simultaneously to pass.

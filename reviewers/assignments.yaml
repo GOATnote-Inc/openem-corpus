@@ -1,0 +1,16 @@
+# Review Assignments
+# Tracks condition review assignments, SLA dates, and completion status.
+# Updated by scripts/assign_reviews.py or manually.
+
+assignments: []
+
+# Assignment format:
+#
+#   - condition_id: stemi
+#     reviewer_id: bdent           # must match reviewers/registry.yaml
+#     review_type: full            # full | dosing-focused | red-team | spot-check | consensus
+#     assigned_date: "2026-02-27"
+#     due_date: "2026-03-13"       # tier A: +2 weeks, tier B: +4 weeks, tier C: +8 weeks
+#     status: pending              # pending | in_progress | complete | overdue
+#     priority: high               # high | medium | low
+#     category_match_required: []  # reviewer must match one of these categories

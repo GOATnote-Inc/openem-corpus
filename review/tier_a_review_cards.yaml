@@ -1,0 +1,2093 @@
+- condition_id: active-shooter-response
+  condition_name: Active Shooter and Mass Violence Event Response
+  category: disaster-mci
+  word_count: 2121
+  sources_count: 5
+  pitfalls_count: 11
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2013, newest: 2019 — no source from last 5 years'
+  category_checks:
+    triage_algorithm: PASS
+    resource_allocation: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify triage algorithm accuracy
+  - Confirm resource allocation criteria
+  - Check mass decontamination protocols if applicable
+- condition_id: acute-ischemic-stroke
+  condition_name: Acute Ischemic Stroke
+  category: neurological
+  word_count: 1700
+  sources_count: 4
+  pitfalls_count: 18
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: acetaminophen 650-1000 mg — no route (IV/IM/PO/etc) found nearby
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2015, newest: 2019 — no source from last 5 years'
+  category_checks:
+    seizure_dose_mg_kg: N/A
+    herniation_signs: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify seizure medication dosing (mg/kg for second-line)
+  - Confirm herniation management protocols
+  - Check thrombolytic eligibility criteria
+- condition_id: acute-valvular-emergency
+  condition_name: Acute Valvular Emergency
+  category: cardiovascular
+  word_count: 1307
+  sources_count: 4
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 1 hour"), not structured object — tier A
+      SHOULD use object form
+  category_checks:
+    reperfusion_target: PASS
+    anticoag_weight_based: N/A
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify reperfusion/intervention time targets are current
+  - Confirm anticoagulation weight-based dosing
+  - Check antiplatelet therapy matches current ACC/AHA
+- condition_id: adrenal-crisis
+  condition_name: Adrenal Crisis
+  category: endocrine-metabolic
+  word_count: 1192
+  sources_count: 4
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "if possible" in Critical Actions: "...BEFORE steroid
+      administration if possible** — but NEVER delay treatment for labs. A single..."'
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 2 hours"), not structured object — tier A
+      SHOULD use object form
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2016, newest: 2020 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: air-embolism
+  condition_name: Venous Air Embolism
+  category: cardiovascular
+  word_count: 1754
+  sources_count: 5
+  pitfalls_count: 7
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: norepinephrine 0.1-0.5 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2000, newest: 2016 — no source from last 5 years'
+  - &id001
+    severity: major
+    check: dangerous_combination
+    detail: 'epinephrine concentration: epinephrine concentration must specify 1:1,000
+      (IM) vs 1:10,000 (IV) or mg/mL equivalent'
+  category_checks:
+    reperfusion_target: N/A
+    anticoag_weight_based: N/A
+  dangerous_combo_flags:
+  - *id001
+  review_status: NEEDS_PHYSICIAN_REVIEW
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify reperfusion/intervention time targets are current
+  - Confirm anticoagulation weight-based dosing
+  - Check antiplatelet therapy matches current ACC/AHA
+- condition_id: amniotic-fluid-embolism
+  condition_name: Amniotic Fluid Embolism
+  category: obstetric-gynecologic
+  word_count: 1687
+  sources_count: 5
+  pitfalls_count: 6
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "if available" in Critical Actions: "...actory pulmonary
+      hypertension if available.  8. **Treat DIC aggressively.** Goal fibrinogen..."'
+  - severity: minor
+    check: pitfall_count
+    detail: Only 6 pitfalls listed (minimum 7 recommended for tier A)
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2014, newest: 2017 — no source from last 5 years'
+  - severity: minor
+    check: category_gestational_cutoffs
+    detail: 'Category check failed: Gestational age cutoffs stated'
+  category_checks:
+    mag_toxicity: N/A
+    fetal_considerations: PASS
+    gestational_cutoffs: FAIL
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify magnesium sulfate dosing and toxicity thresholds
+  - Confirm gestational age cutoffs
+  - Check fetal monitoring recommendations
+- condition_id: anaphylaxis
+  condition_name: Anaphylaxis
+  category: allergic-immunologic
+  word_count: 1488
+  sources_count: 4
+  pitfalls_count: 19
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: epinephrine 3-5 mL — no route (IV/IM/PO/etc) found nearby
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: angioedema
+  condition_name: Angioedema
+  category: allergic-immunologic
+  word_count: 1382
+  sources_count: 6
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 60 minutes"), not structured object — tier
+      A SHOULD use object form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: aortic-dissection
+  condition_name: Aortic Dissection
+  category: cardiovascular
+  word_count: 1975
+  sources_count: 3
+  pitfalls_count: 19
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: category_anticoag_weight_based
+    detail: 'Category check failed: Anticoagulation dosing weight-based where applicable'
+  category_checks:
+    reperfusion_target: PASS
+    anticoag_weight_based: FAIL
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify reperfusion/intervention time targets are current
+  - Confirm anticoagulation weight-based dosing
+  - Check antiplatelet therapy matches current ACC/AHA
+- condition_id: aortic-transection
+  condition_name: Traumatic Aortic Transection
+  category: traumatic
+  word_count: 1471
+  sources_count: 5
+  pitfalls_count: 7
+  time_to_harm_format: structured
+  flags:
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1997, newest: 2015 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify hemorrhage control priorities
+  - Confirm transfusion thresholds
+- condition_id: bacterial-meningitis
+  condition_name: Bacterial Meningitis
+  category: infectious
+  word_count: 1432
+  sources_count: 5
+  pitfalls_count: 7
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "if possible" in Critical Actions: "...2** — draw before
+      antibiotics if possible without delaying antibiotics. LP can follow. 4. *..."'
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 1 hour"), not structured object — tier A
+      SHOULD use object form
+  category_checks:
+    empiric_abx_timing: PASS
+    cultures_before_abx: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify empiric antibiotic regimens match current guidelines
+  - Confirm timing targets for antibiotic administration
+  - Check source control recommendations
+- condition_id: blast-injury
+  condition_name: Blast Injury
+  category: disaster-mci
+  word_count: 2343
+  sources_count: 5
+  pitfalls_count: 11
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "if available" in Critical Actions: "...n, 100% O2, hyperbaric
+      oxygen if available.  8. **Serial abdominal exams for all blast-expos..."'
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1996, newest: 2009 — no source from last 5 years'
+  category_checks:
+    triage_algorithm: PASS
+    resource_allocation: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify triage algorithm accuracy
+  - Confirm resource allocation criteria
+  - Check mass decontamination protocols if applicable
+- condition_id: breech-precipitous-delivery
+  condition_name: Breech Precipitous Delivery
+  category: procedural
+  word_count: 2040
+  sources_count: 5
+  pitfalls_count: 11
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2004, newest: 2018 — no source from last 5 years'
+  category_checks:
+    equipment_list: PASS
+    contraindications_listed: PASS
+    complication_rates: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify equipment list is complete
+  - Confirm contraindications are listed
+  - Check procedural steps are in correct order
+- condition_id: cardiac-arrest
+  condition_name: Cardiac Arrest
+  category: cardiovascular
+  word_count: 1722
+  sources_count: 6
+  pitfalls_count: 20
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "consider" in Critical Actions: "...systemic tPA 50 mg
+      IV bolus (consider if massive PE suspected); continue CPR for 60-90..."'
+  - &id002
+    severity: major
+    check: dangerous_combination
+    detail: 'calcium chloride: must state ''central line only'' or warn against peripheral
+      administration'
+  - &id003
+    severity: major
+    check: dangerous_combination
+    detail: 'epinephrine concentration: epinephrine concentration must specify 1:1,000
+      (IM) vs 1:10,000 (IV) or mg/mL equivalent'
+  category_checks:
+    reperfusion_target: PASS
+    anticoag_weight_based: N/A
+  dangerous_combo_flags:
+  - *id002
+  - *id003
+  review_status: NEEDS_PHYSICIAN_REVIEW
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify reperfusion/intervention time targets are current
+  - Confirm anticoagulation weight-based dosing
+  - Check antiplatelet therapy matches current ACC/AHA
+- condition_id: cardiac-tamponade
+  condition_name: Cardiac Tamponade
+  category: cardiovascular
+  word_count: 1276
+  sources_count: 4
+  pitfalls_count: 19
+  time_to_harm_format: structured
+  flags: []
+  category_checks:
+    reperfusion_target: N/A
+    anticoag_weight_based: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify reperfusion/intervention time targets are current
+  - Confirm anticoagulation weight-based dosing
+  - Check antiplatelet therapy matches current ACC/AHA
+- condition_id: cavernous-sinus-thrombosis
+  condition_name: Cavernous Sinus Thrombosis
+  category: neurological
+  word_count: 1568
+  sources_count: 5
+  pitfalls_count: 5
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: pitfall_count
+    detail: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+  category_checks:
+    seizure_dose_mg_kg: N/A
+    herniation_signs: N/A
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify seizure medication dosing (mg/kg for second-line)
+  - Confirm herniation management protocols
+  - Check thrombolytic eligibility criteria
+- condition_id: cerebral-malaria
+  condition_name: Cerebral Malaria
+  category: infectious
+  word_count: 1677
+  sources_count: 5
+  pitfalls_count: 7
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "consider" in Critical Actions: "...for exchange transfusion**
+      — consider if parasitemia >10% with clinical deterioration,..."'
+  category_checks:
+    empiric_abx_timing: N/A
+    cultures_before_abx: N/A
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify empiric antibiotic regimens match current guidelines
+  - Confirm timing targets for antibiotic administration
+  - Check source control recommendations
+- condition_id: chemical-mass-casualty
+  condition_name: Chemical Mass Casualty Event
+  category: disaster-mci
+  word_count: 2319
+  sources_count: 5
+  pitfalls_count: 11
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "if available" in Critical Actions: "...me, low-pressure
+      water, tepid if available, 3–5 min rinse per patient).  2. **Identify the a..."'
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2003, newest: 2019 — no source from last 5 years'
+  category_checks:
+    triage_algorithm: PASS
+    resource_allocation: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify triage algorithm accuracy
+  - Confirm resource allocation criteria
+  - Check mass decontamination protocols if applicable
+- condition_id: cord-prolapse
+  condition_name: Umbilical Cord Prolapse
+  category: obstetric-gynecologic
+  word_count: 1323
+  sources_count: 5
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 10 minutes"), not structured object — tier
+      A SHOULD use object form
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2004, newest: 2020 — no source from last 5 years'
+  category_checks:
+    mag_toxicity: N/A
+    fetal_considerations: PASS
+    gestational_cutoffs: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify magnesium sulfate dosing and toxicity thresholds
+  - Confirm gestational age cutoffs
+  - Check fetal monitoring recommendations
+- condition_id: crush-syndrome-mci
+  condition_name: Crush Syndrome in Structural Collapse and Mass Casualty Incidents
+  category: disaster-mci
+  word_count: 2562
+  sources_count: 5
+  pitfalls_count: 12
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: mannitol 0.5 g/kg — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1990, newest: 2012 — no source from last 5 years'
+  category_checks:
+    triage_algorithm: PASS
+    resource_allocation: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify triage algorithm accuracy
+  - Confirm resource allocation criteria
+  - Check mass decontamination protocols if applicable
+- condition_id: cyanide-poisoning
+  condition_name: Cyanide Poisoning
+  category: toxicologic
+  word_count: 1428
+  sources_count: 5
+  pitfalls_count: 5
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: minor
+    check: pitfall_count
+    detail: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+  - &id004
+    severity: major
+    check: dangerous_combination
+    detail: 'epinephrine concentration: epinephrine concentration must specify 1:1,000
+      (IM) vs 1:10,000 (IV) or mg/mL equivalent'
+  category_checks:
+    antidote_dose_route: PASS
+    max_dose_stated: PASS
+    decontamination_timing: PASS
+  dangerous_combo_flags:
+  - *id004
+  review_status: NEEDS_PHYSICIAN_REVIEW
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify antidote dosing and routes are current
+  - Confirm decontamination timing windows
+  - Check for dangerous drug interactions
+- condition_id: diabetic-ketoacidosis
+  condition_name: Diabetic Ketoacidosis
+  category: endocrine-metabolic
+  word_count: 1245
+  sources_count: 5
+  pitfalls_count: 7
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: Insulin 0.05-0.1 units/kg/hr — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 6 hours"), not structured object — tier A
+      SHOULD use object form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: difficult-airway-management
+  condition_name: Difficult Airway Management
+  category: procedural
+  word_count: 1886
+  sources_count: 5
+  pitfalls_count: 11
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: propofol 5-50 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: dose_missing_route
+    detail: fentanyl 25-100 mcg/hr — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: dose_missing_route
+    detail: ketamine 0.1-0.5 mg/kg/hr — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  category_checks:
+    equipment_list: PASS
+    contraindications_listed: PASS
+    complication_rates: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify equipment list is complete
+  - Confirm contraindications are listed
+  - Check procedural steps are in correct order
+- condition_id: eclampsia
+  condition_name: Eclampsia
+  category: obstetric-gynecologic
+  word_count: 1540
+  sources_count: 5
+  pitfalls_count: 20
+  time_to_harm_format: structured
+  flags: []
+  category_checks:
+    mag_toxicity: PASS
+    fetal_considerations: PASS
+    gestational_cutoffs: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify magnesium sulfate dosing and toxicity thresholds
+  - Confirm gestational age cutoffs
+  - Check fetal monitoring recommendations
+- condition_id: ectopic-pregnancy
+  condition_name: Ectopic Pregnancy
+  category: obstetric-gynecologic
+  word_count: 1421
+  sources_count: 5
+  pitfalls_count: 7
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 30 minutes if ruptured"), not structured
+      object — tier A SHOULD use object form
+  category_checks:
+    mag_toxicity: N/A
+    fetal_considerations: PASS
+    gestational_cutoffs: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify magnesium sulfate dosing and toxicity thresholds
+  - Confirm gestational age cutoffs
+  - Check fetal monitoring recommendations
+- condition_id: epidural-hematoma
+  condition_name: Epidural Hematoma
+  category: traumatic
+  word_count: 1772
+  sources_count: 5
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 1-2 hours from lucid interval to herniation"),
+      not structured object — tier A SHOULD use object form
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1984, newest: 2020 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify hemorrhage control priorities
+  - Confirm transfusion thresholds
+- condition_id: epiglottitis
+  condition_name: Acute Epiglottitis
+  category: respiratory
+  word_count: 1086
+  sources_count: 3
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 1 hour"), not structured object — tier A
+      SHOULD use object form
+  - severity: minor
+    check: mortality_not_quantified
+    detail: 'mortality_if_delayed has no numeric value: "Complete airway obstruction
+      and death can occur within minutes of decompensation"'
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2010, newest: 2016 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify airway management decision points
+  - Confirm ventilator settings if mentioned
+- condition_id: esophageal-perforation
+  condition_name: Esophageal Perforation
+  category: gastrointestinal
+  word_count: 1207
+  sources_count: 5
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: Norepinephrine 0.05-0.5 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 12 hours"), not structured object — tier
+      A SHOULD use object form
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2004, newest: 2014 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: fat-embolism-syndrome
+  condition_name: Fat Embolism Syndrome
+  category: traumatic
+  word_count: 1596
+  sources_count: 5
+  pitfalls_count: 7
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: norepinephrine 0.1-0.5 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: dose_missing_route
+    detail: Norepinephrine 0.1-0.5 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1974, newest: 2015 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify hemorrhage control priorities
+  - Confirm transfusion thresholds
+- condition_id: fourniers-gangrene
+  condition_name: Fournier's Gangrene
+  category: genitourinary
+  word_count: 2006
+  sources_count: 5
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 6 hours"), not structured object — tier A
+      SHOULD use object form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: heat-stroke
+  condition_name: Heat Stroke
+  category: environmental
+  word_count: 1544
+  sources_count: 5
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 30 minutes"), not structured object — tier
+      A SHOULD use object form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify temperature management targets
+  - Confirm rewarming/cooling protocols
+- condition_id: hellp-syndrome
+  condition_name: HELLP Syndrome
+  category: obstetric-gynecologic
+  word_count: 1807
+  sources_count: 5
+  pitfalls_count: 6
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: minor
+    check: pitfall_count
+    detail: Only 6 pitfalls listed (minimum 7 recommended for tier A)
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1996, newest: 2020 — no source from last 5 years'
+  category_checks:
+    mag_toxicity: PASS
+    fetal_considerations: PASS
+    gestational_cutoffs: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify magnesium sulfate dosing and toxicity thresholds
+  - Confirm gestational age cutoffs
+  - Check fetal monitoring recommendations
+- condition_id: hemorrhagic-shock
+  condition_name: Hemorrhagic Shock
+  category: traumatic
+  word_count: 1908
+  sources_count: 6
+  pitfalls_count: 21
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: Norepinephrine 0.05-0.5 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: dose_missing_route
+    detail: vasopressin 0.03 units/min — no route (IV/IM/PO/etc) found nearby
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2010, newest: 2019 — no source from last 5 years'
+  - &id005
+    severity: major
+    check: dangerous_combination
+    detail: 'calcium chloride: must state ''central line only'' or warn against peripheral
+      administration'
+  - &id006
+    severity: major
+    check: dangerous_combination
+    detail: 'epinephrine concentration: epinephrine concentration must specify 1:1,000
+      (IM) vs 1:10,000 (IV) or mg/mL equivalent'
+  category_checks: {}
+  dangerous_combo_flags:
+  - *id005
+  - *id006
+  review_status: NEEDS_PHYSICIAN_REVIEW
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify hemorrhage control priorities
+  - Confirm transfusion thresholds
+- condition_id: hemorrhagic-stroke
+  condition_name: Hemorrhagic Stroke (Intracerebral Hemorrhage)
+  category: neurological
+  word_count: 2261
+  sources_count: 6
+  pitfalls_count: 8
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "if possible" in Critical Actions: "...ead (simultaneously
+      with NCCT if possible).** Identifies spot sign (predicts hematoma expan..."'
+  category_checks:
+    seizure_dose_mg_kg: PASS
+    herniation_signs: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify seizure medication dosing (mg/kg for second-line)
+  - Confirm herniation management protocols
+  - Check thrombolytic eligibility criteria
+- condition_id: hhs
+  condition_name: Hyperosmolar Hyperglycemic State
+  category: endocrine-metabolic
+  word_count: 2215
+  sources_count: 6
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 24 hours"), not structured object — tier
+      A SHOULD use object form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: hyperkalemia
+  condition_name: Hyperkalemia
+  category: endocrine-metabolic
+  word_count: 1488
+  sources_count: 5
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 30 minutes"), not structured object — tier
+      A SHOULD use object form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: inborn-errors-metabolic-crisis
+  condition_name: Inborn Errors of Metabolism — Acute Crisis
+  category: pediatric
+  word_count: 1435
+  sources_count: 5
+  pitfalls_count: 5
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: minor
+    check: pitfall_count
+    detail: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+  category_checks:
+    weight_based_dosing: PASS
+    max_adult_dose: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify all doses are weight-based with adult max caps
+  - Confirm age-appropriate normal values referenced
+- condition_id: lateral-canthotomy
+  condition_name: Lateral Canthotomy and Cantholysis
+  category: procedural
+  word_count: 1852
+  sources_count: 5
+  pitfalls_count: 11
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  category_checks:
+    equipment_list: PASS
+    contraindications_listed: PASS
+    complication_rates: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify equipment list is complete
+  - Confirm contraindications are listed
+  - Check procedural steps are in correct order
+- condition_id: ludwigs-angina
+  condition_name: Ludwig's Angina
+  category: infectious
+  word_count: 1266
+  sources_count: 4
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 2 hours"), not structured object — tier A
+      SHOULD use object form
+  category_checks:
+    empiric_abx_timing: PASS
+    cultures_before_abx: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify empiric antibiotic regimens match current guidelines
+  - Confirm timing targets for antibiotic administration
+  - Check source control recommendations
+- condition_id: malignant-hyperthermia
+  condition_name: Malignant Hyperthermia
+  category: environmental
+  word_count: 1336
+  sources_count: 4
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 30 minutes"), not structured object — tier
+      A SHOULD use object form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify temperature management targets
+  - Confirm rewarming/cooling protocols
+- condition_id: mass-casualty-triage
+  condition_name: Mass Casualty Incident Triage and Management
+  category: disaster-mci
+  word_count: 1892
+  sources_count: 5
+  pitfalls_count: 11
+  time_to_harm_format: structured
+  flags:
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1996, newest: 2019 — no source from last 5 years'
+  category_checks:
+    triage_algorithm: PASS
+    resource_allocation: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify triage algorithm accuracy
+  - Confirm resource allocation criteria
+  - Check mass decontamination protocols if applicable
+- condition_id: massive-hemoptysis
+  condition_name: Massive Hemoptysis
+  category: respiratory
+  word_count: 1366
+  sources_count: 5
+  pitfalls_count: 5
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: pitfall_count
+    detail: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2000, newest: 2020 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify airway management decision points
+  - Confirm ventilator settings if mentioned
+- condition_id: massive-transfusion
+  condition_name: Massive Transfusion
+  category: hematologic
+  word_count: 1156
+  sources_count: 5
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "if available" in Critical Actions: "...ial POC testing**
+      — TEG/ROTEM if available to guide component therapy. Check ionized calcium..."'
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 30 minutes"), not structured object — tier
+      A SHOULD use object form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: mesenteric-ischemia
+  condition_name: Acute Mesenteric Ischemia
+  category: gastrointestinal
+  word_count: 1379
+  sources_count: 5
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 2 hours"), not structured object — tier A
+      SHOULD use object form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: necrotizing-enterocolitis
+  condition_name: Necrotizing Enterocolitis
+  category: pediatric
+  word_count: 1212
+  sources_count: 5
+  pitfalls_count: 5
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: epinephrine 0.05-0.3 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: minor
+    check: pitfall_count
+    detail: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1978, newest: 2015 — no source from last 5 years'
+  category_checks:
+    weight_based_dosing: PASS
+    max_adult_dose: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify all doses are weight-based with adult max caps
+  - Confirm age-appropriate normal values referenced
+- condition_id: necrotizing-fasciitis
+  condition_name: Necrotizing Fasciitis
+  category: infectious
+  word_count: 1446
+  sources_count: 4
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 6 hours"), not structured object — tier A
+      SHOULD use object form
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2004, newest: 2020 — no source from last 5 years'
+  category_checks:
+    empiric_abx_timing: PASS
+    cultures_before_abx: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify empiric antibiotic regimens match current guidelines
+  - Confirm timing targets for antibiotic administration
+  - Check source control recommendations
+- condition_id: neonatal-emergencies
+  condition_name: Neonatal Emergencies
+  category: pediatric
+  word_count: 2156
+  sources_count: 6
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "if available" in Critical Actions: "...IV (or cefotaxime
+      50 mg/kg IV if available, in place of gentamicin). 7. Add acyclovir 20 mg/..."'
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 1 hour"), not structured object — tier A
+      SHOULD use object form
+  - &id007
+    severity: major
+    check: dangerous_combination
+    detail: 'epinephrine concentration: epinephrine concentration must specify 1:1,000
+      (IM) vs 1:10,000 (IV) or mg/mL equivalent'
+  category_checks:
+    weight_based_dosing: PASS
+    max_adult_dose: PASS
+  dangerous_combo_flags:
+  - *id007
+  review_status: NEEDS_PHYSICIAN_REVIEW
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify all doses are weight-based with adult max caps
+  - Confirm age-appropriate normal values referenced
+- condition_id: neuroleptic-malignant-syndrome
+  condition_name: Neuroleptic Malignant Syndrome
+  category: psychiatric
+  word_count: 1863
+  sources_count: 5
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 24 hours"), not structured object — tier
+      A SHOULD use object form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: opioid-overdose
+  condition_name: Opioid Overdose
+  category: toxicologic
+  word_count: 1321
+  sources_count: 4
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 5 minutes"), not structured object — tier
+      A SHOULD use object form
+  - severity: minor
+    check: mortality_not_quantified
+    detail: 'mortality_if_delayed has no numeric value: "Respiratory arrest within
+      minutes if untreated"'
+  category_checks:
+    antidote_dose_route: PASS
+    max_dose_stated: PASS
+    decontamination_timing: N/A
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify antidote dosing and routes are current
+  - Confirm decontamination timing windows
+  - Check for dangerous drug interactions
+- condition_id: organophosphate-poisoning
+  condition_name: Organophosphate Poisoning
+  category: toxicologic
+  word_count: 1355
+  sources_count: 5
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 30 minutes"), not structured object — tier
+      A SHOULD use object form
+  category_checks:
+    antidote_dose_route: PASS
+    max_dose_stated: PASS
+    decontamination_timing: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify antidote dosing and routes are current
+  - Confirm decontamination timing windows
+  - Check for dangerous drug interactions
+- condition_id: pelvic-fracture
+  condition_name: Pelvic Fracture
+  category: traumatic
+  word_count: 2257
+  sources_count: 5
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "if available" in Critical Actions: "...tive FAST: angioembolization
+      (if available within 30-60 min) OR preperitoneal pelvic packing..."'
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 30 minutes"), not structured object — tier
+      A SHOULD use object form
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2006, newest: 2018 — no source from last 5 years'
+  - &id008
+    severity: major
+    check: dangerous_combination
+    detail: 'calcium chloride: must state ''central line only'' or warn against peripheral
+      administration'
+  category_checks: {}
+  dangerous_combo_flags:
+  - *id008
+  review_status: NEEDS_PHYSICIAN_REVIEW
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify hemorrhage control priorities
+  - Confirm transfusion thresholds
+- condition_id: penetrating-chest-trauma
+  condition_name: Penetrating Chest Trauma
+  category: traumatic
+  word_count: 1809
+  sources_count: 5
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 10 minutes"), not structured object — tier
+      A SHOULD use object form
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2011, newest: 2018 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify hemorrhage control priorities
+  - Confirm transfusion thresholds
+- condition_id: perimortem-cesarean-delivery
+  condition_name: Perimortem Cesarean Delivery
+  category: procedural
+  word_count: 1819
+  sources_count: 5
+  pitfalls_count: 12
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1986, newest: 2020 — no source from last 5 years'
+  category_checks:
+    equipment_list: PASS
+    contraindications_listed: PASS
+    complication_rates: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify equipment list is complete
+  - Confirm contraindications are listed
+  - Check procedural steps are in correct order
+- condition_id: pheochromocytoma-crisis
+  condition_name: Pheochromocytoma / Catecholamine Crisis
+  category: endocrine-metabolic
+  word_count: 1275
+  sources_count: 5
+  pitfalls_count: 5
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: minor
+    check: pitfall_count
+    detail: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1915, newest: 2019 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: placental-abruption
+  condition_name: Placental Abruption
+  category: obstetric-gynecologic
+  word_count: 1347
+  sources_count: 5
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 30 minutes"), not structured object — tier
+      A SHOULD use object form
+  category_checks:
+    mag_toxicity: N/A
+    fetal_considerations: PASS
+    gestational_cutoffs: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify magnesium sulfate dosing and toxicity thresholds
+  - Confirm gestational age cutoffs
+  - Check fetal monitoring recommendations
+- condition_id: postpartum-hemorrhage
+  condition_name: Postpartum Hemorrhage
+  category: obstetric-gynecologic
+  word_count: 1606
+  sources_count: 6
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 30 minutes"), not structured object — tier
+      A SHOULD use object form
+  category_checks:
+    mag_toxicity: N/A
+    fetal_considerations: PASS
+    gestational_cutoffs: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify magnesium sulfate dosing and toxicity thresholds
+  - Confirm gestational age cutoffs
+  - Check fetal monitoring recommendations
+- condition_id: pulmonary-embolism
+  condition_name: Pulmonary Embolism
+  category: respiratory
+  word_count: 1552
+  sources_count: 4
+  pitfalls_count: 7
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "if available" in Critical Actions: "...bolism Response
+      Team (PERT)** if available..."'
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 1 hour for massive PE"), not structured object
+      — tier A SHOULD use object form
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2011, newest: 2019 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify airway management decision points
+  - Confirm ventilator settings if mentioned
+- condition_id: radiation-mass-casualty
+  condition_name: Radiation Mass Casualty Event
+  category: disaster-mci
+  word_count: 2564
+  sources_count: 5
+  pitfalls_count: 12
+  time_to_harm_format: structured
+  flags:
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2001, newest: 2011 — no source from last 5 years'
+  category_checks:
+    triage_algorithm: PASS
+    resource_allocation: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify triage algorithm accuracy
+  - Confirm resource allocation criteria
+  - Check mass decontamination protocols if applicable
+- condition_id: reboa
+  condition_name: Resuscitative Endovascular Balloon Occlusion of the Aorta
+  category: procedural
+  word_count: 2018
+  sources_count: 5
+  pitfalls_count: 11
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2011, newest: 2018 — no source from last 5 years'
+  - severity: minor
+    check: category_complication_rates
+    detail: 'Category check failed: Complication rates cited'
+  category_checks:
+    equipment_list: PASS
+    contraindications_listed: PASS
+    complication_rates: FAIL
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify equipment list is complete
+  - Confirm contraindications are listed
+  - Check procedural steps are in correct order
+- condition_id: resuscitative-thoracotomy
+  condition_name: Resuscitative Thoracotomy
+  category: procedural
+  word_count: 1719
+  sources_count: 5
+  pitfalls_count: 12
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2000, newest: 2018 — no source from last 5 years'
+  category_checks:
+    equipment_list: PASS
+    contraindications_listed: PASS
+    complication_rates: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify equipment list is complete
+  - Confirm contraindications are listed
+  - Check procedural steps are in correct order
+- condition_id: retrobulbar-hemorrhage
+  condition_name: Retrobulbar Hemorrhage (Orbital Compartment Syndrome)
+  category: ophthalmologic
+  word_count: 1444
+  sources_count: 5
+  pitfalls_count: 5
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  - severity: minor
+    check: pitfall_count
+    detail: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: ruptured-aaa
+  condition_name: Ruptured Abdominal Aortic Aneurysm
+  category: cardiovascular
+  word_count: 1486
+  sources_count: 6
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "Consider" in Critical Actions: "...introducer sheaths
+      (cordis). Consider bilateral antecubital or femoral access. 3. **Typ..."'
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 30 minutes"), not structured object — tier
+      A SHOULD use object form
+  category_checks:
+    reperfusion_target: PASS
+    anticoag_weight_based: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify reperfusion/intervention time targets are current
+  - Confirm anticoagulation weight-based dosing
+  - Check antiplatelet therapy matches current ACC/AHA
+- condition_id: sepsis
+  condition_name: Sepsis and Septic Shock
+  category: infectious
+  word_count: 1332
+  sources_count: 3
+  pitfalls_count: 7
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 1 hour"), not structured object — tier A
+      SHOULD use object form
+  - &id009
+    severity: major
+    check: dangerous_combination
+    detail: 'epinephrine concentration: epinephrine concentration must specify 1:1,000
+      (IM) vs 1:10,000 (IV) or mg/mL equivalent'
+  category_checks:
+    empiric_abx_timing: PASS
+    cultures_before_abx: PASS
+  dangerous_combo_flags:
+  - *id009
+  review_status: NEEDS_PHYSICIAN_REVIEW
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify empiric antibiotic regimens match current guidelines
+  - Confirm timing targets for antibiotic administration
+  - Check source control recommendations
+- condition_id: spinal-cord-injury
+  condition_name: Traumatic Spinal Cord Injury
+  category: traumatic
+  word_count: 2474
+  sources_count: 5
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 60 minutes"), not structured object — tier
+      A SHOULD use object form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify hemorrhage control priorities
+  - Confirm transfusion thresholds
+- condition_id: spontaneous-coronary-artery-dissection
+  condition_name: Spontaneous Coronary Artery Dissection
+  category: cardiovascular
+  word_count: 1642
+  sources_count: 5
+  pitfalls_count: 7
+  time_to_harm_format: structured
+  flags:
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2012, newest: 2018 — no source from last 5 years'
+  category_checks:
+    reperfusion_target: PASS
+    anticoag_weight_based: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify reperfusion/intervention time targets are current
+  - Confirm anticoagulation weight-based dosing
+  - Check antiplatelet therapy matches current ACC/AHA
+- condition_id: status-epilepticus
+  condition_name: Status Epilepticus
+  category: neurological
+  word_count: 1627
+  sources_count: 5
+  pitfalls_count: 20
+  time_to_harm_format: structured
+  flags:
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2012, newest: 2020 — no source from last 5 years'
+  category_checks:
+    seizure_dose_mg_kg: PASS
+    herniation_signs: N/A
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify seizure medication dosing (mg/kg for second-line)
+  - Confirm herniation management protocols
+  - Check thrombolytic eligibility criteria
+- condition_id: stemi
+  condition_name: ST-Elevation Myocardial Infarction
+  category: cardiovascular
+  word_count: 1335
+  sources_count: 3
+  pitfalls_count: 18
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: aspirin 81 mg — no route (IV/IM/PO/etc) found nearby
+  category_checks:
+    reperfusion_target: PASS
+    anticoag_weight_based: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify reperfusion/intervention time targets are current
+  - Confirm anticoagulation weight-based dosing
+  - Check antiplatelet therapy matches current ACC/AHA
+- condition_id: subarachnoid-hemorrhage
+  condition_name: Subarachnoid Hemorrhage
+  category: neurological
+  word_count: 1409
+  sources_count: 4
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 60 minutes"), not structured object — tier
+      A SHOULD use object form
+  - severity: minor
+    check: category_seizure_dose_mg_kg
+    detail: 'Category check failed: Seizure med dosing uses mg/kg for second-line'
+  category_checks:
+    seizure_dose_mg_kg: FAIL
+    herniation_signs: N/A
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify seizure medication dosing (mg/kg for second-line)
+  - Confirm herniation management protocols
+  - Check thrombolytic eligibility criteria
+- condition_id: subdural-hematoma
+  condition_name: Subdural Hematoma
+  category: traumatic
+  word_count: 2545
+  sources_count: 5
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 2 hours for acute SDH with herniation; days
+      to weeks for chronic SDH"), not structured object — tier A SHOULD use object
+      form
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify hemorrhage control priorities
+  - Confirm transfusion thresholds
+- condition_id: submersion-injury
+  condition_name: Submersion Injury
+  category: environmental
+  word_count: 1401
+  sources_count: 5
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 5 minutes (irreversible anoxic brain injury)"),
+      not structured object — tier A SHOULD use object form
+  - &id010
+    severity: major
+    check: dangerous_combination
+    detail: 'epinephrine concentration: epinephrine concentration must specify 1:1,000
+      (IM) vs 1:10,000 (IV) or mg/mL equivalent'
+  category_checks: {}
+  dangerous_combo_flags:
+  - *id010
+  review_status: NEEDS_PHYSICIAN_REVIEW
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify temperature management targets
+  - Confirm rewarming/cooling protocols
+- condition_id: surgical-cricothyrotomy
+  condition_name: Surgical Cricothyrotomy
+  category: procedural
+  word_count: 2015
+  sources_count: 5
+  pitfalls_count: 11
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: propofol 5-50 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: dose_missing_route
+    detail: fentanyl 25-100 mcg/hr — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: mortality_not_quantified
+    detail: No mortality_if_delayed in frontmatter and no mortality percentage found
+      in body
+  category_checks:
+    equipment_list: PASS
+    contraindications_listed: PASS
+    complication_rates: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify equipment list is complete
+  - Confirm contraindications are listed
+  - Check procedural steps are in correct order
+- condition_id: tension-pneumothorax
+  condition_name: Tension Pneumothorax
+  category: respiratory
+  word_count: 1241
+  sources_count: 4
+  pitfalls_count: 17
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "consider" in Critical Actions: "...rovement after decompression,
+      consider wrong diagnosis, wrong side, catheter kink/obstru..."'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify airway management decision points
+  - Confirm ventilator settings if mentioned
+- condition_id: thyroid-storm
+  condition_name: Thyroid Storm
+  category: endocrine-metabolic
+  word_count: 1312
+  sources_count: 4
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 6 hours"), not structured object — tier A
+      SHOULD use object form
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1993, newest: 2016 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+- condition_id: toxic-alcohol-ingestion
+  condition_name: Toxic Alcohol Ingestion
+  category: toxicologic
+  word_count: 1947
+  sources_count: 5
+  pitfalls_count: 9
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 6-12 hours"), not structured object — tier
+      A SHOULD use object form
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1999, newest: 2008 — no source from last 5 years'
+  - severity: minor
+    check: category_max_dose_stated
+    detail: 'Category check failed: Max dose stated or ''no maximum'' explicitly'
+  category_checks:
+    antidote_dose_route: PASS
+    max_dose_stated: FAIL
+    decontamination_timing: N/A
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify antidote dosing and routes are current
+  - Confirm decontamination timing windows
+  - Check for dangerous drug interactions
+- condition_id: toxic-shock-syndrome
+  condition_name: Toxic Shock Syndrome
+  category: infectious
+  word_count: 1468
+  sources_count: 5
+  pitfalls_count: 5
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: pitfall_count
+    detail: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2000, newest: 2014 — no source from last 5 years'
+  category_checks:
+    empiric_abx_timing: PASS
+    cultures_before_abx: PASS
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify empiric antibiotic regimens match current guidelines
+  - Confirm timing targets for antibiotic administration
+  - Check source control recommendations
+- condition_id: tracheal-disruption
+  condition_name: Tracheobronchial Disruption
+  category: respiratory
+  word_count: 1374
+  sources_count: 5
+  pitfalls_count: 5
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: hedging_in_critical_actions
+    detail: 'Hedging phrase "if possible" in Critical Actions: "...positive pressure
+      ventilation if possible.** PPV forces air through the disruption, worseni..."'
+  - severity: minor
+    check: pitfall_count
+    detail: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify airway management decision points
+  - Confirm ventilator settings if mentioned
+- condition_id: traumatic-brain-injury
+  condition_name: Traumatic Brain Injury
+  category: traumatic
+  word_count: 1514
+  sources_count: 6
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: dose_missing_route
+    detail: norepinephrine 0.05-0.5 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: dose_missing_route
+    detail: propofol 20-75 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: dose_missing_route
+    detail: midazolam 0.05-0.2 mg/kg/hr — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: dose_missing_route
+    detail: fentanyl 1-2 mcg/kg/hr — no route (IV/IM/PO/etc) found nearby
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 60 minutes"), not structured object — tier
+      A SHOULD use object form
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2001, newest: 2018 — no source from last 5 years'
+  category_checks: {}
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify hemorrhage control priorities
+  - Confirm transfusion thresholds
+- condition_id: unstable-bradycardia
+  condition_name: Unstable Bradycardia
+  category: cardiovascular
+  word_count: 1658
+  sources_count: 5
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 10 minutes"), not structured object — tier
+      A SHOULD use object form
+  - severity: minor
+    check: mortality_not_quantified
+    detail: 'mortality_if_delayed has no numeric value: "Cardiac arrest imminent if
+      perfusing rhythm not restored"'
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 2015, newest: 2020 — no source from last 5 years'
+  - &id011
+    severity: major
+    check: dangerous_combination
+    detail: 'epinephrine concentration: epinephrine concentration must specify 1:1,000
+      (IM) vs 1:10,000 (IV) or mg/mL equivalent'
+  category_checks:
+    reperfusion_target: PASS
+    anticoag_weight_based: N/A
+  dangerous_combo_flags:
+  - *id011
+  review_status: NEEDS_PHYSICIAN_REVIEW
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify reperfusion/intervention time targets are current
+  - Confirm anticoagulation weight-based dosing
+  - Check antiplatelet therapy matches current ACC/AHA
+- condition_id: uterine-rupture
+  condition_name: Uterine Rupture
+  category: obstetric-gynecologic
+  word_count: 1504
+  sources_count: 6
+  pitfalls_count: 6
+  time_to_harm_format: structured
+  flags:
+  - severity: minor
+    check: pitfall_count
+    detail: Only 6 pitfalls listed (minimum 7 recommended for tier A)
+  category_checks:
+    mag_toxicity: N/A
+    fetal_considerations: PASS
+    gestational_cutoffs: N/A
+  dangerous_combo_flags: []
+  review_status: CLEAN
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify magnesium sulfate dosing and toxicity thresholds
+  - Confirm gestational age cutoffs
+  - Check fetal monitoring recommendations
+- condition_id: ventricular-tachycardia
+  condition_name: Ventricular Tachycardia
+  category: cardiovascular
+  word_count: 1573
+  sources_count: 6
+  pitfalls_count: 10
+  time_to_harm_format: string
+  flags:
+  - severity: minor
+    check: time_to_harm_not_structured
+    detail: time_to_harm is a string ("< 5 minutes"), not structured object — tier
+      A SHOULD use object form
+  - severity: minor
+    check: mortality_not_quantified
+    detail: 'mortality_if_delayed has no numeric value: "Pulseless VT degenerates
+      to VF and death within minutes without defibrillation"'
+  - severity: info
+    check: source_currency
+    detail: 'Oldest source year: 1991, newest: 2020 — no source from last 5 years'
+  - &id012
+    severity: major
+    check: dangerous_combination
+    detail: 'epinephrine concentration: epinephrine concentration must specify 1:1,000
+      (IM) vs 1:10,000 (IV) or mg/mL equivalent'
+  category_checks:
+    reperfusion_target: PASS
+    anticoag_weight_based: PASS
+  dangerous_combo_flags:
+  - *id012
+  review_status: NEEDS_PHYSICIAN_REVIEW
+  physician_checklist:
+  - Verify all drug doses match current guidelines
+  - Confirm Critical Actions are complete and time-targeted
+  - Check pitfalls for clinical accuracy
+  - Verify reperfusion/intervention time targets are current
+  - Confirm anticoagulation weight-based dosing
+  - Check antiplatelet therapy matches current ACC/AHA
