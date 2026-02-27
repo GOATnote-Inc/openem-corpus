@@ -19,9 +19,17 @@ NOT a clinical decision support tool. NOT deployed for patient care.
 - `validation:` frontmatter block tracks machine-validation passes (dates, flags).
 - `risk_tier:` classifies conditions as A (high-risk), B (moderate), C (general) — informational only.
 - `reviewed_by:` and `review_date:` track physician review (optional, present on all 80 risk_tier A conditions).
-- `scripts/validate.py` — schema validation (must pass for build).
-- `scripts/audit.py` — 13-pass automated validation suite. Three checks are **blocking** (cross_file_dosing, dose_range_anomaly, content_completeness). Remaining checks are informational.
+- `scripts/validate.py` — schema validation (must pass for build). Reads enums from `schemas/condition.schema.yaml` (single source of truth). Also validates `overlay.yaml` targets.
+- `scripts/audit.py` — 13-pass automated validation suite. Three checks are **blocking** (cross_file_dosing, dose_range_anomaly, content_completeness). Remaining checks informational. Pass 5 (duplicate detection) uses MinHash LSH.
+- `scripts/quality_gate.py` — pre-merge gate (sources, ICD-10, dosing, content completeness, PMIDs).
 - `scripts/review_status.py` — prints physician review status by risk tier.
+- `scripts/check_index_freshness.py` — CI gate: exits 1 if corpus has changed since last `make build-index`. Checks file count + SHA-256 fingerprint.
+
+## Versioning (v0.2.0)
+- `__version__ = "0.2.0"` in `python/openem/__init__.py`
+- Manifest fields: `index_format_version`, `api_version`, `corpus_version`, `corpus_fingerprint`, `corpus_file_count`, `file_hashes`. `version` key kept as backward-compat shim.
+- Downstream consumers can check `from openem import __version__` for API compatibility.
+- All 3 downstream repos pin `openem>=0.2.0` as optional dependency.
 
 ## time_to_harm Convention
 - **risk_tier A:** SHOULD use structured object form (`irreversible_injury`, `death`, `optimal_intervention_window`). String form accepted but new/updated tier A should use object.
@@ -104,26 +112,58 @@ Total corpus: 185 conditions across 20 categories. New source type `consensus-st
 pip install -e .                              # Core package (LanceDB index access)
 pip install -e ".[embeddings]"                # + sentence-transformers for embeddings
 make build-index                              # Rebuild LanceDB index (after adding conditions)
+make build-index -- --incremental             # Incremental rebuild (only re-embeds changed files)
 make check                                    # Run validation + quality gate + tests
-python scripts/validate.py                    # Schema validation only
+make check-freshness                          # Verify index matches corpus
+python scripts/validate.py                    # Schema validation + overlay validation
 python scripts/audit.py                       # Full 13-pass audit suite
+python scripts/check_index_freshness.py       # Index staleness check (exit 1 = stale)
+python scripts/ingest_eval_findings.py --dry-run RESULT.json  # Preview CEIS→issue pipeline
 ```
 
 ### Key File Paths
 
 | Purpose | Path |
 |---------|------|
+| Package init + version | `python/openem/__init__.py` |
 | Index access (LanceDB) | `python/openem/index.py` |
 | Bridge (shared retrieval) | `python/openem/bridge.py` |
+| Condition map + overlay validation | `python/openem/conditions.py` |
+| Overlay (multi-condition mappings) | `python/openem/overlay.yaml` |
 | Schema validation | `scripts/validate.py` |
 | Audit suite (13 passes) | `scripts/audit.py` |
 | Quality gate | `scripts/quality_gate.py` |
-| Condition schema | `schemas/condition.schema.yaml` |
+| Index freshness check | `scripts/check_index_freshness.py` |
+| Index builder | `scripts/build_index.py` |
+| Eval findings ingest | `scripts/ingest_eval_findings.py` |
+| Condition schema (single source of truth) | `schemas/condition.schema.yaml` |
 | Diversity metrics | `scripts/diversity_metrics.py` |
 | Impact analysis | `scripts/analyze_impact.py` |
 | Retrieval evaluation | `scripts/eval_retrieval.py` |
 | Retrieval ground truth | `evaluation/retrieval_ground_truth.jsonl` |
 | Corpus conditions | `corpus/tier1/conditions/*.md` |
 | Pre-built index | `data/index/openem.lance/` |
+| Condition map cache (gitignored) | `python/openem/condition_map.json` |
+| Embedding cache (gitignored) | `data/index/embedding_cache.json` |
+
+### Incremental Index Rebuild
+
+`python scripts/build_index.py --incremental` tracks per-file SHA-256 hashes in the manifest and caches embeddings in `data/index/embedding_cache.json`. On subsequent builds, only changed/new files are re-embedded. At 500+ conditions this cuts rebuild from minutes to seconds for single-file edits. Full rebuild is always available without `--incremental`.
+
+### Stale Index Detection
+
+After adding or modifying condition files, the index may be stale. Detection works at two levels:
+1. **File count:** manifest `corpus_file_count` vs actual `.md` file count
+2. **Fingerprint:** SHA-256 of sorted filenames + sizes (catches edits to existing files)
+
+`check_freshness()` on `OpenEMIndex` and `scripts/check_index_freshness.py` both use this. Wired into CI (`validate.yml`) and `make post-compile`.
+
+### Overlay Validation
+
+`python/openem/overlay.yaml` maps condition names to multiple corpus IDs. `validate_overlay()` checks every target ID has a matching `.md` file. Called automatically by `validate.py` and `build_index.py`. Catches typos that would cause silent retrieval failures.
+
+### Eval Findings Ingest
+
+`scripts/ingest_eval_findings.py` reads LostBench CEIS result JSON files, extracts conditions with Class A failures (critical escalation drops), and creates GitHub issues via `gh issue create` for physician review. Supports `--dry-run`, `--min-failures`, and `--label`.
 
 Cross-repo architecture: see `scribegoat2/docs/CROSS_REPO_ARCHITECTURE.md`
