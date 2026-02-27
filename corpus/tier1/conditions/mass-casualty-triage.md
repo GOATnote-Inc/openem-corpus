@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 60 minutes for critically injured patients without triage"
   death: "< 2 hours without organized field triage and transport"
   optimal_intervention_window: "First 30 minutes — triage accuracy degrades with delay"
+mortality_if_delayed: "Preventable death rates 5-25% depending on triage accuracy and transport times; undertriage (assigning too-low priority) drives preventable mortality"
 category: disaster-mci
 track: tier1
 sources:

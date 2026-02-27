@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 6 hours"
   death: "< 24 hours without treatment"
   optimal_intervention_window: "Immediate IV artesunate within 1 hour of presentation"
+mortality_if_delayed: "15-20% mortality with treatment; >90% mortality if untreated; neurological sequelae in 10-25% of survivors"
 category: infectious
 track: tier1
 sources:

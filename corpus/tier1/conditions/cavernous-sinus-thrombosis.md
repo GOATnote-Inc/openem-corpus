@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 24 hours (cranial nerve palsies, visual loss from optic nerve ischemia)"
   death: "< 48-72 hours without treatment (intracranial extension, meningitis, brain abscess)"
   optimal_intervention_window: "< 6 hours from recognition — IV antibiotics and anticoagulation"
+mortality_if_delayed: "Historical mortality 30-50% pre-antibiotics; current mortality 20-30% with treatment; permanent cranial nerve deficit in 50%"
 category: neurological
 track: tier1
 sources:
@@ -210,3 +211,7 @@ validation:
 4. **Missing the sphenoid sinus as the source.** Sphenoid sinusitis is the most dangerous sinus infection due to direct anatomic proximity to the cavernous sinus, but it is also the most easily missed — it does not cause facial tenderness or nasal congestion. Sphenoid sinusitis presents with vertex or occipital headache. Dedicated CT sinus with coronal reconstruction is required to evaluate the sphenoid.
 
 5. **Failing to inspect the dangerous triangle of the face.** The nasolabial folds, nose, and upper lip drain via the angular and ophthalmic veins directly to the cavernous sinus without valves. A seemingly minor facial furuncle in this distribution can seed CST. Any facial infection in this region with periorbital symptoms warrants aggressive evaluation.
+
+6. **Diagnosing preseptal cellulitis and discharging without imaging when post-septal extension or CST is possible.** Preseptal cellulitis (periorbital cellulitis) is anterior to the orbital septum and is managed with oral antibiotics. However, preseptal infection can extend post-septally and seed the cavernous sinus. Any preseptal cellulitis with proptosis, ophthalmoplegia, pain with eye movement, visual acuity changes, or fever requires CT with contrast and consideration of MRI/MRV. Discharging these patients on oral antibiotics without imaging risks missing early CST when anticoagulation and IV antibiotics can prevent cranial nerve destruction.
+
+7. **Missing contralateral eye involvement that signals bilateral CST.** The intercavernous sinuses connect the left and right cavernous sinuses across the midline. Unilateral CST progresses to bilateral involvement in an average of 24–36 hours. Subtle contralateral findings — mild chemosis, early CN VI palsy (difficulty with lateral gaze), or slight proptosis on the opposite side — indicate bilateral CST and dramatically worsen prognosis. Every patient with unilateral CST requires serial examination of the contralateral eye at minimum q4–6 hours to detect progression.

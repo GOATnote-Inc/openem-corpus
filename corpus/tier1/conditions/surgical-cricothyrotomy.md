@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 4 minutes (anoxic brain injury from failed oxygenation)"
   death: "< 8 minutes without oxygenation"
   optimal_intervention_window: "< 30 seconds from CICO declaration"
+mortality_if_delayed: "CICO event mortality 25-50% when surgical airway delayed; procedure success rate >90% when performed within 30 seconds of CICO declaration"
 category: procedural
 track: tier1
 confusion_pairs:

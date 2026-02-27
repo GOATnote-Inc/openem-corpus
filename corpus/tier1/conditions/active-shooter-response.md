@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 10 minutes for hemorrhagic shock from penetrating wounds"
   death: "< 30 minutes — majority of preventable deaths from compressible hemorrhage"
   optimal_intervention_window: "Tourniquet within 5 minutes of extremity hemorrhage"
+mortality_if_delayed: "Hemorrhagic death from extremity wounds in <10 minutes without tourniquet; preventable death rate 10-20% in mass violence events"
 category: disaster-mci
 track: tier1
 sources:

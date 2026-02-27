@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 6 hours (bowel necrosis progresses rapidly once transmural)"
   death: "< 24 hours without surgical intervention in advanced disease"
   optimal_intervention_window: "< 6 hours from clinical deterioration — early surgical consultation critical"
+mortality_if_delayed: "Overall mortality 15-30%; surgical NEC mortality 30-50%; ELBW infants (<1000g) mortality up to 50%"
 category: pediatric
 track: tier1
 sources:
@@ -176,3 +177,7 @@ validation:
 4. **Relying on pneumoperitoneum as the sole surgical indication.** Pneumoperitoneum indicates perforation, but absence of free air does not exclude surgical NEC. Worsening metabolic acidosis, increasing vasopressor requirements, fixed dilated loop on serial X-rays, abdominal wall erythema, and positive paracentesis are all indications for surgery — do not wait for free air.
 
 5. **Underestimating fluid requirements.** Massive third-space fluid losses in NEC can exceed 200 mL/kg/day. Inadequate volume resuscitation leads to renal failure, worsening bowel ischemia, and cardiovascular collapse. Monitor urine output (target > 1 mL/kg/hr), serum sodium, and hemodynamic parameters hourly.
+
+6. **Missing portal venous gas on plain abdominal radiograph.** Portal venous gas appears as branching linear lucencies overlying the liver on AP film and is a subtle but ominous sign indicating advanced NEC (Bell Stage IIB or higher). It is easily overlooked or mistaken for bowel gas superimposed on the liver shadow. When present, portal venous gas correlates with extensive bowel necrosis and the need for surgical consultation. Abdominal ultrasound is more sensitive than plain film for portal venous gas and should be obtained when clinical suspicion is high despite a seemingly unremarkable X-ray.
+
+7. **Attributing bilious emesis in a preterm neonate to feeding intolerance rather than NEC.** Bilious (green) emesis in any neonate is a surgical emergency until proven otherwise — it suggests intestinal obstruction from NEC, malrotation with volvulus, or other surgical pathology. In a premature infant with risk factors for NEC, bilious emesis combined with abdominal distension or bloody stools demands immediate abdominal X-ray and surgical consultation. Dismissing bilious emesis as reflux or overfeeding delays diagnosis during the critical window when bowel is still salvageable.

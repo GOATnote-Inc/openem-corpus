@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 5 minutes"
   death: "< 15 minutes without treatment"
   optimal_intervention_window: "Hydroxocobalamin within minutes of exposure"
+mortality_if_delayed: "Near 100% mortality if untreated at lethal dose; <5% with timely hydroxocobalamin"
 category: toxicologic
 track: tier1
 sources:
@@ -183,3 +184,7 @@ validation:
 4. **Missing cyanide poisoning in nitroprusside infusion.** Prolonged sodium nitroprusside infusions at doses >10 mcg/kg/min generate free cyanide. An ICU patient on nitroprusside who develops an unexplained rising lactate or altered mental status has nitroprusside-induced cyanide toxicity until proven otherwise. Stop the nitroprusside and give sodium thiosulfate.
 
 5. **Not recognizing the bright red discoloration post-hydroxocobalamin.** Hydroxocobalamin turns blood, urine, and mucous membranes bright red-orange. Lab technicians and nurses may report alarming findings (red serum, "hematuria") that are expected antidote effects. Warn the team before administering hydroxocobalamin.
+
+6. **Missing cyanide toxicity in smoke inhalation patients who lack "classic" cherry-red skin.** Cherry-red skin coloration from cyanide poisoning is a late, inconsistent finding that is absent in the majority of living patients — it is most reliably observed postmortem. Smoke inhalation victims with soot in the airway, altered mental status, and lactic acidosis >8 mmol/L have cyanide poisoning regardless of skin color. Waiting for cherry-red discoloration to confirm the diagnosis delays hydroxocobalamin administration and allows irreversible cellular injury.
+
+7. **Relying on whole blood cyanide levels to guide acute treatment decisions.** Cyanide blood levels take hours to days to result at most institutions — they are confirmatory, not actionable. A patient with a fire exposure history, depressed consciousness, and lactate >10 mmol/L needs hydroxocobalamin immediately. Deferring antidote administration until a cyanide level returns converts a survivable exposure into an anoxic brain injury or cardiac arrest. Treat the clinical picture; use the level retrospectively.

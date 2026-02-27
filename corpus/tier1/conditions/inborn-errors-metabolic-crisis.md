@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 4 hours (cerebral edema in urea cycle defects; irreversible neurological damage)"
   death: "< 12 hours without emergent intervention in neonatal-onset disease"
   optimal_intervention_window: "< 2 hours from presentation — stop catabolism, start anabolism"
+mortality_if_delayed: "Neonatal-onset urea cycle defects: 24-50% mortality in first episode; survivors have 30-50% rate of severe neurodevelopmental disability"
 category: pediatric
 track: tier1
 sources:
@@ -194,3 +195,7 @@ validation:
 4. **Prolonged protein restriction causing worsening hyperammonemia.** Protein-free parenteral nutrition is a temporizing measure (24-48 hours maximum). After this window, the absence of dietary protein forces endogenous protein catabolism, which generates ammonia. Protein must be reintroduced at minimum safe intake (0.5-1 g/kg/day) under metabolic specialist guidance.
 
 5. **Choosing peritoneal dialysis for ammonia clearance.** Peritoneal dialysis clears ammonia at approximately 10% the rate of hemodialysis. For neonatal hyperammonemia > 500 mcmol/L, continuous venovenous hemodiafiltration (CVVHDF) is the modality of choice. Peritoneal dialysis delays definitive ammonia removal and allows ongoing neurological injury.
+
+6. **Continuing protein-containing feeds or TPN during acute metabolic crisis.** In urea cycle defects and organic acidemias, exogenous protein is the direct substrate for toxic metabolite accumulation. Continuing standard formula, breast milk, or protein-containing TPN during an acute crisis drives ammonia and organic acid levels higher. All protein intake must be stopped immediately upon recognition of the crisis and replaced with high-dextrose IV fluids. Protein is reintroduced only after metabolic stabilization (typically 24–48 hours) and only under metabolic specialist guidance at reduced intake (0.5–1 g/kg/day).
+
+7. **Failing to consult a metabolic genetics specialist early.** IEM crises require disorder-specific cofactor therapy, dietary management, and dialysis threshold decisions that are outside the scope of general emergency and critical care training. Delayed consultation leads to suboptimal ammonia scavenger dosing, missed cofactor-responsive variants (e.g., biotin-responsive holocarboxylase synthetase deficiency, B12-responsive methylmalonic acidemia), and inappropriate protein reintroduction timing. Contact the nearest pediatric metabolic specialist or children's hospital metabolic hotline at the time of initial suspicion — not after labs confirm the diagnosis.

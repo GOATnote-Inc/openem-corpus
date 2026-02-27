@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 5 minutes"
   death: "< 30 minutes without resuscitation"
   optimal_intervention_window: "Immediate resuscitation — no specific antidote exists"
+mortality_if_delayed: "Overall maternal mortality 20-60%; cardiac arrest mortality 80-90% without immediate resuscitation"
 category: obstetric-gynecologic
 track: tier1
 sources:
@@ -212,3 +213,7 @@ AFE is a clinical diagnosis of exclusion. No bedside confirmatory test exists in
 5. **Using aggressive IV fluid resuscitation as first-line for hypotension.** AFE hypotension is cardiogenic and vasodilatory — not hypovolemic. Aggressive crystalloid resuscitation worsens pulmonary edema and dilutes coagulation factors. Use vasopressors (norepinephrine) and blood products. Limit crystalloid to <1–2 L before transitioning to vasopressors and MTP.
 
 6. **Attributing coagulopathy entirely to uterine atony and missing the DIC.** Hemorrhage in AFE is driven by DIC, not just uterine atony. Treating only with uterotonics and missing the need for FFP, cryoprecipitate, and platelets leads to exsanguination. Both processes occur simultaneously and require simultaneous treatment.
+
+7. **Failing to prepare for perimortem cesarean delivery when gestational age exceeds 23 weeks.** In any peripartum patient at risk for sudden cardiovascular collapse, the perimortem cesarean tray must be at the bedside before arrest occurs — not retrieved after it. When AFE causes cardiac arrest at ≥23 weeks gestation, the 4–5 minute window to initiate cesarean leaves no time for equipment gathering. Delay beyond 5 minutes dramatically worsens both maternal resuscitation success and fetal neurological outcome.
+
+8. **Underestimating the speed and severity of coagulopathy and delaying blood product administration.** DIC in AFE develops faster than in almost any other obstetric condition — fibrinogen can fall from normal to <100 mg/dL within 10–15 minutes. Waiting for coagulation lab results before activating the massive transfusion protocol wastes the narrow treatment window. Empiric activation of MTP at the time of clinical AFE diagnosis — before labs return — is the standard of care.

@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 24 hours for bone marrow syndrome (>2 Gy); immediate for >10 Gy (GI/cerebrovascular syndrome)"
   death: "48 hours to 60 days depending on dose (LD50/60 ≈ 3.5-4.5 Gy without treatment, ~7 Gy with supportive care)"
   optimal_intervention_window: "Cytokine therapy within 24 hours of exposure; KI within 4 hours of radioiodine exposure"
+mortality_if_delayed: "LD50/60 approximately 3.5-4.5 Gy without treatment, 7 Gy with supportive care; >10 Gy universally fatal regardless of treatment"
 category: disaster-mci
 track: tier1
 sources:

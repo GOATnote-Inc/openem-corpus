@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 15 minutes (hemorrhagic shock → organ failure)"
   death: "< 30 minutes without hemorrhage control"
   optimal_intervention_window: "< 15 minutes from hemorrhagic arrest"
+mortality_if_delayed: "Procedure-specific mortality not applicable; hemorrhagic shock mortality exceeds 50% without hemorrhage control"
 category: procedural
 track: tier1
 confusion_pairs:

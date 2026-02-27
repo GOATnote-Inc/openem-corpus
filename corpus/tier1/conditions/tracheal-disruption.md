@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 30 minutes (tension pneumothorax, complete airway loss)"
   death: "< 1 hour without airway control and decompression"
   optimal_intervention_window: "Immediate — secure airway distal to injury, decompress tension pneumothorax"
+mortality_if_delayed: "Overall mortality 30%; prehospital mortality 30-80% depending on mechanism; delayed diagnosis increases mortality 2-3 fold"
 category: respiratory
 track: tier1
 sources:
@@ -181,3 +182,7 @@ validation:
 4. **Missing the injury due to delayed presentation.** Up to 50% of tracheobronchial injuries present in a delayed fashion (days to weeks) with atelectasis, recurrent pneumonia, or progressive stenosis. A history of significant blunt chest trauma with unexplained lobar atelectasis or recurrent pneumonia should prompt bronchoscopy.
 
 5. **Failing to evaluate for concurrent esophageal injury in penetrating neck/chest trauma.** Esophageal injury is present in 20-30% of penetrating tracheobronchial injuries. A missed esophageal perforation leads to mediastinitis with mortality > 50%. Esophagoscopy or contrast esophagram must be performed when TBD is diagnosed in penetrating trauma.
+
+6. **Relying on a negative chest X-ray to exclude tracheobronchial injury.** Up to 10% of patients with tracheobronchial disruption have no pneumomediastinum on initial chest radiograph, particularly with small tears where the disrupted mucosa acts as a flap valve or when peribronchial tissue tamponades the air leak. Subcutaneous emphysema may also be absent initially. In a patient with a mechanism consistent with TBD (high-energy deceleration, direct crush, penetrating neck/chest trauma) and clinical findings such as hemoptysis or persistent air leak, a normal CXR does not exclude the diagnosis — CT and bronchoscopy are required.
+
+7. **Advancing an endotracheal tube past the site of disruption, creating a false passage into the mediastinum or pleural space.** Blind ETT advancement through a tracheal tear can exit the airway through the disruption, resulting in loss of ventilation, tension pneumomediastinum, or mediastinal contamination. This converts a survivable injury into an airway catastrophe. If intubation is required, fiberoptic bronchoscopy-guided intubation allows direct visualization of the injury and controlled advancement of the ETT distal to the disruption. If fiberoptic is unavailable, advance the tube over a bougie under video laryngoscopy with extreme caution, stopping immediately if resistance is encountered.

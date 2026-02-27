@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 30 minutes (asphyxiation from airway flooding precedes hemorrhagic shock)"
   death: "< 1 hour — death is from asphyxiation, not exsanguination (anatomic dead space is only 150 mL)"
   optimal_intervention_window: "Immediate airway protection and bleeding-side isolation"
+mortality_if_delayed: "Mortality 50-80% without intervention; death is from asphyxiation, not exsanguination"
 category: respiratory
 track: tier1
 sources:
@@ -185,3 +186,7 @@ validation:
 4. **Ordering CTA before stabilizing the airway.** CT requires supine positioning and transport — both of which worsen airway flooding. Stabilize the airway, position the patient, and achieve initial hemostasis before imaging. A CXR at bedside is adequate for initial lateralization.
 
 5. **Missing aspergilloma as the cause in patients with prior TB or COPD.** Aspergilloma (fungal ball in a pre-existing lung cavity) is a leading cause of massive hemoptysis worldwide. CXR shows the classic "air crescent sign" — a mobile intracavitary mass. The definitive treatment is surgical resection or BAE, not antifungals (poor penetration into the avascular cavity).
+
+6. **Placing the patient supine instead of bleeding-side down.** Supine positioning allows blood from the hemorrhaging lung to flow by gravity into the contralateral bronchial tree, flooding the only functional lung and causing bilateral asphyxiation. The patient must be placed in the lateral decubitus position with the bleeding side dependent — this confines blood to the already-affected lung and preserves gas exchange in the contralateral lung. If the bleeding side is unknown, place the patient in whichever lateral position produces the best oxygen saturation.
+
+7. **Failing to isolate the bleeding lung with selective intubation.** When massive hemoptysis continues despite positioning and suctioning, a standard midtracheal ETT does not prevent blood from crossing to the non-bleeding lung. Advancing the ETT into the mainstem bronchus of the non-bleeding lung effectively isolates and protects it — this can be performed rapidly with a standard ETT, confirmed by auscultation and capnography. A double-lumen tube or bronchial blocker provides more controlled isolation but requires an experienced provider. Failure to isolate the bleeding lung is the most common correctable cause of death in massive hemoptysis.

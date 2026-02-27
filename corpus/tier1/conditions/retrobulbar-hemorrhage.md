@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 60-90 minutes (retinal ischemia from elevated intraorbital pressure)"
   death: "Not applicable (vision-threatening, not life-threatening)"
   optimal_intervention_window: "< 60 minutes — lateral canthotomy must be performed before permanent visual loss"
+mortality_if_delayed: "Not life-threatening; primary risk is permanent monocular vision loss if canthotomy delayed beyond 60-90 minutes"
 category: ophthalmologic
 track: tier1
 sources:
@@ -177,3 +178,7 @@ validation:
 4. **Compressing the globe to check IOP in a patient with possible ruptured globe.** Before IOP measurement, rule out globe rupture: irregular pupil (teardrop sign), 360° subconjunctival hemorrhage, visible uveal tissue, flat anterior chamber. If globe rupture is suspected, do NOT measure IOP — place a rigid eye shield, give antibiotics (moxifloxacin 400 mg IV), and consult ophthalmology for operative repair.
 
 5. **Attributing post-traumatic periorbital swelling to simple contusion without checking vision and IOP.** Retrobulbar hemorrhage develops within minutes to hours after orbital trauma. Any patient with periorbital trauma, proptosis, and visual complaints must have visual acuity and IOP checked. A "black eye" that is firm and proptotic with decreasing vision is orbital compartment syndrome.
+
+6. **Spending time measuring IOP when the clinical diagnosis is obvious and the delay risks permanent vision loss.** When a patient presents with acute proptosis, rock-hard globe, afferent pupillary defect, and decreasing visual acuity after trauma, the diagnosis of orbital compartment syndrome is clinical. Obtaining a formal IOP measurement before proceeding to lateral canthotomy wastes minutes that the retina cannot afford. IOP confirmation is useful in equivocal cases, but in an unambiguous presentation, proceed immediately to canthotomy and cantholysis. Document the clinical findings and measure IOP after decompression.
+
+7. **Failing to reassess visual acuity and pupillary response after lateral canthotomy.** The purpose of canthotomy is to restore retinal perfusion. Without post-procedure reassessment of visual acuity, pupillary response, and IOP, the clinician cannot determine whether decompression was adequate. If the afferent pupillary defect persists, IOP remains elevated, or vision does not improve after inferior cantholysis, superior cantholysis must be performed immediately. Persistent compartment syndrome after both inferior and superior cantholysis requires emergent operative orbital decompression by ophthalmology.

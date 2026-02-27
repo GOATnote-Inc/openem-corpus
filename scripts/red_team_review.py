@@ -458,8 +458,13 @@ def check_source_currency(condition: dict) -> list[dict]:
     years = []
     for src in sources:
         ref = src.get("ref", "")
-        for m in _YEAR_RE.finditer(ref):
-            years.append(int(m.group()))
+        # Extract only the first year from each ref — subsequent matches
+        # are often page numbers, volume numbers, or DOI fragments
+        m = _YEAR_RE.search(ref)
+        if m:
+            y = int(m.group())
+            if y <= date.today().year:
+                years.append(y)
 
     if not years:
         flags.append({

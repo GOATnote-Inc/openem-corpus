@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 5 minutes"
   death: "< 10 minutes without intervention"
   optimal_intervention_window: "< 15 minutes from loss of signs of life"
+mortality_if_delayed: "Overall survival 7-15% for penetrating trauma, <2% for blunt; survival drops to near zero beyond 15 minutes of pulseless arrest"
 category: procedural
 track: tier1
 confusion_pairs:

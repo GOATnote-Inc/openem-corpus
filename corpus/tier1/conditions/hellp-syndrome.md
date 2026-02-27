@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 4 hours (hepatic rupture, cerebral hemorrhage)"
   death: "< 12 hours without delivery"
   optimal_intervention_window: "Delivery within 24-48 hours of diagnosis"
+mortality_if_delayed: "Maternal mortality 1-3%; perinatal mortality 7-20%; mortality increases with delayed delivery and complications (DIC, hepatic rupture, placental abruption)"
 category: obstetric-gynecologic
 track: tier1
 sources:
@@ -204,3 +205,5 @@ validation:
 5. **Misattributing HELLP laboratory findings to TTP without ruling out HELLP first.** TTP and HELLP share thrombocytopenia and hemolysis. TTP is far rarer. In a pregnant patient after 20 weeks, HELLP is the default diagnosis. TTP is distinguished by severe ADAMTS13 deficiency (<10%), marked renal failure disproportionate to platelet drop, fever, and neurological symptoms. Plasmapheresis for assumed TTP in a HELLP patient delays delivery — the only treatment that works for HELLP.
 
 6. **Administering regional anesthesia without checking a recent platelet count.** Platelet count in HELLP can fall precipitously. A platelet count of 120,000 at 0800 may be 60,000 by noon. Check platelets within 1–2 hours of planned neuraxial anesthesia. Epidural hematoma from neuraxial anesthesia with a platelet count <80,000 carries risk of permanent spinal cord injury.
+
+7. **Misdiagnosing HELLP as TTP or ITP and initiating plasmapheresis instead of delivery.** TTP (ADAMTS13 <10%), HUS, and ITP share laboratory features with HELLP — thrombocytopenia and microangiopathic hemolysis. In a pregnant patient beyond 20 weeks, HELLP is overwhelmingly more likely than any of these diagnoses. Initiating plasmapheresis for presumed TTP delays the only definitive treatment for HELLP: delivery. If ADAMTS13 is not immediately available, treat as HELLP first. Delivery will resolve HELLP within 48–72 hours; failure to improve postpartum is the appropriate trigger to pursue TTP/HUS workup.

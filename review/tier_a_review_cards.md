@@ -9,8 +9,8 @@ Generated: 2026-02-27
 Total conditions: 80
 Critical flags: 0
 Major flags: 12
-Minor flags: 113
-Info flags: 37
+Minor flags: 83
+Info flags: 39
 ```
 
 ### Needs Attention
@@ -34,21 +34,21 @@ Info flags: 37
 |----------|-------|----------|-------|-------|------|
 | allergic-immunologic | 2 | 0 | 0 | 2 | 0 |
 | cardiovascular | 10 | 0 | 5 | 11 | 4 |
-| disaster-mci | 6 | 0 | 0 | 7 | 6 |
-| endocrine-metabolic | 6 | 0 | 0 | 9 | 3 |
+| disaster-mci | 6 | 0 | 0 | 3 | 6 |
+| endocrine-metabolic | 6 | 0 | 0 | 7 | 3 |
 | environmental | 3 | 0 | 1 | 3 | 0 |
 | gastrointestinal | 2 | 0 | 0 | 3 | 1 |
 | genitourinary | 1 | 0 | 0 | 1 | 0 |
 | hematologic | 1 | 0 | 0 | 2 | 0 |
-| infectious | 6 | 0 | 1 | 7 | 2 |
-| neurological | 5 | 0 | 0 | 5 | 2 |
-| obstetric-gynecologic | 8 | 0 | 0 | 10 | 3 |
-| ophthalmologic | 1 | 0 | 0 | 2 | 0 |
-| pediatric | 3 | 0 | 1 | 7 | 1 |
-| procedural | 7 | 0 | 0 | 13 | 4 |
+| infectious | 6 | 0 | 1 | 6 | 2 |
+| neurological | 5 | 0 | 0 | 4 | 3 |
+| obstetric-gynecologic | 8 | 0 | 0 | 5 | 3 |
+| ophthalmologic | 1 | 0 | 0 | 0 | 0 |
+| pediatric | 3 | 0 | 1 | 3 | 1 |
+| procedural | 7 | 0 | 0 | 6 | 4 |
 | psychiatric | 1 | 0 | 0 | 1 | 0 |
-| respiratory | 5 | 0 | 0 | 8 | 3 |
-| toxicologic | 4 | 0 | 1 | 7 | 1 |
+| respiratory | 5 | 0 | 0 | 6 | 4 |
+| toxicologic | 4 | 0 | 1 | 5 | 1 |
 | traumatic | 9 | 0 | 3 | 15 | 7 |
 
 ---
@@ -60,7 +60,6 @@ Info flags: 37
 **Words:** 2121 | **Sources:** 5 | **Pitfalls:** 11 | **time_to_harm:** structured
 
 **Flags:**
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
 - [INFO] `source_currency`: Oldest source year: 2013, newest: 2019 — no source from last 5 years
 
 **Category Checks:**
@@ -174,18 +173,16 @@ Info flags: 37
 
 ### Amniotic Fluid Embolism
 **ID:** `amniotic-fluid-embolism` | **Category:** obstetric-gynecologic | **Status:** CLEAN
-**Words:** 1687 | **Sources:** 5 | **Pitfalls:** 6 | **time_to_harm:** structured
+**Words:** 1838 | **Sources:** 5 | **Pitfalls:** 8 | **time_to_harm:** structured
 
 **Flags:**
 - [MINOR] `hedging_in_critical_actions`: Hedging phrase "if available" in Critical Actions: "...actory pulmonary hypertension if available.  8. **Treat DIC aggressively.** Goal fibrinogen..."
-- [MINOR] `pitfall_count`: Only 6 pitfalls listed (minimum 7 recommended for tier A)
 - [INFO] `source_currency`: Oldest source year: 2014, newest: 2017 — no source from last 5 years
-- [MINOR] `category_gestational_cutoffs`: Category check failed: Gestational age cutoffs stated
 
 **Category Checks:**
 - mag_toxicity: N/A
 - fetal_considerations: PASS
-- gestational_cutoffs: **FAIL**
+- gestational_cutoffs: PASS
 
 **Physician Checklist:**
 - [ ] Verify all drug doses match current guidelines
@@ -302,7 +299,6 @@ Info flags: 37
 
 **Flags:**
 - [MINOR] `hedging_in_critical_actions`: Hedging phrase "if available" in Critical Actions: "...n, 100% O2, hyperbaric oxygen if available.  8. **Serial abdominal exams for all blast-expos..."
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
 - [INFO] `source_currency`: Oldest source year: 1996, newest: 2009 — no source from last 5 years
 
 **Category Checks:**
@@ -326,7 +322,6 @@ Info flags: 37
 **Words:** 2040 | **Sources:** 5 | **Pitfalls:** 11 | **time_to_harm:** structured
 
 **Flags:**
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
 - [INFO] `source_currency`: Oldest source year: 2004, newest: 2018 — no source from last 5 years
 
 **Category Checks:**
@@ -397,10 +392,10 @@ Info flags: 37
 
 ### Cavernous Sinus Thrombosis
 **ID:** `cavernous-sinus-thrombosis` | **Category:** neurological | **Status:** CLEAN
-**Words:** 1568 | **Sources:** 5 | **Pitfalls:** 5 | **time_to_harm:** structured
+**Words:** 1737 | **Sources:** 5 | **Pitfalls:** 7 | **time_to_harm:** structured
 
 **Flags:**
-- [MINOR] `pitfall_count`: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+- [INFO] `source_currency`: Oldest source year: 1986, newest: 2018 — no source from last 5 years
 
 **Category Checks:**
 - seizure_dose_mg_kg: N/A
@@ -447,7 +442,6 @@ Info flags: 37
 
 **Flags:**
 - [MINOR] `hedging_in_critical_actions`: Hedging phrase "if available" in Critical Actions: "...me, low-pressure water, tepid if available, 3–5 min rinse per patient).  2. **Identify the a..."
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
 - [INFO] `source_currency`: Oldest source year: 2003, newest: 2019 — no source from last 5 years
 
 **Category Checks:**
@@ -497,7 +491,6 @@ Info flags: 37
 
 **Flags:**
 - [MINOR] `dose_missing_route`: mannitol 0.5 g/kg — no route (IV/IM/PO/etc) found nearby
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
 - [INFO] `source_currency`: Oldest source year: 1990, newest: 2012 — no source from last 5 years
 
 **Category Checks:**
@@ -518,11 +511,9 @@ Info flags: 37
 
 ### Cyanide Poisoning
 **ID:** `cyanide-poisoning` | **Category:** toxicologic | **Status:** NEEDS_PHYSICIAN_REVIEW
-**Words:** 1428 | **Sources:** 5 | **Pitfalls:** 5 | **time_to_harm:** structured
+**Words:** 1581 | **Sources:** 5 | **Pitfalls:** 7 | **time_to_harm:** structured
 
 **Flags:**
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
-- [MINOR] `pitfall_count`: Only 5 pitfalls listed (minimum 7 recommended for tier A)
 - [MAJOR] `dangerous_combination`: epinephrine concentration: epinephrine concentration must specify 1:1,000 (IM) vs 1:10,000 (IV) or mg/mL equivalent
 
 **Category Checks:**
@@ -570,7 +561,6 @@ Info flags: 37
 - [MINOR] `dose_missing_route`: propofol 5-50 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
 - [MINOR] `dose_missing_route`: fentanyl 25-100 mcg/hr — no route (IV/IM/PO/etc) found nearby
 - [MINOR] `dose_missing_route`: ketamine 0.1-0.5 mg/kg/hr — no route (IV/IM/PO/etc) found nearby
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
 
 **Category Checks:**
 - equipment_list: PASS
@@ -747,11 +737,9 @@ Info flags: 37
 
 ### HELLP Syndrome
 **ID:** `hellp-syndrome` | **Category:** obstetric-gynecologic | **Status:** CLEAN
-**Words:** 1807 | **Sources:** 5 | **Pitfalls:** 6 | **time_to_harm:** structured
+**Words:** 1895 | **Sources:** 5 | **Pitfalls:** 7 | **time_to_harm:** structured
 
 **Flags:**
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
-- [MINOR] `pitfall_count`: Only 6 pitfalls listed (minimum 7 recommended for tier A)
 - [INFO] `source_currency`: Oldest source year: 1996, newest: 2020 — no source from last 5 years
 
 **Category Checks:**
@@ -854,11 +842,7 @@ Info flags: 37
 
 ### Inborn Errors of Metabolism — Acute Crisis
 **ID:** `inborn-errors-metabolic-crisis` | **Category:** pediatric | **Status:** CLEAN
-**Words:** 1435 | **Sources:** 5 | **Pitfalls:** 5 | **time_to_harm:** structured
-
-**Flags:**
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
-- [MINOR] `pitfall_count`: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+**Words:** 1601 | **Sources:** 5 | **Pitfalls:** 7 | **time_to_harm:** structured
 
 **Category Checks:**
 - weight_based_dosing: PASS
@@ -878,9 +862,6 @@ Info flags: 37
 ### Lateral Canthotomy and Cantholysis
 **ID:** `lateral-canthotomy` | **Category:** procedural | **Status:** CLEAN
 **Words:** 1852 | **Sources:** 5 | **Pitfalls:** 11 | **time_to_harm:** structured
-
-**Flags:**
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
 
 **Category Checks:**
 - equipment_list: PASS
@@ -965,10 +946,9 @@ Info flags: 37
 
 ### Massive Hemoptysis
 **ID:** `massive-hemoptysis` | **Category:** respiratory | **Status:** CLEAN
-**Words:** 1366 | **Sources:** 5 | **Pitfalls:** 5 | **time_to_harm:** structured
+**Words:** 1545 | **Sources:** 5 | **Pitfalls:** 7 | **time_to_harm:** structured
 
 **Flags:**
-- [MINOR] `pitfall_count`: Only 5 pitfalls listed (minimum 7 recommended for tier A)
 - [INFO] `source_currency`: Oldest source year: 2000, newest: 2020 — no source from last 5 years
 
 **Physician Checklist:**
@@ -1017,13 +997,11 @@ Info flags: 37
 
 ### Necrotizing Enterocolitis
 **ID:** `necrotizing-enterocolitis` | **Category:** pediatric | **Status:** CLEAN
-**Words:** 1212 | **Sources:** 5 | **Pitfalls:** 5 | **time_to_harm:** structured
+**Words:** 1390 | **Sources:** 5 | **Pitfalls:** 7 | **time_to_harm:** structured
 
 **Flags:**
 - [MINOR] `dose_missing_route`: epinephrine 0.05-0.3 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
-- [MINOR] `pitfall_count`: Only 5 pitfalls listed (minimum 7 recommended for tier A)
-- [INFO] `source_currency`: Oldest source year: 1978, newest: 2015 — no source from last 5 years
+- [INFO] `source_currency`: Oldest source year: 1978, newest: 2011 — no source from last 5 years
 
 **Category Checks:**
 - weight_based_dosing: PASS
@@ -1204,7 +1182,6 @@ Info flags: 37
 **Words:** 1819 | **Sources:** 5 | **Pitfalls:** 12 | **time_to_harm:** structured
 
 **Flags:**
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
 - [INFO] `source_currency`: Oldest source year: 1986, newest: 2020 — no source from last 5 years
 
 **Category Checks:**
@@ -1226,12 +1203,10 @@ Info flags: 37
 
 ### Pheochromocytoma / Catecholamine Crisis
 **ID:** `pheochromocytoma-crisis` | **Category:** endocrine-metabolic | **Status:** CLEAN
-**Words:** 1275 | **Sources:** 5 | **Pitfalls:** 5 | **time_to_harm:** structured
+**Words:** 1440 | **Sources:** 5 | **Pitfalls:** 7 | **time_to_harm:** structured
 
 **Flags:**
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
-- [MINOR] `pitfall_count`: Only 5 pitfalls listed (minimum 7 recommended for tier A)
-- [INFO] `source_currency`: Oldest source year: 1915, newest: 2019 — no source from last 5 years
+- [INFO] `source_currency`: Oldest source year: 2007, newest: 2019 — no source from last 5 years
 
 **Physician Checklist:**
 - [ ] Verify all drug doses match current guidelines
@@ -1338,7 +1313,6 @@ Info flags: 37
 **Words:** 2018 | **Sources:** 5 | **Pitfalls:** 11 | **time_to_harm:** structured
 
 **Flags:**
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
 - [INFO] `source_currency`: Oldest source year: 2011, newest: 2018 — no source from last 5 years
 - [MINOR] `category_complication_rates`: Category check failed: Complication rates cited
 
@@ -1364,7 +1338,6 @@ Info flags: 37
 **Words:** 1719 | **Sources:** 5 | **Pitfalls:** 12 | **time_to_harm:** structured
 
 **Flags:**
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
 - [INFO] `source_currency`: Oldest source year: 2000, newest: 2018 — no source from last 5 years
 
 **Category Checks:**
@@ -1386,11 +1359,7 @@ Info flags: 37
 
 ### Retrobulbar Hemorrhage (Orbital Compartment Syndrome)
 **ID:** `retrobulbar-hemorrhage` | **Category:** ophthalmologic | **Status:** CLEAN
-**Words:** 1444 | **Sources:** 5 | **Pitfalls:** 5 | **time_to_harm:** structured
-
-**Flags:**
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
-- [MINOR] `pitfall_count`: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+**Words:** 1610 | **Sources:** 5 | **Pitfalls:** 7 | **time_to_harm:** structured
 
 **Physician Checklist:**
 - [ ] Verify all drug doses match current guidelines
@@ -1610,7 +1579,6 @@ Info flags: 37
 **Flags:**
 - [MINOR] `dose_missing_route`: propofol 5-50 mcg/kg/min — no route (IV/IM/PO/etc) found nearby
 - [MINOR] `dose_missing_route`: fentanyl 25-100 mcg/hr — no route (IV/IM/PO/etc) found nearby
-- [MINOR] `mortality_not_quantified`: No mortality_if_delayed in frontmatter and no mortality percentage found in body
 
 **Category Checks:**
 - equipment_list: PASS
@@ -1692,10 +1660,9 @@ Info flags: 37
 
 ### Toxic Shock Syndrome
 **ID:** `toxic-shock-syndrome` | **Category:** infectious | **Status:** CLEAN
-**Words:** 1468 | **Sources:** 5 | **Pitfalls:** 5 | **time_to_harm:** structured
+**Words:** 1636 | **Sources:** 5 | **Pitfalls:** 7 | **time_to_harm:** structured
 
 **Flags:**
-- [MINOR] `pitfall_count`: Only 5 pitfalls listed (minimum 7 recommended for tier A)
 - [INFO] `source_currency`: Oldest source year: 2000, newest: 2014 — no source from last 5 years
 
 **Category Checks:**
@@ -1716,11 +1683,11 @@ Info flags: 37
 
 ### Tracheobronchial Disruption
 **ID:** `tracheal-disruption` | **Category:** respiratory | **Status:** CLEAN
-**Words:** 1374 | **Sources:** 5 | **Pitfalls:** 5 | **time_to_harm:** structured
+**Words:** 1566 | **Sources:** 5 | **Pitfalls:** 7 | **time_to_harm:** structured
 
 **Flags:**
 - [MINOR] `hedging_in_critical_actions`: Hedging phrase "if possible" in Critical Actions: "...positive pressure ventilation if possible.** PPV forces air through the disruption, worseni..."
-- [MINOR] `pitfall_count`: Only 5 pitfalls listed (minimum 7 recommended for tier A)
+- [INFO] `source_currency`: Oldest source year: 1992, newest: 2014 — no source from last 5 years
 
 **Physician Checklist:**
 - [ ] Verify all drug doses match current guidelines
@@ -1787,10 +1754,7 @@ Info flags: 37
 
 ### Uterine Rupture
 **ID:** `uterine-rupture` | **Category:** obstetric-gynecologic | **Status:** CLEAN
-**Words:** 1504 | **Sources:** 6 | **Pitfalls:** 6 | **time_to_harm:** structured
-
-**Flags:**
-- [MINOR] `pitfall_count`: Only 6 pitfalls listed (minimum 7 recommended for tier A)
+**Words:** 1604 | **Sources:** 6 | **Pitfalls:** 7 | **time_to_harm:** structured
 
 **Category Checks:**
 - mag_toxicity: N/A

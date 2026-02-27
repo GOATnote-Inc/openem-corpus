@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 1 hour — continuous crush produces irreversible muscle necrosis; reperfusion hyperkalemia within minutes of extrication"
   death: "< 30 minutes post-extrication from fatal hyperkalemia if untreated; renal failure within 24–72 hours"
   optimal_intervention_window: "Pre-extrication IV fluid resuscitation — begin before release of compressive force"
+mortality_if_delayed: "Post-extrication cardiac arrest from hyperkalemia in 2-5% of crush victims; overall mortality 10-20% with treatment, up to 50% with renal failure"
 category: disaster-mci
 track: tier1
 sources:

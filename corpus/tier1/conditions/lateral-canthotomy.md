@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 60-90 minutes (permanent vision loss)"
   death: "Not directly life-threatening"
   optimal_intervention_window: "< 60 minutes from symptom onset"
+mortality_if_delayed: "Not life-threatening; primary risk is permanent monocular blindness if decompression delayed >60-90 minutes"
 category: procedural
 track: tier1
 confusion_pairs:

@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 30 minutes (hypertensive encephalopathy, myocardial injury, aortic dissection)"
   death: "< 2 hours (catecholamine-induced cardiomyopathy, stroke, aortic rupture)"
   optimal_intervention_window: "Immediate alpha-blockade — phentolamine within minutes of recognition"
+mortality_if_delayed: "Unrecognized crisis mortality up to 80%; perioperative mortality without alpha-blockade 30-45%"
 category: endocrine-metabolic
 track: tier1
 sources:
@@ -196,3 +197,7 @@ validation:
 4. **Failing to volume-resuscitate after alpha-blockade.** Pheochromocytoma patients maintain pseudo-normovolemia through catecholamine-driven venoconstriction. When alpha-blockade relaxes venous tone, the true volume deficit is unmasked — precipitous hypotension and cardiovascular collapse occur. Pre-load with NS and have vasopressors at bedside.
 
 5. **Administering metoclopramide to a patient with undiagnosed pheochromocytoma.** Metoclopramide directly stimulates catecholamine release from chromaffin cells. It has triggered fatal pheochromocytoma crises when given for nausea. Ondansetron 4 mg IV is the safe antiemetic.
+
+6. **Misdiagnosing catecholamine crisis as thyroid storm or sympathomimetic toxicity.** Pheochromocytoma crisis, thyroid storm, and cocaine/amphetamine toxicity all present with hypertension, tachycardia, diaphoresis, and agitation. The critical differentiator is pallor — pheochromocytoma causes catecholamine-driven vasoconstriction and pallor, whereas thyroid storm produces warm, flushed skin and cocaine causes mydriasis with a positive toxicology screen. Treating a catecholamine crisis with beta-blockers (appropriate for thyroid storm) causes paradoxical hypertension. When the diagnosis is unclear, initiate alpha-blockade with phentolamine first — it is safe in all three conditions — and obtain plasma free metanephrines and thyroid function tests simultaneously.
+
+7. **Using labetalol as the sole antihypertensive, assuming its alpha-blocking component is sufficient.** Labetalol has a beta-to-alpha blockade ratio of approximately 7:1, meaning its beta-blocking effect vastly predominates. In pheochromocytoma crisis, this ratio provides inadequate alpha-blockade while delivering substantial beta-blockade, risking unopposed alpha stimulation and worsening hypertension. Phentolamine (pure alpha-blocker) is the correct first-line agent. Labetalol should only be considered after adequate alpha-blockade has been established with phentolamine or phenoxybenzamine.

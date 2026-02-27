@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 5 minutes (head entrapment → fetal anoxia)"
   death: "< 8 minutes without delivery of after-coming head"
   optimal_intervention_window: "Immediate upon recognition of breech in active delivery"
+mortality_if_delayed: "Fetal mortality 0-25% depending on presentation and head entrapment duration; maternal mortality <1% in resource-adequate settings"
 category: procedural
 track: tier1
 confusion_pairs:

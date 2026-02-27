@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 5 minutes for nerve agents (respiratory failure); < 30 minutes for cyanide (cellular asphyxia)"
   death: "< 10 minutes for high-dose nerve agent without antidote; < 60 minutes for cyanide without treatment"
   optimal_intervention_window: "Atropine/pralidoxime within 1 minute of nerve agent symptom onset; hydroxocobalamin within 15 minutes of cyanide exposure"
+mortality_if_delayed: "Nerve agent: near 100% mortality without antidote within minutes of severe exposure; cyanide: death within 15-60 minutes without hydroxocobalamin"
 category: disaster-mci
 track: tier1
 sources:

@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 6 hours (multi-organ failure from superantigen-driven cytokine storm)"
   death: "< 24 hours without aggressive resuscitation and source control"
   optimal_intervention_window: "< 2 hours — antibiotics and source control within first 2 hours of recognition"
+mortality_if_delayed: "Staphylococcal TSS mortality 5-15%; streptococcal TSS mortality 30-70%"
 category: infectious
 track: tier1
 sources:
@@ -194,3 +195,7 @@ validation:
 4. **Underestimating fluid requirements.** TSS causes profound capillary leak similar to severe burns. Patients commonly require 10-20 L of crystalloid in the first 24 hours. Inadequate resuscitation leads to end-organ hypoperfusion and worsening lactic acidosis. Monitor urine output, lactate clearance, and hemodynamic response — not just central venous pressure.
 
 5. **Failing to search for retained foreign body in non-menstrual TSS.** Non-menstrual TSS sources include surgical wound packing, nasal packing (rhinoplasty, epistaxis), retained vaginal foreign bodies (menstrual cup, contraceptive device), and burns. A thorough search for and removal of retained foreign material is essential — antibiotics alone cannot overcome continuous toxin generation from a colonized foreign body.
+
+6. **Attributing the diffuse erythematous rash to drug allergy and discontinuing antibiotics.** The macular erythroderma of TSS is frequently misinterpreted as a drug eruption, leading to discontinuation of the very antibiotics the patient requires. Drug rashes typically appear days after medication initiation, are often morbilliform (not confluent erythroderma), and are not accompanied by multi-organ dysfunction and hemodynamic collapse. In a febrile, hypotensive patient with diffuse sunburn-like rash, the diagnosis is TSS — not drug allergy. Continue antibiotics including clindamycin and pursue source identification.
+
+7. **Not adding clindamycin because the organism is susceptible to beta-lactams.** Clindamycin's role in TSS is mechanistically distinct from its bactericidal activity. As a protein synthesis inhibitor, it suppresses superantigen production at the ribosomal level — an effect that beta-lactams and vancomycin cannot achieve. Beta-lactams kill bacteria but do not halt toxin synthesis from organisms already transcribing toxin genes, and may paradoxically increase toxin release during bacterial lysis (Eagle effect). Clindamycin must be continued regardless of susceptibility results for the duration of acute TSS management.

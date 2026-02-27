@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 60 minutes — blast lung and air embolism progress rapidly"
   death: "< 2 hours for unrecognized tension pneumothorax or blast lung"
   optimal_intervention_window: "Immediate — primary blast lung deteriorates over 24-48 hours even with early recognition"
+mortality_if_delayed: "Primary blast lung mortality 45-90% in enclosed-space detonations; secondary fragment injuries mortality depends on hemorrhage control timing"
 category: disaster-mci
 track: tier1
 sources:

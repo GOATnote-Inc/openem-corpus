@@ -8,6 +8,7 @@ time_to_harm:
   irreversible_injury: "< 4 minutes (fetal neurological injury)"
   death: "< 10 minutes maternal and fetal without delivery"
   optimal_intervention_window: "< 4 minutes from maternal cardiac arrest"
+mortality_if_delayed: "Fetal survival 70% if delivered within 5 minutes of maternal arrest; drops to <10% after 10 minutes. Maternal ROSC improves in 30-40% after aortocaval relief"
 category: procedural
 track: tier1
 confusion_pairs:
