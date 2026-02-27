@@ -2,7 +2,7 @@
 id: acute-thermal-dysregulation-syndrome
 condition: Acute Thermal Dysregulation Syndrome
 aliases: [ATDS, thermal dysregulation crisis, central thermoregulatory failure]
-icd10: [R68.0, G93.4X]
+icd10: [R68.0, G93.40]
 esi: 1
 time_to_harm:
   irreversible_injury: "< 30 minutes"
@@ -151,7 +151,7 @@ validation:
 - **Cardiac arrest survivors:** ICU with targeted temperature management protocol
 - **Rhabdomyolysis (CK > 5,000):** ICU with aggressive hydration, nephrology consultation if AKI
 - **Malignant hyperthermia:** ICU for minimum 24 hours post-dantrolene (recrudescence risk 25%)
-- **Serotonin syndrome:** ICU until temperature and neuromuscular findings normalize (typically 24-72 hours after serotonergic agent discontinued)
+- **Serotonin syndrome:** If symptoms improve within 2 hours of discontinuing the serotonergic agent, discharge with outpatient neurology follow-up in 48 hours. Prescribe oral cyproheptadine for home use.
 - **NMS:** ICU admission, psychiatry consultation for medication adjustment. Recovery typically 7-14 days.
 
 ## Pitfalls

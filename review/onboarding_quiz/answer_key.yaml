@@ -64,19 +64,33 @@ conditions:
           "Perform early intubation for airway protection."
 
       - id: alpha-4
-        type: schema-error
-        severity: major
-        section: Frontmatter
-        location: "icd10: [R68.0, G93.4X]"
+        type: dangerous-omission
+        severity: critical
+        section: Disposition
+        location: >
+          Serotonin syndrome bullet: "If symptoms improve within 2 hours
+          of discontinuing the serotonergic agent, discharge with outpatient
+          neurology follow-up in 48 hours. Prescribe oral cyproheptadine
+          for home use."
         description: >
-          Invalid ICD-10-CM code. "G93.4X" is not a valid ICD-10-CM code.
-          Valid codes in the G93.4 family include G93.40 (Encephalopathy,
-          unspecified), G93.41 (Metabolic encephalopathy), G93.49 (Other
-          encephalopathy). The trailing "X" placeholder is not valid for
-          this code family in ICD-10-CM.
+          Disposition contradicts clinical severity. The condition's own
+          Recognition section states that core temperature > 40.5 C with
+          altered mental status is "a medical emergency regardless of
+          etiology" and that "cooling must not be delayed for diagnostic
+          workup." Serotonin syndrome severe enough to cause hyperthermia
+          > 40.5 C requires ICU admission — not 2-hour ED observation and
+          discharge. Apparent symptom improvement can be transient (active
+          metabolites, redistribution), and rhabdomyolysis, DIC, and
+          multi-organ failure can develop hours after initial presentation.
+          Discharging this patient risks death at home from delayed
+          complications. Additionally, the condition's own Pitfalls section
+          (#4) emphasizes the importance of distinguishing serotonin
+          syndrome from NMS, implying ongoing monitoring is required.
         expected_finding: >
-          G93.4X is not a valid ICD-10-CM code. Should be a specific code
-          such as G93.40 or G93.49.
+          Serotonin syndrome with hyperthermia > 40.5 C requires ICU
+          admission, not discharge after 2 hours. This disposition
+          contradicts the condition's own stated severity and creates
+          a patient safety risk.
 
       - id: alpha-5
         type: dangerous-omission
@@ -187,11 +201,12 @@ conditions:
     description: >
       This condition is CLEAN. It contains no planted errors. All drug doses
       include routes, time targets are specific, Critical Actions use
-      imperative language without hedging, ICD-10 codes are valid (G54.0,
-      G54.1), sources include a 2024 guideline (meeting the currency
-      requirement), and the Pitfalls section has 9 items. This condition
-      is risk_tier B, so the 7-pitfall minimum for tier A does not strictly
-      apply (though it exceeds it regardless).
+      imperative language without hedging, disposition matches clinical
+      severity (emergent surgical consultation, ICU post-fasciotomy),
+      sources include a 2024 guideline (meeting the currency requirement),
+      and the Pitfalls section has 9 items. This condition is risk_tier B,
+      so the 7-pitfall minimum for tier A does not strictly apply (though
+      it exceeds it regardless).
     expected_finding: "No issues found."
     notes: >
       This condition tests the reviewer's false-positive rate. A reviewer
