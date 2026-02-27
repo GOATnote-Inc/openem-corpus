@@ -20,6 +20,7 @@ Output: JSON report to stdout. Exit 1 if critical findings in blocking checks
 (cross_file_dosing, dose_range_anomaly, content_completeness). Exit 0 otherwise.
 """
 
+import hashlib
 import json
 import re
 import sys
@@ -379,37 +380,102 @@ def check_citations(conditions: list[dict]) -> list[dict]:
     return findings
 
 
-# === Pass 5: Duplicate / near-duplicate detection ===
+# === Pass 5: Duplicate / near-duplicate detection (MinHash LSH) ===
+
+# MinHash parameters: 128 hash functions, 4 bands of 32 rows each.
+# Jaccard threshold ≈ (1/4)^(1/32) ≈ 0.96 — catches near-duplicates but
+# not merely-similar paragraphs. Tune bands/rows for different thresholds.
+_MINHASH_NUM_PERM = 128
+_MINHASH_BANDS = 4
+_MINHASH_ROWS = _MINHASH_NUM_PERM // _MINHASH_BANDS
+_MINHASH_LARGE_PRIME = 2**61 - 1
+_MINHASH_SHINGLE_K = 5  # character 5-gram shingles
+
+
+def _minhash_signature(text: str) -> list[int]:
+    """Compute a MinHash signature from character k-gram shingles."""
+    import struct
+
+    # Normalize text
+    text = re.sub(r"\s+", " ", text.lower().strip())
+    if len(text) < _MINHASH_SHINGLE_K:
+        return [0] * _MINHASH_NUM_PERM
+
+    # Generate shingle hashes
+    shingle_hashes = set()
+    for i in range(len(text) - _MINHASH_SHINGLE_K + 1):
+        shingle = text[i : i + _MINHASH_SHINGLE_K]
+        h = struct.unpack("<Q", hashlib.md5(shingle.encode()).digest()[:8])[0]
+        shingle_hashes.add(h)
+
+    if not shingle_hashes:
+        return [0] * _MINHASH_NUM_PERM
+
+    # Compute MinHash: for each of 128 hash functions, take min over shingles
+    # h_i(x) = (a_i * x + b_i) mod p, using fixed seeds
+    sig = []
+    for i in range(_MINHASH_NUM_PERM):
+        # Deterministic a, b from seed i
+        a = (i * 6364136223846793005 + 1) % _MINHASH_LARGE_PRIME
+        b = (i * 1442695040888963407 + 1) % _MINHASH_LARGE_PRIME
+        min_hash = min((a * h + b) % _MINHASH_LARGE_PRIME for h in shingle_hashes)
+        sig.append(min_hash)
+
+    return sig
+
+
 def check_duplicates(conditions: list[dict]) -> list[dict]:
-    """Check for near-duplicate paragraphs across files."""
+    """Check for near-duplicate paragraphs across files using MinHash LSH."""
     findings = []
 
-    # Extract paragraphs (>50 chars) from each file
-    file_paragraphs = {}
+    # Extract paragraphs (>80 chars) and compute MinHash signatures
+    para_sigs: list[tuple[str, str, list[int], str]] = []  # (fname, para_preview, sig, band_key)
     for c in conditions:
         paras = [p.strip() for p in c["body"].split("\n\n") if len(p.strip()) > 80]
-        file_paragraphs[c["name"]] = paras
-
-    # Compare paragraphs across files (using first 100 chars as signature)
-    sig_map = defaultdict(list)
-    for fname, paras in file_paragraphs.items():
         for p in paras:
-            # Normalize whitespace for comparison
-            sig = re.sub(r"\s+", " ", p[:100]).lower()
-            sig_map[sig].append(fname)
+            sig = _minhash_signature(p)
+            preview = re.sub(r"\s+", " ", p[:100]).strip()
+            para_sigs.append((c["name"], preview, sig, ""))
 
-    for sig, files in sig_map.items():
-        unique_files = list(set(files))
-        if len(unique_files) > 1:
-            findings.append(
-                {
-                    "check": "duplicate_content",
-                    "severity": "info",
-                    "message": f"Near-duplicate paragraph across {len(unique_files)} files",
-                    "files": unique_files,
-                    "signature": sig[:80],
-                }
-            )
+    # LSH: hash each band and group by band hash
+    # Two paragraphs are candidates if they share a band hash
+    candidate_pairs: set[tuple[int, int]] = set()
+    for band_idx in range(_MINHASH_BANDS):
+        band_buckets: dict[int, list[int]] = defaultdict(list)
+        start = band_idx * _MINHASH_ROWS
+        end = start + _MINHASH_ROWS
+        for para_idx, (_, _, sig, _) in enumerate(para_sigs):
+            band_hash = hash(tuple(sig[start:end]))
+            band_buckets[band_hash].append(para_idx)
+
+        for bucket in band_buckets.values():
+            if len(bucket) > 1:
+                for i in range(len(bucket)):
+                    for j in range(i + 1, len(bucket)):
+                        # Only flag cross-file duplicates
+                        if para_sigs[bucket[i]][0] != para_sigs[bucket[j]][0]:
+                            pair = (min(bucket[i], bucket[j]), max(bucket[i], bucket[j]))
+                            candidate_pairs.add(pair)
+
+    # Deduplicate findings by file pair + preview
+    seen_pairs: set[tuple[str, str]] = set()
+    for i, j in sorted(candidate_pairs):
+        f1, preview1 = para_sigs[i][0], para_sigs[i][1]
+        f2, preview2 = para_sigs[j][0], para_sigs[j][1]
+        pair_key = (min(f1, f2), max(f1, f2))
+        if pair_key in seen_pairs:
+            continue
+        seen_pairs.add(pair_key)
+
+        findings.append(
+            {
+                "check": "duplicate_content",
+                "severity": "info",
+                "message": f"Near-duplicate paragraph across files (MinHash LSH)",
+                "files": sorted({f1, f2}),
+                "signature": preview1[:80],
+            }
+        )
 
     return findings
 

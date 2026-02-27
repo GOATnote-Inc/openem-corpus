@@ -156,6 +156,16 @@ def corpus_fingerprint(conditions_dir: Path) -> str:
     return hashlib.sha256("\n".join(entries).encode()).hexdigest()[:16]
 
 
+def file_content_hash(path: Path) -> str:
+    """SHA-256 of file content, truncated to 16 hex chars."""
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:16]
+
+
+def per_file_hashes(conditions_dir: Path) -> dict[str, str]:
+    """Compute content hash for every .md file in conditions_dir."""
+    return {f.name: file_content_hash(f) for f in sorted(conditions_dir.glob("*.md"))}
+
+
 def main():
     parser = argparse.ArgumentParser(description="Build OpenEM hybrid search index")
     parser.add_argument(
@@ -168,6 +178,11 @@ def main():
         type=Path,
         default=DEFAULT_INDEX_DIR,
         help="Output directory for index",
+    )
+    parser.add_argument(
+        "--incremental",
+        action="store_true",
+        help="Only re-embed changed files (reuse cached embeddings for unchanged)",
     )
     args = parser.parse_args()
 
@@ -191,33 +206,78 @@ def main():
         print(f"ERROR: No .md files found in {CONDITIONS_DIR}", file=sys.stderr)
         sys.exit(1)
 
+    # Compute per-file hashes for incremental rebuild
+    current_hashes = per_file_hashes(CONDITIONS_DIR)
+
+    # Load previous manifest for incremental mode
+    manifest_path = args.output / "manifest.json"
+    prev_manifest = None
+    prev_hashes: dict[str, str] = {}
+    embedding_cache_path = args.output / "embedding_cache.json"
+    embedding_cache: dict[str, list[float]] = {}
+
+    if args.incremental and manifest_path.exists():
+        prev_manifest = json.loads(manifest_path.read_text())
+        prev_hashes = prev_manifest.get("file_hashes", {})
+
+        # Load cached embeddings if available
+        if embedding_cache_path.exists():
+            try:
+                embedding_cache = json.loads(embedding_cache_path.read_text())
+            except (json.JSONDecodeError, KeyError):
+                embedding_cache = {}
+
     print(f"Parsing {len(md_files)} condition files...")
     all_chunks = []
+    changed_chunk_indices: list[int] = []  # indices of chunks needing embedding
+
     for path in md_files:
         frontmatter, sections = parse_condition(path)
         if frontmatter and sections:
             cid = frontmatter.get("id", path.stem)
             chunks = build_chunks(frontmatter, sections, cid)
-            all_chunks.extend(chunks)
+
+            file_changed = current_hashes.get(path.name) != prev_hashes.get(path.name)
+
+            for chunk in chunks:
+                chunk_idx = len(all_chunks)
+                all_chunks.append(chunk)
+
+                if args.incremental and not file_changed and chunk["id"] in embedding_cache:
+                    # Reuse cached embedding
+                    chunk["vector"] = embedding_cache[chunk["id"]]
+                else:
+                    changed_chunk_indices.append(chunk_idx)
 
     print(f"  {len(all_chunks)} chunks from {len(md_files)} conditions")
 
-    # Generate dense embeddings
-    print(f"Loading embedding model: {args.model}")
-    from sentence_transformers import SentenceTransformer
+    if args.incremental and changed_chunk_indices:
+        total = len(all_chunks)
+        reused = total - len(changed_chunk_indices)
+        print(f"  Incremental: {reused} cached, {len(changed_chunk_indices)} to embed")
+    elif args.incremental and not changed_chunk_indices:
+        print("  Incremental: all chunks cached, no embedding needed")
+        changed_chunk_indices = []  # nothing to embed
 
-    model = SentenceTransformer(args.model)
+    # Generate dense embeddings (only for changed chunks, or all if not incremental)
+    if not args.incremental:
+        changed_chunk_indices = list(range(len(all_chunks)))
 
-    print(f"Encoding {len(all_chunks)} chunks...")
-    t0 = time.time()
-    texts = [c["text"] for c in all_chunks]
-    embeddings = model.encode(texts, show_progress_bar=True, batch_size=32)
-    elapsed = time.time() - t0
-    print(f"  Encoded in {elapsed:.1f}s ({len(all_chunks) / elapsed:.0f} chunks/sec)")
+    if changed_chunk_indices:
+        print(f"Loading embedding model: {args.model}")
+        from sentence_transformers import SentenceTransformer
 
-    # Attach vectors
-    for i, chunk in enumerate(all_chunks):
-        chunk["vector"] = embeddings[i].tolist()
+        model = SentenceTransformer(args.model)
+
+        texts_to_embed = [all_chunks[i]["text"] for i in changed_chunk_indices]
+        print(f"Encoding {len(texts_to_embed)} chunks...")
+        t0 = time.time()
+        embeddings = model.encode(texts_to_embed, show_progress_bar=True, batch_size=32)
+        elapsed = time.time() - t0
+        print(f"  Encoded in {elapsed:.1f}s ({len(texts_to_embed) / elapsed:.0f} chunks/sec)")
+
+        for idx_pos, chunk_idx in enumerate(changed_chunk_indices):
+            all_chunks[chunk_idx]["vector"] = embeddings[idx_pos].tolist()
 
     # Create LanceDB index
     args.output.mkdir(parents=True, exist_ok=True)
@@ -233,6 +293,10 @@ def main():
     # Compute corpus fingerprint for staleness detection
     fp = corpus_fingerprint(CONDITIONS_DIR)
 
+    # Save embedding cache for future incremental builds
+    new_cache = {chunk["id"]: chunk["vector"] for chunk in all_chunks}
+    embedding_cache_path.write_text(json.dumps(new_cache) + "\n")
+
     # Write manifest (restructured for v0.2.0)
     manifest = {
         "corpus": "openem",
@@ -242,6 +306,7 @@ def main():
         "corpus_version": "2.0",
         "corpus_fingerprint": fp,
         "corpus_file_count": len(md_files),
+        "file_hashes": current_hashes,
         "embedding_model": args.model,
         "embedding_dim": len(all_chunks[0]["vector"]),
         "num_conditions": len(md_files),
@@ -249,7 +314,6 @@ def main():
         "index_path": db_path,
         "built_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }
-    manifest_path = args.output / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
 
     # Generate condition map sidecar cache
@@ -261,6 +325,8 @@ def main():
     print(f"  Conditions: {manifest['num_conditions']}")
     print(f"  Chunks:     {manifest['num_chunks']}")
     print(f"  Fingerprint: {fp}")
+    if args.incremental:
+        print(f"  Incremental: {len(all_chunks) - len(changed_chunk_indices)} reused, {len(changed_chunk_indices)} re-embedded")
     print(f"  Embedding:  {manifest['embedding_model']} ({manifest['embedding_dim']}d)")
     print(f"  Index:      {db_path}")
     print(f"  Manifest:   {manifest_path}")
