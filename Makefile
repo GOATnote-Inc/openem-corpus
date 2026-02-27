@@ -1,4 +1,4 @@
-.PHONY: validate audit diversity quality-gate test test-all build-index eval-retrieval post-compile check lint format clean
+.PHONY: validate audit diversity quality-gate test test-all build-index eval-retrieval post-compile check lint format clean check-freshness
 
 PYTHON ?= python3
 
@@ -26,7 +26,10 @@ build-index:
 eval-retrieval:
 	$(PYTHON) scripts/eval_retrieval.py
 
-post-compile: build-index validate audit diversity eval-retrieval
+check-freshness:
+	$(PYTHON) scripts/check_index_freshness.py
+
+post-compile: build-index validate audit diversity eval-retrieval check-freshness
 	@echo "Post-compile pipeline complete."
 
 check: validate quality-gate audit diversity test

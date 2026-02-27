@@ -13,44 +13,12 @@ import yaml
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCHEMA_PATH = REPO_ROOT / "schemas" / "condition.schema.yaml"
 
-REQUIRED_FIELDS = [
-    "id",
-    "condition",
-    "icd10",
-    "esi",
-    "time_to_harm",
-    "category",
-    "track",
-    "sources",
-    "last_updated",
-    "compiled_by",
-    "risk_tier",
-    "validation",
-]
-VALID_CATEGORIES = [
-    "cardiovascular",
-    "neurological",
-    "respiratory",
-    "gastrointestinal",
-    "genitourinary",
-    "obstetric-gynecologic",
-    "endocrine-metabolic",
-    "infectious",
-    "musculoskeletal",
-    "hematologic",
-    "toxicologic",
-    "traumatic",
-    "environmental",
-    "psychiatric",
-    "pediatric",
-    "ophthalmologic",
-    "dermatologic",
-    "allergic-immunologic",
-    "disaster-mci",
-    "procedural",
-]
-VALID_TRACKS = ["tier1", "tier2"]
-VALID_RISK_TIERS = ["A", "B", "C"]
+# Load enums and required fields from the canonical schema (single source of truth)
+_schema = yaml.safe_load(SCHEMA_PATH.read_text())
+REQUIRED_FIELDS = _schema["required"]
+VALID_CATEGORIES = _schema["properties"]["category"]["enum"]
+VALID_TRACKS = _schema["properties"]["track"]["enum"]
+VALID_RISK_TIERS = _schema["properties"]["risk_tier"]["enum"]
 REQUIRED_SECTIONS = ["Recognition", "Critical Actions", "Pitfalls"]
 
 
@@ -191,6 +159,19 @@ def main() -> None:
             file_count += 1
             errors = validate_file(md_file)
             all_errors.extend(errors)
+
+    # Validate overlay.yaml targets exist in corpus
+    try:
+        from openem.conditions import validate_overlay
+
+        overlay_errors = validate_overlay(
+            corpus_dir=REPO_ROOT / "corpus" / "tier1" / "conditions",
+        )
+        for err in overlay_errors:
+            all_errors.append(f"overlay.yaml: {err}")
+    except ImportError:
+        # openem package not installed — skip overlay validation
+        pass
 
     if all_errors:
         print(f"FAILED: {len(all_errors)} errors in {file_count} files:\n")

@@ -12,7 +12,10 @@ Usage:
     context = bridge.get_context("stemi", max_chars=3000)
 """
 
+__version__ = "0.2.0"
+
 from openem.index import OpenEMIndex
 from openem.bridge import OpenEMBridge
+from openem.conditions import load_condition_map
 
-__all__ = ["OpenEMIndex", "OpenEMBridge"]
+__all__ = ["OpenEMIndex", "OpenEMBridge", "load_condition_map", "__version__"]

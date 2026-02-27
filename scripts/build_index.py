@@ -14,6 +14,7 @@ Defaults:
 """
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -147,6 +148,14 @@ def build_chunks(frontmatter: dict, sections: dict, condition_id: str) -> list[d
     return chunks
 
 
+def corpus_fingerprint(conditions_dir: Path) -> str:
+    """SHA-256 fingerprint of sorted filenames + sizes. Used for staleness detection."""
+    entries = []
+    for md_file in sorted(conditions_dir.glob("*.md")):
+        entries.append(f"{md_file.name}:{md_file.stat().st_size}")
+    return hashlib.sha256("\n".join(entries).encode()).hexdigest()[:16]
+
+
 def main():
     parser = argparse.ArgumentParser(description="Build OpenEM hybrid search index")
     parser.add_argument(
@@ -161,6 +170,20 @@ def main():
         help="Output directory for index",
     )
     args = parser.parse_args()
+
+    # Validate overlay before building
+    try:
+        from openem.conditions import validate_overlay, save_condition_map_sidecar
+
+        overlay_errors = validate_overlay(corpus_dir=CONDITIONS_DIR)
+        if overlay_errors:
+            print("ERROR: Overlay validation failed:", file=sys.stderr)
+            for err in overlay_errors:
+                print(f"  - {err}", file=sys.stderr)
+            sys.exit(1)
+        print("Overlay validation passed.")
+    except ImportError:
+        save_condition_map_sidecar = None
 
     # Collect all condition files
     md_files = sorted(CONDITIONS_DIR.glob("*.md"))
@@ -207,10 +230,18 @@ def main():
     # Create full-text search index on the text column
     table.create_fts_index("text", replace=True)
 
-    # Write manifest
+    # Compute corpus fingerprint for staleness detection
+    fp = corpus_fingerprint(CONDITIONS_DIR)
+
+    # Write manifest (restructured for v0.2.0)
     manifest = {
         "corpus": "openem",
-        "version": "1.0",
+        "version": "1.0",  # compat shim — kept for older consumers
+        "index_format_version": "1.0",
+        "api_version": "0.2.0",
+        "corpus_version": "2.0",
+        "corpus_fingerprint": fp,
+        "corpus_file_count": len(md_files),
         "embedding_model": args.model,
         "embedding_dim": len(all_chunks[0]["vector"]),
         "num_conditions": len(md_files),
@@ -221,9 +252,15 @@ def main():
     manifest_path = args.output / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
 
+    # Generate condition map sidecar cache
+    if save_condition_map_sidecar is not None:
+        sidecar = save_condition_map_sidecar(corpus_dir=CONDITIONS_DIR)
+        print(f"  Condition map sidecar: {sidecar}")
+
     print(f"\nIndex built successfully:")
     print(f"  Conditions: {manifest['num_conditions']}")
     print(f"  Chunks:     {manifest['num_chunks']}")
+    print(f"  Fingerprint: {fp}")
     print(f"  Embedding:  {manifest['embedding_model']} ({manifest['embedding_dim']}d)")
     print(f"  Index:      {db_path}")
     print(f"  Manifest:   {manifest_path}")

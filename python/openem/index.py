@@ -5,11 +5,15 @@ This is the canonical location — downstream projects should import
 from here rather than copying openem_adapter.py.
 """
 
+import hashlib
 import json
+import logging
 from pathlib import Path
 from typing import Optional
 
 import lancedb
+
+log = logging.getLogger(__name__)
 
 
 class OpenEMIndex:
@@ -24,11 +28,56 @@ class OpenEMIndex:
             )
 
         self.manifest = json.loads(manifest_path.read_text())
+
+        # Backward-compat shim: older manifests have "version" but not "index_format_version"
+        if "index_format_version" not in self.manifest and "version" in self.manifest:
+            self.manifest["index_format_version"] = self.manifest["version"]
+
         self._model_name = model_name or self.manifest["embedding_model"]
         self._model = None
 
         db = lancedb.connect(str(index_dir / "openem.lance"))
         self.table = db.open_table("conditions")
+
+    def check_freshness(self, corpus_dir: str | Path) -> bool:
+        """Check if this index is up-to-date with the corpus on disk.
+
+        Compares corpus file count and fingerprint (if available) against
+        the manifest. Returns True if fresh, False if stale.
+
+        Does NOT auto-rebuild — callers decide what to do with the result.
+        """
+        corpus_dir = Path(corpus_dir)
+        md_files = sorted(corpus_dir.glob("*.md"))
+        current_count = len(md_files)
+        manifest_count = self.manifest.get("corpus_file_count", self.manifest.get("num_conditions"))
+
+        if current_count != manifest_count:
+            log.warning(
+                "OpenEM index is stale: corpus has %d files but index was built with %d. "
+                "Run: python scripts/build_index.py",
+                current_count,
+                manifest_count,
+            )
+            return False
+
+        # If manifest has a fingerprint, do deeper check
+        manifest_fp = self.manifest.get("corpus_fingerprint")
+        if manifest_fp:
+            entries = []
+            for md_file in md_files:
+                entries.append(f"{md_file.name}:{md_file.stat().st_size}")
+            current_fp = hashlib.sha256("\n".join(entries).encode()).hexdigest()[:16]
+            if current_fp != manifest_fp:
+                log.warning(
+                    "OpenEM index is stale: corpus fingerprint changed (%s → %s). "
+                    "Run: python scripts/build_index.py",
+                    manifest_fp,
+                    current_fp,
+                )
+                return False
+
+        return True
 
     @property
     def model(self):
