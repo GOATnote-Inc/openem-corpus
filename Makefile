@@ -1,16 +1,18 @@
 .PHONY: validate audit diversity quality-gate test test-all build-index eval-retrieval post-compile check lint format clean
 
+PYTHON ?= python3
+
 validate:
-	python scripts/validate.py
+	$(PYTHON) scripts/validate.py
 
 audit:
-	python scripts/audit.py
+	$(PYTHON) scripts/audit.py
 
 diversity:
-	python scripts/diversity_metrics.py
+	$(PYTHON) scripts/diversity_metrics.py
 
 quality-gate:
-	python scripts/quality_gate.py
+	$(PYTHON) scripts/quality_gate.py
 
 test:
 	pytest tests/ -v --ignore=tests/test_index.py
@@ -19,10 +21,10 @@ test-all:
 	pytest tests/ -v
 
 build-index:
-	python scripts/build_index.py
+	$(PYTHON) scripts/build_index.py
 
 eval-retrieval:
-	python scripts/eval_retrieval.py
+	$(PYTHON) scripts/eval_retrieval.py
 
 post-compile: build-index validate audit diversity eval-retrieval
 	@echo "Post-compile pipeline complete."
