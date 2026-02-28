@@ -36,3 +36,4 @@ jobs:
 
       - name: Check index freshness
         run: python scripts/check_index_freshness.py
+        continue-on-error: true  # Index (data/index/) is gitignored; freshness check is advisory in CI

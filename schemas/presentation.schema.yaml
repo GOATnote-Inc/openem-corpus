@@ -1,4 +1,4 @@
-# JSON Schema (in YAML form) for FHIR presentation profiles.
+# JSON Schema (in YAML form) for FHIR presentation profiles (v1.0).
 # Each presentation profile defines clinically appropriate vitals, labs,
 # and conditions for synthetic FHIR R4 Bundle generation.
 
