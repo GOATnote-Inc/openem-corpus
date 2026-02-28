@@ -25,8 +25,8 @@ NOT a clinical decision support tool. NOT deployed for patient care.
 - `scripts/review_status.py` — prints physician review status by risk tier.
 - `scripts/check_index_freshness.py` — CI gate: exits 1 if corpus has changed since last `make build-index`. Checks file count + SHA-256 fingerprint.
 
-## Versioning (v0.2.0)
-- `__version__ = "0.2.0"` in `python/openem/__init__.py`
+## Versioning (v0.3.0)
+- `__version__ = "0.3.0"` in `python/openem/__init__.py`
 - Manifest fields: `index_format_version`, `api_version`, `corpus_version`, `corpus_fingerprint`, `corpus_file_count`, `file_hashes`. `version` key kept as backward-compat shim.
 - Downstream consumers can check `from openem import __version__` for API compatibility.
 - All 3 downstream repos pin `openem>=0.2.0` as optional dependency.
@@ -111,14 +111,20 @@ Total corpus: 185 conditions across 20 categories. New source type `consensus-st
 ```bash
 pip install -e .                              # Core package (LanceDB index access)
 pip install -e ".[embeddings]"                # + sentence-transformers for embeddings
+pip install -e ".[fhir]"                      # + fhir.resources for FHIR validation
 make build-index                              # Rebuild LanceDB index (after adding conditions)
 make build-index -- --incremental             # Incremental rebuild (only re-embeds changed files)
 make check                                    # Run validation + quality gate + tests
 make check-freshness                          # Verify index matches corpus
+make generate-fhir                            # Generate FHIR bundles from presentation profiles
+make validate-fhir                            # Generate + validate FHIR bundles (requires fhir.resources)
+make scan-repos                               # Scan downstream repos for condition insights
 python scripts/validate.py                    # Schema validation + overlay validation
 python scripts/audit.py                       # Full 13-pass audit suite
 python scripts/check_index_freshness.py       # Index staleness check (exit 1 = stale)
 python scripts/ingest_eval_findings.py --dry-run RESULT.json  # Preview CEIS→issue pipeline
+python scripts/generate_fhir.py --all         # Generate all FHIR bundles
+python scripts/scan_repos.py --dry-run        # Preview knowledge flow enrichments
 ```
 
 ### Key File Paths
@@ -145,6 +151,13 @@ python scripts/ingest_eval_findings.py --dry-run RESULT.json  # Preview CEIS→i
 | Pre-built index | `data/index/openem.lance/` |
 | Condition map cache (gitignored) | `python/openem/condition_map.json` |
 | Embedding cache (gitignored) | `data/index/embedding_cache.json` |
+| FHIR generator | `python/openem/fhir.py` |
+| FHIR presentation profiles | `fhir/presentations/*.yaml` |
+| FHIR presentation schema | `schemas/presentation.schema.yaml` |
+| FHIR bundle output (gitignored) | `fhir/bundles/` |
+| FHIR generation script | `scripts/generate_fhir.py` |
+| Knowledge flow insights | `python/openem/insights.py` |
+| Downstream repo scanner | `scripts/scan_repos.py` |
 
 ### Incremental Index Rebuild
 
@@ -165,5 +178,27 @@ After adding or modifying condition files, the index may be stale. Detection wor
 ### Eval Findings Ingest
 
 `scripts/ingest_eval_findings.py` reads LostBench CEIS result JSON files, extracts conditions with Class A failures (critical escalation drops), and creates GitHub issues via `gh issue create` for physician review. Supports `--dry-run`, `--min-failures`, and `--label`.
+
+### FHIR Export Layer (v0.3.0)
+
+Generates synthetic FHIR R4 Bundles from condition definitions via separate presentation profiles. Enables evaluation of system-facing AI (prior auth, CDS Hooks, EHR copilot, triage routing).
+
+- **Presentation profiles** in `fhir/presentations/*.yaml` define clinically appropriate vitals, labs, and conditions per archetype
+- **Generator** (`python/openem/fhir.py`) produces plain JSON dicts conforming to FHIR R4 — no hard dependency on `fhir.resources`
+- **Validation** via `fhir.resources` is optional (`pip install -e ".[fhir]"`)
+- **Deterministic** with `random.Random(seed)` — same seed produces identical bundles
+- **ICD-10-CM** as primary coding; SNOMED only with `--include-snomed` flag
+- **8 POC conditions:** anaphylaxis, neonatal-emergencies, testicular-torsion, diabetic-ketoacidosis, bacterial-meningitis, subarachnoid-hemorrhage, stemi, acute-limb-ischemia
+- Generated bundles go to `fhir/bundles/` (gitignored)
+
+### Bidirectional Knowledge Flow (v0.3.0)
+
+Scans downstream repos (LostBench, RadSlice, SafeShift, ScribeGoat2) for condition-level clinical insights and proposes enrichments to OpenEM condition records. Never auto-writes — produces reports for human review.
+
+- **Insights module** (`python/openem/insights.py`): `ConditionInsight`, `InsightAggregator`, `EnrichmentProposal`
+- **Scanner** (`scripts/scan_repos.py`): parses downstream findings, outputs text or JSON report
+- **Schema extension**: optional `evaluation_properties` field in `schemas/condition.schema.yaml` (pressure_vulnerability, escalation_boundary, code_agent_surface, rag_impact, diagnostic_imaging, mitigation_effectiveness)
+- **LostBench parser**: extracts per-seed difficulty data from SEEDS_PERSISTENCE_FINDINGS.md
+- **RadSlice parser**: extracts condition→modality mappings from task YAMLs
 
 Cross-repo architecture: see `scribegoat2/docs/CROSS_REPO_ARCHITECTURE.md`

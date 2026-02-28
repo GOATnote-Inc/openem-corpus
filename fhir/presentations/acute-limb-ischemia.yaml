@@ -1,0 +1,63 @@
+condition_id: acute-limb-ischemia
+presentations:
+  - name: embolic_lower_extremity
+    description: "Acute lower extremity ischemia from arterial embolism — 6 Ps (pain, pallor, pulselessness, poikilothermia, paresthesia, paralysis)"
+    patient:
+      age_range: [55, 85]
+      sex: [male, female]
+    encounter:
+      class: emergency
+      esi: 2
+    vitals:
+      - code: "8867-4"
+        display: "Heart rate"
+        value_range: [80, 110]
+        unit: "/min"
+        ucum: "/min"
+      - code: "8480-6"
+        display: "Systolic blood pressure"
+        value_range: [130, 170]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "8462-4"
+        display: "Diastolic blood pressure"
+        value_range: [75, 95]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "2708-6"
+        display: "Oxygen saturation"
+        value_range: [95, 99]
+        unit: "%"
+        ucum: "%"
+      - code: "8310-5"
+        display: "Body temperature"
+        value_range: [36.2, 37.0]
+        unit: "Cel"
+        ucum: "Cel"
+      - code: "9279-1"
+        display: "Respiratory rate"
+        value_range: [14, 20]
+        unit: "/min"
+        ucum: "/min"
+    labs:
+      - code: "2532-0"
+        display: "Lactate dehydrogenase"
+        value_range: [200, 500]
+        unit: "U/L"
+        ucum: "U/L"
+        category: laboratory
+      - code: "2157-6"
+        display: "Creatine kinase"
+        value_range: [200, 2000]
+        unit: "U/L"
+        ucum: "U/L"
+        category: laboratory
+      - code: "2164-2"
+        display: "Lactate"
+        value_range: [2.5, 8.0]
+        unit: "mmol/L"
+        ucum: "mmol/L"
+        category: laboratory
+    conditions:
+      - icd10: "I74.3"
+        display: "Embolism and thrombosis of arteries of the lower extremities"

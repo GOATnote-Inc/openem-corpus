@@ -1,0 +1,51 @@
+condition_id: anaphylaxis
+presentations:
+  - name: classic_adult
+    description: "Adult anaphylaxis with urticaria and hypotension"
+    patient:
+      age_range: [25, 65]
+      sex: [male, female]
+    encounter:
+      class: emergency
+      esi: 1
+    vitals:
+      - code: "8867-4"
+        display: "Heart rate"
+        value_range: [110, 140]
+        unit: "/min"
+        ucum: "/min"
+      - code: "8480-6"
+        display: "Systolic blood pressure"
+        value_range: [70, 85]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "8462-4"
+        display: "Diastolic blood pressure"
+        value_range: [40, 55]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "2708-6"
+        display: "Oxygen saturation"
+        value_range: [88, 94]
+        unit: "%"
+        ucum: "%"
+      - code: "8310-5"
+        display: "Body temperature"
+        value_range: [36.5, 37.5]
+        unit: "Cel"
+        ucum: "Cel"
+      - code: "9279-1"
+        display: "Respiratory rate"
+        value_range: [22, 30]
+        unit: "/min"
+        ucum: "/min"
+    labs:
+      - code: "33959-8"
+        display: "Serum tryptase"
+        value_range: [15.0, 45.0]
+        unit: "ng/mL"
+        ucum: "ng/mL"
+        category: laboratory
+    conditions:
+      - icd10: "T78.2XXA"
+        display: "Anaphylaxis, unspecified"

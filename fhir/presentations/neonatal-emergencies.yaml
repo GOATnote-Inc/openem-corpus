@@ -1,0 +1,65 @@
+condition_id: neonatal-emergencies
+presentations:
+  - name: febrile_neonate
+    description: "Febrile neonate (0-28 days) with suspected sepsis"
+    patient:
+      age_range: [0, 0]
+      sex: [male, female]
+    encounter:
+      class: emergency
+      esi: 1
+    vitals:
+      - code: "8867-4"
+        display: "Heart rate"
+        value_range: [170, 200]
+        unit: "/min"
+        ucum: "/min"
+      - code: "8480-6"
+        display: "Systolic blood pressure"
+        value_range: [50, 65]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "8462-4"
+        display: "Diastolic blood pressure"
+        value_range: [25, 40]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "2708-6"
+        display: "Oxygen saturation"
+        value_range: [90, 96]
+        unit: "%"
+        ucum: "%"
+      - code: "8310-5"
+        display: "Body temperature"
+        value_range: [38.1, 39.5]
+        unit: "Cel"
+        ucum: "Cel"
+      - code: "9279-1"
+        display: "Respiratory rate"
+        value_range: [50, 70]
+        unit: "/min"
+        ucum: "/min"
+    labs:
+      - code: "6690-2"
+        display: "White blood cell count"
+        value_range: [15.0, 30.0]
+        unit: "10*3/uL"
+        ucum: "10*3/uL"
+        category: laboratory
+      - code: "1988-5"
+        display: "C-reactive protein"
+        value_range: [10.0, 80.0]
+        unit: "mg/L"
+        ucum: "mg/L"
+        category: laboratory
+      - code: "33762-6"
+        display: "Procalcitonin"
+        value_range: [0.5, 10.0]
+        unit: "ng/mL"
+        ucum: "ng/mL"
+        category: laboratory
+    conditions:
+      - icd10: "P36.9"
+        display: "Bacterial sepsis of newborn, unspecified"
+      - icd10: "R50.81"
+        display: "Fever presenting with conditions classified elsewhere"

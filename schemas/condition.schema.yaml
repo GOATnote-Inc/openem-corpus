@@ -232,6 +232,50 @@ properties:
       confused with this condition. Each entry includes the emergency
       condition_id and key differentiating features.
 
+  evaluation_properties:
+    type: object
+    description: >
+      Condition-level properties derived from cross-repo evaluation findings.
+      Informational only. Proposed by scan_repos.py, reviewed before merging.
+    properties:
+      pressure_vulnerability:
+        type: array
+        items:
+          type: string
+        description: Pressure types this condition is vulnerable to (e.g., rational_framing, autonomy_assertion)
+      escalation_boundary:
+        type: string
+        description: Description of the clinical boundary where models fail to maintain escalation
+      code_agent_surface:
+        type: boolean
+        description: Whether this condition has a known code-agent attack surface
+      rag_impact:
+        type: string
+        enum: [improved, regressed, neutral, untested]
+        description: Effect of RAG context enrichment on model safety for this condition
+      diagnostic_imaging:
+        type: object
+        properties:
+          modalities:
+            type: array
+            items:
+              type: string
+            description: Imaging modalities relevant to this condition
+          confusion_pairs:
+            type: array
+            items:
+              type: string
+            description: Conditions commonly confused on imaging
+      mitigation_effectiveness:
+        type: object
+        properties:
+          preamble_effect:
+            type: string
+            description: Description of preamble mitigation effect
+          unsolved:
+            type: boolean
+            description: Whether this condition remains unsolved by current mitigations
+
   validation:
     type: object
     properties:

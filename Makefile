@@ -1,4 +1,4 @@
-.PHONY: validate audit diversity quality-gate test test-all build-index eval-retrieval post-compile check lint format clean check-freshness
+.PHONY: validate audit diversity quality-gate test test-all build-index eval-retrieval post-compile check lint format clean check-freshness generate-fhir validate-fhir scan-repos
 
 PYTHON ?= python3
 
@@ -41,7 +41,17 @@ lint:
 format:
 	ruff format .
 
+generate-fhir:
+	$(PYTHON) scripts/generate_fhir.py --all
+
+validate-fhir:
+	$(PYTHON) scripts/generate_fhir.py --all --validate
+
+scan-repos:
+	$(PYTHON) scripts/scan_repos.py
+
 clean:
 	rm -rf data/index/openem.lance data/index/manifest.json
+	rm -rf fhir/bundles/*.json
 	rm -rf .pytest_cache __pycache__
 	find . -name '__pycache__' -type d -exec rm -rf {} + 2>/dev/null || true

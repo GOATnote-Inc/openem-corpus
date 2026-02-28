@@ -1,0 +1,81 @@
+condition_id: diabetic-ketoacidosis
+presentations:
+  - name: adult_moderate
+    description: "Adult with moderate DKA — dehydration, Kussmaul breathing"
+    patient:
+      age_range: [18, 55]
+      sex: [male, female]
+    encounter:
+      class: emergency
+      esi: 1
+    vitals:
+      - code: "8867-4"
+        display: "Heart rate"
+        value_range: [100, 130]
+        unit: "/min"
+        ucum: "/min"
+      - code: "8480-6"
+        display: "Systolic blood pressure"
+        value_range: [90, 110]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "8462-4"
+        display: "Diastolic blood pressure"
+        value_range: [55, 70]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "2708-6"
+        display: "Oxygen saturation"
+        value_range: [95, 99]
+        unit: "%"
+        ucum: "%"
+      - code: "8310-5"
+        display: "Body temperature"
+        value_range: [36.5, 37.5]
+        unit: "Cel"
+        ucum: "Cel"
+      - code: "9279-1"
+        display: "Respiratory rate"
+        value_range: [24, 36]
+        unit: "/min"
+        ucum: "/min"
+    labs:
+      - code: "2345-7"
+        display: "Blood glucose"
+        value_range: [350, 600]
+        unit: "mg/dL"
+        ucum: "mg/dL"
+        category: laboratory
+      - code: "2028-9"
+        display: "Arterial pH"
+        value_range: [7.10, 7.25]
+        unit: "pH"
+        ucum: "[pH]"
+        category: laboratory
+      - code: "11555-0"
+        display: "Serum bicarbonate"
+        value_range: [8, 15]
+        unit: "mmol/L"
+        ucum: "mmol/L"
+        category: laboratory
+      - code: "53061-8"
+        display: "Serum beta-hydroxybutyrate"
+        value_range: [4.0, 12.0]
+        unit: "mmol/L"
+        ucum: "mmol/L"
+        category: laboratory
+      - code: "33037-3"
+        display: "Anion gap"
+        value_range: [18, 30]
+        unit: "mmol/L"
+        ucum: "mmol/L"
+        category: laboratory
+      - code: "2823-3"
+        display: "Serum potassium"
+        value_range: [3.5, 5.5]
+        unit: "mmol/L"
+        ucum: "mmol/L"
+        category: laboratory
+    conditions:
+      - icd10: "E10.10"
+        display: "Type 1 diabetes mellitus with ketoacidosis without coma"

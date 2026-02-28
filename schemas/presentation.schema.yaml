@@ -1,0 +1,150 @@
+# JSON Schema (in YAML form) for FHIR presentation profiles.
+# Each presentation profile defines clinically appropriate vitals, labs,
+# and conditions for synthetic FHIR R4 Bundle generation.
+
+$schema: "http://json-schema.org/draft-07/schema#"
+title: OpenEM Presentation Profile
+description: Schema for FHIR presentation profiles (v1.0)
+type: object
+
+required:
+  - condition_id
+  - presentations
+
+properties:
+  condition_id:
+    type: string
+    pattern: "^[a-z0-9-]+$"
+    description: Must match an OpenEM condition id
+
+  presentations:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required:
+        - name
+        - description
+        - patient
+        - encounter
+        - vitals
+        - conditions
+      properties:
+        name:
+          type: string
+          pattern: "^[a-z0-9_]+$"
+          description: Machine-readable archetype name (e.g., classic_adult)
+
+        description:
+          type: string
+          description: Human-readable description of this presentation
+
+        patient:
+          type: object
+          required: [age_range, sex]
+          properties:
+            age_range:
+              type: array
+              items:
+                type: integer
+                minimum: 0
+                maximum: 120
+              minItems: 2
+              maxItems: 2
+              description: "[min_age, max_age] in years"
+            sex:
+              type: array
+              items:
+                type: string
+                enum: [male, female]
+              minItems: 1
+              description: Applicable biological sexes
+
+        encounter:
+          type: object
+          required: [class, esi]
+          properties:
+            class:
+              type: string
+              enum: [emergency, inpatient, observation]
+              description: FHIR encounter class
+            esi:
+              type: integer
+              minimum: 1
+              maximum: 5
+              description: Emergency Severity Index
+
+        vitals:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required: [code, display, value_range, unit, ucum]
+            properties:
+              code:
+                type: string
+                description: LOINC code
+              display:
+                type: string
+                description: Human-readable vital sign name
+              value_range:
+                type: array
+                items:
+                  type: number
+                minItems: 2
+                maxItems: 2
+                description: "[min, max] clinically appropriate range"
+              unit:
+                type: string
+                description: Display unit
+              ucum:
+                type: string
+                description: UCUM unit code
+
+        labs:
+          type: array
+          items:
+            type: object
+            required: [code, display, value_range, unit, ucum]
+            properties:
+              code:
+                type: string
+                description: LOINC code
+              display:
+                type: string
+                description: Human-readable lab name
+              value_range:
+                type: array
+                items:
+                  type: number
+                minItems: 2
+                maxItems: 2
+                description: "[min, max] clinically appropriate range"
+              unit:
+                type: string
+                description: Display unit
+              ucum:
+                type: string
+                description: UCUM unit code
+              category:
+                type: string
+                enum: [laboratory, vital-signs]
+                description: FHIR observation category
+
+        conditions:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required: [icd10, display]
+            properties:
+              icd10:
+                type: string
+                pattern: "^[A-Z][0-9]"
+                description: ICD-10-CM code
+              display:
+                type: string
+                description: Human-readable condition name
+              snomed:
+                type: string
+                description: SNOMED CT code (reference only)

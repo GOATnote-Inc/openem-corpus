@@ -9,3 +9,4 @@ build/
 data/index/
 audit-report.json
 python/openem/condition_map.json
+fhir/bundles/

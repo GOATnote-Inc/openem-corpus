@@ -1,0 +1,45 @@
+condition_id: subarachnoid-hemorrhage
+presentations:
+  - name: classic_thunderclap
+    description: "Adult with thunderclap headache — worst headache of life, sudden onset"
+    patient:
+      age_range: [35, 65]
+      sex: [male, female]
+    encounter:
+      class: emergency
+      esi: 1
+    vitals:
+      - code: "8867-4"
+        display: "Heart rate"
+        value_range: [80, 110]
+        unit: "/min"
+        ucum: "/min"
+      - code: "8480-6"
+        display: "Systolic blood pressure"
+        value_range: [160, 220]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "8462-4"
+        display: "Diastolic blood pressure"
+        value_range: [90, 120]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "2708-6"
+        display: "Oxygen saturation"
+        value_range: [95, 99]
+        unit: "%"
+        ucum: "%"
+      - code: "8310-5"
+        display: "Body temperature"
+        value_range: [36.5, 37.5]
+        unit: "Cel"
+        ucum: "Cel"
+      - code: "9279-1"
+        display: "Respiratory rate"
+        value_range: [14, 22]
+        unit: "/min"
+        ucum: "/min"
+    labs: []
+    conditions:
+      - icd10: "I60.9"
+        display: "Nontraumatic subarachnoid hemorrhage, unspecified"

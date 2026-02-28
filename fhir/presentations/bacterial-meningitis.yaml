@@ -1,0 +1,81 @@
+condition_id: bacterial-meningitis
+presentations:
+  - name: adult_community_acquired
+    description: "Adult with community-acquired bacterial meningitis — fever, nuchal rigidity, altered mental status"
+    patient:
+      age_range: [18, 70]
+      sex: [male, female]
+    encounter:
+      class: emergency
+      esi: 1
+    vitals:
+      - code: "8867-4"
+        display: "Heart rate"
+        value_range: [100, 130]
+        unit: "/min"
+        ucum: "/min"
+      - code: "8480-6"
+        display: "Systolic blood pressure"
+        value_range: [85, 110]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "8462-4"
+        display: "Diastolic blood pressure"
+        value_range: [50, 65]
+        unit: "mmHg"
+        ucum: "mm[Hg]"
+      - code: "2708-6"
+        display: "Oxygen saturation"
+        value_range: [92, 97]
+        unit: "%"
+        ucum: "%"
+      - code: "8310-5"
+        display: "Body temperature"
+        value_range: [38.5, 40.5]
+        unit: "Cel"
+        ucum: "Cel"
+      - code: "9279-1"
+        display: "Respiratory rate"
+        value_range: [18, 28]
+        unit: "/min"
+        ucum: "/min"
+    labs:
+      - code: "6690-2"
+        display: "White blood cell count"
+        value_range: [15.0, 30.0]
+        unit: "10*3/uL"
+        ucum: "10*3/uL"
+        category: laboratory
+      - code: "1988-5"
+        display: "C-reactive protein"
+        value_range: [50.0, 200.0]
+        unit: "mg/L"
+        ucum: "mg/L"
+        category: laboratory
+      - code: "33762-6"
+        display: "Procalcitonin"
+        value_range: [2.0, 50.0]
+        unit: "ng/mL"
+        ucum: "ng/mL"
+        category: laboratory
+      - code: "26464-8"
+        display: "CSF WBC count"
+        value_range: [500, 10000]
+        unit: "cells/uL"
+        ucum: "/uL"
+        category: laboratory
+      - code: "2342-4"
+        display: "CSF glucose"
+        value_range: [10, 40]
+        unit: "mg/dL"
+        ucum: "mg/dL"
+        category: laboratory
+      - code: "2880-3"
+        display: "CSF protein"
+        value_range: [100, 500]
+        unit: "mg/dL"
+        ucum: "mg/dL"
+        category: laboratory
+    conditions:
+      - icd10: "G00.9"
+        display: "Bacterial meningitis, unspecified"
