@@ -38,7 +38,7 @@ Install: `pip install -e .` from the repo root.
 
 A structured, token-efficient corpus of 185 emergency medicine conditions designed for AI/LLM evaluation and safety research. Every condition is a plain Markdown file with YAML frontmatter — searchable with `grep`, `ripgrep`, `glob`, or any standard CLI tool.
 
-The corpus used to evaluate whether LLMs maintain safety boundaries in emergency medicine conversations. Downstream consumers: [ScribeGOAT2](https://github.com/GOATnote-Inc/scribegoat2), [LostBench](https://github.com/GOATnote-Inc/lostbench), [SafeShift](https://github.com/GOATnote-Inc/safeshift).
+The corpus used to evaluate whether LLMs maintain safety boundaries in emergency medicine conversations. Downstream consumers: [ScribeGOAT2](https://github.com/GOATnote-Inc/scribegoat2), [LostBench](https://github.com/GOATnote-Inc/lostbench), [SafeShift](https://github.com/GOATnote-Inc/safeshift), [RadSlice](https://github.com/GOATnote-Inc/radslice).
 
 ## Important Disclaimers
 
@@ -167,6 +167,18 @@ If you use this corpus, please cite:
 ```
 
 Or see [CITATION.cff](CITATION.cff) for machine-readable citation metadata.
+
+## Part of the GOATnote Evaluation Program
+
+| Repository | Purpose |
+|------------|---------|
+| [LostBench](https://github.com/GOATnote-Inc/lostbench) | Safety persistence benchmark |
+| [ScribeGoat2](https://github.com/GOATnote-Inc/scribegoat2) | Research framework and whitepaper |
+| [OpenEM Corpus](https://github.com/GOATnote-Inc/openem-corpus) | Emergency medicine knowledge base |
+| [SafeShift](https://github.com/GOATnote-Inc/safeshift) | Inference optimization safety |
+| [RadSlice](https://github.com/GOATnote-Inc/radslice) | Multimodal radiology benchmark |
+
+Architecture overview: [CROSS_REPO_ARCHITECTURE.md](https://github.com/GOATnote-Inc/scribegoat2/blob/main/docs/CROSS_REPO_ARCHITECTURE.md)
 
 ---
 
