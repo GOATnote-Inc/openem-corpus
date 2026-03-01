@@ -15,7 +15,7 @@ sources:
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"
   - type: review
     ref: "Cardillo G et al. Management of tracheobronchial injuries. Thorac Surg Clin. 2020;30(4):431-441"
-  - type: pubmed
+  - type: review
     ref: "Kiser AC et al. Blunt tracheobronchial injuries: treatment and outcomes. Ann Thorac Surg. 2001;71(6):2059-2065"
 last_updated: "2026-03-01"
 compiled_by: agent

@@ -15,7 +15,7 @@ sources:
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"
   - type: guideline
     ref: "WSES Guidelines on Blunt and Penetrating Bowel Injury: Diagnosis, Investigations, and Treatment. Chiarugi M et al. World J Emerg Surg. 2022;17:13"
-  - type: pubmed
+  - type: review
     ref: "Fakhry SM et al. Incidence of hollow viscus injury in blunt trauma: an analysis from 275,557 trauma admissions from the EAST multi-institutional trial. J Trauma. 2003;54(2):289-294"
 last_updated: "2026-03-01"
 compiled_by: agent

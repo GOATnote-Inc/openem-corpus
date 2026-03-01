@@ -23,7 +23,7 @@ sources:
   - type: pubmed
     ref: "Dainiak N et al. Literature review and global consensus on management of acute radiation syndrome affecting nonhuman primates. Disaster Med Public Health Prep. 2011;5(Suppl 1):S183-S195."
     pmid: "21402813"
-  - type: pubmed
+  - type: review
     ref: "Gusev IA, Guskova AK, Mettler FA. Medical Management of Radiation Accidents, 2nd Edition. CRC Press, 2001."
 last_updated: "2026-02-26"
 compiled_by: agent

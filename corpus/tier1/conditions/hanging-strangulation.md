@@ -15,7 +15,7 @@ sources:
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"
   - type: review
     ref: "Coombs AE, Ashton-Cleary D. Hanging and near-hanging. BJA Educ. 2023;23(8):296-303"
-  - type: pubmed
+  - type: review
     ref: "Salim A et al. Approach considerations for the management of strangulation in the emergency department. West J Emerg Med. 2022;23(3):399-407"
   - type: guideline
     ref: "ENT UK: Guidelines for Clinical Management of Non-Fatal Strangulation. 2024"

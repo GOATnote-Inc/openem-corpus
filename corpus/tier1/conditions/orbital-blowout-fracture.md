@@ -12,7 +12,7 @@ sources:
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"
   - type: review
     ref: "Boyette JR, Pemberton JD, Bonilla-Velez J. Management of orbital fractures: challenges and solutions. Clin Ophthalmol. 2015;9:2127-2137"
-  - type: pubmed
+  - type: review
     ref: "Burnstine MA. Clinical recommendations for repair of orbital facial fractures. Curr Opin Ophthalmol. 2003;14(5):236-240"
 last_updated: "2026-03-01"
 compiled_by: agent

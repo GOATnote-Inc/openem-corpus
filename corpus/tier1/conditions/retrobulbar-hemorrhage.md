@@ -20,7 +20,7 @@ sources:
     pmid: "25497897"
   - type: review
     ref: "Yung CW, Moorthy RS, Lindley D, et al. Periocular infections. Emerg Med Clin North Am. 2008;26(1):57-72."
-  - type: pubmed
+  - type: review
     ref: "Vassallo S et al. Traumatic retrobulbar hemorrhage: emergent lateral canthotomy and cantholysis. J Emerg Med. 2016;50(1):141-145."
   - type: guideline
     ref: "American Academy of Ophthalmology. Orbital trauma and fractures. Preferred Practice Pattern. 2023."

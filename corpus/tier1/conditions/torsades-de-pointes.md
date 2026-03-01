@@ -15,7 +15,7 @@ sources:
     ref: "2020 AHA/ACC Guideline for Management of Patients With Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death. Circulation. 2018;138(13):e272-e391."
   - type: review
     ref: "Drew BJ, et al. Prevention of Torsade de Pointes in Hospital Settings: A Scientific Statement From the AHA. Circulation. 2010;121(8):1047-1060."
-  - type: pubmed
+  - type: review
     ref: "Tzivoni D, et al. Treatment of Torsade de Pointes With Magnesium Sulfate. Circulation. 1988;77(2):392-397."
   - type: review
     ref: "Nachimuthu S, et al. Drug-induced QT interval prolongation: mechanisms and clinical management. Ther Adv Drug Saf. 2012;3(5):241-253."

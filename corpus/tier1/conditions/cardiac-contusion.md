@@ -15,7 +15,7 @@ sources:
     ref: "EAST Practice Management Guideline: Screening for Blunt Cardiac Injury. Clancy K et al. J Trauma. 2012;73(5 Suppl 4):S301-S306"
   - type: guideline
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"
-  - type: pubmed
+  - type: review
     ref: "Yousef R, Bhatt S. Managing blunt cardiac injury. J Cardiothorac Surg. 2023;18(1):55"
 last_updated: "2026-03-01"
 compiled_by: agent

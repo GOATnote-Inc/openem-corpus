@@ -17,7 +17,7 @@ sources:
     ref: "WSES-AAST Guidelines: Duodeno-Pancreatic and Extrahepatic Biliary Tree Trauma. Coccolini F et al. World J Emerg Surg. 2019;14:56"
   - type: guideline
     ref: "EAST Practice Management Guideline: Pancreatic Injuries. Phelan HA et al. J Trauma. 2009"
-  - type: pubmed
+  - type: review
     ref: "Ho VP et al. Pancreatic Trauma: Imaging Review and Management Update. RadioGraphics. 2021;41(4):1164-1181"
 last_updated: "2026-03-01"
 compiled_by: agent

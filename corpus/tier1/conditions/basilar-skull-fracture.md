@@ -15,7 +15,7 @@ sources:
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"
   - type: guideline
     ref: "Brain Trauma Foundation Guidelines for the Management of Severe Traumatic Brain Injury, 4th Edition, 2016"
-  - type: pubmed
+  - type: review
     ref: "Dunklebarger J et al. Basilar Skull Fractures: A Review. J Neurol Surg B Skull Base. 2021;82(1):96-104"
 last_updated: "2026-03-01"
 compiled_by: agent

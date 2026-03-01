@@ -15,7 +15,7 @@ sources:
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"
   - type: review
     ref: "Allareddy V et al. Le Fort Fractures: A Collective Review. J Oral Maxillofac Surg. 2017;75(12):2540-2546"
-  - type: pubmed
+  - type: review
     ref: "Buitrago-Tellez CH et al. A comprehensive classification of craniofacial fractures: postmortem and clinical CT study. Eur J Radiol. 2002;44(2):154-173"
 last_updated: "2026-03-01"
 compiled_by: agent

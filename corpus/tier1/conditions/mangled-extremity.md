@@ -13,9 +13,9 @@ track: tier1
 sources:
   - type: guideline
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"
-  - type: pubmed
+  - type: review
     ref: "Johansen K et al. Objective criteria accurately predict amputation following lower extremity trauma. J Trauma. 1990;30(5):568-572"
-  - type: pubmed
+  - type: review
     ref: "Bosse MJ et al. An analysis of outcomes of reconstruction or amputation after leg-threatening injuries (LEAP study). N Engl J Med. 2002;347(24):1924-1931"
   - type: guideline
     ref: "EAST Landmark Papers: Mangled Extremity. 2023"

@@ -15,7 +15,7 @@ sources:
     ref: "CDC: Explosions and Blast Injuries: A Primer for Clinicians. 2003, updated 2024"
   - type: guideline
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"
-  - type: pubmed
+  - type: review
     ref: "Ritenour AE, Baskin TW. Primary blast injury: update on diagnosis and treatment. Crit Care Med. 2008;36(7 Suppl):S311-S317"
   - type: review
     ref: "Scott TE et al. Blast lung injury: epidemiology and management. Multidiscip Respir Med. 2017;12:6"

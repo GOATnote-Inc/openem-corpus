@@ -2,7 +2,7 @@
 id: covid-pneumonia-severe
 condition: Severe COVID-19 Pneumonia
 aliases: [COVID pneumonia, SARS-CoV-2 pneumonia, COVID ARDS, severe COVID-19, coronavirus pneumonia]
-icd10: [J12.82, U07.1]
+icd10: [J12.82]
 esi: 1
 time_to_harm:
   irreversible_injury: "< 12 hours"

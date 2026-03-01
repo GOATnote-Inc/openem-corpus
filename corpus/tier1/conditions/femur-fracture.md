@@ -17,7 +17,7 @@ sources:
     ref: "NAEMSP Position Statement: Prehospital Management of Suspected Femoral Shaft Fractures. 2025"
   - type: guideline
     ref: "AAOS Clinical Practice Guideline: Hip Fractures in the Elderly. 2021"
-  - type: pubmed
+  - type: review
     ref: "Pape HC et al. Timing of fixation of major fractures in blunt polytrauma: role of conventional indicators in clinical decision making. J Orthop Trauma. 2005;19(8):551-562"
 last_updated: "2026-03-01"
 compiled_by: agent

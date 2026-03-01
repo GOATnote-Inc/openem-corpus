@@ -13,11 +13,11 @@ track: tier1
 sources:
   - type: guideline
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"
-  - type: pubmed
+  - type: review
     ref: "Schaefer SD. The acute management of external laryngeal trauma. A 27-year experience. Arch Otolaryngol Head Neck Surg. 1992;118(6):598-604"
   - type: review
     ref: "Jewett BS et al. Laryngeal Trauma. Curr Opin Otolaryngol Head Neck Surg. 2005;13(3):158-163"
-  - type: pubmed
+  - type: review
     ref: "Moonsamy P et al. Management of laryngotracheal trauma. Ann Cardiothorac Surg. 2018;7(2):210-216"
 last_updated: "2026-03-01"
 compiled_by: agent

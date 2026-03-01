@@ -31,7 +31,7 @@ sources:
   - type: guideline
     ref: "Seidman MD, Gurgel RK, Lin SY, et al. Clinical practice guideline: allergic rhinitis. Otolaryngol Head Neck Surg. 2015;152(1 Suppl):S1-43."
     pmid: "25644617"
-  - type: pubmed
+  - type: review
     ref: "Pawankar R, Canonica GW, Holgate ST, Lockey R. WAO White Book on Allergy. World Allergy Organization; 2011."
   - type: pubmed
     ref: "Wheatley LM, Togias A. Clinical practice. Allergic rhinitis. N Engl J Med. 2015;372(5):456-463."

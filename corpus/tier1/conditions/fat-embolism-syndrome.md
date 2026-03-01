@@ -21,7 +21,7 @@ sources:
   - type: review
     ref: "Akhtar S. Fat embolism. Anesthesiol Clin. 2009;27(3):533-550."
     pmid: "19825491"
-  - type: pubmed
+  - type: review
     ref: "Gupta A, Reilly CS. Fat embolism. Continuing Education in Anaesthesia Critical Care & Pain. 2007;7(5):148-151."
     doi: "10.1093/bjaceaccp/mkm027"
   - type: pubmed

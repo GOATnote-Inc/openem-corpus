@@ -17,7 +17,7 @@ sources:
     ref: "Surgical Critical Care Guidelines: Burn Inhalation Injury. 2025"
   - type: review
     ref: "Walker PF et al. Diagnosis and management of inhalation injury: an updated review. Crit Care. 2015;19:351"
-  - type: pubmed
+  - type: review
     ref: "Dries DJ, Endorf FW. Inhalation injury: epidemiology, pathology, treatment strategies. Scand J Trauma Resusc Emerg Med. 2013;21:31"
 last_updated: "2026-03-01"
 compiled_by: agent

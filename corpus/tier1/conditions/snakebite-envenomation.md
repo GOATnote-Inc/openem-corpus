@@ -20,7 +20,7 @@ sources:
     url: "https://www.surgicalcriticalcare.net/Guidelines/Envenomation%202023.pdf"
   - type: review
     ref: "Deb Barman D. A Review of the Management Strategies and Practices in Snake Envenomation. J Assoc Physicians India. 2025"
-  - type: pubmed
+  - type: review
     ref: "Ruha AM et al. Comparison of CroFab vs ANAVIP for crotaline envenomation. Acad Emerg Med. 2023. ACMT Annual Scientific Meeting"
   - type: guideline
     ref: "CroFab (Crotalidae Polyvalent Immune Fab). FDA Package Insert. BTG International Inc. 2018"

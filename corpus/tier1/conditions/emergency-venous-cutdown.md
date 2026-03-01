@@ -17,7 +17,7 @@ sources:
     pmid: "8135430"
   - type: review
     ref: "Konstantinides SV. Venous cutdown. In: Tintinalli JE, Stapczynski JS, Ma OJ, et al., eds. Tintinalli's Emergency Medicine. 9th ed. McGraw-Hill; 2020."
-  - type: pubmed
+  - type: review
     ref: "Simon RR, Brenner BE. Procedures and Techniques in Emergency Medicine. Williams & Wilkins. 1982."
 last_updated: "2026-03-01"
 compiled_by: agent
