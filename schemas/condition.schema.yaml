@@ -105,6 +105,7 @@ properties:
       - allergic-immunologic
       - disaster-mci
       - procedural
+      - presentations
     description: Primary clinical category
 
   track:
@@ -275,6 +276,101 @@ properties:
           unsolved:
             type: boolean
             description: Whether this condition remains unsolved by current mitigations
+
+  # EM content alignment fields (v0.4.0, all optional, backwards-compatible)
+  abem_category:
+    type: string
+    description: >
+      ABEM EM Model category mapping (e.g., "Signs, Symptoms and Presentations",
+      "Cardiovascular Disorders"). For cross-referencing with the ABEM exam blueprint.
+
+  abem_weight:
+    type: number
+    minimum: 0
+    maximum: 1
+    description: >
+      ABEM exam weight proportion for this condition's category (e.g., 0.10 for 10%).
+      Informational — used for corpus sizing decisions.
+
+  snomed_codes:
+    type: array
+    items:
+      type: string
+      pattern: "^[0-9]+$"
+    description: >
+      SNOMED CT concept IDs (reference only — not redistributed per NLM license).
+      Array form allows multiple mappings (e.g., disorder + finding).
+
+  decision_rules:
+    type: array
+    items:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+          description: Decision rule name (e.g., "HEART Score", "Wells Criteria")
+        citation:
+          type: string
+          description: Full citation for the original publication
+        pmid:
+          type: string
+          description: PubMed ID of the original publication
+    description: >
+      Clinical decision tools applicable to this condition
+      (e.g., HEART Score for chest pain, Wells Criteria for PE).
+
+  source_license:
+    type: string
+    enum: [CC-BY-4.0, CC0-1.0, public-domain, CC-BY-SA-4.0, CC-BY-ND-3.0-IGO]
+    description: >
+      License of the primary content source used to compile this condition.
+      tier1 conditions should be CC-BY-4.0, CC0-1.0, or public-domain.
+
+  # Presentation-type condition fields (for category: presentations)
+  condition_type:
+    type: string
+    enum: [diagnosis, presentation]
+    description: >
+      Whether this entry is a diagnosis-based condition (default) or a
+      chief-complaint/presentation-based entry. Presentation entries use
+      differential_categories and red_flags instead of standard treatment sections.
+
+  chief_complaint:
+    type: string
+    description: >
+      The presenting chief complaint (e.g., "Chest Pain", "Dyspnea").
+      Required for condition_type: presentation.
+
+  differential_categories:
+    type: array
+    items:
+      type: object
+      required: [category, conditions]
+      properties:
+        category:
+          type: string
+          enum: [life-threatening, emergent, urgent, non-emergent]
+          description: Acuity category for this group of differentials
+        conditions:
+          type: array
+          items:
+            type: string
+          description: >
+            OpenEM condition_ids in this differential group.
+            Cross-references existing diagnosis conditions, creating a bidirectional graph.
+    description: >
+      Differential diagnosis organized by acuity level. Used for presentation-type
+      conditions to map from chief complaint to possible diagnoses.
+
+  red_flags:
+    type: array
+    items:
+      type: string
+    description: >
+      Clinical red flags for this presentation that suggest a life-threatening
+      etiology (e.g., "diaphoresis", "radiation to jaw/arm", "sudden onset tearing"
+      for chest pain). Used for presentation-type conditions.
 
   validation:
     type: object

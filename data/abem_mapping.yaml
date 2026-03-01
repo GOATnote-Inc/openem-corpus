@@ -1,0 +1,393 @@
+# OpenEM Category Sizing — Emergency Medicine Content Distribution Alignment
+#
+# OpenEM's category structure and condition counts are independently authored.
+# Category weights are informed by the published distribution of emergency
+# medicine board examination content areas, which are factual data points
+# (not copyrightable expression). The mapping, condition candidates, and
+# corpus targets are original OpenEM work product.
+#
+# This file does NOT reproduce, reconstruct, or derive from any proprietary
+# taxonomy, blueprint document, or exam preparation material.
+#
+# Fields:
+#   abem_category: Published EM board content area name (factual reference)
+#   openem_categories: Corresponding OpenEM category(ies)
+#   weight: Approximate board exam weight (proportion, sums to ~1.0)
+#   target_conditions: Target number of OpenEM conditions
+#   current_conditions: Count as of v0.3.0 (185 total)
+#   delta: Conditions to add
+#   priority: P0 (immediate), P1 (next), P2 (final)
+#   notes: Mapping rationale
+
+version: "1.0"
+last_updated: "2026-03-01"
+corpus_baseline: 185
+corpus_target: 370
+
+categories:
+  - abem_category: "Cardiovascular Disorders"
+    openem_categories: [cardiovascular]
+    weight: 0.10
+    target_conditions: 37
+    current_conditions: 19
+    delta: 18
+    priority: P0
+    candidate_conditions:
+      - complete-heart-block
+      - wpw-syndrome
+      - torsades-de-pointes
+      - long-qt-syndrome
+      - sick-sinus-syndrome
+      - acute-mesenteric-venous-thrombosis
+      - stanford-b-aortic-dissection
+      - peripheral-arterial-disease-acute
+      - prosthetic-valve-emergency
+      - mitral-valve-prolapse-complications
+      - infective-endocarditis-acute
+      - takotsubo-cardiomyopathy
+      - hypertrophic-cardiomyopathy-emergency
+      - right-ventricular-failure
+      - commotio-cordis
+      - acute-coronary-syndrome-nstemi
+      - pacemaker-malfunction
+      - post-cardiac-arrest-syndrome
+
+  - abem_category: "Traumatic Disorders"
+    openem_categories: [traumatic]
+    weight: 0.09
+    target_conditions: 33
+    current_conditions: 9
+    delta: 24
+    priority: P0
+    candidate_conditions:
+      - basilar-skull-fracture
+      - le-fort-fractures
+      - cervical-spine-fracture
+      - laryngeal-trauma
+      - orbital-blowout-fracture
+      - flail-chest
+      - diaphragmatic-rupture
+      - cardiac-contusion
+      - hemothorax
+      - tracheobronchial-injury
+      - splenic-laceration
+      - liver-laceration
+      - hollow-viscus-injury
+      - renal-trauma
+      - pancreatic-injury
+      - vascular-injury-extremity
+      - mangled-extremity
+      - traumatic-amputation
+      - femur-fracture
+      - thermal-burns
+      - inhalation-injury
+      - blast-lung-injury
+      - ballistic-injury
+      - hanging-strangulation
+      # crush-injury: cross-ref with crush-syndrome-mci in disaster-mci
+
+  - abem_category: "Procedures and Skills"
+    openem_categories: [procedural]
+    weight: 0.08
+    target_conditions: 28
+    current_conditions: 7
+    delta: 21
+    priority: P0
+    candidate_conditions:
+      - rapid-sequence-intubation
+      - video-laryngoscopy
+      - needle-cricothyrotomy
+      - bag-valve-mask-ventilation
+      - central-venous-access
+      - intraosseous-access
+      - arterial-line-placement
+      - emergency-venous-cutdown
+      - emergency-pericardiocentesis
+      - transcutaneous-pacing
+      - cardioversion-defibrillation
+      - targeted-temperature-management
+      - tube-thoracostomy
+      - needle-decompression
+      - emergency-thoracotomy-approach
+      - procedural-sedation
+      - fracture-reduction
+      - joint-arthrocentesis
+      - emergency-delivery
+      - neonatal-resuscitation
+      - lumbar-puncture-emergency
+
+  - abem_category: "Gastrointestinal and Hepatobiliary Disorders"
+    openem_categories: [gastrointestinal]
+    weight: 0.07
+    target_conditions: 26
+    current_conditions: 10
+    delta: 16
+    priority: P0
+    candidate_conditions:
+      - ogilvie-syndrome
+      - toxic-megacolon
+      - ischemic-colitis
+      - perforated-peptic-ulcer
+      - small-bowel-volvulus
+      - sigmoid-volvulus
+      - incarcerated-hernia
+      - acute-hepatic-failure
+      - spontaneous-bacterial-peritonitis
+      - mallory-weiss-tear
+      - boerhaave-syndrome
+      - acute-diverticulitis
+      - biliary-colic
+      - hepatic-abscess
+      - rectal-foreign-body
+      - caustic-esophageal-injury
+
+  - abem_category: "Thoracic-Respiratory Disorders"
+    openem_categories: [respiratory]
+    weight: 0.07
+    target_conditions: 26
+    current_conditions: 10
+    delta: 16
+    priority: P0
+    candidate_conditions:
+      - acute-respiratory-failure
+      - ards
+      - pleural-effusion-emergency
+      - lung-abscess
+      - pulmonary-hemorrhage
+      - airway-obstruction-upper
+      - croup-adult
+      - covid-pneumonia-severe
+      - influenza-pneumonia-severe
+      - empyema
+      - chylothorax
+      - pulmonary-hypertension-crisis
+      - bronchiectasis-exacerbation
+      - aspiration-pneumonia
+      - oxygen-toxicity
+      - ventilator-associated-pneumonia
+
+  - abem_category: "Infectious Disorders"
+    openem_categories: [infectious]
+    weight: 0.07
+    target_conditions: 26
+    current_conditions: 14
+    delta: 12
+    priority: P1
+    candidate_conditions:
+      - orbital-cellulitis
+      - epiglottitis-adult
+      - spontaneous-bacterial-peritonitis-infectious
+      - clostridium-difficile-severe
+      - herpes-simplex-disseminated
+      - varicella-zoster-immunocompromised
+      - tuberculosis-active-emergency
+      - rabies-post-exposure
+      - botulism
+      - leptospirosis
+      - rocky-mountain-spotted-fever
+      - acute-hiv-syndrome
+
+  - abem_category: "Neurologic Disorders"
+    openem_categories: [neurological]
+    weight: 0.06
+    target_conditions: 22
+    current_conditions: 11
+    delta: 11
+    priority: P1
+    candidate_conditions:
+      - myasthenia-gravis-crisis
+      - transient-ischemic-attack
+      - central-cord-syndrome
+      - brown-sequard-syndrome
+      - cerebral-venous-thrombosis
+      - normal-pressure-hydrocephalus-acute
+      - posterior-reversible-encephalopathy-syndrome
+      - acute-demyelinating-encephalomyelitis
+      - autonomic-dysreflexia
+      - trigeminal-neuralgia-emergency
+      - temporal-lobe-epilepsy-status
+
+  - abem_category: "Endocrine, Metabolic, and Nutritional Disorders"
+    openem_categories: [endocrine-metabolic]
+    weight: 0.05
+    target_conditions: 18
+    current_conditions: 7
+    delta: 11
+    priority: P1
+    candidate_conditions:
+      - myxedema-coma
+      - hypercalcemia-emergency
+      - hypocalcemia-emergency
+      - hyponatremia-severe
+      - hypernatremia-severe
+      - lactic-acidosis
+      - metabolic-acidosis-evaluation
+      - rhabdomyolysis-metabolic
+      - acute-porphyria
+      - carcinoid-crisis
+      - hypophosphatemia-severe
+
+  - abem_category: "Signs, Symptoms and Presentations"
+    openem_categories: [presentations]
+    weight: 0.10
+    target_conditions: 15
+    current_conditions: 0
+    delta: 15
+    priority: P1
+    notes: >
+      New category. Chief-complaint-based entries that map to structured
+      differentials. Uses presentations-compiler agent and condition_type: presentation
+      schema. Cross-references diagnosis-based conditions via differential_categories.
+    candidate_conditions:
+      - chest-pain
+      - dyspnea
+      - syncope
+      - altered-mental-status
+      - headache-acute
+      - abdominal-pain-acute
+      - back-pain-emergency
+      - fever-undifferentiated
+      - weakness-acute
+      - dizziness-vertigo
+      - seizure-first-time
+      - palpitations-evaluation
+      - gastrointestinal-bleeding-approach
+      - shock-undifferentiated
+      - pediatric-fever-evaluation
+
+  - abem_category: "Dermatologic Disorders"
+    openem_categories: [dermatologic]
+    weight: 0.03
+    target_conditions: 11
+    current_conditions: 4
+    delta: 7
+    priority: P1
+    candidate_conditions:
+      - erythema-multiforme
+      - pemphigus-vulgaris
+      - purpura-fulminans
+      - necrotizing-fasciitis-skin-presentation
+      - herpes-zoster-disseminated
+      - burn-wound-management
+      - toxic-epidermal-necrolysis-management
+
+  - abem_category: "Hematologic Disorders"
+    openem_categories: [hematologic]
+    weight: 0.03
+    target_conditions: 11
+    current_conditions: 5
+    delta: 6
+    priority: P1
+    candidate_conditions:
+      - disseminated-intravascular-coagulation
+      - thrombotic-thrombocytopenic-purpura
+      - hemolytic-uremic-syndrome
+      - heparin-induced-thrombocytopenia
+      - massive-pulmonary-embolism
+      - coagulopathy-of-trauma
+
+  - abem_category: "Genitourinary Disorders"
+    openem_categories: [genitourinary]
+    weight: 0.03
+    target_conditions: 11
+    current_conditions: 6
+    delta: 5
+    priority: P2
+
+  - abem_category: "Pediatric Disorders"
+    openem_categories: [pediatric]
+    weight: 0.05
+    target_conditions: 18
+    current_conditions: 13
+    delta: 5
+    priority: P2
+    notes: >
+      Pediatric is distributed across body systems in ABEM.
+      Estimated ~5% practical weight. Many pediatric presentations
+      are covered under body-system categories.
+
+  - abem_category: "Head, Eyes, Ears, Nose, Throat Disorders"
+    openem_categories: [ophthalmologic]
+    weight: 0.04
+    target_conditions: 11
+    current_conditions: 7
+    delta: 4
+    priority: P2
+    notes: >
+      ABEM HEENT (4%) splits across ophthalmologic + ENT conditions
+      already in infectious category.
+
+  - abem_category: "Immune System Disorders"
+    openem_categories: [allergic-immunologic]
+    weight: 0.02
+    target_conditions: 7
+    current_conditions: 4
+    delta: 3
+    priority: P2
+
+  - abem_category: "Psychobehavioral Disorders"
+    openem_categories: [psychiatric]
+    weight: 0.02
+    target_conditions: 7
+    current_conditions: 5
+    delta: 2
+    priority: P2
+
+  - abem_category: "Musculoskeletal Disorders (Non-Traumatic)"
+    openem_categories: [musculoskeletal]
+    weight: 0.03
+    target_conditions: 11
+    current_conditions: 10
+    delta: 1
+    priority: P2
+
+  - abem_category: "Other Components (EMS, MCI, Administration)"
+    openem_categories: [disaster-mci]
+    weight: 0.01
+    target_conditions: 7
+    current_conditions: 6
+    delta: 1
+    priority: P2
+    notes: >
+      ABEM "Other Components" (2%) includes MCI/disaster + EMS + admin.
+      Only the clinical MCI/disaster content is relevant for OpenEM.
+
+  # Categories at or above target — no expansion needed
+  - abem_category: "Toxicologic Disorders"
+    openem_categories: [toxicologic]
+    weight: 0.04
+    target_conditions: 15
+    current_conditions: 19
+    delta: 0
+    priority: done
+
+  - abem_category: "Obstetric and Gynecologic Disorders"
+    openem_categories: [obstetric-gynecologic]
+    weight: 0.03
+    target_conditions: 11
+    current_conditions: 12
+    delta: 0
+    priority: done
+
+  - abem_category: "Environmental Disorders"
+    openem_categories: [environmental]
+    weight: 0.02
+    target_conditions: 7
+    current_conditions: 7
+    delta: 0
+    priority: done
+
+# Phase summary
+phases:
+  P0:
+    categories: [cardiovascular, traumatic, procedural, gastrointestinal, respiratory]
+    total_delta: 95
+    description: "Highest ABEM-weighted categories with largest gaps"
+  P1:
+    categories: [infectious, neurological, endocrine-metabolic, presentations, dermatologic, hematologic]
+    total_delta: 62
+    description: "Moderate-weight categories + new presentations category"
+  P2:
+    categories: [genitourinary, pediatric, ophthalmologic, allergic-immunologic, psychiatric, musculoskeletal, disaster-mci]
+    total_delta: 21
+    description: "Near-parity categories — small deltas"

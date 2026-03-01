@@ -45,6 +45,7 @@ VALID_CATEGORIES = [
     "allergic-immunologic",
     "disaster-mci",
     "procedural",
+    "presentations",
 ]
 
 VALID_RISK_TIERS = ["A", "B", "C"]

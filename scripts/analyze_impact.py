@@ -43,6 +43,11 @@ CORPUS_MILESTONES = [
         "date": "2026-02-26T00:00:00+00:00",
         "description": "OpenEM corpus v2.1: 185 conditions (added 28 MCI, HALO, procedural)",
     },
+    {
+        "name": "openem_abem_parity_expansion",
+        "date": "2026-03-01T00:00:00+00:00",
+        "description": "OpenEM corpus v0.4.0: EM content distribution alignment (~370 conditions across 21 categories)",
+    },
 ]
 
 
