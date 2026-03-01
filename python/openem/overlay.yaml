@@ -1,10 +1,12 @@
 # Multi-condition mapping overlay for OpenEM canonical condition map.
 #
 # These entries map condition names to MULTIPLE OpenEM condition_ids
-# where a single frontmatter file can't express the mapping.
+# where a single frontmatter file cannot express the mapping.
 # Auto-generated map is built first; overlay entries win on conflict.
 #
 # Format: "condition name (lowercase)": [condition-id-1, condition-id-2]
+
+# --- Original multi-condition mappings ---
 
 "neonatal sepsis": ["neonatal-emergencies", "sepsis"]
 "meningococcemia": ["bacterial-meningitis", "sepsis"]
@@ -26,3 +28,1117 @@
 "knee osteoarthritis - elective surgery timing": ["knee-osteoarthritis"]
 "stable angina - workup timing": ["unstable-angina"]
 "benign palpitations - reassurance appropriate": ["benign-palpitations"]
+
+# --- Shared aliases mapping to multiple conditions (P0/P1/P2 expansion) ---
+"ascitic fluid infection": ["spontaneous-bacterial-peritonitis-infectious", "spontaneous-bacterial-peritonitis"]
+"burn injury": ["burn-wound-management", "thermal-burns"]
+"flame burn": ["burn-wound-management", "thermal-burns"]
+"sbp": ["spontaneous-bacterial-peritonitis-infectious", "spontaneous-bacterial-peritonitis"]
+"scald burn": ["burn-wound-management", "thermal-burns"]
+"shock": ["cardioversion-defibrillation", "shock-undifferentiated"]
+
+# --- Alias mappings for P0/P1/P2 expansion conditions (2026-03-01) ---
+
+# abdominal-pain-acute
+"abdominal pain": ["abdominal-pain-acute"]
+"acute abdomen": ["abdominal-pain-acute"]
+"belly pain": ["abdominal-pain-acute"]
+"stomach pain": ["abdominal-pain-acute"]
+"surgical abdomen": ["abdominal-pain-acute"]
+
+# acute-coronary-syndrome-nstemi
+"acute coronary syndrome without st elevation": ["acute-coronary-syndrome-nstemi"]
+"non-stemi": ["acute-coronary-syndrome-nstemi"]
+"nste-acs": ["acute-coronary-syndrome-nstemi"]
+"nstemi": ["acute-coronary-syndrome-nstemi"]
+"type 1 nstemi": ["acute-coronary-syndrome-nstemi"]
+
+# acute-demyelinating-encephalomyelitis
+"acute demyelinating encephalomyelitis": ["acute-demyelinating-encephalomyelitis"]
+"adem": ["acute-demyelinating-encephalomyelitis"]
+"post-infectious encephalomyelitis": ["acute-demyelinating-encephalomyelitis"]
+
+# acute-diverticulitis
+"colonic diverticulitis": ["acute-diverticulitis"]
+"diverticulitis": ["acute-diverticulitis"]
+"sigmoid diverticulitis": ["acute-diverticulitis"]
+
+# acute-dystonia
+"acute dystonia": ["acute-dystonia"]
+"drug-induced dystonia": ["acute-dystonia"]
+"medication-induced dystonia": ["acute-dystonia"]
+"oculogyric crisis": ["acute-dystonia"]
+
+# acute-hepatic-failure
+"acute liver failure": ["acute-hepatic-failure"]
+"alf": ["acute-hepatic-failure"]
+"fulminant hepatic failure": ["acute-hepatic-failure"]
+"fulminant liver failure": ["acute-hepatic-failure"]
+
+# acute-hiv-syndrome
+"acute antiretroviral syndrome": ["acute-hiv-syndrome"]
+"acute hiv seroconversion": ["acute-hiv-syndrome"]
+"acute retroviral syndrome": ["acute-hiv-syndrome"]
+"primary hiv infection": ["acute-hiv-syndrome"]
+
+# acute-mesenteric-venous-thrombosis
+"mesenteric vein thrombosis": ["acute-mesenteric-venous-thrombosis"]
+"mvt": ["acute-mesenteric-venous-thrombosis"]
+"smv thrombosis": ["acute-mesenteric-venous-thrombosis"]
+"superior mesenteric vein thrombosis": ["acute-mesenteric-venous-thrombosis"]
+
+# acute-porphyria
+"acute hepatic porphyria": ["acute-porphyria"]
+"acute intermittent porphyria": ["acute-porphyria"]
+"aip": ["acute-porphyria"]
+"porphyria attack": ["acute-porphyria"]
+"porphyric crisis": ["acute-porphyria"]
+
+# acute-respiratory-failure
+"arf": ["acute-respiratory-failure"]
+"hypercapnic respiratory failure": ["acute-respiratory-failure"]
+"hypoxemic respiratory failure": ["acute-respiratory-failure"]
+"type 1 respiratory failure": ["acute-respiratory-failure"]
+"type 2 respiratory failure": ["acute-respiratory-failure"]
+
+# airway-obstruction-upper
+"acute upper airway compromise": ["airway-obstruction-upper"]
+"airway foreign body adult": ["airway-obstruction-upper"]
+"stridor emergency": ["airway-obstruction-upper"]
+"supraglottic obstruction": ["airway-obstruction-upper"]
+"uao": ["airway-obstruction-upper"]
+
+# altered-mental-status
+"altered loc": ["altered-mental-status"]
+"altered sensorium": ["altered-mental-status"]
+"ams": ["altered-mental-status"]
+"confusion": ["altered-mental-status"]
+"delirium": ["altered-mental-status"]
+"encephalopathy": ["altered-mental-status"]
+"lethargy": ["altered-mental-status"]
+"obtundation": ["altered-mental-status"]
+
+# angioedema-hereditary
+"bradykinin-mediated angioedema": ["angioedema-hereditary"]
+"c1 esterase inhibitor deficiency": ["angioedema-hereditary"]
+"hae": ["angioedema-hereditary"]
+"hereditary angioneurotic edema": ["angioedema-hereditary"]
+
+# ards
+"acute lung injury": ["ards"]
+"adult respiratory distress syndrome": ["ards"]
+"ards": ["ards"]
+"non-cardiogenic pulmonary edema": ["ards"]
+
+# arterial-line-placement
+"a-line": ["arterial-line-placement"]
+"art line": ["arterial-line-placement"]
+"arterial catheter": ["arterial-line-placement"]
+"radial artery catheterization": ["arterial-line-placement"]
+
+# aspiration-pneumonia
+"aspiration lung injury": ["aspiration-pneumonia"]
+"aspiration pneumonia": ["aspiration-pneumonia"]
+"aspiration pneumonitis": ["aspiration-pneumonia"]
+"chemical pneumonitis": ["aspiration-pneumonia"]
+"mendelson syndrome": ["aspiration-pneumonia"]
+
+# autonomic-dysreflexia
+"ad": ["autonomic-dysreflexia"]
+"autonomic hyperreflexia": ["autonomic-dysreflexia"]
+"mass reflex": ["autonomic-dysreflexia"]
+"spinal cord injury hypertensive crisis": ["autonomic-dysreflexia"]
+
+# back-pain-emergency
+"acute back pain ed": ["back-pain-emergency"]
+"back pain": ["back-pain-emergency"]
+"low back pain": ["back-pain-emergency"]
+"spine pain": ["back-pain-emergency"]
+"thoracic back pain": ["back-pain-emergency"]
+
+# bag-valve-mask-ventilation
+"ambu bag": ["bag-valve-mask-ventilation"]
+"bag-mask ventilation": ["bag-valve-mask-ventilation"]
+"bmv": ["bag-valve-mask-ventilation"]
+"bvm": ["bag-valve-mask-ventilation"]
+"manual ventilation": ["bag-valve-mask-ventilation"]
+
+# ballistic-injury
+"bullet wound": ["ballistic-injury"]
+"firearm injury": ["ballistic-injury"]
+"gsw": ["ballistic-injury"]
+"gunshot wound": ["ballistic-injury"]
+"penetrating ballistic trauma": ["ballistic-injury"]
+
+# basilar-skull-fracture
+"base of skull fracture": ["basilar-skull-fracture"]
+"bsf": ["basilar-skull-fracture"]
+"skull base fracture": ["basilar-skull-fracture"]
+"temporal bone fracture": ["basilar-skull-fracture"]
+
+# biliary-colic
+"gallbladder colic": ["biliary-colic"]
+"gallstone pain": ["biliary-colic"]
+"symptomatic cholelithiasis": ["biliary-colic"]
+
+# biological-mass-casualty
+"biological attack": ["biological-mass-casualty"]
+"bioterrorism mass casualty": ["biological-mass-casualty"]
+"bioweapon incident": ["biological-mass-casualty"]
+"infectious mass casualty": ["biological-mass-casualty"]
+
+# blast-lung-injury
+"blast overpressure injury": ["blast-lung-injury"]
+"bli": ["blast-lung-injury"]
+"primary blast injury lung": ["blast-lung-injury"]
+"pulmonary blast injury": ["blast-lung-injury"]
+
+# boerhaave-syndrome
+"effort rupture of esophagus": ["boerhaave-syndrome"]
+"esophageal rupture": ["boerhaave-syndrome"]
+"spontaneous esophageal perforation": ["boerhaave-syndrome"]
+
+# botulism
+"botulinum toxin poisoning": ["botulism"]
+"foodborne botulism": ["botulism"]
+"infant botulism": ["botulism"]
+"wound botulism": ["botulism"]
+
+# bronchiectasis-exacerbation
+"acute bronchiectasis exacerbation": ["bronchiectasis-exacerbation"]
+"bronchiectasis flare": ["bronchiectasis-exacerbation"]
+"infective bronchiectasis exacerbation": ["bronchiectasis-exacerbation"]
+
+# brown-sequard-syndrome
+"brown-sequard": ["brown-sequard-syndrome"]
+"lateral cord syndrome": ["brown-sequard-syndrome"]
+"spinal cord hemisection syndrome": ["brown-sequard-syndrome"]
+
+# burn-wound-management
+"burn care": ["burn-wound-management"]
+"thermal burn": ["burn-wound-management"]
+
+# carcinoid-crisis
+"carcinoid crisis perioperative": ["carcinoid-crisis"]
+"carcinoid syndrome acute": ["carcinoid-crisis"]
+"neuroendocrine tumor crisis": ["carcinoid-crisis"]
+"serotonin storm neuroendocrine": ["carcinoid-crisis"]
+
+# cardiac-contusion
+"bci": ["cardiac-contusion"]
+"blunt cardiac injury": ["cardiac-contusion"]
+"blunt myocardial injury": ["cardiac-contusion"]
+"myocardial contusion": ["cardiac-contusion"]
+
+# cardioversion-defibrillation
+"dccv": ["cardioversion-defibrillation"]
+"defibrillation": ["cardioversion-defibrillation"]
+"electrical cardioversion": ["cardioversion-defibrillation"]
+"synchronized cardioversion": ["cardioversion-defibrillation"]
+
+# catatonic-emergency
+"catatonic excitement": ["catatonic-emergency"]
+"catatonic state": ["catatonic-emergency"]
+"catatonic stupor": ["catatonic-emergency"]
+"lethal catatonia": ["catatonic-emergency"]
+"malignant catatonia": ["catatonic-emergency"]
+
+# caustic-esophageal-injury
+"acid ingestion": ["caustic-esophageal-injury"]
+"alkali ingestion": ["caustic-esophageal-injury"]
+"caustic ingestion": ["caustic-esophageal-injury"]
+"corrosive esophageal injury": ["caustic-esophageal-injury"]
+"lye ingestion": ["caustic-esophageal-injury"]
+
+# central-cord-syndrome
+"ccs": ["central-cord-syndrome"]
+"central cervical cord syndrome": ["central-cord-syndrome"]
+"incomplete spinal cord injury - central": ["central-cord-syndrome"]
+
+# central-venous-access
+"central line": ["central-venous-access"]
+"central venous catheter": ["central-venous-access"]
+"central venous catheterization": ["central-venous-access"]
+"cvc": ["central-venous-access"]
+"triple lumen catheter": ["central-venous-access"]
+
+# cerebral-venous-thrombosis
+"cerebral venous sinus thrombosis": ["cerebral-venous-thrombosis"]
+"cvst": ["cerebral-venous-thrombosis"]
+"cvt": ["cerebral-venous-thrombosis"]
+"dural sinus thrombosis": ["cerebral-venous-thrombosis"]
+
+# cervical-spine-fracture
+"c-spine fracture": ["cervical-spine-fracture"]
+"cervical vertebral fracture": ["cervical-spine-fracture"]
+"hangman fracture": ["cervical-spine-fracture"]
+"jefferson fracture": ["cervical-spine-fracture"]
+"neck fracture": ["cervical-spine-fracture"]
+"odontoid fracture": ["cervical-spine-fracture"]
+
+# chemical-eye-burn
+"acid eye burn": ["chemical-eye-burn"]
+"alkali eye burn": ["chemical-eye-burn"]
+"chemical conjunctivitis": ["chemical-eye-burn"]
+"chemical ocular injury": ["chemical-eye-burn"]
+"ocular chemical exposure": ["chemical-eye-burn"]
+
+# chest-pain
+"anterior chest pain": ["chest-pain"]
+"chest discomfort": ["chest-pain"]
+"chest pain": ["chest-pain"]
+"thoracic pain": ["chest-pain"]
+
+# chylothorax
+"chyle leak": ["chylothorax"]
+"chylous effusion": ["chylothorax"]
+"chylous pleural effusion": ["chylothorax"]
+"thoracic duct injury": ["chylothorax"]
+
+# clostridium-difficile-severe
+"c. difficile colitis": ["clostridium-difficile-severe"]
+"fulminant cdi": ["clostridium-difficile-severe"]
+"pseudomembranous colitis": ["clostridium-difficile-severe"]
+"severe c. diff": ["clostridium-difficile-severe"]
+
+# coagulopathy-of-trauma
+"acute traumatic coagulopathy": ["coagulopathy-of-trauma"]
+"atc": ["coagulopathy-of-trauma"]
+"tic": ["coagulopathy-of-trauma"]
+"trauma coagulopathy": ["coagulopathy-of-trauma"]
+"trauma-induced coagulopathy": ["coagulopathy-of-trauma"]
+
+# commotio-cordis
+"blunt impact cardiac arrest": ["commotio-cordis"]
+"cardiac concussion": ["commotio-cordis"]
+"commotio cordis syndrome": ["commotio-cordis"]
+
+# complete-heart-block
+"3rd degree heart block": ["complete-heart-block"]
+"chb": ["complete-heart-block"]
+"complete av block": ["complete-heart-block"]
+"third-degree av block": ["complete-heart-block"]
+
+# corneal-ulcer
+"bacterial keratitis": ["corneal-ulcer"]
+"corneal ulceration": ["corneal-ulcer"]
+"infectious keratitis": ["corneal-ulcer"]
+"microbial keratitis": ["corneal-ulcer"]
+
+# covid-pneumonia-severe
+"coronavirus pneumonia": ["covid-pneumonia-severe"]
+"covid ards": ["covid-pneumonia-severe"]
+"covid pneumonia": ["covid-pneumonia-severe"]
+"sars-cov-2 pneumonia": ["covid-pneumonia-severe"]
+"severe covid-19": ["covid-pneumonia-severe"]
+
+# croup-adult
+"acute laryngotracheobronchitis adult": ["croup-adult"]
+"adult croup": ["croup-adult"]
+"laryngotracheitis adult": ["croup-adult"]
+"viral croup adult": ["croup-adult"]
+
+# diaphragmatic-rupture
+"diaphragm laceration": ["diaphragmatic-rupture"]
+"diaphragm tear": ["diaphragmatic-rupture"]
+"diaphragmatic hernia traumatic": ["diaphragmatic-rupture"]
+"diaphragmatic injury": ["diaphragmatic-rupture"]
+
+# disseminated-intravascular-coagulation
+"consumptive coagulopathy": ["disseminated-intravascular-coagulation"]
+"defibrination syndrome": ["disseminated-intravascular-coagulation"]
+"dic": ["disseminated-intravascular-coagulation"]
+
+# dizziness-vertigo
+"disequilibrium": ["dizziness-vertigo"]
+"dizziness": ["dizziness-vertigo"]
+"lightheadedness": ["dizziness-vertigo"]
+"off balance": ["dizziness-vertigo"]
+"room spinning": ["dizziness-vertigo"]
+"unsteady": ["dizziness-vertigo"]
+"vertigo": ["dizziness-vertigo"]
+
+# drug-hypersensitivity-syndrome
+"dihs": ["drug-hypersensitivity-syndrome"]
+"dress syndrome": ["drug-hypersensitivity-syndrome"]
+"drug hypersensitivity syndrome": ["drug-hypersensitivity-syndrome"]
+"drug-induced hypersensitivity syndrome": ["drug-hypersensitivity-syndrome"]
+
+# dyspnea
+"air hunger": ["dyspnea"]
+"breathlessness": ["dyspnea"]
+"difficulty breathing": ["dyspnea"]
+"respiratory distress": ["dyspnea"]
+"shortness of breath": ["dyspnea"]
+"sob": ["dyspnea"]
+
+# emergency-delivery
+"ed delivery": ["emergency-delivery"]
+"emergency vaginal delivery": ["emergency-delivery"]
+"precipitous birth": ["emergency-delivery"]
+"precipitous delivery": ["emergency-delivery"]
+
+# emergency-pericardiocentesis
+"needle pericardiocentesis": ["emergency-pericardiocentesis"]
+"pericardial drainage": ["emergency-pericardiocentesis"]
+"pericardial tap": ["emergency-pericardiocentesis"]
+"pericardiocentesis": ["emergency-pericardiocentesis"]
+
+# emergency-thoracotomy-approach
+"anterolateral thoracotomy": ["emergency-thoracotomy-approach"]
+"clamshell thoracotomy": ["emergency-thoracotomy-approach"]
+"ed thoracotomy approach": ["emergency-thoracotomy-approach"]
+"left thoracotomy": ["emergency-thoracotomy-approach"]
+
+# emergency-venous-cutdown
+"saphenous vein cutdown": ["emergency-venous-cutdown"]
+"surgical venous access": ["emergency-venous-cutdown"]
+"venotomy": ["emergency-venous-cutdown"]
+"venous cutdown": ["emergency-venous-cutdown"]
+
+# empyema
+"empyema": ["empyema"]
+"pleural empyema": ["empyema"]
+"purulent pleuritis": ["empyema"]
+"pyothorax": ["empyema"]
+"thoracic empyema": ["empyema"]
+
+# endophthalmitis
+"endogenous endophthalmitis": ["endophthalmitis"]
+"intraocular infection": ["endophthalmitis"]
+"post-operative endophthalmitis": ["endophthalmitis"]
+
+# epididymitis-acute
+"epididymitis": ["epididymitis-acute"]
+"epididymo-orchitis": ["epididymitis-acute"]
+"scrotal infection": ["epididymitis-acute"]
+
+# epiglottitis-adult
+"acute epiglottitis in adults": ["epiglottitis-adult"]
+"supraglottitis": ["epiglottitis-adult"]
+
+# erythema-multiforme
+"em": ["erythema-multiforme"]
+"em major": ["erythema-multiforme"]
+"em minor": ["erythema-multiforme"]
+"erythema multiforme major": ["erythema-multiforme"]
+"erythema multiforme minor": ["erythema-multiforme"]
+
+# femur-fracture
+"femoral neck fracture": ["femur-fracture"]
+"femoral shaft fracture": ["femur-fracture"]
+"hip fracture": ["femur-fracture"]
+"intertrochanteric fracture": ["femur-fracture"]
+"subtrochanteric fracture": ["femur-fracture"]
+
+# fever-undifferentiated
+"febrile": ["fever-undifferentiated"]
+"fever": ["fever-undifferentiated"]
+"fever of unknown source": ["fever-undifferentiated"]
+"pyrexia": ["fever-undifferentiated"]
+"undifferentiated fever": ["fever-undifferentiated"]
+
+# flail-chest
+"flail segment": ["flail-chest"]
+"paradoxical chest wall movement": ["flail-chest"]
+"stove-in chest": ["flail-chest"]
+
+# fracture-reduction
+"closed reduction": ["fracture-reduction"]
+"dislocation reduction": ["fracture-reduction"]
+"fracture manipulation": ["fracture-reduction"]
+"joint reduction": ["fracture-reduction"]
+
+# gastrointestinal-bleeding-approach
+"bloody stool": ["gastrointestinal-bleeding-approach"]
+"gi bleed": ["gastrointestinal-bleeding-approach"]
+"gi hemorrhage": ["gastrointestinal-bleeding-approach"]
+"hematemesis": ["gastrointestinal-bleeding-approach"]
+"hematochezia": ["gastrointestinal-bleeding-approach"]
+"lower gi bleed": ["gastrointestinal-bleeding-approach"]
+"melena": ["gastrointestinal-bleeding-approach"]
+"rectal bleeding": ["gastrointestinal-bleeding-approach"]
+"upper gi bleed": ["gastrointestinal-bleeding-approach"]
+"vomiting blood": ["gastrointestinal-bleeding-approach"]
+
+# hanging-strangulation
+"asphyxia by hanging": ["hanging-strangulation"]
+"incomplete hanging": ["hanging-strangulation"]
+"judicial hanging": ["hanging-strangulation"]
+"ligature strangulation": ["hanging-strangulation"]
+"manual strangulation": ["hanging-strangulation"]
+"near-hanging": ["hanging-strangulation"]
+
+# headache-acute
+"cephalgia": ["headache-acute"]
+"head pain": ["headache-acute"]
+"headache": ["headache-acute"]
+"thunderclap headache": ["headache-acute"]
+"worst headache of life": ["headache-acute"]
+
+# hemolytic-uremic-syndrome
+"ahus": ["hemolytic-uremic-syndrome"]
+"atypical hus": ["hemolytic-uremic-syndrome"]
+"diarrhea-associated hus": ["hemolytic-uremic-syndrome"]
+"hus": ["hemolytic-uremic-syndrome"]
+"stec-hus": ["hemolytic-uremic-syndrome"]
+"typical hus": ["hemolytic-uremic-syndrome"]
+
+# hemothorax
+"massive hemothorax": ["hemothorax"]
+"retained hemothorax": ["hemothorax"]
+"traumatic hemothorax": ["hemothorax"]
+
+# henoch-schonlein-purpura
+"anaphylactoid purpura": ["henoch-schonlein-purpura"]
+"hsp": ["henoch-schonlein-purpura"]
+"iga vasculitis": ["henoch-schonlein-purpura"]
+"schonlein-henoch purpura": ["henoch-schonlein-purpura"]
+
+# heparin-induced-thrombocytopenia
+"heparin-induced thrombocytopenia and thrombosis": ["heparin-induced-thrombocytopenia"]
+"hit": ["heparin-induced-thrombocytopenia"]
+"hit type ii": ["heparin-induced-thrombocytopenia"]
+"hitt": ["heparin-induced-thrombocytopenia"]
+
+# hepatic-abscess
+"amebic liver abscess": ["hepatic-abscess"]
+"hepatic abscess": ["hepatic-abscess"]
+"liver abscess": ["hepatic-abscess"]
+"pyogenic liver abscess": ["hepatic-abscess"]
+
+# herpes-simplex-disseminated
+"disseminated hsv": ["herpes-simplex-disseminated"]
+"hsv viremia": ["herpes-simplex-disseminated"]
+"systemic herpes simplex": ["herpes-simplex-disseminated"]
+
+# herpes-zoster-disseminated
+"disseminated shingles": ["herpes-zoster-disseminated"]
+"disseminated vzv": ["herpes-zoster-disseminated"]
+"generalized zoster": ["herpes-zoster-disseminated"]
+
+# high-pressure-injection-injury
+"grease gun injury": ["high-pressure-injection-injury"]
+"hydraulic injection injury": ["high-pressure-injection-injury"]
+"industrial injection injury": ["high-pressure-injection-injury"]
+"paint gun injection": ["high-pressure-injection-injury"]
+
+# hollow-viscus-injury
+"bowel injury traumatic": ["hollow-viscus-injury"]
+"intestinal perforation traumatic": ["hollow-viscus-injury"]
+"mesenteric injury": ["hollow-viscus-injury"]
+"traumatic bowel perforation": ["hollow-viscus-injury"]
+
+# hypercalcemia-emergency
+"calcium crisis": ["hypercalcemia-emergency"]
+"hypercalcemic crisis": ["hypercalcemia-emergency"]
+"malignant hypercalcemia": ["hypercalcemia-emergency"]
+"severe hypercalcemia": ["hypercalcemia-emergency"]
+
+# hypernatremia-severe
+"acute hypernatremia": ["hypernatremia-severe"]
+"hypernatremic dehydration": ["hypernatremia-severe"]
+"severe hypernatremia": ["hypernatremia-severe"]
+"sodium excess": ["hypernatremia-severe"]
+
+# hypertrophic-cardiomyopathy-emergency
+"hcm": ["hypertrophic-cardiomyopathy-emergency"]
+"hocm": ["hypertrophic-cardiomyopathy-emergency"]
+"hypertrophic obstructive cardiomyopathy": ["hypertrophic-cardiomyopathy-emergency"]
+"idiopathic hypertrophic subaortic stenosis": ["hypertrophic-cardiomyopathy-emergency"]
+"ihss": ["hypertrophic-cardiomyopathy-emergency"]
+
+# hyphema
+"anterior chamber hemorrhage": ["hyphema"]
+"blood in anterior chamber": ["hyphema"]
+"traumatic hyphema": ["hyphema"]
+
+# hypocalcemia-emergency
+"acute hypocalcemia": ["hypocalcemia-emergency"]
+"hypocalcemic crisis": ["hypocalcemia-emergency"]
+"severe hypocalcemia": ["hypocalcemia-emergency"]
+"symptomatic hypocalcemia": ["hypocalcemia-emergency"]
+
+# hyponatremia-severe
+"acute hyponatremia": ["hyponatremia-severe"]
+"hyponatremic encephalopathy": ["hyponatremia-severe"]
+"severe hyponatremia": ["hyponatremia-severe"]
+"symptomatic hyponatremia": ["hyponatremia-severe"]
+"water intoxication": ["hyponatremia-severe"]
+
+# hypophosphatemia-severe
+"hypophosphatemia": ["hypophosphatemia-severe"]
+"phosphate depletion": ["hypophosphatemia-severe"]
+"refeeding hypophosphatemia": ["hypophosphatemia-severe"]
+"severe phosphorus deficiency": ["hypophosphatemia-severe"]
+
+# incarcerated-hernia
+"incarcerated inguinal hernia": ["incarcerated-hernia"]
+"incarcerated ventral hernia": ["incarcerated-hernia"]
+"irreducible hernia": ["incarcerated-hernia"]
+"strangulated hernia": ["incarcerated-hernia"]
+
+# infective-endocarditis-acute
+"acute ie": ["infective-endocarditis-acute"]
+"bacterial endocarditis": ["infective-endocarditis-acute"]
+"ie": ["infective-endocarditis-acute"]
+"sbe": ["infective-endocarditis-acute"]
+"subacute bacterial endocarditis": ["infective-endocarditis-acute"]
+
+# influenza-pneumonia-severe
+"flu pneumonia": ["influenza-pneumonia-severe"]
+"h1n1 pneumonia": ["influenza-pneumonia-severe"]
+"influenza ards": ["influenza-pneumonia-severe"]
+"influenza pneumonia": ["influenza-pneumonia-severe"]
+"viral influenza pneumonia": ["influenza-pneumonia-severe"]
+
+# inhalation-injury
+"airway burn": ["inhalation-injury"]
+"inhalation burn": ["inhalation-injury"]
+"smoke inhalation": ["inhalation-injury"]
+"smoke inhalation injury": ["inhalation-injury"]
+
+# intraosseous-access
+"ez-io": ["intraosseous-access"]
+"intraosseous infusion": ["intraosseous-access"]
+"io access": ["intraosseous-access"]
+"io line": ["intraosseous-access"]
+"io needle": ["intraosseous-access"]
+
+# ischemic-colitis
+"ci": ["ischemic-colitis"]
+"colon ischemia": ["ischemic-colitis"]
+"colonic ischemia": ["ischemic-colitis"]
+"mesenteric ischemia of colon": ["ischemic-colitis"]
+
+# joint-arthrocentesis
+"arthrocentesis": ["joint-arthrocentesis"]
+"joint aspiration": ["joint-arthrocentesis"]
+"joint tap": ["joint-arthrocentesis"]
+"synovial fluid analysis": ["joint-arthrocentesis"]
+
+# lactic-acidosis
+"elevated lactate": ["lactic-acidosis"]
+"hyperlactatemia": ["lactic-acidosis"]
+"type a lactic acidosis": ["lactic-acidosis"]
+"type b lactic acidosis": ["lactic-acidosis"]
+
+# laryngeal-trauma
+"blunt neck trauma": ["laryngeal-trauma"]
+"cricoid fracture": ["laryngeal-trauma"]
+"laryngeal fracture": ["laryngeal-trauma"]
+"laryngotracheal injury": ["laryngeal-trauma"]
+"thyroid cartilage fracture": ["laryngeal-trauma"]
+
+# le-fort-fractures
+"craniofacial dissociation": ["le-fort-fractures"]
+"le fort i": ["le-fort-fractures"]
+"le fort ii": ["le-fort-fractures"]
+"le fort iii": ["le-fort-fractures"]
+"maxillary fractures": ["le-fort-fractures"]
+"midface fractures": ["le-fort-fractures"]
+
+# leptospirosis
+"canicola fever": ["leptospirosis"]
+"icterohemorrhagic leptospirosis": ["leptospirosis"]
+"mud fever": ["leptospirosis"]
+"weil disease": ["leptospirosis"]
+"weil syndrome": ["leptospirosis"]
+
+# liver-laceration
+"hepatic hemorrhage": ["liver-laceration"]
+"hepatic laceration": ["liver-laceration"]
+"hepatic trauma": ["liver-laceration"]
+"liver injury": ["liver-laceration"]
+"liver rupture": ["liver-laceration"]
+
+# long-qt-syndrome
+"acquired long qt": ["long-qt-syndrome"]
+"congenital lqts": ["long-qt-syndrome"]
+"lqts": ["long-qt-syndrome"]
+"prolonged qt": ["long-qt-syndrome"]
+"romano-ward syndrome": ["long-qt-syndrome"]
+
+# lumbar-puncture-emergency
+"csf analysis": ["lumbar-puncture-emergency"]
+"diagnostic lumbar puncture": ["lumbar-puncture-emergency"]
+"lp": ["lumbar-puncture-emergency"]
+"lumbar puncture": ["lumbar-puncture-emergency"]
+"spinal tap": ["lumbar-puncture-emergency"]
+
+# lung-abscess
+"lung abscess primary": ["lung-abscess"]
+"lung abscess secondary": ["lung-abscess"]
+"necrotizing pneumonia": ["lung-abscess"]
+"pulmonary abscess": ["lung-abscess"]
+
+# mallory-weiss-tear
+"gastroesophageal junction tear": ["mallory-weiss-tear"]
+"mallory-weiss syndrome": ["mallory-weiss-tear"]
+"mwt": ["mallory-weiss-tear"]
+
+# mangled-extremity
+"crush injury extremity": ["mangled-extremity"]
+"limb-threatening injury": ["mangled-extremity"]
+"mangled limb": ["mangled-extremity"]
+"mess score injury": ["mangled-extremity"]
+
+# massive-pulmonary-embolism
+"hemodynamically significant pe": ["massive-pulmonary-embolism"]
+"high-risk pe": ["massive-pulmonary-embolism"]
+"massive pe": ["massive-pulmonary-embolism"]
+"saddle embolus": ["massive-pulmonary-embolism"]
+
+# meningococcemia
+"meningococcal disease": ["meningococcemia"]
+"meningococcal septicemia": ["meningococcemia"]
+"neisseria meningitidis bacteremia": ["meningococcemia"]
+"waterhouse-friderichsen syndrome": ["meningococcemia"]
+
+# metabolic-acidosis-evaluation
+"agma": ["metabolic-acidosis-evaluation"]
+"anion gap metabolic acidosis": ["metabolic-acidosis-evaluation"]
+"metabolic acidosis workup": ["metabolic-acidosis-evaluation"]
+"nagma": ["metabolic-acidosis-evaluation"]
+"non-anion gap metabolic acidosis": ["metabolic-acidosis-evaluation"]
+
+# mitral-valve-prolapse-complications
+"acute mitral regurgitation from mvp": ["mitral-valve-prolapse-complications"]
+"chordae tendineae rupture": ["mitral-valve-prolapse-complications"]
+"flail mitral leaflet": ["mitral-valve-prolapse-complications"]
+"mvp complications": ["mitral-valve-prolapse-complications"]
+
+# myasthenia-gravis-crisis
+"cholinergic crisis": ["myasthenia-gravis-crisis"]
+"mg crisis": ["myasthenia-gravis-crisis"]
+"myasthenia gravis crisis": ["myasthenia-gravis-crisis"]
+"myasthenic exacerbation": ["myasthenia-gravis-crisis"]
+
+# myxedema-coma
+"decompensated hypothyroidism": ["myxedema-coma"]
+"hypothyroid crisis": ["myxedema-coma"]
+"myxedema crisis": ["myxedema-coma"]
+"severe hypothyroidism": ["myxedema-coma"]
+
+# necrotizing-fasciitis-skin-presentation
+"flesh-eating disease": ["necrotizing-fasciitis-skin-presentation"]
+"fournier gangrene": ["necrotizing-fasciitis-skin-presentation"]
+"necrotizing fasciitis": ["necrotizing-fasciitis-skin-presentation"]
+"necrotizing soft tissue infection": ["necrotizing-fasciitis-skin-presentation"]
+"nsti": ["necrotizing-fasciitis-skin-presentation"]
+
+# needle-cricothyrotomy
+"needle cric": ["needle-cricothyrotomy"]
+"percutaneous cricothyroidotomy": ["needle-cricothyrotomy"]
+"percutaneous transtracheal jet ventilation": ["needle-cricothyrotomy"]
+"ptjv": ["needle-cricothyrotomy"]
+
+# needle-decompression
+"ncd": ["needle-decompression"]
+"needle chest decompression": ["needle-decompression"]
+"needle thoracentesis": ["needle-decompression"]
+"needle thoracostomy": ["needle-decompression"]
+
+# neonatal-resuscitation
+"delivery room resuscitation": ["neonatal-resuscitation"]
+"neonatal resuscitation program": ["neonatal-resuscitation"]
+"newborn resuscitation": ["neonatal-resuscitation"]
+"nrp": ["neonatal-resuscitation"]
+
+# normal-pressure-hydrocephalus-acute
+"inph acute": ["normal-pressure-hydrocephalus-acute"]
+"normal pressure hydrocephalus emergency": ["normal-pressure-hydrocephalus-acute"]
+"nph acute": ["normal-pressure-hydrocephalus-acute"]
+"nph shunt failure": ["normal-pressure-hydrocephalus-acute"]
+
+# ogilvie-syndrome
+"acpo": ["ogilvie-syndrome"]
+"colonic pseudo-obstruction": ["ogilvie-syndrome"]
+"ogilvie's syndrome": ["ogilvie-syndrome"]
+
+# orbital-blowout-fracture
+"blowout fracture": ["orbital-blowout-fracture"]
+"orbital floor fracture": ["orbital-blowout-fracture"]
+"orbital fracture": ["orbital-blowout-fracture"]
+"orbital wall fracture": ["orbital-blowout-fracture"]
+
+# orbital-cellulitis
+"orbital infection": ["orbital-cellulitis"]
+"post-septal cellulitis": ["orbital-cellulitis"]
+"postseptal cellulitis": ["orbital-cellulitis"]
+
+# oxygen-toxicity
+"hyperoxia": ["oxygen-toxicity"]
+"lorrain smith effect": ["oxygen-toxicity"]
+"oxygen-induced lung injury": ["oxygen-toxicity"]
+"paul bert effect": ["oxygen-toxicity"]
+"pulmonary oxygen toxicity": ["oxygen-toxicity"]
+
+# pacemaker-malfunction
+"failure to capture": ["pacemaker-malfunction"]
+"failure to sense": ["pacemaker-malfunction"]
+"pacemaker dysfunction": ["pacemaker-malfunction"]
+"pacemaker failure": ["pacemaker-malfunction"]
+"pacemaker-mediated tachycardia": ["pacemaker-malfunction"]
+
+# palpitations-evaluation
+"heart fluttering": ["palpitations-evaluation"]
+"heart pounding": ["palpitations-evaluation"]
+"heart racing": ["palpitations-evaluation"]
+"irregular heartbeat": ["palpitations-evaluation"]
+"palpitations": ["palpitations-evaluation"]
+"skipped beats": ["palpitations-evaluation"]
+
+# pancreatic-injury
+"pancreatic duct injury": ["pancreatic-injury"]
+"pancreatic laceration": ["pancreatic-injury"]
+"pancreatic transection": ["pancreatic-injury"]
+"pancreatic trauma": ["pancreatic-injury"]
+
+# paraphimosis
+"irreducible foreskin retraction": ["paraphimosis"]
+"trapped foreskin": ["paraphimosis"]
+
+# pediatric-fever-evaluation
+"febrile child": ["pediatric-fever-evaluation"]
+"febrile infant": ["pediatric-fever-evaluation"]
+"fever in children": ["pediatric-fever-evaluation"]
+"fever infant": ["pediatric-fever-evaluation"]
+"neonatal fever": ["pediatric-fever-evaluation"]
+"pediatric fever": ["pediatric-fever-evaluation"]
+
+# pediatric-sepsis
+"childhood sepsis": ["pediatric-sepsis"]
+"pediatric septic shock": ["pediatric-sepsis"]
+"pediatric severe sepsis": ["pediatric-sepsis"]
+
+# pemphigus-vulgaris
+"autoimmune blistering disease": ["pemphigus-vulgaris"]
+"pemphigus": ["pemphigus-vulgaris"]
+"pv": ["pemphigus-vulgaris"]
+
+# penile-fracture
+"broken penis": ["penile-fracture"]
+"fractured penis": ["penile-fracture"]
+"ruptured tunica albuginea": ["penile-fracture"]
+
+# perforated-peptic-ulcer
+"perforated duodenal ulcer": ["perforated-peptic-ulcer"]
+"perforated gastric ulcer": ["perforated-peptic-ulcer"]
+"ppu": ["perforated-peptic-ulcer"]
+
+# peripheral-arterial-disease-acute
+"acute arterial occlusion": ["peripheral-arterial-disease-acute"]
+"acute limb ischemia": ["peripheral-arterial-disease-acute"]
+"acute peripheral arterial ischemia": ["peripheral-arterial-disease-acute"]
+"ali": ["peripheral-arterial-disease-acute"]
+"thromboembolism of extremity": ["peripheral-arterial-disease-acute"]
+
+# pertussis-severe
+"bordetella pertussis infection": ["pertussis-severe"]
+"critical pertussis": ["pertussis-severe"]
+"malignant pertussis": ["pertussis-severe"]
+"whooping cough severe": ["pertussis-severe"]
+
+# pleural-effusion-emergency
+"hemothorax": ["pleural-effusion-emergency"]
+"malignant effusion acute": ["pleural-effusion-emergency"]
+"massive pleural effusion": ["pleural-effusion-emergency"]
+"parapneumonic effusion": ["pleural-effusion-emergency"]
+"tension hydrothorax": ["pleural-effusion-emergency"]
+
+# post-cardiac-arrest-syndrome
+"pcas": ["post-cardiac-arrest-syndrome"]
+"post-resuscitation syndrome": ["post-cardiac-arrest-syndrome"]
+"post-rosc care": ["post-cardiac-arrest-syndrome"]
+"return of spontaneous circulation management": ["post-cardiac-arrest-syndrome"]
+
+# posterior-reversible-encephalopathy-syndrome
+"hypertensive encephalopathy": ["posterior-reversible-encephalopathy-syndrome"]
+"pres": ["posterior-reversible-encephalopathy-syndrome"]
+"reversible posterior leukoencephalopathy": ["posterior-reversible-encephalopathy-syndrome"]
+"rpls": ["posterior-reversible-encephalopathy-syndrome"]
+
+# priapism
+"ischemic priapism": ["priapism"]
+"low-flow priapism": ["priapism"]
+"stuttering priapism": ["priapism"]
+
+# procedural-sedation
+"conscious sedation": ["procedural-sedation"]
+"ed sedation": ["procedural-sedation"]
+"moderate sedation": ["procedural-sedation"]
+"procedural sedation and analgesia": ["procedural-sedation"]
+"psa": ["procedural-sedation"]
+
+# prosthetic-valve-emergency
+"mechanical valve malfunction": ["prosthetic-valve-emergency"]
+"prosthetic valve dehiscence": ["prosthetic-valve-emergency"]
+"prosthetic valve dysfunction": ["prosthetic-valve-emergency"]
+"prosthetic valve thrombosis": ["prosthetic-valve-emergency"]
+"stuck valve": ["prosthetic-valve-emergency"]
+
+# pulmonary-hemorrhage
+"alveolar hemorrhage": ["pulmonary-hemorrhage"]
+"dah": ["pulmonary-hemorrhage"]
+"diffuse alveolar hemorrhage": ["pulmonary-hemorrhage"]
+"hemoptysis massive": ["pulmonary-hemorrhage"]
+"pulmonary hemorrhage": ["pulmonary-hemorrhage"]
+
+# pulmonary-hypertension-crisis
+"acute pulmonary hypertension decompensation": ["pulmonary-hypertension-crisis"]
+"pah crisis": ["pulmonary-hypertension-crisis"]
+"ph crisis": ["pulmonary-hypertension-crisis"]
+"pulmonary hypertensive crisis": ["pulmonary-hypertension-crisis"]
+"right heart failure from ph": ["pulmonary-hypertension-crisis"]
+
+# purpura-fulminans
+"infectious purpura fulminans": ["purpura-fulminans"]
+"neonatal purpura fulminans": ["purpura-fulminans"]
+"pf": ["purpura-fulminans"]
+"post-infectious purpura fulminans": ["purpura-fulminans"]
+
+# rabies-post-exposure
+"animal bite rabies prophylaxis": ["rabies-post-exposure"]
+"rabies exposure": ["rabies-post-exposure"]
+"rabies pep": ["rabies-post-exposure"]
+
+# rapid-sequence-intubation
+"crash airway induction": ["rapid-sequence-intubation"]
+"rapid sequence induction": ["rapid-sequence-intubation"]
+"rsi": ["rapid-sequence-intubation"]
+
+# rectal-foreign-body
+"anorectal foreign body": ["rectal-foreign-body"]
+"colorectal foreign body": ["rectal-foreign-body"]
+"retained rectal foreign body": ["rectal-foreign-body"]
+
+# renal-colic-complicated
+"complicated nephrolithiasis": ["renal-colic-complicated"]
+"infected obstructing stone": ["renal-colic-complicated"]
+"obstructive pyelonephritis": ["renal-colic-complicated"]
+"septic kidney stone": ["renal-colic-complicated"]
+
+# renal-trauma
+"kidney injury traumatic": ["renal-trauma"]
+"kidney laceration": ["renal-trauma"]
+"renal contusion": ["renal-trauma"]
+"renal laceration": ["renal-trauma"]
+"renal pedicle injury": ["renal-trauma"]
+
+# rhabdomyolysis-metabolic
+"crush syndrome metabolic": ["rhabdomyolysis-metabolic"]
+"exertional rhabdomyolysis": ["rhabdomyolysis-metabolic"]
+"muscle breakdown": ["rhabdomyolysis-metabolic"]
+"myoglobinuria": ["rhabdomyolysis-metabolic"]
+"rhabdomyolysis": ["rhabdomyolysis-metabolic"]
+
+# right-ventricular-failure
+"acute rv dysfunction": ["right-ventricular-failure"]
+"cor pulmonale acute": ["right-ventricular-failure"]
+"right heart failure": ["right-ventricular-failure"]
+"rv failure": ["right-ventricular-failure"]
+"rv infarction": ["right-ventricular-failure"]
+
+# rocky-mountain-spotted-fever
+"rickettsia rickettsii infection": ["rocky-mountain-spotted-fever"]
+"rmsf": ["rocky-mountain-spotted-fever"]
+"tick-borne spotted fever": ["rocky-mountain-spotted-fever"]
+
+# seizure-first-time
+"convulsion first episode": ["seizure-first-time"]
+"first seizure": ["seizure-first-time"]
+"new-onset seizure": ["seizure-first-time"]
+"seizure evaluation": ["seizure-first-time"]
+"unprovoked seizure": ["seizure-first-time"]
+
+# serum-sickness
+"immune complex disease": ["serum-sickness"]
+"serum sickness": ["serum-sickness"]
+"serum sickness-like reaction": ["serum-sickness"]
+"type iii hypersensitivity reaction": ["serum-sickness"]
+
+# shock-undifferentiated
+"cardiovascular collapse": ["shock-undifferentiated"]
+"circulatory failure": ["shock-undifferentiated"]
+"hemodynamic instability": ["shock-undifferentiated"]
+"hypotension": ["shock-undifferentiated"]
+"undifferentiated shock": ["shock-undifferentiated"]
+
+# sick-sinus-syndrome
+"bradycardia-tachycardia syndrome": ["sick-sinus-syndrome"]
+"sinus node dysfunction": ["sick-sinus-syndrome"]
+"snd": ["sick-sinus-syndrome"]
+"sss": ["sick-sinus-syndrome"]
+"tachy-brady syndrome": ["sick-sinus-syndrome"]
+
+# sigmoid-volvulus
+"colonic volvulus": ["sigmoid-volvulus"]
+"sigmoid colon volvulus": ["sigmoid-volvulus"]
+
+# small-bowel-volvulus
+"midgut volvulus": ["small-bowel-volvulus"]
+"sbv": ["small-bowel-volvulus"]
+"small intestinal volvulus": ["small-bowel-volvulus"]
+
+# splenic-laceration
+"delayed splenic rupture": ["splenic-laceration"]
+"spleen laceration": ["splenic-laceration"]
+"splenic injury": ["splenic-laceration"]
+"splenic rupture": ["splenic-laceration"]
+"splenic trauma": ["splenic-laceration"]
+
+# spontaneous-bacterial-peritonitis
+"primary peritonitis": ["spontaneous-bacterial-peritonitis"]
+
+# spontaneous-bacterial-peritonitis-infectious
+"primary bacterial peritonitis": ["spontaneous-bacterial-peritonitis-infectious"]
+
+# stanford-b-aortic-dissection
+"debakey type iii dissection": ["stanford-b-aortic-dissection"]
+"descending aortic dissection": ["stanford-b-aortic-dissection"]
+"tbad": ["stanford-b-aortic-dissection"]
+"type b dissection": ["stanford-b-aortic-dissection"]
+
+# supracondylar-fracture
+"elbow fracture pediatric": ["supracondylar-fracture"]
+"extension-type supracondylar fracture": ["supracondylar-fracture"]
+"supracondylar fracture": ["supracondylar-fracture"]
+
+# syncope
+"blackout": ["syncope"]
+"fainting": ["syncope"]
+"loc": ["syncope"]
+"loss of consciousness": ["syncope"]
+"passing out": ["syncope"]
+"syncope": ["syncope"]
+
+# takotsubo-cardiomyopathy
+"apical ballooning syndrome": ["takotsubo-cardiomyopathy"]
+"broken heart syndrome": ["takotsubo-cardiomyopathy"]
+"stress cardiomyopathy": ["takotsubo-cardiomyopathy"]
+"takotsubo syndrome": ["takotsubo-cardiomyopathy"]
+
+# targeted-temperature-management
+"post-arrest cooling": ["targeted-temperature-management"]
+"temperature management": ["targeted-temperature-management"]
+"therapeutic hypothermia": ["targeted-temperature-management"]
+"ttm": ["targeted-temperature-management"]
+
+# temporal-lobe-epilepsy-status
+"complex partial status epilepticus": ["temporal-lobe-epilepsy-status"]
+"focal status epilepticus": ["temporal-lobe-epilepsy-status"]
+"nonconvulsive status epilepticus temporal": ["temporal-lobe-epilepsy-status"]
+"temporal lobe status epilepticus": ["temporal-lobe-epilepsy-status"]
+
+# thermal-burns
+"burn trauma": ["thermal-burns"]
+"contact burn": ["thermal-burns"]
+"major burn": ["thermal-burns"]
+
+# thrombotic-thrombocytopenic-purpura
+"acquired ttp": ["thrombotic-thrombocytopenic-purpura"]
+"immune ttp": ["thrombotic-thrombocytopenic-purpura"]
+"ittp": ["thrombotic-thrombocytopenic-purpura"]
+"moschcowitz syndrome": ["thrombotic-thrombocytopenic-purpura"]
+"ttp": ["thrombotic-thrombocytopenic-purpura"]
+
+# torsades-de-pointes
+"polymorphic vt with prolonged qt": ["torsades-de-pointes"]
+"tdp": ["torsades-de-pointes"]
+"twisting of the points": ["torsades-de-pointes"]
+
+# toxic-epidermal-necrolysis-management
+"drug-induced epidermal necrolysis": ["toxic-epidermal-necrolysis-management"]
+"lyell syndrome": ["toxic-epidermal-necrolysis-management"]
+"ten": ["toxic-epidermal-necrolysis-management"]
+"ten management": ["toxic-epidermal-necrolysis-management"]
+
+# toxic-megacolon
+"acute toxic colitis with megacolon": ["toxic-megacolon"]
+"toxic colonic dilation": ["toxic-megacolon"]
+
+# tracheobronchial-injury
+"airway disruption": ["tracheobronchial-injury"]
+"bronchial rupture": ["tracheobronchial-injury"]
+"bronchial transection": ["tracheobronchial-injury"]
+"tbi airway": ["tracheobronchial-injury"]
+"tracheal tear": ["tracheobronchial-injury"]
+
+# transcutaneous-pacing
+"external pacing": ["transcutaneous-pacing"]
+"noninvasive pacing": ["transcutaneous-pacing"]
+"tcp": ["transcutaneous-pacing"]
+"transcutaneous cardiac pacing": ["transcutaneous-pacing"]
+
+# transient-ischemic-attack
+"mini-stroke": ["transient-ischemic-attack"]
+"tia": ["transient-ischemic-attack"]
+"transient cerebral ischemia": ["transient-ischemic-attack"]
+
+# traumatic-amputation
+"digit amputation": ["traumatic-amputation"]
+"extremity amputation": ["traumatic-amputation"]
+"field amputation": ["traumatic-amputation"]
+"limb amputation traumatic": ["traumatic-amputation"]
+
+# trigeminal-neuralgia-emergency
+"status trigeminus": ["trigeminal-neuralgia-emergency"]
+"tic douloureux": ["trigeminal-neuralgia-emergency"]
+"tn exacerbation": ["trigeminal-neuralgia-emergency"]
+"trigeminal neuralgia crisis": ["trigeminal-neuralgia-emergency"]
+"trigeminal neuralgia emergency": ["trigeminal-neuralgia-emergency"]
+
+# tube-thoracostomy
+"chest drain": ["tube-thoracostomy"]
+"chest tube": ["tube-thoracostomy"]
+"icd": ["tube-thoracostomy"]
+"intercostal drain": ["tube-thoracostomy"]
+"thoracostomy tube": ["tube-thoracostomy"]
+
+# tuberculosis-active-emergency
+"active tb": ["tuberculosis-active-emergency"]
+"mycobacterium tuberculosis": ["tuberculosis-active-emergency"]
+"pulmonary tb": ["tuberculosis-active-emergency"]
+"tb emergency": ["tuberculosis-active-emergency"]
+
+# varicella-zoster-immunocompromised
+"chickenpox immunosuppressed": ["varicella-zoster-immunocompromised"]
+"disseminated zoster": ["varicella-zoster-immunocompromised"]
+"shingles immunocompromised": ["varicella-zoster-immunocompromised"]
+"vzv in immunocompromised": ["varicella-zoster-immunocompromised"]
+
+# vascular-injury-extremity
+"arterial injury extremity": ["vascular-injury-extremity"]
+"extremity vascular injury": ["vascular-injury-extremity"]
+"peripheral vascular trauma": ["vascular-injury-extremity"]
+"traumatic arterial occlusion": ["vascular-injury-extremity"]
+
+# ventilator-associated-pneumonia
+"icu-acquired pneumonia": ["ventilator-associated-pneumonia"]
+"nosocomial pneumonia ventilated": ["ventilator-associated-pneumonia"]
+"vap": ["ventilator-associated-pneumonia"]
+"ventilator pneumonia": ["ventilator-associated-pneumonia"]
+
+# video-laryngoscopy
+"c-mac": ["video-laryngoscopy"]
+"glidescope": ["video-laryngoscopy"]
+"indirect laryngoscopy": ["video-laryngoscopy"]
+"mcgrath": ["video-laryngoscopy"]
+"video-assisted intubation": ["video-laryngoscopy"]
+"vl": ["video-laryngoscopy"]
+
+# weakness-acute
+"acute weakness": ["weakness-acute"]
+"can't move": ["weakness-acute"]
+"generalized weakness": ["weakness-acute"]
+"motor deficit": ["weakness-acute"]
+"paralysis": ["weakness-acute"]
+"paresis": ["weakness-acute"]
+"weakness": ["weakness-acute"]
+
+# wpw-syndrome
+"ventricular pre-excitation syndrome": ["wpw-syndrome"]
+"wolff-parkinson-white": ["wpw-syndrome"]
+"wpw": ["wpw-syndrome"]
+"wpw pattern": ["wpw-syndrome"]
