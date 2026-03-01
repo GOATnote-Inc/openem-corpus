@@ -14,7 +14,7 @@
 #   openem_categories: Corresponding OpenEM category(ies)
 #   weight: Approximate board exam weight (proportion, sums to ~1.0)
 #   target_conditions: Target number of OpenEM conditions
-#   current_conditions: Count as of v0.3.0 (185 total)
+#   current_conditions: Count as of v0.4.0 (363 total)
 #   delta: Conditions to add
 #   priority: P0 (immediate), P1 (next), P2 (final)
 #   notes: Mapping rationale
