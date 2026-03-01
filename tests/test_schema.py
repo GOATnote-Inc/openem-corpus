@@ -49,6 +49,7 @@ VALID_CATEGORIES = [
     "allergic-immunologic",
     "disaster-mci",
     "procedural",
+    "presentations",
 ]
 
 VALID_TRACKS = ["tier1", "tier2"]
