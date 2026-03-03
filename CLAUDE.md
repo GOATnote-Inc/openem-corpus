@@ -83,7 +83,7 @@ Four conditions added to fill critical coverage gaps: foreign-body-aspiration, s
 - **procedural** (7 conditions): resuscitative-thoracotomy, perimortem-cesarean-delivery, lateral-canthotomy, difficult-airway-management, breech-precipitous-delivery, surgical-cricothyrotomy, reboa
 - **HALO high-acuity** (15 conditions): aortic-transection, fat-embolism-syndrome, air-embolism, spontaneous-coronary-artery-dissection, hemorrhagic-stroke, necrotizing-enterocolitis, inborn-errors-metabolic-crisis, pheochromocytoma-crisis, toxic-shock-syndrome, cavernous-sinus-thrombosis, massive-hemoptysis, retrobulbar-hemorrhage, tracheal-disruption, esophageal-foreign-body-impaction, malignant-otitis-externa
 
-Total corpus: 185 conditions across 20 categories. New source type `consensus-statement` added to schema.
+Total corpus: 363 conditions across 21 categories (185 base + 178 expansion). New source type `consensus-statement` added to schema.
 
 ### Safety Annotations
 
