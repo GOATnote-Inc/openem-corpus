@@ -2,6 +2,11 @@
 # Install: pip install pre-commit && pre-commit install
 # Manual run: pre-commit run --all-files
 
+# Generated data and index artifacts are excluded from all hooks.
+# Corpus markdown files (corpus/) are in scope for whitespace hooks
+# but not ruff (ruff only targets Python files).
+exclude: (?x)^(data/index/|fhir/bundles/)
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
@@ -16,10 +21,10 @@ repos:
       - id: detect-private-key
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.9
+    rev: v0.9.10
     hooks:
       - id: ruff
         name: "Ruff linting"
-        args: [--fix, --exit-non-zero-on-fix]
+        args: [--fix]
       - id: ruff-format
         name: "Ruff formatting"
