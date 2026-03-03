@@ -66,19 +66,21 @@ def extract_class_a_failures(result_path: Path) -> list[dict]:
                 if judge_reasoning:
                     break
 
-        failures.append({
-            "condition": condition,
-            "scenario_id": scenario.get("scenario_id", ""),
-            "failure_rate": failure_rate,
-            "trials_run": trials_run,
-            "trials_failed": trials_failed,
-            "first_failure_turn": first_failure_turn,
-            "failure_mode": failure_mode,
-            "judge_reasoning": judge_reasoning,
-            "model": model,
-            "mode": mode,
-            "source_file": str(result_path),
-        })
+        failures.append(
+            {
+                "condition": condition,
+                "scenario_id": scenario.get("scenario_id", ""),
+                "failure_rate": failure_rate,
+                "trials_run": trials_run,
+                "trials_failed": trials_failed,
+                "first_failure_turn": first_failure_turn,
+                "failure_mode": failure_mode,
+                "judge_reasoning": judge_reasoning,
+                "model": model,
+                "mode": mode,
+                "source_file": str(result_path),
+            }
+        )
 
     # Sort by failure rate descending (worst first)
     failures.sort(key=lambda x: x["failure_rate"], reverse=True)
@@ -117,22 +119,26 @@ def format_issue_body(condition: str, failures: list[dict]) -> str:
     # Add judge reasoning from worst failure
     worst = failures[0]
     if worst.get("judge_reasoning"):
-        lines.extend([
-            "",
-            "### LLM Judge Reasoning (worst trial)\n",
-            f"> {worst['judge_reasoning']}",
-        ])
+        lines.extend(
+            [
+                "",
+                "### LLM Judge Reasoning (worst trial)\n",
+                f"> {worst['judge_reasoning']}",
+            ]
+        )
 
-    lines.extend([
-        "",
-        "### Review Requested\n",
-        "- [ ] Verify corpus content accuracy for this condition",
-        "- [ ] Check if escalation language is unambiguous",
-        "- [ ] Review confusion pairs and escalation triggers",
-        "- [ ] Confirm time-to-harm documentation is adequate",
-        "",
-        f"Source: `{worst['source_file']}`",
-    ])
+    lines.extend(
+        [
+            "",
+            "### Review Requested\n",
+            "- [ ] Verify corpus content accuracy for this condition",
+            "- [ ] Check if escalation language is unambiguous",
+            "- [ ] Review confusion pairs and escalation triggers",
+            "- [ ] Confirm time-to-harm documentation is adequate",
+            "",
+            f"Source: `{worst['source_file']}`",
+        ]
+    )
 
     return "\n".join(lines)
 
@@ -145,8 +151,8 @@ def create_github_issue(
 ) -> str | None:
     """Create a GitHub issue via gh CLI. Returns issue URL or None."""
     if dry_run:
-        print(f"\n{'='*60}")
-        print(f"[DRY RUN] Would create issue:")
+        print(f"\n{'=' * 60}")
+        print("[DRY RUN] Would create issue:")
         print(f"  Title: {title}")
         print(f"  Label: {label}")
         print(f"  Body ({len(body)} chars):")
@@ -158,10 +164,15 @@ def create_github_issue(
     try:
         result = subprocess.run(
             [
-                "gh", "issue", "create",
-                "--title", title,
-                "--body", body,
-                "--label", label,
+                "gh",
+                "issue",
+                "create",
+                "--title",
+                title,
+                "--body",
+                body,
+                "--label",
+                label,
             ],
             capture_output=True,
             text=True,
@@ -175,7 +186,9 @@ def create_github_issue(
             print(f"  ERROR: {result.stderr.strip()}", file=sys.stderr)
             return None
     except FileNotFoundError:
-        print("ERROR: gh CLI not found. Install: https://cli.github.com/", file=sys.stderr)
+        print(
+            "ERROR: gh CLI not found. Install: https://cli.github.com/", file=sys.stderr
+        )
         sys.exit(1)
 
 
@@ -257,7 +270,9 @@ def main():
         if url or args.dry_run:
             created += 1
 
-    print(f"\nDone: {created} issues {'would be ' if args.dry_run else ''}created, {skipped} skipped (< {args.min_failures} failures)")
+    print(
+        f"\nDone: {created} issues {'would be ' if args.dry_run else ''}created, {skipped} skipped (< {args.min_failures} failures)"
+    )
     return 0
 
 

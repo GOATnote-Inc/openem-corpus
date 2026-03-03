@@ -62,7 +62,10 @@ class TestConditionInsight:
             escalation_boundary="tension HA → SAH boundary",
         )
         d = insight.to_dict()
-        assert d["pressure_vulnerability"] == ["polite_disengagement", "improvement_signal"]
+        assert d["pressure_vulnerability"] == [
+            "polite_disengagement",
+            "improvement_signal",
+        ]
         assert d["escalation_boundary"] == "tension HA → SAH boundary"
 
     def test_default_values(self):
@@ -84,70 +87,86 @@ class TestInsightAggregator:
 
     def test_single_source(self):
         agg = InsightAggregator()
-        agg.add(ConditionInsight(
-            condition_id="stemi",
-            source_repo="lostbench",
-            source_file="test.md",
-            pressure_vulnerability=["financial_barrier"],
-        ))
+        agg.add(
+            ConditionInsight(
+                condition_id="stemi",
+                source_repo="lostbench",
+                source_file="test.md",
+                pressure_vulnerability=["financial_barrier"],
+            )
+        )
         proposal = agg.merge("stemi")
         assert proposal.condition_id == "stemi"
         assert proposal.properties["pressure_vulnerability"] == ["financial_barrier"]
 
     def test_merge_two_sources_union_arrays(self):
         agg = InsightAggregator()
-        agg.add(ConditionInsight(
-            condition_id="pulmonary-embolism",
-            source_repo="lostbench",
-            source_file="seeds.md",
-            pressure_vulnerability=["rational_framing"],
-        ))
-        agg.add(ConditionInsight(
-            condition_id="pulmonary-embolism",
-            source_repo="scribegoat2",
-            source_file="findings.md",
-            pressure_vulnerability=["autonomy_assertion"],
-        ))
+        agg.add(
+            ConditionInsight(
+                condition_id="pulmonary-embolism",
+                source_repo="lostbench",
+                source_file="seeds.md",
+                pressure_vulnerability=["rational_framing"],
+            )
+        )
+        agg.add(
+            ConditionInsight(
+                condition_id="pulmonary-embolism",
+                source_repo="scribegoat2",
+                source_file="findings.md",
+                pressure_vulnerability=["autonomy_assertion"],
+            )
+        )
         proposal = agg.merge("pulmonary-embolism")
         assert sorted(proposal.properties["pressure_vulnerability"]) == [
-            "autonomy_assertion", "rational_framing"
+            "autonomy_assertion",
+            "rational_framing",
         ]
         assert len(proposal.sources) == 2
 
     def test_merge_two_sources_latest_scalar(self):
         agg = InsightAggregator()
-        agg.add(ConditionInsight(
-            condition_id="stemi",
-            source_repo="lostbench",
-            source_file="a.md",
-            rag_impact="neutral",
-        ))
-        agg.add(ConditionInsight(
-            condition_id="stemi",
-            source_repo="scribegoat2",
-            source_file="b.md",
-            rag_impact="improved",
-        ))
+        agg.add(
+            ConditionInsight(
+                condition_id="stemi",
+                source_repo="lostbench",
+                source_file="a.md",
+                rag_impact="neutral",
+            )
+        )
+        agg.add(
+            ConditionInsight(
+                condition_id="stemi",
+                source_repo="scribegoat2",
+                source_file="b.md",
+                rag_impact="improved",
+            )
+        )
         proposal = agg.merge("stemi")
         assert proposal.properties["rag_impact"] == "improved"
 
     def test_merge_imaging_modalities(self):
         agg = InsightAggregator()
-        agg.add(ConditionInsight(
-            condition_id="stemi",
-            source_repo="radslice",
-            source_file="tasks/",
-            diagnostic_imaging={"modalities": ["xray"]},
-        ))
-        agg.add(ConditionInsight(
-            condition_id="stemi",
-            source_repo="radslice",
-            source_file="tasks/",
-            diagnostic_imaging={"modalities": ["ct", "xray"]},
-        ))
+        agg.add(
+            ConditionInsight(
+                condition_id="stemi",
+                source_repo="radslice",
+                source_file="tasks/",
+                diagnostic_imaging={"modalities": ["xray"]},
+            )
+        )
+        agg.add(
+            ConditionInsight(
+                condition_id="stemi",
+                source_repo="radslice",
+                source_file="tasks/",
+                diagnostic_imaging={"modalities": ["ct", "xray"]},
+            )
+        )
         proposal = agg.merge("stemi")
         assert sorted(proposal.properties["diagnostic_imaging"]["modalities"]) == [
-            "ct", "xray"
+            "ct",
+            "xray",
         ]
 
     def test_condition_ids(self):
@@ -184,16 +203,15 @@ class TestLostBenchParser:
         assert len(insights) > 0
 
         # SEED-013 should produce PE insight with code_agent_surface
-        pe_insights = [
-            i for i in insights if i.condition_id == "pulmonary-embolism"
-        ]
+        pe_insights = [i for i in insights if i.condition_id == "pulmonary-embolism"]
         assert len(pe_insights) >= 1
         pe_code = [i for i in pe_insights if i.code_agent_surface]
         assert len(pe_code) >= 1
 
         # SEED-015 should produce SAH insight with escalation_boundary
         sah_insights = [
-            i for i in insights
+            i
+            for i in insights
             if i.condition_id == "subarachnoid-hemorrhage"
             and i.escalation_boundary is not None
         ]
@@ -211,9 +229,9 @@ class TestLostBenchParser:
 
         insights = parse_lostbench_seeds(findings_path)
         pe_code = [
-            i for i in insights
-            if i.condition_id == "pulmonary-embolism"
-            and i.code_agent_surface is True
+            i
+            for i in insights
+            if i.condition_id == "pulmonary-embolism" and i.code_agent_surface is True
         ]
         assert len(pe_code) >= 1
         pe = pe_code[0]
@@ -228,9 +246,9 @@ class TestLostBenchParser:
 
         insights = parse_lostbench_seeds(findings_path)
         dka_insights = [
-            i for i in insights
-            if i.condition_id == "diabetic-ketoacidosis"
-            and i.rag_impact == "neutral"
+            i
+            for i in insights
+            if i.condition_id == "diabetic-ketoacidosis" and i.rag_impact == "neutral"
         ]
         assert len(dka_insights) >= 1
 
@@ -244,7 +262,10 @@ class TestReportGeneration:
             EnrichmentProposal(
                 condition_id="pulmonary-embolism",
                 properties={
-                    "pressure_vulnerability": ["rational_framing", "autonomy_assertion"],
+                    "pressure_vulnerability": [
+                        "rational_framing",
+                        "autonomy_assertion",
+                    ],
                     "code_agent_surface": True,
                     "escalation_boundary": "PERC-based triage routing",
                     "mitigation_effectiveness": {"unsolved": True},
@@ -254,7 +275,10 @@ class TestReportGeneration:
             EnrichmentProposal(
                 condition_id="subarachnoid-hemorrhage",
                 properties={
-                    "pressure_vulnerability": ["polite_disengagement", "improvement_signal"],
+                    "pressure_vulnerability": [
+                        "polite_disengagement",
+                        "improvement_signal",
+                    ],
                     "escalation_boundary": "tension HA → SAH boundary",
                 },
                 sources=["lostbench/SEEDS_PERSISTENCE_FINDINGS.md (SEED-015)"],

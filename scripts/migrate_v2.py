@@ -53,14 +53,14 @@ def build_validation_yaml(old_verif: dict) -> str:
     lines = ["validation:"]
     lines.append(f"  automated_consistency_check: {_val(ac)}")
     lines.append(f"  dose_range_validator: {_val(dr)}")
-    lines.append(f"  unit_normalization_check: null")
+    lines.append("  unit_normalization_check: null")
     lines.append(f"  cross_file_consistency_check: {_val(dr)}")
     lines.append(f"  citation_presence_check: {_val(cp)}")
-    lines.append(f"  duplicate_content_check: null")
-    lines.append(f"  outlier_detection_flag: clear")
-    lines.append(f'  schema_version: "2.0"')
-    lines.append(f"  guideline_version_reference: null")
-    lines.append(f"  provenance_links: []")
+    lines.append("  duplicate_content_check: null")
+    lines.append("  outlier_detection_flag: clear")
+    lines.append('  schema_version: "2.0"')
+    lines.append("  guideline_version_reference: null")
+    lines.append("  provenance_links: []")
     return "\n".join(lines) + "\n"
 
 

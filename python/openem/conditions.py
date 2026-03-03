@@ -70,7 +70,9 @@ def validate_overlay(
 
     for key, ids in overlay.items():
         if not isinstance(ids, list):
-            errors.append(f"overlay key '{key}': value must be a list, got {type(ids).__name__}")
+            errors.append(
+                f"overlay key '{key}': value must be a list, got {type(ids).__name__}"
+            )
             continue
         for cid in ids:
             if cid and cid not in valid_ids:

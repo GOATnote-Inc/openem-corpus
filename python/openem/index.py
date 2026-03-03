@@ -50,7 +50,9 @@ class OpenEMIndex:
         corpus_dir = Path(corpus_dir)
         md_files = sorted(corpus_dir.glob("*.md"))
         current_count = len(md_files)
-        manifest_count = self.manifest.get("corpus_file_count", self.manifest.get("num_conditions"))
+        manifest_count = self.manifest.get(
+            "corpus_file_count", self.manifest.get("num_conditions")
+        )
 
         if current_count != manifest_count:
             log.warning(

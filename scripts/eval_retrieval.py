@@ -20,7 +20,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "python"))
 
-from openem.index import OpenEMIndex
+from openem.index import OpenEMIndex  # noqa: E402
 
 DEFAULT_GROUND_TRUTH = REPO_ROOT / "evaluation" / "retrieval_ground_truth.jsonl"
 DEFAULT_INDEX_DIR = REPO_ROOT / "data" / "index"

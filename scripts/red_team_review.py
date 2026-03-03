@@ -28,7 +28,7 @@ import json
 import re
 import sys
 from collections import defaultdict
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 
 import yaml
@@ -278,17 +278,20 @@ def load_tier_a_conditions() -> list[dict]:
         if fm.get("risk_tier") != "A":
             continue
         body = get_body(text)
-        results.append({
-            "path": str(f),
-            "name": f.stem,
-            "fm": fm,
-            "body": body,
-            "text": text,
-        })
+        results.append(
+            {
+                "path": str(f),
+                "name": f.stem,
+                "fm": fm,
+                "body": body,
+                "text": text,
+            }
+        )
     return results
 
 
 # === Universal checks ===
+
 
 def check_dose_completeness(condition: dict) -> list[dict]:
     """Flag drug doses missing route or frequency."""
@@ -327,11 +330,13 @@ def check_dose_completeness(condition: dict) -> list[dict]:
         end = min(len(body), match.end() + 60)
         context = body[start:end]
         if not route_re.search(context):
-            flags.append({
-                "severity": MINOR,
-                "check": "dose_missing_route",
-                "detail": f"{drug} {dose_str} — no route (IV/IM/PO/etc) found nearby",
-            })
+            flags.append(
+                {
+                    "severity": MINOR,
+                    "check": "dose_missing_route",
+                    "detail": f"{drug} {dose_str} — no route (IV/IM/PO/etc) found nearby",
+                }
+            )
 
     return flags
 
@@ -350,11 +355,13 @@ def check_hedging(condition: dict) -> list[dict]:
             start = max(0, m.start() - 30)
             end = min(len(critical_actions), m.end() + 50)
             context = critical_actions[start:end].replace("\n", " ").strip()
-            flags.append({
-                "severity": MINOR,
-                "check": "hedging_in_critical_actions",
-                "detail": f'Hedging phrase "{m.group()}" in Critical Actions: "...{context}..."',
-            })
+            flags.append(
+                {
+                    "severity": MINOR,
+                    "check": "hedging_in_critical_actions",
+                    "detail": f'Hedging phrase "{m.group()}" in Critical Actions: "...{context}..."',
+                }
+            )
 
     return flags
 
@@ -366,28 +373,34 @@ def check_time_to_harm(condition: dict) -> list[dict]:
     tth = fm.get("time_to_harm")
 
     if not tth:
-        flags.append({
-            "severity": MAJOR,
-            "check": "time_to_harm_missing",
-            "detail": "time_to_harm field is missing",
-        })
+        flags.append(
+            {
+                "severity": MAJOR,
+                "check": "time_to_harm_missing",
+                "detail": "time_to_harm field is missing",
+            }
+        )
         return flags
 
     # Check if structured (object) vs string
     if isinstance(tth, str):
-        flags.append({
-            "severity": MINOR,
-            "check": "time_to_harm_not_structured",
-            "detail": f"time_to_harm is a string (\"{tth}\"), not structured object — tier A SHOULD use object form",
-        })
+        flags.append(
+            {
+                "severity": MINOR,
+                "check": "time_to_harm_not_structured",
+                "detail": f'time_to_harm is a string ("{tth}"), not structured object — tier A SHOULD use object form',
+            }
+        )
         # Check for vague terms
         for vague in VAGUE_TIME_TERMS:
             if vague.lower() in tth.lower():
-                flags.append({
-                    "severity": MAJOR,
-                    "check": "time_to_harm_vague",
-                    "detail": f"time_to_harm contains vague term: \"{vague}\"",
-                })
+                flags.append(
+                    {
+                        "severity": MAJOR,
+                        "check": "time_to_harm_vague",
+                        "detail": f'time_to_harm contains vague term: "{vague}"',
+                    }
+                )
     elif isinstance(tth, dict):
         # Verify the structured fields have actual time values
         for field in ["irreversible_injury", "death", "optimal_intervention_window"]:
@@ -395,11 +408,13 @@ def check_time_to_harm(condition: dict) -> list[dict]:
             if val:
                 for vague in VAGUE_TIME_TERMS:
                     if vague.lower() in val.lower():
-                        flags.append({
-                            "severity": MAJOR,
-                            "check": "time_to_harm_vague",
-                            "detail": f"time_to_harm.{field} contains vague term: \"{vague}\"",
-                        })
+                        flags.append(
+                            {
+                                "severity": MAJOR,
+                                "check": "time_to_harm_vague",
+                                "detail": f'time_to_harm.{field} contains vague term: "{vague}"',
+                            }
+                        )
 
     return flags
 
@@ -415,22 +430,29 @@ def check_mortality(condition: dict) -> list[dict]:
     has_quant = bool(re.search(r"\d+\.?\d*\s*%", str(mortality_field)))
     if not has_quant:
         # Also check body for mortality figures
-        has_quant = bool(re.search(
-            r"mortality.*\d+\.?\d*\s*%|\d+\.?\d*\s*%.*mortality|fatality.*\d+|death\s+rate.*\d+",
-            body, re.IGNORECASE,
-        ))
+        has_quant = bool(
+            re.search(
+                r"mortality.*\d+\.?\d*\s*%|\d+\.?\d*\s*%.*mortality|fatality.*\d+|death\s+rate.*\d+",
+                body,
+                re.IGNORECASE,
+            )
+        )
     if not has_quant and not mortality_field:
-        flags.append({
-            "severity": MINOR,
-            "check": "mortality_not_quantified",
-            "detail": "No mortality_if_delayed in frontmatter and no mortality percentage found in body",
-        })
+        flags.append(
+            {
+                "severity": MINOR,
+                "check": "mortality_not_quantified",
+                "detail": "No mortality_if_delayed in frontmatter and no mortality percentage found in body",
+            }
+        )
     elif mortality_field and not re.search(r"\d", str(mortality_field)):
-        flags.append({
-            "severity": MINOR,
-            "check": "mortality_not_quantified",
-            "detail": f"mortality_if_delayed has no numeric value: \"{mortality_field}\"",
-        })
+        flags.append(
+            {
+                "severity": MINOR,
+                "check": "mortality_not_quantified",
+                "detail": f'mortality_if_delayed has no numeric value: "{mortality_field}"',
+            }
+        )
 
     return flags
 
@@ -440,11 +462,13 @@ def check_pitfall_count(condition: dict) -> list[dict]:
     flags = []
     count = count_pitfalls(condition["body"])
     if count < 7:
-        flags.append({
-            "severity": MINOR if count >= 5 else MAJOR,
-            "check": "pitfall_count",
-            "detail": f"Only {count} pitfalls listed (minimum 7 recommended for tier A)",
-        })
+        flags.append(
+            {
+                "severity": MINOR if count >= 5 else MAJOR,
+                "check": "pitfall_count",
+                "detail": f"Only {count} pitfalls listed (minimum 7 recommended for tier A)",
+            }
+        )
     return flags
 
 
@@ -467,17 +491,21 @@ def check_source_currency(condition: dict) -> list[dict]:
                 years.append(y)
 
     if not years:
-        flags.append({
-            "severity": INFO,
-            "check": "source_currency",
-            "detail": "No publication years found in source refs",
-        })
+        flags.append(
+            {
+                "severity": INFO,
+                "check": "source_currency",
+                "detail": "No publication years found in source refs",
+            }
+        )
     elif max(years) < 2021:
-        flags.append({
-            "severity": INFO,
-            "check": "source_currency",
-            "detail": f"Oldest source year: {min(years)}, newest: {max(years)} — no source from last 5 years",
-        })
+        flags.append(
+            {
+                "severity": INFO,
+                "check": "source_currency",
+                "detail": f"Oldest source year: {min(years)}, newest: {max(years)} — no source from last 5 years",
+            }
+        )
 
     return flags
 
@@ -510,11 +538,13 @@ def check_dangerous_combos(condition: dict) -> list[dict]:
                 continue
             must_contain = combo.get("must_contain")
             if must_contain and not re.search(must_contain, body, re.IGNORECASE):
-                flags.append({
-                    "severity": MAJOR,
-                    "check": "dangerous_combination",
-                    "detail": f"{drug}: {combo['warning']}",
-                })
+                flags.append(
+                    {
+                        "severity": MAJOR,
+                        "check": "dangerous_combination",
+                        "detail": f"{drug}: {combo['warning']}",
+                    }
+                )
 
     return flags
 
@@ -542,6 +572,7 @@ def run_category_checks(condition: dict) -> dict:
 
 
 # === Phase B: LLM-augmented review ===
+
 
 def run_llm_review(condition: dict, flags: list[dict]) -> list[dict]:
     """Run LLM review on conditions with major/critical flags."""
@@ -624,11 +655,15 @@ Output ONLY the JSON array, no other text."""
             print(f"  LLM review failed for {cid}: {e}", file=sys.stderr)
             return llm_flags
 
-    print("  No API key found for LLM review (set ANTHROPIC_API_KEY or OPENAI_API_KEY)", file=sys.stderr)
+    print(
+        "  No API key found for LLM review (set ANTHROPIC_API_KEY or OPENAI_API_KEY)",
+        file=sys.stderr,
+    )
     return llm_flags
 
 
 # === Physician checklist generation ===
+
 
 def generate_physician_checklist(condition: dict, category_results: dict) -> list[str]:
     """Generate physician-specific review items based on condition category."""
@@ -687,9 +722,12 @@ def generate_physician_checklist(condition: dict, category_results: dict) -> lis
 
 # === Output generation ===
 
+
 def generate_yaml_output(cards: list[dict]) -> str:
     """Generate YAML review cards."""
-    return yaml.dump(cards, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    return yaml.dump(
+        cards, default_flow_style=False, sort_keys=False, allow_unicode=True
+    )
 
 
 def generate_markdown_output(cards: list[dict], summary: dict) -> str:
@@ -753,8 +791,12 @@ def generate_markdown_output(cards: list[dict], summary: dict) -> str:
         # Status icon
         icon = "CLEAN" if status == "CLEAN" else "NEEDS_PHYSICIAN_REVIEW"
         lines.append(f"### {name}")
-        lines.append(f"**ID:** `{cid}` | **Category:** {card['category']} | **Status:** {icon}")
-        lines.append(f"**Words:** {card['word_count']} | **Sources:** {card['sources_count']} | **Pitfalls:** {card['pitfalls_count']} | **time_to_harm:** {card['time_to_harm_format']}")
+        lines.append(
+            f"**ID:** `{cid}` | **Category:** {card['category']} | **Status:** {icon}"
+        )
+        lines.append(
+            f"**Words:** {card['word_count']} | **Sources:** {card['sources_count']} | **Pitfalls:** {card['pitfalls_count']} | **time_to_harm:** {card['time_to_harm_format']}"
+        )
         lines.append("")
 
         # Flags
@@ -762,7 +804,7 @@ def generate_markdown_output(cards: list[dict], summary: dict) -> str:
             lines.append("**Flags:**")
             for flag in card["flags"]:
                 sev = flag["severity"].upper()
-                source = f" *(LLM)* " if flag.get("source") == "llm_review" else ""
+                source = " *(LLM)* " if flag.get("source") == "llm_review" else ""
                 lines.append(f"- [{sev}]{source} `{flag['check']}`: {flag['detail']}")
             lines.append("")
 
@@ -770,7 +812,11 @@ def generate_markdown_output(cards: list[dict], summary: dict) -> str:
         if card.get("category_checks"):
             lines.append("**Category Checks:**")
             for check, result in card["category_checks"].items():
-                mark = "PASS" if result == "PASS" else ("N/A" if result == "N/A" else "**FAIL**")
+                mark = (
+                    "PASS"
+                    if result == "PASS"
+                    else ("N/A" if result == "N/A" else "**FAIL**")
+                )
                 lines.append(f"- {check}: {mark}")
             lines.append("")
 
@@ -788,7 +834,7 @@ def generate_markdown_output(cards: list[dict], summary: dict) -> str:
         lines.append("")
 
         # Sign-off
-        lines.append(f"**Sign-off:** _________________________ Date: ___________")
+        lines.append("**Sign-off:** _________________________ Date: ___________")
         lines.append("")
         lines.append("---")
         lines.append("")
@@ -797,9 +843,15 @@ def generate_markdown_output(cards: list[dict], summary: dict) -> str:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Red Team Review for Tier A conditions")
-    parser.add_argument("--llm", action="store_true", help="Enable Phase B LLM-augmented review")
-    parser.add_argument("--json", action="store_true", help="Output JSON instead of YAML")
+    parser = argparse.ArgumentParser(
+        description="Red Team Review for Tier A conditions"
+    )
+    parser.add_argument(
+        "--llm", action="store_true", help="Enable Phase B LLM-augmented review"
+    )
+    parser.add_argument(
+        "--json", action="store_true", help="Output JSON instead of YAML"
+    )
     args = parser.parse_args()
 
     print("=== Red Team Review: Phase A (Deterministic) ===\n", file=sys.stderr)
@@ -845,11 +897,13 @@ def main() -> int:
         for check_name, result in category_results.items():
             if result == "FAIL":
                 check_def = CATEGORY_CHECKS.get(category, {}).get(check_name, {})
-                all_flags.append({
-                    "severity": MINOR,
-                    "check": f"category_{check_name}",
-                    "detail": f"Category check failed: {check_def.get('desc', check_name)}",
-                })
+                all_flags.append(
+                    {
+                        "severity": MINOR,
+                        "check": f"category_{check_name}",
+                        "detail": f"Category check failed: {check_def.get('desc', check_name)}",
+                    }
+                )
 
         # Phase B: LLM review (only for conditions with major/critical flags)
         if args.llm:
@@ -880,10 +934,12 @@ def main() -> int:
             "flags": all_flags,
             "category_checks": category_results,
             "dangerous_combo_flags": combo_flags,
-            "review_status": "CLEAN" if not any(
-                f["severity"] in (CRITICAL, MAJOR) for f in all_flags
-            ) else "NEEDS_PHYSICIAN_REVIEW",
-            "physician_checklist": generate_physician_checklist(condition, category_results),
+            "review_status": "CLEAN"
+            if not any(f["severity"] in (CRITICAL, MAJOR) for f in all_flags)
+            else "NEEDS_PHYSICIAN_REVIEW",
+            "physician_checklist": generate_physician_checklist(
+                condition, category_results
+            ),
         }
         cards.append(card)
 
@@ -894,16 +950,23 @@ def main() -> int:
             summary[sev] += 1
             summary["by_category"][category][sev] += 1
             if sev == CRITICAL:
-                summary["critical_conditions"].setdefault(cid, []).append(flag["detail"])
+                summary["critical_conditions"].setdefault(cid, []).append(
+                    flag["detail"]
+                )
             elif sev == MAJOR:
                 summary["major_conditions"].setdefault(cid, []).append(flag["detail"])
 
     # Print summary
-    print(f"\n=== RESULTS ===", file=sys.stderr)
+    print("\n=== RESULTS ===", file=sys.stderr)
     print(f"Total conditions: {summary['total']}", file=sys.stderr)
-    print(f"Critical: {summary['critical']}, Major: {summary['major']}, Minor: {summary['minor']}, Info: {summary['info']}", file=sys.stderr)
+    print(
+        f"Critical: {summary['critical']}, Major: {summary['major']}, Minor: {summary['minor']}, Info: {summary['info']}",
+        file=sys.stderr,
+    )
 
-    needs_review = sum(1 for c in cards if c["review_status"] == "NEEDS_PHYSICIAN_REVIEW")
+    needs_review = sum(
+        1 for c in cards if c["review_status"] == "NEEDS_PHYSICIAN_REVIEW"
+    )
     clean = sum(1 for c in cards if c["review_status"] == "CLEAN")
     print(f"Needs physician review: {needs_review}, Clean: {clean}", file=sys.stderr)
 

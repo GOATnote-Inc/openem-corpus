@@ -173,7 +173,7 @@ def main() -> int:
     args = parser.parse_args()
 
     conditions = load_all_conditions()
-    registry = load_registry()
+    _registry = load_registry()
     assignments = load_assignments()
 
     # === Overall coverage ===
@@ -188,10 +188,7 @@ def main() -> int:
             by_tier[tier]["reviewed"] += 1
 
     # Conditions with 2+ reviews (consensus)
-    consensus_count = sum(
-        1 for c in conditions
-        if len(c.get("reviews", [])) >= 2
-    )
+    consensus_count = sum(1 for c in conditions if len(c.get("reviews", [])) >= 2)
 
     # === Per-category coverage ===
     by_category = defaultdict(lambda: {"total": 0, "reviewed": 0})
@@ -202,10 +199,16 @@ def main() -> int:
             by_category[cat]["reviewed"] += 1
 
     # === Per-reviewer stats ===
-    reviewer_stats = defaultdict(lambda: {
-        "assigned": 0, "completed": 0, "overdue": 0, "issues_total": 0
-    })
-    sla_summary = {"on-track": 0, "at-risk": 0, "overdue": 0, "complete": 0, "unknown": 0}
+    reviewer_stats = defaultdict(
+        lambda: {"assigned": 0, "completed": 0, "overdue": 0, "issues_total": 0}
+    )
+    sla_summary = {
+        "on-track": 0,
+        "at-risk": 0,
+        "overdue": 0,
+        "complete": 0,
+        "unknown": 0,
+    }
 
     for a in assignments:
         rid = a.get("reviewer_id", "unassigned")
@@ -257,8 +260,14 @@ def main() -> int:
     for tier in ["A", "B", "C"]:
         t = by_tier.get(tier, {"total": 0, "reviewed": 0})
         pct = round(t["reviewed"] / t["total"] * 100, 1) if t["total"] else 0
-        label = {"A": "ESI 1 — resuscitation", "B": "ESI 2 — emergent", "C": "ESI 3+ — urgent/general"}
-        print(f"  {tier} ({label.get(tier, '')}): {t['reviewed']}/{t['total']} ({pct}%)")
+        label = {
+            "A": "ESI 1 — resuscitation",
+            "B": "ESI 2 — emergent",
+            "C": "ESI 3+ — urgent/general",
+        }
+        print(
+            f"  {tier} ({label.get(tier, '')}): {t['reviewed']}/{t['total']} ({pct}%)"
+        )
     print()
 
     # SLA compliance
@@ -274,7 +283,9 @@ def main() -> int:
     if reviewer_stats:
         print("PER-REVIEWER:")
         for rid, stats in sorted(reviewer_stats.items()):
-            print(f"  {rid}: {stats['completed']}/{stats['assigned']} complete, {stats['overdue']} overdue")
+            print(
+                f"  {rid}: {stats['completed']}/{stats['assigned']} complete, {stats['overdue']} overdue"
+            )
         print()
 
     # Category coverage
@@ -298,16 +309,16 @@ def main() -> int:
 
         alpha = compute_krippendorff_alpha(ratings)
         if alpha is not None:
-            print(f"INTER-REVIEWER AGREEMENT:")
+            print("INTER-REVIEWER AGREEMENT:")
             print(f"  Krippendorff's alpha: {alpha:.3f}")
             if alpha >= 0.80:
-                print(f"  Status: Strong agreement")
+                print("  Status: Strong agreement")
             elif alpha >= 0.67:
-                print(f"  Status: Acceptable agreement")
+                print("  Status: Acceptable agreement")
             elif alpha >= 0.50:
-                print(f"  Status: Weak agreement — consider rubric clarification")
+                print("  Status: Weak agreement — consider rubric clarification")
             else:
-                print(f"  Status: Poor agreement — pause and retrain")
+                print("  Status: Poor agreement — pause and retrain")
             print()
     else:
         print("INTER-REVIEWER AGREEMENT:")

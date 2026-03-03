@@ -84,14 +84,18 @@ def main() -> None:
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parent.parent
-    presentations_dir = Path(args.presentations_dir) if args.presentations_dir else repo_root / "fhir" / "presentations"
-    output_dir = Path(args.output_dir) if args.output_dir else repo_root / "fhir" / "bundles"
+    presentations_dir = (
+        Path(args.presentations_dir)
+        if args.presentations_dir
+        else repo_root / "fhir" / "presentations"
+    )
+    output_dir = (
+        Path(args.output_dir) if args.output_dir else repo_root / "fhir" / "bundles"
+    )
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if args.all:
-        condition_ids = sorted(
-            p.stem for p in presentations_dir.glob("*.yaml")
-        )
+        condition_ids = sorted(p.stem for p in presentations_dir.glob("*.yaml"))
         if not condition_ids:
             print(f"No presentation profiles found in {presentations_dir}")
             sys.exit(1)
@@ -129,7 +133,9 @@ def main() -> None:
                 json.dump(bundle, f, indent=2)
 
             n_entries = len(bundle.get("entry", []))
-            print(f"OK  {condition_id}/{pres_name}: {n_entries} resources -> {output_path}")
+            print(
+                f"OK  {condition_id}/{pres_name}: {n_entries} resources -> {output_path}"
+            )
 
             # Optional validation
             if args.validate:
@@ -140,7 +146,7 @@ def main() -> None:
                             print(f"    FAIL: {error}")
                         total_errors += len(errors)
                     else:
-                        print(f"    VALID (FHIR R4)")
+                        print("    VALID (FHIR R4)")
                 except ImportError as e:
                     print(f"    SKIP validation: {e}")
                     break

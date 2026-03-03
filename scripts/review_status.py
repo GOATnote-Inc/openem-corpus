@@ -22,7 +22,11 @@ _FM_RE = re.compile(r"^---\n(.*?)\n---", re.DOTALL)
 
 # Priority order for review: A (highest), then B, then C
 TIER_ORDER = {"A": 0, "B": 1, "C": 2}
-TIER_LABELS = {"A": "Risk Tier A (ESI 1 — resuscitation)", "B": "Risk Tier B (ESI 2 — emergent)", "C": "Risk Tier C (ESI 3+ — urgent/general)"}
+TIER_LABELS = {
+    "A": "Risk Tier A (ESI 1 — resuscitation)",
+    "B": "Risk Tier B (ESI 2 — emergent)",
+    "C": "Risk Tier C (ESI 3+ — urgent/general)",
+}
 
 
 def extract_frontmatter(text: str) -> dict | None:

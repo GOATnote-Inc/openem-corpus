@@ -11,7 +11,6 @@ fhir.resources is optional (CI/test-time only).
 
 from __future__ import annotations
 
-import json
 import random
 import uuid
 from datetime import datetime, timedelta, timezone
@@ -99,8 +98,7 @@ def generate_bundle(
         if not matches:
             available = [p["name"] for p in presentations]
             raise ValueError(
-                f"Presentation '{presentation_name}' not found. "
-                f"Available: {available}"
+                f"Presentation '{presentation_name}' not found. Available: {available}"
             )
         presentation = matches[0]
     else:
@@ -124,9 +122,7 @@ def generate_bundle(
 
     # Build resources
     patient = _make_patient(presentation, rng, patient_id)
-    encounter = _make_encounter(
-        presentation, patient_ref, encounter_id, timestamp
-    )
+    encounter = _make_encounter(presentation, patient_ref, encounter_id, timestamp)
 
     entries = [
         {"fullUrl": f"urn:uuid:{patient_id}", "resource": patient},
@@ -137,19 +133,26 @@ def generate_bundle(
     for cond_data in presentation.get("conditions", []):
         cond_id = str(uuid.UUID(int=base_uuid.int + len(entries) + 1, version=4))
         condition = _make_condition(
-            cond_data, patient_ref, encounter_ref, include_snomed,
-            cond_id, timestamp,
+            cond_data,
+            patient_ref,
+            encounter_ref,
+            include_snomed,
+            cond_id,
+            timestamp,
         )
-        entries.append(
-            {"fullUrl": f"urn:uuid:{cond_id}", "resource": condition}
-        )
+        entries.append({"fullUrl": f"urn:uuid:{cond_id}", "resource": condition})
 
     # Vitals
     for obs_data in presentation.get("vitals", []):
         obs_id = str(uuid.UUID(int=base_uuid.int + len(entries) + 1, version=4))
         obs = _make_observation(
-            obs_data, patient_ref, encounter_ref, rng,
-            obs_id, timestamp, category="vital-signs",
+            obs_data,
+            patient_ref,
+            encounter_ref,
+            rng,
+            obs_id,
+            timestamp,
+            category="vital-signs",
         )
         entries.append({"fullUrl": f"urn:uuid:{obs_id}", "resource": obs})
 
@@ -158,8 +161,13 @@ def generate_bundle(
         lab_id = str(uuid.UUID(int=base_uuid.int + len(entries) + 1, version=4))
         lab_category = lab_data.get("category", "laboratory")
         obs = _make_observation(
-            lab_data, patient_ref, encounter_ref, rng,
-            lab_id, timestamp, category=lab_category,
+            lab_data,
+            patient_ref,
+            encounter_ref,
+            rng,
+            lab_id,
+            timestamp,
+            category=lab_category,
         )
         entries.append({"fullUrl": f"urn:uuid:{lab_id}", "resource": obs})
 
@@ -376,7 +384,9 @@ def _make_observation(
         "resourceType": "Observation",
         "id": obs_id,
         "status": "final",
-        "category": [{"coding": [category_map.get(category, category_map["vital-signs"])]}],
+        "category": [
+            {"coding": [category_map.get(category, category_map["vital-signs"])]}
+        ],
         "code": {
             "coding": [
                 {

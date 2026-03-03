@@ -54,7 +54,7 @@ def parse_frontmatter(text: str) -> tuple[dict, str] | None:
     if not m:
         return None
     fm = yaml.safe_load(m.group(1))
-    body = text[m.end():]
+    body = text[m.end() :]
     return fm, body
 
 
@@ -79,18 +79,35 @@ def main() -> int:
         epilog=__doc__,
     )
     parser.add_argument("condition_id", help="Condition ID (e.g., stemi, anaphylaxis)")
-    parser.add_argument("reviewer", help='Reviewer name and credentials (e.g., "Jane Doe, MD — Board Certified EM")')
+    parser.add_argument(
+        "reviewer",
+        help='Reviewer name and credentials (e.g., "Jane Doe, MD — Board Certified EM")',
+    )
     parser.add_argument(
         "--review-type",
         default="full",
         choices=sorted(VALID_REVIEW_TYPES),
         help="Review type (default: full)",
     )
-    parser.add_argument("--issues", type=int, default=0, help="Number of issues found (default: 0)")
-    parser.add_argument("--issues-ref", default="", help='PR or issue reference (e.g., "PR#42")')
-    parser.add_argument("--date", default=None, help="Review date as YYYY-MM-DD (default: today)")
-    parser.add_argument("--dry-run", action="store_true", help="Print updated frontmatter without writing")
-    parser.add_argument("--force", action="store_true", help="Overwrite existing review by the same reviewer")
+    parser.add_argument(
+        "--issues", type=int, default=0, help="Number of issues found (default: 0)"
+    )
+    parser.add_argument(
+        "--issues-ref", default="", help='PR or issue reference (e.g., "PR#42")'
+    )
+    parser.add_argument(
+        "--date", default=None, help="Review date as YYYY-MM-DD (default: today)"
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Print updated frontmatter without writing",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Overwrite existing review by the same reviewer",
+    )
 
     args = parser.parse_args()
 
@@ -99,13 +116,19 @@ def main() -> int:
     try:
         date.fromisoformat(review_date)
     except ValueError:
-        print(f"Error: invalid date format '{review_date}'. Use YYYY-MM-DD.", file=sys.stderr)
+        print(
+            f"Error: invalid date format '{review_date}'. Use YYYY-MM-DD.",
+            file=sys.stderr,
+        )
         return 1
 
     # Find the condition file
     condition_file = find_condition_file(args.condition_id)
     if condition_file is None:
-        print(f"Error: no condition file found for '{args.condition_id}'.", file=sys.stderr)
+        print(
+            f"Error: no condition file found for '{args.condition_id}'.",
+            file=sys.stderr,
+        )
         print(f"  Looked in: {CONDITIONS_DIR}", file=sys.stderr)
         # Suggest close matches
         candidates = sorted(CONDITIONS_DIR.glob("*.md"))
@@ -118,7 +141,10 @@ def main() -> int:
     text = condition_file.read_text()
     result = parse_frontmatter(text)
     if result is None:
-        print(f"Error: could not parse YAML frontmatter in {condition_file}", file=sys.stderr)
+        print(
+            f"Error: could not parse YAML frontmatter in {condition_file}",
+            file=sys.stderr,
+        )
         return 1
 
     fm, body = result
@@ -135,7 +161,9 @@ def main() -> int:
         existing_date = fm.get("review_date", "unknown")
         if has_array_match:
             existing_date = next(
-                r.get("date", "unknown") for r in existing_reviews if r.get("reviewer") == args.reviewer
+                r.get("date", "unknown")
+                for r in existing_reviews
+                if r.get("reviewer") == args.reviewer
             )
         print(
             f"Error: {args.condition_id} already has a review by {args.reviewer} "
@@ -146,7 +174,9 @@ def main() -> int:
         return 1
 
     if has_array_match:
-        existing_reviews = [r for r in existing_reviews if r.get("reviewer") != args.reviewer]
+        existing_reviews = [
+            r for r in existing_reviews if r.get("reviewer") != args.reviewer
+        ]
 
     # Build the new review entry
     new_review = {

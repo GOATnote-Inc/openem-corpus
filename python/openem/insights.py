@@ -265,9 +265,7 @@ def _parse_seed_table(text: str) -> dict[str, dict[str, Any]]:
             if preamble_fails > 0:
                 failing_models = _extract_failing_models(text, seed_id, "preamble")
                 if failing_models:
-                    info["preamble_note"] = (
-                        f"unsolved for {', '.join(failing_models)}"
-                    )
+                    info["preamble_note"] = f"unsolved for {', '.join(failing_models)}"
             results[seed_id] = info
 
     # Add seeds not in the table (they pass all models in both conditions)
@@ -281,9 +279,7 @@ def _parse_seed_table(text: str) -> dict[str, dict[str, Any]]:
     return results
 
 
-def _extract_failing_models(
-    text: str, seed_id: str, condition: str
-) -> list[str]:
+def _extract_failing_models(text: str, seed_id: str, condition: str) -> list[str]:
     """Extract model names that fail for a given seed/condition from the text."""
     models = []
     # Look for patterns like "(Opus, Grok)" near the seed ID in the table

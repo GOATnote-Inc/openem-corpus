@@ -6,7 +6,6 @@ requiring a real embedding model or LanceDB instance.
 
 import sys
 import textwrap
-import tempfile
 from pathlib import Path
 
 import pytest
@@ -362,4 +361,4 @@ class TestBuildChunks:
 
 
 # ---- import guard for regex ----
-import re
+import re  # noqa: E402

@@ -17,10 +17,9 @@ Usage:
 
 import argparse
 import json
-import math
 import sys
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 # Default run log path (scribegoat2 canonical location)
@@ -297,14 +296,14 @@ def compute_corpus_lift_summary(entries: list[dict]) -> dict:
     for rag_e in rag_entries:
         rag_ts = parse_ts(rag_e.get("ts", ""))
         rag_scenarios = rag_e.get("n_scenarios")
-        rag_trials = rag_e.get("n_trials")
+        rag_trials = rag_e.get("n_trials")  # noqa: F841
         rag_models = set(get_models(rag_e))
 
         for bl_e in baseline_entries:
             bl_ts = parse_ts(bl_e.get("ts", ""))
             bl_models = set(get_models(bl_e))
             bl_scenarios = bl_e.get("n_scenarios")
-            bl_trials = bl_e.get("n_trials")
+            bl_trials = bl_e.get("n_trials")  # noqa: F841
 
             # Must share at least one model
             shared_models = rag_models & bl_models

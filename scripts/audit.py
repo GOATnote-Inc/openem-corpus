@@ -429,7 +429,9 @@ def check_duplicates(conditions: list[dict]) -> list[dict]:
     findings = []
 
     # Extract paragraphs (>80 chars) and compute MinHash signatures
-    para_sigs: list[tuple[str, str, list[int], str]] = []  # (fname, para_preview, sig, band_key)
+    para_sigs: list[
+        tuple[str, str, list[int], str]
+    ] = []  # (fname, para_preview, sig, band_key)
     for c in conditions:
         paras = [p.strip() for p in c["body"].split("\n\n") if len(p.strip()) > 80]
         for p in paras:
@@ -454,14 +456,17 @@ def check_duplicates(conditions: list[dict]) -> list[dict]:
                     for j in range(i + 1, len(bucket)):
                         # Only flag cross-file duplicates
                         if para_sigs[bucket[i]][0] != para_sigs[bucket[j]][0]:
-                            pair = (min(bucket[i], bucket[j]), max(bucket[i], bucket[j]))
+                            pair = (
+                                min(bucket[i], bucket[j]),
+                                max(bucket[i], bucket[j]),
+                            )
                             candidate_pairs.add(pair)
 
     # Deduplicate findings by file pair + preview
     seen_pairs: set[tuple[str, str]] = set()
     for i, j in sorted(candidate_pairs):
         f1, preview1 = para_sigs[i][0], para_sigs[i][1]
-        f2, preview2 = para_sigs[j][0], para_sigs[j][1]
+        f2, _preview2 = para_sigs[j][0], para_sigs[j][1]
         pair_key = (min(f1, f2), max(f1, f2))
         if pair_key in seen_pairs:
             continue
@@ -471,7 +476,7 @@ def check_duplicates(conditions: list[dict]) -> list[dict]:
             {
                 "check": "duplicate_content",
                 "severity": "info",
-                "message": f"Near-duplicate paragraph across files (MinHash LSH)",
+                "message": "Near-duplicate paragraph across files (MinHash LSH)",
                 "files": sorted({f1, f2}),
                 "signature": preview1[:80],
             }
@@ -901,7 +906,11 @@ def main() -> None:
     #   - cross_file_dosing: dosing inconsistencies across files
     #   - dose_range_anomaly: doses outside safe ranges
     #   - content_completeness: missing required sections (critical severity only)
-    BLOCKING_CHECKS = {"cross_file_dosing", "dose_range_anomaly", "content_completeness"}
+    BLOCKING_CHECKS = {
+        "cross_file_dosing",
+        "dose_range_anomaly",
+        "content_completeness",
+    }
     blocking_count = 0
     for check_name in BLOCKING_CHECKS:
         check_data = report["passes"].get(check_name, {})

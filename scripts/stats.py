@@ -47,8 +47,8 @@ def main():
                 unreviewed += 1
 
     total = sum(tier_counts.values())
-    print(f"OpenEM Corpus Statistics")
-    print(f"========================")
+    print("OpenEM Corpus Statistics")
+    print("========================")
     print(f"Total conditions: {total}")
     print(f"  Tier 1 (Apache 2.0): {tier_counts.get('tier1', 0)}")
     print(f"  Tier 2 (CC-BY-SA):   {tier_counts.get('tier2', 0)}")

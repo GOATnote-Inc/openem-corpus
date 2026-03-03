@@ -243,7 +243,11 @@ def main():
                 chunk_idx = len(all_chunks)
                 all_chunks.append(chunk)
 
-                if args.incremental and not file_changed and chunk["id"] in embedding_cache:
+                if (
+                    args.incremental
+                    and not file_changed
+                    and chunk["id"] in embedding_cache
+                ):
                     # Reuse cached embedding
                     chunk["vector"] = embedding_cache[chunk["id"]]
                 else:
@@ -274,7 +278,9 @@ def main():
         t0 = time.time()
         embeddings = model.encode(texts_to_embed, show_progress_bar=True, batch_size=32)
         elapsed = time.time() - t0
-        print(f"  Encoded in {elapsed:.1f}s ({len(texts_to_embed) / elapsed:.0f} chunks/sec)")
+        print(
+            f"  Encoded in {elapsed:.1f}s ({len(texts_to_embed) / elapsed:.0f} chunks/sec)"
+        )
 
         for idx_pos, chunk_idx in enumerate(changed_chunk_indices):
             all_chunks[chunk_idx]["vector"] = embeddings[idx_pos].tolist()
@@ -321,12 +327,14 @@ def main():
         sidecar = save_condition_map_sidecar(corpus_dir=CONDITIONS_DIR)
         print(f"  Condition map sidecar: {sidecar}")
 
-    print(f"\nIndex built successfully:")
+    print("\nIndex built successfully:")
     print(f"  Conditions: {manifest['num_conditions']}")
     print(f"  Chunks:     {manifest['num_chunks']}")
     print(f"  Fingerprint: {fp}")
     if args.incremental:
-        print(f"  Incremental: {len(all_chunks) - len(changed_chunk_indices)} reused, {len(changed_chunk_indices)} re-embedded")
+        print(
+            f"  Incremental: {len(all_chunks) - len(changed_chunk_indices)} reused, {len(changed_chunk_indices)} re-embedded"
+        )
     print(f"  Embedding:  {manifest['embedding_model']} ({manifest['embedding_dim']}d)")
     print(f"  Index:      {db_path}")
     print(f"  Manifest:   {manifest_path}")

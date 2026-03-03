@@ -11,9 +11,8 @@ that test_index.py needs.
 
 import sys
 from pathlib import Path
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
-import pytest
 
 # Track whether we installed the stub (so we can clean it up if needed).
 _LANCEDB_STUB_INSTALLED = False
@@ -25,7 +24,7 @@ if "lancedb" not in sys.modules:
 # Ensure the package under test is importable
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "python"))
 
-from openem.bridge import OpenEMBridge, PRIORITY_SECTIONS
+from openem.bridge import OpenEMBridge, PRIORITY_SECTIONS  # noqa: E402
 
 
 # ---- Fixtures ----

@@ -41,7 +41,9 @@ def extract_frontmatter(text: str) -> dict | None:
     return yaml.safe_load(m.group(1))
 
 
-def load_conditions(tier_filter: str | None = None, category_filter: str | None = None) -> list[dict]:
+def load_conditions(
+    tier_filter: str | None = None, category_filter: str | None = None
+) -> list[dict]:
     conditions = []
     for f in sorted(CONDITIONS_DIR.glob("*.md")):
         text = f.read_text()
@@ -84,7 +86,8 @@ def reviewer_matches_category(reviewer: dict, category: str) -> bool:
 
 def count_active_assignments(reviewer_id: str, assignments: list[dict]) -> int:
     return sum(
-        1 for a in assignments
+        1
+        for a in assignments
         if a.get("reviewer_id") == reviewer_id
         and a.get("status") in ("pending", "in_progress")
     )
@@ -115,8 +118,12 @@ def find_best_reviewer(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Auto-assign reviews to matching reviewers")
-    parser.add_argument("--dry-run", action="store_true", help="Preview without writing")
+    parser = argparse.ArgumentParser(
+        description="Auto-assign reviews to matching reviewers"
+    )
+    parser.add_argument(
+        "--dry-run", action="store_true", help="Preview without writing"
+    )
     parser.add_argument("--tier", type=str, help="Filter by risk tier (A/B/C)")
     parser.add_argument("--category", type=str, help="Filter by category")
     args = parser.parse_args()
@@ -128,7 +135,9 @@ def main() -> int:
     conditions = load_conditions(args.tier, args.category)
 
     if not reviewers:
-        print("No active reviewers in registry. Add reviewers to reviewers/registry.yaml first.")
+        print(
+            "No active reviewers in registry. Add reviewers to reviewers/registry.yaml first."
+        )
         return 1
 
     print(f"Active reviewers: {len(reviewers)}")
@@ -170,9 +179,13 @@ def main() -> int:
         category = c.get("category", "")
         tier = c.get("risk_tier", "C")
 
-        reviewer = find_best_reviewer(category, reviewers, assignments + new_assignments)
+        reviewer = find_best_reviewer(
+            category, reviewers, assignments + new_assignments
+        )
         if not reviewer:
-            unassignable.append({"condition_id": cid, "category": category, "tier": tier})
+            unassignable.append(
+                {"condition_id": cid, "category": category, "tier": tier}
+            )
             continue
 
         sla_days = SLA_DAYS.get(tier, 56)
@@ -191,7 +204,7 @@ def main() -> int:
         new_assignments.append(assignment)
 
     # Summary
-    print(f"=== Assignment Summary ===")
+    print("=== Assignment Summary ===")
     print(f"New assignments: {len(new_assignments)}")
     print(f"Unassignable (no matching reviewer): {len(unassignable)}")
     print()
@@ -199,13 +212,17 @@ def main() -> int:
     if new_assignments:
         print("New assignments:")
         for a in new_assignments:
-            print(f"  {a['condition_id']} -> {a['reviewer_id']} (due {a['due_date']}, {a['priority']})")
+            print(
+                f"  {a['condition_id']} -> {a['reviewer_id']} (due {a['due_date']}, {a['priority']})"
+            )
         print()
 
     if unassignable:
         print("Unassignable (need matching reviewer):")
         for u in unassignable:
-            print(f"  {u['condition_id']} (category: {u['category']}, tier: {u['tier']})")
+            print(
+                f"  {u['condition_id']} (category: {u['category']}, tier: {u['tier']})"
+            )
         print()
 
     # Write

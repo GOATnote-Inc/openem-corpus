@@ -93,7 +93,8 @@ class TestGenerateBundle:
     def test_icd10_coding(self, anaphylaxis_profile):
         bundle = generate_bundle("anaphylaxis", anaphylaxis_profile)
         conditions = [
-            e["resource"] for e in bundle["entry"]
+            e["resource"]
+            for e in bundle["entry"]
             if e["resource"]["resourceType"] == "Condition"
         ]
         assert len(conditions) >= 1
@@ -106,7 +107,8 @@ class TestGenerateBundle:
     def test_snomed_absent_by_default(self, anaphylaxis_profile):
         bundle = generate_bundle("anaphylaxis", anaphylaxis_profile)
         conditions = [
-            e["resource"] for e in bundle["entry"]
+            e["resource"]
+            for e in bundle["entry"]
             if e["resource"]["resourceType"] == "Condition"
         ]
         for cond in conditions:
@@ -116,7 +118,8 @@ class TestGenerateBundle:
     def test_loinc_coding_in_observations(self, anaphylaxis_profile):
         bundle = generate_bundle("anaphylaxis", anaphylaxis_profile)
         observations = [
-            e["resource"] for e in bundle["entry"]
+            e["resource"]
+            for e in bundle["entry"]
             if e["resource"]["resourceType"] == "Observation"
         ]
         for obs in observations:
@@ -127,20 +130,31 @@ class TestGenerateBundle:
     def test_deterministic_with_same_seed(self, anaphylaxis_profile):
         bundle1 = generate_bundle("anaphylaxis", anaphylaxis_profile, seed=42)
         bundle2 = generate_bundle("anaphylaxis", anaphylaxis_profile, seed=42)
-        assert json.dumps(bundle1, sort_keys=True) == json.dumps(bundle2, sort_keys=True)
+        assert json.dumps(bundle1, sort_keys=True) == json.dumps(
+            bundle2, sort_keys=True
+        )
 
     def test_different_seed_different_values(self, anaphylaxis_profile):
         bundle1 = generate_bundle("anaphylaxis", anaphylaxis_profile, seed=42)
         bundle2 = generate_bundle("anaphylaxis", anaphylaxis_profile, seed=99)
         # Patient birth dates should differ with different seeds
-        p1 = [e["resource"] for e in bundle1["entry"] if e["resource"]["resourceType"] == "Patient"][0]
-        p2 = [e["resource"] for e in bundle2["entry"] if e["resource"]["resourceType"] == "Patient"][0]
+        p1 = [
+            e["resource"]
+            for e in bundle1["entry"]
+            if e["resource"]["resourceType"] == "Patient"
+        ][0]
+        p2 = [
+            e["resource"]
+            for e in bundle2["entry"]
+            if e["resource"]["resourceType"] == "Patient"
+        ][0]
         assert p1["birthDate"] != p2["birthDate"]
 
     def test_vital_values_within_range(self, anaphylaxis_profile):
         bundle = generate_bundle("anaphylaxis", anaphylaxis_profile)
         observations = [
-            e["resource"] for e in bundle["entry"]
+            e["resource"]
+            for e in bundle["entry"]
             if e["resource"]["resourceType"] == "Observation"
         ]
         profile_vitals = anaphylaxis_profile["presentations"][0]["vitals"]
@@ -163,8 +177,7 @@ class TestGenerateBundle:
     def test_invalid_presentation_name(self, anaphylaxis_profile):
         with pytest.raises(ValueError, match="not found"):
             generate_bundle(
-                "anaphylaxis", anaphylaxis_profile,
-                presentation_name="nonexistent_type"
+                "anaphylaxis", anaphylaxis_profile, presentation_name="nonexistent_type"
             )
 
     def test_synthetic_tag(self, anaphylaxis_profile):
@@ -176,7 +189,8 @@ class TestGenerateBundle:
     def test_encounter_esi_priority(self, anaphylaxis_profile):
         bundle = generate_bundle("anaphylaxis", anaphylaxis_profile)
         encounters = [
-            e["resource"] for e in bundle["entry"]
+            e["resource"]
+            for e in bundle["entry"]
             if e["resource"]["resourceType"] == "Encounter"
         ]
         assert len(encounters) == 1
@@ -194,7 +208,7 @@ class TestBundleValidation:
         return generate_bundle("anaphylaxis", profile)
 
     def test_validate_returns_errors_list(self, anaphylaxis_bundle):
-        fhir_resources = pytest.importorskip("fhir.resources")
+        pytest.importorskip("fhir.resources")
         errors = validate_bundle(anaphylaxis_bundle)
         assert isinstance(errors, list)
 
@@ -209,6 +223,7 @@ class TestAllPresentationProfiles:
     def test_valid_yaml(self, profile_path):
         """Profile loads as valid YAML."""
         import yaml
+
         with open(profile_path) as f:
             data = yaml.safe_load(f)
         assert isinstance(data, dict)
@@ -216,6 +231,7 @@ class TestAllPresentationProfiles:
     def test_has_condition_id(self, profile_path):
         """Profile has condition_id field."""
         import yaml
+
         with open(profile_path) as f:
             data = yaml.safe_load(f)
         assert "condition_id" in data
@@ -224,6 +240,7 @@ class TestAllPresentationProfiles:
     def test_condition_exists_in_corpus(self, profile_path):
         """condition_id has a matching .md in the corpus."""
         import yaml
+
         with open(profile_path) as f:
             data = yaml.safe_load(f)
         condition_id = data["condition_id"]
@@ -233,6 +250,7 @@ class TestAllPresentationProfiles:
     def test_has_presentations(self, profile_path):
         """Profile has at least one presentation."""
         import yaml
+
         with open(profile_path) as f:
             data = yaml.safe_load(f)
         assert "presentations" in data
@@ -242,6 +260,7 @@ class TestAllPresentationProfiles:
         """LOINC codes match expected pattern (digits-digits)."""
         import re
         import yaml
+
         with open(profile_path) as f:
             data = yaml.safe_load(f)
         loinc_pattern = re.compile(r"^\d+-\d+$")
@@ -258,6 +277,7 @@ class TestAllPresentationProfiles:
     def test_value_ranges_sane(self, profile_path):
         """Value ranges have min < max."""
         import yaml
+
         with open(profile_path) as f:
             data = yaml.safe_load(f)
         for pres in data["presentations"]:
@@ -275,6 +295,7 @@ class TestAllPresentationProfiles:
     def test_generates_valid_bundle(self, profile_path):
         """Profile generates a valid FHIR Bundle."""
         import yaml
+
         with open(profile_path) as f:
             data = yaml.safe_load(f)
         bundle = generate_bundle(data["condition_id"], data)

@@ -17,7 +17,6 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
-import re
 import sys
 from pathlib import Path
 
@@ -289,7 +288,9 @@ def main() -> None:
         output = format_report_json(proposals, scanned)
     else:
         output = format_report(
-            proposals, scanned, skipped,
+            proposals,
+            scanned,
+            skipped,
             risk_tiers=risk_tiers,
         )
 

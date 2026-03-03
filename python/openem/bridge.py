@@ -66,6 +66,7 @@ class OpenEMBridge:
         self._index = index
         if condition_map is None:
             from openem.conditions import load_condition_map
+
             condition_map = load_condition_map()
         self._condition_map = condition_map
         self._fallback_separator = fallback_separator
