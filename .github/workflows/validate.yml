@@ -7,12 +7,16 @@ on:
       - "schemas/**"
       - "scripts/validate.py"
       - "scripts/check_index_freshness.py"
+      - "scripts/check_doc_counts.py"
+      - "README.md"
   pull_request:
     paths:
       - "corpus/**/*.md"
       - "schemas/**"
       - "scripts/validate.py"
       - "scripts/check_index_freshness.py"
+      - "scripts/check_doc_counts.py"
+      - "README.md"
 
 jobs:
   validate:
@@ -33,6 +37,9 @@ jobs:
 
       - name: Run schema validation
         run: python scripts/validate.py
+
+      - name: Check doc counts
+        run: python scripts/check_doc_counts.py
 
       - name: Check index freshness
         run: python scripts/check_index_freshness.py

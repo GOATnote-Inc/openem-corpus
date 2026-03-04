@@ -19,7 +19,7 @@ This document contains detailed information about the corpus structure, validati
 
 ## Condition Expansion (v2.1)
 
-The corpus has grown from 128 to 185 tier1 conditions:
+The corpus has grown from 128 to 363 tier1 conditions (185 base + 178 expansion):
 - **6 defer conditions** (ESI 4-5): benign-positional-vertigo, pediatric-acute-otitis-media, knee-osteoarthritis, tension-headache, panic-attack, benign-palpitations
 - **4 gap conditions**: foreign-body-aspiration, snakebite-envenomation, uterine-rupture, pprom
 - **19 expansion conditions**: Additional high-priority conditions across existing categories
@@ -46,7 +46,7 @@ The corpus has grown from 128 to 185 tier1 conditions:
 | `esi` | Yes | Emergency Severity Index (1-5) |
 | `time_to_harm` | Yes | Time window before irreversible harm (string or structured object) |
 | `mortality_if_delayed` | No | Mortality risk with delayed treatment |
-| `category` | Yes | One of 20 clinical categories |
+| `category` | Yes | One of 21 clinical categories |
 | `track` | Yes | `tier1` (Apache 2.0) or `tier2` (CC-BY-SA) |
 | `sources` | Yes | Array of citations with `type`, `ref`, optional `pmid`/`doi` |
 | `compiled_by` | Yes | `agent` or `human` |
@@ -57,7 +57,7 @@ The corpus has grown from 128 to 185 tier1 conditions:
 
 ## Validation (Schema v2.0)
 
-Each condition file carries a `validation` block recording which automated checks have passed. All 185 conditions pass the full 13-check suite.
+Each condition file carries a `validation` block recording which automated checks have passed. All conditions pass the full 13-check suite.
 
 | Check | What it validates |
 |-------|-------------------|
@@ -90,7 +90,7 @@ This corpus is compiled and maintained by AI agent teams:
 3. **Cross-Reference**: ICD-10 codes validated, differential diagnoses cross-linked
 4. **Clinical Validation**: 4-agent adversarial red-team audit — clinical accuracy, evidence basis, licensing, coverage gaps
 5. **PMID Verification**: All 450 unique PMIDs batch-verified against PubMed API (initial 23% hallucination rate corrected)
-6. **Automated Validation Suite**: 13-check pipeline. All 185 conditions pass.
+6. **Automated Validation Suite**: 13-check pipeline. All conditions pass.
 7. **Physician Review**: Risk tier A conditions reviewed by board-certified emergency medicine physician
 
 ## Source Licensing Rules
@@ -111,7 +111,7 @@ All tier1 content is compiled exclusively from copyright-free or permissively li
 ```
 corpus/
 ├── tier1/                   # Apache 2.0 (copyright-free sources)
-│   ├── conditions/          # 185 condition files (.md)
+│   ├── conditions/          # condition files (.md)
 │   ├── procedures/          # EM procedures (planned)
 │   ├── medications/         # EM pharmacology (planned)
 │   └── decision-aids/       # Clinical decision rules (planned)

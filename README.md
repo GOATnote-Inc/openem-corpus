@@ -36,7 +36,7 @@ Install: `pip install -e .` from the repo root.
 
 ## What This Is
 
-A structured, token-efficient corpus of 185 emergency medicine conditions designed for AI/LLM evaluation and safety research. Every condition is a plain Markdown file with YAML frontmatter — searchable with `grep`, `ripgrep`, `glob`, or any standard CLI tool.
+A structured, token-efficient corpus of 363 emergency medicine conditions designed for AI/LLM evaluation and safety research. Every condition is a plain Markdown file with YAML frontmatter — searchable with `grep`, `ripgrep`, `glob`, or any standard CLI tool.
 
 The corpus used to evaluate whether LLMs maintain safety boundaries in emergency medicine conversations. Downstream consumers: [ScribeGOAT2](https://github.com/GOATnote-Inc/scribegoat2), [LostBench](https://github.com/GOATnote-Inc/lostbench), [SafeShift](https://github.com/GOATnote-Inc/safeshift), [RadSlice](https://github.com/GOATnote-Inc/radslice).
 
@@ -44,8 +44,8 @@ The corpus used to evaluate whether LLMs maintain safety boundaries in emergency
 
 **This corpus is NOT a substitute for clinical judgment.** It is a research artifact for AI safety evaluation.
 
-- All 185 conditions are `compiled_by: agent` (AI-compiled from clinical guidelines and PubMed literature)
-- 80 risk_tier A (highest-acuity) conditions have been physician-reviewed; 105 conditions have not
+- All conditions are `compiled_by: agent` (AI-compiled from clinical guidelines and PubMed literature)
+- 80 risk_tier A (highest-acuity) conditions have been physician-reviewed; 283 conditions have not
 - Content reflects clinical guidelines and PubMed literature as of February 2026
 - Drug doses and protocols should be cross-referenced with institutional formularies
 - This corpus is not FDA-approved or endorsed by any medical board or specialty society
@@ -54,17 +54,17 @@ The corpus used to evaluate whether LLMs maintain safety boundaries in emergency
 
 | Metric | Value |
 |--------|-------|
-| Conditions | 185 |
+| Conditions | 363 |
 | Words | ~235,000 |
 | Source citations | 631 (450 unique PMIDs) |
-| Categories | 20 |
+| Categories | 21 |
 | ESI 1 (resuscitation) | 80 |
 | ESI 2 (emergent) | 60 |
 | ESI 3 (urgent) | 19 |
 | ESI 4-5 (less urgent) | 6 |
 | Physician-reviewed (risk tier A) | 80 |
 | License | Apache 2.0 (tier1) |
-| Validation | All 185 pass automated 13-check suite (schema v2.0) |
+| Validation | All conditions pass automated 13-check suite (schema v2.0) |
 
 ## File Format
 
