@@ -19,7 +19,7 @@ This document contains detailed information about the corpus structure, validati
 
 ## Condition Expansion (v2.1)
 
-The corpus has grown from 128 to 363 tier1 conditions (185 base + 178 expansion):
+The corpus has grown from 128 to 370 tier1 conditions (185 base + 185 expansion):
 - **6 defer conditions** (ESI 4-5): benign-positional-vertigo, pediatric-acute-otitis-media, knee-osteoarthritis, tension-headache, panic-attack, benign-palpitations
 - **4 gap conditions**: foreign-body-aspiration, snakebite-envenomation, uterine-rupture, pprom
 - **19 expansion conditions**: Additional high-priority conditions across existing categories
