@@ -4,24 +4,10 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE-APACHE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-**The AI-native emergency medicine knowledge base.**
-Agent-compiled. Machine-validated. Structured for LLM consumption.
+**363 emergency medicine conditions. 80 physician-reviewed. 631 source citations.**
+Agent-compiled from clinical guidelines and PubMed literature. Machine-validated with a 13-pass automated quality suite.
 
 ## Quick Start
-
-```bash
-# Search for all conditions mentioning chest pain
-rg "chest pain" corpus/
-
-# Find all ESI-1 conditions
-rg "^esi: 1" corpus/ --glob "*.md"
-
-# List all cardiovascular conditions
-rg "^category: cardiovascular" corpus/ --glob "*.md" -l
-
-# Find drug doses for a specific medication
-rg "epinephrine" corpus/ --glob "*.md"
-```
 
 ```python
 from openem import OpenEMIndex, OpenEMBridge
@@ -34,11 +20,23 @@ print(context)
 
 Install: `pip install -e .` from the repo root.
 
+### CLI
+
+Every condition is a plain Markdown file — searchable with standard tools:
+
+```bash
+rg "chest pain" corpus/                              # Full-text search
+rg "^esi: 1" corpus/ --glob "*.md"                   # Find all ESI-1 conditions
+rg "^category: cardiovascular" corpus/ --glob "*.md" -l  # List cardiovascular conditions
+```
+
 ## What This Is
 
 A structured, token-efficient corpus of 363 emergency medicine conditions designed for AI/LLM evaluation and safety research. Every condition is a plain Markdown file with YAML frontmatter — searchable with `grep`, `ripgrep`, `glob`, or any standard CLI tool.
 
-The corpus used to evaluate whether LLMs maintain safety boundaries in emergency medicine conversations. Downstream consumers: [ScribeGOAT2](https://github.com/GOATnote-Inc/scribegoat2), [LostBench](https://github.com/GOATnote-Inc/lostbench), [SafeShift](https://github.com/GOATnote-Inc/safeshift), [RadSlice](https://github.com/GOATnote-Inc/radslice).
+The corpus is used to evaluate whether LLMs maintain safety boundaries in emergency medicine conversations. Downstream consumers: [ScribeGOAT2](https://github.com/GOATnote-Inc/scribegoat2), [LostBench](https://github.com/GOATnote-Inc/lostbench), [SafeShift](https://github.com/GOATnote-Inc/safeshift), [RadSlice](https://github.com/GOATnote-Inc/radslice).
+
+Downstream evaluations show measurable safety impact: RAG context from OpenEM lifts model safety pass^k from 0.217 to 0.391 (+80%) and reduces urgency-minimization failures by 65% ([LostBench CEIS](https://github.com/GOATnote-Inc/lostbench), N=78 scenarios). [RadSlice](https://github.com/GOATnote-Inc/radslice) maps 133 OpenEM conditions to multimodal imaging tasks. [SafeShift](https://github.com/GOATnote-Inc/safeshift) uses optional OpenEM context enrichment for inference optimization safety testing.
 
 ## Important Disclaimers
 
@@ -65,6 +63,17 @@ The corpus used to evaluate whether LLMs maintain safety boundaries in emergency
 | Physician-reviewed (risk tier A) | 80 |
 | License | Apache 2.0 (tier1) |
 | Validation | All conditions pass automated 13-check suite (schema v2.0) |
+
+## Quality Assurance
+
+| Layer | What | Details |
+|-------|------|---------|
+| Schema validation | Every condition validates against [`condition.schema.yaml`](schemas/condition.schema.yaml) (v2.0) | 22 required fields, ICD-10 format, source citations |
+| 13-pass audit | [`scripts/audit.py`](scripts/audit.py) — 3 blocking, 10 informational | Cross-file dosing consistency, dose range anomalies, content completeness |
+| Physician review | 80 risk_tier A conditions reviewed by board-certified EM physician | Structured [category-specific rubrics](review/rubric/), blind review protocol |
+| CI pipeline | 5 workflows: validate, audit, quality-gate, review-gate, tests | All block merge to main |
+
+Physician review workflow: [`REVIEWING.md`](REVIEWING.md). Full validation pipeline: [`docs/CORPUS_DETAILS.md`](docs/CORPUS_DETAILS.md).
 
 ## File Format
 
@@ -112,6 +121,10 @@ validation:
 
 Every condition file contains 7 required sections: Recognition, Critical Actions, Differential Diagnosis, Workup, Treatment, Disposition, Pitfalls.
 
+### Safety-Specific Fields
+
+38 conditions include `confusion_pairs` linking to conditions with similar presentation but different acuity (e.g., tension-headache → subarachnoid-hemorrhage). 13 conditions include `escalation_triggers` — red flags that override a low-ESI default. 10 risk_tier A conditions carry structured `time_to_harm` with `irreversible_injury`, `death`, and `optimal_intervention_window` fields. Full schema: [`schemas/condition.schema.yaml`](schemas/condition.schema.yaml).
+
 ## Python API
 
 ```bash
@@ -140,6 +153,17 @@ Downstream projects can override the canonical map:
 ```python
 bridge = OpenEMBridge(index, condition_map={"my_condition": ["stemi", "sepsis"]})
 ```
+
+## FHIR Export
+
+Eight conditions have synthetic FHIR R4 presentation profiles ([`fhir/presentations/`](fhir/presentations/)) that generate deterministic patient bundles for evaluating EHR-facing AI — prior authorization, CDS Hooks, triage routing.
+
+```bash
+pip install -e ".[fhir]"           # Optional: fhir.resources validation
+make generate-fhir                  # Generate bundles from presentation profiles
+```
+
+POC conditions: anaphylaxis, bacterial-meningitis, diabetic-ketoacidosis, neonatal-emergencies, stemi, subarachnoid-hemorrhage, testicular-torsion, acute-limb-ischemia.
 
 ## Licensing
 
@@ -180,6 +204,10 @@ Or see [CITATION.cff](CITATION.cff) for machine-readable citation metadata.
 
 Architecture overview: [CROSS_REPO_ARCHITECTURE.md](https://github.com/GOATnote-Inc/scribegoat2/blob/main/docs/CROSS_REPO_ARCHITECTURE.md)
 
----
+## Further Reading
 
-For detailed documentation on categories, source composition, validation pipeline, agent architecture, and schema extensions, see [`docs/`](docs/).
+- [Architecture](docs/ARCHITECTURE.md) — retrieval layer design, bridge pattern, index chunking
+- [Corpus Details](docs/CORPUS_DETAILS.md) — categories, expansion history, source composition, validation
+- [Condition Schema](schemas/condition.schema.yaml) — YAML frontmatter specification (v2.0)
+- [Changelog](CHANGELOG.md) — version history
+- [Reviewing Guide](REVIEWING.md) — physician review workflow and rubrics
