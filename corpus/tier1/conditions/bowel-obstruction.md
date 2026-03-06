@@ -8,6 +8,22 @@ time_to_harm: "< 6 hours"
 mortality_if_delayed: "Strangulated bowel: 20-40% mortality if surgery delayed beyond 36 hours; closed-loop obstruction causes ischemia within hours"
 category: gastrointestinal
 track: tier1
+confusion_pairs:
+  - condition: mesenteric-ischemia
+    differentiators:
+      - "Bowel obstruction: colicky abdominal pain, distension, vomiting, obstipation, dilated loops with air-fluid levels on imaging, transition point identifiable"
+      - "Mesenteric ischemia: pain out of proportion to exam, vascular risk factors (AFib, atherosclerosis), lactic acidosis, CT angiography shows vascular occlusion, wall thickening/pneumatosis"
+      - "Bowel obstruction can progress to ischemia (strangulation) — rising lactate and peritoneal signs in obstruction suggest ischemic bowel"
+  - condition: incarcerated-hernia
+    differentiators:
+      - "Bowel obstruction: may have multiple etiologies (adhesions most common), imaging shows site of obstruction"
+      - "Incarcerated hernia: palpable non-reducible hernia mass (inguinal, femoral, umbilical, incisional), hernia IS the cause of obstruction, requires manual reduction or emergent surgery"
+      - "Incarcerated hernia is a specific CAUSE of bowel obstruction — physical exam of all hernia sites is mandatory in every obstruction workup"
+  - condition: ogilvie-syndrome
+    differentiators:
+      - "Bowel obstruction: mechanical cause with identifiable transition point, surgical or procedural intervention often required"
+      - "Ogilvie syndrome (acute colonic pseudo-obstruction): massive colonic dilation without mechanical obstruction, postoperative/critically ill/immobilized patient, no transition point, cecum > 12 cm risks perforation, treated with neostigmine"
+      - "Absence of a transition point on CT distinguishes pseudo-obstruction from mechanical obstruction — neostigmine is contraindicated in mechanical obstruction"
 sources:
   - type: guideline
     ref: "WSES 2017 Guidelines for Management of Small Bowel Obstruction. World J Emerg Surg. 2017;12:29"

@@ -1,5 +1,29 @@
 # Changelog
 
+## v0.5.0 (2026-03-06) — Depth Over Breadth
+
+### Safety Metadata Deepening
+- **confusion_pairs** expanded from 38 to 152 conditions (41% coverage) — maps conditions with similar presentation but different acuity
+- **decision_rules** expanded from 15 to 45 conditions — clinical scoring systems (Wells, PERC, qSOFA, NIHSS, HEART, etc.) with citations and PMIDs
+- **evaluation_properties** expanded from 4 to 44 conditions — pressure vulnerability, imaging modalities from downstream evaluations (LostBench, RadSlice)
+
+### New Conditions (7)
+- **6 ENT/otolaryngology**: epistaxis, post-tonsillectomy-hemorrhage, sudden-sensorineural-hearing-loss, dental-emergency, nasal-septal-hematoma, parapharyngeal-abscess
+- **1 LostBench demand signal**: malignant-spinal-cord-compression
+- All new conditions include confusion_pairs from day one
+- Total: 363 → 370 conditions
+
+### Downstream Alignment
+- RadSlice overlay fixes: `appendicitis` → `acute-appendicitis`, `pneumothorax` → `[spontaneous-pneumothorax, tension-pneumothorax]`, `rib-fracture` → `flail-chest`
+- Overlay aliases added for all 7 new conditions
+- ABEM mapping updated with v0.5.0 condition counts
+
+### Quality
+- All 370 conditions pass schema v2.0 validation
+- 13-pass audit: 0 critical findings
+- Quality gate: all 6 blocking gates pass
+- All confusion_pairs reference valid condition_ids (machine-verified)
+
 ## v2.0 (2026-02-23)
 
 ### Schema Extensions

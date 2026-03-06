@@ -8,6 +8,22 @@ time_to_harm: "< 24 hours"
 mortality_if_delayed: "Irreversible paralysis and loss of bowel/bladder function if treatment delayed > 24-48 hours"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: cauda-equina-syndrome
+    differentiators:
+      - "Cord compression: upper motor neuron signs (hyperreflexia, Babinski, clonus), sensory level, lesion above L1-L2"
+      - "CES: lower motor neuron signs (areflexia), saddle anesthesia, bowel/bladder dysfunction, lesion at/below L1-L2"
+      - "CES: absent bulbocavernosus reflex, decreased anal tone; cord compression: brisk reflexes below level"
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "Cord compression: bilateral weakness with sensory level, back pain, spinal tenderness, no cranial nerve involvement"
+      - "AIS: unilateral face/arm/leg weakness in cerebral territory, speech/language deficit, brain imaging abnormal"
+      - "Anterior spinal artery syndrome (spinal stroke) presents like cord compression but without compressive lesion on MRI"
+  - condition: guillain-barre-syndrome
+    differentiators:
+      - "Cord compression: distinct sensory level, upper motor neuron signs, MRI shows extrinsic mass"
+      - "GBS: ascending areflexic paralysis without sensory level, normal spinal MRI, CSF protein elevated"
+      - "Cord compression: often back pain at lesion level; GBS: pain is diffuse, no focal spinal tenderness"
 sources:
   - type: guideline
     ref: "NICE Guideline NG149: Metastatic spinal cord compression in adults. 2008 (updated 2019)"

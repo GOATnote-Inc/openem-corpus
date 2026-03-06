@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 6 hours"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "PRES: bilateral posterior-predominant vasogenic edema on MRI, resolves with BP control"
+      - "AIS: restricted diffusion (DWI+/ADC-) in arterial territory, does not resolve"
+      - "PRES: visual symptoms and seizures predominate; AIS: focal motor/language deficit in single territory"
+  - condition: hypertensive-emergency
+    differentiators:
+      - "PRES is a complication of hypertensive emergency — distinguished by neuroimaging (posterior vasogenic edema)"
+      - "Hypertensive emergency without PRES: end-organ damage (cardiac, renal, aortic) without characteristic MRI findings"
+      - "PRES can occur at lower BP thresholds in eclampsia, immunosuppression, renal disease"
+  - condition: status-epilepticus
+    differentiators:
+      - "PRES: seizures in context of acute hypertension or immunosuppression, characteristic MRI pattern"
+      - "SE without PRES: seizures from epilepsy, metabolic, or structural causes; MRI lacks posterior vasogenic edema"
+      - "PRES seizures resolve with BP control and removal of offending agent"
 sources:
   - type: guideline
     ref: "Fugate JE, Rabinstein AA. Posterior Reversible Encephalopathy Syndrome: Clinical and Radiological Manifestations, Pathophysiology, and Outstanding Questions. Lancet Neurol. 2015;14(9):914-925"

@@ -8,6 +8,29 @@ time_to_harm: "< 4 hours"
 mortality_if_delayed: "CAP mortality 1-5% outpatient, 5-25% inpatient, 30-50% ICU; increases with delayed antibiotics"
 category: respiratory
 track: tier1
+decision_rules:
+  - name: "CURB-65"
+    citation: "Lim WS et al. Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study. Thorax. 2003;58(5):377-382."
+    pmid: "12728155"
+  - name: "PSI/PORT Score"
+    citation: "Fine MJ et al. A prediction rule to identify low-risk patients with community-acquired pneumonia. N Engl J Med. 1997;336(4):243-250."
+    pmid: "8995086"
+confusion_pairs:
+  - condition: pulmonary-embolism
+    differentiators:
+      - "Pneumonia: productive cough, fever, focal consolidation on CXR, elevated WBC/procalcitonin, responds to antibiotics"
+      - "Pulmonary embolism: sudden onset dyspnea/pleuritic chest pain, often no fever, CXR may be normal or show Hampton hump/Westermark sign, CT angiography shows filling defect"
+      - "Both cause dyspnea, hypoxia, and pleuritic pain — pneumonia that fails to improve should prompt PE evaluation"
+  - condition: acute-heart-failure
+    differentiators:
+      - "Pneumonia: fever, productive cough, focal infiltrate, infectious markers elevated"
+      - "Acute heart failure: bilateral pulmonary edema, elevated BNP/NT-proBNP, cardiomegaly, S3 gallop, JVD, responds to diuretics/vasodilators"
+      - "Both cause dyspnea and bilateral infiltrates — BNP and clinical context distinguish; pneumonia can precipitate heart failure exacerbation"
+  - condition: covid-pneumonia-severe
+    differentiators:
+      - "Pneumonia (bacterial): productive purulent sputum, focal lobar consolidation, responds to standard antibiotics, procalcitonin elevated"
+      - "COVID pneumonia: bilateral ground-glass opacities, lymphopenia, elevated ferritin/D-dimer/LDH, procalcitonin often normal, requires dexamethasone + remdesivir, rapid progression to ARDS"
+      - "COVID pneumonia has characteristic bilateral GGO pattern and inflammatory marker profile distinct from bacterial pneumonia"
 sources:
   - type: guideline
     ref: "ATS/IDSA 2019 Diagnosis and Treatment of Adults with Community-acquired Pneumonia: An Official Clinical Practice Guideline"

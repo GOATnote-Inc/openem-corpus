@@ -10,6 +10,20 @@ time_to_harm:
   optimal_intervention_window: "< 12 hours (NAC, transplant evaluation)"
 category: gastrointestinal
 track: tier1
+confusion_pairs:
+  - condition: acetaminophen-overdose
+    differentiators:
+      - "Acute hepatic failure: broad etiology (viral, drug-induced, autoimmune, ischemic); encephalopathy and coagulopathy defining features"
+      - "Acetaminophen overdose: specific toxin with known dose-toxicity curve, NAC as antidote, Rumack-Matthew nomogram guides treatment"
+      - "Overlap: acetaminophen is the most common cause of acute hepatic failure in the US/UK"
+  - condition: sepsis
+    differentiators:
+      - "Acute hepatic failure: INR >= 1.5 with encephalopathy, AST/ALT markedly elevated, jaundice, hypoglycemia"
+      - "Sepsis: infectious source identifiable, procalcitonin elevated, liver enzymes may be mildly elevated but coagulopathy from DIC pattern differs"
+  - condition: acute-heart-failure
+    differentiators:
+      - "Acute hepatic failure: primary hepatic dysfunction with encephalopathy, no pulmonary edema or volume overload"
+      - "Acute heart failure: BNP/NT-proBNP elevated, pulmonary edema on CXR, hepatic congestion is secondary (shock liver pattern with AST > ALT)"
 sources:
   - type: guideline
     ref: "AASLD Position Paper: The Management of Acute Liver Failure: Update 2011, Hepatology 2012;55(3):965-967"

@@ -11,6 +11,19 @@ time_to_harm:
 mortality_if_delayed: "Overall maternal mortality 20-60%; cardiac arrest mortality 80-90% without immediate resuscitation"
 category: obstetric-gynecologic
 track: tier1
+confusion_pairs:
+  - condition: pulmonary-embolism
+    differentiators:
+      - "Amniotic fluid embolism: sudden cardiovascular collapse during labor/delivery with DIC, no prior DVT risk factors specific to PE"
+      - "Pulmonary embolism: thromboembolic obstruction, D-dimer elevated, CT pulmonary angiography shows clot, DIC not typical"
+  - condition: anaphylaxis
+    differentiators:
+      - "Amniotic fluid embolism: occurs during labor/delivery, DIC with coagulopathic hemorrhage, no urticaria or angioedema"
+      - "Anaphylaxis: identifiable allergen exposure, urticaria/angioedema/bronchospasm, responds to epinephrine, no DIC"
+  - condition: postpartum-hemorrhage
+    differentiators:
+      - "Amniotic fluid embolism: cardiovascular collapse and respiratory failure precede hemorrhage, DIC causes coagulopathic bleeding"
+      - "Postpartum hemorrhage: bleeding is the primary event (uterine atony, lacerations), no preceding cardiovascular collapse or hypoxia"
 sources:
   - type: review
     ref: "Clark SL. Amniotic fluid embolism. Obstet Gynecol. 2014;123(2 Pt 1):337-348."

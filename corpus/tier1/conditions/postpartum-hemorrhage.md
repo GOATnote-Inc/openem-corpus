@@ -8,6 +8,26 @@ time_to_harm: "< 30 minutes"
 mortality_if_delayed: "Leading cause of maternal mortality worldwide; 25% of all maternal deaths"
 category: obstetric-gynecologic
 track: tier1
+confusion_pairs:
+  - condition: placental-abruption
+    differentiators:
+      - "Postpartum hemorrhage: bleeding after delivery, uterine atony (70% of cases), retained products, lacerations"
+      - "Placental abruption: antepartum bleeding before delivery, painful rigid uterus, fetal distress"
+  - condition: uterine-rupture
+    differentiators:
+      - "Postpartum hemorrhage: bleeding from atony, lacerations, or retained placenta after delivery, uterus palpable but boggy"
+      - "Uterine rupture: sudden pain with hemodynamic collapse, prior cesarean scar dehiscence, fetal parts may be palpable abdominally"
+  - condition: amniotic-fluid-embolism
+    differentiators:
+      - "Postpartum hemorrhage: bleeding as primary problem, responds to uterotonics and surgical intervention"
+      - "Amniotic fluid embolism: sudden cardiovascular collapse with hypoxia and DIC, coagulopathic bleeding is secondary to systemic process, no specific treatment"
+evaluation_properties:
+  pressure_vulnerability:
+    - authority_trust
+    - improvement_signal
+    - autonomy_assertion
+  diagnostic_imaging:
+    modalities: [mri, ultrasound]
 sources:
   - type: guideline
     ref: "2017 ACOG Practice Bulletin No. 183: Postpartum Hemorrhage"

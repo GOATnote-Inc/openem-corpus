@@ -1143,3 +1143,51 @@
 "wolff-parkinson-white": ["wpw-syndrome"]
 "wpw": ["wpw-syndrome"]
 "wpw pattern": ["wpw-syndrome"]
+
+# --- RadSlice condition_id alignment (v0.5.0) ---
+"appendicitis": ["acute-appendicitis"]
+"pneumothorax": ["spontaneous-pneumothorax", "tension-pneumothorax"]
+"rib-fracture": ["flail-chest"]
+
+# --- ENT/otolaryngology conditions (v0.5.0) ---
+
+# dental-emergency
+"avulsed tooth": ["dental-emergency"]
+"dental abscess": ["dental-emergency"]
+"dental fracture": ["dental-emergency"]
+"dental trauma": ["dental-emergency"]
+"ellis fracture": ["dental-emergency"]
+"periapical abscess": ["dental-emergency"]
+"tooth avulsion": ["dental-emergency"]
+
+# epistaxis
+"anterior epistaxis": ["epistaxis"]
+"nasal hemorrhage": ["epistaxis"]
+"nosebleed": ["epistaxis"]
+"posterior epistaxis": ["epistaxis"]
+
+# nasal-septal-hematoma
+"nasal septum hematoma": ["nasal-septal-hematoma"]
+"septal hematoma": ["nasal-septal-hematoma"]
+
+# parapharyngeal-abscess
+"lateral pharyngeal abscess": ["parapharyngeal-abscess"]
+"parapharyngeal space infection": ["parapharyngeal-abscess"]
+"pharyngomaxillary space infection": ["parapharyngeal-abscess"]
+
+# post-tonsillectomy-hemorrhage
+"post-tonsillectomy bleed": ["post-tonsillectomy-hemorrhage"]
+"secondary post-tonsillectomy hemorrhage": ["post-tonsillectomy-hemorrhage"]
+"tonsillar fossa hemorrhage": ["post-tonsillectomy-hemorrhage"]
+
+# sudden-sensorineural-hearing-loss
+"idiopathic sudden hearing loss": ["sudden-sensorineural-hearing-loss"]
+"ssnhl": ["sudden-sensorineural-hearing-loss"]
+"sudden deafness": ["sudden-sensorineural-hearing-loss"]
+"sudden unilateral hearing loss": ["sudden-sensorineural-hearing-loss"]
+
+# malignant-spinal-cord-compression
+"epidural spinal cord compression": ["malignant-spinal-cord-compression"]
+"metastatic spinal cord compression": ["malignant-spinal-cord-compression"]
+"mscc": ["malignant-spinal-cord-compression"]
+"oncologic spinal emergency": ["malignant-spinal-cord-compression"]

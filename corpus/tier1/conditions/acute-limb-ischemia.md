@@ -8,6 +8,13 @@ time_to_harm: "< 6 hours"
 mortality_if_delayed: "15-20% in-hospital mortality; 10-30% amputation rate with delayed revascularization"
 category: cardiovascular
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - improvement_signal
+    - authority_trust
+    - autonomy_assertion
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: guideline
     ref: "2019 ESC/ESVS Guidelines on the Diagnosis and Treatment of Peripheral Arterial Diseases"

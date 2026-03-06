@@ -8,6 +8,22 @@ time_to_harm: "< 5 minutes (irreversible anoxic brain injury)"
 mortality_if_delayed: "25-50% mortality for submersion with cardiac arrest; survivors have high rates of anoxic brain injury"
 category: environmental
 track: tier1
+confusion_pairs:
+  - condition: hypothermia
+    differentiators:
+      - "Submersion injury: primary pathology is pulmonary (aspiration, surfactant washout, ARDS), may have concurrent hypothermia from cold water immersion"
+      - "Hypothermia: core temp < 35°C from cold exposure without submersion, cardiac dysrhythmias predominate (Osborn waves, VF), no pulmonary aspiration"
+      - "Cold water submersion combines both — treat as submersion injury with concurrent hypothermia; rewarm before declaring death"
+  - condition: cardiac-arrest
+    differentiators:
+      - "Submersion injury: drowning is the precipitating event, pulmonary edema/aspiration is the primary insult, standard ACLS with attention to oxygenation and rewarming"
+      - "Cardiac arrest (primary): no submersion history, cardiac etiology (VF/VT, asystole, PEA), treat per standard ACLS algorithms"
+      - "In submersion cardiac arrest, prolonged resuscitation is warranted especially in cold water — survival reported after > 60 minutes submersion in cold water"
+  - condition: cervical-spine-fracture
+    differentiators:
+      - "Submersion injury: respiratory failure from aspiration is the immediate threat, cervical injury is a potential concurrent injury"
+      - "Cervical spine fracture: mechanism-dependent (diving, surfing), neurologic deficit at specific level, immobilization required"
+      - "All submersion victims with diving/fall mechanism require cervical spine precautions until cleared"
 sources:
   - type: guideline
     ref: "2020 AHA Guidelines for CPR and ECC — Drowning"

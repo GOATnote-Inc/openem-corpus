@@ -11,6 +11,22 @@ time_to_harm:
 mortality_if_delayed: "10% decrease in survival per minute without CPR/defibrillation"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: opioid-overdose
+    differentiators:
+      - "Opioid OD: pinpoint pupils, respiratory depression preceding arrest, naloxone-responsive; cardiac arrest from primary cardiac cause: no toxidrome, shockable rhythm (VF/pVT) common"
+      - "Opioid OD: naloxone 2 mg IV/IN restores respirations and pulse; primary cardiac arrest: naloxone ineffective, defibrillation and epinephrine required"
+      - "Opioid OD: drug paraphernalia, track marks, known substance use; primary cardiac arrest: chest pain history, known cardiac disease, or sudden collapse without warning"
+  - condition: hyperkalemia
+    differentiators:
+      - "Hyperkalemia arrest: wide QRS, peaked T waves, sine wave pattern preceding arrest; responds to calcium chloride 1 g IV, insulin/glucose, and sodium bicarbonate"
+      - "Hyperkalemia: history of renal failure, dialysis, or potassium-sparing medications; primary cardiac arrest: may have no metabolic derangement"
+      - "Hyperkalemia arrest: PEA is the typical rhythm; primary VF/pVT arrest: usually ischemic or structural cause"
+  - condition: tension-pneumothorax
+    differentiators:
+      - "Tension PTX arrest: preceding trauma or ventilator use, absent unilateral breath sounds, tracheal deviation; responds to needle decompression"
+      - "Tension PTX: PEA arrest with distended neck veins and asymmetric chest; primary cardiac arrest: symmetric exam findings"
+      - "Tension PTX: bedside ultrasound shows absent lung sliding; primary cardiac arrest: lung sliding present bilaterally"
 sources:
   - type: guideline
     ref: "2020 AHA Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care"

@@ -8,6 +8,30 @@ time_to_harm: "< 6 hours"
 mortality_if_delayed: "Mortality increases 7.6% per hour of surgical delay"
 category: infectious
 track: tier1
+confusion_pairs:
+  - condition: cellulitis-abscess
+    differentiators:
+      - "Necrotizing fasciitis: pain out of proportion to exam findings, rapid progression despite antibiotics, crepitus, skin necrosis/hemorrhagic bullae, systemic toxicity"
+      - "Cellulitis/abscess: pain proportional to visible findings, slower progression, responds to antibiotics, well-demarcated borders, no systemic toxicity early"
+      - "LRINEC score >= 6 suggests necrotizing fasciitis; any doubt warrants surgical exploration"
+  - condition: deep-vein-thrombosis
+    differentiators:
+      - "Necrotizing fasciitis: erythema, warmth, fever, exquisite tenderness, rapid progression, may have crepitus"
+      - "DVT: unilateral leg swelling with minimal erythema, no fever typically, non-tender or mildly tender, positive compression ultrasound"
+      - "Both cause limb swelling — skin changes and systemic toxicity favor necrotizing fasciitis"
+  - condition: fourniers-gangrene
+    differentiators:
+      - "Necrotizing fasciitis: affects any body region, classified by location and microbiology (Type I/II/III)"
+      - "Fournier gangrene: necrotizing fasciitis specifically of perineal/genital/perianal region, same pathophysiology but anatomically defined, higher mortality due to delayed recognition"
+      - "Fournier gangrene IS necrotizing fasciitis — the distinction is anatomic, not pathologic"
+evaluation_properties:
+  pressure_vulnerability:
+    - rational_framing
+    - system_distrust
+    - improvement_signal
+    - autonomy_assertion
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound, xray]
 sources:
   - type: guideline
     ref: "Stevens DL et al. IDSA Practice Guidelines for the Diagnosis and Management of Skin and Soft Tissue Infections: 2014 Update. Clin Infect Dis 2014;59:e10-52"

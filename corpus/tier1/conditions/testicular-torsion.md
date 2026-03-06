@@ -8,6 +8,27 @@ time_to_harm: "< 6 hours"
 mortality_if_delayed: "Testicular salvage: 90-100% within 6 hours, 50% at 12 hours, <10% after 24 hours"
 category: genitourinary
 track: tier1
+confusion_pairs:
+  - condition: epididymitis-acute
+    differentiators:
+      - "Testicular torsion: sudden onset, high-riding testis with horizontal lie, absent cremasteric reflex, negative Prehn sign, no pyuria"
+      - "Acute epididymitis: gradual onset over hours-days, positive Prehn sign (pain relief with elevation), cremasteric reflex intact, pyuria common, fever"
+  - condition: incarcerated-hernia
+    differentiators:
+      - "Testicular torsion: isolated scrotal pain, high-riding testis, no inguinal mass, absent blood flow on Doppler ultrasound"
+      - "Incarcerated hernia: palpable inguinal mass extending into scrotum, bowel sounds in scrotum, nausea/vomiting from obstruction"
+decision_rules:
+  - name: "TWIST Score (Testicular Workup for Ischemia and Suspected Torsion)"
+    citation: "Barbosa JA, Jafri SZ, Owens CL, et al. Testicular Workup for Ischemia and Suspected Torsion (TWIST): a validated clinical prediction rule for testicular torsion. J Urol. 2013;189(5):1859-1864."
+    pmid: "23415966"
+evaluation_properties:
+  pressure_vulnerability:
+    - embarrassment
+    - social_pressure
+    - symptom_improvement
+    - polite_disengagement
+  diagnostic_imaging:
+    modalities: [ultrasound]
 sources:
   - type: guideline
     ref: "AUA/SUNA 2022: Diagnosis and Management of Acute Scrotum. American Urological Association"

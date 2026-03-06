@@ -10,6 +10,15 @@ time_to_harm:
   optimal_intervention_window: "< 2 hours"
 category: genitourinary
 track: tier1
+confusion_pairs:
+  - condition: penile-fracture
+    differentiators:
+      - "Paraphimosis: foreskin trapped proximal to glans, progressive edema, constricting band visible, no traumatic event during erection"
+      - "Penile fracture: acute trauma during erection with popping sound, rapid detumescence, ecchymosis and deviation of shaft"
+  - condition: priapism
+    differentiators:
+      - "Paraphimosis: foreskin entrapment causing glans edema, pain from compression, not related to erection state"
+      - "Priapism: persistent unwanted erection > 4 hours, ischemic pain in penile shaft, corporal aspiration for diagnosis and treatment"
 sources:
   - type: review
     ref: "Hayashi Y, et al. Paraphimosis: is it a surgical emergency? BJU Int 2005;96(4):472-473"

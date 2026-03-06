@@ -8,6 +8,22 @@ time_to_harm: "< 2 hours"
 mortality_if_delayed: "5-10% for acute chest syndrome; higher for stroke"
 category: hematologic
 track: tier1
+confusion_pairs:
+  - condition: pulmonary-embolism
+    differentiators:
+      - "Sickle cell crisis: known SCD, diffuse bone/chest pain, history of prior crises, acute chest syndrome presents with fever + new infiltrate + respiratory symptoms"
+      - "Pulmonary embolism: sudden onset dyspnea/pleuritic chest pain, tachycardia, elevated D-dimer, CT angiography shows filling defect"
+      - "PE occurs at increased rate in SCD patients — maintain high suspicion for PE in sickle cell patients with chest pain and hypoxia"
+  - condition: acute-coronary-syndrome-nstemi
+    differentiators:
+      - "Sickle cell crisis: young patient with known SCD, pain in typical crisis locations (back, extremities, chest), hemoglobin electrophoresis abnormal"
+      - "NSTEMI: troponin elevation with ischemic symptoms, ECG changes (ST depression, T-wave inversion), coronary risk factors"
+      - "Troponin can be elevated in sickle cell crisis from myocardial demand ischemia — serial troponins and ECG changes help distinguish"
+  - condition: sepsis
+    differentiators:
+      - "Sickle cell crisis: known SCD, pain out of proportion, triggered by cold/dehydration/infection, reticulocytosis"
+      - "Sepsis: infectious source, elevated procalcitonin and lactate, responds to antibiotics"
+      - "Infection is the most common trigger of sickle cell crisis — both may coexist; always evaluate for infection in febrile SCD patients"
 sources:
   - type: guideline
     ref: "NHLBI Evidence-Based Management of Sickle Cell Disease: Expert Panel Report (2014)"

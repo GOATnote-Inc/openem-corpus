@@ -8,6 +8,22 @@ time_to_harm: "< 30 minutes"
 mortality_if_delayed: "Overall mortality 80-90%; 50% die before reaching hospital; operative mortality 40-50%"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: renal-colic-complicated
+    differentiators:
+      - "rAAA: pulsatile abdominal mass, hemodynamic instability, age > 65 with vascular risk factors; renal colic: colicky flank pain, writhing patient, normal aorta on ultrasound"
+      - "rAAA: aorta >= 5.0 cm on bedside ultrasound; renal colic: normal-caliber aorta, hydronephrosis on ultrasound, stone on CT"
+      - "Any patient > 50 with 'renal colic' and hemodynamic instability requires bedside aortic ultrasound before CT — this is the most dangerous misdiagnosis"
+  - condition: acute-pancreatitis
+    differentiators:
+      - "rAAA: sudden back/flank pain with hypotension, pulsatile mass; pancreatitis: epigastric pain radiating to back, elevated lipase > 3x ULN, no pulsatile mass"
+      - "rAAA: hemoglobin may be normal early (acute hemorrhage without equilibration); pancreatitis: hemoglobin usually normal, lipase diagnostic"
+      - "Both can present with back pain and shock — aortic ultrasound is mandatory in any elderly patient with back pain and hemodynamic instability"
+  - condition: aortic-dissection
+    differentiators:
+      - "rAAA: infrarenal aortic aneurysm visible on ultrasound, treatment is OR for surgical repair; dissection: intimal flap on CTA, may involve ascending or descending aorta"
+      - "rAAA: hypotension from hemorrhage, permissive hypotension target SBP 70-90; dissection: hypertension at presentation, target SBP 100-120 with anti-impulse therapy"
+      - "Both can coexist — dissection can extend into an aneurysmal infrarenal segment"
 sources:
   - type: guideline
     ref: "2018 Society for Vascular Surgery Practice Guidelines for the Care of Patients with an Abdominal Aortic Aneurysm"

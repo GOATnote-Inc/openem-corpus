@@ -30,7 +30,7 @@ last_updated: "2026-02-26"
 compiled_by: agent
 risk_tier: B
 confusion_pairs:
-  - condition: acute-otitis-media
+  - condition: pediatric-acute-otitis-media
     differentiators:
       - "Malignant OE: ear canal granulation tissue at osseocartilaginous junction"
       - "Malignant OE: diabetic or immunocompromised patient with weeks of symptoms"

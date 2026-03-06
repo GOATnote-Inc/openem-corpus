@@ -10,6 +10,30 @@ time_to_harm:
   optimal_intervention_window: "< 5 minutes"
 category: respiratory
 track: tier1
+confusion_pairs:
+  - condition: acute-heart-failure
+    differentiators:
+      - "Respiratory failure: hypoxemia from pulmonary parenchymal disease (pneumonia, ARDS, PE); AHF: hypoxemia from cardiogenic pulmonary edema with elevated filling pressures"
+      - "Respiratory failure: BNP/NT-proBNP normal or mildly elevated; AHF: BNP markedly elevated (> 500 pg/mL), bilateral pulmonary edema on CXR, S3 gallop, JVD"
+      - "Type 2 respiratory failure (hypercapnic): COPD, neuromuscular disease, overdose — responds to NIV or intubation; AHF: responds to diuretics, nitroglycerin, and CPAP/BiPAP"
+      - "Bedside echo differentiates: reduced EF and dilated ventricles in AHF; normal cardiac function with lung pathology in primary respiratory failure"
+  - condition: pulmonary-embolism
+    differentiators:
+      - "Respiratory failure: bilateral CXR findings (infiltrates, edema, ARDS), hypoxemia correlates with imaging; PE: hypoxemia disproportionate to CXR findings (CXR often near-normal), elevated D-dimer"
+      - "PE: acute onset dyspnea with pleuritic pain, risk factors (DVT, immobility, malignancy); respiratory failure: progressive dyspnea with identifiable pulmonary cause"
+      - "PE: CTA shows pulmonary artery filling defects, RV dilation on echo; respiratory failure: CTA negative for PE, lung parenchymal disease visible"
+  - condition: sepsis
+    differentiators:
+      - "Respiratory failure from pneumonia/ARDS may coexist with sepsis — they are not mutually exclusive; isolated sepsis without pulmonary source: hypotension, tachycardia, altered mentation, but clear CXR"
+      - "Sepsis-induced respiratory failure: usually ARDS from extrapulmonary source (abdominal sepsis, urosepsis); primary respiratory failure: pulmonary cause identified (pneumonia, aspiration)"
+      - "Both require early antibiotics if infection suspected; respiratory failure additionally requires ventilatory support (NIV or intubation)"
+decision_rules:
+  - name: "Berlin Definition for ARDS"
+    citation: "ARDS Definition Task Force et al. Acute respiratory distress syndrome: the Berlin Definition. JAMA. 2012;307(23):2526-2533."
+    pmid: "22797452"
+  - name: "ROX Index"
+    citation: "Roca O et al. An index combining respiratory rate and oxygenation to predict outcome of nasal high-flow therapy. Am J Respir Crit Care Med. 2019;199(11):1368-1376."
+    pmid: "30021612"
 sources:
   - type: guideline
     ref: "2024 ATS Clinical Practice Guideline: An Update on Management of Adult Patients With Acute Respiratory Distress Syndrome. Am J Respir Crit Care Med. 2024;209(1):24-36."

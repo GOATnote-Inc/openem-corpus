@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 48 hours (antitoxin most effective within first 2 days)"
 category: infectious
 track: tier1
+confusion_pairs:
+  - condition: myasthenia-gravis-crisis
+    differentiators:
+      - "Botulism: descending paralysis (cranial nerves first), fixed dilated pupils, autonomic dysfunction (dry mouth, constipation), no prior neuromuscular diagnosis, exposure history (food, wound, infant)"
+      - "MG crisis: fatigable weakness that worsens with repetition, normal pupils, known MG history, responds to acetylcholinesterase inhibitors (edrophonium test)"
+      - "Both cause bulbar weakness and respiratory failure — pupil dilation and descending pattern favor botulism"
+  - condition: guillain-barre-syndrome
+    differentiators:
+      - "Botulism: descending paralysis (cranial nerves → arms → legs), dilated pupils, normal CSF, preceded by GI symptoms or wound"
+      - "GBS: ascending paralysis (legs → arms → cranial nerves), areflexia, albuminocytologic dissociation in CSF (elevated protein, normal cells), preceded by viral illness"
+      - "Direction of paralysis is the key clinical discriminator — descending = botulism, ascending = GBS"
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "Botulism: bilateral symmetric cranial nerve palsies, no sensory deficits, clear sensorium, descending weakness pattern"
+      - "Acute ischemic stroke: sudden onset focal neurologic deficit in single vascular territory, often unilateral, may include sensory loss, CT/MRI shows infarct"
+      - "Bilateral cranial nerve involvement with preserved cognition strongly favors botulism over stroke"
 sources:
   - type: guideline
     ref: "CDC Clinical Guidelines for Diagnosis and Treatment of Botulism, MMWR, 2021"

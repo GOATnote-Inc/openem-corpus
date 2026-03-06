@@ -8,6 +8,30 @@ time_to_harm: "< 6-8 hours (ovarian salvage rate drops significantly)"
 mortality_if_delayed: "Low mortality; high morbidity — ovarian necrosis and loss of fertility if diagnosis delayed"
 category: obstetric-gynecologic
 track: tier1
+confusion_pairs:
+  - condition: acute-appendicitis
+    differentiators:
+      - "Ovarian torsion: sudden onset severe unilateral pelvic/adnexal pain, nausea/vomiting, intermittent pain pattern (torsion-detorsion), ovarian enlargement on US"
+      - "Acute appendicitis: gradual onset periumbilical-to-RLQ pain migration, anorexia, low-grade fever, CT shows inflamed appendix"
+      - "Right-sided ovarian torsion closely mimics appendicitis — pelvic US with Doppler should be performed in reproductive-age females with RLQ pain"
+  - condition: ectopic-pregnancy
+    differentiators:
+      - "Ovarian torsion: negative pregnancy test, enlarged ovary with absent/reduced Doppler flow, no free fluid typically early"
+      - "Ectopic pregnancy: positive beta-hCG, adnexal mass with or without free fluid, vaginal bleeding, hemodynamic instability if ruptured"
+      - "Always check beta-hCG — both cause acute pelvic pain but treatment differs completely (surgery for torsion vs methotrexate or surgery for ectopic)"
+  - condition: renal-colic-complicated
+    differentiators:
+      - "Ovarian torsion: pelvic pain with nausea/vomiting, adnexal mass on exam/US, no hematuria"
+      - "Renal colic: flank pain radiating to groin, hematuria on UA, CT shows ureteral stone, colicky pain"
+      - "Both cause acute unilateral abdominal/pelvic pain with nausea — hematuria and CT stone favor renal colic; adnexal mass on US favors torsion"
+evaluation_properties:
+  pressure_vulnerability:
+    - prior_experience
+    - financial_barrier
+    - social_pressure
+    - polite_disengagement
+  diagnostic_imaging:
+    modalities: [ct, ultrasound]
 sources:
   - type: pubmed
     ref: "Houry D, Abbott JT. Ovarian torsion: a fifteen-year review. Ann Emerg Med 2001;38(2):156-159"

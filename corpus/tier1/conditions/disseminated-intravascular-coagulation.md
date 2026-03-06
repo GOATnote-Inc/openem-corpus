@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 2 hours (treat underlying cause)"
 category: hematologic
 track: tier1
+confusion_pairs:
+  - condition: thrombotic-thrombocytopenic-purpura
+    differentiators:
+      - "DIC: consumptive coagulopathy with prolonged PT/PTT, low fibrinogen, elevated D-dimer, schistocytes, triggered by underlying cause (sepsis, trauma, malignancy)"
+      - "TTP: ADAMTS13 deficiency, pentad (thrombocytopenia, MAHA, neurologic changes, renal dysfunction, fever), normal PT/PTT, normal fibrinogen, treated with plasma exchange NOT platelets"
+      - "Key lab distinction: DIC has prolonged coagulation times and low fibrinogen; TTP has normal coagulation times and normal fibrinogen"
+  - condition: hemolytic-uremic-syndrome
+    differentiators:
+      - "DIC: systemic consumption of clotting factors and platelets, prolonged PT/PTT, low fibrinogen, occurs in setting of sepsis/trauma/malignancy"
+      - "HUS: triad of MAHA + thrombocytopenia + AKI, often post-diarrheal (STEC), normal coagulation studies, renal failure predominates"
+      - "Both have schistocytes and thrombocytopenia — coagulation studies and clinical context distinguish"
+  - condition: sepsis
+    differentiators:
+      - "DIC: coagulopathy is the defining feature, can be triggered by sepsis among other causes"
+      - "Sepsis: infection-driven systemic inflammatory response, may or may not develop DIC"
+      - "DIC in the setting of sepsis carries significantly higher mortality — screen with ISTH DIC score in all septic patients"
 sources:
   - type: guideline
     ref: "British Committee for Standards in Haematology: Guidelines for the Diagnosis and Management of DIC, 2009"

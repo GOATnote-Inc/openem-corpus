@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 1 hour"
 category: respiratory
 track: tier1
+confusion_pairs:
+  - condition: gi-hemorrhage
+    differentiators:
+      - "Pulmonary hemorrhage: hemoptysis (bright red, frothy, alkaline pH), bilateral infiltrates on CXR, dropping hemoglobin; GI hemorrhage: hematemesis (dark, coffee-ground, acidic pH) or melena/hematochezia"
+      - "Pulmonary hemorrhage: dyspnea and hypoxemia predominant; GI hemorrhage: hemodynamic instability from volume loss, may have abdominal pain"
+      - "Massive hemoptysis can be swallowed and mimic upper GI bleed — CXR differentiates (infiltrates in DAH vs normal in GI bleed)"
+  - condition: hemothorax
+    differentiators:
+      - "Pulmonary hemorrhage: bilateral alveolar infiltrates, hemoptysis, autoimmune etiology common; hemothorax: unilateral pleural opacification, usually post-traumatic or iatrogenic"
+      - "Hemothorax: dullness to percussion, decreased breath sounds unilaterally; DAH: bilateral crackles, diffuse infiltrates"
+      - "Hemothorax: treatment is chest tube drainage with possible thoracotomy; DAH: treatment is immunosuppression (if autoimmune), plasmapheresis (anti-GBM), and supportive care"
+  - condition: ards
+    differentiators:
+      - "DAH: bilateral infiltrates with hemoptysis, dropping hemoglobin, BAL returns progressively bloodier aliquots; ARDS: bilateral infiltrates without hemoptysis, hemoglobin stable, BAL non-bloody"
+      - "DAH: often autoimmune etiology (ANCA vasculitis, anti-GBM, SLE) requiring immunosuppression; ARDS: usually infectious or inflammatory precipitant requiring antibiotics and lung-protective ventilation"
+      - "DAH: rising DLCO (pathognomonic — blood in alveoli absorbs CO); ARDS: falling DLCO from impaired gas exchange"
 sources:
   - type: review
     ref: "Lara AR, Schwarz MI. Diffuse Alveolar Hemorrhage. Chest. 2010;137(5):1164-1171."

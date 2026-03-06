@@ -10,6 +10,17 @@ time_to_harm:
   optimal_intervention_window: "< 6 hours for intravitreal antibiotics"
 category: ophthalmologic
 track: tier1
+confusion_pairs:
+  - condition: orbital-cellulitis
+    differentiators:
+      - "Endophthalmitis: intraocular infection, hypopyon (layering of WBC in anterior chamber), vitritis (hazy vitreous), often post-surgical or post-traumatic, treated with intravitreal antibiotics"
+      - "Orbital cellulitis: periorbital/orbital soft tissue infection, proptosis, painful EOM, no hypopyon, originates from sinusitis, treated with IV antibiotics"
+      - "Endophthalmitis is INSIDE the globe; orbital cellulitis is OUTSIDE — slit lamp examination showing hypopyon distinguishes"
+  - condition: acute-angle-closure-glaucoma
+    differentiators:
+      - "Endophthalmitis: hypopyon, vitritis, recent surgery/trauma/injection history, decreased red reflex, organisms on culture"
+      - "Acute angle-closure glaucoma: mid-dilated fixed pupil, elevated IOP > 40 mmHg, corneal edema, no hypopyon typically, no surgical history required"
+      - "Both cause acute painful vision loss — hypopyon with recent ocular procedure is endophthalmitis until proven otherwise"
 sources:
   - type: guideline
     ref: "Endophthalmitis Vitrectomy Study (EVS). Arch Ophthalmol 1995;113(12):1479-1496"

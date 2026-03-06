@@ -8,6 +8,22 @@ time_to_harm: "< 30 minutes"
 mortality_if_delayed: "20-40% without atropinization"
 category: toxicologic
 track: tier1
+confusion_pairs:
+  - condition: opioid-overdose
+    differentiators:
+      - "Organophosphate poisoning: cholinergic toxidrome (SLUDGE/DUMBELS), miosis, bradycardia, bronchorrhea, fasciculations, responds to atropine and pralidoxime"
+      - "Opioid overdose: miosis and respiratory depression but NO secretions, NO fasciculations, NO bradycardia typically, responds to naloxone"
+      - "Both cause miosis — presence of copious secretions and fasciculations distinguishes organophosphate"
+  - condition: seizure-first-time
+    differentiators:
+      - "Organophosphate poisoning: cholinergic crisis with SLUDGE symptoms, seizures are a late complication, occupational/agricultural exposure history, low cholinesterase levels"
+      - "Seizure (first-time): postictal state resolves, no cholinergic signs, no toxic exposure history, EEG and neuroimaging for workup"
+      - "Organophosphate seizures are refractory to standard anticonvulsants — require aggressive atropinization and benzodiazepines"
+  - condition: botulism
+    differentiators:
+      - "Organophosphate poisoning: excessive secretions (salivation, lacrimation, bronchorrhea), miosis, fasciculations, hyperactive bowel sounds"
+      - "Botulism: dry mouth and eyes (anticholinergic-like), mydriasis, descending paralysis, constipation, NO fasciculations"
+      - "Secretory state is opposite — organophosphate = wet, botulism = dry"
 sources:
   - type: guideline
     ref: "WHO Clinical Management of Acute Pesticide Intoxication: Prevention of Suicidal Behaviours (2008)"

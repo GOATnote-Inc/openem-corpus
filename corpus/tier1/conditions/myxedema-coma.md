@@ -10,6 +10,20 @@ time_to_harm:
   optimal_intervention_window: "< 2 hours"
 category: endocrine-metabolic
 track: tier1
+confusion_pairs:
+  - condition: hypothermia
+    differentiators:
+      - "Myxedema coma: hypothermia with altered mental status in patient with hypothyroid features (edema, macroglossia, delayed reflexes), elevated TSH"
+      - "Hypothermia: environmental cold exposure, no hypothyroid features, TSH normal, rewarming is primary treatment"
+  - condition: sepsis
+    differentiators:
+      - "Myxedema coma: hypothermia, bradycardia, hypotension, hyponatremia with known or suspected hypothyroidism, responds to IV levothyroxine"
+      - "Sepsis: fever (or hypothermia), tachycardia typical, infectious source identifiable, procalcitonin elevated"
+      - "Pitfall: infection is a common precipitant of myxedema coma — both may coexist"
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "Myxedema coma: gradual altered mental status with hypothermia, non-focal neurologic findings, hypothyroid features"
+      - "Acute ischemic stroke: sudden focal neurologic deficit (hemiparesis, aphasia, facial droop), CT/MRI shows infarct, thrombolytic window applies"
 sources:
   - type: guideline
     ref: "Jonklaas J et al. Guidelines for the Treatment of Hypothyroidism. ATA/AACE. Thyroid. 2014;24(12):1670-1751"

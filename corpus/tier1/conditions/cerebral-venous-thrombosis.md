@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 24 hours"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "CVT: headache predominates (>90%), deficits cross arterial territories, young patients with prothrombotic risk factors"
+      - "AIS: sudden onset focal deficit in single arterial territory, headache less prominent"
+      - "CVT: hemorrhagic infarction in 30-40% (unusual for arterial stroke in this pattern)"
+  - condition: subarachnoid-hemorrhage
+    differentiators:
+      - "CVT: progressive headache over days, seizures common, CT may show hemorrhage crossing vascular territories"
+      - "SAH: thunderclap onset (maximal within seconds), blood in subarachnoid cisterns on CT"
+      - "Both present with worst headache of life — CTV/MRV distinguishes CVT from aneurysmal SAH"
+  - condition: bacterial-meningitis
+    differentiators:
+      - "CVT: focal deficits and seizures prominent, fever less common unless septic CVT"
+      - "Meningitis: nuchal rigidity, fever, photophobia; CSF shows pleocytosis with organisms"
+      - "Septic CVT from otogenic/sinogenic source may coexist with meningitis"
 sources:
   - type: guideline
     ref: "Silvis SM et al. Diagnosis and Management of Cerebral Venous Thrombosis: A Scientific Statement From the American Heart Association. Stroke. 2024;55:e54-e76"

@@ -10,6 +10,17 @@ time_to_harm:
   optimal_intervention_window: "< 24 hours"
 category: hematologic
 track: tier1
+confusion_pairs:
+  - condition: thrombotic-thrombocytopenic-purpura
+    differentiators:
+      - "HUS: renal failure predominates (oliguria, elevated creatinine, hyperkalemia), often preceded by bloody diarrhea (STEC), more common in children, ADAMTS13 normal"
+      - "TTP: neurologic symptoms predominate (confusion, seizures), ADAMTS13 < 10%, more common in adults, treated with plasma exchange"
+      - "Both are thrombotic microangiopathies — send ADAMTS13 before plasma exchange; renal vs neurologic predominance guides initial assessment"
+  - condition: disseminated-intravascular-coagulation
+    differentiators:
+      - "HUS: normal coagulation studies (PT/PTT, fibrinogen), triad of MAHA + thrombocytopenia + AKI, no underlying sepsis/trauma required"
+      - "DIC: prolonged PT/PTT, low fibrinogen, elevated D-dimer, occurs secondary to sepsis/trauma/malignancy"
+      - "Normal coagulation studies with MAHA and renal failure favor HUS over DIC"
 sources:
   - type: guideline
     ref: "ASH Education: Atypical Hemolytic Uremic Syndrome — Diagnosis, Management, and Discontinuation of Therapy. Hematology, 2024"

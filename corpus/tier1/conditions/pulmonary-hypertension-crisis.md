@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 30 minutes"
 category: respiratory
 track: tier1
+confusion_pairs:
+  - condition: pulmonary-embolism
+    differentiators:
+      - "PH crisis: known history of pulmonary hypertension, on PH-specific medications (prostacyclins, PDE-5 inhibitors, ERA); acute PE: no PH history, sudden onset from new thromboembolism"
+      - "PH crisis: often precipitated by medication non-compliance or abrupt prostacyclin withdrawal; PE: risk factors include DVT, immobility, malignancy, recent surgery"
+      - "PE superimposed on chronic PH is a common precipitant of PH crisis — CTA differentiates acute clot from chronic RV failure"
+  - condition: right-ventricular-failure
+    differentiators:
+      - "PH crisis IS acute RV failure from elevated pulmonary vascular resistance — the distinction is etiology, not hemodynamics"
+      - "PH crisis: treatment includes inhaled nitric oxide, IV epoprostenol, milrinone; RV failure from non-PH cause (e.g., RV infarct): treatment is volume loading and inotropes, NOT pulmonary vasodilators"
+      - "PH crisis: abrupt interruption of IV prostacyclin is a specific life-threatening precipitant with no parallel in other RV failure causes"
+  - condition: cardiac-tamponade
+    differentiators:
+      - "PH crisis: RV dilation on echo, elevated PA pressures, clear pericardium; tamponade: pericardial effusion with RA/RV diastolic collapse, normal or small RV"
+      - "PH crisis: clear lung fields, JVD from RV failure; tamponade: muffled heart sounds, pulsus paradoxus, electrical alternans"
+      - "PH crisis: treatment is pulmonary vasodilators and inotropes; tamponade: treatment is pericardiocentesis"
 sources:
   - type: guideline
     ref: "2022 ESC/ERS Guidelines for the Diagnosis and Treatment of Pulmonary Hypertension. Eur Heart J. 2022;43(38):3618-3731."

@@ -10,6 +10,18 @@ time_to_harm:
   optimal_intervention_window: "< 2 minutes"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: ventricular-tachycardia
+    differentiators:
+      - "TdP: polymorphic VT occurring in the setting of prolonged QTc (> 500 ms); monomorphic VT: stable QRS morphology with normal baseline QTc"
+      - "TdP: characteristic twisting of QRS axis around baseline with short-long-short initiation; monomorphic VT: uniform QRS morphology from a single re-entrant circuit"
+      - "TdP: treatment is magnesium sulfate 2 g IV + overdrive pacing; monomorphic VT: treatment is amiodarone or procainamide (which would WORSEN TdP)"
+      - "Critical distinction: checking baseline QTc before treating any polymorphic wide complex tachycardia determines the entire treatment algorithm"
+  - condition: svt
+    differentiators:
+      - "TdP: wide complex polymorphic tachycardia at 150-300 bpm with undulating QRS axis; SVT: narrow complex (< 120 ms) regular tachycardia at 150-250 bpm"
+      - "TdP: hemodynamic instability common, degenerates to VF; SVT: usually hemodynamically tolerated"
+      - "TdP: adenosine and AV nodal blockers ineffective and potentially harmful; SVT: adenosine is diagnostic and therapeutic"
 sources:
   - type: guideline
     ref: "2020 AHA/ACC Guideline for Management of Patients With Ventricular Arrhythmias and the Prevention of Sudden Cardiac Death. Circulation. 2018;138(13):e272-e391."

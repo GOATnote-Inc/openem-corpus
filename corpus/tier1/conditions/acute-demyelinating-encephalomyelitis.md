@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 24 hours"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: bacterial-meningitis
+    differentiators:
+      - "ADEM: polyfocal deficits with encephalopathy, post-infectious latency (1-4 weeks), MRI shows multifocal white matter lesions"
+      - "Meningitis: fever, nuchal rigidity, CSF pleocytosis with organisms, acute onset without preceding illness interval"
+      - "ADEM CSF: mild lymphocytic pleocytosis, no organisms; meningitis CSF: high WBC, low glucose, positive culture/gram stain"
+  - condition: hsv-encephalitis
+    differentiators:
+      - "ADEM: multifocal bilateral white matter lesions on MRI, often post-infectious in children"
+      - "HSV encephalitis: temporal lobe predilection on MRI, CSF HSV PCR positive, more acute febrile course"
+      - "HSV: hemorrhagic temporal changes; ADEM: non-hemorrhagic demyelination in white matter"
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "ADEM: subacute polyfocal deficits crossing vascular territories, encephalopathy, young patient"
+      - "AIS: sudden focal deficit in single vascular territory, restricted diffusion on DWI"
+      - "ADEM: white matter demyelinating lesions; AIS: cytotoxic edema in grey + white matter"
 sources:
   - type: guideline
     ref: "Krupp LB et al. International Pediatric Multiple Sclerosis Study Group criteria for pediatric multiple sclerosis and immune-mediated CNS demyelinating disorders. Neurology. 2013;81(Suppl 5):S13-S22"

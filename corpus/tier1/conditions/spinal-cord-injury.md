@@ -8,6 +8,22 @@ time_to_harm: "< 60 minutes"
 mortality_if_delayed: "Permanent neurological deficit; neurogenic shock mortality 7-10% without hemodynamic support"
 category: traumatic
 track: tier1
+confusion_pairs:
+  - condition: brown-sequard-syndrome
+    differentiators:
+      - "Spinal cord injury (complete): bilateral motor and sensory loss below injury level, bilateral loss of bowel/bladder function"
+      - "Brown-Sequard syndrome: cord hemisection causing ipsilateral motor loss and proprioception loss with contralateral pain/temperature loss, best prognosis of incomplete SCI patterns"
+      - "Brown-Sequard is an incomplete SCI pattern — identifying incomplete injury has major prognostic significance"
+  - condition: central-cord-syndrome
+    differentiators:
+      - "Spinal cord injury (complete): complete motor/sensory loss below level, spinal shock with areflexia acutely"
+      - "Central cord syndrome: upper extremity weakness > lower extremity weakness (cape distribution), often from hyperextension in elderly with cervical stenosis, bladder dysfunction variable"
+      - "Central cord syndrome is the most common incomplete SCI — disproportionate upper extremity weakness is the hallmark"
+  - condition: cauda-equina-syndrome
+    differentiators:
+      - "Spinal cord injury: upper motor neuron signs (spasticity after spinal shock resolves, hyperreflexia, Babinski), injury above conus medullaris"
+      - "Cauda equina syndrome: lower motor neuron signs (flaccidity, areflexia, fasciculations), saddle anesthesia, urinary retention, injury at/below L1-L2 level"
+      - "UMN vs LMN pattern distinguishes — spinal cord injury = UMN (after spinal shock); cauda equina = LMN"
 sources:
   - type: guideline
     ref: "Kwon BK, Tetreault LA, Martin AR, et al. A Clinical Practice Guideline for the Management of Patients With Acute Spinal Cord Injury: Recommendations on Hemodynamic Management. Global Spine J. 2024;14(3_suppl):187S-211S"

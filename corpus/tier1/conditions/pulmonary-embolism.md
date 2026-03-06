@@ -11,6 +11,35 @@ time_to_harm:
 mortality_if_delayed: "25-65% for massive PE without treatment"
 category: respiratory
 track: tier1
+confusion_pairs:
+  - condition: pneumonia
+    differentiators:
+      - "PE: acute dyspnea with pleuritic chest pain, clear lungs or focal findings, elevated D-dimer, CTA filling defects; pneumonia: productive cough, fever, focal consolidation on CXR, elevated WBC/procalcitonin"
+      - "PE: hypoxemia out of proportion to CXR findings (CXR often near-normal); pneumonia: CXR infiltrate corresponds to clinical findings"
+      - "PE: risk factors include immobilization, recent surgery, DVT, malignancy, OCP use; pneumonia: risk factors include aspiration, immunosuppression, recent URI"
+  - condition: acute-coronary-syndrome-nstemi
+    differentiators:
+      - "PE: pleuritic chest pain (sharp, worse with inspiration), dyspnea predominant, RV strain on ECG (S1Q3T3, right axis); NSTEMI: substernal pressure radiating to arm/jaw, ST depression or T-wave inversions in coronary distribution"
+      - "PE: troponin may be mildly elevated from RV strain but D-dimer is markedly elevated; NSTEMI: troponin rise/fall pattern with normal D-dimer"
+      - "PE: CTA pulmonary arteries diagnostic; NSTEMI: coronary angiography diagnostic"
+  - condition: aortic-dissection
+    differentiators:
+      - "PE: pleuritic chest pain, tachycardia, dyspnea, unilateral leg swelling; dissection: sudden tearing pain maximal at onset, hypertension, BP differential between arms, pulse deficits"
+      - "PE: anticoagulation is the primary treatment; dissection: anticoagulation is CONTRAINDICATED (worsens hemorrhage)"
+      - "PE: CTA pulmonary arteries shows filling defects; dissection: CTA aorta shows intimal flap and false lumen"
+decision_rules:
+  - name: "Wells Criteria for PE"
+    citation: "Wells PS et al. Derivation of a simple clinical model to categorize patients probability of pulmonary embolism. Thromb Haemost. 2000;83(3):416-420."
+    pmid: "10744147"
+  - name: "PERC Rule"
+    citation: "Kline JA et al. Clinical criteria to prevent unnecessary diagnostic testing in emergency department patients with suspected pulmonary embolism. J Thromb Haemost. 2004;2(8):1247-1255."
+    pmid: "15304025"
+  - name: "Geneva Score"
+    citation: "Le Gal G et al. Prediction of pulmonary embolism in the emergency department: the revised Geneva score. Ann Intern Med. 2006;144(3):165-171."
+    pmid: "16461960"
+  - name: "PESI Score"
+    citation: "Aujesky D et al. Derivation and validation of a prognostic model for pulmonary embolism. Am J Respir Crit Care Med. 2005;172(8):1041-1046."
+    pmid: "16003407"
 sources:
   - type: guideline
     ref: "2019 ESC/ERS Guidelines for the Diagnosis and Management of Acute Pulmonary Embolism"

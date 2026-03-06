@@ -8,6 +8,24 @@ time_to_harm: "< 30 minutes"
 mortality_if_delayed: "Cardiac arrest from untreated severe hyperkalemia approaches 100%"
 category: endocrine-metabolic
 track: tier1
+confusion_pairs:
+  - condition: stemi
+    differentiators:
+      - "Hyperkalemia: peaked T waves, widened QRS, sine wave pattern; K+ > 6.0 mEq/L; renal failure or medication history"
+      - "STEMI: ST elevation in coronary distribution, reciprocal changes, troponin elevation, peaked T waves in hyperacute STEMI can mimic hyperkalemia"
+      - "Critical: hyperkalemia ECG changes (peaked T waves, wide QRS) can mimic or mask acute MI — always check potassium"
+  - condition: complete-heart-block
+    differentiators:
+      - "Hyperkalemia: progressive conduction delay (prolonged PR → widened QRS → sine wave), responds to calcium and potassium-lowering"
+      - "Complete heart block: AV dissociation with regular ventricular escape rhythm, structural or ischemic cause, may require pacing"
+  - condition: digoxin-toxicity
+    differentiators:
+      - "Hyperkalemia: peaked T waves, widened QRS, renal failure common cause, treated with calcium, insulin/glucose, dialysis"
+      - "Digoxin toxicity: bidirectional VT pathognomonic, scooped ST segments, GI symptoms, hyperkalemia may coexist; calcium contraversial (historically contraindicated), treated with digoxin-specific antibody fragments"
+decision_rules:
+  - name: "ECG Severity Staging for Hyperkalemia"
+    citation: "Montague BT, Ouellette JR, Bhatt GK. Retrospective review of the frequency of ECG changes in hyperkalemia. Clin J Am Soc Nephrol. 2008;3(2):324-330."
+    pmid: "18614789"
 sources:
   - type: guideline
     ref: "2020 AHA Guidelines for CPR and Emergency Cardiovascular Care — Part 10: Special Circumstances (Electrolyte Abnormalities)"

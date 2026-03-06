@@ -10,6 +10,17 @@ time_to_harm:
   optimal_intervention_window: "< 1 hour for laryngeal involvement"
 category: allergic-immunologic
 track: tier1
+confusion_pairs:
+  - condition: angioedema
+    differentiators:
+      - "Hereditary angioedema: recurrent episodes since childhood, family history, low C4 and C1-INH, does NOT respond to epinephrine/antihistamines/steroids, treated with C1-INH concentrate or icatibant"
+      - "Acquired angioedema: often drug-induced (ACE-inhibitors), later onset, no family history, may respond to antihistamines if histamine-mediated"
+      - "Both are bradykinin-mediated when mast cell activation is absent — HAE is genetic (autosomal dominant), acquired is medication- or antibody-mediated"
+  - condition: anaphylaxis
+    differentiators:
+      - "Hereditary angioedema: no urticaria, no bronchospasm, no hypotension from vasodilatation, swelling develops over hours, does not respond to epinephrine"
+      - "Anaphylaxis: rapid onset after allergen exposure, urticaria present, bronchospasm, hypotension, responds to epinephrine"
+      - "Absence of urticaria and unresponsiveness to epinephrine in recurrent angioedema episodes should prompt evaluation for HAE"
 sources:
   - type: guideline
     ref: "WAO/EAACI Guideline for the Management of Hereditary Angioedema — 2021 Update"

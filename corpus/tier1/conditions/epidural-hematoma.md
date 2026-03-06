@@ -8,6 +8,22 @@ time_to_harm: "< 1-2 hours from lucid interval to herniation"
 mortality_if_delayed: "15-20% overall; near 100% if untreated with herniation"
 category: traumatic
 track: tier1
+confusion_pairs:
+  - condition: subdural-hematoma
+    differentiators:
+      - "Epidural hematoma: biconvex (lens-shaped) on CT, does NOT cross suture lines, middle meningeal artery source, lucid interval in 20-50%, temporal bone fracture association"
+      - "Subdural hematoma: crescent-shaped on CT, crosses suture lines, bridging vein source, no lucid interval typical, more common in elderly/anticoagulated"
+      - "CT morphology is definitive — biconvex = epidural, crescent = subdural; both require emergent neurosurgical evaluation"
+  - condition: traumatic-brain-injury
+    differentiators:
+      - "Epidural hematoma: specific entity requiring emergent craniotomy, classic lucid interval then rapid deterioration, excellent prognosis if evacuated promptly"
+      - "TBI (general): spectrum from concussion to severe diffuse axonal injury, management depends on specific pathology identified"
+      - "Epidural hematoma is the most time-critical TBI subtype — rapid deterioration from lucid to herniation within hours"
+  - condition: subarachnoid-hemorrhage
+    differentiators:
+      - "Epidural hematoma: trauma-related, biconvex extra-axial collection, surgical emergency"
+      - "SAH (traumatic): blood in subarachnoid space, often linear along convexities, may be seen with EDH; SAH (spontaneous): thunderclap headache, aneurysmal source, CTA for aneurysm"
+      - "Traumatic SAH commonly coexists with EDH — both can be present on the same CT"
 sources:
   - type: guideline
     ref: "Brain Trauma Foundation. Guidelines for the Management of Severe Traumatic Brain Injury, 4th Edition. Neurosurgery 2017;80(1):6-15"

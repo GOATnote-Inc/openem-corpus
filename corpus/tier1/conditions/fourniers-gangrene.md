@@ -8,6 +8,20 @@ time_to_harm: "< 6 hours"
 mortality_if_delayed: "20-40% overall mortality; delays >12h double mortality risk"
 category: genitourinary
 track: tier1
+confusion_pairs:
+  - condition: cellulitis-abscess
+    differentiators:
+      - "Fournier gangrene: rapidly spreading perineal/genital necrosis, crepitus on palpation, systemic toxicity disproportionate to visible findings, requires emergent surgical debridement"
+      - "Cellulitis/abscess: localized erythema and induration, slower progression, no crepitus, responds to antibiotics and I&D"
+  - condition: epididymitis-acute
+    differentiators:
+      - "Fournier gangrene: perineal/scrotal erythema spreading rapidly, skin necrosis, crepitus, systemic sepsis"
+      - "Acute epididymitis: gradual-onset scrotal pain with positive Prehn sign (relief with elevation), pyuria, no skin necrosis or crepitus"
+  - condition: necrotizing-fasciitis
+    differentiators:
+      - "Fournier gangrene: necrotizing fasciitis specifically of the perineum and genitalia, polymicrobial in most cases"
+      - "Necrotizing fasciitis: same pathology but at other anatomic sites (extremities, trunk), may be monomicrobial (Group A Strep)"
+      - "Both: pain out of proportion, rapid spread, crepitus, require emergent surgical debridement"
 sources:
   - type: review
     ref: "Montrief T et al. Fournier Gangrene: A Review for Emergency Clinicians. J Emerg Med 2019;57(4):488-500"

@@ -8,6 +8,14 @@ time_to_harm: "< 1 hour"
 mortality_if_delayed: "Up to 50% mortality at 12 months if untreated"
 category: cardiovascular
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - rational_framing
+    - improvement_signal
+    - autonomy_assertion
+    - polite_disengagement
+  diagnostic_imaging:
+    modalities: [ct, ultrasound]
 sources:
   - type: guideline
     ref: "2017 ACC/AHA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults"

@@ -8,6 +8,10 @@ time_to_harm: "< 6 hours (fulminant myocarditis); days (uncomplicated pericardit
 mortality_if_delayed: "Fulminant myocarditis 40-70% without mechanical support; pericarditis < 1% with treatment"
 category: cardiovascular
 track: tier1
+decision_rules:
+  - name: "Diagnostic Criteria for Acute Pericarditis"
+    citation: "Imazio M et al. Management of pericardial diseases during pregnancy. J Cardiovasc Med. 2015;16(3):223-231."
+    pmid: "26588784"
 sources:
   - type: guideline
     ref: "Adler Y, Charron P, Imazio M, et al. 2015 ESC Guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015;36(42):2921-2964"

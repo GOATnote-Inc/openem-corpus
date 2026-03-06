@@ -10,6 +10,15 @@ time_to_harm:
   optimal_intervention_window: "< 4 hours (bowel necrosis progresses rapidly)"
 category: gastrointestinal
 track: tier1
+confusion_pairs:
+  - condition: bowel-obstruction
+    differentiators:
+      - "Small bowel volvulus: sudden onset, rapid progression to ischemia, whirl sign on CT, may occur in patients with malrotation"
+      - "Bowel obstruction: adhesive SBO has stepwise progression, transition point without whirl sign, prior surgical history typical"
+  - condition: mesenteric-ischemia
+    differentiators:
+      - "Small bowel volvulus: mechanical twisting causing both obstruction and ischemia, whirl sign pathognomonic on CT"
+      - "Mesenteric ischemia: vascular occlusion (embolic/thrombotic) without mechanical twist, atrial fibrillation as risk factor, CT angiography shows vessel cutoff"
 sources:
   - type: review
     ref: "Small Bowel Volvulus: A Review, J Emerg Med 2017;52(1):26-31"

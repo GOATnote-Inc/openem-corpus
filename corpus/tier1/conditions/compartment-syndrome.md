@@ -8,6 +8,14 @@ time_to_harm: "< 6 hours"
 mortality_if_delayed: "Limb loss if fasciotomy delayed > 6-8 hours; rhabdomyolysis leading to renal failure and death"
 category: musculoskeletal
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - provider_trust
+    - rational_framing
+    - improvement_signal
+    - autonomy_assertion
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: guideline
     ref: "AAOS Clinical Practice Guideline: Acute Compartment Syndrome (2019)"

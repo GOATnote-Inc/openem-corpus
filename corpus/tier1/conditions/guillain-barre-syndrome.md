@@ -8,6 +8,22 @@ time_to_harm: "< 48 hours for respiratory failure"
 mortality_if_delayed: "3-7% mortality; 20% persistent disability"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: myasthenia-gravis-crisis
+    differentiators:
+      - "GBS: ascending paralysis with areflexia, progressive over days-weeks, albuminocytologic dissociation in CSF"
+      - "MG crisis: fatigable weakness (worse with repetition), reflexes preserved early, positive acetylcholine receptor antibodies"
+      - "GBS: no response to edrophonium or pyridostigmine; MG: improvement with anticholinesterase"
+  - condition: botulism
+    differentiators:
+      - "GBS: ascending paralysis (legs first), areflexia, sensory symptoms common, CSF protein elevated"
+      - "Botulism: descending paralysis (cranial nerves first), fixed dilated pupils, normal CSF"
+      - "GBS: NCS shows demyelinating pattern; botulism: presynaptic NMJ block with incremental response on repetitive stimulation"
+  - condition: spinal-cord-compression
+    differentiators:
+      - "GBS: symmetric ascending weakness with areflexia, no sensory level, normal spinal MRI"
+      - "Cord compression: motor/sensory level, upper motor neuron signs below lesion (hyperreflexia, Babinski), spinal MRI shows compressive lesion"
+      - "GBS: progressive over days; acute cord compression: abrupt onset with back pain at level of compression"
 sources:
   - type: guideline
     ref: "AAN Practice Parameter: Immunotherapy for Guillain-Barré Syndrome. Neurology. 2003;61(6):736-740"

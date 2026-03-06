@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 6 hours for benzodiazepine trial"
 category: psychiatric
 track: tier1
+confusion_pairs:
+  - condition: neuroleptic-malignant-syndrome
+    differentiators:
+      - "Catatonia: waxy flexibility, negativism, echolalia/echopraxia; responds to benzodiazepine challenge (lorazepam 1-2mg IV)"
+      - "NMS: lead-pipe rigidity without waxy flexibility, always follows dopamine antagonist exposure, CK markedly elevated"
+      - "Malignant catatonia and NMS share hyperthermia and autonomic instability — benzodiazepine response differentiates"
+  - condition: acute-psychosis
+    differentiators:
+      - "Catatonia: motor signs dominate (immobility, posturing, mutism), positive Bush-Francis screen (>=2 signs)"
+      - "Psychosis: prominent hallucinations, delusions, thought disorder with preserved (if disorganized) motor activity"
+      - "Catatonia occurs in psychotic AND medical/neurologic conditions — always evaluate for underlying cause"
+  - condition: status-epilepticus
+    differentiators:
+      - "Catatonia: sustained posturing without rhythmic motor activity, no EEG ictal correlate"
+      - "Nonconvulsive SE: subtle eye deviation, EEG shows continuous ictal discharges"
+      - "Catatonia responds to benzodiazepines (paradoxically increases movement); SE responds to benzodiazepines (stops seizure activity)"
 sources:
   - type: review
     ref: "Fink M, Taylor MA. The catatonia syndrome: forgotten but not gone. Arch Gen Psychiatry 2009;66(11):1173-1177"

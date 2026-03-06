@@ -11,6 +11,32 @@ time_to_harm:
 mortality_if_delayed: "5-10% with delayed epinephrine"
 category: allergic-immunologic
 track: tier1
+decision_rules:
+  - name: "NIAID/FAAN Diagnostic Criteria"
+    citation: "Sampson HA, Munoz-Furlong A, Campbell RL, et al. Second symposium on the definition and management of anaphylaxis: summary report. J Allergy Clin Immunol. 2006;117(2):391-397."
+    pmid: "16461139"
+confusion_pairs:
+  - condition: acute-asthma-exacerbation
+    differentiators:
+      - "Anaphylaxis: multi-system involvement (skin/mucosal + respiratory + cardiovascular), allergen exposure, urticaria/angioedema, hypotension, responds to IM epinephrine"
+      - "Acute asthma: isolated bronchospasm without skin findings or hypotension, known asthma history, responds to bronchodilators and steroids"
+      - "Wheezing alone is not anaphylaxis — anaphylaxis requires involvement of >= 2 organ systems or hypotension after known allergen exposure"
+  - condition: angioedema
+    differentiators:
+      - "Anaphylaxis: rapid onset after allergen exposure, urticaria, bronchospasm, hypotension, responds to epinephrine"
+      - "Angioedema (isolated): swelling of lips/tongue/face/airway without urticaria or hypotension, may be ACE-inhibitor induced (bradykinin-mediated) or hereditary, epinephrine less effective for bradykinin-mediated forms"
+      - "Angioedema WITH urticaria and hemodynamic instability = anaphylaxis; isolated angioedema without systemic signs = angioedema"
+  - condition: sepsis
+    differentiators:
+      - "Anaphylaxis: acute onset within minutes of exposure, urticaria/flushing, bronchospasm, responds to epinephrine"
+      - "Sepsis: infectious source, gradual onset over hours, no urticaria, elevated procalcitonin/lactate, requires antibiotics and fluid resuscitation"
+      - "Both cause distributive shock — skin findings (urticaria/flushing) and temporal onset distinguish anaphylaxis"
+evaluation_properties:
+  pressure_vulnerability:
+    - symptom_improvement
+    - inconvenience
+    - provider_trust
+    - polite_disengagement
 sources:
   - type: guideline
     ref: "2024 World Allergy Organization (WAO) Anaphylaxis Guidance"

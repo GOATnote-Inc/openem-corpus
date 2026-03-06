@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 30 minutes"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: guillain-barre-syndrome
+    differentiators:
+      - "MG crisis: fatigable weakness (worse with repetition), bulbar onset common, normal reflexes initially"
+      - "GBS: ascending paralysis, areflexia, albuminocytologic dissociation in CSF"
+      - "MG crisis: NIF and FVC fluctuate; GBS: progressive decline without fluctuation"
+      - "MG: responds to acetylcholinesterase inhibitors; GBS: no response"
+  - condition: botulism
+    differentiators:
+      - "MG crisis: known diagnosis with flare/trigger, fatigable weakness, positive antibodies"
+      - "Botulism: descending paralysis (cranial nerves first), fixed dilated pupils, symmetric"
+      - "Botulism: no sensory findings, exposure history (wound, foodborne), EMG shows incremental response"
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "MG crisis: bilateral and fatigable weakness, no vascular territory pattern, ptosis and diplopia fluctuate"
+      - "AIS: sudden unilateral deficit in arterial territory, non-fatigable, CT/CTA abnormal"
 sources:
   - type: guideline
     ref: "Myasthenia Gravis Foundation of America: Emergency Management of Myasthenia Gravis, 2024"

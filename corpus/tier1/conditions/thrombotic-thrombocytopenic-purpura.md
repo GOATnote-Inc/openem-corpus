@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 4-8 hours (plasma exchange initiation)"
 category: hematologic
 track: tier1
+confusion_pairs:
+  - condition: hemolytic-uremic-syndrome
+    differentiators:
+      - "TTP: neurologic symptoms predominate (confusion, seizures, focal deficits), ADAMTS13 activity < 10% is diagnostic, responds to plasma exchange"
+      - "HUS: renal failure predominates, often post-diarrheal illness (STEC/Shiga toxin), more common in children, ADAMTS13 normal"
+      - "Both are thrombotic microangiopathies with MAHA + thrombocytopenia — ADAMTS13 level is the definitive discriminator"
+  - condition: disseminated-intravascular-coagulation
+    differentiators:
+      - "TTP: normal PT/PTT, normal fibrinogen, ADAMTS13 deficiency, do NOT transfuse platelets (worsens thrombosis)"
+      - "DIC: prolonged PT/PTT, low fibrinogen, elevated D-dimer, treat underlying cause, may transfuse platelets if actively bleeding"
+      - "Coagulation studies are the fastest bedside discriminator — normal in TTP, abnormal in DIC"
+  - condition: hellp-syndrome
+    differentiators:
+      - "TTP: any patient, neurologic symptoms, ADAMTS13 < 10%, normal liver enzymes, treated with plasma exchange"
+      - "HELLP: pregnant/postpartum patient (typically 3rd trimester), elevated liver enzymes, RUQ pain, hypertension, treated with delivery"
+      - "Pregnancy makes distinction critical — HELLP and TTP can coexist; ADAMTS13 testing and liver enzymes distinguish"
 sources:
   - type: guideline
     ref: "ISTH Guidelines for Treatment of Thrombotic Thrombocytopenic Purpura, 2020"

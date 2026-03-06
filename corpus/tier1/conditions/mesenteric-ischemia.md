@@ -8,6 +8,19 @@ time_to_harm: "< 2 hours"
 mortality_if_delayed: "> 60-80% with delayed diagnosis; drops to 20-30% with early intervention"
 category: gastrointestinal
 track: tier1
+confusion_pairs:
+  - condition: bowel-obstruction
+    differentiators:
+      - "Mesenteric ischemia: pain out of proportion to exam, rapid hemodynamic deterioration, lactate elevation early"
+      - "Bowel obstruction: colicky pain with distension, obstipation, air-fluid levels on X-ray without early lactate rise"
+  - condition: acute-pancreatitis
+    differentiators:
+      - "Mesenteric ischemia: periumbilical pain with bloody stools, atrial fibrillation as risk factor, CT angiography shows vascular occlusion"
+      - "Acute pancreatitis: epigastric pain radiating to back, elevated lipase > 3x upper limit, history of alcohol or gallstones"
+  - condition: aortic-dissection
+    differentiators:
+      - "Mesenteric ischemia: abdominal-focused pain, GI bleeding, CT shows SMA occlusion or bowel wall thickening"
+      - "Aortic dissection: tearing chest/back pain, pulse deficits, widened mediastinum, intimal flap on CT"
 sources:
   - type: guideline
     ref: "European Society for Vascular Surgery (ESVS) 2017 Clinical Practice Guidelines on the Management of Acute Mesenteric Ischaemia"

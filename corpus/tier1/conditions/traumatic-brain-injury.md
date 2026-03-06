@@ -8,6 +8,32 @@ time_to_harm: "< 60 minutes"
 mortality_if_delayed: "30-50% for severe TBI; herniation is rapidly fatal"
 category: traumatic
 track: tier1
+decision_rules:
+  - name: "Glasgow Coma Scale (GCS)"
+    citation: "Teasdale G, Jennett B. Assessment of coma and impaired consciousness: a practical scale. Lancet. 1974;2(7872):81-84."
+    pmid: "4136544"
+  - name: "Canadian CT Head Rule"
+    citation: "Stiell IG et al. The Canadian CT Head Rule for patients with minor head injury. Lancet. 2001;357(9266):1391-1396."
+    pmid: "11519735"
+  - name: "PECARN Pediatric Head Injury Rule"
+    citation: "Kuppermann N et al. Identification of children at very low risk of clinically-important brain injuries after head trauma: a prospective cohort study. Lancet. 2009;374(9696):1160-1170."
+    pmid: "19758692"
+confusion_pairs:
+  - condition: epidural-hematoma
+    differentiators:
+      - "TBI (general): umbrella term for all traumatic intracranial injuries, GCS-based severity classification (mild 13-15, moderate 9-12, severe 3-8)"
+      - "Epidural hematoma: specific entity — biconvex/lens-shaped hyperdensity on CT, middle meningeal artery source, lucid interval classic, rapidly fatal if missed"
+      - "All epidural hematomas are a type of TBI — the distinction matters for surgical urgency and prognosis"
+  - condition: subdural-hematoma
+    differentiators:
+      - "TBI: broad category including contusion, DAI, SAH, EDH, SDH"
+      - "Subdural hematoma: crescent-shaped collection crossing suture lines, bridging vein source, common in elderly/anticoagulated, acute vs chronic presentation"
+      - "SDH is the most common traumatic intracranial hemorrhage requiring surgery"
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "TBI: trauma history, CT shows hemorrhage/contusion/edema, mechanism-dependent injury pattern"
+      - "Acute ischemic stroke: no trauma, sudden focal deficit in vascular territory, CT initially normal then shows infarct, DWI-positive on MRI"
+      - "Trauma can cause dissection-related stroke — carotid/vertebral dissection should be considered in TBI with focal deficits out of proportion to CT findings"
 sources:
   - type: guideline
     ref: "Brain Trauma Foundation: Guidelines for the Management of Severe Traumatic Brain Injury, 4th Edition (2016)"

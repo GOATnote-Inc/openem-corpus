@@ -8,6 +8,26 @@ time_to_harm: "< 1 hour"
 mortality_if_delayed: "10-30% overall, increases 10-20% per hour of antibiotic delay"
 category: infectious
 track: tier1
+confusion_pairs:
+  - condition: hsv-encephalitis
+    differentiators:
+      - "Bacterial meningitis: meningismus, purulent CSF (WBC > 1000, PMN predominance, low glucose, high protein), positive Gram stain"
+      - "HSV encephalitis: temporal lobe predominance on MRI, behavioral changes and seizures prominent, CSF lymphocytic pleocytosis, diagnose by CSF HSV PCR"
+      - "Both present with fever and altered mental status — treat empirically for both until CSF results available"
+  - condition: subarachnoid-hemorrhage
+    differentiators:
+      - "Bacterial meningitis: fever, meningismus, gradual headache onset over hours, CSF shows infection (elevated WBC, low glucose)"
+      - "SAH: thunderclap headache reaching maximum intensity within seconds, CT shows hyperdensity in basal cisterns, CSF xanthochromia, normal glucose"
+      - "Meningismus occurs in both — nuchal rigidity alone does not distinguish; CT head before LP if focal deficits or papilledema"
+  - condition: cerebral-malaria
+    differentiators:
+      - "Bacterial meningitis: no travel to endemic area required, CSF shows bacterial infection, responds to antibiotics"
+      - "Cerebral malaria: travel to Plasmodium falciparum-endemic region, thick/thin smear positive, parasitemia on peripheral blood, retinal hemorrhages, responds to IV artesunate"
+      - "Both present with fever, AMS, and meningismus — travel history is critical discriminator"
+decision_rules:
+  - name: "Bacterial Meningitis Score"
+    citation: "Nigrovic LE, Kuppermann N, Macias CG, et al. Clinical prediction rule for identifying children with cerebrospinal fluid pleocytosis at very low risk of bacterial meningitis. JAMA. 2007;297(1):52-60."
+    pmid: "17194763"
 sources:
   - type: guideline
     ref: "2024 IDSA Practice Guidelines for Bacterial Meningitis"

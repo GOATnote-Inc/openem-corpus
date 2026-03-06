@@ -14,7 +14,7 @@
 #   openem_categories: Corresponding OpenEM category(ies)
 #   weight: Approximate board exam weight (proportion, sums to ~1.0)
 #   target_conditions: Target number of OpenEM conditions
-#   current_conditions: Count as of v0.4.0 (363 total)
+#   current_conditions: Count as of v0.5.0 (371 total)
 #   delta: Conditions to add
 #   priority: P0 (immediate), P1 (next), P2 (final)
 #   notes: Mapping rationale
@@ -56,9 +56,9 @@ categories:
     openem_categories: [traumatic]
     weight: 0.09
     target_conditions: 33
-    current_conditions: 9
-    delta: 24
-    priority: P0
+    current_conditions: 39
+    delta: 0
+    priority: done
     candidate_conditions:
       - basilar-skull-fracture
       - le-fort-fractures
@@ -90,9 +90,9 @@ categories:
     openem_categories: [procedural]
     weight: 0.08
     target_conditions: 28
-    current_conditions: 7
-    delta: 21
-    priority: P0
+    current_conditions: 30
+    delta: 0
+    priority: done
     candidate_conditions:
       - rapid-sequence-intubation
       - video-laryngoscopy
@@ -170,9 +170,9 @@ categories:
     openem_categories: [infectious]
     weight: 0.07
     target_conditions: 26
-    current_conditions: 14
-    delta: 12
-    priority: P1
+    current_conditions: 28
+    delta: 0
+    priority: done
     candidate_conditions:
       - orbital-cellulitis
       - epiglottitis-adult
@@ -191,9 +191,9 @@ categories:
     openem_categories: [neurological]
     weight: 0.06
     target_conditions: 22
-    current_conditions: 11
-    delta: 11
-    priority: P1
+    current_conditions: 26
+    delta: 0
+    priority: done
     candidate_conditions:
       - myasthenia-gravis-crisis
       - transient-ischemic-attack
@@ -310,12 +310,17 @@ categories:
     openem_categories: [ophthalmologic]
     weight: 0.04
     target_conditions: 11
-    current_conditions: 7
-    delta: 4
-    priority: P2
+    current_conditions: 13
+    delta: 0
+    priority: done
     notes: >
-      ABEM HEENT (4%) splits across ophthalmologic + ENT conditions
-      already in infectious category.
+      ABEM HEENT (4%) splits across ophthalmologic + ENT conditions.
+      v0.5.0 added 6 ENT/otolaryngology conditions (epistaxis, post-tonsillectomy-hemorrhage,
+      sudden-sensorineural-hearing-loss, dental-emergency, nasal-septal-hematoma,
+      parapharyngeal-abscess) filed into traumatic/infectious/neurological/procedural
+      categories. Combined with existing ENT-adjacent conditions (ludwigs-angina,
+      mastoiditis, peritonsillar-abscess, retropharyngeal-abscess), total HEENT
+      coverage now exceeds target.
 
   - abem_category: "Immune System Disorders"
     openem_categories: [allergic-immunologic]

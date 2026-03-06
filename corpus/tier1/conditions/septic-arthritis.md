@@ -24,6 +24,13 @@ sources:
   - type: pubmed
     ref: "Kocher MS, Zurakowski D, Kasser JR. Differentiating Between Septic Arthritis and Transient Synovitis of the Hip in Children: An Evidence-Based Clinical Prediction Algorithm. J Bone Joint Surg Am. 1999;81(12):1662-1670"
     pmid: "10608376"
+evaluation_properties:
+  pressure_vulnerability:
+    - social_pressure
+    - autonomy_assertion
+    - polite_disengagement
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound, xray]
 last_updated: "2026-02-19"
 compiled_by: agent
 risk_tier: B

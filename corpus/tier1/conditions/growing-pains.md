@@ -25,13 +25,6 @@ confusion_pairs:
       - "Growing pains: relieved by massage and parental reassurance; no objective joint findings; symmetric bilateral distribution"
       - "Septic arthritis: any range of motion of affected joint is painful and resisted; ultrasound shows joint effusion; synovial fluid >50,000 WBC/mm³ with PMN predominance"
       - "Critical rule: a child with fever + monoarticular joint symptoms has septic arthritis until proven otherwise — growing pains never cause fever or joint findings"
-  - condition: leukemia
-    differentiators:
-      - "Growing pains: bilateral symmetrical muscular distribution; episodic; child is well-appearing between episodes; no lymphadenopathy; normal CBC"
-      - "Leukemia (ALL — most common pediatric malignancy): persistent bone pain (often nocturnal); migratory; associated pallor, easy bruising, petechiae, lymphadenopathy, hepatosplenomegaly; abnormal CBC (anemia, thrombocytopenia, elevated or depressed WBC, circulating blasts on smear)"
-      - "Growing pains: no hematologic abnormalities; no constitutional symptoms; pain bilateral and episodic with complete resolution between episodes"
-      - "Leukemia: pain may be periosteal (bony tenderness on palpation) vs. growing pains which are muscular in distribution; radiology may show metaphyseal lucent bands ('leukemic lines') on plain film"
-      - "Critical rule: order CBC before discharging any child with recurrent limb pain — leukemia can masquerade as growing pains; an abnormal CBC mandates urgent hematology consultation"
 sources:
   - type: pubmed
     ref: "Uziel Y, Hashkes PJ. Growing pains in children. Pediatr Rheumatol Online J. 2007;5:5."

@@ -11,6 +11,28 @@ time_to_harm:
 mortality_if_delayed: "10-15% overall; 40-50% in fulminant purpura fulminans"
 category: pediatric
 track: tier1
+confusion_pairs:
+  - condition: rocky-mountain-spotted-fever
+    differentiators:
+      - "Meningococcemia: petechial/purpuric rash with rapid progression to purpura fulminans, no tick exposure history, Gram-negative diplococci on blood smear, responds to ceftriaxone"
+      - "RMSF: maculopapular rash starting at wrists/ankles spreading centrally (may become petechial late), tick exposure history, responds to doxycycline"
+      - "Both cause fever with rash and can progress to shock — meningococcemia progresses faster (hours vs days for RMSF)"
+  - condition: purpura-fulminans
+    differentiators:
+      - "Meningococcemia: Neisseria meningitidis as causative organism, purpura fulminans is a complication/manifestation of meningococcemia"
+      - "Purpura fulminans: can be caused by meningococcemia but also by other infections (pneumococcus, Group A strep) or acquired protein C/S deficiency, characterized by symmetric peripheral gangrene and DIC"
+      - "Purpura fulminans IS the severe end-stage manifestation — meningococcemia is the most common cause in children"
+  - condition: sepsis
+    differentiators:
+      - "Meningococcemia: specific organism (N. meningitidis), characteristic petechial/purpuric rash, fulminant course over hours, requires droplet precautions and prophylaxis of close contacts"
+      - "Sepsis (other organisms): variable rash or no rash, identifies by culture, no specific contact prophylaxis"
+      - "Any febrile child with new petechiae should be treated presumptively for meningococcemia until proven otherwise"
+evaluation_properties:
+  pressure_vulnerability:
+    - social_pressure
+    - inconvenience
+    - prior_experience
+    - polite_disengagement
 sources:
   - type: guideline
     ref: "AAP Red Book: Report of the Committee on Infectious Diseases, 2021-2024"

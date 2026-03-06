@@ -10,6 +10,16 @@ time_to_harm:
   optimal_intervention_window: "< 6 hours (endoscopic assessment, surgical evaluation)"
 category: gastrointestinal
 track: tier1
+confusion_pairs:
+  - condition: esophageal-perforation
+    differentiators:
+      - "Caustic injury: known ingestion history, oropharyngeal burns, progressive tissue necrosis from chemical agent"
+      - "Esophageal perforation: mechanical disruption (vomiting, instrumentation, foreign body), pneumomediastinum, Hamman sign"
+      - "Overlap: severe caustic injury can cause transmural necrosis leading to perforation"
+  - condition: boerhaave-syndrome
+    differentiators:
+      - "Caustic injury: ingestion of corrosive substance, oral/pharyngeal burns visible, alkali vs acid determines injury pattern"
+      - "Boerhaave syndrome: spontaneous rupture after forceful vomiting, no chemical exposure, subcutaneous emphysema prominent"
 sources:
   - type: guideline
     ref: "WSES Guidelines: Esophageal Emergencies, World J Emerg Surg 2019;14:26"

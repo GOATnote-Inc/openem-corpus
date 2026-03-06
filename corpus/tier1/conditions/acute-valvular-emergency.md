@@ -8,6 +8,22 @@ time_to_harm: "< 1 hour"
 mortality_if_delayed: "Acute AR/MR: >75% without surgical intervention; critical AS with syncope: 50% 1-year mortality without valve replacement"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: acute-heart-failure
+    differentiators:
+      - "Acute valvular emergency: sudden new murmur (diastolic for AR, systolic for MR), flash pulmonary edema with rapid onset; AHF: known chronic HF with gradual decompensation, known reduced EF"
+      - "Acute AR: soft diastolic murmur (may be inaudible), absent wide pulse pressure (unlike chronic AR); AHF: S3 gallop, elevated BNP, bilateral pulmonary edema"
+      - "Acute valvular emergency: requires emergent surgical intervention (valve repair/replacement); AHF: responds to diuretics, vasodilators, and medical optimization"
+  - condition: sepsis
+    differentiators:
+      - "Acute valvular emergency (endocarditis): new murmur, embolic phenomena (Janeway lesions, splinter hemorrhages, Roth spots), positive blood cultures; sepsis without endocarditis: no new murmur, no embolic phenomena, source identified elsewhere"
+      - "Endocarditis: vegetations on echocardiography, often subacute fever with constitutional symptoms; sepsis: acute febrile illness with identifiable source (pneumonia, UTI, intra-abdominal)"
+      - "Both can coexist — endocarditis IS a source of sepsis; blood cultures and echo are mandatory when new murmur present in septic patient"
+  - condition: pulmonary-embolism
+    differentiators:
+      - "Acute valvular emergency: new murmur, flash pulmonary edema, echo shows valvular pathology; PE: no new murmur, clear lungs or focal findings, RV dilation on echo without valvular pathology"
+      - "Acute MR: loud holosystolic murmur at apex radiating to axilla; PE: no characteristic murmur, pleuritic chest pain, tachycardia"
+      - "Both cause acute dyspnea and hypotension — bedside echo differentiates valvular pathology from RV dilation"
 sources:
   - type: guideline
     ref: "2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease"

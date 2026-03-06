@@ -7,6 +7,13 @@ esi: 2
 time_to_harm: "< 10 days (coronary artery aneurysm risk increases after day 10 of fever without treatment)"
 category: pediatric
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - authority_trust
+    - social_pressure
+    - autonomy_assertion
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound]
 sources:
   - type: guideline
     ref: "McCrindle BW et al. Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease: A Scientific Statement from the American Heart Association. Circulation 2017;135(17):e927-e999"

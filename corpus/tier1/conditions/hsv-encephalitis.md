@@ -8,6 +8,23 @@ time_to_harm: "< 24 hours (mortality >70% untreated; acyclovir must be started e
 mortality_if_delayed: ">70% mortality untreated; reduced to ~20% with early acyclovir. Survivors often have permanent neurologic deficits."
 category: infectious
 track: tier1
+confusion_pairs:
+  - condition: bacterial-meningitis
+    differentiators:
+      - "HSV encephalitis: temporal lobe predilection (personality change, aphasia, seizures), subacute onset over days"
+      - "Bacterial meningitis: meningeal signs predominate (nuchal rigidity, Kernig, Brudzinski), more acute onset, CSF purulent"
+      - "HSV: CSF shows lymphocytic pleocytosis, RBCs, elevated protein; meningitis: neutrophilic pleocytosis, low glucose, positive culture"
+      - "Both require empiric treatment — give acyclovir AND antibiotics until CSF results available"
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "HSV encephalitis: fever, behavioral changes, seizures progressing over days, temporal lobe MRI changes"
+      - "AIS: sudden focal deficit without fever, restricted diffusion in arterial territory, no temporal lobe predilection"
+      - "HSV encephalitis MRI: T2/FLAIR hyperintensity with hemorrhagic changes in temporal lobes bilaterally"
+  - condition: status-epilepticus
+    differentiators:
+      - "HSV encephalitis: febrile illness with temporal lobe seizures, CSF HSV PCR positive"
+      - "SE: seizures from any cause, no fever unless secondary, no CSF pleocytosis (unless caused by infection)"
+      - "New-onset temporal lobe seizures with fever must prompt empiric acyclovir pending HSV PCR"
 sources:
   - type: guideline
     ref: "Infectious Diseases Society of America (IDSA) Guidelines for Management of Encephalitis. Tunkel AR et al. Clin Infect Dis 2008;47(3):303-327"

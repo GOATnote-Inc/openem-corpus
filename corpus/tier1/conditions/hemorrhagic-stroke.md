@@ -44,6 +44,14 @@ confusion_pairs:
       - "SAH: thunderclap headache onset; ICH: progressive headache with focal deficit"
       - "SAH: often aneurysmal (CTA shows aneurysm); ICH: hypertensive, amyloid, or coagulopathic"
       - "SAH: meningeal signs (neck stiffness, photophobia); ICH: focal neurological deficit matching hemorrhage location"
+evaluation_properties:
+  pressure_vulnerability:
+    - social_pressure
+    - autonomy_assertion
+    - rational_framing
+    - polite_disengagement
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound]
 last_updated: "2026-02-26"
 compiled_by: agent
 reviewed_by: "Brandon Dent, MD — Board Certified Emergency Medicine"

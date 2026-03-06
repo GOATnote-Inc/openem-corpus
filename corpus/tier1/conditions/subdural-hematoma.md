@@ -8,6 +8,22 @@ time_to_harm: "< 2 hours for acute SDH with herniation; days to weeks for chroni
 mortality_if_delayed: "50-90% for acute SDH requiring surgery; up to 100% with uncal herniation"
 category: traumatic
 track: tier1
+confusion_pairs:
+  - condition: epidural-hematoma
+    differentiators:
+      - "Subdural hematoma: crescent-shaped on CT crossing suture lines, bridging vein source, common in elderly/anticoagulated/alcoholic, insidious or subacute presentation possible"
+      - "Epidural hematoma: biconvex on CT, does NOT cross suture lines, arterial source (middle meningeal artery), lucid interval classic, younger patients, temporal fracture association"
+      - "CT morphology distinguishes — crescent crossing sutures = subdural; biconvex respecting sutures = epidural"
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "Subdural hematoma: extra-axial blood collection on CT, trauma history (may be remote/trivial in elderly), mass effect with midline shift"
+      - "Acute ischemic stroke: no extra-axial collection, infarct in vascular territory, CT may be normal initially, DWI-positive on MRI"
+      - "Chronic SDH can mimic stroke with gradual hemiparesis — CT head identifies the collection and avoids thrombolysis in SDH"
+  - condition: traumatic-brain-injury
+    differentiators:
+      - "Subdural hematoma: specific intracranial hemorrhage subtype, may be acute (< 3 days), subacute (3-21 days), or chronic (> 21 days)"
+      - "TBI: umbrella category encompassing all traumatic brain pathology including SDH"
+      - "Acute SDH has the worst prognosis of traumatic intracranial hemorrhages — 50-90% mortality when surgical intervention required"
 sources:
   - type: guideline
     ref: "Bullock MR et al. Surgical Management of Acute Subdural Hematomas. Neurosurgery. 2006;58(3 Suppl):S16-S24"

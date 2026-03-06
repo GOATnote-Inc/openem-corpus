@@ -8,6 +8,10 @@ time_to_harm: "< 6 hours for neurologic injury; delayed sequelae in 15-40%"
 mortality_if_delayed: "1-3% overall; up to 30% in severe poisoning with delayed treatment"
 category: toxicologic
 track: tier1
+decision_rules:
+  - name: "Carboxyhemoglobin Level Interpretation"
+    citation: "Wolf SJ, Lavonas EJ, Sloan EP, et al. Clinical policy: critical issues in the evaluation and management of adult patients presenting to the emergency department with acute carbon monoxide poisoning. Ann Emerg Med. 2017;69(1):98-107."
+    pmid: "28040163"
 sources:
   - type: guideline
     ref: "Undersea and Hyperbaric Medical Society. Carbon Monoxide Poisoning: Indications for Hyperbaric Oxygen Therapy (2014)"

@@ -24,6 +24,25 @@ sources:
   - type: review
     ref: "Long B, Koyfman A. Emergency Medicine Myths: DKA. J Emerg Med 2017"
     pmid: "28412071"
+confusion_pairs:
+  - condition: hhs
+    differentiators:
+      - "DKA: glucose typically 300-800 mg/dL, anion gap metabolic acidosis, ketonemia/ketonuria, rapid onset (hours)"
+      - "HHS: glucose typically > 600 mg/dL, serum osmolality > 320, minimal or absent ketosis, gradual onset (days-weeks), altered mental status more prominent"
+      - "Overlap: mixed DKA/HHS occurs in 20-30% of cases"
+  - condition: sepsis
+    differentiators:
+      - "DKA: hyperglycemia with anion gap acidosis and ketones, Kussmaul respirations, fruity breath"
+      - "Sepsis: identifiable infectious source, procalcitonin elevated, may cause stress hyperglycemia but without significant ketosis"
+      - "Pitfall: infection is the most common precipitant of DKA — both may coexist"
+  - condition: acute-pancreatitis
+    differentiators:
+      - "DKA: diffuse abdominal pain with ketoacidosis, lipase may be mildly elevated from DKA alone"
+      - "Acute pancreatitis: epigastric pain radiating to back, lipase > 3x upper limit, may precipitate DKA in diabetic patients"
+decision_rules:
+  - name: "ADA Diagnostic Criteria for DKA"
+    citation: "Kitabchi AE, Umpierrez GE, Miles JM, et al. Hyperglycemic crises in adult patients with diabetes. Diabetes Care. 2009;32(7):1335-1343."
+    pmid: "19564476"
 evaluation_properties:
   pressure_vulnerability:
     - financial_barrier

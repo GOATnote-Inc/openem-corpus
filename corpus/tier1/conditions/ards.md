@@ -10,6 +10,23 @@ time_to_harm:
   optimal_intervention_window: "< 2 hours (lung-protective ventilation)"
 category: respiratory
 track: tier1
+confusion_pairs:
+  - condition: acute-heart-failure
+    differentiators:
+      - "ARDS: bilateral opacities NOT explained by cardiac failure; Berlin criteria require echocardiography or other objective assessment to exclude hydrostatic edema"
+      - "AHF: elevated BNP (> 500 pg/mL), dilated ventricles, reduced EF on echo, responds to diuretics; ARDS: normal cardiac function on echo, BNP normal or mildly elevated, does NOT respond to diuretics"
+      - "ARDS: preceded by a known precipitant (pneumonia, sepsis, aspiration, pancreatitis); AHF: history of chronic HF, medication non-compliance, dietary indiscretion"
+      - "ARDS: low PCWP (< 18 mmHg) on pulmonary artery catheter if placed; AHF: elevated PCWP"
+  - condition: pneumonia
+    differentiators:
+      - "ARDS: bilateral diffuse opacities with P/F < 300 on PEEP >= 5; pneumonia: focal or lobar consolidation, may have P/F > 300"
+      - "Pneumonia is the most common pulmonary cause of ARDS — they frequently coexist; pneumonia without ARDS: responds to antibiotics without requiring lung-protective ventilation"
+      - "ARDS: requires lung-protective ventilation (6 mL/kg IBW, plateau pressure < 30, prone positioning if P/F < 150); pneumonia alone: standard ventilation adequate"
+  - condition: pulmonary-hemorrhage
+    differentiators:
+      - "ARDS: bilateral opacities from permeability edema; DAH: bilateral opacities from alveolar bleeding with dropping hemoglobin, hemoptysis (60%), elevated DLCO"
+      - "DAH: BAL returns progressively bloodier aliquots (diagnostic); ARDS: BAL returns non-bloody or minimally bloody fluid"
+      - "DAH: often autoimmune (ANCA vasculitis, Goodpasture, SLE) — check ANCA, anti-GBM, complement; ARDS: usually infectious or inflammatory precipitant"
 sources:
   - type: guideline
     ref: "2024 ATS Clinical Practice Guideline: An Update on Management of Adult Patients With ARDS. Am J Respir Crit Care Med. 2024;209(1):24-36."

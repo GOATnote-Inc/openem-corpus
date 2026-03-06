@@ -7,6 +7,20 @@ esi: 2
 time_to_harm: "< 6 hours (strangulation risk doubles every 24 hours; bowel necrosis within 4-6 hours of strangulation)"
 category: gastrointestinal
 track: tier1
+confusion_pairs:
+  - condition: bowel-obstruction
+    differentiators:
+      - "Incarcerated hernia: palpable non-reducible mass at hernia site (inguinal, umbilical, incisional), localized tenderness"
+      - "Bowel obstruction: diffuse abdominal distension without palpable hernia mass, multiple air-fluid levels on imaging, adhesions as common cause"
+      - "Overlap: incarcerated hernia is a cause of bowel obstruction — always examine hernia orifices in SBO"
+  - condition: testicular-torsion
+    differentiators:
+      - "Incarcerated hernia: inguinal mass extending from external ring, bowel sounds may be heard in scrotum, nausea/vomiting with obstruction"
+      - "Testicular torsion: high-riding testis with horizontal lie, absent cremasteric reflex, negative Prehn sign, no inguinal mass"
+  - condition: ovarian-torsion
+    differentiators:
+      - "Incarcerated hernia: visible/palpable groin or abdominal wall mass, occurs in both sexes"
+      - "Ovarian torsion: unilateral pelvic pain in female, enlarged ovary on ultrasound, no external hernia mass, may have known ovarian cyst"
 sources:
   - type: guideline
     ref: "EAST Practice Management Guideline: Surgical Management of Incarcerated and Strangulated Inguinal Hernias Requiring Urgent Surgical Intervention"

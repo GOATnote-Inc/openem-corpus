@@ -8,6 +8,26 @@ time_to_harm: "Hours to days (proximal DVT may embolize to PE at any time)"
 mortality_if_delayed: "1-5% from PE if untreated proximal DVT; phlegmasia cerulea dolens carries 20-40% mortality"
 category: hematologic
 track: tier1
+decision_rules:
+  - name: "Wells DVT Criteria"
+    citation: "Wells PS et al. Evaluation of D-dimer in the diagnosis of suspected deep-vein thrombosis. N Engl J Med. 2003;349(13):1227-1235."
+    pmid: "12946564"
+confusion_pairs:
+  - condition: cellulitis-abscess
+    differentiators:
+      - "DVT: unilateral leg swelling, positive Homan sign (unreliable), elevated D-dimer, confirmed by compression ultrasound showing non-compressible vein"
+      - "Cellulitis: erythema with warmth and tenderness, well-demarcated borders, fever, elevated WBC, responds to antibiotics"
+      - "Both cause unilateral leg swelling and pain — DVT has minimal erythema; cellulitis has prominent erythema and warmth"
+  - condition: compartment-syndrome
+    differentiators:
+      - "DVT: venous occlusion causing edema, no pallor or pulselessness, treated with anticoagulation"
+      - "Compartment syndrome: elevated compartment pressure > 30 mmHg, pain with passive stretch (out of proportion), tense compartment, paresthesias, threatened limb, requires emergent fasciotomy"
+      - "DVT does not threaten the limb acutely (unless phlegmasia); compartment syndrome is a limb-threatening emergency"
+  - condition: necrotizing-fasciitis
+    differentiators:
+      - "DVT: swelling without skin color change (unless phlegmasia), no systemic toxicity, responds to anticoagulation"
+      - "Necrotizing fasciitis: pain out of proportion, rapid progression, skin changes (dusky, bullae, crepitus), systemic toxicity, requires emergent surgical debridement"
+      - "Severe pain with systemic toxicity in a swollen limb should prompt concern for necrotizing fasciitis over DVT"
 sources:
   - type: guideline
     ref: "Kearon C et al. Antithrombotic therapy for VTE disease: CHEST guideline and expert panel report. Chest 2016;149(2):315-352"

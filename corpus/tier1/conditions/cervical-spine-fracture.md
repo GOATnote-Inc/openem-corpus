@@ -10,6 +10,17 @@ time_to_harm:
   optimal_intervention_window: "< 4 hours for cord decompression"
 category: traumatic
 track: tier1
+confusion_pairs:
+  - condition: spinal-cord-injury
+    differentiators:
+      - "Cervical spine fracture: bony injury identified on CT, may or may not have neurologic deficit, stable vs unstable classification determines management"
+      - "Spinal cord injury: neurologic deficit (motor/sensory/autonomic) from cord damage, may occur with or without fracture (e.g., SCIWORA, central cord syndrome in stenotic spine)"
+      - "Cervical fracture without SCI requires immobilization; cervical fracture WITH SCI requires immobilization plus hemodynamic and neuroprotective management"
+  - condition: traumatic-brain-injury
+    differentiators:
+      - "Cervical spine fracture: neck pain/tenderness, mechanism-specific (axial loading, hyperflexion, hyperextension), CT cervical spine diagnostic"
+      - "TBI: altered mental status, scalp injury, intracranial pathology on CT head, GCS-based classification"
+      - "Both commonly coexist — 5-10% of TBI patients have concurrent cervical spine injury; always image both in significant trauma"
 sources:
   - type: guideline
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"

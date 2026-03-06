@@ -8,6 +8,22 @@ time_to_harm: "< 5 minutes"
 mortality_if_delayed: "Respiratory arrest within minutes if untreated"
 category: toxicologic
 track: tier1
+confusion_pairs:
+  - condition: benzodiazepine-overdose
+    differentiators:
+      - "Opioid overdose: miotic (pinpoint) pupils, respiratory depression with bradypnea, responds to naloxone"
+      - "Benzodiazepine overdose: normal or mildly dilated pupils, sedation predominates, respiratory depression less severe unless co-ingestion, responds to flumazenil (use cautiously)"
+      - "Co-ingestion is common — naloxone trial is both diagnostic and therapeutic for the opioid component"
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "Opioid overdose: bilateral miosis, depressed respirations, no focal lateralizing signs, responds to naloxone"
+      - "Acute ischemic stroke: sudden focal neurologic deficit (hemiparesis, aphasia, facial droop), unilateral findings, CT/MRI confirms infarct, does not respond to naloxone"
+      - "Unresponsive patient with unknown history — check pupils and administer naloxone before assuming stroke"
+  - condition: hypoglycemia
+    differentiators:
+      - "Opioid overdose: miotic pupils, bradypnea, track marks or drug paraphernalia, responds to naloxone"
+      - "Hypoglycemia: diaphoresis, tremor, tachycardia, glucose < 70 mg/dL, responds to dextrose, normal pupils"
+      - "Both cause altered mental status — point-of-care glucose should be checked immediately in all unresponsive patients"
 sources:
   - type: guideline
     ref: "AHA 2020 Guidelines for CPR and Emergency Cardiovascular Care: Opioid-Associated Emergencies. Circulation 2020;142(16 Suppl 2):S364-S381"

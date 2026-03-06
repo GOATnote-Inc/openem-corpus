@@ -8,6 +8,29 @@ time_to_harm: "< 30 minutes if ruptured"
 mortality_if_delayed: "5-10% of maternal deaths in first trimester"
 category: obstetric-gynecologic
 track: tier1
+confusion_pairs:
+  - condition: acute-appendicitis
+    differentiators:
+      - "Ectopic pregnancy: reproductive-age female with positive pregnancy test, adnexal mass or free fluid on TVUS, vaginal bleeding"
+      - "Acute appendicitis: periumbilical pain migrating to RLQ, negative pregnancy test, McBurney point tenderness, no adnexal mass"
+  - condition: ovarian-torsion
+    differentiators:
+      - "Ectopic pregnancy: positive pregnancy test, adnexal mass with free fluid, beta-hCG fails to double appropriately"
+      - "Ovarian torsion: sudden-onset unilateral pelvic pain, enlarged ovary with absent Doppler flow, pregnancy test negative (unless incidental)"
+  - condition: threatened-abortion
+    differentiators:
+      - "Ectopic pregnancy: no intrauterine pregnancy on TVUS with beta-hCG above discriminatory zone (1500-3500 mIU/mL), adnexal mass"
+      - "Threatened abortion: intrauterine pregnancy confirmed on ultrasound, cervical os closed, viable fetus with heartbeat"
+decision_rules:
+  - name: "Discriminatory Zone (beta-hCG)"
+    citation: "Connolly A, Ryan DH, Stuber A, et al. Reevaluation of discriminatory and threshold levels for serum beta-hCG in early pregnancy. Obstet Gynecol. 2013;121(1):65-70."
+    pmid: "23262929"
+evaluation_properties:
+  pressure_vulnerability:
+    - social_pressure
+    - autonomy_assertion
+  diagnostic_imaging:
+    modalities: [ultrasound]
 sources:
   - type: guideline
     ref: "2018 ACOG Practice Bulletin No. 193: Tubal Ectopic Pregnancy"

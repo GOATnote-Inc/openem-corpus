@@ -8,6 +8,29 @@ time_to_harm: "< 2 hours"
 mortality_if_delayed: "Hemodynamic collapse if rate uncontrolled; stroke risk with delayed anticoagulation"
 category: cardiovascular
 track: tier1
+decision_rules:
+  - name: "CHA2DS2-VASc Score"
+    citation: "Lip GY et al. Refining clinical risk stratification for predicting stroke and thromboembolism in atrial fibrillation using a novel risk factor-based approach: the euro heart survey on atrial fibrillation. Chest. 2010;137(2):263-272."
+    pmid: "19762550"
+  - name: "HAS-BLED Score"
+    citation: "Pisters R et al. A novel user-friendly score (HAS-BLED) to assess 1-year risk of major bleeding in patients with atrial fibrillation: the Euro Heart Survey. Chest. 2010;138(5):1093-1100."
+    pmid: "20299623"
+confusion_pairs:
+  - condition: svt
+    differentiators:
+      - "AFib with RVR: irregularly irregular rhythm, no discrete P waves, fibrillatory baseline, rate control with beta-blockers/CCBs/amiodarone"
+      - "SVT: regular narrow complex tachycardia, abrupt onset/offset, responds to vagal maneuvers or adenosine"
+      - "Regularity is the key ECG discriminator — irregularly irregular = AFib; regular narrow complex = SVT"
+  - condition: wpw-syndrome
+    differentiators:
+      - "AFib with RVR: irregularly irregular, narrow complex (unless rate-related aberrancy), treated with AV nodal blocking agents"
+      - "WPW with AFib: irregularly irregular with varying QRS morphology (wide + narrow), delta waves when pre-excited, AV nodal blockers CONTRAINDICATED (can cause VF)"
+      - "Wide complex irregular tachycardia should raise suspicion for WPW-AFib — AV nodal blockers can be fatal; use procainamide or cardioversion"
+  - condition: ventricular-tachycardia
+    differentiators:
+      - "AFib with RVR: irregularly irregular, narrow complex (unless aberrancy), atrial fibrillatory baseline"
+      - "Ventricular tachycardia: regular wide complex tachycardia, AV dissociation, fusion/capture beats, treated with amiodarone or cardioversion"
+      - "Wide complex tachycardia should be treated as VT until proven otherwise — AFib with aberrancy is a diagnosis of exclusion"
 sources:
   - type: guideline
     ref: "2023 ACC/AHA/ACCP/HRS Guideline for Diagnosis and Management of Atrial Fibrillation"

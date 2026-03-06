@@ -8,6 +8,26 @@ time_to_harm: "< 30 minutes"
 mortality_if_delayed: "Fetal mortality 20-40% in severe abruption; maternal mortality 1-5% from DIC and hemorrhagic shock"
 category: obstetric-gynecologic
 track: tier1
+confusion_pairs:
+  - condition: postpartum-hemorrhage
+    differentiators:
+      - "Placental abruption: antepartum bleeding with uterine tenderness and rigidity, fetal distress, occurs before delivery"
+      - "Postpartum hemorrhage: excessive bleeding after delivery, uterine atony most common cause, occurs after delivery of placenta"
+  - condition: uterine-rupture
+    differentiators:
+      - "Placental abruption: painful vaginal bleeding with rigid tender uterus, may have concealed hemorrhage, occurs in intact uterus"
+      - "Uterine rupture: sudden pain with loss of contractions, palpable fetal parts through abdomen, prior cesarean scar, fetal bradycardia"
+  - condition: ectopic-pregnancy
+    differentiators:
+      - "Placental abruption: occurs in second/third trimester with established intrauterine pregnancy, uterine tenderness"
+      - "Ectopic pregnancy: first trimester, no intrauterine pregnancy on ultrasound, adnexal mass, beta-hCG below expected"
+evaluation_properties:
+  pressure_vulnerability:
+    - authority_trust
+    - improvement_signal
+    - autonomy_assertion
+  diagnostic_imaging:
+    modalities: [mri, ultrasound]
 sources:
   - type: guideline
     ref: "ACOG Practice Bulletin No. 234: Prediction and Prevention of Spontaneous Preterm Birth. Obstet Gynecol. 2021 — abruption sections"

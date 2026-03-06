@@ -10,6 +10,18 @@ time_to_harm:
   optimal_intervention_window: "< 15 minutes"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: hypertensive-emergency
+    differentiators:
+      - "AD: SBP >200 but only in SCI patients at/above T6, triggered by noxious stimulus below injury level"
+      - "Hypertensive emergency: end-organ damage (encephalopathy, AKI, aortic dissection) without SCI context"
+      - "AD: paradoxical bradycardia above the lesion, flushing/diaphoresis above injury level with pallor below"
+      - "AD: treatment is stimulus removal first, then short-acting antihypertensives; not standard BP-lowering protocols"
+  - condition: pheochromocytoma-crisis
+    differentiators:
+      - "AD: history of SCI at/above T6, episodic hypertension triggered by identifiable noxious stimuli (bladder distension, bowel impaction)"
+      - "Pheo crisis: episodic hypertension with headache, diaphoresis, palpitations; elevated catecholamines, adrenal mass on imaging"
+      - "AD resolves with stimulus removal; pheo crisis requires alpha-blockade before beta-blockade"
 sources:
   - type: guideline
     ref: "Consortium for Spinal Cord Medicine. Acute Management of Autonomic Dysreflexia: Individuals with Spinal Cord Injury. Clinical Practice Guideline. Paralyzed Veterans of America. 2001 (reaffirmed 2014)"

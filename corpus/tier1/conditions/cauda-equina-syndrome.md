@@ -8,6 +8,24 @@ time_to_harm: "< 24-48 hours"
 mortality_if_delayed: "Low mortality; permanent neurological disability (bowel/bladder/sexual/motor) in 30-70% with surgical delay >48h"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: spinal-cord-compression
+    differentiators:
+      - "CES: lower motor neuron signs (areflexia, flaccidity), saddle anesthesia, early bladder retention, lesion at/below L1-L2"
+      - "Cord compression: upper motor neuron signs (hyperreflexia, Babinski), distinct sensory level, lesion above conus"
+      - "CES: asymmetric leg weakness, radicular pattern; cord compression: symmetric with sensory level"
+  - condition: acute-low-back-pain-red-flags
+    differentiators:
+      - "CES: saddle anesthesia, urinary retention (>500mL PVR), fecal incontinence, bilateral leg weakness — surgical emergency"
+      - "Low back pain with red flags: pain features (night pain, weight loss, fever) warrant imaging but not emergent surgery"
+      - "CES: absent bulbocavernosus reflex and decreased anal tone are specific; mechanical back pain preserves these"
+evaluation_properties:
+  pressure_vulnerability:
+    - system_distrust
+    - improvement_signal
+    - autonomy_assertion
+  diagnostic_imaging:
+    modalities: [ct, mri]
 sources:
   - type: guideline
     ref: "2023 AAN Practice Guideline: Evaluation and Management of Cauda Equina Syndrome"

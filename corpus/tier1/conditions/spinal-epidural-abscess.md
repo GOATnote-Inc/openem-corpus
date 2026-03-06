@@ -8,6 +8,12 @@ time_to_harm: "< 24-48 hours from neurological deficit to irreversible paraplegi
 mortality_if_delayed: "5-20% mortality; paralysis in 33-50% with delayed diagnosis"
 category: infectious
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - social_pressure
+    - autonomy_assertion
+  diagnostic_imaging:
+    modalities: [ct, mri]
 sources:
   - type: review
     ref: "Darouiche RO. Spinal Epidural Abscess. N Engl J Med 2006;355:2012-2020"

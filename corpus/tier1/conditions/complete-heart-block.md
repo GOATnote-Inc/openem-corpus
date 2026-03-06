@@ -10,6 +10,17 @@ time_to_harm:
   optimal_intervention_window: "< 30 minutes"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: sick-sinus-syndrome
+    differentiators:
+      - "CHB: complete AV dissociation with atrial rate > ventricular rate, no consistent PR interval; SSS: sinus pauses, sinus arrest, or tachy-brady alternation with intact AV conduction"
+      - "CHB: escape rhythm is junctional (40-60 bpm, narrow QRS) or ventricular (20-40 bpm, wide QRS); SSS: pauses followed by sinus beats, junctional escape, or atrial fibrillation"
+      - "CHB: often requires emergent transcutaneous pacing; SSS: rarely requires emergent pacing unless prolonged pauses > 6 seconds with syncope"
+  - condition: unstable-bradycardia
+    differentiators:
+      - "CHB is a specific ECG diagnosis (complete AV dissociation); unstable bradycardia is a clinical syndrome (HR < 60 with hemodynamic compromise from any cause)"
+      - "CHB: atropine often ineffective for infranodal block (wide QRS escape) — proceed directly to pacing; unstable bradycardia from sinus or nodal cause: atropine is first-line and often effective"
+      - "CHB: most patients require permanent pacemaker; unstable bradycardia from reversible causes (drug toxicity, hyperkalemia) may resolve with treatment"
 sources:
   - type: guideline
     ref: "2018 ACC/AHA/HRS Guideline on the Evaluation and Management of Patients With Bradycardia and Cardiac Conduction Delay. Circulation. 2019;140(8):e382-e482."

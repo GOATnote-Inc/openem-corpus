@@ -11,6 +11,22 @@ time_to_harm:
 mortality_if_delayed: "30-40% Class III; 50%+ Class IV"
 category: traumatic
 track: tier1
+confusion_pairs:
+  - condition: cardiac-tamponade
+    differentiators:
+      - "Hemorrhagic shock: tachycardia, flat neck veins, responds to volume resuscitation and hemorrhage control, Class I-IV based on blood loss"
+      - "Cardiac tamponade: Beck triad (hypotension, distended neck veins, muffled heart sounds), pulsus paradoxus, does NOT respond to fluids, requires pericardiocentesis or thoracotomy"
+      - "Distended vs flat neck veins in a trauma patient is the critical bedside discriminator — tamponade = distended, hemorrhage = flat"
+  - condition: tension-pneumothorax
+    differentiators:
+      - "Hemorrhagic shock: tachycardia, flat neck veins, bilateral breath sounds (unless hemothorax), responds to blood products"
+      - "Tension pneumothorax: distended neck veins, absent breath sounds on affected side, tracheal deviation away from affected side, requires needle decompression then chest tube"
+      - "Both cause hypotension in trauma — absent unilateral breath sounds with distended neck veins mandates immediate needle decompression"
+  - condition: sepsis
+    differentiators:
+      - "Hemorrhagic shock: identifiable blood loss source, tachycardia, cool/clammy skin, responds to hemorrhage control and blood products"
+      - "Sepsis: infectious source, warm/vasodilated early, fever or hypothermia, elevated procalcitonin/lactate, requires antibiotics"
+      - "In trauma, hemorrhage is the most common cause of shock until proven otherwise — sepsis is a later complication"
 sources:
   - type: guideline
     ref: "ATLS Advanced Trauma Life Support, 10th Edition (2018)"

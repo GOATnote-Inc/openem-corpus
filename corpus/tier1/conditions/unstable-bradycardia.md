@@ -8,6 +8,22 @@ time_to_harm: "< 10 minutes"
 mortality_if_delayed: "Cardiac arrest imminent if perfusing rhythm not restored"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: complete-heart-block
+    differentiators:
+      - "Unstable bradycardia: clinical syndrome with multiple ECG causes (sinus bradycardia, Mobitz I/II, CHB, drug-induced); CHB: specific ECG pattern of complete AV dissociation"
+      - "Unstable bradycardia from sinus or nodal cause: atropine effective; CHB with wide QRS escape: atropine often ineffective, requires pacing"
+      - "Unstable bradycardia: may resolve entirely with treating reversible cause (stop offending drug, correct K+); CHB from degenerative disease: usually requires permanent pacemaker"
+  - condition: sick-sinus-syndrome
+    differentiators:
+      - "Unstable bradycardia: acute hemodynamic compromise requiring emergent intervention; SSS: often chronic or intermittent with tachy-brady alternation"
+      - "SSS: alternating tachycardia (AF/flutter) and bradycardia (sinus pauses); unstable bradycardia: sustained rate insufficient to maintain perfusion"
+      - "SSS: long-term management with permanent pacemaker + rate control for tachycardia; unstable bradycardia: emergent atropine, pacing, and chronotropic infusions"
+  - condition: syncope
+    differentiators:
+      - "Unstable bradycardia: persistent hemodynamic compromise with ongoing bradycardia; vasovagal syncope: transient bradycardia with spontaneous recovery, normal hemodynamics between episodes"
+      - "Vasovagal: typical prodrome (warmth, nausea, tunnel vision), triggered by pain/standing/emotional stress; unstable bradycardia: no prodrome, persistent rhythm abnormality"
+      - "Vasovagal: normal ECG between episodes, no structural heart disease; unstable bradycardia: ECG shows conduction disease or drug effect"
 sources:
   - type: guideline
     ref: "2020 AHA/ACC Guideline for Management of Patients With Bradycardia and Cardiac Conduction Delay"

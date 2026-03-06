@@ -8,6 +8,23 @@ time_to_harm: "< 5 minutes"
 mortality_if_delayed: "Pulseless VT degenerates to VF and death within minutes without defibrillation"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: svt
+    differentiators:
+      - "VT: wide QRS > 120 ms, AV dissociation, fusion/capture beats; SVT with aberrancy: narrow baseline QRS that widens with rate-related bundle branch block"
+      - "VT: age > 50, structural heart disease, prior MI strongly favor VT; SVT: younger patient, no structural heart disease, prior SVT episodes"
+      - "VT: treat with procainamide or amiodarone; SVT: treat with adenosine or vagal maneuvers — adenosine in VT is ineffective but generally safe; verapamil in VT causes cardiovascular collapse"
+      - "Key rule: wide complex tachycardia is VT until proven otherwise — treating VT as SVT is far more dangerous than the reverse"
+  - condition: wpw-syndrome
+    differentiators:
+      - "WPW with antidromic AVRT: short PR and delta wave on baseline ECG, irregular wide complex tachycardia in AF; VT: no delta wave on baseline, regular wide complex tachycardia"
+      - "WPW: AV nodal blockers (adenosine, beta-blockers, CCBs) are CONTRAINDICATED — cause VF via unopposed accessory pathway conduction; VT: amiodarone and procainamide are safe"
+      - "WPW with AF: irregularly irregular wide complex tachycardia; VT: typically regular (monomorphic) or chaotically irregular (polymorphic/VF)"
+  - condition: torsades-de-pointes
+    differentiators:
+      - "TdP: polymorphic VT with prolonged QTc > 500 ms, characteristic twisting morphology, short-long-short initiation; monomorphic VT: constant QRS morphology, QTc typically normal"
+      - "TdP: treat with magnesium sulfate 2 g IV and overdrive pacing; monomorphic VT: treat with procainamide or amiodarone"
+      - "TdP: amiodarone and procainamide WORSEN the arrhythmia by further prolonging QT; monomorphic VT: amiodarone and procainamide are first-line"
 sources:
   - type: guideline
     ref: "2020 AHA Guidelines for CPR and Emergency Cardiovascular Care — Part 7: Adult Advanced Cardiovascular Life Support"

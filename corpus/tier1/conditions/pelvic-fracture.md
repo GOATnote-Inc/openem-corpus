@@ -8,6 +8,28 @@ time_to_harm: "< 30 minutes"
 mortality_if_delayed: "30-50% for hemodynamically unstable pelvic fractures; mortality exceeds 50% in open pelvic fractures"
 category: traumatic
 track: tier1
+decision_rules:
+  - name: "Young-Burgess Classification"
+    citation: "Young JWR, Burgess AR. Radiologic Management of Pelvic Ring Fractures. Urban & Schwarzenberg. 1987."
+  - name: "Tile Classification"
+    citation: "Tile M. Acute pelvic fractures: I. Causation and classification. J Am Acad Orthop Surg. 1996;4(3):143-151."
+    pmid: "10795049"
+confusion_pairs:
+  - condition: ruptured-aaa
+    differentiators:
+      - "Pelvic fracture: trauma mechanism, pelvic instability on exam, X-ray/CT shows fracture, hemorrhage from presacral venous plexus and bone"
+      - "Ruptured AAA: no trauma, elderly with abdominal/back pain, pulsatile abdominal mass, CT shows retroperitoneal hemorrhage with aortic pathology"
+      - "Both cause retroperitoneal hemorrhage with hemodynamic instability — trauma history and imaging distinguish"
+  - condition: ectopic-pregnancy
+    differentiators:
+      - "Pelvic fracture: trauma mechanism, bony tenderness, pelvic instability, hemorrhage from fracture site"
+      - "Ectopic pregnancy: reproductive-age female, missed period, positive beta-hCG, adnexal mass/free fluid on ultrasound, no trauma"
+      - "In reproductive-age females with pelvic trauma and hemorrhagic shock, always check beta-hCG — concurrent ectopic pregnancy is possible"
+  - condition: hemorrhagic-shock
+    differentiators:
+      - "Pelvic fracture: specific injury causing hemorrhagic shock, treated with pelvic binder, angioembolization, preperitoneal packing, or REBOA"
+      - "Hemorrhagic shock: the systemic response to blood loss from any source, classified by volume loss (Class I-IV)"
+      - "Pelvic fracture is a CAUSE of hemorrhagic shock — the distinction matters for source-specific interventions"
 sources:
   - type: guideline
     ref: "Cullinane DC et al. Eastern Association for the Surgery of Trauma Practice Management Guidelines for Hemorrhage in Pelvic Fracture -- Update and Systematic Review. J Trauma 2011;71(6):1850-1868"

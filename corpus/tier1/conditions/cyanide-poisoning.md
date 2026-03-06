@@ -11,6 +11,22 @@ time_to_harm:
 mortality_if_delayed: "Near 100% mortality if untreated at lethal dose; <5% with timely hydroxocobalamin"
 category: toxicologic
 track: tier1
+confusion_pairs:
+  - condition: carbon-monoxide-poisoning
+    differentiators:
+      - "Cyanide poisoning: rapid cardiovascular collapse, severe lactic acidosis, bitter almond odor, responds to hydroxocobalamin/sodium thiosulfate"
+      - "CO poisoning: headache, confusion, cherry-red skin (rare), elevated carboxyhemoglobin on co-oximetry, responds to 100% O2 or hyperbaric oxygen"
+      - "Both occur in smoke inhalation — treat empirically for both with hydroxocobalamin and 100% O2 in fire victims with altered mental status and lactic acidosis"
+  - condition: sepsis
+    differentiators:
+      - "Cyanide poisoning: acute onset after exposure (fire, industrial, ingestion), lactic acidosis with normal or elevated PaO2, bright red venous blood"
+      - "Sepsis: infectious source, gradual onset over hours, elevated procalcitonin, lactic acidosis with tissue hypoperfusion"
+      - "Cyanide causes cellular hypoxia despite adequate oxygen delivery — venous blood appears arterialized"
+  - condition: lactic-acidosis
+    differentiators:
+      - "Cyanide poisoning: exposure history, acute onset, lactic acidosis from mitochondrial toxicity (cytochrome oxidase inhibition), responds to specific antidotes"
+      - "Lactic acidosis (other causes): diverse etiologies (shock, liver failure, metformin, thiamine deficiency), no specific toxic exposure, treat underlying cause"
+      - "Unexplained severe lactic acidosis in a fire victim or industrial worker should prompt empiric cyanide treatment"
 sources:
   - type: pubmed
     ref: "Borron SW et al. Prospective study of hydroxocobalamin for acute cyanide poisoning in smoke inhalation. Ann Emerg Med 2007;49(6):794-801, 801.e1-2"

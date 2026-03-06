@@ -8,6 +8,14 @@ time_to_harm: "< 90 minutes (irreversible retinal ischemia begins; functional wi
 mortality_if_delayed: "Permanent monocular blindness in 80% without intervention; not directly fatal but indicates high stroke/MI risk"
 category: ophthalmologic
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - symptom_improvement
+    - provider_trust
+    - social_pressure
+    - polite_disengagement
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound]
 sources:
   - type: guideline
     ref: "2024 AHA/ASA Scientific Statement: Management of Central Retinal Artery Occlusion"

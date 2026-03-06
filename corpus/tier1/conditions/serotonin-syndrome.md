@@ -8,6 +8,23 @@ time_to_harm: "< 12 hours"
 mortality_if_delayed: "2-12% in severe cases"
 category: toxicologic
 track: tier1
+confusion_pairs:
+  - condition: neuroleptic-malignant-syndrome
+    differentiators:
+      - "SS: hyperreflexia and clonus (especially lower extremity), rapid onset (<24h), caused by serotonergic agents"
+      - "NMS: lead-pipe rigidity, hyporeflexia, develops over days, caused by dopamine antagonists"
+      - "SS: agitation, mydriasis, diaphoresis, diarrhea; NMS: stupor, akinesia, incontinence"
+      - "Hunter criteria for SS: clonus (spontaneous or inducible) is the key differentiating sign"
+  - condition: malignant-hyperthermia
+    differentiators:
+      - "SS: serotonergic drug exposure, hyperreflexia, clonus, onset in any setting"
+      - "MH: volatile anesthetic or succinylcholine exposure, onset in OR/PACU, masseter rigidity, rapidly rising ETCO2"
+      - "SS: treat with cyproheptadine + benzodiazepines; MH: treat with dantrolene"
+  - condition: anticholinergic-toxidrome
+    differentiators:
+      - "SS: hyperreflexia, clonus, diaphoresis (wet), hyperactive bowel sounds"
+      - "Anticholinergic: hyporeflexia, dry skin/mucous membranes, urinary retention, decreased bowel sounds, mydriasis"
+      - "SS: 'wet' (diaphoretic); anticholinergic: 'dry as a bone, red as a beet, mad as a hatter'"
 sources:
   - type: review
     ref: "Boyer EW, Shannon M. The Serotonin Syndrome. N Engl J Med 2005;352:1112-20"

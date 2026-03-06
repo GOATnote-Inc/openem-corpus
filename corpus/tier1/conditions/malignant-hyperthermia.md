@@ -8,6 +8,22 @@ time_to_harm: "< 30 minutes"
 mortality_if_delayed: ">70% without dantrolene; <5% with early dantrolene"
 category: environmental
 track: tier1
+confusion_pairs:
+  - condition: neuroleptic-malignant-syndrome
+    differentiators:
+      - "Malignant hyperthermia: triggered by volatile anesthetics or succinylcholine, onset during/immediately after anesthesia, masseter rigidity, rapidly rising ETCO2, treated with dantrolene"
+      - "NMS: triggered by dopamine antagonists (antipsychotics), develops over days, lead-pipe rigidity, treated with dantrolene/bromocriptine but slower course"
+      - "Both cause hyperthermia and rigidity — temporal relationship to anesthesia vs antipsychotics is the key discriminator"
+  - condition: serotonin-syndrome
+    differentiators:
+      - "Malignant hyperthermia: perioperative onset, muscle rigidity without clonus, rising ETCO2, rhabdomyolysis, genetic susceptibility (RYR1 mutation)"
+      - "Serotonin syndrome: serotonergic drug exposure, clonus and hyperreflexia (not rigidity), agitation, diarrhea, onset outside OR"
+      - "Clonus distinguishes serotonin syndrome; rigidity without clonus distinguishes MH and NMS"
+  - condition: heat-stroke
+    differentiators:
+      - "Malignant hyperthermia: occurs in the operating room during anesthesia, specific pharmacologic trigger, treated with dantrolene"
+      - "Heat stroke: occurs with environmental heat exposure or exertion, no anesthetic trigger, treated with aggressive external cooling"
+      - "Clinical setting is definitive — OR with anesthetic agents = MH; outdoor/exertional = heat stroke"
 sources:
   - type: guideline
     ref: "Malignant Hyperthermia Association of the United States (MHAUS) Emergency Protocol for MH. Updated 2023"

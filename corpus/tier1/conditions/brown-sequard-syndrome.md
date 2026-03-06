@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 24 hours"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: central-cord-syndrome
+    differentiators:
+      - "Brown-Sequard: ipsilateral motor/proprioception loss + contralateral pain/temperature loss (hemisection pattern)"
+      - "Central cord: upper extremity weakness > lower extremity, cape-like sensory loss, sacral sparing"
+      - "Brown-Sequard: typically penetrating trauma; central cord: hyperextension injury in elderly with stenosis"
+  - condition: spinal-cord-compression
+    differentiators:
+      - "Brown-Sequard: hemisection pattern with dissociated sensory loss (ipsilateral vs contralateral)"
+      - "Compression: bilateral motor and sensory deficits, often symmetric, with a sensory level"
+      - "Brown-Sequard has better prognosis (>90% regain ambulation) vs compression (outcome depends on duration)"
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "Brown-Sequard: dissociated sensory loss below spinal level, ipsilateral motor weakness"
+      - "AIS: cerebral territory deficit (face + arm > leg in MCA), no dissociated spinal sensory pattern"
+      - "Anterior spinal artery syndrome mimics stroke but spares dorsal column function"
 sources:
   - type: guideline
     ref: "AANS/CNS Joint Section on Disorders of the Spine and Peripheral Nerves. Guidelines for the Management of Acute Cervical Spine and Spinal Cord Injuries. Neurosurgery. 2013"

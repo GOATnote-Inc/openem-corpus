@@ -8,6 +8,26 @@ time_to_harm: "< 72 hours for perforation/gangrene; acalculous and emphysematous
 mortality_if_delayed: "Overall 1-4%; acalculous cholecystitis 30-50%; emphysematous cholecystitis 15-25%; gangrenous cholecystitis 15-20%"
 category: gastrointestinal
 track: tier1
+decision_rules:
+  - name: "Tokyo Guidelines (TG18) Severity Grading"
+    citation: "Yokoe M, et al. Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholecystitis. J Hepatobiliary Pancreat Sci. 2018;25(1):41-54."
+    pmid: "29032636"
+confusion_pairs:
+  - condition: acute-pancreatitis
+    differentiators:
+      - "Acute cholecystitis: RUQ pain, positive Murphy sign, sonographic Murphy sign with gallstones and gallbladder wall thickening/pericholecystic fluid, normal or mildly elevated lipase"
+      - "Acute pancreatitis: epigastric pain radiating to back, lipase > 3x ULN, may be triggered by gallstones (gallstone pancreatitis)"
+      - "Gallstone pancreatitis combines both — RUQ pain with markedly elevated lipase should prompt evaluation for both"
+  - condition: acute-coronary-syndrome-nstemi
+    differentiators:
+      - "Acute cholecystitis: RUQ tenderness with positive Murphy sign, postprandial pain, ultrasound diagnostic"
+      - "NSTEMI: chest pain with ECG changes and troponin elevation, no RUQ tenderness, no gallstones on imaging"
+      - "Inferior MI can refer pain to the RUQ — ECG and troponin should be checked in all RUQ pain with atypical features"
+  - condition: perforated-peptic-ulcer
+    differentiators:
+      - "Acute cholecystitis: RUQ pain, Murphy sign, gallstones on US, no free air, gradual worsening"
+      - "Perforated peptic ulcer: sudden severe epigastric pain, rigid abdomen, free air on imaging, peritonitis, hemodynamic instability"
+      - "Free air on imaging rules out simple cholecystitis and mandates surgical consultation for perforation"
 sources:
   - type: guideline
     ref: "Yokoe M, et al. Tokyo Guidelines 2018 (TG18): diagnostic criteria and severity grading of acute cholecystitis (with videos). J Hepatobiliary Pancreat Sci. 2018;25(1):41-54"

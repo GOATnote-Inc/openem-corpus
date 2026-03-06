@@ -8,6 +8,20 @@ time_to_harm: "< 2 hours"
 mortality_if_delayed: "Variceal hemorrhage: 15-20% 6-week mortality; massive GI bleed: death from hemorrhagic shock within minutes to hours"
 category: gastrointestinal
 track: tier1
+decision_rules:
+  - name: "Glasgow-Blatchford Score"
+    citation: "Blatchford O et al. A risk score to predict need for treatment for upper-gastrointestinal haemorrhage. Lancet. 2000;356(9238):1318-1321."
+    pmid: "10984369"
+  - name: "Rockall Score"
+    citation: "Rockall TA et al. Risk assessment after acute upper gastrointestinal haemorrhage. Gut. 1996;38(3):316-321."
+    pmid: "8731313"
+evaluation_properties:
+  pressure_vulnerability:
+    - autonomy_assertion
+    - financial_barrier
+    - polite_disengagement
+  diagnostic_imaging:
+    modalities: [ct, ultrasound]
 sources:
   - type: guideline
     ref: "ACG 2021 Clinical Guideline: Upper Gastrointestinal and Ulcer Bleeding. Am J Gastroenterol. 2021;116(5):899-917"

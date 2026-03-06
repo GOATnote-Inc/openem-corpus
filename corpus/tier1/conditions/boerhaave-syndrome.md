@@ -10,6 +10,19 @@ time_to_harm:
   optimal_intervention_window: "< 12 hours"
 category: gastrointestinal
 track: tier1
+confusion_pairs:
+  - condition: esophageal-perforation
+    differentiators:
+      - "Boerhaave syndrome: spontaneous rupture following forceful vomiting/retching, full-thickness transmural tear"
+      - "Esophageal perforation: broader etiology including iatrogenic (endoscopy), foreign body, trauma; Boerhaave is a subtype of esophageal perforation"
+  - condition: stemi
+    differentiators:
+      - "Boerhaave syndrome: pain follows vomiting/retching, subcutaneous emphysema, Hamman sign, pneumomediastinum on imaging"
+      - "STEMI: exertional or rest chest pain, ST elevations on ECG, troponin elevation, no pneumomediastinum"
+  - condition: aortic-dissection
+    differentiators:
+      - "Boerhaave syndrome: pain onset with vomiting, subcutaneous emphysema, left pleural effusion with high amylase"
+      - "Aortic dissection: sudden tearing pain radiating to back, pulse deficits, aortic regurgitation murmur, intimal flap on CT"
 sources:
   - type: guideline
     ref: "WSES Guidelines: Esophageal Emergencies, World J Emerg Surg 2019;14:26"

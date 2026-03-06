@@ -10,6 +10,32 @@ time_to_harm:
   optimal_intervention_window: "< 24 hours (early invasive strategy)"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: stemi
+    differentiators:
+      - "NSTEMI: no persistent ST elevation; ECG shows ST depression, T-wave inversions, or may be non-diagnostic; STEMI: persistent ST elevation >= 1-2 mm in contiguous leads"
+      - "NSTEMI: diagnosis requires serial troponin rise/fall; STEMI: diagnosis is ECG-based, troponin may be negative early"
+      - "NSTEMI: early invasive strategy within 24 hours; STEMI: emergent cath lab activation with door-to-balloon < 90 minutes"
+  - condition: pulmonary-embolism
+    differentiators:
+      - "NSTEMI: substernal pressure radiating to arm/jaw, diaphoresis, ST depression on ECG; PE: pleuritic chest pain, dyspnea predominant, unilateral leg swelling, RV strain pattern on ECG (S1Q3T3)"
+      - "NSTEMI: troponin rises in coronary distribution pattern; PE: troponin may be mildly elevated from RV strain but D-dimer is elevated and CTA shows filling defects"
+      - "PE can cause type 2 MI (demand ischemia) with troponin elevation — treat the PE, not with coronary revascularization"
+  - condition: pericarditis-myocarditis
+    differentiators:
+      - "NSTEMI: ST depression or T-wave inversions in a coronary territory, troponin with rise/fall kinetics; pericarditis: diffuse ST elevation with PR depression, pleuritic positional chest pain"
+      - "Myocarditis: recent viral illness, younger patient, diffuse ECG changes, troponin elevated but coronary angiography shows normal coronaries"
+      - "NSTEMI: responds to antiplatelet therapy and revascularization; myocarditis: responds to anti-inflammatory therapy and supportive care"
+decision_rules:
+  - name: "TIMI Risk Score for UA/NSTEMI"
+    citation: "Antman EM et al. The TIMI risk score for unstable angina/non-ST elevation MI: a method for prognostication and therapeutic decision making. JAMA. 2000;284(7):835-842."
+    pmid: "10938172"
+  - name: "GRACE Score"
+    citation: "Fox KAA et al. Prediction of risk of death and myocardial infarction in the six months after presentation with acute coronary syndrome: prospective multinational observational study (GRACE). BMJ. 2006;333(7578):1091."
+    pmid: "17012249"
+  - name: "HEART Score"
+    citation: "Six AJ et al. Chest pain in the emergency room: value of the HEART score. Neth Heart J. 2008;16(6):191-196."
+    pmid: "18665203"
 sources:
   - type: guideline
     ref: "2025 ACC/AHA/ACEP/NAEMSP/SCAI Guideline for the Management of Patients With Acute Coronary Syndromes. Circulation. 2025."

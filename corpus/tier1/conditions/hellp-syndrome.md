@@ -11,6 +11,19 @@ time_to_harm:
 mortality_if_delayed: "Maternal mortality 1-3%; perinatal mortality 7-20%; mortality increases with delayed delivery and complications (DIC, hepatic rupture, placental abruption)"
 category: obstetric-gynecologic
 track: tier1
+confusion_pairs:
+  - condition: eclampsia
+    differentiators:
+      - "HELLP syndrome: hemolysis + elevated liver enzymes + low platelets, may occur without seizures or severe hypertension"
+      - "Eclampsia: seizures are the defining feature, may have normal labs, both are on the preeclampsia spectrum"
+  - condition: thrombotic-thrombocytopenic-purpura
+    differentiators:
+      - "HELLP syndrome: pregnancy-associated, elevated LDH and AST/ALT, delivery is definitive treatment"
+      - "TTP: pentad of thrombocytopenia, MAHA, neurologic symptoms, renal dysfunction, fever; ADAMTS13 activity < 10% diagnostic; treated with plasma exchange, not delivery"
+  - condition: acute-hepatic-failure
+    differentiators:
+      - "HELLP syndrome: pregnancy-specific, thrombocytopenia and hemolysis prominent, resolves with delivery"
+      - "Acute hepatic failure: not pregnancy-specific, INR >= 1.5 with encephalopathy, progressive coagulopathy, may require transplant"
 sources:
   - type: pubmed
     ref: "Sibai BM. Diagnosis, controversies, and management of the syndrome of hemolysis, elevated liver enzymes, and low platelet count. Obstet Gynecol. 2004;103(5 Pt 1):981-991."

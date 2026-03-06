@@ -10,6 +10,19 @@ time_to_harm:
   optimal_intervention_window: "< 12 hours"
 category: gastrointestinal
 track: tier1
+confusion_pairs:
+  - condition: bowel-obstruction
+    differentiators:
+      - "Toxic megacolon: colonic dilation > 6 cm with systemic toxicity (fever, tachycardia, leukocytosis), history of IBD or C. difficile"
+      - "Bowel obstruction: mechanical cause (adhesions, hernia, tumor), transition point on imaging, no systemic inflammatory response early"
+  - condition: ogilvie-syndrome
+    differentiators:
+      - "Toxic megacolon: underlying inflammatory colitis, systemic toxicity, bloody diarrhea preceding dilation"
+      - "Ogilvie syndrome: acute colonic pseudo-obstruction without inflammation, postoperative or critically ill patient, cecal dilation predominant, no mucosal disease"
+  - condition: clostridium-difficile-severe
+    differentiators:
+      - "Toxic megacolon: colonic dilation > 6 cm on imaging, systemic toxicity criteria met, may complicate C. difficile or IBD"
+      - "Severe C. difficile: profuse watery diarrhea, WBC > 15,000, creatinine rise, but colon may not be dilated — toxic megacolon is a complication of severe C. difficile"
 sources:
   - type: review
     ref: "Toxic Megacolon: Background, Pathophysiology, Management Challenges and Solutions, Clin Exp Gastroenterol 2020;13:203-210"

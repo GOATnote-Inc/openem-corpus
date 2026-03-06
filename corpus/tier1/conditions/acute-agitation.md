@@ -8,6 +8,22 @@ time_to_harm: "< 1 hour"
 mortality_if_delayed: "Risk of sudden death with excited delirium, positional asphyxia"
 category: psychiatric
 track: tier1
+confusion_pairs:
+  - condition: acute-psychosis
+    differentiators:
+      - "Agitation: behavioral emergency requiring immediate de-escalation/sedation, may or may not have psychotic features"
+      - "Psychosis: hallucinations, delusions, thought disorder; agitation is a complication, not the defining feature"
+      - "Agitation has broader differential (medical, toxicologic, psychiatric); psychosis implies specific psychiatric or organic etiology"
+  - condition: sympathomimetic-toxidrome
+    differentiators:
+      - "Agitation (psychiatric): normal pupils possible, no hyperthermia, psychiatric history"
+      - "Sympathomimetic toxidrome: mydriasis, tachycardia, hypertension, hyperthermia, diaphoresis, substance exposure (cocaine, methamphetamine)"
+      - "Sympathomimetic: agitation with autonomic hyperactivity; primary psychiatric agitation: vital sign abnormalities are secondary"
+  - condition: thyroid-storm
+    differentiators:
+      - "Agitation (psychiatric): no goiter, normal thyroid function, no systemic hypermetabolic signs"
+      - "Thyroid storm: agitation + tachycardia + fever + GI symptoms, goiter/exophthalmos, Burch-Wartofsky score >45"
+      - "Thyroid storm: agitation is one component of multi-organ hypermetabolic crisis; psychiatric agitation is isolated behavioral"
 sources:
   - type: guideline
     ref: "Nordstrom K, et al. AAEP Project BETA Overview: Best Practices in Evaluation and Treatment of Agitation. West J Emerg Med. 2012;13(1):3-10"

@@ -11,6 +11,16 @@ time_to_harm:
 mortality_if_delayed: "30-day mortality 35-50%; rebleeding mortality 70%"
 category: neurological
 track: tier1
+decision_rules:
+  - name: "Ottawa SAH Rule"
+    citation: "Perry JJ et al. Clinical decision rules to rule out subarachnoid hemorrhage for acute headache. JAMA. 2013;310(12):1248-1255."
+    pmid: "24065011"
+  - name: "Hunt-Hess Scale"
+    citation: "Hunt WE, Hess RM. Surgical risk as related to time of intervention in the repair of intracranial aneurysms. J Neurosurg. 1968;28(1):14-20."
+    pmid: "5635959"
+  - name: "Fisher Scale"
+    citation: "Fisher CM et al. Relation of cerebral vasospasm to subarachnoid hemorrhage visualized by computerized tomographic scanning. Neurosurgery. 1980;6(1):1-9."
+    pmid: "7350776"
 sources:
   - type: guideline
     ref: "2023 AHA/ASA Guideline for the Management of Patients With Aneurysmal Subarachnoid Hemorrhage"

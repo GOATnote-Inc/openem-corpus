@@ -8,6 +8,22 @@ time_to_harm: "< 60 minutes"
 mortality_if_delayed: "Up to 30% mortality from airway obstruction if not managed"
 category: allergic-immunologic
 track: tier1
+confusion_pairs:
+  - condition: anaphylaxis
+    differentiators:
+      - "Angioedema: localized swelling of lips/tongue/face/larynx, may occur without urticaria (especially ACE-inhibitor induced), no hypotension unless airway obstruction"
+      - "Anaphylaxis: multi-system involvement (skin + respiratory + cardiovascular), urticaria, bronchospasm, hypotension, requires IM epinephrine"
+      - "Isolated angioedema without urticaria or hemodynamic compromise is NOT anaphylaxis — but airway compromise requires the same urgency"
+  - condition: angioedema-hereditary
+    differentiators:
+      - "Angioedema (acquired/ACE-I): drug-related onset (ACE inhibitors cause 30% of ER angioedema), responds poorly to epinephrine/antihistamines/steroids if bradykinin-mediated"
+      - "Hereditary angioedema: family history, onset in childhood/adolescence, recurrent episodes, low C4 (screening), low C1-INH level/function, responds to C1-INH concentrate, icatibant, or ecallantide"
+      - "Both are bradykinin-mediated — C4 level is the fastest screening test; low C4 suggests HAE"
+  - condition: epiglottitis
+    differentiators:
+      - "Angioedema: visible lip/tongue/facial swelling, no fever, no infectious prodrome, history of ACE-I use or allergic triggers"
+      - "Epiglottitis: severe sore throat, drooling, stridor, no visible facial swelling, fever, infectious etiology, thumbprint sign on lateral neck X-ray"
+      - "Both threaten the airway — angioedema involves visible external swelling; epiglottitis is internal supraglottic swelling"
 sources:
   - type: guideline
     ref: "2022 WAO/EAACI Guideline for the Management of Hereditary Angioedema"

@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 5 minutes"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: status-epilepticus
+    differentiators:
+      - "Temporal lobe SE: focal onset with automatisms (lip smacking, picking), altered awareness without generalized convulsions"
+      - "Generalized convulsive SE: bilateral tonic-clonic activity from onset, more immediately recognized"
+      - "Temporal lobe SE may present as prolonged confusional state without motor activity — requires EEG"
+  - condition: acute-psychosis
+    differentiators:
+      - "Temporal lobe SE: stereotyped automatisms, fluctuating awareness, post-ictal state, EEG with temporal ictal activity"
+      - "Psychosis: goal-directed (if disorganized) behavior, hallucinations with paranoid content, no EEG correlate"
+      - "Temporal lobe SE: olfactory/gustatory auras, deja vu; psychosis: auditory hallucinations, delusions"
+  - condition: hsv-encephalitis
+    differentiators:
+      - "Temporal lobe SE: seizures with temporal EEG focus, may be recurrent/chronic history of epilepsy"
+      - "HSV encephalitis: acute febrile illness with temporal lobe predilection, CSF HSV PCR positive, hemorrhagic changes on MRI"
+      - "HSV encephalitis causes temporal lobe seizures — if new temporal SE + fever, empiric acyclovir is mandatory"
 sources:
   - type: guideline
     ref: "Glauser T et al. Evidence-Based Guideline: Treatment of Convulsive Status Epilepticus in Children and Adults. AES Guideline Committee. Epilepsy Curr. 2016;16(1):48-61"

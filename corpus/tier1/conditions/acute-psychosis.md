@@ -7,6 +7,22 @@ esi: 2
 time_to_harm: "< 2 hours (risk of self-harm, violence, elopement, excited delirium)"
 category: psychiatric
 track: tier1
+confusion_pairs:
+  - condition: catatonic-emergency
+    differentiators:
+      - "Psychosis: prominent hallucinations, delusions, disorganized speech with preserved motor activity"
+      - "Catatonia: motor signs predominate (immobility, waxy flexibility, posturing, mutism), Bush-Francis screen positive"
+      - "Catatonia occurs in psychotic conditions but requires different treatment (benzodiazepines, not antipsychotics — which can worsen it)"
+  - condition: anticholinergic-toxidrome
+    differentiators:
+      - "Psychosis: auditory hallucinations, paranoid ideation, thought disorder, normal vital signs possible"
+      - "Anticholinergic toxicity: visual hallucinations (lilliputian), mydriasis, dry skin, tachycardia, urinary retention, absent bowel sounds"
+      - "Anticholinergic: exposure history (diphenhydramine, TCAs, jimsonweed); psychosis: psychiatric history or first break"
+  - condition: hsv-encephalitis
+    differentiators:
+      - "Psychosis: psychiatric symptoms without fever, normal neuroimaging, normal CSF"
+      - "HSV encephalitis: fever + personality change + seizures, temporal lobe MRI changes, CSF pleocytosis with HSV PCR positive"
+      - "New-onset psychosis with fever requires LP and neuroimaging to exclude encephalitis before attributing to primary psychiatric disorder"
 sources:
   - type: guideline
     ref: "2017 ACEP Clinical Policy: Critical Issues in the Diagnosis and Management of the Adult Psychiatric Patient in the Emergency Department. Ann Emerg Med 2017;69(4):480-498"

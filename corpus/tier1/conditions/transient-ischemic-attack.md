@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 24 hours"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "TIA: symptoms fully resolve (typically <1 hour), no acute infarct on DWI-MRI"
+      - "AIS: persistent deficit, DWI-positive; up to 50% of clinical TIAs have DWI lesions (= completed stroke)"
+      - "Both are vascular emergencies requiring identical acute workup (CT/CTA, labs)"
+  - condition: seizure-first-time
+    differentiators:
+      - "TIA: negative symptoms (weakness, numbness, vision loss) in vascular territory"
+      - "Seizure: positive symptoms (jerking, tingling march), post-ictal confusion, tongue bite"
+      - "Todd paralysis mimics TIA but follows witnessed seizure and resolves over hours"
+  - condition: syncope
+    differentiators:
+      - "TIA: focal neurological deficit without loss of consciousness (unless bilateral vertebrobasilar)"
+      - "Syncope: global cerebral hypoperfusion, brief LOC with rapid recovery, no focal deficits"
+      - "Posterior circulation TIA may cause drop attacks but preserves consciousness"
 sources:
   - type: guideline
     ref: "Kleindorfer DO et al. 2021 Guideline for the Prevention of Stroke in Patients With Stroke and Transient Ischemic Attack. AHA/ASA. Stroke. 2021;52:e364-e467"

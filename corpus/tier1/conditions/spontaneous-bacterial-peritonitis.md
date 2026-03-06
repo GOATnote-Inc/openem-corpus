@@ -7,6 +7,15 @@ esi: 2
 time_to_harm: "< 6-12 hours (mortality increases 3.3% per hour of delayed paracentesis)"
 category: gastrointestinal
 track: tier1
+confusion_pairs:
+  - condition: perforated-peptic-ulcer
+    differentiators:
+      - "SBP: cirrhotic patient with ascites, insidious onset, ascitic fluid PMN > 250/mm3, no free air on imaging"
+      - "Perforated peptic ulcer: sudden thunderclap pain, board-like rigidity, free air under diaphragm, requires surgical intervention"
+  - condition: acute-pancreatitis
+    differentiators:
+      - "SBP: ascitic infection in cirrhotic patient, diagnosed by paracentesis, treated with antibiotics alone"
+      - "Acute pancreatitis: epigastric pain radiating to back, lipase > 3x upper limit, may cause secondary ascites but not primary ascitic infection"
 sources:
   - type: guideline
     ref: "AASLD Practice Guidance: Portal Hypertensive Bleeding in Cirrhosis, Hepatology 2022;76(1):252-273"

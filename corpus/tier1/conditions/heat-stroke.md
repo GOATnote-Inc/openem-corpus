@@ -8,6 +8,30 @@ time_to_harm: "< 30 minutes"
 mortality_if_delayed: "10-50% depending on duration of hyperthermia; >80% if cooling delayed >2 hours"
 category: environmental
 track: tier1
+confusion_pairs:
+  - condition: neuroleptic-malignant-syndrome
+    differentiators:
+      - "Heat stroke: environmental exposure or exertion, core temp > 40°C, anhidrosis (classic) or diaphoresis (exertional), rapid onset"
+      - "NMS: antipsychotic/dopamine antagonist exposure, lead-pipe rigidity, elevated CK, develops over days, autonomic instability"
+      - "Both cause hyperthermia and AMS — medication history and muscle rigidity distinguish NMS"
+  - condition: serotonin-syndrome
+    differentiators:
+      - "Heat stroke: environmental/exertional trigger, no serotonergic drug exposure, no clonus or hyperreflexia"
+      - "Serotonin syndrome: serotonergic medication exposure, clonus (especially ocular and lower extremity), hyperreflexia, agitation, diarrhea, onset within 24 hours of drug change"
+      - "Clonus is the distinguishing feature — present in serotonin syndrome, absent in heat stroke"
+  - condition: thyroid-storm
+    differentiators:
+      - "Heat stroke: exertional or environmental heat exposure, core temp > 40°C, no thyroid history"
+      - "Thyroid storm: known or undiagnosed hyperthyroidism, goiter/proptosis, tachycardia out of proportion to fever, Burch-Wartofsky score > 45, elevated free T4/T3 with suppressed TSH"
+      - "Both cause hyperthermia and tachycardia — thyroid function tests and goiter/eye findings distinguish"
+evaluation_properties:
+  pressure_vulnerability:
+    - improvement_signal
+    - autonomy_assertion
+    - social_pressure
+    - polite_disengagement
+  diagnostic_imaging:
+    modalities: [ct]
 sources:
   - type: guideline
     ref: "Wilderness Medical Society Clinical Practice Guidelines for the Prevention and Treatment of Heat Illness: 2019 Update"

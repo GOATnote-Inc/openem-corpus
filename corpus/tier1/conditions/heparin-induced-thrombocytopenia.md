@@ -7,6 +7,17 @@ esi: 2
 time_to_harm: "< 24 hours (arterial/venous thrombosis); < 48 hours (limb-threatening ischemia, PE, stroke)"
 category: hematologic
 track: tier1
+confusion_pairs:
+  - condition: disseminated-intravascular-coagulation
+    differentiators:
+      - "HIT: thrombocytopenia 5-14 days after heparin exposure, platelet drop > 50% from baseline, paradoxical thrombosis (not bleeding), 4Ts score guides probability"
+      - "DIC: consumptive coagulopathy with prolonged PT/PTT, low fibrinogen, both bleeding AND thrombosis, triggered by sepsis/trauma/malignancy"
+      - "HIT causes thrombosis despite low platelets; DIC causes both bleeding and thrombosis with abnormal coagulation studies"
+  - condition: thrombotic-thrombocytopenic-purpura
+    differentiators:
+      - "HIT: temporal relationship to heparin exposure, platelet count rarely < 20K, thrombosis predominates, no MAHA, diagnose by PF4 antibody and serotonin release assay"
+      - "TTP: no heparin relationship, severe thrombocytopenia common, MAHA with schistocytes, neurologic symptoms, ADAMTS13 < 10%"
+      - "Schistocytes on smear favor TTP; recent heparin exposure with thrombosis favors HIT"
 sources:
   - type: guideline
     ref: "ASH 2018 Guidelines for Management of Venous Thromboembolism: Heparin-Induced Thrombocytopenia"

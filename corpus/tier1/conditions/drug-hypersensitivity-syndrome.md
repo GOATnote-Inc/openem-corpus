@@ -11,6 +11,22 @@ time_to_harm:
 mortality_if_delayed: "2-10% overall mortality; liver involvement increases risk"
 category: allergic-immunologic
 track: tier1
+confusion_pairs:
+  - condition: sjs-ten
+    differentiators:
+      - "DRESS: onset 2-8 weeks after drug initiation, fever + morbilliform rash + eosinophilia + internal organ involvement (hepatitis, nephritis), facial edema, lymphadenopathy"
+      - "SJS/TEN: onset 1-3 weeks, mucocutaneous involvement with skin detachment (< 10% BSA in SJS, > 30% in TEN), target lesions, Nikolsky sign positive, mucosal erosions"
+      - "DRESS has eosinophilia and organ inflammation; SJS/TEN has skin detachment and mucosal erosions — skin biopsy may be needed"
+  - condition: toxic-shock-syndrome
+    differentiators:
+      - "DRESS: drug exposure weeks prior, eosinophilia, lymphocytosis with atypical lymphocytes, gradual onset"
+      - "Toxic shock syndrome: acute onset with high fever, diffuse erythroderma, hypotension, multiorgan failure, associated with tampon use or wound infection, desquamation occurs later"
+      - "TSS has acute hemodynamic instability; DRESS has insidious organ damage over days with eosinophilia as a hallmark"
+  - condition: serum-sickness
+    differentiators:
+      - "DRESS: eosinophilia, hepatitis/nephritis/myocarditis, facial edema, onset 2-8 weeks post-drug"
+      - "Serum sickness: arthralgia/arthritis, urticaria, fever, onset 7-14 days after drug/serum exposure, no eosinophilia (neutrophilia instead), no internal organ damage"
+      - "Joint involvement and urticaria favor serum sickness; eosinophilia and organ damage favor DRESS"
 sources:
   - type: review
     ref: "Kardaun SH, et al. Drug reaction with eosinophilia and systemic symptoms (DRESS): an original multisystem adverse drug reaction. Results from the prospective RegiSCAR study. Br J Dermatol 2013;169(5):1071-1080"

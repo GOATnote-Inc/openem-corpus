@@ -10,6 +10,17 @@ time_to_harm:
   optimal_intervention_window: "< 5 minutes (immediate irrigation)"
 category: ophthalmologic
 track: tier1
+confusion_pairs:
+  - condition: acute-angle-closure-glaucoma
+    differentiators:
+      - "Chemical eye burn: exposure history to alkali/acid, immediate copious irrigation required, corneal opacification or epithelial defect, pH testing of conjunctival fornix"
+      - "Acute angle-closure glaucoma: no chemical exposure, mid-dilated fixed pupil, rock-hard globe (elevated IOP > 40 mmHg), halos around lights, nausea/vomiting, treated with timolol/pilocarpine/acetazolamide"
+      - "Both cause acute painful red eye — exposure history and IOP measurement distinguish; do NOT delay irrigation for chemical burns"
+  - condition: corneal-ulcer
+    differentiators:
+      - "Chemical eye burn: acute onset after chemical exposure, diffuse corneal haze/opacification, limbal ischemia (blanching) in severe cases, emergency irrigation"
+      - "Corneal ulcer: infectious etiology (bacterial, fungal, viral), contact lens use risk factor, focal corneal infiltrate with overlying epithelial defect, hypopyon, treated with topical antibiotics"
+      - "Chemical burns can become secondarily infected — corneal ulcer should be considered if worsening despite treatment"
 sources:
   - type: guideline
     ref: "AAO Preferred Practice Pattern: Corneal Ectasia and Chemical Injury, 2023"

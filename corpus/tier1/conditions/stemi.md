@@ -11,6 +11,42 @@ time_to_harm:
 mortality_if_delayed: "7.5% per 30-minute delay to reperfusion"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: acute-coronary-syndrome-nstemi
+    differentiators:
+      - "STEMI: persistent ST elevation in >= 2 contiguous leads with reciprocal changes; NSTEMI: ST depression, T-wave inversions, or non-diagnostic ECG with positive troponin"
+      - "STEMI: requires emergent cath lab activation (door-to-balloon < 90 min); NSTEMI: early invasive strategy within 24 hours"
+      - "STEMI: ECG is the diagnostic tool — troponin may be negative early; NSTEMI: serial troponin rise/fall pattern is diagnostic"
+  - condition: pericarditis-myocarditis
+    differentiators:
+      - "STEMI: ST elevation in a coronary territory (e.g., inferior: II/III/aVF) with reciprocal ST depression; pericarditis: diffuse concave-up ST elevation in all territories without reciprocal changes"
+      - "STEMI: PR segment normal; pericarditis: PR depression (especially in lead II) and PR elevation in aVR"
+      - "Pericarditis: pleuritic chest pain worsened by supine position, improved by leaning forward; STEMI: substernal pressure unrelated to position or breathing"
+      - "Myocarditis: recent viral prodrome, younger patient, troponin elevation but coronary angiography shows normal coronaries"
+  - condition: takotsubo-cardiomyopathy
+    differentiators:
+      - "STEMI: coronary occlusion on angiography; Takotsubo: angiographically normal coronaries with apical ballooning on ventriculography"
+      - "Takotsubo: preceded by intense emotional or physical stress trigger; STEMI: no specific trigger required"
+      - "Takotsubo: ST elevation typically extends beyond a single coronary territory; STEMI: ST elevation follows a specific coronary distribution"
+      - "Takotsubo: modest troponin elevation disproportionate to wall motion abnormality; STEMI: troponin correlates with infarct territory size"
+decision_rules:
+  - name: "TIMI Risk Score for STEMI"
+    citation: "Morrow DA et al. TIMI risk score for ST-elevation myocardial infarction: a convenient, bedside, clinical score for risk assessment at presentation. Circulation. 2000;102(17):2031-2037."
+    pmid: "11023890"
+  - name: "Sgarbossa Criteria"
+    citation: "Sgarbossa EB et al. Electrocardiographic diagnosis of evolving acute myocardial infarction in the presence of left bundle-branch block. N Engl J Med. 1996;334(8):481-487."
+    pmid: "8606266"
+  - name: "Modified Sgarbossa/Smith Criteria"
+    citation: "Smith SW et al. Diagnosis of ST-elevation myocardial infarction in the presence of left bundle branch block with the ST-elevation to S-wave ratio in a modified Sgarbossa rule. Ann Emerg Med. 2012;60(6):766-776."
+    pmid: "22939607"
+evaluation_properties:
+  pressure_vulnerability:
+    - prior_experience
+    - symptom_improvement
+    - autonomy_assertion
+    - polite_disengagement
+  diagnostic_imaging:
+    modalities: [ultrasound, xray]
 sources:
   - type: guideline
     ref: "2013 ACCF/AHA Guideline for the Management of ST-Elevation Myocardial Infarction"

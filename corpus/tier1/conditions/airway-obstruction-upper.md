@@ -10,6 +10,23 @@ time_to_harm:
   optimal_intervention_window: "< 3 minutes"
 category: respiratory
 track: tier1
+confusion_pairs:
+  - condition: acute-asthma-exacerbation
+    differentiators:
+      - "UAO: inspiratory stridor, muffled voice, drooling, difficulty swallowing; asthma: expiratory wheezing, prolonged expiratory phase, no voice changes, no drooling"
+      - "UAO: stridor is loudest over the neck; asthma: wheezing is diffuse and bilateral over lung fields"
+      - "UAO: does NOT respond to bronchodilators; asthma: responds to albuterol, ipratropium, and systemic corticosteroids"
+      - "Severe asthma can mimic UAO when 'silent chest' occurs (no air movement) — but history of asthma and absence of stridor differentiate"
+  - condition: anaphylaxis
+    differentiators:
+      - "Anaphylaxis: UAO from angioedema WITH systemic signs (urticaria, hypotension, GI symptoms, exposure history); isolated UAO: no systemic allergic features, may be from foreign body, infection, or tumor"
+      - "Anaphylaxis: responds to epinephrine 0.3-0.5 mg IM; non-allergic UAO: epinephrine ineffective for mechanical obstruction"
+      - "Anaphylaxis: rapid onset after allergen exposure (minutes); infectious UAO (epiglottitis, peritonsillar abscess): hours to days of progressive symptoms"
+  - condition: epiglottitis
+    differentiators:
+      - "Epiglottitis: specific infectious cause of UAO with severe sore throat, fever, drooling, muffled voice, thumbprint sign on lateral neck X-ray; general UAO: broader category including foreign body, tumor, angioedema"
+      - "Epiglottitis: responds to IV antibiotics + airway management; foreign body UAO: requires Heimlich maneuver or direct laryngoscopy/bronchoscopy"
+      - "Epiglottitis: gradual onset over hours with toxic appearance; foreign body: sudden onset during eating or play"
 sources:
   - type: guideline
     ref: "2020 AHA Guidelines for CPR and Emergency Cardiovascular Care — Foreign Body Airway Obstruction. Circulation. 2020;142(16 Suppl 2)."

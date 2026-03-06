@@ -11,6 +11,27 @@ time_to_harm:
 mortality_if_delayed: "Near 100% if untreated obstructive shock"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: tension-pneumothorax
+    differentiators:
+      - "Tamponade: pericardial effusion on bedside echo, muffled heart sounds, pulsus paradoxus; tension PTX: absent breath sounds unilaterally, tracheal deviation, hyperresonance to percussion"
+      - "Tamponade: bilateral breath sounds present; tension PTX: unilateral absent breath sounds"
+      - "Tamponade: treatment is pericardiocentesis; tension PTX: treatment is needle decompression followed by chest tube"
+      - "Both cause obstructive shock with JVD and hypotension — bedside ultrasound differentiates within seconds"
+  - condition: acute-heart-failure
+    differentiators:
+      - "Tamponade: pericardial effusion with RA/RV diastolic collapse on echo, clear lung fields; AHF: dilated ventricles with reduced EF, bilateral pulmonary edema on CXR"
+      - "Tamponade: pulsus paradoxus > 10 mmHg, electrical alternans; AHF: no pulsus paradoxus, BNP/NT-proBNP markedly elevated"
+      - "Tamponade: diuretics and vasodilators are CONTRAINDICATED (reduce preload); AHF: diuretics are mainstay of treatment"
+  - condition: pulmonary-embolism
+    differentiators:
+      - "Tamponade: pericardial effusion on echo, electrical alternans, muffled heart sounds; massive PE: RV dilation without pericardial effusion, S1Q3T3 on ECG, CTPA filling defects"
+      - "Tamponade: treatment is pericardiocentesis; PE: treatment is anticoagulation and thrombolysis"
+      - "Both cause obstructive shock with elevated JVP — echo shows effusion in tamponade vs RV dilation/D-sign in PE"
+decision_rules:
+  - name: "Point-of-Care Ultrasound for Pericardial Effusion"
+    citation: "Adler Y et al. 2015 ESC Guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015;36(42):2921-2964."
+    pmid: "26320112"
 sources:
   - type: guideline
     ref: "2015 ESC Guidelines for the Diagnosis and Management of Pericardial Diseases"

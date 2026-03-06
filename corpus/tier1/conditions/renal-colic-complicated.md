@@ -10,6 +10,20 @@ time_to_harm:
   optimal_intervention_window: "< 6 hours for emergent decompression"
 category: genitourinary
 track: tier1
+confusion_pairs:
+  - condition: ruptured-aaa
+    differentiators:
+      - "Complicated renal colic: colicky flank pain with hematuria, stone visible on CT, younger patient, hemodynamically stable"
+      - "Ruptured AAA: sudden tearing flank/back pain in elderly patient, pulsatile abdominal mass, hemodynamic instability, no stone on CT"
+      - "Critical pitfall: ruptured AAA misdiagnosed as renal colic is a classic lethal error — always consider in patients > 50 with flank pain"
+  - condition: ectopic-pregnancy
+    differentiators:
+      - "Complicated renal colic: flank pain with hematuria, stone on CT, not pregnancy-specific"
+      - "Ectopic pregnancy: lower abdominal/pelvic pain in reproductive-age female, positive pregnancy test, free fluid on ultrasound, no stone"
+  - condition: acute-appendicitis
+    differentiators:
+      - "Complicated renal colic: flank-to-groin pain, hematuria, hydronephrosis on imaging, stone visible"
+      - "Acute appendicitis: periumbilical pain migrating to RLQ, McBurney point tenderness, elevated WBC, no hematuria, inflamed appendix on CT"
 sources:
   - type: guideline
     ref: "AUA/Endourology Society Guideline on Surgical Management of Stones, 2022"

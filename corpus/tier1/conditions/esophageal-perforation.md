@@ -8,6 +8,19 @@ time_to_harm: "< 12 hours"
 mortality_if_delayed: ">40% mortality if diagnosis delayed >24 hours; approaches 100% if untreated"
 category: gastrointestinal
 track: tier1
+confusion_pairs:
+  - condition: boerhaave-syndrome
+    differentiators:
+      - "Esophageal perforation: broad category including iatrogenic (most common), foreign body, trauma, and spontaneous causes"
+      - "Boerhaave syndrome: specifically spontaneous perforation from forceful vomiting/retching, a subtype of esophageal perforation"
+  - condition: aortic-dissection
+    differentiators:
+      - "Esophageal perforation: retrosternal pain with subcutaneous emphysema, pneumomediastinum, pleural effusion (often left-sided with high amylase)"
+      - "Aortic dissection: tearing interscapular pain, pulse deficits, aortic regurgitation, intimal flap on CTA, no pneumomediastinum"
+  - condition: stemi
+    differentiators:
+      - "Esophageal perforation: pain follows instrumentation or vomiting, subcutaneous crepitus on exam, pneumomediastinum on imaging"
+      - "STEMI: ischemic chest pain with ST elevation on ECG, troponin elevation, no air in mediastinum or subcutaneous tissues"
 sources:
   - type: pubmed
     ref: "Brinster CJ, Singhal S, Lee L, et al. Evolving options in the management of esophageal perforation. Ann Thorac Surg. 2004;77(4):1475-1483"

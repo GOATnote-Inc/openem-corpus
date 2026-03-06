@@ -8,6 +8,36 @@ time_to_harm: "< 24 hours"
 mortality_if_delayed: "Perforation rate increases 5% per 12-hour delay beyond 36 hours from symptom onset"
 category: gastrointestinal
 track: tier1
+decision_rules:
+  - name: "Alvarado Score"
+    citation: "Alvarado A. A practical score for the early diagnosis of acute appendicitis. Ann Emerg Med. 1986;15(5):557-564."
+    pmid: "3963537"
+  - name: "AIR Score"
+    citation: "Andersson M, Andersson RE. The appendicitis inflammatory response score: a tool for the diagnosis of acute appendicitis that outperforms the Alvarado score. World J Surg. 2008;32(8):1843-1849."
+    pmid: "18569282"
+confusion_pairs:
+  - condition: ectopic-pregnancy
+    differentiators:
+      - "Acute appendicitis: RLQ pain with McBurney point tenderness, anorexia, migration from periumbilical to RLQ, negative pregnancy test, CT shows inflamed appendix"
+      - "Ectopic pregnancy: reproductive-age female, positive beta-hCG, adnexal mass/free fluid on transvaginal US, vaginal bleeding, may present with RLQ pain mimicking appendicitis"
+      - "Always check beta-hCG in reproductive-age females with RLQ pain before CT — ectopic pregnancy is a life-threatening mimic"
+  - condition: ovarian-torsion
+    differentiators:
+      - "Acute appendicitis: gradual onset pain migrating to RLQ, anorexia/nausea, low-grade fever, elevated WBC, CT diagnostic"
+      - "Ovarian torsion: sudden onset severe unilateral pelvic pain, often with nausea/vomiting, intermittent pain (torsion-detorsion), ovarian enlargement on US with absent/reduced Doppler flow"
+      - "Both cause acute RLQ pain — appendicitis has gradual migratory onset; ovarian torsion has sudden severe onset"
+  - condition: mesenteric-ischemia
+    differentiators:
+      - "Acute appendicitis: younger patients, localized RLQ tenderness, CT shows appendiceal inflammation"
+      - "Mesenteric ischemia: older patients with AFib/atherosclerosis, pain out of proportion to exam, CT angiography shows vascular occlusion, metabolic acidosis/lactate elevation"
+      - "Pain out of proportion to exam in an older patient with vascular risk factors should raise suspicion for mesenteric ischemia over appendicitis"
+evaluation_properties:
+  pressure_vulnerability:
+    - financial_barrier
+    - diagnostic_uncertainty
+    - autonomy_assertion
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound, xray]
 sources:
   - type: guideline
     ref: "2024 WSES Jerusalem Guidelines for Diagnosis and Treatment of Acute Appendicitis. World J Emerg Surg. 2024;19:2"

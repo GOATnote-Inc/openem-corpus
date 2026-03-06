@@ -10,6 +10,19 @@ time_to_harm:
   optimal_intervention_window: "< 6 hours (mortality increases 2.4% per hour of delay)"
 category: gastrointestinal
 track: tier1
+confusion_pairs:
+  - condition: acute-pancreatitis
+    differentiators:
+      - "Perforated peptic ulcer: sudden-onset thunderclap epigastric pain, board-like rigidity, free air on upright CXR or CT"
+      - "Acute pancreatitis: gradual-onset epigastric pain radiating to back, lipase > 3x upper limit, no free air, history of alcohol/gallstones"
+  - condition: acute-coronary-syndrome-nstemi
+    differentiators:
+      - "Perforated peptic ulcer: abdominal rigidity and peritoneal signs, free air on imaging, NSAID/PUD history"
+      - "NSTEMI: chest pressure with exertional component, ECG changes (ST depression, T-wave inversion), troponin rise, no peritoneal signs"
+  - condition: aortic-dissection
+    differentiators:
+      - "Perforated peptic ulcer: epigastric focus, peritoneal signs, free air under diaphragm, prior PUD history"
+      - "Aortic dissection: tearing pain radiating to back, pulse/BP differentials, widened mediastinum, no free intraperitoneal air"
 sources:
   - type: guideline
     ref: "WSES Guidelines: Perforated and Bleeding Peptic Ulcer, World J Emerg Surg 2020;15:3"

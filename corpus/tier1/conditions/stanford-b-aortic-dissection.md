@@ -10,6 +10,18 @@ time_to_harm:
   optimal_intervention_window: "< 1 hour for anti-impulse therapy"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: aortic-dissection
+    differentiators:
+      - "Stanford B: involves only descending aorta distal to left subclavian; Type A: involves ascending aorta — Type A is a surgical emergency, uncomplicated Type B is medical management"
+      - "Stanford B: interscapular back pain predominant; Type A: anterior chest pain predominant, may have aortic regurgitation murmur or tamponade"
+      - "Stanford B uncomplicated: ICU with anti-impulse therapy (HR < 60, SBP 100-120); Type A: emergent open surgical repair"
+      - "Stanford B complicated (malperfusion, rupture, refractory pain): requires TEVAR; Type A: requires open surgery regardless"
+  - condition: pulmonary-embolism
+    differentiators:
+      - "Stanford B: sudden tearing interscapular pain, hypertension, pulse deficits; PE: pleuritic chest pain, dyspnea, tachycardia, unilateral leg swelling"
+      - "Stanford B: CTA aorta shows intimal flap in descending aorta; PE: CTA pulmonary arteries shows filling defects"
+      - "Stanford B: anticoagulation contraindicated; PE: anticoagulation is the primary treatment"
 sources:
   - type: guideline
     ref: "2022 STS/AATS Clinical Practice Guidelines on the Management of Type B Aortic Dissection. Ann Thorac Surg. 2022;113(4):1073-1130."

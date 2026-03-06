@@ -10,6 +10,15 @@ time_to_harm:
   optimal_intervention_window: "< 24 hours for best functional outcomes"
 category: genitourinary
 track: tier1
+confusion_pairs:
+  - condition: priapism
+    differentiators:
+      - "Penile fracture: acute traumatic event with popping sound, immediate detumescence, ecchymosis and deviation"
+      - "Priapism: persistent erection > 4 hours without trauma, no popping sound, ischemic (low-flow) vs non-ischemic (high-flow)"
+  - condition: paraphimosis
+    differentiators:
+      - "Penile fracture: tunica albuginea rupture during erection, eggplant deformity, requires surgical repair"
+      - "Paraphimosis: retracted foreskin trapped behind glans causing edema, constricting band visible, treated with manual reduction"
 sources:
   - type: review
     ref: "Amer T, et al. Penile fracture: a meta-analysis. Urol Int 2016;96(3):315-329"

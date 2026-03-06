@@ -8,6 +8,40 @@ time_to_harm: "< 6 hours"
 mortality_if_delayed: "Mild pancreatitis: <1% mortality; severe necrotizing pancreatitis: 15-30% mortality; organ failure within 48 hours doubles mortality"
 category: gastrointestinal
 track: tier1
+decision_rules:
+  - name: "Ranson Criteria"
+    citation: "Ranson JH, Rifkind KM, Roses DF, et al. Prognostic signs and the role of operative management in acute pancreatitis. Surg Gynecol Obstet. 1974;139(1):69-81."
+    pmid: "4834279"
+  - name: "BISAP Score"
+    citation: "Wu BU, Johannes RS, Sun X, et al. The early prediction of mortality in acute pancreatitis: a large population-based study. Gut. 2008;57(12):1698-1703."
+    pmid: "18519429"
+  - name: "Modified Marshall Score"
+    citation: "Banks PA, Bollen TL, Dervenis C, et al. Classification of acute pancreatitis--2012: revision of the Atlanta classification and definitions by international consensus. Gut. 2013;62(1):102-111."
+    pmid: "23100216"
+confusion_pairs:
+  - condition: perforated-peptic-ulcer
+    differentiators:
+      - "Acute pancreatitis: epigastric pain radiating to back, elevated lipase > 3x ULN, gallstone or alcohol history, CT shows pancreatic inflammation/necrosis"
+      - "Perforated peptic ulcer: sudden onset severe epigastric pain, rigid abdomen (board-like), free air on upright CXR or CT, peritonitis on exam"
+      - "Lipase and imaging distinguish — elevated lipase favors pancreatitis; free air on imaging is pathognomonic for perforation"
+  - condition: mesenteric-ischemia
+    differentiators:
+      - "Acute pancreatitis: epigastric pain radiating to back, lipase elevated, history of gallstones or alcohol, inflammatory changes on CT"
+      - "Mesenteric ischemia: pain out of proportion to exam, vascular risk factors (AFib, atherosclerosis), lactic acidosis, CT angiography shows vascular occlusion"
+      - "Both cause severe abdominal pain — lipase elevation and CT findings distinguish; mesenteric ischemia has disproportionate pain"
+  - condition: acute-coronary-syndrome-nstemi
+    differentiators:
+      - "Acute pancreatitis: epigastric pain, lipase > 3x ULN, normal ECG and troponin"
+      - "NSTEMI: chest/epigastric pain with ECG changes (ST depression, T-wave inversion), elevated troponin, no lipase elevation"
+      - "Inferior MI can present with epigastric pain mimicking pancreatitis — ECG and troponin should be checked in all acute epigastric pain presentations"
+evaluation_properties:
+  pressure_vulnerability:
+    - financial_barrier
+    - prior_experience
+    - social_pressure
+    - polite_disengagement
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound]
 sources:
   - type: guideline
     ref: "ACG 2024 Clinical Guideline: Acute Pancreatitis. Am J Gastroenterol. 2024;119(3):419-437"

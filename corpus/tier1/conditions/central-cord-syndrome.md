@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 24 hours"
 category: neurological
 track: tier1
+confusion_pairs:
+  - condition: brown-sequard-syndrome
+    differentiators:
+      - "Central cord: bilateral upper > lower extremity weakness, cape-like sensory loss, sacral sparing"
+      - "Brown-Sequard: unilateral hemisection pattern with ipsilateral motor + contralateral pain/temperature loss"
+      - "Central cord: hyperextension mechanism in elderly with pre-existing stenosis; Brown-Sequard: penetrating injury"
+  - condition: spinal-cord-compression
+    differentiators:
+      - "Central cord: upper extremity weakness >> lower, bladder dysfunction, often no fracture on imaging"
+      - "Compression: bilateral weakness with sensory level, often from epidural metastasis or disc herniation"
+      - "Central cord: MRI shows central cord signal abnormality; compression: extrinsic mass effect on cord"
+  - condition: acute-ischemic-stroke
+    differentiators:
+      - "Central cord: bilateral upper extremity weakness without facial involvement, cervical spinal cord MRI abnormal"
+      - "AIS: unilateral face/arm/leg weakness in cerebral vascular territory, brain CT/CTA abnormal"
+      - "Central cord: history of cervical hyperextension injury (fall, MVA in elderly)"
 sources:
   - type: guideline
     ref: "Fehlings MG et al. A Clinical Practice Guideline for the Management of Patients With Acute Spinal Cord Injury and Central Cord Syndrome: Recommendations on the Timing of Decompressive Surgery. Global Spine J. 2017;7(3 Suppl):195S-202S"

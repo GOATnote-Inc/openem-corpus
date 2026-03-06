@@ -11,6 +11,15 @@ time_to_harm:
 mortality_if_delayed: "Fetal mortality 0–6% (complete rupture during TOLAC); maternal mortality < 1% in high-resource settings but up to 10% with delayed surgical intervention; perinatal HIE in 6.2% of survivors"
 category: obstetric-gynecologic
 track: tier1
+confusion_pairs:
+  - condition: placental-abruption
+    differentiators:
+      - "Uterine rupture: sudden cessation of contractions, loss of fetal station, palpable fetal parts through abdomen, prior cesarean scar"
+      - "Placental abruption: painful rigid uterus with continued contractions, vaginal bleeding (may be concealed), no loss of uterine contour"
+  - condition: postpartum-hemorrhage
+    differentiators:
+      - "Uterine rupture: occurs during labor, sudden fetal bradycardia, maternal hemodynamic collapse, surgical repair required"
+      - "Postpartum hemorrhage: occurs after delivery, uterine atony most common, responds to uterotonics before surgical intervention"
 sources:
   - type: review
     ref: "Amikam G et al. Perinatal outcomes following uterine rupture during a trial of labor after cesarean: A 12-year single-center experience. Int J Gynaecol Obstet. 2024"

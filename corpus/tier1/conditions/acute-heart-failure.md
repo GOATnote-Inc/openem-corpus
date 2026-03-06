@@ -8,6 +8,13 @@ time_to_harm: "< 1 hour"
 mortality_if_delayed: "In-hospital mortality 4-10%; cardiogenic shock mortality 40-50%"
 category: cardiovascular
 track: tier1
+decision_rules:
+  - name: "BNP/NT-proBNP Diagnostic Thresholds"
+    citation: "Januzzi JL et al. NT-proBNP testing for diagnosis and short-term prognosis in acute destabilized heart failure: an international pooled analysis of 1256 patients: the International Collaborative of NT-proBNP Study. Eur Heart J. 2006;27(3):330-337."
+    pmid: "16531614"
+  - name: "Framingham Heart Failure Criteria"
+    citation: "McKee PA et al. The natural history of congestive heart failure: the Framingham study. N Engl J Med. 1971;285(26):1441-1446."
+    pmid: "5572576"
 sources:
   - type: guideline
     ref: "2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure"

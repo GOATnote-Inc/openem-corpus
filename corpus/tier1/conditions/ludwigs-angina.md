@@ -8,6 +8,22 @@ time_to_harm: "< 2 hours"
 mortality_if_delayed: ">50% if airway lost without surgical airway control; historical mortality >50% pre-antibiotics"
 category: infectious
 track: tier1
+confusion_pairs:
+  - condition: peritonsillar-abscess
+    differentiators:
+      - "Ludwig angina: bilateral submandibular swelling, woody brawny induration (not fluctuant), floor of mouth elevated, tongue displaced posterosuperiorly"
+      - "Peritonsillar abscess: unilateral tonsillar bulge with uvular deviation, fluctuant, trismus present but no floor-of-mouth elevation, voice muffled but airway less immediately threatened"
+      - "Ludwig angina is a surgical emergency threatening the airway; PTA can usually be drained at bedside"
+  - condition: epiglottitis
+    differentiators:
+      - "Ludwig angina: submandibular swelling visible externally, dental source, tongue elevation, no thumbprint sign on lateral neck X-ray"
+      - "Epiglottitis: sore throat, drooling, tripod positioning, no external swelling, thumbprint sign on lateral neck, direct visualization shows cherry-red swollen epiglottis"
+      - "Both are airway emergencies — Ludwig angina threatens from below (floor of mouth), epiglottitis from above (supraglottic)"
+  - condition: retropharyngeal-abscess
+    differentiators:
+      - "Ludwig angina: anterior submandibular space, visible external swelling, dental origin"
+      - "Retropharyngeal abscess: posterior pharyngeal space, neck stiffness with limited extension, widened prevertebral space on lateral X-ray or CT, often follows URI in children"
+      - "Both can compromise the airway — retropharyngeal abscess risks mediastinal extension"
 sources:
   - type: guideline
     ref: "IDSA Clinical Practice Guidelines for the Diagnosis and Management of Skin and Soft Tissue Infections, 2014 Update. Clin Infect Dis. 2014;59(2):e10-e52"

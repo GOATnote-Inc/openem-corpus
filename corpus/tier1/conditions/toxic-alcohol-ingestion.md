@@ -8,6 +8,22 @@ time_to_harm: "< 6-12 hours"
 mortality_if_delayed: "Methanol: 20-50% mortality if untreated; Ethylene glycol: 80-90% mortality if untreated"
 category: toxicologic
 track: tier1
+confusion_pairs:
+  - condition: diabetic-ketoacidosis
+    differentiators:
+      - "Toxic alcohol ingestion: osmolar gap elevated early (before metabolism), anion gap metabolic acidosis develops later, specific toxin levels confirmatory, no hyperglycemia"
+      - "DKA: hyperglycemia > 250 mg/dL, ketonemia, ketonuria, no osmolar gap elevation, known diabetes history"
+      - "Both cause AG metabolic acidosis — osmolar gap and glucose distinguish; DKA can coexist with toxic alcohol ingestion in alcoholic patients"
+  - condition: salicylate-poisoning
+    differentiators:
+      - "Toxic alcohol ingestion: osmolar gap elevated, specific end-organ toxicity (methanol → retinal damage/blindness; ethylene glycol → calcium oxalate crystals/renal failure), treated with fomepizole"
+      - "Salicylate poisoning: mixed respiratory alkalosis and metabolic acidosis, tinnitus, diaphoresis, hyperthermia, salicylate level diagnostic, treated with alkalinization and hemodialysis"
+      - "Both cause AG metabolic acidosis — check both levels in undifferentiated poisoning with acidosis"
+  - condition: lactic-acidosis
+    differentiators:
+      - "Toxic alcohol ingestion: osmolar gap is the early clue before acidosis develops, specific toxic metabolites (formic acid, glycolic acid), responds to fomepizole and hemodialysis"
+      - "Lactic acidosis: lactate elevation is the primary finding, osmolar gap normal, treat underlying cause (shock, sepsis, medications)"
+      - "Toxic alcohols generate non-lactate organic acids — if AG acidosis present with normal lactate, suspect toxic alcohol"
 sources:
   - type: guideline
     ref: "AACT/EAPCCT Position Statement: Treatment of Methanol Poisoning. J Toxicol Clin Toxicol 2002;40(4):415-46"

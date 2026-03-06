@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 1 hour"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: pulmonary-embolism
+    differentiators:
+      - "RV failure: may be chronic (known PH, cardiomyopathy) or acute from multiple causes; acute PE: sudden onset RV dilation from acute obstruction, identified by CTA filling defects"
+      - "PE is the most common acute cause of RV failure — CTA pulmonary angiography differentiates; chronic RV failure: gradual onset, known underlying disease"
+      - "PE-caused RV failure: anticoagulation +/- thrombolysis; non-PE RV failure: treat underlying cause (inotropes, pulmonary vasodilators, volume optimization)"
+  - condition: cardiac-tamponade
+    differentiators:
+      - "RV failure: RV dilation with septal bowing into LV on echo, clear pericardium; tamponade: pericardial effusion with RA/RV diastolic collapse, no RV dilation"
+      - "RV failure: elevated CVP with RV dilation; tamponade: elevated CVP with compressed RV (effusion prevents dilation)"
+      - "RV failure: treatment is inotropes (dobutamine/milrinone) + pulmonary vasodilators; tamponade: treatment is pericardiocentesis"
+  - condition: tension-pneumothorax
+    differentiators:
+      - "RV failure: bilateral breath sounds present, RV dilation on echo, no mediastinal shift; tension PTX: unilateral absent breath sounds, tracheal deviation, absent lung sliding on ultrasound"
+      - "RV failure: JVD from impaired RV output; tension PTX: JVD from impaired venous return due to mediastinal shift"
+      - "Both cause obstructive/cardiogenic shock with JVD — bedside ultrasound and lung exam differentiate rapidly"
 sources:
   - type: review
     ref: "Harjola VP, et al. Contemporary Management of Acute Right Ventricular Failure: A Statement from the Heart Failure Association and the Working Group on Pulmonary Circulation and Right Ventricular Function of the ESC. Eur J Heart Fail. 2016;18(3):226-241."

@@ -10,6 +10,22 @@ time_to_harm:
   optimal_intervention_window: "< 15 minutes"
 category: cardiovascular
 track: tier1
+confusion_pairs:
+  - condition: svt
+    differentiators:
+      - "WPW orthodromic AVRT: clinically indistinguishable from typical AVNRT/SVT during episode; baseline ECG reveals short PR, delta wave, wide QRS (WPW pattern absent in typical SVT)"
+      - "WPW: delta wave on baseline ECG differentiates; SVT/AVNRT: normal baseline ECG with narrow QRS"
+      - "WPW orthodromic AVRT: adenosine is generally safe (blocks AV node in orthodromic circuit); WPW with AF: adenosine is CONTRAINDICATED (causes VF via accessory pathway)"
+  - condition: ventricular-tachycardia
+    differentiators:
+      - "WPW antidromic AVRT: pre-excited wide complex tachycardia with delta wave morphology, short PR on baseline ECG; VT: wide complex without delta wave, AV dissociation, fusion beats"
+      - "WPW with AF: irregularly irregular wide complex tachycardia with varying QRS morphology; VT: usually regular (monomorphic) or grossly disorganized (polymorphic/VF)"
+      - "Both: avoid AV nodal blockers; use procainamide or cardioversion for hemodynamic instability"
+  - condition: atrial-fibrillation-rvr
+    differentiators:
+      - "WPW with AF: irregularly irregular wide complex tachycardia, very rapid rates (> 250 bpm possible), varying QRS width; AF-RVR without pre-excitation: irregularly irregular narrow complex tachycardia"
+      - "WPW with AF: AV nodal blockers (diltiazem, metoprolol, digoxin, adenosine) are LETHAL — cause unopposed accessory pathway conduction and VF; AF-RVR: rate control with AV nodal blockers is standard"
+      - "WPW with AF: treat with procainamide or ibutilide; AF-RVR: treat with diltiazem, metoprolol, or amiodarone"
 sources:
   - type: guideline
     ref: "2015 ACC/AHA/HRS Guideline for the Management of Adult Patients With Supraventricular Tachycardia. Circulation. 2016;133(14):e506-e574."

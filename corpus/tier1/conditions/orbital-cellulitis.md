@@ -7,6 +7,22 @@ esi: 2
 time_to_harm: "< 24 hours (vision loss); < 48 hours (intracranial extension)"
 category: infectious
 track: tier1
+confusion_pairs:
+  - condition: peritonsillar-abscess
+    differentiators:
+      - "Orbital cellulitis: periorbital swelling with proptosis, painful extraocular movements, visual changes, originates from sinus infection"
+      - "Peritonsillar abscess: oropharyngeal infection with unilateral tonsillar bulge, trismus, uvular deviation, no orbital involvement"
+      - "Both are deep space infections requiring IV antibiotics — orbital cellulitis threatens vision, PTA threatens airway"
+  - condition: cavernous-sinus-thrombosis
+    differentiators:
+      - "Orbital cellulitis: usually unilateral, proptosis and EOM restriction from orbital inflammation, responds to IV antibiotics"
+      - "Cavernous sinus thrombosis: bilateral eye findings (or rapid progression to bilateral), cranial nerve palsies (III, IV, V1, V2, VI), meningismus, MR venography shows filling defect, requires anticoagulation in addition to antibiotics"
+      - "Orbital cellulitis can progress to cavernous sinus thrombosis — bilateral involvement is the red flag"
+  - condition: acute-angle-closure-glaucoma
+    differentiators:
+      - "Orbital cellulitis: fever, proptosis, painful EOM, periorbital edema, infectious etiology"
+      - "Acute angle-closure glaucoma: severe eye pain with nausea/vomiting, mid-dilated fixed pupil, rock-hard globe on palpation, IOP > 40 mmHg, corneal edema/halos, no fever"
+      - "Both cause a red painful eye — IOP measurement and pupil exam distinguish them rapidly"
 sources:
   - type: guideline
     ref: "AAO Preferred Practice Pattern: Orbital Cellulitis, American Academy of Ophthalmology"

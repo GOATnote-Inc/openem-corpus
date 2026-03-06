@@ -11,6 +11,22 @@ time_to_harm:
 mortality_if_delayed: "Each hour delay in antibiotics increases mortality 3-7%"
 category: pediatric
 track: tier1
+confusion_pairs:
+  - condition: sepsis
+    differentiators:
+      - "Pediatric sepsis: age-adjusted vital sign thresholds (tachycardia and hypotension norms differ by age), fluid-refractory shock more common, cold shock phenotype (poor perfusion with vasoconstriction) more common than warm shock"
+      - "Adult sepsis: standard vital sign thresholds, SOFA/qSOFA validated, warm shock (vasodilation) is typical presentation"
+      - "Pediatric sepsis may present with hypothermia rather than fever in neonates — compensated shock with normal BP can mask severity"
+  - condition: diabetic-ketoacidosis
+    differentiators:
+      - "Pediatric sepsis: infectious source, tachycardia with poor perfusion, elevated procalcitonin, responds to fluids and antibiotics"
+      - "DKA: hyperglycemia, ketonemia, AG metabolic acidosis, Kussmaul breathing, polyuria/polydipsia history, new-onset diabetes common in children"
+      - "DKA can be triggered by infection — always evaluate for sepsis as precipitant of pediatric DKA"
+  - condition: kawasaki-disease
+    differentiators:
+      - "Pediatric sepsis: identifiable infectious source, responds to antibiotics, any age"
+      - "Kawasaki disease: fever >= 5 days + 4/5 criteria (bilateral conjunctival injection, oral changes, extremity changes, rash, cervical lymphadenopathy), coronary artery aneurysm risk, age typically 6 months to 5 years, does NOT respond to antibiotics"
+      - "Both cause prolonged fever in children — Kawasaki should be considered in any child with fever > 5 days unresponsive to antibiotics"
 sources:
   - type: guideline
     ref: "Surviving Sepsis Campaign International Guidelines for the Management of Septic Shock and Sepsis-Associated Organ Dysfunction in Children, 2020"
