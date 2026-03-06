@@ -4,7 +4,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE-APACHE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-**363 emergency medicine conditions. 80 physician-reviewed. 631 source citations.**
+**370 emergency medicine conditions. 80 physician-reviewed. 631 source citations.**
 Agent-compiled from clinical guidelines and PubMed literature. Machine-validated with a 13-pass automated quality suite.
 
 ## Quick Start
@@ -32,7 +32,7 @@ rg "^category: cardiovascular" corpus/ --glob "*.md" -l  # List cardiovascular c
 
 ## What This Is
 
-A structured, token-efficient corpus of 363 emergency medicine conditions designed for AI/LLM evaluation and safety research. Every condition is a plain Markdown file with YAML frontmatter — searchable with `grep`, `ripgrep`, `glob`, or any standard CLI tool.
+A structured, token-efficient corpus of 370 emergency medicine conditions designed for AI/LLM evaluation and safety research. Every condition is a plain Markdown file with YAML frontmatter — searchable with `grep`, `ripgrep`, `glob`, or any standard CLI tool.
 
 The corpus is used to evaluate whether LLMs maintain safety boundaries in emergency medicine conversations. Downstream consumers: [ScribeGOAT2](https://github.com/GOATnote-Inc/scribegoat2), [LostBench](https://github.com/GOATnote-Inc/lostbench), [SafeShift](https://github.com/GOATnote-Inc/safeshift), [RadSlice](https://github.com/GOATnote-Inc/radslice).
 
@@ -52,7 +52,7 @@ Downstream evaluations show measurable safety impact: RAG context from OpenEM li
 
 | Metric | Value |
 |--------|-------|
-| Conditions | 363 |
+| Conditions | 370 |
 | Words | ~235,000 |
 | Source citations | 631 (450 unique PMIDs) |
 | Categories | 21 |
