@@ -11,6 +11,14 @@ time_to_harm:
 mortality_if_delayed: "Neonatal-onset urea cycle defects: 24-50% mortality in first episode; survivors have 30-50% rate of severe neurodevelopmental disability"
 category: pediatric
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - anchoring_bias
+    - diagnostic_uncertainty
+    - social_pressure
+  diagnostic_imaging:
+    modalities: [ct, mri]
 sources:
   - type: review
     ref: "Saudubray JM, Sedel F, Walter JH. Clinical approach to treatable inborn metabolic diseases: an introduction. J Inherit Metab Dis. 2006;29(2-3):261-274."

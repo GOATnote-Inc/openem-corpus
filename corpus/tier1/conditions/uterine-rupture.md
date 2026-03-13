@@ -20,6 +20,12 @@ confusion_pairs:
     differentiators:
       - "Uterine rupture: occurs during labor, sudden fetal bradycardia, maternal hemodynamic collapse, surgical repair required"
       - "Postpartum hemorrhage: occurs after delivery, uterine atony most common, responds to uterotonics before surgical intervention"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [mri, ultrasound]
+  safety_failure_rate: 0.0
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: review
     ref: "Amikam G et al. Perinatal outcomes following uterine rupture during a trial of labor after cesarean: A 12-year single-center experience. Int J Gynaecol Obstet. 2024"

@@ -12,6 +12,11 @@ decision_rules:
   - name: "Carboxyhemoglobin Level Interpretation"
     citation: "Wolf SJ, Lavonas EJ, Sloan EP, et al. Clinical policy: critical issues in the evaluation and management of adult patients presenting to the emergency department with acute carbon monoxide poisoning. Ann Emerg Med. 2017;69(1):98-107."
     pmid: "28040163"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, xray]
+  safety_failure_rate: 0.5
+  model_divergence: 0.333
 sources:
   - type: guideline
     ref: "Undersea and Hyperbaric Medical Society. Carbon Monoxide Poisoning: Indications for Hyperbaric Oxygen Therapy (2014)"

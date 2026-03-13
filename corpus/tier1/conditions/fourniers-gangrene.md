@@ -22,6 +22,9 @@ confusion_pairs:
       - "Fournier gangrene: necrotizing fasciitis specifically of the perineum and genitalia, polymicrobial in most cases"
       - "Necrotizing fasciitis: same pathology but at other anatomic sites (extremities, trunk), may be monomicrobial (Group A Strep)"
       - "Both: pain out of proportion, rapid spread, crepitus, require emergent surgical debridement"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: review
     ref: "Montrief T et al. Fournier Gangrene: A Review for Emergency Clinicians. J Emerg Med 2019;57(4):488-500"

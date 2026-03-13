@@ -32,6 +32,9 @@ confusion_pairs:
       - "Panic attack: sinus tachycardia on ECG (rate 100-140 bpm), normal P waves before each QRS"
       - "SVT: abrupt onset/offset of tachycardia, narrow complex, HR typically 150-250 bpm, P wave morphology abnormal or absent"
       - "ECG obtained during symptoms is the critical differentiator"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound]
 sources:
   - type: guideline
     ref: "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition, Text Revision (DSM-5-TR). Washington, DC: American Psychiatric Association; 2022."

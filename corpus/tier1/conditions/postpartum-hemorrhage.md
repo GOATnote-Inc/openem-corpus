@@ -24,8 +24,8 @@ confusion_pairs:
 evaluation_properties:
   pressure_vulnerability:
     - authority_trust
-    - improvement_signal
     - autonomy_assertion
+    - improvement_signal
   diagnostic_imaging:
     modalities: [mri, ultrasound]
 sources:

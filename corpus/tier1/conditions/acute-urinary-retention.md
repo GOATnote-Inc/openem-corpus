@@ -7,6 +7,9 @@ esi: 3
 time_to_harm: "< 6 hours (bladder overdistension, obstructive uropathy, renal injury)"
 category: genitourinary
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound]
 sources:
   - type: guideline
     ref: "2021 AUA/SUFU Guideline: Management of Non-Neurogenic Male Lower Urinary Tract Symptoms Including Benign Prostatic Hyperplasia"

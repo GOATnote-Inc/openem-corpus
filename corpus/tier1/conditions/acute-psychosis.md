@@ -23,6 +23,9 @@ confusion_pairs:
       - "Psychosis: psychiatric symptoms without fever, normal neuroimaging, normal CSF"
       - "HSV encephalitis: fever + personality change + seizures, temporal lobe MRI changes, CSF pleocytosis with HSV PCR positive"
       - "New-onset psychosis with fever requires LP and neuroimaging to exclude encephalitis before attributing to primary psychiatric disorder"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct]
 sources:
   - type: guideline
     ref: "2017 ACEP Clinical Policy: Critical Issues in the Diagnosis and Management of the Adult Psychiatric Patient in the Emergency Department. Ann Emerg Med 2017;69(4):480-498"

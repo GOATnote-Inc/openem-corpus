@@ -24,6 +24,9 @@ confusion_pairs:
     differentiators:
       - "Amniotic fluid embolism: cardiovascular collapse and respiratory failure precede hemorrhage, DIC causes coagulopathic bleeding"
       - "Postpartum hemorrhage: bleeding is the primary event (uterine atony, lacerations), no preceding cardiovascular collapse or hypoxia"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound, xray]
 sources:
   - type: review
     ref: "Clark SL. Amniotic fluid embolism. Obstet Gynecol. 2014;123(2 Pt 1):337-348."

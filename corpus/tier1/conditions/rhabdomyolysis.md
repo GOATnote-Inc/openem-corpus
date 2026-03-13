@@ -8,6 +8,9 @@ time_to_harm: "< 24 hours for renal injury"
 mortality_if_delayed: "8-20% with AKI; higher in crush syndrome"
 category: musculoskeletal
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct]
 sources:
   - type: pubmed
     ref: "Long B, Koyfman A, Gottlieb M. An Evidence-Based Narrative Review of the Emergency Department Evaluation and Management of Rhabdomyolysis. Am J Emerg Med. 2019;37(3):518-523"

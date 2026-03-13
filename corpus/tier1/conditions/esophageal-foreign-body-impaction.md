@@ -10,6 +10,14 @@ time_to_harm:
   optimal_intervention_window: "Button battery: < 2 hours emergent endoscopic removal. Food bolus: < 6-12 hours. Sharp objects: < 24 hours"
 category: gastrointestinal
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - anchoring_bias
+    - diagnostic_uncertainty
+    - social_pressure
+  diagnostic_imaging:
+    modalities: [ct, xray]
 sources:
   - type: guideline
     ref: "Kramer RE et al. Management of ingested foreign bodies in children: a clinical report of the NASPGHAN Endoscopy Committee. J Pediatr Gastroenterol Nutr. 2015;60(4):562-574."

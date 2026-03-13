@@ -10,6 +10,9 @@ time_to_harm:
   optimal_intervention_window: "Initiate heart failure therapy at first presentation — delay worsens myocardial remodeling"
 category: obstetric-gynecologic
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [mri, ultrasound, xray]
 sources:
   - type: pubmed
     ref: "Sliwa K et al. Current state of knowledge on aetiology, diagnosis, management, and therapy of peripartum cardiomyopathy: a position statement from the Heart Failure Association of the European Society of Cardiology Working Group on peripartum cardiomyopathy. Eur J Heart Fail. 2010;12(8):767-778."

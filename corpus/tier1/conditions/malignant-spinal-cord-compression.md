@@ -23,6 +23,12 @@ confusion_pairs:
       - "MSCC: known malignancy, insidious onset over weeks, no fever, normal or mildly elevated inflammatory markers"
       - "Epidural abscess: fever, IVDU or recent spinal procedure, rapid progression over days, elevated WBC/ESR/CRP, ring-enhancing collection on MRI"
       - "Both present with progressive back pain and neurological deficit — MRI with gadolinium distinguishes"
+evaluation_properties:
+  pressure_vulnerability:
+    - authority_trust
+    - polite_disengagement
+    - rational_framing
+    - social_pressure
 sources:
   - type: pubmed
     ref: "Patchell RA et al. Direct decompressive surgical resection in the treatment of spinal cord compression caused by metastatic cancer: a randomised trial. Lancet. 2005;366(9486):643-648"

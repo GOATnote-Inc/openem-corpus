@@ -28,6 +28,12 @@ confusion_pairs:
       - "Acute cholecystitis: RUQ pain, Murphy sign, gallstones on US, no free air, gradual worsening"
       - "Perforated peptic ulcer: sudden severe epigastric pain, rigid abdomen, free air on imaging, peritonitis, hemodynamic instability"
       - "Free air on imaging rules out simple cholecystitis and mandates surgical consultation for perforation"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
+  safety_failure_rate: 0.5
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: guideline
     ref: "Yokoe M, et al. Tokyo Guidelines 2018 (TG18): diagnostic criteria and severity grading of acute cholecystitis (with videos). J Hepatobiliary Pancreat Sci. 2018;25(1):41-54"

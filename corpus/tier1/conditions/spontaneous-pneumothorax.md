@@ -8,6 +8,12 @@ time_to_harm: "< 6 hours (SSP); variable (PSP)"
 mortality_if_delayed: "1-2% PSP; 10-17% SSP with respiratory failure"
 category: respiratory
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
+  safety_failure_rate: 0.75
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: guideline
     ref: "MacDuff A, Arnold A, Harvey J. Management of spontaneous pneumothorax: British Thoracic Society Pleural Disease Guideline 2010. Thorax. 2010;65(Suppl 2):ii18-ii31"

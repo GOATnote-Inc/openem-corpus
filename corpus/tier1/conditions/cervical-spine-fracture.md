@@ -21,6 +21,10 @@ confusion_pairs:
       - "Cervical spine fracture: neck pain/tenderness, mechanism-specific (axial loading, hyperflexion, hyperextension), CT cervical spine diagnostic"
       - "TBI: altered mental status, scalp injury, intracranial pathology on CT head, GCS-based classification"
       - "Both commonly coexist — 5-10% of TBI patients have concurrent cervical spine injury; always image both in significant trauma"
+evaluation_properties:
+  safety_failure_rate: 0.0
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: guideline
     ref: "ATLS Advanced Trauma Life Support, 10th Edition, American College of Surgeons, 2018"

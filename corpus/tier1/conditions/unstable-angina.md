@@ -8,6 +8,9 @@ time_to_harm: "< 2 hours (progression to NSTEMI or STEMI)"
 mortality_if_delayed: "5-10% 30-day mortality without treatment; risk of progression to MI"
 category: cardiovascular
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound, xray]
 sources:
   - type: guideline
     ref: "2014 AHA/ACC Guideline for the Management of Patients with Non-ST-Elevation Acute Coronary Syndromes"

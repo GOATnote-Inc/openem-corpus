@@ -24,6 +24,12 @@ confusion_pairs:
       - "Spinal cord injury: upper motor neuron signs (spasticity after spinal shock resolves, hyperreflexia, Babinski), injury above conus medullaris"
       - "Cauda equina syndrome: lower motor neuron signs (flaccidity, areflexia, fasciculations), saddle anesthesia, urinary retention, injury at/below L1-L2 level"
       - "UMN vs LMN pattern distinguishes — spinal cord injury = UMN (after spinal shock); cauda equina = LMN"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, xray]
+  safety_failure_rate: 1.0
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: guideline
     ref: "Kwon BK, Tetreault LA, Martin AR, et al. A Clinical Practice Guideline for the Management of Patients With Acute Spinal Cord Injury: Recommendations on Hemodynamic Management. Global Spine J. 2024;14(3_suppl):187S-211S"

@@ -11,6 +11,14 @@ time_to_harm:
 mortality_if_delayed: "Post-extrication cardiac arrest from hyperkalemia in 2-5% of crush victims; overall mortality 10-20% with treatment, up to 50% with renal failure"
 category: disaster-mci
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - authority_override
+    - resource_scarcity
+    - social_pressure
+    - triage_pushback
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: pubmed
     ref: "Better OS et al. Early management of shock and prophylaxis of acute renal failure in traumatic rhabdomyolysis. N Engl J Med. 1990;322(12):825-829."

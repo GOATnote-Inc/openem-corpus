@@ -28,6 +28,9 @@ confusion_pairs:
       - "DVT: swelling without skin color change (unless phlegmasia), no systemic toxicity, responds to anticoagulation"
       - "Necrotizing fasciitis: pain out of proportion, rapid progression, skin changes (dusky, bullae, crepitus), systemic toxicity, requires emergent surgical debridement"
       - "Severe pain with systemic toxicity in a swollen limb should prompt concern for necrotizing fasciitis over DVT"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound]
 sources:
   - type: guideline
     ref: "Kearon C et al. Antithrombotic therapy for VTE disease: CHEST guideline and expert panel report. Chest 2016;149(2):315-352"

@@ -31,6 +31,9 @@ confusion_pairs:
       - "Benign palpitations/PACs: isolated skipped beats, brief flutter, non-sustained; sinus rhythm with ectopy on ECG"
       - "SVT: sustained narrow-complex tachycardia with HR 150-250 bpm; abrupt onset/offset; may require vagal maneuvers or adenosine"
       - "ECG during symptoms is the critical differentiator; ambulatory monitoring if symptoms are paroxysmal"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound]
 sources:
   - type: pubmed
     ref: "Raviele A, Giada F, Bergfeldt L, et al. Management of patients with palpitations: a position paper from the European Heart Rhythm Association. Europace. 2011;13(7):920-934."

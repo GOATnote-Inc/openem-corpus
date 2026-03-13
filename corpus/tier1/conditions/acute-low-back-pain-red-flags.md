@@ -8,6 +8,9 @@ time_to_harm: "< 24-48 hours (cauda equina, epidural abscess, epidural hematoma)
 mortality_if_delayed: "Low mortality for most etiologies; permanent neurological disability (paraplegia, bowel/bladder dysfunction) in 30-70% with delayed diagnosis of cauda equina, epidural abscess, or epidural hematoma"
 category: musculoskeletal
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound, xray]
 sources:
   - type: guideline
     ref: "Chou R et al. Diagnosis and Treatment of Low Back Pain: A Joint Clinical Practice Guideline from the ACP and APS. Ann Intern Med 2007;147(7):478-491"

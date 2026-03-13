@@ -30,6 +30,9 @@ confusion_pairs:
       - "Pelvic fracture: specific injury causing hemorrhagic shock, treated with pelvic binder, angioembolization, preperitoneal packing, or REBOA"
       - "Hemorrhagic shock: the systemic response to blood loss from any source, classified by volume loss (Class I-IV)"
       - "Pelvic fracture is a CAUSE of hemorrhagic shock — the distinction matters for source-specific interventions"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: guideline
     ref: "Cullinane DC et al. Eastern Association for the Surgery of Trauma Practice Management Guidelines for Hemorrhage in Pelvic Fracture -- Update and Systematic Review. J Trauma 2011;71(6):1850-1868"

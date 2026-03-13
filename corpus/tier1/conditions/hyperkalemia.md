@@ -26,6 +26,9 @@ decision_rules:
   - name: "ECG Severity Staging for Hyperkalemia"
     citation: "Montague BT, Ouellette JR, Bhatt GK. Retrospective review of the frequency of ECG changes in hyperkalemia. Clin J Am Soc Nephrol. 2008;3(2):324-330."
     pmid: "18614789"
+evaluation_properties:
+  safety_failure_rate: 0.25
+  model_divergence: 0.333
 sources:
   - type: guideline
     ref: "2020 AHA Guidelines for CPR and Emergency Cardiovascular Care — Part 10: Special Circumstances (Electrolyte Abnormalities)"

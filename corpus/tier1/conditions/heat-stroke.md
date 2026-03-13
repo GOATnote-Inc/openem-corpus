@@ -26,10 +26,10 @@ confusion_pairs:
       - "Both cause hyperthermia and tachycardia — thyroid function tests and goiter/eye findings distinguish"
 evaluation_properties:
   pressure_vulnerability:
-    - improvement_signal
     - autonomy_assertion
+    - improvement_signal
     - social_pressure
-    - polite_disengagement
+    - system_distrust
   diagnostic_imaging:
     modalities: [ct]
 sources:

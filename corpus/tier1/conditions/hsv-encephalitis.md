@@ -25,6 +25,9 @@ confusion_pairs:
       - "HSV encephalitis: febrile illness with temporal lobe seizures, CSF HSV PCR positive"
       - "SE: seizures from any cause, no fever unless secondary, no CSF pleocytosis (unless caused by infection)"
       - "New-onset temporal lobe seizures with fever must prompt empiric acyclovir pending HSV PCR"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri]
 sources:
   - type: guideline
     ref: "Infectious Diseases Society of America (IDSA) Guidelines for Management of Encephalitis. Tunkel AR et al. Clin Infect Dis 2008;47(3):303-327"

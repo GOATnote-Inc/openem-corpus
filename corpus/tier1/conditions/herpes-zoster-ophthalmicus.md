@@ -8,6 +8,9 @@ time_to_harm: "< 72 hours for optimal antiviral efficacy; corneal and anterior s
 mortality_if_delayed: "Not directly fatal; 50% develop ocular disease; up to 25% chronic/recurrent disease with vision loss if untreated"
 category: ophthalmologic
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri]
 sources:
   - type: review
     ref: "Litt J, Cunningham AL, Arnalich-Montiel F, Parikh R. Herpes Zoster Ophthalmicus: Presentation, Complications, Treatment, and Prevention. Infect Dis Ther. 2024;13(7):1439-1459"

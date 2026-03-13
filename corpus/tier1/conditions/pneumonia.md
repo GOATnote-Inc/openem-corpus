@@ -31,6 +31,12 @@ confusion_pairs:
       - "Pneumonia (bacterial): productive purulent sputum, focal lobar consolidation, responds to standard antibiotics, procalcitonin elevated"
       - "COVID pneumonia: bilateral ground-glass opacities, lymphopenia, elevated ferritin/D-dimer/LDH, procalcitonin often normal, requires dexamethasone + remdesivir, rapid progression to ARDS"
       - "COVID pneumonia has characteristic bilateral GGO pattern and inflammatory marker profile distinct from bacterial pneumonia"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
+  safety_failure_rate: 0.0
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: guideline
     ref: "ATS/IDSA 2019 Diagnosis and Treatment of Adults with Community-acquired Pneumonia: An Official Clinical Practice Guideline"

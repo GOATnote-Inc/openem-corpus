@@ -21,6 +21,14 @@ confusion_pairs:
     differentiators:
       - "Cardiac tamponade: obstructive shock from pericardial fluid; treated with pericardiocentesis or thoracotomy; REBOA does not address tamponade"
       - "REBOA: hemorrhagic shock from non-compressible torso hemorrhage; tamponade must be excluded before attributing hypotension to hemorrhage"
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - hesitation_bias
+    - liability_fear
+    - technique_doubt
+  diagnostic_imaging:
+    modalities: [ct, ultrasound]
 sources:
   - type: guideline
     ref: "Brenner M, Bulger EM, Perina DG, et al. Joint statement from the American College of Surgeons Committee on Trauma (ACS COT) and the American College of Emergency Physicians (ACEP) regarding the clinical use of Resuscitative Endovascular Balloon Occlusion of the Aorta (REBOA). Trauma Surg Acute Care Open. 2018;3(1):e000154."

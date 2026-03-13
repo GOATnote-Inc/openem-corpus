@@ -11,6 +11,14 @@ time_to_harm:
 mortality_if_delayed: "Overall mortality 15-30%; surgical NEC mortality 30-50%; ELBW infants (<1000g) mortality up to 50%"
 category: pediatric
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - anchoring_bias
+    - diagnostic_uncertainty
+    - polite_disengagement
+    - social_pressure
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound, xray]
 sources:
   - type: review
     ref: "Neu J, Walker WA. Necrotizing enterocolitis. N Engl J Med. 2011;364(3):255-264."

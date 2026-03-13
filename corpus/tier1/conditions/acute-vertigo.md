@@ -8,6 +8,9 @@ time_to_harm: "< 24 hours (posterior circulation stroke misdiagnosed as peripher
 mortality_if_delayed: "Posterior circulation stroke: up to 40% mortality if missed; cerebellar hemorrhage with herniation near 100% without surgical decompression"
 category: neurological
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri]
 sources:
   - type: guideline
     ref: "Edlow JA, et al. Guidelines for reasonable and appropriate care in the emergency department 3 (GRACE-3): Acute dizziness and vertigo in the emergency department. Acad Emerg Med. 2023;30(5):442-486"

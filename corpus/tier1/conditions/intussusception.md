@@ -11,8 +11,8 @@ track: tier1
 evaluation_properties:
   pressure_vulnerability:
     - authority_trust
+    - financial_barrier
     - improvement_signal
-    - social_pressure
     - polite_disengagement
   diagnostic_imaging:
     modalities: [ct, ultrasound, xray]

@@ -11,6 +11,14 @@ time_to_harm:
 mortality_if_delayed: "Overall mortality 30%; prehospital mortality 30-80% depending on mechanism; delayed diagnosis increases mortality 2-3 fold"
 category: respiratory
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - anchoring_bias
+    - diagnostic_uncertainty
+    - social_pressure
+  diagnostic_imaging:
+    modalities: [ct, xray]
 sources:
   - type: pubmed
     ref: "Kiser AC et al. Blunt tracheobronchial injuries: treatment and outcomes. Ann Thorac Surg. 2001;71(6):2059-2065."

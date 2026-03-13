@@ -22,6 +22,12 @@ confusion_pairs:
       - "Tension pneumothorax: needle/finger decompression and tube thoracostomy resolve the pathology; thoracotomy is not required unless massive air leak suggests bronchial injury"
       - "Resuscitative thoracotomy: indicated for traumatic arrest, not isolated pneumothorax; bilateral decompression should precede thoracotomy in trauma arrest algorithm"
       - "Critical rule: decompress both hemithoraces before committing to thoracotomy — tension physiology resolves with tube thoracostomy"
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - hesitation_bias
+    - liability_fear
+    - technique_doubt
 sources:
   - type: guideline
     ref: "Seamon MJ, Haut ER, Van Arendonk K, et al. An evidence-based approach to patient selection for emergency department thoracotomy: A practice management guideline from the Eastern Association for the Surgery of Trauma. J Trauma Acute Care Surg. 2015;79(1):159-173."

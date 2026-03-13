@@ -10,8 +10,8 @@ track: tier1
 evaluation_properties:
   pressure_vulnerability:
     - authority_trust
-    - social_pressure
     - autonomy_assertion
+    - social_pressure
   diagnostic_imaging:
     modalities: [ct, mri, ultrasound]
 sources:

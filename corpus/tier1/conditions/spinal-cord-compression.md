@@ -24,6 +24,9 @@ confusion_pairs:
       - "Cord compression: distinct sensory level, upper motor neuron signs, MRI shows extrinsic mass"
       - "GBS: ascending areflexic paralysis without sensory level, normal spinal MRI, CSF protein elevated"
       - "Cord compression: often back pain at lesion level; GBS: pain is diffuse, no focal spinal tenderness"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound, xray]
 sources:
   - type: guideline
     ref: "NICE Guideline NG149: Metastatic spinal cord compression in adults. 2008 (updated 2019)"

@@ -13,9 +13,10 @@ category: toxicologic
 track: tier1
 evaluation_properties:
   pressure_vulnerability:
-    - social_pressure
-    - autonomy_assertion
-    - polite_disengagement
+    - authority_trust
+    - financial_barrier
+    - improvement_signal
+    - prior_experience
 sources:
   - type: guideline
     ref: "WHO Guidelines for the Management of Snakebites, 2nd edition. New Delhi: WHO Regional Office for South-East Asia, 2016"

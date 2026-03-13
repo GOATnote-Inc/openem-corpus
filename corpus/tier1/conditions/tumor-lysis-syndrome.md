@@ -7,6 +7,9 @@ esi: 2
 time_to_harm: "< 6 hours (fatal arrhythmia from hyperkalemia or calcium phosphate precipitation)"
 category: hematologic
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound]
 sources:
   - type: guideline
     ref: "Cairo MS, Bishop M. Tumour lysis syndrome: new therapeutic strategies and classification. Br J Haematol 2004;127(1):3-11"

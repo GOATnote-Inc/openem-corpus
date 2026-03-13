@@ -17,6 +17,12 @@ confusion_pairs:
       - "Difficult airway management: the overarching algorithm encompassing all airway strategies from RSI to surgical airway; cricothyrotomy is the final rescue step"
       - "Surgical cricothyrotomy: a specific procedure performed when all non-surgical techniques have failed (CICO); it is the endpoint of the difficult airway algorithm, not a standalone decision"
       - "Critical rule: surgical cricothyrotomy should not be a standalone plan except in complete upper airway obstruction (expanding neck hematoma, massive angioedema, laryngeal fracture) where oral/nasal access is anatomically impossible"
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - hesitation_bias
+    - liability_fear
+    - technique_doubt
 sources:
   - type: guideline
     ref: "Apfelbaum JL, Hagberg CA, Connis RT, et al. 2022 American Society of Anesthesiologists Practice Guidelines for Management of the Difficult Airway. Anesthesiology. 2022;136(1):31-81."

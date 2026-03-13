@@ -7,6 +7,10 @@ esi: 2
 time_to_harm: "Minutes to hours (vascular compromise from displaced fracture/dislocation); hip dislocation: AVN risk increases after 6 hours"
 category: procedural
 track: tier1
+evaluation_properties:
+  safety_failure_rate: 0.0
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: review
     ref: "Hendey GW. Managing anterior shoulder dislocations. Ann Emerg Med. 2016;67(1):76-80."

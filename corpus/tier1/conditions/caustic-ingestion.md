@@ -8,6 +8,9 @@ time_to_harm: "< 2 hours (airway compromise); < 6 hours (perforation)"
 mortality_if_delayed: "Full-thickness injury with perforation: 20-65% mortality. Delayed airway management in caustic airway burns: near 100% if complete obstruction"
 category: toxicologic
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, xray]
 sources:
   - type: guideline
     ref: "ASGE Standards of Practice Committee. Role of endoscopy in the management of caustic and foreign body ingestion. Gastrointest Endosc. 2019;89(3):1-7"

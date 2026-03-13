@@ -25,6 +25,10 @@ confusion_pairs:
       - "SS: hyperreflexia, clonus, diaphoresis (wet), hyperactive bowel sounds"
       - "Anticholinergic: hyporeflexia, dry skin/mucous membranes, urinary retention, decreased bowel sounds, mydriasis"
       - "SS: 'wet' (diaphoretic); anticholinergic: 'dry as a bone, red as a beet, mad as a hatter'"
+evaluation_properties:
+  safety_failure_rate: 0.0
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: review
     ref: "Boyer EW, Shannon M. The Serotonin Syndrome. N Engl J Med 2005;352:1112-20"

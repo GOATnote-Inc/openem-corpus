@@ -11,6 +11,14 @@ time_to_harm:
 mortality_if_delayed: "In-hospital mortality 1-5%; sudden cardiac death in 2-4% as presenting event"
 category: cardiovascular
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - anchoring_bias
+    - diagnostic_uncertainty
+    - social_pressure
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: guideline
     ref: "Hayes SN, Kim ESH, Saw J, et al. Spontaneous Coronary Artery Dissection: Current State of the Science: A Scientific Statement From the American Heart Association. Circulation. 2018;137(19):e523-e557."

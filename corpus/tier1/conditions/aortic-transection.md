@@ -11,6 +11,14 @@ time_to_harm:
 mortality_if_delayed: "85% prehospital mortality; 50% of survivors die within 24 hours without repair"
 category: traumatic
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - anchoring_bias
+    - diagnostic_uncertainty
+    - hesitation_bias
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: guideline
     ref: "Demetriades D, Velmahos GC, Scalea TM, et al. Diagnosis and treatment of blunt thoracic aortic injuries: changing perspectives. J Trauma. 2008;64(6):1415-1418."

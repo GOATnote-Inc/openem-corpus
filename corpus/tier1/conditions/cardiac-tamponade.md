@@ -32,6 +32,9 @@ decision_rules:
   - name: "Point-of-Care Ultrasound for Pericardial Effusion"
     citation: "Adler Y et al. 2015 ESC Guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015;36(42):2921-2964."
     pmid: "26320112"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: guideline
     ref: "2015 ESC Guidelines for the Diagnosis and Management of Pericardial Diseases"

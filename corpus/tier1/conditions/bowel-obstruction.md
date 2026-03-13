@@ -24,6 +24,9 @@ confusion_pairs:
       - "Bowel obstruction: mechanical cause with identifiable transition point, surgical or procedural intervention often required"
       - "Ogilvie syndrome (acute colonic pseudo-obstruction): massive colonic dilation without mechanical obstruction, postoperative/critically ill/immobilized patient, no transition point, cecum > 12 cm risks perforation, treated with neostigmine"
       - "Absence of a transition point on CT distinguishes pseudo-obstruction from mechanical obstruction — neostigmine is contraindicated in mechanical obstruction"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, xray]
 sources:
   - type: guideline
     ref: "WSES 2017 Guidelines for Management of Small Bowel Obstruction. World J Emerg Surg. 2017;12:29"

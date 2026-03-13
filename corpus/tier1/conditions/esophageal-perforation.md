@@ -21,6 +21,11 @@ confusion_pairs:
     differentiators:
       - "Esophageal perforation: pain follows instrumentation or vomiting, subcutaneous crepitus on exam, pneumomediastinum on imaging"
       - "STEMI: ischemic chest pain with ST elevation on ECG, troponin elevation, no air in mediastinum or subcutaneous tissues"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, xray]
+  safety_failure_rate: 0.5
+  model_divergence: 0.667
 sources:
   - type: pubmed
     ref: "Brinster CJ, Singhal S, Lee L, et al. Evolving options in the management of esophageal perforation. Ann Thorac Surg. 2004;77(4):1475-1483"

@@ -11,6 +11,14 @@ time_to_harm:
 mortality_if_delayed: "Primary blast lung mortality 45-90% in enclosed-space detonations; secondary fragment injuries mortality depends on hemorrhage control timing"
 category: disaster-mci
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - diagnostic_uncertainty
+    - resource_scarcity
+    - social_pressure
+    - system_overwhelm
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: review
     ref: "DePalma RG et al. Blast injuries. N Engl J Med. 2005;352(13):1335-1342."

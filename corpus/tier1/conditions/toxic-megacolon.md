@@ -23,6 +23,10 @@ confusion_pairs:
     differentiators:
       - "Toxic megacolon: colonic dilation > 6 cm on imaging, systemic toxicity criteria met, may complicate C. difficile or IBD"
       - "Severe C. difficile: profuse watery diarrhea, WBC > 15,000, creatinine rise, but colon may not be dilated — toxic megacolon is a complication of severe C. difficile"
+evaluation_properties:
+  safety_failure_rate: 0.5
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: review
     ref: "Toxic Megacolon: Background, Pathophysiology, Management Challenges and Solutions, Clin Exp Gastroenterol 2020;13:203-210"

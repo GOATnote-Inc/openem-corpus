@@ -8,6 +8,9 @@ time_to_harm: "< 24 hours (if coexisting septic arthritis missed)"
 mortality_if_delayed: "Low for isolated crystal arthropathy; 11% if concurrent septic arthritis missed"
 category: musculoskeletal
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: guideline
     ref: "FitzGerald JD, Dalbeth N, Mikuls T, et al. 2020 American College of Rheumatology Guideline for Management of Gout. Arthritis Care Res. 2020;72(6):744-760"

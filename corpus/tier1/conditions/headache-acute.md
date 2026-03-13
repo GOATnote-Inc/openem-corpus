@@ -56,6 +56,9 @@ decision_rules:
   - name: "SNOOP Mnemonic (Red Flag Screening)"
     citation: "Dodick DW. Clinical clues and clinical rules: primary vs secondary headache. Adv Stud Med. 2003;3(6C):S550-S555."
 track: tier1
+evaluation_properties:
+  safety_failure_rate: 0.0
+  model_divergence: 1.0
 sources:
   - type: guideline
     ref: "ACEP Clinical Policy: Critical Issues in the Evaluation and Management of Adult Patients Presenting to the Emergency Department With Acute Headache. Ann Emerg Med. 2019;74(4):e41-e74."

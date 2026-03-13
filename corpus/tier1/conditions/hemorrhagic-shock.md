@@ -27,6 +27,11 @@ confusion_pairs:
       - "Hemorrhagic shock: identifiable blood loss source, tachycardia, cool/clammy skin, responds to hemorrhage control and blood products"
       - "Sepsis: infectious source, warm/vasodilated early, fever or hypothermia, elevated procalcitonin/lactate, requires antibiotics"
       - "In trauma, hemorrhage is the most common cause of shock until proven otherwise — sepsis is a later complication"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
+  safety_failure_rate: 0.917
+  model_divergence: 0.083
 sources:
   - type: guideline
     ref: "ATLS Advanced Trauma Life Support, 10th Edition (2018)"

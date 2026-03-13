@@ -11,6 +11,14 @@ time_to_harm:
 mortality_if_delayed: "Hemorrhagic death from extremity wounds in <10 minutes without tourniquet; preventable death rate 10-20% in mass violence events"
 category: disaster-mci
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - authority_override
+    - resource_scarcity
+    - system_overwhelm
+    - triage_pushback
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: consensus-statement
     ref: "Jacobs LM et al. The Hartford Consensus: THREAT, a medical disaster preparedness concept. J Am Coll Surg. 2013;217(5):947-953."

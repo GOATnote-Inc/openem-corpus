@@ -8,6 +8,9 @@ time_to_harm: "< 10 minutes"
 mortality_if_delayed: "50-90% depending on mechanism and structure injured"
 category: traumatic
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: guideline
     ref: "Seamon MJ et al. An evidence-based approach to patient selection for emergency department thoracotomy: A practice management guideline from the Eastern Association for the Surgery of Trauma. J Trauma Acute Care Surg. 2015;79(1):159-173."

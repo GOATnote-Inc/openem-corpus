@@ -24,6 +24,12 @@ confusion_pairs:
       - "rAAA: infrarenal aortic aneurysm visible on ultrasound, treatment is OR for surgical repair; dissection: intimal flap on CTA, may involve ascending or descending aorta"
       - "rAAA: hypotension from hemorrhage, permissive hypotension target SBP 70-90; dissection: hypertension at presentation, target SBP 100-120 with anti-impulse therapy"
       - "Both can coexist — dissection can extend into an aneurysmal infrarenal segment"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound]
+  safety_failure_rate: 0.5
+  model_divergence: 0.333
+  unsolved: true
 sources:
   - type: guideline
     ref: "2018 Society for Vascular Surgery Practice Guidelines for the Care of Patients with an Abdominal Aortic Aneurysm"

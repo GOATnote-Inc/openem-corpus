@@ -23,6 +23,10 @@ confusion_pairs:
     differentiators:
       - "Boerhaave syndrome: pain onset with vomiting, subcutaneous emphysema, left pleural effusion with high amylase"
       - "Aortic dissection: sudden tearing pain radiating to back, pulse deficits, aortic regurgitation murmur, intimal flap on CT"
+evaluation_properties:
+  safety_failure_rate: 0.5
+  model_divergence: 0.667
+  unsolved: true
 sources:
   - type: guideline
     ref: "WSES Guidelines: Esophageal Emergencies, World J Emerg Surg 2019;14:26"

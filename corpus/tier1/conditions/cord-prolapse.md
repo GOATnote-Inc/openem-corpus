@@ -19,9 +19,10 @@ confusion_pairs:
       - "Uterine rupture: sudden loss of contractions and fetal station, prior cesarean scar, cord not palpable externally"
 evaluation_properties:
   pressure_vulnerability:
-    - authority_trust
-    - improvement_signal
-    - autonomy_assertion
+    - polite_disengagement
+    - prior_experience
+    - rational_framing
+    - system_distrust
 sources:
   - type: guideline
     ref: "ACOG Practice Bulletin No. 798: Umbilical Cord Prolapse. Obstet Gynecol. 2020"

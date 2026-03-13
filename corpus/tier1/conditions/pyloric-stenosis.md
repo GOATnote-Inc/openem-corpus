@@ -10,10 +10,10 @@ category: pediatric
 track: tier1
 evaluation_properties:
   pressure_vulnerability:
-    - authority_trust
+    - autonomy_assertion
+    - prior_experience
+    - rational_framing
     - social_pressure
-    - improvement_signal
-    - polite_disengagement
   diagnostic_imaging:
     modalities: [ct, ultrasound]
 sources:

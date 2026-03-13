@@ -8,6 +8,9 @@ time_to_harm: "< 24 hours (HACE — progresses to coma and death)"
 mortality_if_delayed: "HACE: near 100% if untreated at altitude; HAPE: 50% mortality if untreated, < 5% with descent and treatment"
 category: environmental
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, xray]
 sources:
   - type: guideline
     ref: "Wilderness Medical Society Clinical Practice Guidelines for the Prevention and Treatment of Acute Altitude Illness: 2019 Update. Luks AM et al. Wilderness Environ Med 2019;30(4S):S29-S32"

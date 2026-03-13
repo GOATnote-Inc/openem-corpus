@@ -8,6 +8,9 @@ time_to_harm: "< 24-72 hours (embolic events, valve destruction, heart failure)"
 mortality_if_delayed: "In-hospital mortality 15-30%; S. aureus IE mortality 25-47% with delayed diagnosis"
 category: infectious
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound]
 sources:
   - type: guideline
     ref: "Baddour LM, Wilson WR, Bayer AS, et al. Infective Endocarditis in Adults: Diagnosis, Antimicrobial Therapy, and Management of Complications: A Scientific Statement From the American Heart Association. Circulation. 2015;132(15):1435-1486"

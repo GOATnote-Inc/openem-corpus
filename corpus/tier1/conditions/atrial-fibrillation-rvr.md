@@ -31,6 +31,11 @@ confusion_pairs:
       - "AFib with RVR: irregularly irregular, narrow complex (unless aberrancy), atrial fibrillatory baseline"
       - "Ventricular tachycardia: regular wide complex tachycardia, AV dissociation, fusion/capture beats, treated with amiodarone or cardioversion"
       - "Wide complex tachycardia should be treated as VT until proven otherwise — AFib with aberrancy is a diagnosis of exclusion"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound, xray]
+  safety_failure_rate: 0.389
+  model_divergence: 0.556
 sources:
   - type: guideline
     ref: "2023 ACC/AHA/ACCP/HRS Guideline for Diagnosis and Management of Atrial Fibrillation"

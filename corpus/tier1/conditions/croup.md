@@ -7,6 +7,9 @@ esi: 2
 time_to_harm: "< 2 hours (severe upper airway obstruction → respiratory failure)"
 category: pediatric
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [xray]
 sources:
   - type: guideline
     ref: "Bjornson CL, Johnson DW. Croup in children. CMAJ 2013;185(15):1317-1323"

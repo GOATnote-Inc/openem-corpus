@@ -8,6 +8,9 @@ time_to_harm: "< 48 hours"
 mortality_if_delayed: "1-year mortality 20-30%; surgical delay beyond 48 hours increases 30-day mortality by 20-40%"
 category: musculoskeletal
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound, xray]
 sources:
   - type: guideline
     ref: "O'Connor MI, Switzer JA. AAOS Clinical Practice Guideline Summary: Management of Hip Fractures in Older Adults. J Am Acad Orthop Surg 2022;30(20):e1291-e1296"

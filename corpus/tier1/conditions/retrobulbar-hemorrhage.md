@@ -11,6 +11,14 @@ time_to_harm:
 mortality_if_delayed: "Not life-threatening; primary risk is permanent monocular vision loss if canthotomy delayed beyond 60-90 minutes"
 category: ophthalmologic
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - anchoring_bias
+    - hesitation_bias
+    - liability_fear
+  diagnostic_imaging:
+    modalities: [ct, mri]
 sources:
   - type: review
     ref: "Lima V et al. Orbital compartment syndrome: the ophthalmic surgical emergency. Surv Ophthalmol. 2009;54(4):441-449."

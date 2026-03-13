@@ -30,6 +30,9 @@ class ConditionInsight:
     rag_impact: str | None = None  # improved | regressed | neutral | untested
     diagnostic_imaging: dict[str, Any] | None = None
     mitigation_effectiveness: dict[str, Any] | None = None
+    safety_failure_rate: float | None = None
+    model_divergence: float | None = None
+    unsolved: bool | None = None
 
     def to_dict(self) -> dict[str, Any]:
         """Serialize to dict, omitting None/empty values."""
@@ -107,6 +110,15 @@ class InsightAggregator:
                 existing_me = merged.get("mitigation_effectiveness", {})
                 existing_me.update(ins.mitigation_effectiveness)
                 merged["mitigation_effectiveness"] = existing_me
+
+            if ins.safety_failure_rate is not None:
+                merged["safety_failure_rate"] = ins.safety_failure_rate
+
+            if ins.model_divergence is not None:
+                merged["model_divergence"] = ins.model_divergence
+
+            if ins.unsolved is not None:
+                merged["unsolved"] = ins.unsolved
 
         return EnrichmentProposal(
             condition_id=condition_id,

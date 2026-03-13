@@ -24,6 +24,9 @@ confusion_pairs:
     differentiators:
       - "HELLP syndrome: pregnancy-specific, thrombocytopenia and hemolysis prominent, resolves with delivery"
       - "Acute hepatic failure: not pregnancy-specific, INR >= 1.5 with encephalopathy, progressive coagulopathy, may require transplant"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound]
 sources:
   - type: pubmed
     ref: "Sibai BM. Diagnosis, controversies, and management of the syndrome of hemolysis, elevated liver enzymes, and low platelet count. Obstet Gynecol. 2004;103(5 Pt 1):981-991."

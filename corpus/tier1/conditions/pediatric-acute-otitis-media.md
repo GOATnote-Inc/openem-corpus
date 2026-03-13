@@ -26,6 +26,9 @@ confusion_pairs:
       - "Meningitis: meningeal signs (nuchal rigidity, Kernig, Brudzinski), altered mental status, purpuric rash possible"
       - "AOM: otoscopic findings (bulging TM, effusion) explain fever source"
       - "Meningitis: AOM can be a contiguous source for meningitis — if meningeal signs present with AOM, LP is mandatory"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound, xray]
 sources:
   - type: guideline
     ref: "Lieberthal AS, Carroll AE, Chonmaitree T, et al. The Diagnosis and Management of Acute Otitis Media. Pediatrics. 2013;131(3):e964-e999."

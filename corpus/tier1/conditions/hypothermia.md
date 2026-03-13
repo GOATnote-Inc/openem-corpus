@@ -8,6 +8,9 @@ time_to_harm: "< 60 minutes (severe hypothermia can progress to cardiac arrest)"
 mortality_if_delayed: "40-80% for severe hypothermia (core temp < 28°C) without rewarming"
 category: environmental
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [xray]
 sources:
   - type: guideline
     ref: "2020 AHA/ACC Guidelines for CPR and ECC — Accidental Hypothermia"

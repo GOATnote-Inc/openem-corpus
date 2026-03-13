@@ -24,6 +24,11 @@ confusion_pairs:
       - "Ludwig angina: anterior submandibular space, visible external swelling, dental origin"
       - "Retropharyngeal abscess: posterior pharyngeal space, neck stiffness with limited extension, widened prevertebral space on lateral X-ray or CT, often follows URI in children"
       - "Both can compromise the airway — retropharyngeal abscess risks mediastinal extension"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct]
+  safety_failure_rate: 0.5
+  model_divergence: 1.0
 sources:
   - type: guideline
     ref: "IDSA Clinical Practice Guidelines for the Diagnosis and Management of Skin and Soft Tissue Infections, 2014 Update. Clin Infect Dis. 2014;59(2):e10-e52"

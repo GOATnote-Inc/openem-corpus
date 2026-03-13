@@ -24,6 +24,9 @@ confusion_pairs:
       - "Acute valvular emergency: new murmur, flash pulmonary edema, echo shows valvular pathology; PE: no new murmur, clear lungs or focal findings, RV dilation on echo without valvular pathology"
       - "Acute MR: loud holosystolic murmur at apex radiating to axilla; PE: no characteristic murmur, pleuritic chest pain, tachycardia"
       - "Both cause acute dyspnea and hypotension — bedside echo differentiates valvular pathology from RV dilation"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound, xray]
 sources:
   - type: guideline
     ref: "2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease"

@@ -8,6 +8,11 @@ time_to_harm: "< 24 hours (necrotizing fasciitis)"
 mortality_if_delayed: "Necrotizing fasciitis: 25-35% overall; >70% if surgical debridement delayed >24 hours"
 category: dermatologic
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound]
+  safety_failure_rate: 0.5
+  model_divergence: 0.667
 sources:
   - type: guideline
     ref: "IDSA 2014 Practice Guidelines for the Diagnosis and Management of Skin and Soft Tissue Infections. Stevens DL, et al. Clin Infect Dis. 2014;59(2):e10-52"

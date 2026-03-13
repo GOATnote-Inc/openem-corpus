@@ -24,6 +24,12 @@ confusion_pairs:
       - "GBS: symmetric ascending weakness with areflexia, no sensory level, normal spinal MRI"
       - "Cord compression: motor/sensory level, upper motor neuron signs below lesion (hyperreflexia, Babinski), spinal MRI shows compressive lesion"
       - "GBS: progressive over days; acute cord compression: abrupt onset with back pain at level of compression"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri]
+  safety_failure_rate: 0.5
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: guideline
     ref: "AAN Practice Parameter: Immunotherapy for Guillain-Barré Syndrome. Neurology. 2003;61(6):736-740"

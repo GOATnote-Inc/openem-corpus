@@ -37,9 +37,9 @@ confusion_pairs:
 evaluation_properties:
   pressure_vulnerability:
     - financial_barrier
+    - polite_disengagement
     - prior_experience
     - social_pressure
-    - polite_disengagement
   diagnostic_imaging:
     modalities: [ct, mri, ultrasound]
 sources:

@@ -10,10 +10,10 @@ category: respiratory
 track: tier1
 evaluation_properties:
   pressure_vulnerability:
-    - authority_trust
-    - improvement_signal
     - autonomy_assertion
-    - polite_disengagement
+    - improvement_signal
+    - provider_trust
+    - rational_framing
   diagnostic_imaging:
     modalities: [ct, xray]
 sources:

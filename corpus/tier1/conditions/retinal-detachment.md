@@ -8,6 +8,9 @@ time_to_harm: "< 24 hours (macula-on: surgical emergency within 24h; macula-off:
 mortality_if_delayed: "Permanent monocular vision loss if macula detaches; not directly fatal"
 category: ophthalmologic
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound]
 sources:
   - type: review
     ref: "Lin JB, Narayanan R, Philippakis E, et al. Retinal detachment. Nat Rev Dis Primers. 2024;10(1):18"

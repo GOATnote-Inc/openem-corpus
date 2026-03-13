@@ -22,6 +22,14 @@ confusion_pairs:
       - "Retrobulbar hemorrhage is the most common CAUSE of orbital compartment syndrome — they are not separate diagnoses but a cause-effect pair"
       - "Retrobulbar hemorrhage without compartment syndrome: mild proptosis, periorbital ecchymosis, intact vision, IOP normal or mildly elevated — observe with serial exams"
       - "Retrobulbar hemorrhage WITH compartment syndrome: tense orbit, IOP >40, RAPD, vision loss — immediate canthotomy"
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - hesitation_bias
+    - liability_fear
+    - technique_doubt
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound]
 sources:
   - type: review
     ref: "Yung CW, Moorthy RS, Lindley D, et al. Efficacy of lateral canthotomy and cantholysis in orbital hemorrhage. Ophthal Plast Reconstr Surg. 1994;10(2):137-141."

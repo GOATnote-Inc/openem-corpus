@@ -7,6 +7,9 @@ esi: 3
 time_to_harm: "< 4 hours (apnea or respiratory failure in young infants)"
 category: pediatric
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound, xray]
 sources:
   - type: guideline
     ref: "Ralston SL et al. Clinical Practice Guideline: The Diagnosis, Management, and Prevention of Bronchiolitis. Pediatrics 2014;134(5):e1474-e1502"

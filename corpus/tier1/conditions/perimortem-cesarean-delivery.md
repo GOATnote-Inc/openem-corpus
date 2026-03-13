@@ -22,6 +22,12 @@ confusion_pairs:
       - "Cord prolapse: emergent cesarean is indicated but in the OR with anesthesia if maternal hemodynamics are stable; the urgency is fetal, not maternal"
       - "Perimortem cesarean: maternal cardiac arrest is the trigger; performed at bedside without anesthesia; the primary goal is maternal resuscitation via aortocaval decompression"
       - "Critical rule: cord prolapse with a pulsatile maternal rhythm is an OR cesarean; cord prolapse with maternal arrest is a perimortem cesarean at bedside"
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - authority_override
+    - hesitation_bias
+    - liability_fear
 sources:
   - type: guideline
     ref: "Jeejeebhoy FM, Zelop CM, Lipman S, et al. Cardiac Arrest in Pregnancy: A Scientific Statement From the American Heart Association. Circulation. 2015;132(18):1747-1773."

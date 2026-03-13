@@ -8,6 +8,9 @@ time_to_harm: "Variable by gestational age: cord prolapse causes fetal compromis
 mortality_if_delayed: "Fetal: perinatal mortality 1–2% at 28–33 weeks, higher at earlier gestations; 43% composite maternal morbidity at periviable gestations; neonatal sepsis and RDS are leading causes of neonatal death with PPROM"
 category: obstetric-gynecologic
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound]
 sources:
   - type: guideline
     ref: "ACOG Practice Bulletin No. 217: Prelabor Rupture of Membranes. Obstet Gynecol. 2020;135(3):e80-e97"

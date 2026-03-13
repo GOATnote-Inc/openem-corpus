@@ -8,6 +8,9 @@ time_to_harm: "< 6 hours"
 mortality_if_delayed: "Rupture into mediastinum causes mediastinitis with >40% mortality"
 category: infectious
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, xray]
 sources:
   - type: pubmed
     ref: "Craig FW, Schunk JE. Retropharyngeal abscess in children: clinical presentation, utility of imaging, and current management. Pediatrics. 2003;111(6 Pt 1):1394-1398"

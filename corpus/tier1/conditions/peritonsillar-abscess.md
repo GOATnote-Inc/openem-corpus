@@ -8,6 +8,9 @@ time_to_harm: "< 24 hours"
 mortality_if_delayed: "Rare mortality but airway compromise, parapharyngeal space extension, and Lemierre syndrome if untreated"
 category: infectious
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound]
 sources:
   - type: guideline
     ref: "AAO-HNS Clinical Practice Guideline: Tonsillectomy in Children (Update) — Peritonsillar Abscess Section. Otolaryngol Head Neck Surg 2019;160:S1-S42"

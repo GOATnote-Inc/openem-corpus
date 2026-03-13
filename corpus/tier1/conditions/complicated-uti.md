@@ -8,6 +8,9 @@ time_to_harm: "< 6 hours if obstructed or septic; hours to days if uncomplicated
 mortality_if_delayed: "Urosepsis mortality 20-40% if source control delayed; emphysematous pyelonephritis 13-25%"
 category: genitourinary
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound]
 sources:
   - type: review
     ref: "Wagenlehner FME, Bjerklund Johansen TE, Cai T, et al. Epidemiology, definition and treatment of complicated urinary tract infections. Nat Rev Urol. 2020;17(10):586-600"

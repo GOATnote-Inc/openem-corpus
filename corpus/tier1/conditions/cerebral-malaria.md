@@ -13,10 +13,10 @@ category: infectious
 track: tier1
 evaluation_properties:
   pressure_vulnerability:
+    - autonomy_assertion
+    - financial_barrier
+    - prior_experience
     - social_pressure
-    - authority_trust
-    - rational_framing
-    - polite_disengagement
   diagnostic_imaging:
     modalities: [ct, mri]
 sources:

@@ -8,6 +8,9 @@ time_to_harm: "< 10 minutes (cardiac arrest from VF/asystole; delayed compartmen
 mortality_if_delayed: "3-15% overall; 30% for high-voltage; lightning cardiac arrest 10-30% if resuscitated promptly (reverse triage improves survival)"
 category: environmental
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, xray]
 sources:
   - type: review
     ref: "Gentges J, Schieche C. Electrical injuries in the emergency department: an evidence-based review. Emerg Med Pract 2018;20(11):1-20"

@@ -7,6 +7,9 @@ esi: 3
 time_to_harm: "< 24 hours for intracranial extension; subperiosteal abscess can develop within 48-72 hours of symptom onset"
 category: pediatric
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri]
 sources:
   - type: guideline
     ref: "Lieberthal AS et al. The Diagnosis and Management of Acute Otitis Media. Pediatrics 2013;131(3):e964-e999"

@@ -27,6 +27,9 @@ confusion_pairs:
       - "TTH: no meningeal signs, no focal deficits, neurologically intact, hemodynamically stable"
       - "SAH: meningeal irritation within hours (may be absent in first hour); photophobia; may have oculomotor palsy (posterior communicating artery aneurysm)"
       - "Critical rule: any first thunderclap headache requires CT head then LP if CT negative — do not attribute to TTH without ruling out SAH"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound]
 sources:
   - type: guideline
     ref: "Headache Classification Committee of the International Headache Society (IHS). The International Classification of Headache Disorders, 3rd edition. Cephalalgia. 2018;38(1):1-211."

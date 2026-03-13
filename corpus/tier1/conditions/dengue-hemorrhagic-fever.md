@@ -9,6 +9,9 @@ time_to_harm:
   death: "< 24-48 hours in dengue shock syndrome"
 category: infectious
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: who
     ref: "World Health Organization. Dengue: Guidelines for Diagnosis, Treatment, Prevention and Control. New edition 2009. WHO/HTM/NTD/DEN/2009.1"

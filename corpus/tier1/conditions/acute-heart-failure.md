@@ -15,6 +15,12 @@ decision_rules:
   - name: "Framingham Heart Failure Criteria"
     citation: "McKee PA et al. The natural history of congestive heart failure: the Framingham study. N Engl J Med. 1971;285(26):1441-1446."
     pmid: "5572576"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
+  safety_failure_rate: 0.0
+  model_divergence: -0.333
+  unsolved: true
 sources:
   - type: guideline
     ref: "2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure"

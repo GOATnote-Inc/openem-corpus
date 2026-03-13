@@ -25,6 +25,9 @@ confusion_pairs:
       - "BPPV: positive Dix-Hallpike with upbeating torsional nystagmus with latency and fatigability"
       - "Posterior stroke: Dix-Hallpike may produce atypical nystagmus (no latency, non-fatiguing, downbeating)"
       - "BPPV: no headache, no focal deficits, hemodynamically normal"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound]
 sources:
   - type: guideline
     ref: "Bhattacharyya N, Gubbels SP, Schwartz SR, et al. Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo (Update). Otolaryngol Head Neck Surg. 2017;156(3_suppl):S1-S47."

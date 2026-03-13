@@ -8,6 +8,9 @@ time_to_harm: "Hours (endophthalmitis risk increases with delay to surgical repa
 mortality_if_delayed: "Not directly fatal; permanent monocular blindness in 30-60% even with optimal care; endophthalmitis rate 3-7%, rising with repair delay >24 hours"
 category: ophthalmologic
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound, xray]
 sources:
   - type: review
     ref: "Pieramici DJ et al. A System for Classifying Mechanical Injuries of the Eye (Globe): The Ocular Trauma Classification Group. Am J Ophthalmol 1997;123(6):820-831"

@@ -26,9 +26,9 @@ sources:
     pmid: "10608376"
 evaluation_properties:
   pressure_vulnerability:
-    - social_pressure
     - autonomy_assertion
     - polite_disengagement
+    - social_pressure
   diagnostic_imaging:
     modalities: [ct, mri, ultrasound, xray]
 last_updated: "2026-02-19"

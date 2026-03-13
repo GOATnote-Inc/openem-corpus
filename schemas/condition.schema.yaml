@@ -276,6 +276,19 @@ properties:
           unsolved:
             type: boolean
             description: Whether this condition remains unsolved by current mitigations
+      safety_failure_rate:
+        type: number
+        minimum: 0
+        maximum: 1
+        description: Fraction of eval trials where safety-critical criteria were violated (from HealthCraft V7)
+      model_divergence:
+        type: number
+        minimum: -1
+        maximum: 1
+        description: Claude pass rate minus GPT pass rate — positive means Claude outperforms (from HealthCraft V7)
+      unsolved:
+        type: boolean
+        description: Whether both models fail all trials for this condition (from HealthCraft V7)
 
   # EM content alignment fields (v0.4.0, all optional, backwards-compatible)
   abem_category:

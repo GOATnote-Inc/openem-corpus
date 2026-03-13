@@ -65,6 +65,10 @@ decision_rules:
     citation: "Grossman SA et al. A novel approach to predicting 30-day adverse events in emergency department patients with syncope using the Boston Syncope criteria. Acad Emerg Med. 2007;14(5):434-441."
     pmid: "17456554"
 track: tier1
+evaluation_properties:
+  safety_failure_rate: 0.0
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: guideline
     ref: "2017 ACC/AHA/HRS Guideline for the Evaluation and Management of Patients with Syncope"

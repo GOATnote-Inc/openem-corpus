@@ -29,10 +29,10 @@ confusion_pairs:
       - "Any febrile child with new petechiae should be treated presumptively for meningococcemia until proven otherwise"
 evaluation_properties:
   pressure_vulnerability:
-    - social_pressure
     - inconvenience
-    - prior_experience
     - polite_disengagement
+    - prior_experience
+    - social_pressure
 sources:
   - type: guideline
     ref: "AAP Red Book: Report of the Committee on Infectious Diseases, 2021-2024"

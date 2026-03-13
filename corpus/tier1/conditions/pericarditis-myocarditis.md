@@ -12,6 +12,11 @@ decision_rules:
   - name: "Diagnostic Criteria for Acute Pericarditis"
     citation: "Imazio M et al. Management of pericardial diseases during pregnancy. J Cardiovasc Med. 2015;16(3):223-231."
     pmid: "26588784"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound, xray]
+  safety_failure_rate: 0.333
+  model_divergence: 1.0
 sources:
   - type: guideline
     ref: "Adler Y, Charron P, Imazio M, et al. 2015 ESC Guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015;36(42):2921-2964"

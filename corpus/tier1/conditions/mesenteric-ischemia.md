@@ -21,6 +21,12 @@ confusion_pairs:
     differentiators:
       - "Mesenteric ischemia: abdominal-focused pain, GI bleeding, CT shows SMA occlusion or bowel wall thickening"
       - "Aortic dissection: tearing chest/back pain, pulse deficits, widened mediastinum, intimal flap on CT"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, xray]
+  safety_failure_rate: 0.5
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: guideline
     ref: "European Society for Vascular Surgery (ESVS) 2017 Clinical Practice Guidelines on the Management of Acute Mesenteric Ischaemia"

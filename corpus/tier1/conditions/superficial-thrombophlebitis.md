@@ -31,6 +31,9 @@ confusion_pairs:
       - "Superficial thrombophlebitis: if located remote from SFJ and no concurrent DVT on duplex, PE risk is low"
       - "PE: any respiratory symptoms in a patient with phlebitis require CT-PA; D-dimer will be elevated in active phlebitis and is not useful to screen for PE in this context"
       - "Critical rule: elevated D-dimer is expected in superficial thrombophlebitis — use CT-PA directly when PE is suspected, not D-dimer"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound]
 sources:
   - type: guideline
     ref: "Di Nisio M, Wichers IM, Middeldorp S. Treatment for superficial thrombophlebitis of the leg. Cochrane Database Syst Rev. 2018;2(2):CD004982."

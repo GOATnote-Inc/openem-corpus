@@ -8,6 +8,9 @@ time_to_harm: "Hours to days (permanent monocular blindness within hours of visu
 mortality_if_delayed: "Bilateral permanent blindness in 25-50% of untreated patients with visual symptoms; aortitis, stroke, and aortic aneurysm in large-vessel GCA"
 category: ophthalmologic
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound]
 sources:
   - type: guideline
     ref: "Hellmich B et al. 2018 Update of the EULAR Recommendations for the Management of Large Vessel Vasculitis. Ann Rheum Dis 2020;79(1):19-30"

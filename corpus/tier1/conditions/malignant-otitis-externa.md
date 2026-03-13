@@ -10,6 +10,14 @@ time_to_harm:
   optimal_intervention_window: "< 48-72 hours from presentation — IV antipseudomonal antibiotics"
 category: infectious
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - anchoring_bias
+    - autonomy_assertion
+    - financial_barrier
+    - polite_disengagement
+  diagnostic_imaging:
+    modalities: [ct, mri]
 sources:
   - type: review
     ref: "Carfrae MJ, Kesser BW. Malignant otitis externa. Otolaryngol Clin North Am. 2008;41(3):537-549."

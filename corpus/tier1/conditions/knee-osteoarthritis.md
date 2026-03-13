@@ -22,6 +22,9 @@ confusion_pairs:
       - "Septic arthritis: acute onset, fever, marked warmth and erythema, WBC >50,000 cells/µL in synovial fluid (>90% PMNs), ESR/CRP elevated"
       - "OA flare: may have mild warmth from crystal deposition or mechanical inflammation — low-grade, no systemic signs"
       - "Septic arthritis: never discharge without arthrocentesis if fever + acute joint effusion"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound, xray]
 sources:
   - type: guideline
     ref: "Kolasinski SL, Neogi T, Hochberg MC, et al. 2019 American College of Rheumatology/Arthritis Foundation Guideline for the Management of Osteoarthritis of the Hand, Hip, and Knee. Arthritis Care Res (Hoboken). 2020;72(2):149-162."

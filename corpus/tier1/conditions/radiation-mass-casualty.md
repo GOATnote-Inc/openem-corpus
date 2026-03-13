@@ -11,6 +11,12 @@ time_to_harm:
 mortality_if_delayed: "LD50/60 approximately 3.5-4.5 Gy without treatment, 7 Gy with supportive care; >10 Gy universally fatal regardless of treatment"
 category: disaster-mci
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - authority_override
+    - resource_scarcity
+    - system_overwhelm
+    - triage_pushback
 sources:
   - type: guideline
     ref: "Radiation Emergency Medical Management (REMM), U.S. Department of Health and Human Services. https://remm.hhs.gov/"

@@ -24,6 +24,9 @@ confusion_pairs:
       - "Unstable bradycardia: persistent hemodynamic compromise with ongoing bradycardia; vasovagal syncope: transient bradycardia with spontaneous recovery, normal hemodynamics between episodes"
       - "Vasovagal: typical prodrome (warmth, nausea, tunnel vision), triggered by pain/standing/emotional stress; unstable bradycardia: no prodrome, persistent rhythm abnormality"
       - "Vasovagal: normal ECG between episodes, no structural heart disease; unstable bradycardia: ECG shows conduction disease or drug effect"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: guideline
     ref: "2020 AHA/ACC Guideline for Management of Patients With Bradycardia and Cardiac Conduction Delay"

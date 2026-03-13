@@ -11,6 +11,12 @@ time_to_harm:
 mortality_if_delayed: "Nerve agent: near 100% mortality without antidote within minutes of severe exposure; cyanide: death within 15-60 minutes without hydroxocobalamin"
 category: disaster-mci
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - authority_override
+    - resource_scarcity
+    - system_overwhelm
+    - triage_pushback
 sources:
   - type: consensus-statement
     ref: "Ciottone GR et al. Ciottone's Disaster Medicine, 2nd Edition. Elsevier, 2016. Chapters 126-135: Chemical Terrorism."

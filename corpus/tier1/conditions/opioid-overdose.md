@@ -24,6 +24,9 @@ confusion_pairs:
       - "Opioid overdose: miotic pupils, bradypnea, track marks or drug paraphernalia, responds to naloxone"
       - "Hypoglycemia: diaphoresis, tremor, tachycardia, glucose < 70 mg/dL, responds to dextrose, normal pupils"
       - "Both cause altered mental status — point-of-care glucose should be checked immediately in all unresponsive patients"
+evaluation_properties:
+  safety_failure_rate: 0.0
+  model_divergence: 0.5
 sources:
   - type: guideline
     ref: "AHA 2020 Guidelines for CPR and Emergency Cardiovascular Care: Opioid-Associated Emergencies. Circulation 2020;142(16 Suppl 2):S364-S381"

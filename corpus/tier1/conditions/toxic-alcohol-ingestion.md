@@ -24,6 +24,10 @@ confusion_pairs:
       - "Toxic alcohol ingestion: osmolar gap is the early clue before acidosis develops, specific toxic metabolites (formic acid, glycolic acid), responds to fomepizole and hemodialysis"
       - "Lactic acidosis: lactate elevation is the primary finding, osmolar gap normal, treat underlying cause (shock, sepsis, medications)"
       - "Toxic alcohols generate non-lactate organic acids — if AG acidosis present with normal lactate, suspect toxic alcohol"
+evaluation_properties:
+  safety_failure_rate: 0.5
+  model_divergence: 0.0
+  unsolved: true
 sources:
   - type: guideline
     ref: "AACT/EAPCCT Position Statement: Treatment of Methanol Poisoning. J Toxicol Clin Toxicol 2002;40(4):415-46"

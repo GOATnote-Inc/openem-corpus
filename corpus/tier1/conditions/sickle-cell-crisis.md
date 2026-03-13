@@ -24,6 +24,11 @@ confusion_pairs:
       - "Sickle cell crisis: known SCD, pain out of proportion, triggered by cold/dehydration/infection, reticulocytosis"
       - "Sepsis: infectious source, elevated procalcitonin and lactate, responds to antibiotics"
       - "Infection is the most common trigger of sickle cell crisis — both may coexist; always evaluate for infection in febrile SCD patients"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, mri, ultrasound, xray]
+  safety_failure_rate: 0.0
+  model_divergence: -0.667
 sources:
   - type: guideline
     ref: "NHLBI Evidence-Based Management of Sickle Cell Disease: Expert Panel Report (2014)"

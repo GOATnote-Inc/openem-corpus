@@ -8,6 +8,11 @@ time_to_harm: "< 6-12 hours if obstructed or septic"
 mortality_if_delayed: "2-10% if complicated/septic; < 1% if uncomplicated and treated"
 category: genitourinary
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, ultrasound]
+  safety_failure_rate: 0.167
+  model_divergence: 0.667
 sources:
   - type: guideline
     ref: "2011 IDSA/ESCMID Clinical Practice Guideline for the Treatment of Acute Uncomplicated Cystitis and Pyelonephritis in Women"

@@ -24,6 +24,11 @@ confusion_pairs:
       - "Epidural hematoma: trauma-related, biconvex extra-axial collection, surgical emergency"
       - "SAH (traumatic): blood in subarachnoid space, often linear along convexities, may be seen with EDH; SAH (spontaneous): thunderclap headache, aneurysmal source, CTA for aneurysm"
       - "Traumatic SAH commonly coexists with EDH — both can be present on the same CT"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ct, xray]
+  safety_failure_rate: 0.5
+  model_divergence: 0.5
 sources:
   - type: guideline
     ref: "Brain Trauma Foundation. Guidelines for the Management of Severe Traumatic Brain Injury, 4th Edition. Neurosurgery 2017;80(1):6-15"

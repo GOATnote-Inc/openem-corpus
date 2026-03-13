@@ -9,11 +9,6 @@ mortality_if_delayed: "Grade III cholangitis: 20-30% mortality without emergent 
 category: gastrointestinal
 track: tier1
 evaluation_properties:
-  pressure_vulnerability:
-    - financial_barrier
-    - prior_experience
-    - authority_trust
-    - polite_disengagement
   diagnostic_imaging:
     modalities: [ct, mri, ultrasound]
 sources:

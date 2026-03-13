@@ -8,6 +8,9 @@ time_to_harm: "< 2 hours if hemorrhagic; delayed harm if ectopic missed"
 mortality_if_delayed: "< 1% for threatened abortion alone; mortality from missed ectopic pregnancy up to 5-10% of first trimester maternal deaths"
 category: obstetric-gynecologic
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [ultrasound]
 sources:
   - type: guideline
     ref: "ACOG Practice Bulletin No. 200: Early Pregnancy Loss. Obstet Gynecol 2018;132(5):e197-e207"

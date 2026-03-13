@@ -17,6 +17,12 @@ confusion_pairs:
       - "Difficult airway management: encompasses the entire decision algorithm from RSI through rescue devices to surgical airway; cricothyrotomy is the final step in the failed airway pathway"
       - "Surgical cricothyrotomy: a specific procedure within the difficult airway algorithm, performed when all non-surgical options have failed (CICO scenario)"
       - "Critical rule: declaring CICO and proceeding to cricothyrotomy should occur after a maximum of 3 failed oral attempts — the algorithm exists to prevent fixation on a failed technique"
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - hesitation_bias
+    - social_pressure
+    - technique_doubt
 sources:
   - type: guideline
     ref: "Apfelbaum JL, Hagberg CA, Connis RT, et al. 2022 American Society of Anesthesiologists Practice Guidelines for Management of the Difficult Airway. Anesthesiology. 2022;136(1):31-81."

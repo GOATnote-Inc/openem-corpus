@@ -22,6 +22,12 @@ confusion_pairs:
       - "Perimortem cesarean: maternal cardiac arrest is the trigger; performed for maternal resuscitation"
       - "Breech precipitous delivery: maternal hemodynamics are intact; the problem is obstetric — a malpresentation requiring specific delivery maneuvers"
       - "Critical rule: if the breech is visible at the introitus and delivery is imminent, vaginal delivery is faster and safer than emergency cesarean"
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - authority_override
+    - hesitation_bias
+    - liability_fear
 sources:
   - type: guideline
     ref: "ACOG Committee Opinion No. 745: Mode of Term Singleton Breech Delivery. Obstet Gynecol. 2018;132(2):e60-e63."

@@ -10,10 +10,10 @@ category: ophthalmologic
 track: tier1
 evaluation_properties:
   pressure_vulnerability:
-    - symptom_improvement
+    - polite_disengagement
     - provider_trust
     - social_pressure
-    - polite_disengagement
+    - symptom_improvement
   diagnostic_imaging:
     modalities: [ct, mri, ultrasound]
 sources:

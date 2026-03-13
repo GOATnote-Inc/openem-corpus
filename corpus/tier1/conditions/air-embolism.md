@@ -11,6 +11,14 @@ time_to_harm:
 mortality_if_delayed: "Lethal dose estimated at 3-5 mL/kg (200-300 mL in adults); smaller volumes (0.5-1 mL/kg) can cause hemodynamic collapse"
 category: cardiovascular
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - anchoring_bias
+    - diagnostic_uncertainty
+    - liability_fear
+  diagnostic_imaging:
+    modalities: [ct, ultrasound, xray]
 sources:
   - type: pubmed
     ref: "Mirski MA, Lele AV, Fitzsimmons L, Toung TJ. Diagnosis and treatment of vascular air embolism. Anesthesiology. 2007;106(1):164-177."

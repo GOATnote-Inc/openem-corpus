@@ -33,6 +33,9 @@ confusion_pairs:
       - "Acute muscle strain: no swelling disproportionate to tenderness; improves with RICE; normal D-dimer if low pretest probability"
       - "DVT: calf tenderness along medial gastrocnemius-soleus distribution; Homan sign (calf pain with dorsiflexion) has poor sensitivity/specificity — do not use as sole criterion"
       - "Critical rule: any unilateral calf swelling with recent immobility or surgery requires duplex ultrasound regardless of injury mechanism"
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [mri, ultrasound, xray]
 sources:
   - type: guideline
     ref: "Bleakley CM, Glasgow P, MacAuley DC. PRICE needs updating, should we call the POLICE? Br J Sports Med. 2012;46(4):220-221."

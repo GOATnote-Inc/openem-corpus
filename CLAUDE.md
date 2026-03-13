@@ -25,8 +25,8 @@ NOT a clinical decision support tool. NOT deployed for patient care.
 - `scripts/review_status.py` — prints physician review status by risk tier.
 - `scripts/check_index_freshness.py` — CI gate: exits 1 if corpus has changed since last `make build-index`. Checks file count + SHA-256 fingerprint.
 
-## Versioning (v0.5.0)
-- `__version__ = "0.5.0"` in `python/openem/__init__.py`
+## Versioning (v0.5.1)
+- `__version__ = "0.5.1"` in `python/openem/__init__.py`
 - Manifest fields: `index_format_version`, `api_version`, `corpus_version`, `corpus_fingerprint`, `corpus_file_count`, `file_hashes`. `version` key kept as backward-compat shim.
 - Downstream consumers can check `from openem import __version__` for API compatibility.
 - All 3 downstream repos pin `openem>=0.2.0` as optional dependency.
@@ -83,7 +83,7 @@ Four conditions added to fill critical coverage gaps: foreign-body-aspiration, s
 - **procedural** (7 conditions): resuscitative-thoracotomy, perimortem-cesarean-delivery, lateral-canthotomy, difficult-airway-management, breech-precipitous-delivery, surgical-cricothyrotomy, reboa
 - **HALO high-acuity** (15 conditions): aortic-transection, fat-embolism-syndrome, air-embolism, spontaneous-coronary-artery-dissection, hemorrhagic-stroke, necrotizing-enterocolitis, inborn-errors-metabolic-crisis, pheochromocytoma-crisis, toxic-shock-syndrome, cavernous-sinus-thrombosis, massive-hemoptysis, retrobulbar-hemorrhage, tracheal-disruption, esophageal-foreign-body-impaction, malignant-otitis-externa
 
-Total corpus: 370 conditions across 21 categories (185 base + 185 expansion). New source type `consensus-statement` added to schema. v0.5.0 added 7 conditions (6 ENT + 1 LostBench demand) and deepened safety metadata (152 confusion_pairs, 45 decision_rules, 44 evaluation_properties).
+Total corpus: 370 conditions across 21 categories (185 base + 185 expansion). New source type `consensus-statement` added to schema. v0.5.0 added 7 conditions (6 ENT + 1 LostBench demand) and deepened safety metadata (152 confusion_pairs, 45 decision_rules, 44 evaluation_properties). v0.5.1 closed the HealthCraft feedback loop: 72 overlay mappings, HC parser in scan_repos.py, evaluation_properties expanded to 177/370 conditions (48%), retrieval ground truth expanded to 98 queries covering 118 conditions.
 
 ### Safety Annotations
 

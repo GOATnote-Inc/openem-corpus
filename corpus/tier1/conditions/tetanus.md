@@ -8,6 +8,9 @@ time_to_harm: "< 24 hours"
 mortality_if_delayed: "10-70% depending on severity; generalized tetanus mortality 10-20% with ICU care, up to 50% without"
 category: infectious
 track: tier1
+evaluation_properties:
+  diagnostic_imaging:
+    modalities: [xray]
 sources:
   - type: cdc
     ref: "CDC Tetanus — For Clinicians. Centers for Disease Control and Prevention, 2024"

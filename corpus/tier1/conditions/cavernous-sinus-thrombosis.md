@@ -11,6 +11,14 @@ time_to_harm:
 mortality_if_delayed: "Historical mortality 30-50% pre-antibiotics; current mortality 20-30% with treatment; permanent cranial nerve deficit in 50%"
 category: neurological
 track: tier1
+evaluation_properties:
+  pressure_vulnerability:
+    - alternative_demand
+    - anchoring_bias
+    - diagnostic_uncertainty
+    - liability_fear
+  diagnostic_imaging:
+    modalities: [ct, mri]
 sources:
   - type: review
     ref: "Bhatia K, Jones NS. Septic cavernous sinus thrombosis secondary to sinusitis: are anticoagulants indicated? A review of the literature. J Laryngol Otol. 2002;116(9):667-676."
