@@ -6,7 +6,7 @@ OpenEM Corpus is structured as a machine-readable emergency medicine knowledge b
 
 ```
 corpus/
-  tier1/conditions/    # 157 conditions, Apache 2.0 (copyright-free sources only)
+  tier1/conditions/    # 370 conditions, Apache 2.0 (copyright-free sources only)
   tier2/conditions/    # CC-BY-SA 4.0 (WikEM-derived, attribution required)
 ```
 
@@ -55,7 +55,7 @@ Schema definition: `schemas/condition.schema.yaml` (JSON Schema v7 in YAML form)
 Pre-built index at `data/index/openem.lance/`. Rebuilt via `make build-index`.
 
 - **Embedding model:** PubMedBERT (768 dimensions)
-- **Index size:** 157 conditions, 1,721 chunks
+- **Index size:** 370 conditions, 3,699 chunks
 - **Search modes:**
   - `hybrid` (default): RRF fusion of dense vector + BM25 full-text search
   - `vector`: Dense semantic search only
@@ -70,7 +70,7 @@ RRF scoring: over-fetches `top_k * 4` from each modality, then merges with `scor
 3. Subsection split at H3 headers (`### Subsection`) when section text exceeds 800 characters
 4. Enrich each chunk with metadata: condition name, aliases, ICD-10 codes, category, risk tier, ESI
 
-Result: 157 conditions produce 1,721 chunks (~11 per condition on average).
+Result: 370 conditions produce 3,699 chunks (~10 per condition on average).
 
 ## Python Package
 
