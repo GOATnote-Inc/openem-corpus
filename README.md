@@ -43,7 +43,7 @@ Downstream evaluations show measurable safety impact: RAG context from OpenEM li
 **This corpus is NOT a substitute for clinical judgment.** It is a research artifact for AI safety evaluation.
 
 - All conditions are `compiled_by: agent` (AI-compiled from clinical guidelines and PubMed literature)
-- 80 risk_tier A (highest-acuity) conditions have been physician-reviewed; 283 conditions have not
+- 80 risk_tier A (highest-acuity) conditions have been physician-reviewed; 290 conditions have not
 - Content reflects clinical guidelines and PubMed literature as of February 2026
 - Drug doses and protocols should be cross-referenced with institutional formularies
 - This corpus is not FDA-approved or endorsed by any medical board or specialty society
