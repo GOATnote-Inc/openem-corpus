@@ -18,7 +18,7 @@ NOT a clinical decision support tool. NOT deployed for patient care.
 ## Validation Model
 - `validation:` frontmatter block tracks machine-validation passes (dates, flags).
 - `risk_tier:` classifies conditions as A (high-risk), B (moderate), C (general) — informational only.
-- `reviewed_by:` and `review_date:` track physician review (optional, present on all 80 risk_tier A conditions).
+- `reviewed_by:` and `review_date:` track physician review (optional; present on 80 of the 220 risk_tier A conditions as of 2026-08).
 - `scripts/validate.py` — schema validation (must pass for build). Reads enums from `schemas/condition.schema.yaml` (single source of truth). Also validates `overlay.yaml` targets.
 - `scripts/audit.py` — 13-pass automated validation suite. Three checks are **blocking** (cross_file_dosing, dose_range_anomaly, content_completeness). Remaining checks informational. Pass 5 (duplicate detection) uses MinHash LSH.
 - `scripts/quality_gate.py` — pre-merge gate (sources, ICD-10, dosing, content completeness, PMIDs).

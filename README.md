@@ -12,7 +12,7 @@ Agent-compiled from clinical guidelines and PubMed literature. Machine-validated
 ```python
 from openem import OpenEMIndex, OpenEMBridge
 
-index = OpenEMIndex("data/index/openem.lance")
+index = OpenEMIndex("data/index")  # build once: python scripts/build_index.py
 bridge = OpenEMBridge(index)  # auto-loads canonical condition map
 context = bridge.get_context("chest pain", max_chars=2000)
 print(context)
@@ -43,7 +43,7 @@ Downstream evaluations show measurable safety impact: RAG context from OpenEM li
 **This corpus is NOT a substitute for clinical judgment.** It is a research artifact for AI safety evaluation.
 
 - All conditions are `compiled_by: agent` (AI-compiled from clinical guidelines and PubMed literature)
-- 80 risk_tier A (highest-acuity) conditions have been physician-reviewed; 290 conditions have not
+- 80 of the 220 risk_tier A (highest-acuity) conditions have been physician-reviewed; the other 290 conditions have not
 - Content reflects clinical guidelines and PubMed literature as of February 2026
 - Drug doses and protocols should be cross-referenced with institutional formularies
 - This corpus is not FDA-approved or endorsed by any medical board or specialty society
@@ -60,7 +60,7 @@ Downstream evaluations show measurable safety impact: RAG context from OpenEM li
 | ESI 2 (emergent) | 60 |
 | ESI 3 (urgent) | 19 |
 | ESI 4-5 (less urgent) | 6 |
-| Physician-reviewed (risk tier A) | 80 |
+| Physician-reviewed (risk tier A) | 80 of 220 |
 | License | Apache 2.0 (tier1) |
 | Validation | All conditions pass automated 13-check suite (schema v2.0) |
 
@@ -70,7 +70,7 @@ Downstream evaluations show measurable safety impact: RAG context from OpenEM li
 |-------|------|---------|
 | Schema validation | Every condition validates against [`condition.schema.yaml`](schemas/condition.schema.yaml) (v2.0) | 22 required fields, ICD-10 format, source citations |
 | 13-pass audit | [`scripts/audit.py`](scripts/audit.py) — 3 blocking, 10 informational | Cross-file dosing consistency, dose range anomalies, content completeness |
-| Physician review | 80 risk_tier A conditions reviewed by board-certified EM physician | Structured [category-specific rubrics](review/rubric/), blind review protocol |
+| Physician review | 80 of 220 risk_tier A conditions reviewed by the corpus author (board-certified EM physician); single reviewer, self-attested in frontmatter | Structured [category-specific rubrics](review/rubric/), blind review protocol |
 | CI pipeline | 5 workflows: validate, audit, quality-gate, review-gate, tests | All block merge to main |
 
 Physician review workflow: [`REVIEWING.md`](REVIEWING.md). Full validation pipeline: [`docs/CORPUS_DETAILS.md`](docs/CORPUS_DETAILS.md).
@@ -136,7 +136,7 @@ pip install -e ".[embeddings]"                # + sentence-transformers for embe
 from openem import OpenEMIndex, OpenEMBridge
 
 # Hybrid search (vector + FTS + RRF fusion)
-index = OpenEMIndex("data/index/openem.lance")
+index = OpenEMIndex("data/index")  # build once: python scripts/build_index.py
 results = index.search("chest pain tearing", top_k=5, mode="hybrid")
 
 # Bridge with auto-loaded canonical condition map
