@@ -210,7 +210,7 @@ Alpha is reported per batch and cumulatively by `scripts/review_dashboard.py`.
 
 ## Current Review Status
 
-All 80 risk_tier A (ESI 1) conditions have been reviewed by the corpus author (board-certified emergency medicine physician). The remaining 105 conditions across risk tiers B and C need review.
+80 of the 220 risk_tier A conditions have been reviewed by the corpus author (board-certified emergency medicine physician). The remaining 290 conditions (140 tier A plus all of tiers B and C) have not been reviewed.
 
 Run `python scripts/review_status.py` to see detailed status by tier.
 

@@ -38,8 +38,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pyyaml pytest
-          pip install -e . --no-deps
+          pip install pytest
+          pip install -e .
 
       - name: Run tests (skip test_index.py)
         run: pytest tests/ -v --ignore=tests/test_index.py

@@ -9,7 +9,7 @@ authors:
     affiliation: "GOATnote Inc."
 repository-code: "https://github.com/GOATnote-Inc/openem-corpus"
 license: Apache-2.0
-version: "2.1"
+version: 0.5.1
 date-released: "2026-02-27"
 keywords:
   - emergency-medicine
@@ -18,10 +18,10 @@ keywords:
   - medical-corpus
   - ai-safety
 abstract: >-
-  A structured, token-efficient corpus of 185 emergency medicine conditions
+  A structured, token-efficient corpus of 370 emergency medicine conditions
   designed for AI/LLM evaluation and safety research. Agent-compiled from
   clinical guidelines and PubMed literature, machine-validated through a
-  13-check automated suite, and physician-reviewed for all high-acuity
-  (risk tier A) conditions. Used by ScribeGoat2, LostBench, and SafeShift
+  13-check automated suite; 80 of the 220 high-acuity (risk tier A)
+  conditions have been physician-reviewed by the corpus author. Used by ScribeGoat2, LostBench, and SafeShift
   to evaluate whether LLMs maintain safety boundaries in emergency medicine
   conversations.
