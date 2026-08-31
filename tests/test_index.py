@@ -257,5 +257,8 @@ class TestFilterInjection:
     def test_accepts_normal_ids(self):
         from openem.index import OpenEMIndex
 
-        assert OpenEMIndex._filter_literal("condition_id", "stemi") == "condition_id = 'stemi'"
+        assert (
+            OpenEMIndex._filter_literal("condition_id", "stemi")
+            == "condition_id = 'stemi'"
+        )
         assert OpenEMIndex._filter_literal("risk_tier", "A") == "risk_tier = 'A'"
