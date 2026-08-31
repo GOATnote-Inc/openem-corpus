@@ -7,6 +7,7 @@ from here rather than copying openem_adapter.py.
 
 import hashlib
 import json
+import re
 import logging
 from pathlib import Path
 from typing import Optional
@@ -143,14 +144,31 @@ class OpenEMIndex:
         merged = self._rrf_merge(vec_qb.to_list(), fts_qb.to_list())
         return self._clean(merged[:top_k])
 
-    @staticmethod
-    def _apply_filters(qb, category, risk_tier, condition_id):
+    _FILTER_VALUE = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
+
+    @classmethod
+    def _filter_literal(cls, field: str, value: str) -> str:
+        """Build a safe SQL literal for a LanceDB ``where`` clause.
+
+        Filter values come from callers that may pass model- or user-derived
+        strings; a quote in the value would otherwise break out of the literal.
+        Values are restricted to the identifier alphabet actually used by
+        corpus categories, tiers, and condition ids.
+        """
+        if not cls._FILTER_VALUE.match(value):
+            raise ValueError(
+                f"invalid {field} filter {value!r}: expected 1-64 chars of [A-Za-z0-9_-]"
+            )
+        return f"{field} = '{value}'"
+
+    @classmethod
+    def _apply_filters(cls, qb, category, risk_tier, condition_id):
         if category:
-            qb = qb.where(f"category = '{category}'")
+            qb = qb.where(cls._filter_literal("category", category))
         if risk_tier:
-            qb = qb.where(f"risk_tier = '{risk_tier}'")
+            qb = qb.where(cls._filter_literal("risk_tier", risk_tier))
         if condition_id:
-            qb = qb.where(f"condition_id = '{condition_id}'")
+            qb = qb.where(cls._filter_literal("condition_id", condition_id))
         return qb
 
     @staticmethod

@@ -41,5 +41,5 @@ jobs:
           pip install pytest
           pip install -e .
 
-      - name: Run tests (skip test_index.py)
-        run: pytest tests/ -v --ignore=tests/test_index.py
+      - name: Run tests
+        run: pytest tests/ -v
