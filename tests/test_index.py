@@ -237,3 +237,25 @@ class TestRRFMerge:
         cleaned = OpenEMIndex._clean(rows)
         assert "vector" not in cleaned[0]
         assert cleaned[0]["text"] == "hello"
+
+
+class TestFilterInjection:
+    """Filter values must not be able to break out of the SQL literal (audit P1-4)."""
+
+    def test_rejects_quote_breakout(self):
+        from openem.index import OpenEMIndex
+
+        with pytest.raises(ValueError, match="invalid category filter"):
+            OpenEMIndex._filter_literal("category", "x' OR '1'='1")
+
+    def test_rejects_overlong_value(self):
+        from openem.index import OpenEMIndex
+
+        with pytest.raises(ValueError):
+            OpenEMIndex._filter_literal("risk_tier", "A" * 65)
+
+    def test_accepts_normal_ids(self):
+        from openem.index import OpenEMIndex
+
+        assert OpenEMIndex._filter_literal("condition_id", "stemi") == "condition_id = 'stemi'"
+        assert OpenEMIndex._filter_literal("risk_tier", "A") == "risk_tier = 'A'"
