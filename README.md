@@ -5,6 +5,9 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
 **370 emergency medicine conditions. 80 physician-reviewed. 631 source citations.**
+
+> **Maintenance status (2026-09):** passive. This repository is kept available as a reference implementation; CI runs on pushes and pull requests only, Dependabot security alerts remain enabled, and no scheduled jobs or hosted services consume ongoing resources. No active development is planned.
+
 Agent-compiled from clinical guidelines and PubMed literature. Machine-validated with a 13-pass automated quality suite.
 
 ## Quick Start
